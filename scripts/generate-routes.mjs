@@ -1,9 +1,12 @@
 import { copyFile, mkdir } from "node:fs/promises";
 import { resolve } from "node:path";
+import { publicDataEssays } from "../src/content.js";
 
 const routes = [
   "research",
+  "experiments",
   "experiments/claiming-under-agents",
+  ...publicDataEssays.map((essay) => `experiments/${essay.slug}`),
   "notes/labels-are-not-treatments",
   "notes/map-is-a-policy-choice",
   "notes/open-is-not-agent-readable",

@@ -1,6 +1,6 @@
 import React, { useMemo, useState } from "react";
 import { createRoot } from "react-dom/client";
-import { notes, research, timeline } from "./content";
+import { notes, publicDataEssays, research, timeline } from "./content";
 import { runModel, scenarios } from "./model";
 import "./styles.css";
 
@@ -14,7 +14,7 @@ function Header() {
   const path = window.location.pathname;
   const links = [
     ["/research/", "Research"],
-    ["/experiments/claiming-under-agents/", "Experiment"],
+    ["/experiments/", "Experiments"],
     ["/timeline/", "Timeline"],
   ];
 
@@ -153,7 +153,7 @@ function Home() {
               Enter the research program <Arrow />
             </a>
             <a className="secondary-button" href="/experiments/claiming-under-agents/">
-              Run the new simulation
+              Run the systems simulation
             </a>
           </div>
         </div>
@@ -247,6 +247,23 @@ function Home() {
         </div>
       </section>
 
+      <section className="public-series-section page-shell" aria-labelledby="public-series-heading">
+        <div className="section-heading split-heading">
+          <div>
+            <p className="eyebrow">Six public-data experiments · August 2026</p>
+            <h2 id="public-series-heading">Small tests of where institutional power hides.</h2>
+          </div>
+          <a className="text-link" href="/experiments/">
+            Enter the full series <Arrow />
+          </a>
+        </div>
+        <div className="essay-card-grid">
+          {publicDataEssays.slice(0, 3).map((essay) => (
+            <ExperimentEssayCard essay={essay} key={essay.slug} />
+          ))}
+        </div>
+      </section>
+
       <section className="notes-section page-shell" aria-labelledby="notes-heading">
         <div className="section-heading">
           <p className="eyebrow">Research notes</p>
@@ -265,6 +282,215 @@ function Home() {
           ))}
         </div>
       </section>
+    </Shell>
+  );
+}
+
+function ExperimentEssayCard({ essay }) {
+  return (
+    <a className="experiment-essay-card" href={`/experiments/${essay.slug}/`}>
+      <span className="essay-card-number">{essay.number}</span>
+      <span className="eyebrow">Public-data experiment</span>
+      <h3>{essay.title}</h3>
+      <p>{essay.standfirst}</p>
+      <span className="card-action">Read methods and results <Arrow /></span>
+    </a>
+  );
+}
+
+function ExperimentsLanding() {
+  return (
+    <Shell>
+      <section className="page-intro page-shell experiments-landing-intro">
+        <p className="eyebrow">Open methods · Public data · August 2026</p>
+        <h1>Experiments that can tell me I am wrong.</h1>
+        <p className="intro-lede">
+          Six empirical essays test a different institutional boundary—failure,
+          metadata, participation, ranking, procedure, and missingness. Each exposes
+          its data, code, exclusions, and defeaters.
+        </p>
+        <div className="status-box landing-status">
+          <strong>Series rule</strong>
+          <p>
+            No result is presented as causal. A title earns its claim only through a
+            reproducible contrast and an explicit account of what the data cannot show.
+          </p>
+        </div>
+      </section>
+
+      <section className="experiment-principles page-shell" aria-label="Experiment design principles">
+        <div><span>01</span><strong>One public-data test</strong><small>Not a renamed concept</small></div>
+        <div><span>02</span><strong>One result that could reverse</strong><small>Not a confirmatory illustration</small></div>
+        <div><span>03</span><strong>One institutional implication</strong><small>Not an AI slogan</small></div>
+        <div><span>04</span><strong>One published limitation</strong><small>Not false certainty</small></div>
+      </section>
+
+      <section className="experiment-index page-shell" aria-labelledby="experiment-index-heading">
+        <div className="section-heading">
+          <p className="eyebrow">Public-data essay series</p>
+          <h2 id="experiment-index-heading">Six boundaries. Six falsifiable claims.</h2>
+        </div>
+        <div className="essay-card-grid full-grid">
+          {publicDataEssays.map((essay) => (
+            <ExperimentEssayCard essay={essay} key={essay.slug} />
+          ))}
+        </div>
+      </section>
+
+      <section className="novelty-audit page-shell" aria-labelledby="novelty-audit-heading">
+        <div className="section-heading">
+          <p className="eyebrow">Novelty ledger</p>
+          <h2 id="novelty-audit-heading">No old concept is relabeled as a discovery.</h2>
+        </div>
+        <div className="novelty-table" role="table" aria-label="Established ideas and new contribution">
+          <div className="novelty-row header-row" role="row">
+            <span role="columnheader">Experiment</span>
+            <span role="columnheader">Established before this analysis</span>
+            <span role="columnheader">Contribution tested here</span>
+          </div>
+          {[
+            ["Error recovery", "Machine-readable problem details", "Failure signals allocate repair capacity"],
+            ["Metadata", "Open-data quality audits", "Freshness and semantic legibility behave as separate capabilities"],
+            ["311 channels", "Socio-spatial reporting bias", "High participation can coexist with unequal machine-ready form"],
+            ["Priority ranks", "Composite-index sensitivity", "A decision-facing probability of priority; method is not claimed as new"],
+            ["Comment burden", "Variable comment periods", "Attention-normalized load rather than calendar time alone"],
+            ["Global coverage", "Nonrandom missing data", "The vintage vector makes the temporal price of inclusion observable"],
+          ].map(([name, established, contribution]) => (
+            <div className="novelty-row" role="row" key={name}>
+              <strong role="cell">{name}</strong>
+              <span role="cell">{established}</span>
+              <span role="cell">{contribution}</span>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="simulation-callout page-shell">
+        <div>
+          <p className="eyebrow">Separate theory-building instrument</p>
+          <h2>The Burden Moves</h2>
+          <p>
+            The essays begin with observed public data. This interactive model does
+            something different: it formalizes how applicant assistance and agency
+            verification can respond to each other.
+          </p>
+        </div>
+        <a className="primary-button" href="/experiments/claiming-under-agents/">
+          Run the simulation <Arrow />
+        </a>
+      </section>
+
+      <section className="series-download page-shell">
+        <p className="eyebrow">Reproducibility bundle</p>
+        <h2>Audit every number from the source tables.</h2>
+        <p>
+          Raw extracts remain separate from processed tables. The bundle carries
+          source URLs, scoring rules, the machine manifest, and the result tables used
+          in the essays.
+        </p>
+        <div className="download-row">
+          <a className="primary-button" href="/data/public-data-series/public-data-experiments.zip" download>
+            Download the audit bundle <Arrow />
+          </a>
+          <a className="secondary-button" href="/data/public-data-series/manifest.json">
+            Read the machine manifest
+          </a>
+        </div>
+      </section>
+    </Shell>
+  );
+}
+
+function PublicDataEssayPage({ essay }) {
+  const currentIndex = publicDataEssays.findIndex((item) => item.slug === essay.slug);
+  const previous = publicDataEssays[currentIndex - 1];
+  const next = publicDataEssays[currentIndex + 1];
+
+  return (
+    <Shell>
+      <article className="data-essay page-shell">
+        <header className="data-essay-header">
+          <div className="data-essay-sequence">Experiment {essay.number} / 06</div>
+          <p className="eyebrow">{essay.eyebrow}</p>
+          <h1>{essay.title}</h1>
+          <p className="essay-standfirst">{essay.standfirst}</p>
+          <div className="research-question-box">
+            <span>Question</span>
+            <p>{essay.question}</p>
+          </div>
+        </header>
+
+        <section className="data-essay-metrics" aria-label="Key results">
+          {essay.metrics.map(([label, value]) => (
+            <div key={label}><span>{label}</span><strong>{value}</strong></div>
+          ))}
+        </section>
+
+        <section className="evidence-status-strip">
+          <strong>Evidence status</strong>
+          <p>{essay.evidenceStatus}</p>
+        </section>
+
+        <figure className="data-essay-figure">
+          <img src={essay.figure.src} alt={essay.figure.alt} />
+          <figcaption>{essay.figure.caption}</figcaption>
+        </figure>
+
+        <div className="data-essay-layout">
+          <aside className="essay-contents">
+            <strong>Contents</strong>
+            <ol>
+              {essay.blocks.map((block, index) => (
+                <li key={block.heading}>
+                  <a href={`#section-${index + 1}`}>{block.heading}</a>
+                </li>
+              ))}
+            </ol>
+          </aside>
+          <div className="data-essay-body">
+            {essay.blocks.map((block, index) => (
+              <section id={`section-${index + 1}`} key={block.heading}>
+                <span className="section-number">{String(index + 1).padStart(2, "0")}</span>
+                <h2>{block.heading}</h2>
+                {block.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+              </section>
+            ))}
+          </div>
+        </div>
+
+        <section className="essay-resources">
+          <div>
+            <p className="eyebrow">Data and code</p>
+            <h2>Reproduce the contrast.</h2>
+            <div className="resource-list">
+              {essay.dataLinks.map(([label, href]) => (
+                <a href={href} key={href}>{label} <Arrow /></a>
+              ))}
+            </div>
+          </div>
+          <div>
+            <p className="eyebrow">Sources and context</p>
+            <ol className="source-list">
+              {essay.sources.map(([label, href]) => (
+                <li key={href}><a href={href}>{label}</a></li>
+              ))}
+            </ol>
+          </div>
+        </section>
+
+        <nav className="series-nav" aria-label="Public-data experiment series">
+          {previous ? (
+            <a href={`/experiments/${previous.slug}/`}>
+              <span>Previous experiment</span><strong>← {previous.title}</strong>
+            </a>
+          ) : <a href="/experiments/"><span>Series</span><strong>← All experiments</strong></a>}
+          {next ? (
+            <a href={`/experiments/${next.slug}/`}>
+              <span>Next experiment</span><strong>{next.title} →</strong>
+            </a>
+          ) : <a href="/experiments/"><span>Series</span><strong>All experiments →</strong></a>}
+        </nav>
+      </article>
     </Shell>
   );
 }
@@ -532,8 +758,14 @@ function App() {
   const path = window.location.pathname.replace(/\/+$/, "") || "/";
   if (path === "/") return <Home />;
   if (path === "/research") return <ResearchPage />;
+  if (path === "/experiments") return <ExperimentsLanding />;
   if (path === "/experiments/claiming-under-agents") return <ExperimentPage />;
   if (path === "/timeline") return <TimelinePage />;
+  const experimentMatch = path.match(/^\/experiments\/([^/]+)$/);
+  if (experimentMatch) {
+    const essay = publicDataEssays.find((item) => item.slug === experimentMatch[1]);
+    if (essay) return <PublicDataEssayPage essay={essay} />;
+  }
   const noteMatch = path.match(/^\/notes\/([^/]+)$/);
   if (noteMatch) {
     const note = notes.find((item) => item.slug === noteMatch[1]);

@@ -1,0 +1,47 @@
+{
+  "research_run_local_date": "2026-08-23",
+  "claims": [
+    {
+      "id": "api-200-errors",
+      "claim": "Three of eight malformed public API requests returned HTTP 200.",
+      "direct_source": "/data/public-data-series/api-error-recovery.csv",
+      "method_source": "/experiments/public_data_series.py",
+      "qualifier": "One malformed request per API; dated interface audit, not a comprehensive benchmark."
+    },
+    {
+      "id": "metadata-no-column-descriptions",
+      "claim": "56.6 percent of 6,607 catalogued datasets had no column descriptions in the discovery metadata.",
+      "direct_source": "/data/public-data-series/open-data-metadata-audit.csv",
+      "method_source": "https://dev.socrata.com/docs/endpoints.html",
+      "qualifier": "Six Socrata portals; discovery metadata may not expose every piece of portal documentation."
+    },
+    {
+      "id": "nyc-channel-gradient",
+      "claim": "Digital 311 share was 64.7 percent in the lowest-income ZCTA quartile and 74.4 percent in the highest.",
+      "direct_source": "/data/public-data-series/nyc-311-channel-income-quartiles.csv",
+      "method_source": "https://data.cityofnewyork.us/d/erm2-nwe9",
+      "qualifier": "Incident ZIP is not necessarily caller residence; descriptive 2025 association."
+    },
+    {
+      "id": "ranking-fragility",
+      "claim": "Only five of the equal-weight top ten states had at least an 80 percent top-ten probability across 10,000 weight draws.",
+      "direct_source": "/data/public-data-series/state-priority-ranking-fragility.csv",
+      "method_source": "https://www.oecd.org/en/publications/handbook-on-constructing-composite-indicators-methodology-and-user-guide_9789264043466-en.html",
+      "qualifier": "Illustrative four-variable score with deliberately broad weight uncertainty."
+    },
+    {
+      "id": "comment-load",
+      "claim": "Federal Register page length and comment-window length had Spearman rho 0.109 among 1,292 valid 2025 proposed-rule records.",
+      "direct_source": "/data/public-data-series/federal-register-comment-burden.csv",
+      "method_source": "https://www.federalregister.gov/developers/documentation/api/v1",
+      "qualifier": "Page count is a rough attention proxy and excludes attachments and prior expertise."
+    },
+    {
+      "id": "global-vintage-tradeoff",
+      "claim": "Latest-value selection raised complete coverage from 72.4 to 86.6 percent, while 23.9 percent of included economies mixed indicator years.",
+      "direct_source": "/data/public-data-series/world-bank-latest-window-coverage.csv",
+      "method_source": "https://datahelpdesk.worldbank.org/knowledgebase/articles/889392",
+      "qualifier": "Four selected digital-infrastructure indicators and World Bank economy definitions."
+    }
+  ]
+}

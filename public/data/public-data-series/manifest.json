@@ -1,0 +1,234 @@
+{
+  "title": "Public-data research series",
+  "retrieved_at_utc": "2026-08-24T03:50:54Z",
+  "scope_note": "Six descriptive, reproducible experiments. Findings are associations or interface audits, not causal effects. Live APIs may produce different results when rerun.",
+  "experiments": {
+    "errors": {
+      "n_apis": 8,
+      "median_score": 5.0,
+      "status_200_on_invalid_count": 3,
+      "named_bad_input_count": 6,
+      "top_api": "National Weather Service",
+      "bottom_api": "NASA EONET"
+    },
+    "metadata": {
+      "n_portals": 6,
+      "n_datasets": 6607,
+      "overall_metadata_older_than_two_years": 0.3040714393824731,
+      "overall_no_column_descriptions": 0.5659149387013773,
+      "overall_frequency_coverage": 0.9116088996518844,
+      "portal_summary": [
+        {
+          "portal": "Los Angeles",
+          "datasets": 360,
+          "median_metadata_age_days": 2092.0,
+          "metadata_older_than_two_years": 0.8083333333333333,
+          "mean_column_description_coverage": 0.2857441432187438,
+          "datasets_with_no_column_descriptions": 0.6222222222222222,
+          "license_coverage": 0.7361111111111112,
+          "contact_coverage": 0.0,
+          "frequency_coverage": 0.9361111111111111
+        },
+        {
+          "portal": "Dallas",
+          "datasets": 342,
+          "median_metadata_age_days": 865.0,
+          "metadata_older_than_two_years": 0.7192982456140351,
+          "mean_column_description_coverage": 0.19184784599830454,
+          "datasets_with_no_column_descriptions": 0.7631578947368421,
+          "license_coverage": 0.07602339181286549,
+          "contact_coverage": 0.4853801169590643,
+          "frequency_coverage": 0.15204678362573099
+        },
+        {
+          "portal": "Chicago",
+          "datasets": 914,
+          "median_metadata_age_days": 865.0,
+          "metadata_older_than_two_years": 0.5929978118161926,
+          "mean_column_description_coverage": 0.22797002375687822,
+          "datasets_with_no_column_descriptions": 0.6105032822757112,
+          "license_coverage": 0.5940919037199125,
+          "contact_coverage": 0.0,
+          "frequency_coverage": 0.7155361050328227
+        },
+        {
+          "portal": "New York City",
+          "datasets": 2398,
+          "median_metadata_age_days": 635.0,
+          "metadata_older_than_two_years": 0.2956630525437865,
+          "mean_column_description_coverage": 0.4626043705408228,
+          "datasets_with_no_column_descriptions": 0.5,
+          "license_coverage": 0.0079232693911593,
+          "contact_coverage": 0.0,
+          "frequency_coverage": 1.0
+        },
+        {
+          "portal": "Maryland",
+          "datasets": 1564,
+          "median_metadata_age_days": 76.0,
+          "metadata_older_than_two_years": 0.09782608695652174,
+          "mean_column_description_coverage": 0.03532429954839185,
+          "datasets_with_no_column_descriptions": 0.9392583120204604,
+          "license_coverage": 0.1956521739130435,
+          "contact_coverage": 0.0,
+          "frequency_coverage": 0.9948849104859335
+        },
+        {
+          "portal": "New York State",
+          "datasets": 1029,
+          "median_metadata_age_days": 129.0,
+          "metadata_older_than_two_years": 0.06608357628765792,
+          "mean_column_description_coverage": 0.9428297979514533,
+          "datasets_with_no_column_descriptions": 0.027210884353741496,
+          "license_coverage": 0.007774538386783284,
+          "contact_coverage": 0.9961127308066083,
+          "frequency_coverage": 0.9970845481049563
+        }
+      ]
+    },
+    "311": {
+      "year": 2025,
+      "n_zctas": 180,
+      "n_requests_in_analysis": 3615972,
+      "income_digital_share_spearman_rho": 0.4054228122745133,
+      "income_digital_share_p_value": 1.644594811586423e-08,
+      "broadband_digital_share_spearman_rho": 0.354205558919334,
+      "broadband_digital_share_p_value": 1.0708676024014953e-06,
+      "lower_income_quartile_digital_share": 0.6470183955991334,
+      "higher_income_quartile_digital_share": 0.7437086812259192,
+      "channel_values": [
+        "MOBILE",
+        "ONLINE",
+        "OTHER",
+        "PHONE",
+        "UNKNOWN"
+      ]
+    },
+    "ranking": {
+      "n_states_including_dc": 51,
+      "random_weight_draws": 10000,
+      "equal_weight_top_10": [
+        "Alabama",
+        "Arkansas",
+        "Kentucky",
+        "Louisiana",
+        "Mississippi",
+        "New Mexico",
+        "Oklahoma",
+        "South Carolina",
+        "Tennessee",
+        "West Virginia"
+      ],
+      "states_with_at_least_80_percent_top_10_probability": [
+        "Arkansas",
+        "Kentucky",
+        "Louisiana",
+        "New Mexico",
+        "Oklahoma"
+      ],
+      "median_state_90_percent_rank_interval_width": 25.0,
+      "max_deterministic_rank_range": 19,
+      "state_with_max_deterministic_rank_range": "West Virginia"
+    },
+    "comments": {
+      "n_proposed_rules": 1498,
+      "n_with_valid_window_and_length": 1292,
+      "share_missing_comment_close_date": 0.13618157543391188,
+      "median_comment_window_days": 45.0,
+      "page_length_window_spearman_rho": 0.10925580144682652,
+      "page_length_window_p_value": 8.315570886686303e-05,
+      "n_rules_at_least_100_pages": 12,
+      "share_100_page_rules_with_30_days_or_less": 0.08333333333333333,
+      "highest_median_load_agencies_min_10_rules": [
+        {
+          "lead_agency": "Health and Human Services Department",
+          "proposed_rules": 35,
+          "median_window_days": 60.0,
+          "median_pages": 23.0,
+          "median_pages_per_30_days": 11.5
+        },
+        {
+          "lead_agency": "Justice Department",
+          "proposed_rules": 13,
+          "median_window_days": 31.0,
+          "median_pages": 8.0,
+          "median_pages_per_30_days": 7.5
+        },
+        {
+          "lead_agency": "Federal Communications Commission",
+          "proposed_rules": 66,
+          "median_window_days": 31.0,
+          "median_pages": 8.0,
+          "median_pages_per_30_days": 6.887096774193548
+        },
+        {
+          "lead_agency": "Interior Department",
+          "proposed_rules": 45,
+          "median_window_days": 60.0,
+          "median_pages": 8.0,
+          "median_pages_per_30_days": 6.393442622950819
+        },
+        {
+          "lead_agency": "Commerce Department",
+          "proposed_rules": 47,
+          "median_window_days": 31.0,
+          "median_pages": 5.0,
+          "median_pages_per_30_days": 6.0
+        }
+      ]
+    },
+    "missingness": {
+      "n_countries": 217,
+      "strict_year": 2023,
+      "strict_complete_count": 157,
+      "strict_complete_share": 0.7235023041474654,
+      "latest_2020_2024_complete_count": 188,
+      "latest_2020_2024_complete_share": 0.8663594470046083,
+      "share_of_latest_complete_cases_mixing_vintages": 0.2393617021276596,
+      "median_vintage_span_among_latest_complete": 0.0,
+      "coverage_by_income_group": [
+        {
+          "income_group": "Low income",
+          "countries": 25,
+          "strict_complete_share": 0.6,
+          "latest_complete_share": 0.8,
+          "median_vintage_span": 1.0
+        },
+        {
+          "income_group": "Lower middle income",
+          "countries": 47,
+          "strict_complete_share": 0.7872340425531915,
+          "latest_complete_share": 0.9787234042553191,
+          "median_vintage_span": 0.0
+        },
+        {
+          "income_group": "Upper middle income",
+          "countries": 59,
+          "strict_complete_share": 0.7627118644067796,
+          "latest_complete_share": 0.9322033898305084,
+          "median_vintage_span": 0.0
+        },
+        {
+          "income_group": "High income",
+          "countries": 86,
+          "strict_complete_share": 0.6976744186046512,
+          "latest_complete_share": 0.7790697674418605,
+          "median_vintage_span": 0.0
+        }
+      ]
+    }
+  },
+  "primary_sources": [
+    "https://open.fda.gov/apis/",
+    "https://earthquake.usgs.gov/fdsnws/event/1/",
+    "https://vpic.nhtsa.dot.gov/api/",
+    "https://www.federalregister.gov/developers/documentation/api/v1",
+    "https://datahelpdesk.worldbank.org/knowledgebase/articles/889392",
+    "https://eonet.gsfc.nasa.gov/docs/v3",
+    "https://www.weather.gov/documentation/services-web-api",
+    "https://fiscaldata.treasury.gov/api-documentation/",
+    "https://dev.socrata.com/docs/endpoints.html",
+    "https://data.cityofnewyork.us/d/erm2-nwe9",
+    "https://www.census.gov/programs-surveys/acs/data/summary-file.html"
+  ]
+}
