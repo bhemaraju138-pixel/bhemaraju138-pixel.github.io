@@ -1,7 +1,10 @@
 export const research = [
   {
     year: "2026",
-    type: "Accepted conference paper",
+    type: "Accepted abstract · presentation upcoming",
+    publicationStatus: "Accepted · Presentation upcoming",
+    venue: "20th ISDSI Global Conference · IMT Hyderabad · December 2026",
+    authors: "Hema Raju Barri and Chandana Charitha Peddinti",
     title: "Agent–Infrastructure Fit",
     dek: "Open data can be public and still be unusable by an agent.",
     question:
@@ -17,7 +20,10 @@ export const research = [
   },
   {
     year: "2026",
-    type: "Accepted empirical paper · coauthored",
+    type: "Accepted and presented · INSIGHT 2026",
+    publicationStatus: "Accepted · Presented",
+    venue: "INSIGHT 2026",
+    authors: "Hema Raju Barri and Chandana Charitha Peddinti",
     title: "Privacy-Sensitive Generative AI Sourcing",
     dek: "The governance of a public AI system begins with who supplies it.",
     question:
@@ -29,11 +35,14 @@ export const research = [
     implication:
       "Sourcing determines who can inspect a system, where operational knowledge accumulates, and who can be held accountable when the system acts on sensitive data.",
     href: "/papers/privacy-sensitive-sourcing.pdf",
-    linkLabel: "Read the empirical writing sample",
+    linkLabel: "Read the presented writing sample",
   },
   {
     year: "2026",
     type: "Sole-authored preprint",
+    publicationStatus: "Sole-authored preprint",
+    venue: "SSRN · April 2026",
+    authors: "Hema Raju Barri",
     title: "Keeping Strategic Futures Observable",
     dek: "AI can change the evidence an institution sees after it acts.",
     question:

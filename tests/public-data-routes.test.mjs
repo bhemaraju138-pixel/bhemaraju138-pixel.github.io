@@ -23,13 +23,16 @@ test("every essay figure, local download, and built route exists", async () => {
 });
 
 test("portfolio routes and route-specific metadata are built", async () => {
-  for (const route of ["research", "writing", "about", "experiments/claiming-under-agents"]) {
+  for (const route of ["research", "publications", "blogs", "writing", "about", "experiments/claiming-under-agents"]) {
     await access(resolve("dist/client", route, "index.html"));
   }
 
   const writingHtml = await readFile(resolve("dist/client/writing/index.html"), "utf8");
   assert.match(writingHtml, /<title>Writing — Hema Raju Barri<\/title>/);
-  assert.match(writingHtml, /og\.png/);
+  assert.match(writingHtml, /og-minimal\.png/);
+
+  const publicationsHtml = await readFile(resolve("dist/client/publications/index.html"), "utf8");
+  assert.match(publicationsHtml, /<title>Publications — Hema Raju Barri<\/title>/);
 
   const essayHtml = await readFile(
     resolve("dist/client/experiments/error-message-is-policy/index.html"),

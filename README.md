@@ -5,8 +5,8 @@ human–AI interaction, evidence, and empirical methods.
 
 The portfolio includes:
 
-- a selected-work archive connecting questions, methods, findings, and implications;
-- a searchable writing notebook that brings essays and experiments into one place;
+- a publications archive with precise accepted, presented, upcoming, and preprint status;
+- a searchable blog archive that brings essays and experiments into one place;
 - an interactive research compass linking projects across four intellectual lenses;
 - a parameterized simulation of agent-mediated public-benefit claiming;
 - six reproducible public-data experiments on interface recovery, metadata, civic

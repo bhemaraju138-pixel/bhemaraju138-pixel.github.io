@@ -10,6 +10,16 @@ const routes = [
     description: "Research across AI systems, human–AI interaction, public institutions, evidence, and empirical methods.",
   },
   {
+    route: "publications",
+    title: "Publications — Hema Raju Barri",
+    description: "Accepted, presented, forthcoming, and preprint research on AI infrastructure, federal AI sourcing, and strategic evidence.",
+  },
+  {
+    route: "blogs",
+    title: "Blogs — Hema Raju Barri",
+    description: "Blogs, public-data experiments, research notes, methods, code, and working ideas by Hema Raju Barri.",
+  },
+  {
     route: "writing",
     title: "Writing — Hema Raju Barri",
     description: "An open notebook of essays, public-data experiments, methods, code, and unfinished research questions.",

@@ -13,8 +13,8 @@ function Arrow() {
 function Header() {
   const path = window.location.pathname;
   const links = [
-    ["/research/", "Work"],
-    ["/writing/", "Writing"],
+    ["/publications/", "Publications"],
+    ["/blogs/", "Blogs"],
     ["/experiments/claiming-under-agents/", "Lab"],
     ["/about/", "About"],
   ];
@@ -54,7 +54,8 @@ function Footer() {
       <div className="footer-links">
         <a href="mailto:bhemaraju.138@gmail.com">Email</a>
         <a href="https://github.com/bhemaraju138-pixel">GitHub</a>
-        <a href="/writing/">Writing</a>
+        <a href="/publications/">Publications</a>
+        <a href="/blogs/">Blogs</a>
         <a href="/about/">About</a>
       </div>
       <p className="date-note">
@@ -228,7 +229,7 @@ function NotebookPreviewCard({ essay }) {
       </div>
       <h3>{essay.title}</h3>
       <p>{essay.standfirst}</p>
-      <strong className="notebook-card-link">Read the field note <Arrow /></strong>
+      <strong className="notebook-card-link">Read the blog <Arrow /></strong>
     </a>
   );
 }
@@ -248,11 +249,11 @@ function Home() {
             incentives, and rules—that determine who technology actually works for.
           </p>
           <div className="button-row">
-            <a className="primary-button" href="/research/">
-              Explore selected work <Arrow />
+            <a className="primary-button" href="/publications/">
+              Browse publications <Arrow />
             </a>
-            <a className="secondary-button" href="/writing/">
-              Read the notebook
+            <a className="secondary-button" href="/blogs/">
+              Read the blogs
             </a>
           </div>
         </div>
@@ -293,15 +294,15 @@ function Home() {
       <section className="selected-section portfolio-selected page-shell" aria-labelledby="selected-heading">
         <div className="section-heading split-heading">
           <div>
-            <p className="eyebrow">Selected work</p>
-            <h2 id="selected-heading">Projects with a point of view.</h2>
+            <p className="eyebrow">Publications</p>
+            <h2 id="selected-heading">Presented, forthcoming, and in circulation.</h2>
           </div>
-          <a className="text-link" href="/research/">
-            View all research <Arrow />
+          <a className="text-link" href="/publications/">
+            View publications <Arrow />
           </a>
         </div>
         <div className="card-grid portfolio-card-grid">
-          {[research[0], research[3], research[5]].map((item, index) => (
+          {research.slice(0, 3).map((item, index) => (
             <ResearchCard item={item} index={index} key={item.title} />
           ))}
         </div>
@@ -310,17 +311,29 @@ function Home() {
       <section className="notebook-home page-shell" aria-labelledby="notebook-heading">
         <div className="section-heading split-heading">
           <div>
-            <p className="eyebrow">From the notebook</p>
-            <h2 id="notebook-heading">Writing in public, with receipts.</h2>
+            <p className="eyebrow">Blogs</p>
+            <h2 id="notebook-heading">Experiments, essays, and field notes.</h2>
           </div>
-          <a className="text-link" href="/writing/">
-            Browse all writing <Arrow />
+          <a className="text-link" href="/blogs/">
+            Browse all blogs <Arrow />
           </a>
         </div>
         <div className="notebook-preview-grid">
           {publicDataEssays.slice(0, 4).map((essay) => (
             <NotebookPreviewCard essay={essay} key={essay.slug} />
           ))}
+        </div>
+        <div className="blog-notes-preview">
+          <p className="eyebrow">Research notes</p>
+          <div className="notes-list">
+            {notes.slice(0, 3).map((note, index) => (
+              <a href={`/notes/${note.slug}/`} className="note-row" key={note.slug}>
+                <span className="note-row-number">N{index + 1}</span>
+                <span><strong>{note.title}</strong><small>{note.eyebrow}</small></span>
+                <span className="row-arrow" aria-hidden="true">↗</span>
+              </a>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -346,7 +359,7 @@ function Home() {
 
       <section className="home-about page-shell" aria-labelledby="home-about-heading">
         <div className="home-about-statement">
-          <p className="eyebrow">A short introduction</p>
+          <p className="eyebrow">About</p>
           <h2 id="home-about-heading">Computer scientist by training. Institution-watcher by habit.</h2>
           <p>
             I have built agentic workflows, studied human–AI interaction, worked with
@@ -482,6 +495,63 @@ function ExperimentsLanding() {
   );
 }
 
+function PublicationsPage() {
+  const publications = research.slice(0, 3);
+
+  return (
+    <Shell>
+      <section className="page-intro publications-intro page-shell">
+        <p className="eyebrow">Publications</p>
+        <h1>Research outputs and writing samples.</h1>
+        <p className="intro-lede">
+          Work on agent-readable public infrastructure, federal generative-AI
+          sourcing, and how organizations preserve evidence about strategic paths
+          they did not choose.
+        </p>
+      </section>
+
+      <section className="publication-status-strip page-shell" aria-label="Publication status definitions">
+        <div><span>Presented</span><p>The paper has been accepted and presented at the named conference.</p></div>
+        <div><span>Upcoming</span><p>The abstract is accepted; the conference presentation is scheduled.</p></div>
+        <div><span>Preprint</span><p>The manuscript is publicly available but is not described as peer reviewed.</p></div>
+      </section>
+
+      <section className="publications-list page-shell" aria-labelledby="publications-list-heading">
+        <div className="section-heading">
+          <p className="eyebrow">Selected publications</p>
+          <h2 id="publications-list-heading">Status stated precisely.</h2>
+        </div>
+        {publications.map((item, index) => (
+          <article className="publication-entry" key={item.title}>
+            <div className="publication-number">0{index + 1}</div>
+            <div className="publication-heading">
+              <span className="publication-badge">{item.publicationStatus}</span>
+              <h3>{item.title}</h3>
+              <p className="publication-authors">{item.authors}</p>
+              <p className="publication-venue">{item.venue}</p>
+            </div>
+            <div className="publication-detail">
+              <p className="publication-dek">{item.dek}</p>
+              <dl>
+                <div><dt>Question</dt><dd>{item.question}</dd></div>
+                <div><dt>Contribution</dt><dd>{item.implication}</dd></div>
+              </dl>
+              <a className="primary-button" href={item.href}>{item.linkLabel} <Arrow /></a>
+            </div>
+          </article>
+        ))}
+      </section>
+
+      <section className="publication-contact page-shell">
+        <p>
+          For a copy, presentation materials, or a conversation about the methods,
+          email <a href="mailto:bhemaraju.138@gmail.com">bhemaraju.138@gmail.com</a>.
+        </p>
+      </section>
+    </Shell>
+  );
+}
+
 const experimentTopics = ["systems", "government", "government", "methods", "government", "methods"];
 const noteTopics = ["human–AI", "government", "systems", "government"];
 
@@ -522,8 +592,8 @@ function WritingPage() {
     <Shell>
       <section className="writing-hero page-shell">
         <div>
-          <p className="eyebrow">Writing · Experiments · Working ideas</p>
-          <h1>The open notebook.</h1>
+          <p className="eyebrow">Blogs · Experiments · Working ideas</p>
+          <h1>Blogs and notes.</h1>
         </div>
         <p>
           Essays about AI, institutions, evidence, and the unglamorous infrastructure
@@ -853,12 +923,6 @@ function ResearchPage() {
         ))}
       </section>
 
-      <section className="next-questions page-shell">
-        <p className="eyebrow">Questions currently on the desk</p>
-        <div className="large-question">01 / When does agent assistance change take-up rather than merely shift who completes an application?</div>
-        <div className="large-question">02 / Which verification responses return burden to the people agents were meant to help?</div>
-        <div className="large-question">03 / What public infrastructure makes machine-mediated claims contestable, inspectable, and equally reachable?</div>
-      </section>
     </Shell>
   );
 }
@@ -1070,7 +1134,8 @@ function App() {
   const path = window.location.pathname.replace(/\/+$/, "") || "/";
   if (path === "/") return <Home />;
   if (path === "/research") return <ResearchPage />;
-  if (path === "/writing") return <WritingPage />;
+  if (path === "/publications") return <PublicationsPage />;
+  if (path === "/writing" || path === "/blogs") return <WritingPage />;
   if (path === "/about") return <AboutPage />;
   if (path === "/experiments") return <ExperimentsLanding />;
   if (path === "/experiments/claiming-under-agents") return <ExperimentPage />;
