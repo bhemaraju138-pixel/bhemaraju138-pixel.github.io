@@ -710,27 +710,7 @@ function PublicationsPage() {
 
   return (
     <Shell>
-      <section className="page-intro publications-intro page-shell">
-        <p className="eyebrow">Publications</p>
-        <h1>Research outputs and writing samples.</h1>
-        <p className="intro-lede">
-          Work on agent-readable public infrastructure, federal generative-AI
-          sourcing, and how organizations preserve evidence about strategic paths
-          they did not choose.
-        </p>
-      </section>
-
-      <section className="publication-status-strip page-shell" aria-label="Publication status definitions">
-        <div><span>Presented</span><p>The paper has been accepted and presented at the named conference.</p></div>
-        <div><span>Upcoming</span><p>The abstract is accepted; the conference presentation is scheduled.</p></div>
-        <div><span>Preprint</span><p>The manuscript is publicly available but is not described as peer reviewed.</p></div>
-      </section>
-
-      <section className="publications-list page-shell" aria-labelledby="publications-list-heading">
-        <div className="section-heading">
-          <p className="eyebrow">Selected publications</p>
-          <h2 id="publications-list-heading">Status stated precisely.</h2>
-        </div>
+      <section className="publications-list page-shell" aria-label="Publications">
         {publications.map((item) => (
           <article className="publication-entry" key={item.title}>
             <div className="publication-heading">
