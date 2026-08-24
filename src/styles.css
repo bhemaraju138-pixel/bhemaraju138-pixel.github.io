@@ -1323,8 +1323,6 @@ dd { margin: 0; font-size: 13px; line-height: 1.55; }
   backdrop-filter: blur(12px);
   transition: left 900ms cubic-bezier(0.65, 0, 0.16, 1), top 900ms cubic-bezier(0.65, 0, 0.16, 1), right 900ms cubic-bezier(0.65, 0, 0.16, 1), transform 900ms cubic-bezier(0.65, 0, 0.16, 1);
 }
-.path-card::after { position: absolute; bottom: -18px; left: 50%; width: 9px; height: 9px; border: 2px solid var(--paper); border-radius: 50%; background: var(--red); content: ""; opacity: 0; transform: translateX(-50%) scale(0); transition: opacity 300ms ease 800ms, transform 300ms ease 800ms; }
-.is-connected .path-card::after { opacity: 1; transform: translateX(-50%) scale(1); }
 .path-card p { margin: 0 0 12px; color: var(--red-dark); font-size: 9px; font-weight: 800; letter-spacing: 0.15em; text-transform: uppercase; }
 .path-card h2 { margin: 0 0 8px; font-size: 22px; font-weight: 500; }
 .path-card small { display: block; color: var(--muted); font-family: var(--serif); font-size: 12px; line-height: 1.38; }
