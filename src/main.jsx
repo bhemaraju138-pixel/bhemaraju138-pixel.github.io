@@ -75,6 +75,14 @@ function Icon({ name }) {
   return <i className={`codicon codicon-${name}`} aria-hidden="true" />;
 }
 
+function readWorkspaceSetting(key) {
+  try {
+    return window.localStorage.getItem(key);
+  } catch {
+    return null;
+  }
+}
+
 function Arrow() {
   return <span aria-hidden="true">↗</span>;
 }
@@ -130,7 +138,7 @@ function ReaderFooter() {
   );
 }
 
-function CommandConsole({ onModeChange, onOpenLLM }) {
+function CommandConsole({ onModeChange, onOpenLLM, onPanelChange, onCommand }) {
   const [input, setInput] = useState("");
   const [history, setHistory] = useState([
     { kind: "system", text: "HRB research interface ready." },
@@ -172,6 +180,7 @@ function CommandConsole({ onModeChange, onOpenLLM }) {
     const raw = rawValue.trim();
     if (!raw) return;
     const normalized = raw.toLowerCase().replace(/^open\s+/, "").replace(/^cd\s+/, "");
+    onCommand(raw);
 
     if (normalized === "clear") {
       setHistory([]);
@@ -179,7 +188,7 @@ function CommandConsole({ onModeChange, onOpenLLM }) {
       return;
     }
     if (normalized === "help" || normalized === "?") {
-      write(raw, "about · research · publications · blogs · simulations · timeline · llm · run burden|observability|queue · connect · scatter · whoami · status · contact · read · clear");
+      write(raw, "about · research · publications · blogs · simulations · timeline · llm · panel terminal|output|problems|debug · run burden|observability|queue · connect · scatter · whoami · status · contact · read · clear");
     } else if (normalized === "ls") {
       write(raw, "about/  research/  publications/  blogs/  simulations/  timeline/");
     } else if (normalized === "whoami") {
@@ -192,6 +201,14 @@ function CommandConsole({ onModeChange, onOpenLLM }) {
     } else if (normalized === "llm" || normalized === "chat" || normalized === "extensions") {
       onOpenLLM();
       write(raw, "Opening the local research model. Load it explicitly when you are ready.");
+    } else if (normalized.startsWith("panel ")) {
+      const target = normalized.replace("panel ", "").replace("debug console", "debug");
+      if (["terminal", "output", "problems", "debug"].includes(target)) {
+        onPanelChange(target);
+        write(raw, `Panel switched to ${target}.`);
+      } else {
+        write(raw, "Panel not found. Try: panel terminal, output, problems, or debug.");
+      }
     } else if (normalized === "connect" || normalized === "connect path") {
       if (window.location.pathname === "/" || window.location.pathname === "/about/") {
         window.dispatchEvent(new CustomEvent("portfolio:path", { detail: { connected: true } }));
@@ -269,13 +286,32 @@ function editorFileForPath(path) {
   return "not_found.log";
 }
 
+const WORKSPACE_FILES = [
+  ["/", "about.md"],
+  ["/research/", "research.md"],
+  ["/publications/", "publications.md"],
+  ["/blogs/", "blogs.index"],
+  ["/simulations/", "simulations.run"],
+  ["/simulations/burden-moves/", "burden_moves.sim"],
+  ["/simulations/observability-reserve/", "observability_reserve.sim"],
+  ["/simulations/verification-queue/", "verification_queue.sim"],
+  ["/timeline/", "timeline.log"],
+];
+
+function iconForFile(file) {
+  if (file.endsWith(".run") || file.endsWith(".sim")) return "play";
+  if (file.endsWith(".log")) return "output";
+  if (file.endsWith(".index")) return "list-tree";
+  return "markdown";
+}
+
 function ExtensionsSidebar({ onOpenLLM }) {
   const [query, setQuery] = useState("");
   const matches = "local research llm qwen webllm private browser ai chat".includes(query.trim().toLowerCase());
 
   return (
     <aside className="ide-explorer ide-extensions" aria-label="Research extensions">
-      <div className="ide-pane-title"><strong>EXTENSIONS</strong><Icon name="more" /></div>
+      <div className="ide-pane-title"><strong>EXTENSIONS</strong><button type="button" aria-label="Open local research LLM" title="Open Local Research LLM" onClick={onOpenLLM}><Icon name="sparkle" /></button></div>
       <label className="ide-extension-search">
         <span className="sr-only">Search research extensions</span>
         <input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Search Extensions" />
@@ -296,6 +332,80 @@ function ExtensionsSidebar({ onOpenLLM }) {
         <Icon name="info" />
         <p>Model weights are downloaded only after you choose <strong>Load model</strong>.</p>
       </div>
+    </aside>
+  );
+}
+
+function SearchSidebar() {
+  const [query, setQuery] = useState("");
+  const documents = [
+    { href: "/", file: "about.md", text: "Hema Raju Barri computer science engineering management researcher builder systems around intelligent systems Oxford Johns Hopkins Birmingham" },
+    { href: "/research/", file: "research.md", text: research.map((item) => `${item.title} ${item.question} ${item.method} ${item.finding}`).join(" ") },
+    { href: "/publications/", file: "publications.md", text: research.slice(0, 3).map((item) => `${item.title} ${item.type} ${item.venue}`).join(" ") },
+    { href: "/blogs/", file: "blogs.index", text: [...notes, ...publicDataEssays].map((item) => `${item.title} ${item.standfirst}`).join(" ") },
+    { href: "/simulations/", file: "simulations.run", text: simulationCatalog.map((item) => `${item.title} ${item.question} ${item.mathematics}`).join(" ") },
+    { href: "/timeline/", file: "timeline.log", text: "research experience education Oxford Saïd Testing Autonomy Johns Hopkins CORI Birmingham SwiftCollab" },
+  ];
+  const normalized = query.trim().toLowerCase();
+  const matches = normalized ? documents.filter((item) => `${item.file} ${item.text}`.toLowerCase().includes(normalized)) : [];
+
+  return (
+    <aside className="ide-explorer ide-search-sidebar" aria-label="Search portfolio">
+      <div className="ide-pane-title"><strong>SEARCH</strong><span>{matches.length || ""}</span></div>
+      <form onSubmit={(event) => event.preventDefault()}>
+        <label><span className="sr-only">Search the portfolio</span><input autoFocus value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Search" /></label>
+        {query && <button type="button" onClick={() => setQuery("")} aria-label="Clear search" title="Clear Search"><Icon name="close" /></button>}
+      </form>
+      {!normalized && <div className="ide-sidebar-empty"><Icon name="search" /><p>Search across research, publications, blogs, simulations, and experience.</p><small>Try “verification”, “Oxford”, or “infrastructure”.</small></div>}
+      {normalized && !matches.length && <div className="ide-sidebar-empty"><Icon name="search-stop" /><p>No results found.</p><small>Try a broader research term.</small></div>}
+      {matches.length > 0 && <div className="ide-search-results">
+        <p><Icon name="chevron-down" /> HRB_PORTFOLIO <span>{matches.length}</span></p>
+        {matches.map((item) => <a href={item.href} key={item.href}><Icon name={iconForFile(item.file)} /><span><strong>{item.file}</strong><small>{item.text.slice(0, 92)}…</small></span></a>)}
+      </div>}
+    </aside>
+  );
+}
+
+function SourceControlSidebar() {
+  const [checkedAt, setCheckedAt] = useState("just now");
+  return (
+    <aside className="ide-explorer ide-source-sidebar" aria-label="Source control">
+      <div className="ide-pane-title"><strong>SOURCE CONTROL</strong><button type="button" aria-label="Refresh source status" title="Refresh" onClick={() => setCheckedAt(new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }))}><Icon name="refresh" /></button></div>
+      <div className="ide-source-branch"><Icon name="git-branch" /><span><strong>main</strong><small>Published snapshot · checked {checkedAt}</small></span></div>
+      <div className="ide-source-clean"><Icon name="check-all" /><strong>No pending changes</strong><p>The live portfolio matches its published source state.</p></div>
+      <div className="ide-tree-spacer" />
+      <a className="ide-source-link" href="https://github.com/bhemaraju138-pixel/bhemaraju138-pixel.github.io" target="_blank" rel="noreferrer"><Icon name="github" /> Open repository <Icon name="link-external" /></a>
+    </aside>
+  );
+}
+
+function RunSidebar({ activeFile }) {
+  const [configuration, setConfiguration] = useState(() => {
+    if (activeFile.includes("burden")) return "burden";
+    if (activeFile.includes("observability")) return "observability";
+    if (activeFile.includes("verification")) return "queue";
+    return "burden";
+  });
+  const routes = {
+    burden: "/simulations/burden-moves/",
+    observability: "/simulations/observability-reserve/",
+    queue: "/simulations/verification-queue/",
+  };
+  return (
+    <aside className="ide-explorer ide-run-sidebar" aria-label="Run and debug simulations">
+      <div className="ide-pane-title"><strong>RUN AND DEBUG</strong><Icon name="debug-alt" /></div>
+      <div className="ide-run-config">
+        <label><span>Configuration</span><select value={configuration} onChange={(event) => setConfiguration(event.target.value)}><option value="burden">Burden Moves</option><option value="observability">Observability Reserve</option><option value="queue">Verification Queue</option></select></label>
+        <button type="button" onClick={() => window.location.assign(routes[configuration])}><Icon name="debug-start" /> Run simulation</button>
+      </div>
+      <p className="ide-extension-section"><Icon name="chevron-down" /> SIMULATIONS</p>
+      <div className="ide-run-list">
+        {simulationCatalog.map((item, index) => {
+          const href = Object.values(routes)[index];
+          return <a href={href} key={item.title}><Icon name="play-circle" /><span><strong>{item.title}</strong><small>{item.family}</small></span></a>;
+        })}
+      </div>
+      <div className="ide-extension-note"><Icon name="info" /><p>Each run opens an interactive model with adjustable parameters, equations, assumptions, and stability conditions.</p></div>
     </aside>
   );
 }
@@ -478,93 +588,421 @@ function LocalLLMPanel() {
   );
 }
 
+function QuickOpen({ open, onClose }) {
+  const [query, setQuery] = useState("");
+  const inputRef = useRef(null);
+  const matches = WORKSPACE_FILES.filter(([, file]) => file.toLowerCase().includes(query.trim().toLowerCase()));
+
+  useEffect(() => {
+    if (!open) return;
+    setQuery("");
+    window.setTimeout(() => inputRef.current?.focus(), 0);
+  }, [open]);
+
+  if (!open) return null;
+
+  const select = (href) => {
+    onClose();
+    window.location.assign(href);
+  };
+
+  return (
+    <div className="ide-quick-open-backdrop" role="presentation" onMouseDown={(event) => { if (event.target === event.currentTarget) onClose(); }}>
+      <section className="ide-quick-open" role="dialog" aria-modal="true" aria-label="Quick Open">
+        <label>
+          <span className="sr-only">Search files by name</span>
+          <Icon name="search" />
+          <input
+            ref={inputRef}
+            value={query}
+            onChange={(event) => setQuery(event.target.value)}
+            onKeyDown={(event) => {
+              if (event.key === "Enter" && matches[0]) select(matches[0][0]);
+              if (event.key === "Escape") onClose();
+            }}
+            placeholder="Search files by name"
+          />
+          <kbd>esc</kbd>
+        </label>
+        <p>recently opened</p>
+        <div className="ide-quick-results">
+          {matches.map(([href, file], index) => (
+            <button type="button" className={index === 0 ? "selected" : ""} key={href} onClick={() => select(href)}>
+              <Icon name={iconForFile(file)} />
+              <span><strong>{file}</strong><small>HRB_PORTFOLIO{href}</small></span>
+            </button>
+          ))}
+          {!matches.length && <span className="ide-quick-empty">No matching files</span>}
+        </div>
+      </section>
+    </div>
+  );
+}
+
+function OutputPanel({ entries, onClear }) {
+  const [channel, setChannel] = useState("portfolio");
+  const visibleEntries = channel === "research" ? entries.filter((entry) => entry.id === "index") : entries;
+  return (
+    <div className="ide-output-panel">
+      <div className="ide-panel-toolbar">
+        <label><span className="sr-only">Output channel</span><select value={channel} onChange={(event) => setChannel(event.target.value)}><option value="portfolio">HRB Portfolio</option><option value="research">Research Index</option></select></label>
+        <button type="button" aria-label="Clear output" title="Clear Output" onClick={onClear}><Icon name="clear-all" /></button>
+      </div>
+      <div className="ide-output-lines" aria-live="polite">
+        {visibleEntries.length ? visibleEntries.map((entry) => <p key={entry.id}><span>[{entry.time}]</span> {entry.text}</p>) : <p><span>[output]</span> Channel cleared.</p>}
+      </div>
+    </div>
+  );
+}
+
+function ProblemsPanel() {
+  const [filter, setFilter] = useState("");
+  const summary = "No errors or warnings are recorded in this published workspace.";
+  const visible = summary.toLowerCase().includes(filter.trim().toLowerCase());
+  return (
+    <div className="ide-problems-panel">
+      <div className="ide-panel-toolbar">
+        <label className="ide-problem-filter"><Icon name="filter" /><span className="sr-only">Filter problems</span><input value={filter} onChange={(event) => setFilter(event.target.value)} placeholder="Filter (e.g. text, file)" /></label>
+        <span><Icon name="error" /> 0</span><span><Icon name="warning" /> 0</span>
+      </div>
+      {visible ? (
+        <div className="ide-empty-state"><Icon name="check-all" /><strong>No problems detected</strong><p>{summary}</p><small>Methods, uncertainty, and publication-status caveats remain visible inside the research files rather than being treated as software errors.</small></div>
+      ) : <div className="ide-empty-state"><Icon name="search-stop" /><strong>No filtered results</strong></div>}
+    </div>
+  );
+}
+
+function DebugConsole({ path, activeFile }) {
+  const [expression, setExpression] = useState("");
+  const [history, setHistory] = useState([
+    { id: "debug-ready", kind: "result", text: "Research debug session ready. Type help to inspect available expressions." },
+  ]);
+
+  const values = {
+    route: path,
+    file: activeFile,
+    "research.length": research.length,
+    "publications.length": research.slice(0, 3).length,
+    "blogs.length": publicDataEssays.length + notes.length,
+    "simulations.length": simulationCatalog.length,
+    "research[0].title": research[0]?.title,
+    "simulation[0].family": simulationCatalog[0]?.family,
+  };
+
+  const runExpression = (event) => {
+    event.preventDefault();
+    const raw = expression.trim();
+    if (!raw) return;
+    if (raw.toLowerCase() === "clear") {
+      setHistory([]);
+      setExpression("");
+      return;
+    }
+    let result;
+    if (raw.toLowerCase() === "help") result = Object.keys(values).join(" · ") + " · clear";
+    else if (Object.hasOwn(values, raw)) result = typeof values[raw] === "string" ? values[raw] : JSON.stringify(values[raw]);
+    else result = `ReferenceError: ${raw} is not exposed in this read-only research session.`;
+    setHistory((current) => [...current.slice(-9), { id: `input-${Date.now()}`, kind: "input", text: raw }, { id: `result-${Date.now()}`, kind: "result", text: result }]);
+    setExpression("");
+  };
+
+  return (
+    <div className="ide-debug-console">
+      <div className="ide-debug-history" aria-live="polite">
+        {history.map((entry) => <p className={entry.kind} key={entry.id}><Icon name={entry.kind === "input" ? "chevron-right" : "debug-console"} />{entry.text}</p>)}
+      </div>
+      <form onSubmit={runExpression}>
+        <Icon name="chevron-right" />
+        <input value={expression} onChange={(event) => setExpression(event.target.value)} placeholder="Evaluate a workspace expression" spellCheck="false" />
+      </form>
+    </div>
+  );
+}
+
 function CommandWorkspace({ children, onModeChange }) {
   const path = window.location.pathname;
   const activeFile = editorFileForPath(path);
   const [activeSidebar, setActiveSidebar] = useState("explorer");
   const [rightPanel, setRightPanel] = useState("context");
-  const files = [
-    ["/", "about.md"],
-    ["/research/", "research.md"],
-    ["/publications/", "publications.md"],
-    ["/blogs/", "blogs.index"],
-    ["/simulations/", "simulations.run"],
-    ["/timeline/", "timeline.log"],
-  ];
+  const [sidebarVisible, setSidebarVisible] = useState(() => {
+    const stored = readWorkspaceSetting("hrb-sidebar");
+    return stored ? stored !== "hidden" : window.innerWidth > 860;
+  });
+  const [inspectorVisible, setInspectorVisible] = useState(() => {
+    const stored = readWorkspaceSetting("hrb-inspector");
+    return stored ? stored !== "hidden" : window.innerWidth > 1240;
+  });
+  const [panelVisible, setPanelVisible] = useState(() => readWorkspaceSetting("hrb-panel") !== "hidden");
+  const [panelMaximized, setPanelMaximized] = useState(false);
+  const [panelTab, setPanelTab] = useState("terminal");
+  const [quickOpen, setQuickOpen] = useState(false);
+  const [helpOpen, setHelpOpen] = useState(false);
+  const [editorOpen, setEditorOpen] = useState(true);
+  const [sidebarWidth, setSidebarWidth] = useState(() => Number(readWorkspaceSetting("hrb-sidebar-width")) || 250);
+  const [inspectorWidth, setInspectorWidth] = useState(() => Number(readWorkspaceSetting("hrb-inspector-width")) || 360);
+  const [panelHeight, setPanelHeight] = useState(() => Number(readWorkspaceSetting("hrb-panel-height")) || 210);
+  const [treeOpen, setTreeOpen] = useState({ editors: true, portfolio: true, outline: false, evidence: false });
+  const [outputEntries, setOutputEntries] = useState(() => [
+    { id: "boot", time: new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit", second: "2-digit" }), text: `Workspace opened ${activeFile} at ${path}` },
+    { id: "index", time: "index", text: `${research.length} research records · ${publicDataEssays.length + notes.length} blogs and notes · ${simulationCatalog.length} simulations indexed` },
+  ]);
+
+  const setPanel = (nextPanel) => {
+    setPanelTab(nextPanel);
+    setPanelVisible(true);
+  };
+
+  const addOutput = (command) => {
+    setOutputEntries((current) => [...current.slice(-29), {
+      id: `${Date.now()}-${command}`,
+      time: new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit", second: "2-digit" }),
+      text: `terminal executed: ${command}`,
+    }]);
+  };
+
+  const selectSidebar = (sidebar) => {
+    if (activeSidebar === sidebar && sidebarVisible) {
+      setSidebarVisible(false);
+      return;
+    }
+    setActiveSidebar(sidebar);
+    setSidebarVisible(true);
+  };
 
   const openLocalModel = () => {
     setActiveSidebar("extensions");
+    setSidebarVisible(true);
     setRightPanel("llm");
+    setInspectorVisible(true);
   };
+
+  useEffect(() => {
+    try {
+      window.localStorage.setItem("hrb-sidebar", sidebarVisible ? "visible" : "hidden");
+      window.localStorage.setItem("hrb-inspector", inspectorVisible ? "visible" : "hidden");
+      window.localStorage.setItem("hrb-panel", panelVisible ? "visible" : "hidden");
+      window.localStorage.setItem("hrb-sidebar-width", String(sidebarWidth));
+      window.localStorage.setItem("hrb-inspector-width", String(inspectorWidth));
+      window.localStorage.setItem("hrb-panel-height", String(panelHeight));
+    } catch {
+      // The workbench remains fully usable when browser storage is unavailable.
+    }
+  }, [sidebarVisible, inspectorVisible, panelVisible, sidebarWidth, inspectorWidth, panelHeight]);
+
+  useEffect(() => {
+    const handleWorkbenchShortcut = (event) => {
+      const modifier = event.metaKey || event.ctrlKey;
+      const key = event.key.toLowerCase();
+      if (modifier && key === "p") {
+        event.preventDefault();
+        setQuickOpen(true);
+      } else if (modifier && key === "b") {
+        event.preventDefault();
+        setSidebarVisible((current) => !current);
+      } else if (modifier && key === "j") {
+        event.preventDefault();
+        setPanelVisible((current) => !current);
+      } else if (modifier && event.shiftKey && key === "e") {
+        event.preventDefault();
+        setActiveSidebar("explorer");
+        setSidebarVisible(true);
+      } else if (modifier && event.shiftKey && key === "f") {
+        event.preventDefault();
+        setActiveSidebar("search");
+        setSidebarVisible(true);
+      } else if (modifier && event.shiftKey && key === "g") {
+        event.preventDefault();
+        setActiveSidebar("source");
+        setSidebarVisible(true);
+      } else if (modifier && event.shiftKey && key === "d") {
+        event.preventDefault();
+        setActiveSidebar("run");
+        setSidebarVisible(true);
+      } else if (modifier && event.shiftKey && key === "x") {
+        event.preventDefault();
+        openLocalModel();
+      } else if (event.key === "Escape") {
+        setQuickOpen(false);
+        setHelpOpen(false);
+      }
+    };
+    window.addEventListener("keydown", handleWorkbenchShortcut);
+    return () => window.removeEventListener("keydown", handleWorkbenchShortcut);
+  });
+
+  const beginResize = (kind, event) => {
+    event.preventDefault();
+    const startX = event.clientX;
+    const startY = event.clientY;
+    const startSidebar = sidebarWidth;
+    const startInspector = inspectorWidth;
+    const startPanel = panelHeight;
+    document.body.classList.add("ide-is-resizing");
+
+    const move = (moveEvent) => {
+      if (kind === "sidebar") setSidebarWidth(Math.min(430, Math.max(170, startSidebar + moveEvent.clientX - startX)));
+      if (kind === "inspector") setInspectorWidth(Math.min(560, Math.max(280, startInspector + startX - moveEvent.clientX)));
+      if (kind === "panel") setPanelHeight(Math.min(window.innerHeight * 0.72, Math.max(125, startPanel + startY - moveEvent.clientY)));
+    };
+    const stop = () => {
+      document.body.classList.remove("ide-is-resizing");
+      window.removeEventListener("pointermove", move);
+      window.removeEventListener("pointerup", stop);
+    };
+    window.addEventListener("pointermove", move);
+    window.addEventListener("pointerup", stop, { once: true });
+  };
+
+  const resizeWithKeyboard = (kind, event) => {
+    const step = event.shiftKey ? 30 : 10;
+    if (kind === "sidebar" && ["ArrowLeft", "ArrowRight"].includes(event.key)) {
+      event.preventDefault();
+      setSidebarWidth((current) => Math.min(430, Math.max(170, current + (event.key === "ArrowRight" ? step : -step))));
+    }
+    if (kind === "inspector" && ["ArrowLeft", "ArrowRight"].includes(event.key)) {
+      event.preventDefault();
+      setInspectorWidth((current) => Math.min(560, Math.max(280, current + (event.key === "ArrowLeft" ? step : -step))));
+    }
+    if (kind === "panel" && ["ArrowUp", "ArrowDown"].includes(event.key)) {
+      event.preventDefault();
+      setPanelHeight((current) => Math.min(window.innerHeight * 0.72, Math.max(125, current + (event.key === "ArrowUp" ? step : -step))));
+    }
+  };
+
+  const toggleTree = (key) => setTreeOpen((current) => ({ ...current, [key]: !current[key] }));
+  const workbenchClass = [
+    "ide-workbench",
+    sidebarVisible ? "" : "sidebar-hidden",
+    inspectorVisible ? "" : "inspector-hidden",
+  ].filter(Boolean).join(" ");
+  const editorClass = [
+    "ide-editor-shell",
+    panelVisible ? "" : "panel-hidden",
+    panelMaximized && panelVisible ? "panel-maximized" : "",
+  ].filter(Boolean).join(" ");
 
   return (
     <div className="ide-screen">
       <header className="ide-titlebar">
-        <div className="ide-history-controls">
-          <button type="button" aria-label="Go back" title="Go Back" onClick={() => window.history.back()}><Icon name="arrow-left" /></button>
-          <button type="button" aria-label="Go forward" title="Go Forward" onClick={() => window.history.forward()}><Icon name="arrow-right" /></button>
+        <div className="ide-title-left">
+          <div className="ide-history-controls">
+            <button type="button" aria-label="Go back" title="Go Back" onClick={() => window.history.back()}><Icon name="arrow-left" /></button>
+            <button type="button" aria-label="Go forward" title="Go Forward" onClick={() => window.history.forward()}><Icon name="arrow-right" /></button>
+          </div>
+          <div className="ide-menu-strip" aria-label="Application menu">
+            <button type="button" onClick={() => setQuickOpen(true)}>File</button>
+            <button type="button" onClick={() => setSidebarVisible((current) => !current)}>View</button>
+            <a href="/simulations/">Run</a>
+            <button type="button" onClick={() => setPanelVisible((current) => !current)}>Terminal</button>
+            <button type="button" onClick={() => setHelpOpen((current) => !current)}>Help</button>
+          </div>
         </div>
-        <strong>HRB_OS / RESEARCH_INTERFACE</strong>
-        <ModeSwitch mode="command" onChange={onModeChange} />
+        <button type="button" className="ide-command-center" onClick={() => setQuickOpen(true)} title="Quick Open (⌘P)"><Icon name="search" /><span>HRB_OS / {activeFile}</span><kbd>⌘P</kbd></button>
+        <div className="ide-title-actions">
+          <button type="button" className={sidebarVisible ? "active" : ""} onClick={() => setSidebarVisible((current) => !current)} aria-label="Toggle primary side bar" title="Toggle Primary Side Bar (⌘B)"><Icon name={sidebarVisible ? "layout-sidebar-left" : "layout-sidebar-left-off"} /></button>
+          <button type="button" className={panelVisible ? "active" : ""} onClick={() => setPanelVisible((current) => !current)} aria-label="Toggle panel" title="Toggle Panel (⌘J)"><Icon name={panelVisible ? "layout-panel" : "layout-panel-off"} /></button>
+          <button type="button" className={inspectorVisible ? "active" : ""} onClick={() => setInspectorVisible((current) => !current)} aria-label="Toggle secondary side bar" title="Toggle Secondary Side Bar"><Icon name={inspectorVisible ? "layout-sidebar-right" : "layout-sidebar-right-off"} /></button>
+          <ModeSwitch mode="command" onChange={onModeChange} />
+        </div>
       </header>
 
-      <div className="ide-workbench">
+      <div className={workbenchClass} style={{ "--ide-sidebar-width": `${sidebarWidth}px`, "--ide-inspector-width": `${inspectorWidth}px` }}>
         <nav className="ide-activitybar" aria-label="Workspace shortcuts">
-          <button type="button" className={activeSidebar === "explorer" ? "active" : ""} aria-label="Explorer" title="Explorer" onClick={() => setActiveSidebar("explorer")}><Icon name="files" /></button>
-          <a href="/research/" aria-label="Research" title="Research"><Icon name="search" /></a>
-          <a href="/publications/" aria-label="Publications" title="Publications"><Icon name="source-control" /></a>
-          <a href="/simulations/" aria-label="Run simulations" title="Run and Simulate"><Icon name="debug-alt" /></a>
-          <button type="button" className={activeSidebar === "extensions" ? "active" : ""} aria-label="Extensions" title="Extensions" onClick={openLocalModel}><Icon name="extensions" /></button>
+          <button type="button" className={activeSidebar === "explorer" && sidebarVisible ? "active" : ""} aria-label="Explorer" title="Explorer (⇧⌘E)" onClick={() => selectSidebar("explorer")}><Icon name="files" /></button>
+          <button type="button" className={activeSidebar === "search" && sidebarVisible ? "active" : ""} aria-label="Search" title="Search (⇧⌘F)" onClick={() => selectSidebar("search")}><Icon name="search" /></button>
+          <button type="button" className={activeSidebar === "source" && sidebarVisible ? "active" : ""} aria-label="Source Control" title="Source Control (⌃⇧G)" onClick={() => selectSidebar("source")}><Icon name="source-control" /></button>
+          <button type="button" className={activeSidebar === "run" && sidebarVisible ? "active" : ""} aria-label="Run and Debug" title="Run and Debug (⇧⌘D)" onClick={() => selectSidebar("run")}><Icon name="debug-alt" /></button>
+          <button type="button" className={activeSidebar === "extensions" && sidebarVisible ? "active" : ""} aria-label="Extensions" title="Extensions (⇧⌘X)" onClick={() => selectSidebar("extensions")}><Icon name="extensions" /></button>
           <span className="ide-activity-spacer" />
           <a href="mailto:bhemaraju.138@gmail.com" aria-label="Contact Hema" title="Contact"><Icon name="account" /></a>
         </nav>
 
-        {activeSidebar === "extensions" ? <ExtensionsSidebar onOpenLLM={() => setRightPanel("llm")} /> : (
+        {sidebarVisible && (activeSidebar === "extensions" ? <ExtensionsSidebar onOpenLLM={() => { setRightPanel("llm"); setInspectorVisible(true); }} /> : activeSidebar === "search" ? <SearchSidebar /> : activeSidebar === "source" ? <SourceControlSidebar /> : activeSidebar === "run" ? <RunSidebar activeFile={activeFile} /> : (
           <aside className="ide-explorer" aria-label="Portfolio explorer">
-            <div className="ide-pane-title"><strong>EXPLORER</strong><Icon name="more" /></div>
+            <div className="ide-pane-title"><strong>EXPLORER</strong><button type="button" aria-label="Collapse all sections" title="Collapse All" onClick={() => setTreeOpen({ editors: false, portfolio: false, outline: false, evidence: false })}><Icon name="collapse-all" /></button></div>
             <div className="ide-tree-group">
-              <p><Icon name="chevron-down" /> OPEN EDITORS</p>
-              <a className="active" href={path}><Icon name="markdown" />{activeFile}</a>
+              <button type="button" className="ide-tree-header" onClick={() => toggleTree("editors")} aria-expanded={treeOpen.editors}><Icon name={treeOpen.editors ? "chevron-down" : "chevron-right"} /> OPEN EDITORS <span>1</span></button>
+              {treeOpen.editors && editorOpen && <a className="active" href={path}><Icon name={iconForFile(activeFile)} />{activeFile}</a>}
             </div>
             <div className="ide-tree-group">
-              <p><Icon name="chevron-down" /> HRB_PORTFOLIO</p>
-              {files.map(([href, file]) => (
+              <button type="button" className="ide-tree-header" onClick={() => toggleTree("portfolio")} aria-expanded={treeOpen.portfolio}><Icon name={treeOpen.portfolio ? "chevron-down" : "chevron-right"} /> HRB_PORTFOLIO</button>
+              {treeOpen.portfolio && WORKSPACE_FILES.map(([href, file]) => (
                 <a className={activeFile === file ? "active" : ""} href={href} key={href}>
-                  <Icon name={file.endsWith(".run") ? "play" : file.endsWith(".log") ? "output" : "markdown"} />{file}
+                  <Icon name={iconForFile(file)} />{file}
                 </a>
               ))}
             </div>
             <div className="ide-tree-spacer" />
-            <div className="ide-collapsed-pane"><Icon name="chevron-right" /> OUTLINE</div>
-            <div className="ide-collapsed-pane"><Icon name="chevron-right" /> EVIDENCE LOG</div>
+            <button type="button" className="ide-collapsed-pane" onClick={() => toggleTree("outline")} aria-expanded={treeOpen.outline}><Icon name={treeOpen.outline ? "chevron-down" : "chevron-right"} /> OUTLINE</button>
+            {treeOpen.outline && <div className="ide-pane-details"><a href="#main">Document root</a><a href="/research/">Research program</a><a href="/publications/">Selected outputs</a></div>}
+            <button type="button" className="ide-collapsed-pane" onClick={() => toggleTree("evidence")} aria-expanded={treeOpen.evidence}><Icon name={treeOpen.evidence ? "chevron-down" : "chevron-right"} /> EVIDENCE LOG</button>
+            {treeOpen.evidence && <div className="ide-pane-details"><span><Icon name="pass" /> Presented paper</span><span><Icon name="clock" /> Upcoming conference</span><span><Icon name="book" /> Sole-authored preprint</span></div>}
           </aside>
-        )}
+        ))}
 
-        <section className="ide-editor-shell" aria-label="Research editor">
-          <div className="ide-tabs"><div className="ide-tab active"><Icon name="markdown" />{activeFile}<Icon name="close" /></div></div>
-          <div className="ide-breadcrumb">HRB_PORTFOLIO <Icon name="chevron-right" /> {path.split("/").filter(Boolean).join("  ›  ") || "about"} <Icon name="chevron-right" /> {activeFile}</div>
-          <main className="ide-editor-content" id="main">{children}</main>
-          <section className="ide-terminal-panel" aria-label="Integrated terminal">
-            <div className="ide-panel-tabs"><strong>TERMINAL</strong><span>OUTPUT</span><span>PROBLEMS</span><span>DEBUG CONSOLE</span></div>
-            <CommandConsole onModeChange={onModeChange} onOpenLLM={openLocalModel} />
+        {sidebarVisible && <div className="ide-resizer ide-resizer-vertical ide-resizer-sidebar" role="separator" aria-label="Resize primary side bar" aria-orientation="vertical" tabIndex="0" onPointerDown={(event) => beginResize("sidebar", event)} onKeyDown={(event) => resizeWithKeyboard("sidebar", event)} />}
+
+        <section className={editorClass} style={{ "--ide-panel-height": `${panelHeight}px` }} aria-label="Research editor">
+          <div className="ide-tabs">
+            {editorOpen && <div className="ide-tab active"><Icon name={iconForFile(activeFile)} />{activeFile}<button type="button" aria-label={`Close ${activeFile}`} title="Close Editor" onClick={() => setEditorOpen(false)}><Icon name="close" /></button></div>}
+            <div className="ide-editor-actions"><button type="button" aria-label="Open research context to the side" title="Open Research to the Side" onClick={() => { setRightPanel("context"); setInspectorVisible(true); }}><Icon name="split-horizontal" /></button><button type="button" aria-label="Quick Open" title="Quick Open" onClick={() => setQuickOpen(true)}><Icon name="more" /></button></div>
+          </div>
+          <div className="ide-breadcrumb">{editorOpen ? <><span>HRB_PORTFOLIO</span><Icon name="chevron-right" /><span>{path.split("/").filter(Boolean).join("  ›  ") || "about"}</span><Icon name="chevron-right" /><span>{activeFile}</span></> : <span>HRB_PORTFOLIO</span>}</div>
+          {editorOpen ? <main className="ide-editor-content" id="main">{children}</main> : <main className="ide-empty-editor" id="main"><Icon name="files" /><p>No editor is open</p><button type="button" onClick={() => setQuickOpen(true)}>Quick Open <kbd>⌘P</kbd></button></main>}
+          {panelVisible && <section className="ide-terminal-panel" aria-label="Integrated panel">
+            {!panelMaximized && <div className="ide-resizer ide-resizer-horizontal" role="separator" aria-label="Resize bottom panel" aria-orientation="horizontal" tabIndex="0" onPointerDown={(event) => beginResize("panel", event)} onKeyDown={(event) => resizeWithKeyboard("panel", event)} />}
+            <div className="ide-panel-tabs">
+              <div role="tablist" aria-label="Bottom panel">
+                {[["terminal", "TERMINAL"], ["output", "OUTPUT"], ["problems", "PROBLEMS"], ["debug", "DEBUG CONSOLE"]].map(([id, label]) => (
+                  <button type="button" role="tab" aria-selected={panelTab === id} className={panelTab === id ? "active" : ""} key={id} onClick={() => setPanel(id)}>{label}{id === "problems" && <span>0</span>}</button>
+                ))}
+              </div>
+              <div className="ide-panel-actions">
+                <button type="button" aria-label={panelMaximized ? "Restore panel size" : "Maximize panel"} title={panelMaximized ? "Restore Panel Size" : "Maximize Panel Size"} onClick={() => setPanelMaximized((current) => !current)}><Icon name={panelMaximized ? "chrome-restore" : "chrome-maximize"} /></button>
+                <button type="button" aria-label="Close panel" title="Close Panel (⌘J)" onClick={() => setPanelVisible(false)}><Icon name="close" /></button>
+              </div>
+            </div>
+            <div className="ide-panel-content">
+              <div hidden={panelTab !== "terminal"}><CommandConsole onModeChange={onModeChange} onOpenLLM={openLocalModel} onPanelChange={setPanel} onCommand={addOutput} /></div>
+              <div hidden={panelTab !== "output"}><OutputPanel entries={outputEntries} onClear={() => setOutputEntries([])} /></div>
+              <div hidden={panelTab !== "problems"}><ProblemsPanel /></div>
+              <div hidden={panelTab !== "debug"}><DebugConsole path={path} activeFile={activeFile} /></div>
+            </div>
           </section>
+          }
         </section>
 
-        <aside className={`ide-inspector ${rightPanel === "llm" ? "llm-open" : ""}`} aria-label="Research context">
+        {inspectorVisible && <div className="ide-resizer ide-resizer-vertical ide-resizer-inspector" role="separator" aria-label="Resize secondary side bar" aria-orientation="vertical" tabIndex="0" onPointerDown={(event) => beginResize("inspector", event)} onKeyDown={(event) => resizeWithKeyboard("inspector", event)} />}
+
+        {inspectorVisible && <aside className={`ide-inspector ${rightPanel === "llm" ? "llm-open" : ""}`} aria-label="Research context">
           <div className="ide-inspector-tabs" role="tablist" aria-label="Inspector panel">
             <button type="button" role="tab" aria-selected={rightPanel === "context"} className={rightPanel === "context" ? "active" : ""} onClick={() => setRightPanel("context")}>RESEARCH</button>
             <button type="button" role="tab" aria-selected={rightPanel === "llm"} className={rightPanel === "llm" ? "active" : ""} onClick={() => setRightPanel("llm")}><Icon name="sparkle" /> LOCAL LLM</button>
-            <Icon name="more" />
+            <button type="button" className="ide-inspector-close" aria-label="Close secondary side bar" title="Close Secondary Side Bar" onClick={() => setInspectorVisible(false)}><Icon name="close" /></button>
           </div>
           {rightPanel === "llm" ? <LocalLLMPanel /> : <ResearchContext path={path} activeFile={activeFile} />}
-        </aside>
+        </aside>}
       </div>
 
       <footer className="ide-statusbar">
-        <span><Icon name="git-branch" /> main</span>
+        <div><button type="button" title="Show workspace output" onClick={() => setPanel("output")}><Icon name="git-branch" /> main</button><button type="button" title="No workspace problems" onClick={() => setPanel("problems")}><Icon name="error" /> 0 <Icon name="warning" /> 0</button></div>
         <span><Icon name="check" /> {activeFile}</span>
-        <span>UTF-8&nbsp;&nbsp; LF&nbsp;&nbsp; HRB_OS</span>
+        <div><span>UTF-8</span><span>LF</span><span>HRB_OS</span><button type="button" title="Toggle Panel" onClick={() => setPanelVisible((current) => !current)}><Icon name="layout-panel" /></button><button type="button" title="Workspace notifications" onClick={() => setPanel("problems")}><Icon name="bell" /></button></div>
       </footer>
+      <QuickOpen open={quickOpen} onClose={() => setQuickOpen(false)} />
+      {helpOpen && <aside className="ide-help-popover" aria-label="Workbench shortcuts">
+        <header><strong>Keyboard Shortcuts</strong><button type="button" aria-label="Close help" onClick={() => setHelpOpen(false)}><Icon name="close" /></button></header>
+        <dl>
+          <div><dt>Quick Open</dt><dd>⌘ / Ctrl + P</dd></div>
+          <div><dt>Toggle primary sidebar</dt><dd>⌘ / Ctrl + B</dd></div>
+          <div><dt>Toggle bottom panel</dt><dd>⌘ / Ctrl + J</dd></div>
+          <div><dt>Explorer</dt><dd>⇧⌘ / Ctrl + E</dd></div>
+          <div><dt>Search</dt><dd>⇧⌘ / Ctrl + F</dd></div>
+          <div><dt>Run and Debug</dt><dd>⇧⌘ / Ctrl + D</dd></div>
+          <div><dt>Extensions</dt><dd>⇧⌘ / Ctrl + X</dd></div>
+        </dl>
+        <button type="button" onClick={() => { setHelpOpen(false); setPanel("terminal"); }}>Open integrated terminal</button>
+      </aside>}
     </div>
   );
 }
