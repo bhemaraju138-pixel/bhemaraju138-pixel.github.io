@@ -319,7 +319,6 @@ export const publicDataEssays = [
     dataLinks: [
       ["Download scored probes", "/data/public-data-series/api-error-recovery.csv"],
       ["Download response excerpts", "/data/public-data-series/raw/api-error-probes.json"],
-      ["Inspect the analysis code", "https://github.com/bhemaraju138-pixel/bhemaraju138-pixel.github.io/blob/main/experiments/public_data_series.py"],
     ],
     sources: [
       ["IETF RFC 9457 — Problem Details for HTTP APIs", "https://www.rfc-editor.org/rfc/rfc9457.html"],
@@ -406,7 +405,6 @@ export const publicDataEssays = [
     dataLinks: [
       ["Download dataset-level audit", "/data/public-data-series/open-data-metadata-audit.csv"],
       ["Download portal summary", "/data/public-data-series/open-data-metadata-summary.csv"],
-      ["Inspect the analysis code", "https://github.com/bhemaraju138-pixel/bhemaraju138-pixel.github.io/blob/main/experiments/public_data_series.py"],
     ],
     sources: [
       ["Socrata SODA endpoint documentation", "https://dev.socrata.com/docs/endpoints.html"],
@@ -490,7 +488,6 @@ export const publicDataEssays = [
     dataLinks: [
       ["Download ZIP-level analysis", "/data/public-data-series/nyc-311-channel-access.csv"],
       ["Download income-quartile results", "/data/public-data-series/nyc-311-channel-income-quartiles.csv"],
-      ["Inspect the analysis code", "https://github.com/bhemaraju138-pixel/bhemaraju138-pixel.github.io/blob/main/experiments/public_data_series.py"],
     ],
     sources: [
       ["NYC 311 Service Requests from 2020 to Present", "https://data.cityofnewyork.us/d/erm2-nwe9"],
@@ -575,7 +572,6 @@ export const publicDataEssays = [
     dataLinks: [
       ["Download state robustness results", "/data/public-data-series/state-priority-ranking-fragility.csv"],
       ["Download sampled weights", "/data/public-data-series/raw/rank-fragility-random-weights.csv"],
-      ["Inspect the analysis code", "https://github.com/bhemaraju138-pixel/bhemaraju138-pixel.github.io/blob/main/experiments/public_data_series.py"],
     ],
     sources: [
       ["OECD/EU/JRC composite-indicator handbook", "https://www.oecd.org/en/publications/handbook-on-constructing-composite-indicators-methodology-and-user-guide_9789264043466-en.html"],
@@ -660,7 +656,6 @@ export const publicDataEssays = [
     dataLinks: [
       ["Download rule-level analysis", "/data/public-data-series/federal-register-comment-burden.csv"],
       ["Download agency summary", "/data/public-data-series/federal-register-agency-comment-burden.csv"],
-      ["Inspect the analysis code", "https://github.com/bhemaraju138-pixel/bhemaraju138-pixel.github.io/blob/main/experiments/public_data_series.py"],
     ],
     sources: [
       ["Federal Register API documentation", "https://www.federalregister.gov/developers/documentation/api/v1"],
@@ -744,7 +739,6 @@ export const publicDataEssays = [
     dataLinks: [
       ["Download strict-year coverage", "/data/public-data-series/world-bank-strict-2023-coverage.csv"],
       ["Download latest-window coverage", "/data/public-data-series/world-bank-latest-window-coverage.csv"],
-      ["Inspect the analysis code", "https://github.com/bhemaraju138-pixel/bhemaraju138-pixel.github.io/blob/main/experiments/public_data_series.py"],
     ],
     sources: [
       ["World Bank Indicators API documentation", "https://datahelpdesk.worldbank.org/knowledgebase/articles/889392"],

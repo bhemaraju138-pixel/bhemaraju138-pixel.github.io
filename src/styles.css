@@ -969,8 +969,7 @@ dd { margin: 0; font-size: 13px; line-height: 1.55; }
 .notebook-home,
 .home-about,
 .writing-index,
-.experience-section,
-.practice-section { padding-block: 110px; border-top: 1px solid var(--line); }
+.experience-section { padding-block: 110px; border-top: 1px solid var(--line); }
 
 .section-side-note {
   max-width: 330px;
@@ -1352,11 +1351,6 @@ dd { margin: 0; font-size: 13px; line-height: 1.55; }
 .experience-list h3 { margin: 7px 0 0; font-family: var(--serif); font-size: 24px; font-weight: 500; }
 .experience-list p { margin: 0; color: var(--muted); }
 
-.practice-grid { display: grid; grid-template-columns: repeat(2, 1fr); border-top: 1px solid var(--ink); border-left: 1px solid var(--ink); }
-.practice-grid article { min-height: 270px; padding: 28px; border-right: 1px solid var(--ink); border-bottom: 1px solid var(--ink); }
-.practice-grid h3 { margin: 30px 0 14px; font-family: var(--serif); font-size: 31px; font-weight: 500; }
-.practice-grid p { max-width: 520px; color: var(--muted); }
-
 .contact-panel { margin-bottom: 110px; padding: 65px; background: var(--ink); color: var(--white); }
 .contact-panel h2 { margin-bottom: 20px; font-size: clamp(50px, 6vw, 84px); }
 .contact-panel > p:not(.eyebrow) { max-width: 760px; color: #cbd1dc; font-family: var(--serif); font-size: 21px; }
@@ -1378,7 +1372,7 @@ dd { margin: 0; font-size: 13px; line-height: 1.55; }
 @media (max-width: 780px) {
   .note-row.no-number { grid-template-columns: 1fr auto; }
   .writing-row.no-marker { grid-template-columns: 1fr auto; }
-  .compass-section, .notebook-home, .home-about, .writing-index, .experience-section, .practice-section { padding-block: 75px; }
+  .compass-section, .notebook-home, .home-about, .writing-index, .experience-section { padding-block: 75px; }
   .research-compass { grid-template-columns: 1fr; }
   .compass-controls { grid-template-columns: repeat(4, 1fr); border-right: 0; border-bottom: 1px solid var(--ink); }
   .compass-controls button { grid-template-columns: 1fr; gap: 4px; padding: 14px 10px; border-right: 1px solid var(--line); border-bottom: 0; text-align: center; }
@@ -1443,5 +1437,4 @@ dd { margin: 0; font-size: 13px; line-height: 1.55; }
   .about-hero h1 { font-size: 52px; }
   .experience-list article { grid-template-columns: 1fr; gap: 10px; }
   .experience-list article > p { grid-column: 1; }
-  .practice-grid { grid-template-columns: 1fr; }
 }

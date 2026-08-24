@@ -54,7 +54,6 @@ function Footer() {
       </div>
       <div className="footer-links">
         <a href="mailto:bhemaraju.138@gmail.com">Email</a>
-        <a href="https://github.com/bhemaraju138-pixel">GitHub</a>
         <a href="/publications/">Publications</a>
         <a href="/blogs/">Blogs</a>
         <a href="/simulations/">Simulations</a>
@@ -953,23 +952,12 @@ function AboutPage() {
         </div>
       </section>
 
-      <section className="practice-section page-shell" aria-labelledby="practice-heading">
-        <div className="section-heading"><p className="eyebrow">How I work</p><h2 id="practice-heading">Four commitments.</h2></div>
-        <div className="practice-grid">
-          <article><h3>Build close to the mechanism.</h3><p>Prototypes, data pipelines, and simulations make vague claims concrete enough to break.</p></article>
-          <article><h3>Separate observation from inference.</h3><p>Descriptive evidence, causal claims, and conceptual proposals should never borrow one another’s certainty.</p></article>
-          <article><h3>Publish the audit trail.</h3><p>Code, data decisions, exclusions, and falsifiers are part of the contribution.</p></article>
-          <article><h3>Design for institutional reality.</h3><p>A technically elegant answer is incomplete if nobody can implement, contest, or maintain it.</p></article>
-        </div>
-      </section>
-
       <section className="contact-panel page-shell">
         <p className="eyebrow light">Say hello</p>
         <h2>Good questions travel well.</h2>
         <p>I am always glad to talk about AI evaluation, public systems, research methods, or an argument you think I have wrong.</p>
         <div className="button-row">
           <a className="light-button" href="mailto:bhemaraju.138@gmail.com">Email me <Arrow /></a>
-          <a className="light-button" href="https://github.com/bhemaraju138-pixel">GitHub <Arrow /></a>
         </div>
       </section>
     </Shell>
@@ -1240,7 +1228,6 @@ function BurdenMovesSimulationPage() {
         </div>
         <div className="download-row">
           <a className="primary-button" href="/data/claiming-under-agents-results.json" download>Download baseline results <Arrow /></a>
-          <a className="secondary-button" href="https://github.com/bhemaraju138-pixel/bhemaraju138-pixel.github.io/tree/main/experiments">Inspect the code</a>
         </div>
       </section>
     </Shell>

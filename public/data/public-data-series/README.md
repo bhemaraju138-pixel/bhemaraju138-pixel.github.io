@@ -28,9 +28,9 @@ Generated on August 23, 2026 (America/New_York). Exact UTC retrieval time is in
   group.
 - `manifest.json` — compact results, source list, and run metadata.
 
-The full live-API response excerpts and large Census inputs remain in the GitHub
-repository rather than the compact download archive. The complete method is in
-`experiments/public_data_series.py`.
+Large live-API response excerpts and Census inputs are not included in this
+compact download archive. The included files document the published results,
+sources, and exclusions.
 
 ## Key exclusions
 
@@ -40,4 +40,3 @@ repository rather than the compact download archive. The complete method is in
   comment windows from 1–365 days.
 - The World Bank analysis uses the Bank's economy list, which includes
   territories, and four specified indicators only.
-
