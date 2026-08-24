@@ -11,6 +11,9 @@
   --max: 1240px;
   --serif: "Iowan Old Style", "Baskerville", "Times New Roman", serif;
   --sans: "Avenir Next", "Helvetica Neue", Arial, sans-serif;
+  --heading-weight: 800;
+  --heading-tracking: 0.09em;
+  --heading-line-height: 1.2;
 }
 
 * { box-sizing: border-box; }
@@ -124,10 +127,19 @@ button, input { font: inherit; }
 
 h1, h2, h3, p { margin-top: 0; }
 
-h1, h2, h3 { line-height: 1.05; }
+h1, h2, h3 {
+  font-family: var(--sans) !important;
+  font-style: normal;
+  font-weight: var(--heading-weight) !important;
+  letter-spacing: var(--heading-tracking) !important;
+  line-height: var(--heading-line-height) !important;
+  text-transform: uppercase;
+}
 
-h1, h2, h3 { font-family: var(--sans) !important; }
-h1, h2 { font-weight: 500; }
+h1 em, h2 em, h3 em {
+  font-style: normal;
+  font-weight: inherit !important;
+}
 
 .hero {
   display: grid;
@@ -1182,7 +1194,7 @@ dd { margin: 0; font-size: 13px; line-height: 1.55; }
   line-height: 1.42;
 }
 .simulation-heading { padding-top: 82px; }
-.simulation-heading h1 { margin: 0; font-family: var(--sans); font-size: clamp(21px, 2.5vw, 32px); font-weight: 800; letter-spacing: 0.09em; line-height: 1.2; }
+.simulation-heading h1 { margin: 0; font-size: clamp(21px, 2.5vw, 32px); }
 .simulation-index { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; padding-block: 42px 88px; }
 .simulation-index-card {
   position: relative;
