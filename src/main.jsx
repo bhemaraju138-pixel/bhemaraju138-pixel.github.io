@@ -82,25 +82,21 @@ function EvidenceChain() {
   return (
     <div className="system-map" aria-label="Citizen to institution research system">
       <div className="system-node">
-        <span>01</span>
         <strong>Citizen</strong>
         <small>eligibility · resources</small>
       </div>
       <div className="system-arrow" aria-hidden="true">→</div>
       <div className="system-node accent-node">
-        <span>02</span>
         <strong>Agent</strong>
         <small>capability · error · cost</small>
       </div>
       <div className="system-arrow" aria-hidden="true">→</div>
       <div className="system-node">
-        <span>03</span>
         <strong>Evidence</strong>
         <small>schema · documents · claims</small>
       </div>
       <div className="system-arrow" aria-hidden="true">→</div>
       <div className="system-node institution-node">
-        <span>04</span>
         <strong>Institution</strong>
         <small>capacity · verification · rules</small>
       </div>
@@ -112,10 +108,9 @@ function EvidenceChain() {
   );
 }
 
-function ResearchCard({ item, index }) {
+function ResearchCard({ item }) {
   return (
     <article className="research-card">
-      <div className="card-index">0{index + 1}</div>
       <div className="card-meta">
         <span>{item.year}</span>
         <span>{item.type}</span>
@@ -189,7 +184,7 @@ function ResearchCompass() {
   return (
     <div className={`research-compass ${active.accent}`}>
       <div className="compass-controls" role="tablist" aria-label="Explore research by lens">
-        {researchLenses.map((lens, index) => (
+        {researchLenses.map((lens) => (
           <button
             type="button"
             role="tab"
@@ -197,7 +192,6 @@ function ResearchCompass() {
             key={lens.id}
             onClick={() => setActiveId(lens.id)}
           >
-            <span>0{index + 1}</span>
             {lens.label}
           </button>
         ))}
@@ -226,7 +220,6 @@ function NotebookPreviewCard({ essay }) {
   return (
     <a className="notebook-preview-card" href={`/experiments/${essay.slug}/`}>
       <div>
-        <span>{essay.number}</span>
         <small>Experiment · August 2026</small>
       </div>
       <h3>{essay.title}</h3>
@@ -272,10 +265,10 @@ function Home() {
 
       <div className="practice-rail" aria-label="Research practices">
         <div>
-          <span>01</span> Build the system
-          <span>02</span> Test the behavior
-          <span>03</span> Trace the institution
-          <span>04</span> Publish the uncertainty
+          <span>Build the system</span><i aria-hidden="true">·</i>
+          <span>Test the behavior</span><i aria-hidden="true">·</i>
+          <span>Trace the institution</span><i aria-hidden="true">·</i>
+          <span>Publish the uncertainty</span>
         </div>
       </div>
 
@@ -304,8 +297,8 @@ function Home() {
           </a>
         </div>
         <div className="card-grid portfolio-card-grid">
-          {research.slice(0, 3).map((item, index) => (
-            <ResearchCard item={item} index={index} key={item.title} />
+          {research.slice(0, 3).map((item) => (
+            <ResearchCard item={item} key={item.title} />
           ))}
         </div>
       </section>
@@ -384,7 +377,6 @@ function Home() {
 function ExperimentEssayCard({ essay }) {
   return (
     <a className="experiment-essay-card" href={`/experiments/${essay.slug}/`}>
-      <span className="essay-card-number">{essay.number}</span>
       <span className="eyebrow">Public-data experiment</span>
       <h3>{essay.title}</h3>
       <p>{essay.standfirst}</p>
@@ -414,10 +406,10 @@ function ExperimentsLanding() {
       </section>
 
       <section className="experiment-principles page-shell" aria-label="Experiment design principles">
-        <div><span>01</span><strong>One public-data test</strong><small>Not a renamed concept</small></div>
-        <div><span>02</span><strong>One result that could reverse</strong><small>Not a confirmatory illustration</small></div>
-        <div><span>03</span><strong>One institutional implication</strong><small>Not an AI slogan</small></div>
-        <div><span>04</span><strong>One published limitation</strong><small>Not false certainty</small></div>
+        <div><strong>One public-data test</strong><small>Not a renamed concept</small></div>
+        <div><strong>One result that could reverse</strong><small>Not a confirmatory illustration</small></div>
+        <div><strong>One institutional implication</strong><small>Not an AI slogan</small></div>
+        <div><strong>One published limitation</strong><small>Not false certainty</small></div>
       </section>
 
       <section className="experiment-index page-shell" aria-labelledby="experiment-index-heading">
@@ -768,9 +760,8 @@ function PublicationsPage() {
           <p className="eyebrow">Selected publications</p>
           <h2 id="publications-list-heading">Status stated precisely.</h2>
         </div>
-        {publications.map((item, index) => (
+        {publications.map((item) => (
           <article className="publication-entry" key={item.title}>
-            <div className="publication-number">0{index + 1}</div>
             <div className="publication-heading">
               <span className="publication-badge">{item.publicationStatus}</span>
               <h3>{item.title}</h3>
@@ -814,7 +805,6 @@ function WritingPage() {
       kind: "Public-data experiment",
       date: "August 2026",
       topic: experimentTopics[index],
-      marker: essay.number,
     })),
     ...notes.map((note, index) => ({
       id: `note-${note.slug}`,
@@ -824,7 +814,6 @@ function WritingPage() {
       kind: "Research note",
       date: "August 2026",
       topic: noteTopics[index],
-      marker: null,
     })),
   ];
   const normalizedQuery = query.trim().toLowerCase();
@@ -850,8 +839,7 @@ function WritingPage() {
       </section>
 
       <section className="writing-feature page-shell">
-        <div className="feature-marker">New / 06</div>
-        <div>
+        <div className="writing-feature-copy">
           <p className="eyebrow">Featured public-data series</p>
           <h2>Six Boundaries of Machine-Mediated Government</h2>
           <p>
@@ -864,7 +852,7 @@ function WritingPage() {
         <div className="feature-index" aria-label="Six experiment themes">
           {["Failure", "Metadata", "Channels", "Ranking", "Procedure", "Missingness"].map((label, index) => (
             <a href={`/experiments/${publicDataEssays[index].slug}/`} key={label}>
-              <span>0{index + 1}</span><strong>{label}</strong>
+              <strong>{label}</strong>
             </a>
           ))}
         </div>
@@ -906,8 +894,7 @@ function WritingPage() {
 
         <div className="writing-list">
           {visibleItems.map((item) => (
-            <a className={item.marker ? "writing-row" : "writing-row no-marker"} href={item.href} key={item.id}>
-              {item.marker && <span className="writing-marker">{item.marker}</span>}
+            <a className="writing-row no-marker" href={item.href} key={item.id}>
               <span className="writing-row-main">
                 <small>{item.kind} · {item.date} · {item.topic}</small>
                 <strong>{item.title}</strong>
@@ -1010,10 +997,10 @@ function AboutPage() {
       <section className="practice-section page-shell" aria-labelledby="practice-heading">
         <div className="section-heading"><p className="eyebrow">How I work</p><h2 id="practice-heading">Four commitments.</h2></div>
         <div className="practice-grid">
-          <article><span>01</span><h3>Build close to the mechanism.</h3><p>Prototypes, data pipelines, and simulations make vague claims concrete enough to break.</p></article>
-          <article><span>02</span><h3>Separate observation from inference.</h3><p>Descriptive evidence, causal claims, and conceptual proposals should never borrow one another’s certainty.</p></article>
-          <article><span>03</span><h3>Publish the audit trail.</h3><p>Code, data decisions, exclusions, and falsifiers are part of the contribution.</p></article>
-          <article><span>04</span><h3>Design for institutional reality.</h3><p>A technically elegant answer is incomplete if nobody can implement, contest, or maintain it.</p></article>
+          <article><h3>Build close to the mechanism.</h3><p>Prototypes, data pipelines, and simulations make vague claims concrete enough to break.</p></article>
+          <article><h3>Separate observation from inference.</h3><p>Descriptive evidence, causal claims, and conceptual proposals should never borrow one another’s certainty.</p></article>
+          <article><h3>Publish the audit trail.</h3><p>Code, data decisions, exclusions, and falsifiers are part of the contribution.</p></article>
+          <article><h3>Design for institutional reality.</h3><p>A technically elegant answer is incomplete if nobody can implement, contest, or maintain it.</p></article>
         </div>
       </section>
 
@@ -1039,7 +1026,7 @@ function PublicDataEssayPage({ essay }) {
     <Shell>
       <article className="data-essay page-shell">
         <header className="data-essay-header">
-          <div className="data-essay-sequence">Experiment {essay.number} / 06</div>
+          <div className="data-essay-label">Public-data experiment</div>
           <p className="eyebrow">{essay.eyebrow}</p>
           <h1>{essay.title}</h1>
           <p className="essay-standfirst">{essay.standfirst}</p>
@@ -1068,18 +1055,17 @@ function PublicDataEssayPage({ essay }) {
         <div className="data-essay-layout">
           <aside className="essay-contents">
             <strong>Contents</strong>
-            <ol>
+            <ul>
               {essay.blocks.map((block, index) => (
                 <li key={block.heading}>
                   <a href={`#section-${index + 1}`}>{block.heading}</a>
                 </li>
               ))}
-            </ol>
+            </ul>
           </aside>
           <div className="data-essay-body">
             {essay.blocks.map((block, index) => (
               <section id={`section-${index + 1}`} key={block.heading}>
-                <span className="section-number">{String(index + 1).padStart(2, "0")}</span>
                 <h2>{block.heading}</h2>
                 {block.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
               </section>
@@ -1151,9 +1137,8 @@ function ResearchPage() {
           <p className="eyebrow">Research trace</p>
           <h2 id="work-heading">Question → method → finding → implication</h2>
         </div>
-        {research.map((item, index) => (
+        {research.map((item) => (
           <article className="research-full" key={item.title}>
-            <div className="research-full-index">0{index + 1}</div>
             <div className="research-full-title">
               <div className="card-meta"><span>{item.year}</span><span>{item.type}</span></div>
               <h3>{item.title}</h3>
@@ -1276,10 +1261,10 @@ function BurdenMovesSimulationPage() {
           <h2>The loop</h2>
         </div>
         <ol>
-          <li><span>01</span><p>Agents reduce application costs unevenly.</p></li>
-          <li><span>02</span><p>Submission volume rises.</p></li>
-          <li><span>03</span><p>Capacity pressure raises verification.</p></li>
-          <li><span>04</span><p>Documentation costs reshape take-up.</p></li>
+          <li><p>Agents reduce application costs unevenly.</p></li>
+          <li><p>Submission volume rises.</p></li>
+          <li><p>Capacity pressure raises verification.</p></li>
+          <li><p>Documentation costs reshape take-up.</p></li>
         </ol>
       </section>
 
