@@ -58,4 +58,6 @@ test("portfolio routes and route-specific metadata are built", async () => {
   assert.match(essayHtml, /<title>The Error Message Is Part of the Policy \| Hema Raju Barri<\/title>/);
   assert.doesNotMatch(essayHtml, /property="og:image"/);
   assert.doesNotMatch(essayHtml, /name="twitter:image"/);
+
+  await assert.rejects(access(resolve("dist/client/timeline/index.html")));
 });

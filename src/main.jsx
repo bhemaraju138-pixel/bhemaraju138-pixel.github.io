@@ -1,6 +1,6 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import { createRoot } from "react-dom/client";
-import { notes, publicDataEssays, research, timeline } from "./content";
+import { notes, publicDataEssays, research } from "./content";
 import { runModel, scenarios } from "./model";
 import { buildPortfolioContext, portfolioKnowledge } from "./portfolio-knowledge";
 import { education, experience, pathMoments } from "./profile";
@@ -20,7 +20,6 @@ const devRoutes = {
   blogs: "/blogs/",
   writing: "/blogs/",
   simulations: "/simulations/",
-  timeline: "/timeline/",
 };
 
 const simulationRoutes = {
@@ -156,9 +155,9 @@ function CommandConsole({ onModeChange, onOpenLLM, onPanelChange, onCommand }) {
       return;
     }
     if (normalized === "help" || normalized === "?") {
-      write(raw, "about · research · publications · blogs · simulations · timeline · llm · panel terminal|output|problems|debug · run burden|observability|queue · connect · scatter · whoami · status · contact · read · clear");
+      write(raw, "about · research · publications · blogs · simulations · llm · panel terminal|output|problems|debug · run burden|observability|queue · connect · scatter · whoami · status · contact · read · clear");
     } else if (normalized === "ls") {
-      write(raw, "about/  research/  publications/  blogs/  simulations/  timeline/");
+      write(raw, "about/  research/  publications/  blogs/  simulations/");
     } else if (normalized === "whoami") {
       write(raw, "Hema Raju Barri: researcher, systems builder, and public-interest technologist studying the institutions around intelligent systems.");
     } else if (normalized === "status") {
@@ -248,7 +247,6 @@ function editorFileForPath(path) {
   if (path.includes("observability-reserve")) return "observability_reserve.sim";
   if (path.includes("verification-queue")) return "verification_queue.sim";
   if (path.startsWith("/research")) return "research.md";
-  if (path.startsWith("/timeline")) return "timeline.log";
   if (path.startsWith("/experiments/")) return `${path.split("/").filter(Boolean).at(-1)}.experiment`;
   if (path.startsWith("/notes/")) return `${path.split("/").filter(Boolean).at(-1)}.note`;
   return "not_found.log";
@@ -263,7 +261,6 @@ const WORKSPACE_FILES = [
   ["/simulations/burden-moves/", "burden_moves.sim"],
   ["/simulations/observability-reserve/", "observability_reserve.sim"],
   ["/simulations/verification-queue/", "verification_queue.sim"],
-  ["/timeline/", "timeline.log"],
 ];
 
 function iconForFile(file) {
@@ -312,7 +309,6 @@ function SearchSidebar() {
     { href: "/publications/", file: "publications.md", text: research.slice(0, 3).map((item) => `${item.title} ${item.type} ${item.venue}`).join(" ") },
     { href: "/blogs/", file: "blogs.index", text: [...notes, ...publicDataEssays].map((item) => `${item.title} ${item.standfirst}`).join(" ") },
     { href: "/simulations/", file: "simulations.run", text: simulationCatalog.map((item) => `${item.title} ${item.question} ${item.mathematics}`).join(" ") },
-    { href: "/timeline/", file: "timeline.log", text: "research experience education Oxford Saïd Testing Autonomy Johns Hopkins CORI Birmingham SwiftCollab" },
   ];
   const normalized = query.trim().toLowerCase();
   const matches = normalized ? documents.filter((item) => `${item.file} ${item.text}`.toLowerCase().includes(normalized)) : [];
@@ -2048,11 +2044,11 @@ function ResearchPage() {
       </section>
 
       <section className="question-matrix page-shell" aria-label="Research question matrix">
-        <div className="matrix-label">Where is the consequential choice?</div>
-        <div><span>Interface</span><strong>What can the agent see and do?</strong></div>
-        <div><span>Interaction</span><strong>For whom does the behavior work?</strong></div>
-        <div><span>Institution</span><strong>How does the counterparty respond?</strong></div>
-        <div><span>Evidence</span><strong>What remains observable after action?</strong></div>
+        <header className="matrix-label">Where is the consequential choice?</header>
+        <article className="matrix-cell"><span>Interface</span><strong>What can the agent see and do?</strong></article>
+        <article className="matrix-cell"><span>Interaction</span><strong>For whom does the behavior work?</strong></article>
+        <article className="matrix-cell"><span>Institution</span><strong>How does the counterparty respond?</strong></article>
+        <article className="matrix-cell"><span>Evidence</span><strong>What remains observable after action?</strong></article>
       </section>
 
       <section className="research-stack page-shell" aria-labelledby="work-heading">
@@ -2264,30 +2260,6 @@ function NotePage({ note }) {
   );
 }
 
-function TimelinePage() {
-  return (
-    <Shell>
-      <section className="page-intro page-shell">
-        <p className="eyebrow">Research timeline</p>
-        <h1>How the unit of analysis kept getting larger.</h1>
-        <p className="intro-lede">From reliable deployment, to human–AI fit, to public evidence systems, to institutions that strategically respond.</p>
-      </section>
-      <section className="timeline page-shell">
-        {timeline.map((item) => (
-          <article key={item.year}>
-            <div className="timeline-year">{item.year}</div>
-            <div><p className="eyebrow">{item.status}</p><h2>{item.title}</h2><p>{item.text}</p></div>
-          </article>
-        ))}
-      </section>
-      <section className="timeline-clarity page-shell">
-        <strong>A note on dates</strong>
-        <p>Dates on this page describe when the underlying work was conducted or when a named research output was formally released.</p>
-      </section>
-    </Shell>
-  );
-}
-
 function NotFound() {
   return (
     <Shell>
@@ -2312,7 +2284,6 @@ function App() {
   if (path === "/simulations/observability-reserve") return <ObservabilitySimulationPage />;
   if (path === "/simulations/verification-queue") return <VerificationQueuePage />;
   if (path === "/experiments") return <ExperimentsLanding />;
-  if (path === "/timeline") return <TimelinePage />;
   const experimentMatch = path.match(/^\/experiments\/([^/]+)$/);
   if (experimentMatch) {
     const essay = publicDataEssays.find((item) => item.slug === experimentMatch[1]);

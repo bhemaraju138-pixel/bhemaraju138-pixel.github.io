@@ -69,11 +69,6 @@ const routes = [
     description: note.standfirst,
     detail: true,
   })),
-  {
-    route: "timeline",
-    title: "Research Timeline | Hema Raju Barri",
-    description: "A research path from reliable deployment to human–AI fit, public evidence systems, and institutional response.",
-  },
 ];
 
 const escapeAttribute = (value) => value

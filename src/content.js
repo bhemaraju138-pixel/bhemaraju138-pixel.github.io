@@ -748,30 +748,3 @@ export const publicDataEssays = [
     ],
   },
 ];
-
-export const timeline = [
-  {
-    year: "2024",
-    title: "Reliability before autonomy",
-    text: "Cloud deployment work and a clinical workflow redesign taught me the same lesson in two settings: failures often arise at handoffs, dependencies, and representations, not in the nominal core technology.",
-    status: "Work conducted in 2024",
-  },
-  {
-    year: "2025",
-    title: "Behavior and institutions enter the frame",
-    text: "I studied treatment fidelity in conversational agents, built public-health data infrastructure, and joined fragmented municipal evidence into policy pathways. These experiences shifted my question from whether a model works to what system makes its action meaningful.",
-    status: "Work conducted in 2025",
-  },
-  {
-    year: "2026",
-    title: "A research program takes shape",
-    text: "Work on agent-readable infrastructure, federal AI sourcing, counterfactual observability, and econometric robustness converged on one problem: how autonomous systems change the evidence and rules of the institutions they mediate.",
-    status: "Research and accepted outputs in 2026",
-  },
-  {
-    year: "Now",
-    title: "Government as a responding counterparty",
-    text: "The Burden Moves simulation formalizes the next claim: an agent’s effect on access depends on how agencies change verification under capacity constraints. It is a theory-building artifact designed to generate testable contrasts.",
-    status: "Theory-building simulation",
-  },
-];
