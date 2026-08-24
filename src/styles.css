@@ -9,8 +9,8 @@
   --mint: #e8edfb;
   --white: #ffffff;
   --max: 1240px;
-  --serif: "Iowan Old Style", "Baskerville", "Times New Roman", serif;
-  --sans: "Avenir Next", "Helvetica Neue", Arial, sans-serif;
+  --serif: "New York", "Iowan Old Style", "Baskerville", "Times New Roman", serif;
+  --sans: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
   --heading-weight: 800;
   --heading-tracking: 0.09em;
   --heading-line-height: 1.2;
@@ -1651,7 +1651,6 @@ dd { margin: 0; font-size: 13px; line-height: 1.55; }
   background-size: 28px 28px, 28px 28px, auto, auto;
 }
 
-[data-interface="command"] body * { font-family: var(--mono) !important; }
 [data-interface="command"] ::selection { background: #78eba8; color: #07100a; }
 
 [data-interface="command"] .site-header {
@@ -1833,7 +1832,7 @@ body,
   --paper: #1e1e1e;
   --paper-deep: #181818;
   --ink: #d4d4d4;
-  --muted: #8c8c8c;
+  --muted: #b3b3b3;
   --line: #303030;
   --red: #4fc1ff;
   --red-dark: #4fc1ff;
@@ -2066,8 +2065,9 @@ body,
 /* VS Code fidelity and the local-model extension */
 
 [data-interface="command"] {
-  --vscode-ui: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-  --vscode-mono: Consolas, "SFMono-Regular", "Liberation Mono", "Courier New", monospace;
+  --vscode-ui: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --vscode-display: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --vscode-mono: "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono", monospace;
 }
 
 [data-interface="command"] :is(
@@ -2085,7 +2085,6 @@ body,
 }
 
 [data-interface="command"] :is(
-  .ide-editor-content,
   .ide-terminal-panel .command-console,
   .ide-terminal-panel .command-form input,
   .ide-terminal-panel .command-form label,
@@ -2608,6 +2607,41 @@ body,
 [data-interface="command"] .ide-editor-content,
 [data-interface="command"] .ide-editor-content * { font-family: var(--vscode-ui) !important; }
 [data-interface="command"] .ide-editor-content :is(code, pre, .equation, .equation *, .model-code, .model-code *) { font-family: var(--vscode-mono) !important; }
+[data-interface="command"] .ide-editor-content :is(h1, h2, h3, h4) { font-family: var(--vscode-display) !important; }
+[data-interface="command"] .ide-editor-content :is(
+  .eyebrow,
+  .card-meta,
+  .path-stage-label,
+  .path-card > p,
+  .outcome-label,
+  .metric span,
+  dt,
+  .status-pulse,
+  .simulation-card-footer,
+  .data-essay-label,
+  .notebook-preview-card > div,
+  .writing-row > span,
+  .publication-status
+) { font-family: var(--vscode-mono) !important; }
+[data-interface="command"] .ide-editor-content { color: #d4d4d4; }
+[data-interface="command"] .ide-editor-content :is(p, li, dd, small, figcaption) { color: #c2c2c2; }
+[data-interface="command"] .ide-editor-content :is(h1, h2, h3, h4, strong) { color: #f0f0f0; }
+[data-interface="command"] .ide-editor-content :is(
+  .eyebrow,
+  .path-card > p,
+  .card-dek,
+  .research-full-title > p,
+  .publication-dek,
+  .status-box > strong,
+  .control-panel output,
+  .technical-controls output
+) { color: #4fc1ff; }
+[data-interface="command"] .ide-editor-content :is(.hero-lede, .intro-lede, .essay-standfirst, .home-about-statement > p:not(.eyebrow)) {
+  color: #cccccc;
+  font-family: var(--vscode-ui) !important;
+  font-weight: 400;
+  letter-spacing: -0.012em;
+}
 [data-interface="command"] .ide-editor-content .page-shell { width: min(1120px, calc(100% - 54px)); }
 [data-interface="command"] .ide-editor-content :is(.about-path-hero, .about-story, .experience-section, .contact-panel, .page-intro, .selected-section, .notebook-home, .compass-section) { padding-top: 34px; padding-bottom: 44px; }
 [data-interface="command"] .ide-editor-content h1 { font-size: clamp(34px, 4.3vw, 52px) !important; font-weight: 650; letter-spacing: -0.035em; line-height: 1.04; }
@@ -2626,6 +2660,7 @@ body,
 [data-interface="command"] .ide-editor-content :is(.hero-lede, .intro-lede, .about-story-copy p, .home-about-statement > p) { font-size: clamp(14px, 1.45vw, 18px); line-height: 1.58; }
 [data-interface="command"] .ide-editor-content .path-manifesto { margin-top: 28px; font-size: clamp(21px, 2.7vw, 34px); }
 [data-interface="command"] .ide-editor-content .about-path-stage { margin-top: 36px; }
+[data-interface="command"] .ide-editor-content .path-stage-label { color: #a6a6a6; }
 [data-interface="command"] .ide-editor-content .path-card h2 { font-size: 18px; letter-spacing: -0.01em; }
 [data-interface="command"] .ide-editor-content .path-card small { font-family: var(--vscode-ui) !important; font-size: 11px; line-height: 1.45; }
 [data-interface="command"] .ide-editor-content .experience-list article { padding-block: 16px; }
@@ -2664,6 +2699,30 @@ body,
 [data-interface="command"] .ide-editor-content :is(.chart-threshold span, .queue-boundary span) { background: #181818; color: #cccccc; }
 [data-interface="command"] .ide-editor-content .data-essay-figure img { background: #f7f7f7; opacity: 1; filter: none; }
 [data-interface="command"] .ide-editor-content .data-essay-figure figcaption { color: #b8b8b8; }
+
+/* Dimmed workbench copy still needs to be readable on a Mac display. */
+[data-interface="command"] :is(
+  .ide-breadcrumb > span,
+  .ide-tree-header span,
+  .ide-pane-details a,
+  .ide-pane-details span,
+  .ide-extension-card small,
+  .ide-extension-empty,
+  .ide-extension-note,
+  .local-llm-hero span,
+  .local-model-state small,
+  .local-llm-credits,
+  .ide-empty-state p,
+  .ide-empty-state small,
+  .ide-sidebar-empty small,
+  .ide-search-results > a small,
+  .ide-source-branch small,
+  .ide-source-clean p,
+  .ide-run-list a small,
+  .ide-command-center kbd,
+  .ide-quick-open kbd,
+  .ide-help-actions kbd
+) { color: #9d9d9d; }
 
 @container ide-editor (max-width: 980px) {
   [data-interface="command"] .ide-editor-content .page-shell { width: calc(100% - 42px); }
