@@ -70,25 +70,15 @@ button, input { font: inherit; }
 .wordmark {
   display: inline-flex;
   align-items: center;
-  gap: 12px;
   width: fit-content;
   text-decoration: none;
-  letter-spacing: 0.04em;
 }
 
 .wordmark span {
-  display: grid;
-  place-items: center;
-  width: 38px;
-  height: 38px;
-  border: 1px solid var(--ink);
-  font-size: 12px;
-  font-weight: 700;
-}
-
-.wordmark small {
-  font-size: 11px;
-  text-transform: uppercase;
+  font-family: var(--serif);
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.015em;
 }
 
 .site-header nav { display: flex; gap: 34px; }
@@ -1123,18 +1113,7 @@ dd { margin: 0; font-size: 13px; line-height: 1.55; }
 
 /* Writing archive */
 
-.writing-hero {
-  display: grid;
-  grid-template-columns: 1.25fr 0.75fr;
-  gap: 80px;
-  align-items: end;
-  min-height: 550px;
-  padding-block: 120px 90px;
-}
-.writing-hero h1 { margin: 0; font-size: clamp(72px, 10vw, 142px); letter-spacing: -0.065em; }
-.writing-hero > p { max-width: 570px; margin: 0 0 12px; color: var(--muted); font-family: var(--serif); font-size: 23px; line-height: 1.5; }
-
-.writing-count { align-self: end; padding: 8px 12px; border: 1px solid var(--ink); font-size: 10px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; }
+.writing-index { padding-block: 72px 110px; border-top: 0; }
 .writing-tools { display: grid; grid-template-columns: 1fr minmax(250px, 0.4fr); gap: 30px; align-items: center; margin-bottom: 28px; }
 .topic-filters { display: flex; flex-wrap: wrap; gap: 8px; }
 .topic-filters button { padding: 9px 13px; border: 1px solid var(--ink); background: transparent; color: var(--ink); cursor: pointer; font-size: 9px; font-weight: 800; letter-spacing: 0.09em; text-transform: uppercase; }
@@ -1202,7 +1181,7 @@ dd { margin: 0; font-size: 13px; line-height: 1.55; }
   line-height: 1.42;
 }
 .simulation-heading { padding-top: 82px; }
-.simulation-heading h1 { margin: 0; font-size: clamp(42px, 5.8vw, 74px); letter-spacing: -0.035em; }
+.simulation-heading h1 { margin: 0; font-family: var(--sans); font-size: clamp(21px, 2.5vw, 32px); font-weight: 800; letter-spacing: 0.09em; line-height: 1.2; }
 .simulation-index { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; padding-block: 42px 88px; }
 .simulation-index-card {
   position: relative;
@@ -1433,7 +1412,6 @@ dd { margin: 0; font-size: 13px; line-height: 1.55; }
   .compass-projects a { margin-right: 0; }
   .notebook-preview-grid { grid-template-columns: 1fr; }
   .home-about { grid-template-columns: 1fr; gap: 60px; }
-  .writing-hero { grid-template-columns: 1fr; gap: 30px; min-height: 480px; }
   .writing-tools { grid-template-columns: 1fr; }
   .technical-sim-intro { grid-template-columns: 1fr; }
   .technical-sim-intro > .eyebrow, .technical-sim-intro > h1, .technical-sim-intro > .intro-lede, .technical-sim-intro .technical-status { grid-column: 1; grid-row: auto; }
@@ -1474,7 +1452,6 @@ dd { margin: 0; font-size: 13px; line-height: 1.55; }
   .practice-rail div { padding-inline: 18px; }
   .compass-controls button { font-size: 8px; }
   .notebook-preview-card { min-height: 360px; padding: 22px; }
-  .writing-hero h1 { font-size: 60px; }
   .writing-row { grid-template-columns: 46px 1fr auto; gap: 12px; }
   .writing-row-main p { display: none; }
   .writing-principle, .contact-panel { padding: 34px 24px; }
@@ -1484,7 +1461,7 @@ dd { margin: 0; font-size: 13px; line-height: 1.55; }
   .simulation-index-card { padding: 22px; }
   .simulation-index-card h2 { margin-top: 38px; font-size: 32px; }
   .simulation-heading { padding-top: 58px; }
-  .simulation-heading h1 { font-size: 40px; }
+  .simulation-heading h1 { font-size: 23px; }
   .technical-model, .model-simulation { gap: 24px; padding-block: 30px 64px; }
   .technical-controls, .control-panel { padding: 21px; box-shadow: 5px 5px 0 var(--mint); }
   .status-box { box-shadow: 5px 5px 0 var(--mint); }

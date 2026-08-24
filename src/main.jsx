@@ -24,8 +24,7 @@ function Header() {
     <header className="site-header">
       <a className="skip-link" href="#main">Skip to content</a>
       <a className="wordmark" href="/" aria-label="Hema Raju Barri, home">
-        <span>HRB</span>
-        <small>Researcher · Builder</small>
+        <span>Hema Raju Barri</span>
       </a>
       <nav aria-label="Primary navigation">
         {links.map(([href, label]) => (
@@ -767,27 +766,7 @@ function WritingPage() {
 
   return (
     <Shell>
-      <section className="writing-hero page-shell">
-        <div>
-          <p className="eyebrow">Blogs · Public-data experiments</p>
-          <h1>Blogs.</h1>
-        </div>
-        <p>
-          Empirical essays about AI, institutions, evidence, and the infrastructure
-          between a model and a real decision. Each includes data, code, exclusions,
-          and a result that could change the argument.
-        </p>
-      </section>
-
-      <section className="writing-index page-shell" aria-labelledby="writing-index-heading">
-        <div className="section-heading split-heading">
-          <div>
-            <p className="eyebrow">Browse the archive</p>
-            <h2 id="writing-index-heading">Follow a question, not a format.</h2>
-          </div>
-          <div className="writing-count" aria-live="polite">{visibleItems.length} entries</div>
-        </div>
-
+      <section className="writing-index page-shell" aria-label="Blog archive">
         <div className="writing-tools">
           <div className="topic-filters" aria-label="Filter writing by topic">
             {topics.map((item) => (
