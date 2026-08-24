@@ -876,7 +876,6 @@ function DevWorkspace({ children, onModeChange }) {
     <div className="ide-screen">
       <header className="ide-titlebar">
         <div className="ide-title-left">
-          <ModeToggle mode="dev" onChange={onModeChange} />
           <div className="ide-history-controls">
             <button type="button" aria-label="Go back" title="Go Back" onClick={() => window.history.back()}><Icon name="arrow-left" /></button>
             <button type="button" aria-label="Go forward" title="Go Forward" onClick={() => window.history.forward()}><Icon name="arrow-right" /></button>
@@ -937,7 +936,7 @@ function DevWorkspace({ children, onModeChange }) {
         <section className={editorClass} style={{ "--ide-panel-height": `${panelHeight}px` }} aria-label="Research editor">
           <div className="ide-tabs">
             {editorOpen && <div className="ide-tab active"><Icon name={iconForFile(activeFile)} />{activeFile}<button type="button" aria-label={`Close ${activeFile}`} title="Close Editor" onClick={() => setEditorOpen(false)}><Icon name="close" /></button></div>}
-            <div className="ide-editor-actions"><button type="button" aria-label="Open research context to the side" title="Open Research to the Side" onClick={() => { setRightPanel("context"); setInspectorVisible(true); }}><Icon name="split-horizontal" /></button><button type="button" aria-label="Quick Open" title="Quick Open" onClick={() => setQuickOpen(true)}><Icon name="more" /></button></div>
+            <div className="ide-editor-actions"><ModeToggle mode="dev" onChange={onModeChange} /><button type="button" aria-label="Open research context to the side" title="Open Research to the Side" onClick={() => { setRightPanel("context"); setInspectorVisible(true); }}><Icon name="split-horizontal" /></button><button type="button" aria-label="Quick Open" title="Quick Open" onClick={() => setQuickOpen(true)}><Icon name="more" /></button></div>
           </div>
           <div className="ide-breadcrumb">{editorOpen ? <><span>HRB_PORTFOLIO</span><Icon name="chevron-right" /><span>{path.split("/").filter(Boolean).join("  ›  ") || "about"}</span><Icon name="chevron-right" /><span>{activeFile}</span></> : <span>HRB_PORTFOLIO</span>}</div>
           {editorOpen ? <main className="ide-editor-content" id="main">{children}</main> : <main className="ide-empty-editor" id="main"><Icon name="files" /><p>No editor is open</p><button type="button" onClick={() => setQuickOpen(true)}>Quick Open <kbd>⌘P</kbd></button></main>}

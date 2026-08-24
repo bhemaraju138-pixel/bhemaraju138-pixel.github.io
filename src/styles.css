@@ -2363,8 +2363,6 @@ body,
 }
 .ide-title-actions > button:hover,
 .ide-title-actions > button.active { background: #2a2d2e; color: #d7d7d7; }
-.ide-title-left .mode-toggle { margin-right: 5px; flex: 0 0 auto; }
-
 .ide-workbench {
   grid-template-columns: 48px var(--ide-sidebar-width, 250px) 1px minmax(0, 1fr) 1px var(--ide-inspector-width, 360px);
 }
@@ -2451,7 +2449,7 @@ body,
 
 .ide-tabs { justify-content: space-between; }
 .ide-tab button,
-.ide-editor-actions button {
+.ide-editor-actions > button:not(.mode-toggle) {
   display: grid;
   width: 24px;
   height: 24px;
@@ -2466,8 +2464,22 @@ body,
 }
 .ide-tab button { margin-left: auto; }
 .ide-tab button:hover,
-.ide-editor-actions button:hover { background: #303030; color: #fff; }
+.ide-editor-actions > button:not(.mode-toggle):hover { background: #303030; color: #fff; }
 .ide-editor-actions { display: flex; align-items: center; gap: 1px; padding-right: 7px; }
+.ide-editor-actions .mode-toggle {
+  grid-template-columns: auto 24px auto;
+  gap: 5px;
+  width: auto;
+  min-height: 26px;
+  height: 26px;
+  margin-right: 5px;
+  padding: 3px 6px;
+  border-color: #3b3b3b;
+  background: #202020;
+}
+.ide-editor-actions .mode-toggle-track { width: 24px; height: 13px; }
+.ide-editor-actions .mode-toggle-track span { width: 7px; height: 7px; }
+.ide-editor-actions .mode-toggle.is-dev .mode-toggle-track span { transform: translateX(11px); }
 .ide-breadcrumb > span { overflow: hidden; padding: 0; color: #8b8b8b; text-overflow: ellipsis; white-space: nowrap; }
 
 .ide-empty-editor { display: grid; min-height: 0; place-content: center; justify-items: center; background: #1e1e1e; color: #5f5f5f; }
@@ -2990,13 +3002,6 @@ body,
 
   .ide-title-left :is(.ide-history-controls, .ide-menu-strip) { display: none; }
 
-  .ide-title-left .mode-toggle {
-    display: inline-grid;
-    width: auto;
-    height: 26px;
-    margin: 0 5px 0 0;
-  }
-
   .ide-command-center {
     grid-column: 1 / -1;
     grid-row: 1;
@@ -3014,6 +3019,12 @@ body,
   }
 
   .ide-title-actions > button:not(.mode-toggle) { display: grid; }
+
+  .ide-editor-actions { display: flex; }
+
+  .ide-editor-actions .mode-toggle { flex: 0 0 auto; }
+
+  .ide-editor-actions > button:last-child { display: none; }
 
   .ide-explorer,
   .ide-inspector { top: 70px; }
