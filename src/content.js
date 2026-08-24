@@ -117,7 +117,7 @@ export const research = [
       "In the baseline parameterization, equal and reliable assistance narrows the access gap; unequal agent quality can widen it. Strong verification responses can erode individual gains by shifting cost downstream.",
     implication:
       "The appropriate unit of analysis is the applicant–agent–agency system. The simulation specifies empirical contrasts; it is not a causal estimate or policy forecast.",
-    href: "/experiments/claiming-under-agents/",
+    href: "/simulations/burden-moves/",
     linkLabel: "Run the simulation",
   },
 ];

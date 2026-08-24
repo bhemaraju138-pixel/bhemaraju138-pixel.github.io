@@ -32,7 +32,7 @@ test("portfolio routes and route-specific metadata are built", async () => {
     "simulations",
     "simulations/observability-reserve",
     "simulations/verification-queue",
-    "experiments/claiming-under-agents",
+    "simulations/burden-moves",
   ]) {
     await access(resolve("dist/client", route, "index.html"));
   }

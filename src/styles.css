@@ -712,7 +712,7 @@ dd { margin: 0; font-size: 13px; line-height: 1.55; }
 .status-box strong { display: block; margin-bottom: 14px; color: var(--red-dark); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; }
 .status-box p { margin: 0; font-size: 13px; }
 
-.model-lab { display: grid; grid-template-columns: 350px 1fr; gap: 44px; padding-block: 56px 100px; }
+.model-simulation { display: grid; grid-template-columns: 350px 1fr; gap: 44px; padding-block: 56px 100px; }
 .control-panel { position: sticky; top: 110px; align-self: start; padding: 28px; border: 1px solid var(--ink); background: var(--white); }
 .control-panel h2 { margin-bottom: 40px; font-size: 35px; }
 .control-panel label { display: block; padding: 19px 0; border-top: 1px solid var(--line); }
@@ -815,7 +815,7 @@ dd { margin: 0; font-size: 13px; line-height: 1.55; }
   .research-full-details { grid-column: 2; }
   .experiment-intro { grid-template-columns: 1fr; }
   .experiment-intro .eyebrow, .experiment-intro h1, .experiment-intro .intro-lede, .status-box { grid-column: 1; grid-row: auto; }
-  .model-lab { grid-template-columns: 1fr; }
+  .model-simulation { grid-template-columns: 1fr; }
   .control-panel { position: static; }
   .model-explanation { grid-template-columns: 1fr; gap: 20px; }
 }
@@ -1138,8 +1138,8 @@ dd { margin: 0; font-size: 13px; line-height: 1.55; }
 .blog-notes-preview { margin-top: 70px; }
 .blog-notes-preview > .eyebrow { margin-bottom: 22px; }
 
-.portfolio-lab { position: relative; overflow: hidden; }
-.portfolio-lab::after { position: absolute; right: -90px; bottom: -180px; width: 420px; aspect-ratio: 1; border: 1px solid rgba(255,255,255,0.2); border-radius: 50%; content: ""; }
+.portfolio-simulations { position: relative; overflow: hidden; }
+.portfolio-simulations::after { position: absolute; right: -90px; bottom: -180px; width: 420px; aspect-ratio: 1; border: 1px solid rgba(255,255,255,0.2); border-radius: 50%; content: ""; }
 
 .home-about {
   display: grid;

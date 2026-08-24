@@ -14,7 +14,7 @@ export const simulationCatalog = [
   {
     title: "The Burden Moves",
     family: "Heterogeneous fixed-point model",
-    href: "/experiments/claiming-under-agents/",
+    href: "/simulations/burden-moves/",
     question: "When assistance reduces claiming costs, where does administrative burden reappear after the agency responds?",
     mathematics: "Coupled take-up and verification fixed point with heterogeneous agent quality and documentation cost.",
     contribution: "Endogenizes the agency response instead of treating the institution as a fixed endpoint.",

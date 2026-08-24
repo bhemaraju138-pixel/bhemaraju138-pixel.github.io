@@ -52,7 +52,7 @@ const routes = [
     description: "Six reproducible studies of failure, metadata, participation, ranking, procedure, and missingness in public systems.",
   },
   {
-    route: "experiments/claiming-under-agents",
+    route: "simulations/burden-moves",
     title: "The Burden Moves — Hema Raju Barri",
     description: "An interactive model of agent-mediated public-benefit claiming, agency capacity, verification, and unequal access.",
     detail: true,

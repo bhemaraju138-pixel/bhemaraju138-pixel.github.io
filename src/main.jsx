@@ -32,7 +32,7 @@ function Header() {
           <a
             href={href}
             key={href}
-            aria-current={path.startsWith(href) || (href === "/simulations/" && path.startsWith("/experiments/claiming-under-agents")) ? "page" : undefined}
+            aria-current={path.startsWith(href) ? "page" : undefined}
           >
             {label}
           </a>
@@ -338,7 +338,7 @@ function Home() {
         </div>
       </section>
 
-      <section className="experiment-band portfolio-lab" aria-labelledby="experiment-heading">
+      <section className="experiment-band portfolio-simulations" aria-labelledby="experiment-heading">
         <div className="page-shell experiment-band-inner">
           <div>
             <p className="eyebrow light">Technical simulations · Three open models</p>
@@ -470,7 +470,7 @@ function ExperimentsLanding() {
             verification can respond to each other.
           </p>
         </div>
-        <a className="primary-button" href="/experiments/claiming-under-agents/">
+        <a className="primary-button" href="/simulations/burden-moves/">
           Run the simulation <Arrow />
         </a>
       </section>
@@ -1211,7 +1211,7 @@ function OutcomeBar({ label, value, secondary }) {
   );
 }
 
-function ExperimentPage() {
+function BurdenMovesSimulationPage() {
   const [agencyCapacity, setAgencyCapacity] = useState(0.37);
   const [verificationResponse, setVerificationResponse] = useState(0.55);
   const [qualityGap, setQualityGap] = useState(0.25);
@@ -1241,7 +1241,7 @@ function ExperimentPage() {
         </div>
       </section>
 
-      <section className="model-lab page-shell" aria-labelledby="simulation-controls-heading">
+      <section className="model-simulation page-shell" aria-labelledby="simulation-controls-heading">
         <div className="control-panel">
           <div>
             <p className="eyebrow">Simulation controls</p>
@@ -1402,10 +1402,10 @@ function App() {
   if (path === "/writing" || path === "/blogs") return <WritingPage />;
   if (path === "/about") return <AboutPage />;
   if (path === "/simulations") return <SimulationsPage />;
+  if (path === "/simulations/burden-moves") return <BurdenMovesSimulationPage />;
   if (path === "/simulations/observability-reserve") return <ObservabilitySimulationPage />;
   if (path === "/simulations/verification-queue") return <VerificationQueuePage />;
   if (path === "/experiments") return <ExperimentsLanding />;
-  if (path === "/experiments/claiming-under-agents") return <ExperimentPage />;
   if (path === "/timeline") return <TimelinePage />;
   const experimentMatch = path.match(/^\/experiments\/([^/]+)$/);
   if (experimentMatch) {
