@@ -3,6 +3,7 @@ import { createRoot } from "react-dom/client";
 import { notes, publicDataEssays, research, timeline } from "./content";
 import { runModel, scenarios } from "./model";
 import { runObservabilityReserve, runVerificationQueue, simulationCatalog } from "./simulations";
+import "@vscode/codicons/dist/codicon.css";
 import "./styles.css";
 
 const percent = (value, digits = 0) => `${(value * 100).toFixed(digits)}%`;
@@ -25,6 +26,54 @@ const simulationRoutes = {
   observability: "/simulations/observability-reserve/",
   queue: "/simulations/verification-queue/",
 };
+
+const LOCAL_MODEL_ID = "Qwen2.5-0.5B-Instruct-q4f16_1-MLC";
+const PORTFOLIO_CONTEXT = `
+You are the local research guide inside Hema Raju Barri's portfolio. Answer only
+from the context below. Be concise, distinguish completed work from research
+questions, and say when the portfolio does not contain an answer.
+
+Hema studies the systems around intelligent systems at the intersection of AI,
+management, economics, and public institutions. The recurring concern is how
+agents change access, evidence, verification, and institutional response.
+
+Trajectory and experience:
+- Computer-science training at ANITS (BTech, 2020-2024), followed by an MSE in
+  Engineering Management at Johns Hopkins University (2024-2025) and an Imperial
+  College London winter school in 2025.
+- Research Assistant at Oxford Saïd from 2026, working on missing-data
+  sensitivity, econometric replication, and reproducible simulation infrastructure.
+- AI SDET at Testing Autonomy from 2026, building evaluation pipelines for LLM,
+  RAG, and agentic workflows, including grounding and failure recovery.
+- Research Assistant at Johns Hopkins Carey in 2025 on a controlled human-AI
+  study of empathizing and systemizing conversational behavior.
+- Research Assistant at the Center for Outbreak Response Innovation in 2025 on
+  public-health data collection with provenance, validation, and human review.
+- Strategy Analyst with the Birmingham Mayor's Office and Bloomberg Center in
+  2025 on municipal evidence integration, streetlighting policy, and implementation.
+- AI Engineer at SwiftCollab in 2024-2025 on schema-aware agent workflows,
+  monitoring, durable execution, and recovery across external applications.
+
+Selected work:
+- Agent-Infrastructure Fit: How AI Agents Are Redefining the Governance of Public
+  Digital Data Infrastructure. Coauthored paper; abstract accepted for the 20th
+  ISDSI Global Conference at IMT Hyderabad, with the presentation upcoming in
+  December 2026.
+- Privacy-Sensitive Generative AI Sourcing in Federal Information Systems.
+  Coauthored empirical paper; accepted and presented at INSIGHT 2026.
+- Keeping Strategic Futures Observable in AI Strategy: Counterfactual
+  Observability and Evidence Architecture under Radical Uncertainty.
+  Sole-authored SSRN preprint, April 2026.
+
+The portfolio also contains public-data experiments and three technical
+simulations: Burden Moves, Observability Reserve, and Verification Queue.
+Visitors can inspect the Research, Publications, Blogs, Simulations, and About
+files for the full evidence and caveats.
+`;
+
+function Icon({ name }) {
+  return <i className={`codicon codicon-${name}`} aria-hidden="true" />;
+}
 
 function Arrow() {
   return <span aria-hidden="true">↗</span>;
@@ -81,7 +130,7 @@ function ReaderFooter() {
   );
 }
 
-function CommandConsole({ onModeChange }) {
+function CommandConsole({ onModeChange, onOpenLLM }) {
   const [input, setInput] = useState("");
   const [history, setHistory] = useState([
     { kind: "system", text: "HRB research interface ready." },
@@ -130,7 +179,7 @@ function CommandConsole({ onModeChange }) {
       return;
     }
     if (normalized === "help" || normalized === "?") {
-      write(raw, "about · research · publications · blogs · simulations · timeline · run burden|observability|queue · connect · scatter · whoami · status · contact · read · clear");
+      write(raw, "about · research · publications · blogs · simulations · timeline · llm · run burden|observability|queue · connect · scatter · whoami · status · contact · read · clear");
     } else if (normalized === "ls") {
       write(raw, "about/  research/  publications/  blogs/  simulations/  timeline/");
     } else if (normalized === "whoami") {
@@ -140,6 +189,9 @@ function CommandConsole({ onModeChange }) {
     } else if (normalized === "read" || normalized === "reader" || normalized === "mode read") {
       write(raw, "Returning to Read mode.");
       window.setTimeout(() => onModeChange("reader"), 120);
+    } else if (normalized === "llm" || normalized === "chat" || normalized === "extensions") {
+      onOpenLLM();
+      write(raw, "Opening the local research model. Load it explicitly when you are ready.");
     } else if (normalized === "connect" || normalized === "connect path") {
       if (window.location.pathname === "/" || window.location.pathname === "/about/") {
         window.dispatchEvent(new CustomEvent("portfolio:path", { detail: { connected: true } }));
@@ -169,7 +221,7 @@ function CommandConsole({ onModeChange }) {
     setInput("");
   };
 
-  const quickCommands = ["help", "about", "research", "publications", "blogs", "simulations", "connect"];
+  const quickCommands = ["help", "about", "research", "publications", "simulations", "llm", "read"];
 
   return (
     <aside className="command-console" aria-label="Portfolio command interface">
@@ -217,9 +269,220 @@ function editorFileForPath(path) {
   return "not_found.log";
 }
 
+function ExtensionsSidebar({ onOpenLLM }) {
+  const [query, setQuery] = useState("");
+  const matches = "local research llm qwen webllm private browser ai chat".includes(query.trim().toLowerCase());
+
+  return (
+    <aside className="ide-explorer ide-extensions" aria-label="Research extensions">
+      <div className="ide-pane-title"><strong>EXTENSIONS</strong><Icon name="more" /></div>
+      <label className="ide-extension-search">
+        <span className="sr-only">Search research extensions</span>
+        <input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Search Extensions" />
+      </label>
+      <p className="ide-extension-section"><Icon name="chevron-down" /> LOCAL</p>
+      {matches ? (
+        <article className="ide-extension-card">
+          <div className="ide-extension-mark" aria-hidden="true"><Icon name="sparkle" /></div>
+          <div>
+            <h2>Local Research LLM</h2>
+            <p>Qwen 2.5 · 0.5B Instruct</p>
+            <small>WebGPU · Apache 2.0 · no API key</small>
+            <button type="button" onClick={onOpenLLM}>Open</button>
+          </div>
+        </article>
+      ) : <p className="ide-extension-empty">No local extension matches “{query}”.</p>}
+      <div className="ide-extension-note">
+        <Icon name="info" />
+        <p>Model weights are downloaded only after you choose <strong>Load model</strong>.</p>
+      </div>
+    </aside>
+  );
+}
+
+function ResearchContext({ path, activeFile }) {
+  return (
+    <div className="ide-inspector-body">
+      <p className="ide-inspector-label">ACTIVE QUESTION</p>
+      <h2>Who gets to write the next page?</h2>
+      <p>I study how intelligent systems change evidence, access, verification, and institutional response.</p>
+      <dl>
+        <div><dt>ROUTE</dt><dd>{path}</dd></div>
+        <div><dt>FILE</dt><dd>{activeFile}</dd></div>
+        <div><dt>METHODS</dt><dd>experiments · econometrics · simulation · systems</dd></div>
+      </dl>
+      <div className="ide-command-reference">
+        <span>TRY IN TERMINAL</span>
+        <code>help</code><code>publications</code><code>run queue</code><code>llm</code><code>read</code>
+      </div>
+    </div>
+  );
+}
+
+function LocalLLMPanel() {
+  const initialMessage = {
+    id: "welcome",
+    role: "assistant",
+    content: "Ask me about Hema's research, publications, simulations, or intellectual trajectory. I answer from a compact portfolio context loaded with the model.",
+  };
+  const [messages, setMessages] = useState([initialMessage]);
+  const [draft, setDraft] = useState("");
+  const [loadState, setLoadState] = useState("idle");
+  const [loadLabel, setLoadLabel] = useState("Not loaded");
+  const [progress, setProgress] = useState(0);
+  const [isGenerating, setIsGenerating] = useState(false);
+  const engineRef = useRef(null);
+  const transcriptRef = useRef(null);
+
+  useEffect(() => {
+    transcriptRef.current?.scrollTo({ top: transcriptRef.current.scrollHeight, behavior: "smooth" });
+  }, [messages, loadLabel]);
+
+  const loadModel = async () => {
+    if (engineRef.current || loadState === "loading") return;
+    if (!("gpu" in navigator)) {
+      setLoadState("unsupported");
+      setLoadLabel("WebGPU is unavailable in this browser");
+      return;
+    }
+
+    setLoadState("loading");
+    setLoadLabel("Preparing the local runtime");
+    setProgress(0);
+    try {
+      const { CreateMLCEngine } = await import("@mlc-ai/web-llm");
+      const engine = await CreateMLCEngine(LOCAL_MODEL_ID, {
+        initProgressCallback: (report) => {
+          const nextProgress = Number.isFinite(report.progress) ? report.progress : 0;
+          setProgress(nextProgress);
+          setLoadLabel(report.text || "Loading model files");
+        },
+      });
+      engineRef.current = engine;
+      setProgress(1);
+      setLoadLabel("Ready on this device");
+      setLoadState("ready");
+    } catch (error) {
+      setLoadState("error");
+      setLoadLabel(error instanceof Error ? error.message : "The local model could not be loaded");
+    }
+  };
+
+  const submitPrompt = async (event) => {
+    event.preventDefault();
+    const prompt = draft.trim();
+    if (!prompt || isGenerating) return;
+    if (!engineRef.current) {
+      setLoadLabel("Load the model before starting a chat");
+      return;
+    }
+
+    const userEntry = { id: `user-${Date.now()}`, role: "user", content: prompt };
+    const assistantId = `assistant-${Date.now()}`;
+    const conversation = [...messages.filter((message) => message.id !== "welcome"), userEntry]
+      .map(({ role, content }) => ({ role, content }));
+    setMessages((current) => [...current, userEntry, { id: assistantId, role: "assistant", content: "" }]);
+    setDraft("");
+    setIsGenerating(true);
+
+    try {
+      const stream = await engineRef.current.chat.completions.create({
+        messages: [{ role: "system", content: PORTFOLIO_CONTEXT }, ...conversation],
+        temperature: 0.3,
+        max_tokens: 420,
+        stream: true,
+      });
+      let response = "";
+      for await (const chunk of stream) {
+        response += chunk.choices[0]?.delta?.content || "";
+        setMessages((current) => current.map((message) => (
+          message.id === assistantId ? { ...message, content: response } : message
+        )));
+      }
+      if (!response) {
+        setMessages((current) => current.map((message) => (
+          message.id === assistantId ? { ...message, content: "I could not form a response. Try a shorter, more specific question." } : message
+        )));
+      }
+    } catch (error) {
+      const detail = error instanceof Error ? error.message : "Generation failed";
+      setMessages((current) => current.map((message) => (
+        message.id === assistantId ? { ...message, content: `The local runtime stopped: ${detail}` } : message
+      )));
+    } finally {
+      setIsGenerating(false);
+    }
+  };
+
+  const clearChat = () => {
+    setMessages([initialMessage]);
+    setDraft("");
+  };
+
+  return (
+    <div className="local-llm-panel">
+      <div className="local-llm-hero">
+        <div className="local-llm-logo"><Icon name="sparkle" /></div>
+        <div>
+          <p>LOCAL RESEARCH LLM</p>
+          <h2>Qwen 2.5 · 0.5B</h2>
+          <span>Runs in this browser with WebLLM</span>
+        </div>
+        <button type="button" className="icon-button" aria-label="Clear chat" title="Clear chat" onClick={clearChat}><Icon name="trash" /></button>
+      </div>
+
+      <div className={`local-model-state ${loadState}`}>
+        <div className="local-model-state-line"><span>{loadLabel}</span><strong>{loadState === "loading" ? `${Math.round(progress * 100)}%` : loadState === "ready" ? "LOCAL" : ""}</strong></div>
+        <div className="local-model-progress" aria-hidden="true"><span style={{ width: `${Math.max(2, progress * 100)}%` }} /></div>
+        <button type="button" onClick={loadModel} disabled={loadState === "loading" || loadState === "ready"}>
+          <Icon name={loadState === "ready" ? "check" : "cloud-download"} />
+          {loadState === "ready" ? "Model ready" : loadState === "loading" ? "Loading model" : "Load model"}
+        </button>
+        <small>A substantial first-time download is cached by your browser. Inference stays on your device; no API key or server chat log.</small>
+      </div>
+
+      <div className="local-llm-transcript" ref={transcriptRef} aria-live="polite">
+        {messages.map((message) => (
+          <article className={`local-message ${message.role}`} key={message.id}>
+            <div><Icon name={message.role === "user" ? "account" : "sparkle"} /></div>
+            <p>{message.content || (isGenerating ? "Thinking…" : "")}</p>
+          </article>
+        ))}
+      </div>
+
+      <form className="local-llm-composer" onSubmit={submitPrompt}>
+        <label htmlFor="local-llm-prompt">Ask the portfolio</label>
+        <div>
+          <textarea
+            id="local-llm-prompt"
+            value={draft}
+            onChange={(event) => setDraft(event.target.value)}
+            onKeyDown={(event) => {
+              if (event.key === "Enter" && !event.shiftKey) {
+                event.preventDefault();
+                event.currentTarget.form?.requestSubmit();
+              }
+            }}
+            disabled={loadState !== "ready" || isGenerating}
+            placeholder={loadState === "ready" ? "Ask about the research…" : "Load the model to begin"}
+            rows="3"
+          />
+          <button type="submit" disabled={loadState !== "ready" || isGenerating || !draft.trim()} aria-label="Send message"><Icon name="send" /></button>
+        </div>
+      </form>
+
+      <p className="local-llm-credits">
+        Experimental, compact, and fallible. <a href="https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct" target="_blank" rel="noreferrer">Model</a> · <a href="https://github.com/mlc-ai/web-llm" target="_blank" rel="noreferrer">WebLLM</a>
+      </p>
+    </div>
+  );
+}
+
 function CommandWorkspace({ children, onModeChange }) {
   const path = window.location.pathname;
   const activeFile = editorFileForPath(path);
+  const [activeSidebar, setActiveSidebar] = useState("explorer");
+  const [rightPanel, setRightPanel] = useState("context");
   const files = [
     ["/", "about.md"],
     ["/research/", "research.md"],
@@ -229,12 +492,17 @@ function CommandWorkspace({ children, onModeChange }) {
     ["/timeline/", "timeline.log"],
   ];
 
+  const openLocalModel = () => {
+    setActiveSidebar("extensions");
+    setRightPanel("llm");
+  };
+
   return (
     <div className="ide-screen">
       <header className="ide-titlebar">
         <div className="ide-history-controls">
-          <button type="button" aria-label="Go back" onClick={() => window.history.back()}>←</button>
-          <button type="button" aria-label="Go forward" onClick={() => window.history.forward()}>→</button>
+          <button type="button" aria-label="Go back" title="Go Back" onClick={() => window.history.back()}><Icon name="arrow-left" /></button>
+          <button type="button" aria-label="Go forward" title="Go Forward" onClick={() => window.history.forward()}><Icon name="arrow-right" /></button>
         </div>
         <strong>HRB_OS / RESEARCH_INTERFACE</strong>
         <ModeSwitch mode="command" onChange={onModeChange} />
@@ -242,60 +510,61 @@ function CommandWorkspace({ children, onModeChange }) {
 
       <div className="ide-workbench">
         <nav className="ide-activitybar" aria-label="Workspace shortcuts">
-          <a className="active" href="/" title="Explorer">▱</a>
-          <a href="/research/" title="Research">⌕</a>
-          <a href="/publications/" title="Publications">⑂</a>
-          <a href="/simulations/" title="Run simulations">▷</a>
-          <a href="mailto:bhemaraju.138@gmail.com" title="Contact">＠</a>
+          <button type="button" className={activeSidebar === "explorer" ? "active" : ""} aria-label="Explorer" title="Explorer" onClick={() => setActiveSidebar("explorer")}><Icon name="files" /></button>
+          <a href="/research/" aria-label="Research" title="Research"><Icon name="search" /></a>
+          <a href="/publications/" aria-label="Publications" title="Publications"><Icon name="source-control" /></a>
+          <a href="/simulations/" aria-label="Run simulations" title="Run and Simulate"><Icon name="debug-alt" /></a>
+          <button type="button" className={activeSidebar === "extensions" ? "active" : ""} aria-label="Extensions" title="Extensions" onClick={openLocalModel}><Icon name="extensions" /></button>
+          <span className="ide-activity-spacer" />
+          <a href="mailto:bhemaraju.138@gmail.com" aria-label="Contact Hema" title="Contact"><Icon name="account" /></a>
         </nav>
 
-        <aside className="ide-explorer" aria-label="Portfolio explorer">
-          <div className="ide-pane-title"><strong>EXPLORER</strong><span>···</span></div>
-          <div className="ide-tree-group">
-            <p>⌄ OPEN EDITOR</p>
-            <a className="active" href={path}><span>#</span>{activeFile}</a>
-          </div>
-          <div className="ide-tree-group">
-            <p>⌄ HRB_PORTFOLIO</p>
-            {files.map(([href, file]) => (
-              <a className={activeFile === file ? "active" : ""} href={href} key={href}><span>{file.endsWith(".run") ? "▷" : "#"}</span>{file}</a>
-            ))}
-          </div>
-          <div className="ide-tree-spacer" />
-          <div className="ide-collapsed-pane">› OUTLINE</div>
-          <div className="ide-collapsed-pane">› EVIDENCE LOG</div>
-        </aside>
+        {activeSidebar === "extensions" ? <ExtensionsSidebar onOpenLLM={() => setRightPanel("llm")} /> : (
+          <aside className="ide-explorer" aria-label="Portfolio explorer">
+            <div className="ide-pane-title"><strong>EXPLORER</strong><Icon name="more" /></div>
+            <div className="ide-tree-group">
+              <p><Icon name="chevron-down" /> OPEN EDITORS</p>
+              <a className="active" href={path}><Icon name="markdown" />{activeFile}</a>
+            </div>
+            <div className="ide-tree-group">
+              <p><Icon name="chevron-down" /> HRB_PORTFOLIO</p>
+              {files.map(([href, file]) => (
+                <a className={activeFile === file ? "active" : ""} href={href} key={href}>
+                  <Icon name={file.endsWith(".run") ? "play" : file.endsWith(".log") ? "output" : "markdown"} />{file}
+                </a>
+              ))}
+            </div>
+            <div className="ide-tree-spacer" />
+            <div className="ide-collapsed-pane"><Icon name="chevron-right" /> OUTLINE</div>
+            <div className="ide-collapsed-pane"><Icon name="chevron-right" /> EVIDENCE LOG</div>
+          </aside>
+        )}
 
         <section className="ide-editor-shell" aria-label="Research editor">
-          <div className="ide-tabs"><div className="ide-tab active"><span>#</span>{activeFile}<i aria-hidden="true">×</i></div></div>
-          <div className="ide-breadcrumb">HRB_PORTFOLIO <span>›</span> {path.split("/").filter(Boolean).join(" › ") || "about"} <span>›</span> {activeFile}</div>
+          <div className="ide-tabs"><div className="ide-tab active"><Icon name="markdown" />{activeFile}<Icon name="close" /></div></div>
+          <div className="ide-breadcrumb">HRB_PORTFOLIO <Icon name="chevron-right" /> {path.split("/").filter(Boolean).join("  ›  ") || "about"} <Icon name="chevron-right" /> {activeFile}</div>
           <main className="ide-editor-content" id="main">{children}</main>
           <section className="ide-terminal-panel" aria-label="Integrated terminal">
             <div className="ide-panel-tabs"><strong>TERMINAL</strong><span>OUTPUT</span><span>PROBLEMS</span><span>DEBUG CONSOLE</span></div>
-            <CommandConsole onModeChange={onModeChange} />
+            <CommandConsole onModeChange={onModeChange} onOpenLLM={openLocalModel} />
           </section>
         </section>
 
-        <aside className="ide-inspector" aria-label="Research context">
-          <div className="ide-pane-title"><strong>RESEARCH CONTEXT</strong><span>···</span></div>
-          <div className="ide-inspector-body">
-            <p className="ide-inspector-label">ACTIVE QUESTION</p>
-            <h2>Who gets to write the next page?</h2>
-            <p>I study how intelligent systems change evidence, access, verification, and institutional response.</p>
-            <dl>
-              <div><dt>ROUTE</dt><dd>{path}</dd></div>
-              <div><dt>FILE</dt><dd>{activeFile}</dd></div>
-              <div><dt>METHODS</dt><dd>experiments · econometrics · simulation · systems</dd></div>
-            </dl>
-            <div className="ide-command-reference">
-              <span>TRY IN TERMINAL</span>
-              <code>help</code><code>publications</code><code>run queue</code><code>connect</code><code>read</code>
-            </div>
+        <aside className={`ide-inspector ${rightPanel === "llm" ? "llm-open" : ""}`} aria-label="Research context">
+          <div className="ide-inspector-tabs" role="tablist" aria-label="Inspector panel">
+            <button type="button" role="tab" aria-selected={rightPanel === "context"} className={rightPanel === "context" ? "active" : ""} onClick={() => setRightPanel("context")}>RESEARCH</button>
+            <button type="button" role="tab" aria-selected={rightPanel === "llm"} className={rightPanel === "llm" ? "active" : ""} onClick={() => setRightPanel("llm")}><Icon name="sparkle" /> LOCAL LLM</button>
+            <Icon name="more" />
           </div>
+          {rightPanel === "llm" ? <LocalLLMPanel /> : <ResearchContext path={path} activeFile={activeFile} />}
         </aside>
       </div>
 
-      <footer className="ide-statusbar"><span>⑂ main</span><span>{activeFile}</span><span>UTF-8 · LF · HRB_OS</span></footer>
+      <footer className="ide-statusbar">
+        <span><Icon name="git-branch" /> main</span>
+        <span><Icon name="check" /> {activeFile}</span>
+        <span>UTF-8&nbsp;&nbsp; LF&nbsp;&nbsp; HRB_OS</span>
+      </footer>
     </div>
   );
 }
