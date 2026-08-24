@@ -2969,3 +2969,50 @@ body,
   [data-interface="dev"] .ide-editor-content .page-shell { width: min(var(--max), calc(100% - 26px)); }
   [data-interface="dev"] .ide-editor-content :is(.about-story-lead h2, .section-heading h2, .home-about-statement h2, .experiment-band h2) { font-size: clamp(24px, 8vw, 34px); }
 }
+
+/* Keep the Dev-mode controls reachable on narrow screens. */
+@media (max-width: 700px) {
+  .ide-screen { grid-template-rows: 70px minmax(0, 1fr) 20px; }
+
+  .ide-titlebar {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: 32px 32px;
+    gap: 0;
+    height: 70px;
+    padding: 3px 6px;
+  }
+
+  .ide-title-left { display: none; }
+
+  .ide-command-center {
+    grid-column: 1;
+    grid-row: 1;
+    width: 100%;
+  }
+
+  .ide-command-center kbd { display: none; }
+
+  .ide-title-actions {
+    grid-column: 1;
+    grid-row: 2;
+    width: 100%;
+    justify-content: flex-start;
+    overflow: hidden;
+  }
+
+  .ide-title-actions > button:not(.mode-toggle) { display: grid; }
+
+  .ide-title-actions .mode-toggle {
+    order: -1;
+    display: inline-grid;
+    width: auto;
+    height: 26px;
+    margin: 0 5px 0 0;
+    flex: 0 0 auto;
+  }
+
+  .ide-explorer,
+  .ide-inspector { top: 70px; }
+
+  .ide-quick-open-backdrop { inset: 70px 0 20px; }
+}
