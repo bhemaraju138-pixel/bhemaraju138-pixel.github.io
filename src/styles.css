@@ -1218,35 +1218,17 @@ dd { margin: 0; font-size: 13px; line-height: 1.55; }
 .publication-contact p { max-width: 900px; margin: 0; font-family: var(--serif); font-size: 24px; }
 .publication-contact a { color: var(--red-dark); }
 
-.simulations-intro { padding-block: 90px 56px; }
-.simulations-intro h1,
 .technical-sim-intro h1,
 .experiment-intro h1 {
   font-size: clamp(44px, 6vw, 78px);
   letter-spacing: -0.04em;
 }
-.simulations-intro .intro-lede,
 .technical-sim-intro .intro-lede,
 .experiment-intro .intro-lede {
   max-width: 760px;
   font-size: clamp(18px, 1.8vw, 24px);
   line-height: 1.42;
 }
-.simulation-principles {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 14px;
-}
-.simulation-principles > div {
-  min-height: 112px;
-  padding: 18px;
-  border: 1px solid var(--line);
-  border-top: 3px solid var(--red);
-  background: rgba(255, 255, 255, 0.82);
-  box-shadow: 0 8px 24px rgba(23, 25, 31, 0.045);
-}
-.simulation-principles span { display: block; color: var(--red-dark); font-size: 9px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; }
-.simulation-principles strong { display: block; margin-top: 26px; font-family: var(--serif); font-size: 17px; font-weight: 500; line-height: 1.25; }
 .simulation-index { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; padding-block: 64px 88px; }
 .simulation-index-card {
   position: relative;
@@ -1386,7 +1368,6 @@ dd { margin: 0; font-size: 13px; line-height: 1.55; }
   .home-about { grid-template-columns: 1fr; gap: 60px; }
   .writing-hero { grid-template-columns: 1fr; gap: 30px; min-height: 480px; }
   .writing-tools { grid-template-columns: 1fr; }
-  .simulation-principles { grid-template-columns: repeat(2, 1fr); }
   .technical-sim-intro { grid-template-columns: 1fr; }
   .technical-sim-intro > .eyebrow, .technical-sim-intro > h1, .technical-sim-intro > .intro-lede, .technical-sim-intro .technical-status { grid-column: 1; grid-row: auto; }
   .technical-model { grid-template-columns: 1fr; }
@@ -1417,10 +1398,8 @@ dd { margin: 0; font-size: 13px; line-height: 1.55; }
   .writing-row { grid-template-columns: 46px 1fr auto; gap: 12px; }
   .writing-row-main p { display: none; }
   .writing-principle, .contact-panel { padding: 34px 24px; }
-  .simulation-principles { grid-template-columns: 1fr; }
-  .simulations-intro, .technical-sim-intro, .experiment-intro { padding-block: 68px 44px; }
-  .simulations-intro h1, .technical-sim-intro h1, .experiment-intro h1 { font-size: 42px; }
-  .simulation-principles > div { min-height: 92px; }
+  .technical-sim-intro, .experiment-intro { padding-block: 68px 44px; }
+  .technical-sim-intro h1, .experiment-intro h1 { font-size: 42px; }
   .simulation-index { gap: 12px; padding-block: 44px 64px; }
   .simulation-index-card { padding: 22px; }
   .simulation-index-card h2 { margin-top: 38px; font-size: 32px; }

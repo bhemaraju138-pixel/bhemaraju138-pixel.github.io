@@ -32,7 +32,7 @@ function Header() {
           <a
             href={href}
             key={href}
-            aria-current={path.startsWith(href) ? "page" : undefined}
+            aria-current={path.startsWith(href) || (href === "/about/" && path === "/") ? "page" : undefined}
           >
             {label}
           </a>
@@ -497,19 +497,6 @@ function SimulationIndexCard({ simulation }) {
 function SimulationsPage() {
   return (
     <Shell>
-      <section className="page-intro simulations-intro page-shell">
-        <p className="eyebrow">Technical simulations</p>
-        <h1>Institutional feedback, made calculable.</h1>
-        <p className="intro-lede">
-          Three interactive models. Visible equations, adjustable assumptions, explicit limits.
-        </p>
-      </section>
-      <section className="simulation-principles page-shell" aria-label="Simulation standards">
-        <div><span>Equations</span><strong>Nothing hidden.</strong></div>
-        <div><span>Stability</span><strong>Boundaries shown.</strong></div>
-        <div><span>Novelty</span><strong>Mechanisms, not labels.</strong></div>
-        <div><span>Claims</span><strong>No false precision.</strong></div>
-      </section>
       <section className="simulation-index page-shell" aria-label="Available simulations">
         {simulationCatalog.map((simulation) => (
           <SimulationIndexCard simulation={simulation} key={simulation.title} />
@@ -1304,7 +1291,7 @@ function NotFound() {
 
 function App() {
   const path = window.location.pathname.replace(/\/+$/, "") || "/";
-  if (path === "/") return <Home />;
+  if (path === "/") return <AboutPage />;
   if (path === "/research") return <ResearchPage />;
   if (path === "/publications") return <PublicationsPage />;
   if (path === "/writing" || path === "/blogs") return <WritingPage />;
