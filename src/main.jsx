@@ -307,7 +307,7 @@ function Home() {
         <div className="section-heading split-heading">
           <div>
             <p className="eyebrow">Blogs</p>
-            <h2 id="notebook-heading">Experiments, essays, and field notes.</h2>
+            <h2 id="notebook-heading">Experiments and public-data essays.</h2>
           </div>
           <a className="text-link" href="/blogs/">
             Browse all blogs <Arrow />
@@ -317,17 +317,6 @@ function Home() {
           {publicDataEssays.slice(0, 4).map((essay) => (
             <NotebookPreviewCard essay={essay} key={essay.slug} />
           ))}
-        </div>
-        <div className="blog-notes-preview">
-          <p className="eyebrow">Research notes</p>
-          <div className="notes-list">
-            {notes.slice(0, 3).map((note) => (
-              <a href={`/notes/${note.slug}/`} className="note-row no-number" key={note.slug}>
-                <span><strong>{note.title}</strong><small>{note.eyebrow}</small></span>
-                <span className="row-arrow" aria-hidden="true">↗</span>
-              </a>
-            ))}
-          </div>
         </div>
       </section>
 
@@ -791,7 +780,6 @@ function PublicationsPage() {
 }
 
 const experimentTopics = ["systems", "government", "government", "methods", "government", "methods"];
-const noteTopics = ["human–AI", "government", "systems", "government"];
 
 function WritingPage() {
   const [topic, setTopic] = useState("all");
@@ -806,15 +794,6 @@ function WritingPage() {
       date: "August 2026",
       topic: experimentTopics[index],
     })),
-    ...notes.map((note, index) => ({
-      id: `note-${note.slug}`,
-      title: note.title,
-      excerpt: note.standfirst,
-      href: `/notes/${note.slug}/`,
-      kind: "Research note",
-      date: "August 2026",
-      topic: noteTopics[index],
-    })),
   ];
   const normalizedQuery = query.trim().toLowerCase();
   const visibleItems = writingItems.filter((item) => {
@@ -822,40 +801,20 @@ function WritingPage() {
     const textMatch = !normalizedQuery || `${item.title} ${item.excerpt} ${item.kind}`.toLowerCase().includes(normalizedQuery);
     return topicMatch && textMatch;
   });
-  const topics = ["all", "government", "methods", "human–AI", "systems"];
+  const topics = ["all", "government", "methods", "systems"];
 
   return (
     <Shell>
       <section className="writing-hero page-shell">
         <div>
-          <p className="eyebrow">Blogs · Experiments · Working ideas</p>
-          <h1>Blogs and notes.</h1>
+          <p className="eyebrow">Blogs · Public-data experiments</p>
+          <h1>Blogs.</h1>
         </div>
         <p>
-          Essays about AI, institutions, evidence, and the unglamorous infrastructure
-          between a model and a real decision. Experiments include their data, code,
-          exclusions, and the result that would change my mind.
+          Empirical essays about AI, institutions, evidence, and the infrastructure
+          between a model and a real decision. Each includes data, code, exclusions,
+          and a result that could change the argument.
         </p>
-      </section>
-
-      <section className="writing-feature page-shell">
-        <div className="writing-feature-copy">
-          <p className="eyebrow">Featured public-data series</p>
-          <h2>Six Boundaries of Machine-Mediated Government</h2>
-          <p>
-            Six small empirical tests of where institutional power hides before an AI
-            system ever makes a decision: in failure messages, metadata, channels,
-            rankings, comment windows, and missing observations.
-          </p>
-          <a className="primary-button" href="/experiments/">Enter the complete series <Arrow /></a>
-        </div>
-        <div className="feature-index" aria-label="Six experiment themes">
-          {["Failure", "Metadata", "Channels", "Ranking", "Procedure", "Missingness"].map((label, index) => (
-            <a href={`/experiments/${publicDataEssays[index].slug}/`} key={label}>
-              <strong>{label}</strong>
-            </a>
-          ))}
-        </div>
       </section>
 
       <section className="writing-index page-shell" aria-labelledby="writing-index-heading">
@@ -904,7 +863,7 @@ function WritingPage() {
             </a>
           ))}
           {visibleItems.length === 0 && (
-            <div className="writing-empty">No note matches that path. Try another word or topic.</div>
+            <div className="writing-empty">No blog matches that path. Try another word or topic.</div>
           )}
         </div>
       </section>

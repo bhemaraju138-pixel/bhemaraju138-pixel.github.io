@@ -1106,9 +1106,6 @@ dd { margin: 0; font-size: 13px; line-height: 1.55; }
 .notebook-preview-card h3 { max-width: 520px; margin: 40px 0 18px; font-family: var(--serif); font-size: clamp(31px, 3.4vw, 48px); font-weight: 500; letter-spacing: -0.03em; }
 .notebook-preview-card p { max-width: 560px; color: var(--muted); font-family: var(--serif); font-size: 17px; }
 .notebook-card-link { margin-top: auto; padding-top: 24px; border-top: 1px solid currentColor; font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; }
-.blog-notes-preview { margin-top: 70px; }
-.blog-notes-preview > .eyebrow { margin-bottom: 22px; }
-
 .portfolio-simulations { position: relative; overflow: hidden; }
 .portfolio-simulations::after { position: absolute; right: -90px; bottom: -180px; width: 420px; aspect-ratio: 1; border: 1px solid rgba(255,255,255,0.2); border-radius: 50%; content: ""; }
 
@@ -1137,21 +1134,6 @@ dd { margin: 0; font-size: 13px; line-height: 1.55; }
 }
 .writing-hero h1 { margin: 0; font-size: clamp(72px, 10vw, 142px); letter-spacing: -0.065em; }
 .writing-hero > p { max-width: 570px; margin: 0 0 12px; color: var(--muted); font-family: var(--serif); font-size: 23px; line-height: 1.5; }
-
-.writing-feature {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(280px, 0.55fr);
-  gap: 50px;
-  padding-block: 70px;
-  border-block: 1px solid var(--ink);
-}
-.writing-feature h2 { max-width: 760px; margin-bottom: 22px; font-size: clamp(44px, 5.4vw, 78px); letter-spacing: -0.04em; }
-.writing-feature-copy > p:not(.eyebrow) { max-width: 720px; color: var(--muted); font-family: var(--serif); font-size: 19px; }
-.writing-feature .primary-button { margin-top: 14px; }
-.feature-index { border-top: 1px solid var(--ink); }
-.feature-index a { display: grid; grid-template-columns: 1fr; padding: 15px 0; border-bottom: 1px solid var(--line); text-decoration: none; }
-.feature-index a:hover { padding-left: 8px; color: var(--red-dark); }
-.feature-index strong { font-family: var(--serif); font-size: 17px; font-weight: 500; }
 
 .writing-count { align-self: end; padding: 8px 12px; border: 1px solid var(--ink); font-size: 10px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; }
 .writing-tools { display: grid; grid-template-columns: 1fr minmax(250px, 0.4fr); gap: 30px; align-items: center; margin-bottom: 28px; }
@@ -1391,7 +1373,6 @@ dd { margin: 0; font-size: 13px; line-height: 1.55; }
   .compass-projects a { margin-right: 22px; }
   .portfolio-card-grid { grid-template-columns: 1fr; }
   .portfolio-card-grid .research-card { min-height: 0; }
-  .writing-feature { grid-template-columns: minmax(0, 1fr) minmax(240px, 0.55fr); }
 }
 
 @media (max-width: 780px) {
@@ -1410,8 +1391,6 @@ dd { margin: 0; font-size: 13px; line-height: 1.55; }
   .notebook-preview-grid { grid-template-columns: 1fr; }
   .home-about { grid-template-columns: 1fr; gap: 60px; }
   .writing-hero { grid-template-columns: 1fr; gap: 30px; min-height: 480px; }
-  .writing-feature { grid-template-columns: 1fr; gap: 28px; }
-  .feature-index { grid-column: 1; }
   .writing-tools { grid-template-columns: 1fr; }
   .simulation-principles { grid-template-columns: repeat(2, 1fr); }
   .technical-sim-intro { grid-template-columns: 1fr; }

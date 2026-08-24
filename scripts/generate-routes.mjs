@@ -17,12 +17,12 @@ const routes = [
   {
     route: "blogs",
     title: "Blogs — Hema Raju Barri",
-    description: "Blogs, public-data experiments, research notes, methods, code, and working ideas by Hema Raju Barri.",
+    description: "Public-data experiments, methods, code, and empirical essays by Hema Raju Barri.",
   },
   {
     route: "writing",
     title: "Writing — Hema Raju Barri",
-    description: "An open notebook of essays, public-data experiments, methods, code, and unfinished research questions.",
+    description: "An open collection of public-data experiments, methods, code, and empirical essays.",
   },
   {
     route: "about",
