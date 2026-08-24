@@ -14,7 +14,7 @@ export const research = [
     finding:
       "Representational choices altered both completion and consequential error. A more restrictive interface reduced hallucinated fields but also blocked some legitimate tasks.",
     implication:
-      "Agent performance belongs partly to the institutional interface. Public agencies govern AI behavior through schemas, permissions, reference assets, and failure signals—even without changing a model.",
+      "Agent performance belongs partly to the institutional interface. Public agencies govern AI behavior through schemas, permissions, reference assets, and failure signals, even without changing a model.",
     href: "/papers/agent-infrastructure-fit-abstract.pdf",
     linkLabel: "Read the accepted abstract",
   },
@@ -110,7 +110,7 @@ export const research = [
     title: "The Burden Moves",
     dek: "Cheaper claiming does not guarantee easier access once the agency responds.",
     question:
-      "When agents reduce the cost of applying for a public benefit, does administrative burden disappear—or return through verification, delay, and documentation?",
+      "When agents reduce the cost of applying for a public benefit, does administrative burden disappear, or return through verification, delay, and documentation?",
     method:
       "A transparent fixed-point model of heterogeneous applicants, unequal agent quality, agency capacity, and endogenous verification, with a parameter sweep rather than real-world calibration.",
     finding:
@@ -251,7 +251,7 @@ export const publicDataEssays = [
     standfirst:
       "An agent cannot recover from a failure the institution refuses to name. Error semantics decide who gets the capacity to repair a public transaction.",
     question:
-      "When a public API receives a malformed request, does it make failure machine-detectable and repairable—or does it leave the caller to guess?",
+      "When a public API receives a malformed request, does it make failure machine-detectable and repairable, or does it leave the caller to guess?",
     evidenceStatus:
       "Dated interface audit, not a permanent product ranking. One valid control and one deliberately malformed request were sent to each of eight APIs on August 23, 2026 (ET).",
     metrics: [
@@ -291,7 +291,7 @@ export const publicDataEssays = [
       {
         heading: "The finding that matters",
         paragraphs: [
-          "The headline is not that some APIs are better documented. It is that error design allocates repair capacity. A well-structured failure lets a low-resource caller—or an agent acting for that caller—detect the boundary, correct the request, and preserve a trace of what went wrong. A silent fallback or success-coded error pushes interpretation into bespoke code, vendor heuristics, or human support. The transaction remains nominally open, but recovery becomes privately supplied.",
+          "The headline is not that some APIs are better documented. It is that error design allocates repair capacity. A well-structured failure lets a low-resource caller, or an agent acting for that caller, detect the boundary, correct the request, and preserve a trace of what went wrong. A silent fallback or success-coded error pushes interpretation into bespoke code, vendor heuristics, or human support. The transaction remains nominally open, but recovery becomes privately supplied.",
           "This is a governance issue because autonomous systems multiply edge cases. A human using one portal may recognize an odd result and stop. An agent can propagate the same ambiguity across thousands of requests. The institution therefore governs downstream behavior not only through valid schemas and permissions, but through the semantics of invalid action.",
         ],
       },
@@ -299,7 +299,7 @@ export const publicDataEssays = [
         heading: "What this does not show",
         paragraphs: [
           "One malformed request cannot characterize an API. Different endpoints may be maintained by different teams, and a response observed today can change tomorrow. The score also values explicit repair, while security-sensitive interfaces may reasonably disclose less. Nor did I test latency, rate limits, authentication failures, or the correctness of successful data.",
-          "A larger benchmark should sample a taxonomy of errors, repeat probes over time, and test whether an agent can actually recover without human intervention. That outcome—not conformity alone—is the dependent variable I ultimately care about. I would weaken the argument if recovery performance proved unrelated to structured failure signals.",
+          "A larger benchmark should sample a taxonomy of errors, repeat probes over time, and test whether an agent can actually recover without human intervention. That outcome, not conformity alone, is the dependent variable I ultimately care about. I would weaken the argument if recovery performance proved unrelated to structured failure signals.",
         ],
       },
       {
@@ -321,7 +321,7 @@ export const publicDataEssays = [
       ["Download response excerpts", "/data/public-data-series/raw/api-error-probes.json"],
     ],
     sources: [
-      ["IETF RFC 9457 — Problem Details for HTTP APIs", "https://www.rfc-editor.org/rfc/rfc9457.html"],
+      ["IETF RFC 9457: Problem Details for HTTP APIs", "https://www.rfc-editor.org/rfc/rfc9457.html"],
       ["Federal Register API documentation", "https://www.federalregister.gov/developers/documentation/api/v1"],
       ["World Bank Indicators API documentation", "https://datahelpdesk.worldbank.org/knowledgebase/articles/889392"],
       ["National Weather Service API documentation", "https://www.weather.gov/documentation/services-web-api"],
@@ -447,14 +447,14 @@ export const publicDataEssays = [
         heading: "Joining activity to access",
         paragraphs: [
           "I aggregated every 2025 NYC 311 service-request record by incident ZIP and open-data channel. To keep the server query auditable, the code retrieves twelve monthly aggregates and sums them; it does not sample rows. I joined those totals to the Census Bureau's 2024 ACS five-year population, median household income, and broadband estimates for ZCTAs. The analytical set retains ZCTAs with at least 1,000 residents and 100 requests.",
-          "Digital participation is defined narrowly as online or mobile submission. Phone, other, and unknown are not counted as digital. The resulting set contains 3.62 million requests across 180 ZCTAs. Because the geographic field describes the incident, not necessarily the caller, the analysis characterizes where digitally routed complaints concern—not the demographic identity of individual complainants.",
+          "Digital participation is defined narrowly as online or mobile submission. Phone, other, and unknown are not counted as digital. The resulting set contains 3.62 million requests across 180 ZCTAs. Because the geographic field describes the incident, not necessarily the caller, the analysis characterizes where digitally routed complaints concern, not the demographic identity of individual complainants.",
         ],
       },
       {
         heading: "A channel gradient inside an active system",
         paragraphs: [
           "The digital share was 64.7 percent in the lowest-income quartile of ZCTAs and 74.4 percent in the highest. Across all ZCTAs, the Spearman correlation between median household income and digital share was 0.405. Broadband subscription had a separate positive association of 0.354 with digital share. The pattern is visible, but far from deterministic: neighborhoods at similar incomes often used different channel mixes.",
-          "The result I did not want to lose is that lower-income ZCTAs were not simply absent. Their median request rate was higher than the rate in the top-income quartile—about 459 versus 362 requests per 1,000 residents. That does not prove greater civic voice; duplicate reports, land use, daytime populations, housing conditions, and complaint mix all matter. But it rejects the easiest narrative that the channel gap is merely a participation gap.",
+          "The result I did not want to lose is that lower-income ZCTAs were not simply absent. Their median request rate was higher than the rate in the top-income quartile, about 459 versus 362 requests per 1,000 residents. That does not prove greater civic voice; duplicate reports, land use, daytime populations, housing conditions, and complaint mix all matter. But it rejects the easiest narrative that the channel gap is merely a participation gap.",
         ],
       },
       {
@@ -537,7 +537,7 @@ export const publicDataEssays = [
       {
         heading: "Half of the apparent top ten was conditional",
         paragraphs: [
-          "The equal-weight score placed Alabama, Arkansas, Kentucky, Louisiana, Mississippi, New Mexico, Oklahoma, South Carolina, Tennessee, and West Virginia in the top ten. Across random weights, only five—Arkansas, Kentucky, Louisiana, New Mexico, and Oklahoma—had at least an 80 percent chance of remaining there. The median state's fifth-to-ninety-fifth percentile rank interval spanned 25 places.",
+          "The equal-weight score placed Alabama, Arkansas, Kentucky, Louisiana, Mississippi, New Mexico, Oklahoma, South Carolina, Tennessee, and West Virginia in the top ten. Across random weights, only five states (Arkansas, Kentucky, Louisiana, New Mexico, and Oklahoma) had at least an 80 percent chance of remaining there. The median state's fifth-to-ninety-fifth percentile rank interval spanned 25 places.",
           "West Virginia provides the clearest warning. It ranked seventh under equal weights and sixth when digital access received double weight, but twenty-fifth under the noncompensatory rule. Across the broad random-weight diagnostic, its central ninety percent interval ran from first to thirty-ninth. None of those answers is a data error. They answer different questions about whether concentrated disadvantage on some dimensions can be offset by strength on another.",
         ],
       },
@@ -585,7 +585,7 @@ export const publicDataEssays = [
     title: "Thirty Days Is Not Thirty Days",
     eyebrow: "Procedural-burden analysis · Published August 23, 2026 · Federal Register",
     standfirst:
-      "A comment window measures calendar time. Participation depends on how much attention must fit inside it—and who can parallelize the work.",
+      "A comment window measures calendar time. Participation depends on how much attention must fit inside it and who can parallelize the work.",
     question:
       "Do longer proposed rules reliably receive longer public-comment windows, or does nominally equal time conceal very different attention burdens?",
     evidenceStatus:
@@ -620,7 +620,7 @@ export const publicDataEssays = [
       {
         heading: "Time scaled only weakly with length",
         paragraphs: [
-          "The median valid comment window was 45 days. Page length and window length had a Spearman correlation of 0.109—a positive but weak association. Some of the longest rules did receive more time, yet the upper tail shows why the denominator matters. A 910-page Medicare and Medicaid proposal offered 58 days, equivalent to about 471 pages per thirty days. A 490-page inpatient-payment proposal offered 41 days, about 359 pages per thirty days.",
+          "The median valid comment window was 45 days. Page length and window length had a Spearman correlation of 0.109, a positive but weak association. Some of the longest rules did receive more time, yet the upper tail shows why the denominator matters. A 910-page Medicare and Medicaid proposal offered 58 days, equivalent to about 471 pages per thirty days. A 490-page inpatient-payment proposal offered 41 days, about 359 pages per thirty days.",
           "Those examples are not evidence that the windows were unlawful or that no one could comment. They show that ‘58 days’ is not a complete description of the participation demand. A technically shorter proposal may also be harder than a long payment table. The more defensible conclusion is not a ranking of procedural fairness, but a measurement gap: public data expose time and length, while effective burden depends on their interaction with expertise and resources.",
         ],
       },
@@ -659,7 +659,7 @@ export const publicDataEssays = [
     ],
     sources: [
       ["Federal Register API documentation", "https://www.federalregister.gov/developers/documentation/api/v1"],
-      ["Office of the Federal Register — The Rulemaking Process", "https://uploads.federalregister.gov/uploads/2013/09/The-Rulemaking-Process.pdf"],
+      ["Office of the Federal Register: The Rulemaking Process", "https://uploads.federalregister.gov/uploads/2013/09/The-Rulemaking-Process.pdf"],
     ],
   },
   {
@@ -703,14 +703,14 @@ export const publicDataEssays = [
       {
         heading: "Thirty-one more economies, one new ambiguity",
         paragraphs: [
-          "Of 217 World Bank economies, 157—72.4 percent—had all four values in 2023. Latest-window selection raised the complete set to 188, or 86.6 percent. That is a meaningful inclusion gain: thirty-one additional economies can enter a four-dimensional comparison without a modeled value.",
+          "Of 217 World Bank economies, 157 (72.4 percent) had all four values in 2023. Latest-window selection raised the complete set to 188, or 86.6 percent. That is a meaningful inclusion gain: thirty-one additional economies can enter a four-dimensional comparison without a modeled value.",
           "But 23.9 percent of those latest-window complete cases mixed indicator years. Among low-income economies, same-year coverage was 60 percent and latest-window coverage was 80 percent; the median vintage span was one year. The gain is not fraudulent. It answers a different question: what is the latest mosaic we can assemble, rather than what did these infrastructures look like at one common moment?",
         ],
       },
       {
         heading: "A result that resists the easy inequality story",
         paragraphs: [
-          "Coverage was not a simple monotonic function of income. In the World Bank economy list, the strict complete share was lower for the high-income group than for the two middle-income groups. Territories and small economies contribute to that pattern. It would be careless to summarize the experiment as ‘poor countries are missing.’ Statistical visibility follows data systems, indicator definitions, reporting arrangements, and the composition of the country list—not income alone.",
+          "Coverage was not a simple monotonic function of income. In the World Bank economy list, the strict complete share was lower for the high-income group than for the two middle-income groups. Territories and small economies contribute to that pattern. It would be careless to summarize the experiment as ‘poor countries are missing.’ Statistical visibility follows data systems, indicator definitions, reporting arrangements, and the composition of the country list, not income alone.",
           "That complication strengthens the methodological point. Missingness should be reported as a pattern to investigate, not a nuisance deleted before the ranking appears. The set of excluded economies can reveal where a purportedly global construct is least observable.",
         ],
       },
@@ -742,7 +742,7 @@ export const publicDataEssays = [
     ],
     sources: [
       ["World Bank Indicators API documentation", "https://datahelpdesk.worldbank.org/knowledgebase/articles/889392"],
-      ["World Bank — Individuals using the Internet", "https://data.worldbank.org/indicator/IT.NET.USER.ZS"],
+      ["World Bank: Individuals using the Internet", "https://data.worldbank.org/indicator/IT.NET.USER.ZS"],
       ["When is there enough data to create a global statistic?", "https://doi.org/10.3233/SJI-220090"],
       ["Rethinking the methodology of global indexes", "https://pmc.ncbi.nlm.nih.gov/articles/PMC11658712/"],
     ],
@@ -753,7 +753,7 @@ export const timeline = [
   {
     year: "2024",
     title: "Reliability before autonomy",
-    text: "Cloud deployment work and a clinical workflow redesign taught me the same lesson in two settings: failures often arise at handoffs, dependencies, and representations—not in the nominal core technology.",
+    text: "Cloud deployment work and a clinical workflow redesign taught me the same lesson in two settings: failures often arise at handoffs, dependencies, and representations, not in the nominal core technology.",
     status: "Work conducted in 2024",
   },
   {

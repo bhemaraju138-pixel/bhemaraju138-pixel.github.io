@@ -147,7 +147,7 @@ const researchLenses = [
     id: "people",
     label: "People",
     glyph: "P",
-    question: "For whom does an intelligent system work—and under which interaction conditions?",
+    question: "For whom does an intelligent system work, and under which interaction conditions?",
     thesis:
       "Performance is relational. The same behavior can help one person and frustrate another because fit depends on the user, task, and stakes.",
     projectIndexes: [3, 4, 6],
@@ -169,7 +169,7 @@ const researchLenses = [
     glyph: "S",
     question: "What infrastructure makes autonomous action reliable, repairable, and contestable?",
     thesis:
-      "Schemas, failure signals, permissions, and monitoring are governance mechanisms—not implementation details.",
+      "Schemas, failure signals, permissions, and monitoring are governance mechanisms, not implementation details.",
     projectIndexes: [0, 5, 6],
     accent: "mint",
   },
@@ -238,8 +238,8 @@ function Home() {
           </h1>
           <p className="hero-lede">
             My work crosses AI, management, and public institutions. I build systems,
-            run experiments, and study the less visible choices—interfaces, evidence,
-            incentives, and rules—that determine who technology actually works for.
+            run experiments, and study the less visible choices: interfaces, evidence,
+            incentives, and rules that determine who technology actually works for.
           </p>
           <div className="button-row">
             <a className="primary-button" href="/publications/">
@@ -379,7 +379,7 @@ function ExperimentsLanding() {
         <p className="eyebrow">Open methods · Public data · August 2026</p>
         <h1>Experiments that can tell me I am wrong.</h1>
         <p className="intro-lede">
-          Six empirical essays test a different institutional boundary—failure,
+          Six empirical essays test a different institutional boundary: failure,
           metadata, participation, ranking, procedure, and missingness. Each exposes
           its data, code, exclusions, and defeaters.
         </p>
@@ -848,10 +848,15 @@ function AboutPage() {
           <p className="path-kicker"><span /> Hello, I’m</p>
           <h1>Hema Raju <em>Barri.</em></h1>
           <p>
-            I cross disciplines, institutions, and assumptions—then build the missing
+            I cross disciplines, institutions, and assumptions, then build the missing
             map between intelligent systems and the people who must live with them.
           </p>
         </div>
+
+        <p className="path-manifesto">
+          <span>AS AI AGENTS TAKE THE STAGE,</span>
+          <span>I ASK WHO GETS TO WRITE THE NEXT PAGE.</span>
+        </p>
 
         <div className={pathMade ? "about-path-stage is-connected" : "about-path-stage"} aria-live="polite">
           <div className="path-stage-label">
@@ -868,11 +873,6 @@ function AboutPage() {
               <small>{description}</small>
             </article>
           ))}
-          {pathMade && (
-            <blockquote className="path-quote">
-              <em>AS AI AGENTS TAKE THE STAGE,<br />I ASK WHO GETS TO WRITE THE NEXT PAGE.</em>
-            </blockquote>
-          )}
         </div>
 
         <button
@@ -1045,9 +1045,9 @@ function ResearchPage() {
         <p className="eyebrow">Selected work</p>
         <h1>Research built from systems, data, and institutional questions.</h1>
         <p className="intro-lede">
-          These studies begin in different settings—civic data, federal sourcing,
+          These studies begin in different settings: civic data, federal sourcing,
           human–AI interaction, strategy, health surveillance, and municipal
-          policy—but share a method: make the hidden choice observable, then test
+          policy, but share a method: make the hidden choice observable, then test
           what changes when it moves.
         </p>
       </section>

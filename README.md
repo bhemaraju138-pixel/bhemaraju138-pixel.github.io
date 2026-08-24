@@ -1,7 +1,10 @@
-# Hema Raju Barri — Researcher & Systems Builder
+# Hema Raju Barri | Researcher and Systems Builder
 
 An editorial portfolio spanning AI systems, management, public institutions,
 human–AI interaction, evidence, and empirical methods.
+
+Portfolio copy, research notes, and project documentation are written and
+reviewed by Hema Raju Barri.
 
 The portfolio includes:
 

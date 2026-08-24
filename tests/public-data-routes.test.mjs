@@ -38,24 +38,24 @@ test("portfolio routes and route-specific metadata are built", async () => {
   }
 
   const writingHtml = await readFile(resolve("dist/client/writing/index.html"), "utf8");
-  assert.match(writingHtml, /<title>Writing — Hema Raju Barri<\/title>/);
+  assert.match(writingHtml, /<title>Writing \| Hema Raju Barri<\/title>/);
   assert.match(writingHtml, /og-minimal\.png/);
 
   const publicationsHtml = await readFile(resolve("dist/client/publications/index.html"), "utf8");
-  assert.match(publicationsHtml, /<title>Publications — Hema Raju Barri<\/title>/);
+  assert.match(publicationsHtml, /<title>Publications \| Hema Raju Barri<\/title>/);
 
   const simulationHtml = await readFile(
     resolve("dist/client/simulations/observability-reserve/index.html"),
     "utf8",
   );
-  assert.match(simulationHtml, /<title>The Evidence You Stop Seeing — Hema Raju Barri<\/title>/);
+  assert.match(simulationHtml, /<title>The Evidence You Stop Seeing \| Hema Raju Barri<\/title>/);
   assert.doesNotMatch(simulationHtml, /property="og:image"/);
 
   const essayHtml = await readFile(
     resolve("dist/client/experiments/error-message-is-policy/index.html"),
     "utf8",
   );
-  assert.match(essayHtml, /<title>The Error Message Is Part of the Policy — Hema Raju Barri<\/title>/);
+  assert.match(essayHtml, /<title>The Error Message Is Part of the Policy \| Hema Raju Barri<\/title>/);
   assert.doesNotMatch(essayHtml, /property="og:image"/);
   assert.doesNotMatch(essayHtml, /name="twitter:image"/);
 });
