@@ -8,7 +8,8 @@ The portfolio includes:
 - a publications archive with precise accepted, presented, upcoming, and preprint status;
 - a searchable blog archive that brings essays and experiments into one place;
 - an interactive research compass linking projects across four intellectual lenses;
-- a parameterized simulation of agent-mediated public-benefit claiming;
+- three technical simulations: a heterogeneous claiming fixed point, a Bayesian
+  counterfactual-observability model, and an endogenous M/M/c verification queue;
 - six reproducible public-data experiments on interface recovery, metadata, civic
   channels, ranking robustness, rulemaking burden, and cross-country missingness; and
 - an About page connecting research, engineering, field work, and education.

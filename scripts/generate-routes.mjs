@@ -30,6 +30,23 @@ const routes = [
     description: "Hema Raju Barri is a researcher and systems builder working across AI, management, public policy, and empirical methods.",
   },
   {
+    route: "simulations",
+    title: "Technical Simulations — Hema Raju Barri",
+    description: "Interactive mathematical models of administrative burden, counterfactual observability, and endogenous verification queues.",
+  },
+  {
+    route: "simulations/observability-reserve",
+    title: "The Evidence You Stop Seeing — Hema Raju Barri",
+    description: "A Bayesian partial-feedback simulation of counterfactual evidence reserves, observability decay, and reversal-detection delay.",
+    detail: true,
+  },
+  {
+    route: "simulations/verification-queue",
+    title: "The Queue Answers Back — Hema Raju Barri",
+    description: "An endogenous M/M/c simulation coupling agent-induced demand, verification intensity, service rate, and unequal abandonment.",
+    detail: true,
+  },
+  {
     route: "experiments",
     title: "Public-Data Experiments — Hema Raju Barri",
     description: "Six reproducible studies of failure, metadata, participation, ranking, procedure, and missingness in public systems.",

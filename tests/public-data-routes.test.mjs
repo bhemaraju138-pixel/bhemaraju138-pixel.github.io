@@ -23,7 +23,17 @@ test("every essay figure, local download, and built route exists", async () => {
 });
 
 test("portfolio routes and route-specific metadata are built", async () => {
-  for (const route of ["research", "publications", "blogs", "writing", "about", "experiments/claiming-under-agents"]) {
+  for (const route of [
+    "research",
+    "publications",
+    "blogs",
+    "writing",
+    "about",
+    "simulations",
+    "simulations/observability-reserve",
+    "simulations/verification-queue",
+    "experiments/claiming-under-agents",
+  ]) {
     await access(resolve("dist/client", route, "index.html"));
   }
 
@@ -33,6 +43,13 @@ test("portfolio routes and route-specific metadata are built", async () => {
 
   const publicationsHtml = await readFile(resolve("dist/client/publications/index.html"), "utf8");
   assert.match(publicationsHtml, /<title>Publications — Hema Raju Barri<\/title>/);
+
+  const simulationHtml = await readFile(
+    resolve("dist/client/simulations/observability-reserve/index.html"),
+    "utf8",
+  );
+  assert.match(simulationHtml, /<title>The Evidence You Stop Seeing — Hema Raju Barri<\/title>/);
+  assert.doesNotMatch(simulationHtml, /property="og:image"/);
 
   const essayHtml = await readFile(
     resolve("dist/client/experiments/error-message-is-policy/index.html"),

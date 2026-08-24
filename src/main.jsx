@@ -2,6 +2,7 @@ import React, { useMemo, useState } from "react";
 import { createRoot } from "react-dom/client";
 import { notes, publicDataEssays, research, timeline } from "./content";
 import { runModel, scenarios } from "./model";
+import { runObservabilityReserve, runVerificationQueue, simulationCatalog } from "./simulations";
 import "./styles.css";
 
 const percent = (value, digits = 0) => `${(value * 100).toFixed(digits)}%`;
@@ -15,7 +16,7 @@ function Header() {
   const links = [
     ["/publications/", "Publications"],
     ["/blogs/", "Blogs"],
-    ["/experiments/claiming-under-agents/", "Lab"],
+    ["/simulations/", "Simulations"],
     ["/about/", "About"],
   ];
 
@@ -31,7 +32,7 @@ function Header() {
           <a
             href={href}
             key={href}
-            aria-current={path.startsWith(href) ? "page" : undefined}
+            aria-current={path.startsWith(href) || (href === "/simulations/" && path.startsWith("/experiments/claiming-under-agents")) ? "page" : undefined}
           >
             {label}
           </a>
@@ -56,6 +57,7 @@ function Footer() {
         <a href="https://github.com/bhemaraju138-pixel">GitHub</a>
         <a href="/publications/">Publications</a>
         <a href="/blogs/">Blogs</a>
+        <a href="/simulations/">Simulations</a>
         <a href="/about/">About</a>
       </div>
       <p className="date-note">
@@ -326,9 +328,8 @@ function Home() {
         <div className="blog-notes-preview">
           <p className="eyebrow">Research notes</p>
           <div className="notes-list">
-            {notes.slice(0, 3).map((note, index) => (
-              <a href={`/notes/${note.slug}/`} className="note-row" key={note.slug}>
-                <span className="note-row-number">N{index + 1}</span>
+            {notes.slice(0, 3).map((note) => (
+              <a href={`/notes/${note.slug}/`} className="note-row no-number" key={note.slug}>
                 <span><strong>{note.title}</strong><small>{note.eyebrow}</small></span>
                 <span className="row-arrow" aria-hidden="true">↗</span>
               </a>
@@ -340,19 +341,19 @@ function Home() {
       <section className="experiment-band portfolio-lab" aria-labelledby="experiment-heading">
         <div className="page-shell experiment-band-inner">
           <div>
-            <p className="eyebrow light">Interactive lab · Open model</p>
-            <h2 id="experiment-heading">The Burden Moves</h2>
+            <p className="eyebrow light">Technical simulations · Three open models</p>
+            <h2 id="experiment-heading">Simulations</h2>
             <p>
-              Change agency capacity, verification response, and unequal agent
-              quality. The model reveals when assistance expands access—and when the
-              administrative burden simply reappears somewhere else.
+              Explore coupled fixed points, Bayesian partial feedback, and an
+              endogenous multi-server queue. Every model exposes its equations,
+              assumptions, stability conditions, and novelty boundary.
             </p>
           </div>
           <div className="experiment-mark" aria-hidden="true">
             <span>claim ↓</span><span>volume ↑</span><span>verify ?</span>
           </div>
-          <a className="light-button" href="/experiments/claiming-under-agents/">
-            Run the model <Arrow />
+          <a className="light-button" href="/simulations/">
+            Browse simulations <Arrow />
           </a>
         </div>
       </section>
@@ -495,6 +496,269 @@ function ExperimentsLanding() {
   );
 }
 
+function SimulationIndexCard({ simulation }) {
+  return (
+    <a className="simulation-index-card" href={simulation.href}>
+      <span>{simulation.family}</span>
+      <h2>{simulation.title}</h2>
+      <p>{simulation.question}</p>
+      <dl>
+        <div><dt>Mathematical core</dt><dd>{simulation.mathematics}</dd></div>
+        <div><dt>Contribution tested</dt><dd>{simulation.contribution}</dd></div>
+        <div><dt>Evidence status</dt><dd>{simulation.status}</dd></div>
+      </dl>
+      <strong>Open simulation <Arrow /></strong>
+    </a>
+  );
+}
+
+function SimulationsPage() {
+  return (
+    <Shell>
+      <section className="page-intro simulations-intro page-shell">
+        <p className="eyebrow">Technical simulations</p>
+        <h1>Models that make institutional feedback calculable.</h1>
+        <p className="intro-lede">
+          Each simulation states its equations, exposes its parameters, tests a
+          boundary case, and separates established mathematics from the institutional
+          mechanism being proposed.
+        </p>
+      </section>
+      <section className="simulation-principles page-shell" aria-label="Simulation standards">
+        <div><span>Equations</span><strong>No hidden scoring rule.</strong></div>
+        <div><span>Stability</span><strong>Boundary conditions are visible.</strong></div>
+        <div><span>Novelty</span><strong>New mechanism, not renamed mathematics.</strong></div>
+        <div><span>Claims</span><strong>Theory-building, not policy forecasts.</strong></div>
+      </section>
+      <section className="simulation-index page-shell" aria-label="Available simulations">
+        {simulationCatalog.map((simulation) => (
+          <SimulationIndexCard simulation={simulation} key={simulation.title} />
+        ))}
+      </section>
+      <section className="simulation-novelty page-shell">
+        <p className="eyebrow">Novelty boundary</p>
+        <h2>The mathematics is established. The coupled institutional mechanisms are the experiment.</h2>
+        <p>
+          Fixed points, Gaussian updating, and Erlang-C queues are not presented as
+          inventions. The contribution is to use them to formalize three mechanisms
+          usually held constant: institutional verification after agent adoption,
+          decaying evidence about rejected strategies, and service capacity that falls
+          when verification intensifies.
+        </p>
+      </section>
+    </Shell>
+  );
+}
+
+function Equation({ children }) {
+  return <div className="equation"><code>{children}</code></div>;
+}
+
+function ObservabilitySimulationPage() {
+  const [reserve, setReserve] = useState(0.25);
+  const [evidenceDecay, setEvidenceDecay] = useState(0.01);
+  const [signalNoise, setSignalNoise] = useState(0.18);
+  const [changePoint, setChangePoint] = useState(24);
+  const result = useMemo(
+    () => runObservabilityReserve({ reserve, evidenceDecay, signalNoise, changePoint }),
+    [reserve, evidenceDecay, signalNoise, changePoint],
+  );
+  const timeline = result.series.filter((point) => point.period % 5 === 0 || point.period === changePoint);
+
+  return (
+    <Shell>
+      <section className="page-intro technical-sim-intro page-shell">
+        <p className="eyebrow">Bayesian partial-feedback simulation</p>
+        <h1>The Evidence You Stop Seeing</h1>
+        <p className="intro-lede">
+          A decision-maker commits to Strategy A. Strategy B later becomes better,
+          but evidence about B is observed only through a deliberately maintained
+          reserve whose informativeness decays with operational distance.
+        </p>
+        <div className="status-box technical-status">
+          <strong>Evidence status</strong>
+          <p>Analytical thought experiment. Gaussian signals and latent payoff paths are illustrative, not calibrated estimates.</p>
+        </div>
+      </section>
+
+      <section className="technical-model page-shell" aria-labelledby="observability-controls-heading">
+        <div className="technical-controls">
+          <p className="eyebrow">Parameter controls</p>
+          <h2 id="observability-controls-heading">Fund the counterfactual.</h2>
+          <label>
+            <span>Observability reserve <output>{percent(reserve)}</output></span>
+            <input type="range" min="0" max="1" step="0.05" value={reserve} onChange={(event) => setReserve(Number(event.target.value))} />
+            <small>Fractional evidence collected about the unchosen strategy each period.</small>
+          </label>
+          <label>
+            <span>Evidence decay <output>{evidenceDecay.toFixed(3)}</output></span>
+            <input type="range" min="0" max="0.06" step="0.005" value={evidenceDecay} onChange={(event) => setEvidenceDecay(Number(event.target.value))} />
+            <small>Exponential loss of relevance as operations move farther from Strategy B.</small>
+          </label>
+          <label>
+            <span>Signal noise σ <output>{signalNoise.toFixed(2)}</output></span>
+            <input type="range" min="0.08" max="0.4" step="0.01" value={signalNoise} onChange={(event) => setSignalNoise(Number(event.target.value))} />
+            <small>Standard deviation of the payoff signal.</small>
+          </label>
+          <label>
+            <span>Reversal period <output>t = {changePoint}</output></span>
+            <input type="range" min="10" max="40" step="1" value={changePoint} onChange={(event) => setChangePoint(Number(event.target.value))} />
+            <small>Period when the latent payoff of Strategy B rises above Strategy A.</small>
+          </label>
+        </div>
+
+        <div className="technical-results" aria-live="polite">
+          <div className="technical-metrics">
+            <Metric label="B evidence / A evidence" value={percent(result.observabilityRatio, 1)} />
+            <Metric label="Posterior SD of B" value={result.posteriorSdB.toFixed(3)} />
+            <Metric label="P(B > A) at horizon" value={percent(result.reversalProbability, 1)} />
+            <Metric label="80% detection delay" value={result.detectionDelay === null ? "Not detected" : `${result.detectionDelay} periods`} tone={result.detectionDelay === null ? "warning" : ""} />
+          </div>
+          <div className="belief-chart" aria-label="Posterior probability that Strategy B is better across time">
+            <div className="chart-threshold"><span>80% detection threshold</span></div>
+            {timeline.map((point) => (
+              <div className="belief-column" key={point.period}>
+                <div className={point.period === changePoint ? "belief-bar change" : "belief-bar"} style={{ height: `${Math.max(2, point.reversalProbability * 100)}%` }} />
+                <span>{point.period}</span>
+              </div>
+            ))}
+          </div>
+          <p className="chart-caption">Bar height is Pr(B &gt; A | evidence). The outlined bar marks the latent reversal; the model detects it only when the posterior crosses 80%.</p>
+        </div>
+      </section>
+
+      <section className="mathematical-core page-shell">
+        <div><p className="eyebrow">Mathematical core</p><h2>Fractional Bayesian evidence.</h2></div>
+        <div className="equation-stack">
+          <Equation>{"w(B,t) = r · exp[−δ(t−1)]"}</Equation>
+          <Equation>{"τ(B,t) = τ₀ + Σ w(B,k) / σ²"}</Equation>
+          <Equation>{"Pr(B>A | Dₜ) = Φ[(mᴮ−mᴬ) / √(Vᴬ+Vᴮ)]"}</Equation>
+          <p>
+            The conjugate Gaussian update is standard. The experimental object is the
+            reserve weight r interacting with decay δ, producing a measurable delay
+            between a real reversal and an institution’s ability to recognize it.
+          </p>
+        </div>
+      </section>
+
+      <section className="simulation-interpretation page-shell">
+        <article><span>Established result</span><h3>Selective decisions create selective labels.</h3><p>Outcomes for rejected or unchosen options are systematically harder to observe.</p></article>
+        <article><span>Contribution tested here</span><h3>Observability can be budgeted.</h3><p>The model treats counterfactual evidence as a reserve with an explicit opportunity cost and decay rate.</p></article>
+        <article><span>Failure condition</span><h3>Some reserves never become informative.</h3><p>When decay or noise dominates, spending on observation still fails to identify the reversal by the horizon.</p></article>
+      </section>
+
+      <section className="simulation-sources page-shell">
+        <p className="eyebrow">Primary foundations</p>
+        <a href="https://www.cs.cornell.edu/home/kleinber/kdd17-selective.pdf">Lakkaraju et al. (2017), The Selective Labels Problem <Arrow /></a>
+        <a href="https://proceedings.mlr.press/v139/wei21a/wei21a.pdf">Wei (2021), Decision-Making Under Selective Labels <Arrow /></a>
+      </section>
+    </Shell>
+  );
+}
+
+function VerificationQueuePage() {
+  const [agentAdoption, setAgentAdoption] = useState(0.45);
+  const [reviewers, setReviewers] = useState(14);
+  const [verificationResponse, setVerificationResponse] = useState(0.35);
+  const [agentQualityGap, setAgentQualityGap] = useState(0.2);
+  const result = useMemo(
+    () => runVerificationQueue({ agentAdoption, reviewers, verificationResponse, agentQualityGap }),
+    [agentAdoption, reviewers, verificationResponse, agentQualityGap],
+  );
+  const waitLabel = result.stable ? `${(result.expectedWait * 24).toFixed(2)} h` : "Diverges";
+
+  return (
+    <Shell>
+      <section className="page-intro technical-sim-intro page-shell">
+        <p className="eyebrow">Endogenous queueing simulation</p>
+        <h1>The Queue Answers Back</h1>
+        <p className="intro-lede">
+          Agent adoption increases submissions. Congestion triggers verification.
+          Verification slows service, which raises utilization again. The question is
+          whether this feedback crosses the M/M/c stability boundary ρ = 1.
+        </p>
+        <div className="status-box technical-status">
+          <strong>Evidence status</strong>
+          <p>Steady-state queueing thought experiment. Arrival, service, patience, and response parameters are illustrative.</p>
+        </div>
+      </section>
+
+      <section className="technical-model page-shell" aria-labelledby="queue-controls-heading">
+        <div className="technical-controls">
+          <p className="eyebrow">Parameter controls</p>
+          <h2 id="queue-controls-heading">Move the stability boundary.</h2>
+          <label>
+            <span>Agent adoption <output>{percent(agentAdoption)}</output></span>
+            <input type="range" min="0" max="1" step="0.05" value={agentAdoption} onChange={(event) => setAgentAdoption(Number(event.target.value))} />
+            <small>Share of potential claimants using an agent; arrival volume rises with adoption.</small>
+          </label>
+          <label>
+            <span>Concurrent reviewers <output>{reviewers}</output></span>
+            <input type="range" min="6" max="20" step="1" value={reviewers} onChange={(event) => setReviewers(Number(event.target.value))} />
+            <small>Parallel service channels c.</small>
+          </label>
+          <label>
+            <span>Verification response β <output>{verificationResponse.toFixed(2)}</output></span>
+            <input type="range" min="0" max="0.9" step="0.05" value={verificationResponse} onChange={(event) => setVerificationResponse(Number(event.target.value))} />
+            <small>Strength of the agency’s verification response to utilization.</small>
+          </label>
+          <label>
+            <span>Agent-quality gap g <output>{agentQualityGap.toFixed(2)}</output></span>
+            <input type="range" min="0" max="0.6" step="0.05" value={agentQualityGap} onChange={(event) => setAgentQualityGap(Number(event.target.value))} />
+            <small>Additional verification induced by unequal error quality across submitted claims.</small>
+          </label>
+        </div>
+
+        <div className="technical-results" aria-live="polite">
+          <div className="technical-metrics">
+            <Metric label="Utilization ρ" value={percent(result.utilization, 1)} tone={result.stable ? "" : "warning"} />
+            <Metric label="Expected queue wait" value={waitLabel} tone={result.stable ? "" : "warning"} />
+            <Metric label="Verification intensity" value={percent(result.verification, 1)} />
+            <Metric label="Abandonment gap" value={result.stable ? `${(result.abandonmentGap * 100).toFixed(2)} pp` : "Queue unstable"} />
+          </div>
+          <div className="queue-chart" aria-label="Queue utilization across agent adoption levels">
+            <div className="queue-boundary"><span>ρ = 1 stability boundary</span></div>
+            {result.curve.map((point) => (
+              <div className="queue-column" key={point.adoption}>
+                <div className={point.stable ? "queue-bar" : "queue-bar unstable"} style={{ height: `${Math.min(100, (point.utilization / 1.25) * 100)}%` }} />
+                <span>{Math.round(point.adoption * 100)}</span>
+              </div>
+            ))}
+          </div>
+          <p className="chart-caption">Bars show utilization as adoption rises from 0% to 100%. Dark bars above the modeled stability boundary indicate that steady-state waiting time does not exist.</p>
+        </div>
+      </section>
+
+      <section className="mathematical-core page-shell">
+        <div><p className="eyebrow">Mathematical core</p><h2>An Erlang-C queue inside a fixed point.</h2></div>
+        <div className="equation-stack">
+          <Equation>{"λ(a) = λ₀(1 + 1.35a)"}</Equation>
+          <Equation>{"μ(v) = μ₀ / (1 + 1.55v),   ρ = λ / cμ"}</Equation>
+          <Equation>{"v* = .06 + .72β·logit⁻¹[9(ρ−.72)] + .20ga"}</Equation>
+          <Equation>{"Wq = C(c,λ/μ) / (cμ−λ),   only if ρ < 1"}</Equation>
+          <p>
+            Erlang-C is established queueing mathematics. The simulation adds a
+            feedback loop: congestion raises verification v, verification reduces the
+            service rate μ, and the new μ changes congestion again. A damped iteration
+            solves the fixed point.
+          </p>
+        </div>
+      </section>
+
+      <section className="simulation-interpretation page-shell">
+        <article><span>Nonlinearity</span><h3>Small adoption changes can create a phase change.</h3><p>Waiting remains modest until utilization approaches one; beyond it, the steady-state queue diverges.</p></article>
+        <article><span>Distribution</span><h3>Equal waiting creates unequal exit.</h3><p>Different patience parameters turn the same queue into a larger abandonment rate for lower-resource claimants.</p></article>
+        <article><span>Falsifier</span><h3>The loop weakens when service is verification-elastic.</h3><p>Cross-trained capacity, targeted audits, or verification that does not slow service would reduce or break the modeled feedback.</p></article>
+      </section>
+
+      <section className="simulation-sources page-shell">
+        <p className="eyebrow">Primary foundation</p>
+        <a href="https://www.columbia.edu/~ww2040/HalfinWW1981.pdf">Halfin &amp; Whitt (1981), Heavy-Traffic Limits for Queues with Many Exponential Servers <Arrow /></a>
+      </section>
+    </Shell>
+  );
+}
+
 function PublicationsPage() {
   const publications = research.slice(0, 3);
 
@@ -577,7 +841,7 @@ function WritingPage() {
       kind: "Research note",
       date: "August 2026",
       topic: noteTopics[index],
-      marker: `N${index + 1}`,
+      marker: null,
     })),
   ];
   const normalizedQuery = query.trim().toLowerCase();
@@ -659,8 +923,8 @@ function WritingPage() {
 
         <div className="writing-list">
           {visibleItems.map((item) => (
-            <a className="writing-row" href={item.href} key={item.id}>
-              <span className="writing-marker">{item.marker}</span>
+            <a className={item.marker ? "writing-row" : "writing-row no-marker"} href={item.href} key={item.id}>
+              {item.marker && <span className="writing-marker">{item.marker}</span>}
               <span className="writing-row-main">
                 <small>{item.kind} · {item.date} · {item.topic}</small>
                 <strong>{item.title}</strong>
@@ -977,11 +1241,11 @@ function ExperimentPage() {
         </div>
       </section>
 
-      <section className="model-lab page-shell" aria-labelledby="lab-heading">
+      <section className="model-lab page-shell" aria-labelledby="simulation-controls-heading">
         <div className="control-panel">
           <div>
-            <p className="eyebrow">Parameter lab</p>
-            <h2 id="lab-heading">Change the institution, not only the agent.</h2>
+            <p className="eyebrow">Simulation controls</p>
+            <h2 id="simulation-controls-heading">Change the institution, not only the agent.</h2>
           </div>
           <label>
             <span>Agency capacity <output>{percent(agencyCapacity)}</output></span>
@@ -1137,6 +1401,9 @@ function App() {
   if (path === "/publications") return <PublicationsPage />;
   if (path === "/writing" || path === "/blogs") return <WritingPage />;
   if (path === "/about") return <AboutPage />;
+  if (path === "/simulations") return <SimulationsPage />;
+  if (path === "/simulations/observability-reserve") return <ObservabilitySimulationPage />;
+  if (path === "/simulations/verification-queue") return <VerificationQueuePage />;
   if (path === "/experiments") return <ExperimentsLanding />;
   if (path === "/experiments/claiming-under-agents") return <ExperimentPage />;
   if (path === "/timeline") return <TimelinePage />;
