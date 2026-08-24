@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from "react";
+import React, { useEffect, useMemo, useRef, useState } from "react";
 import { createRoot } from "react-dom/client";
 import { notes, publicDataEssays, research, timeline } from "./content";
 import { runModel, scenarios } from "./model";
@@ -7,11 +7,30 @@ import "./styles.css";
 
 const percent = (value, digits = 0) => `${(value * 100).toFixed(digits)}%`;
 
+const commandRoutes = {
+  about: "/",
+  home: "/",
+  profile: "/",
+  research: "/research/",
+  publications: "/publications/",
+  papers: "/publications/",
+  blogs: "/blogs/",
+  writing: "/blogs/",
+  simulations: "/simulations/",
+  timeline: "/timeline/",
+};
+
+const simulationRoutes = {
+  burden: "/simulations/burden-moves/",
+  observability: "/simulations/observability-reserve/",
+  queue: "/simulations/verification-queue/",
+};
+
 function Arrow() {
   return <span aria-hidden="true">↗</span>;
 }
 
-function Header() {
+function Header({ mode, onModeChange, onOpenCommand }) {
   const path = window.location.pathname;
   const links = [
     ["/publications/", "Publications"],
@@ -37,9 +56,19 @@ function Header() {
           </a>
         ))}
       </nav>
-      <a className="contact-link" href="mailto:bhemaraju.138@gmail.com">
-        Contact <Arrow />
-      </a>
+      <div className="header-actions">
+        <div className="mode-switch" role="group" aria-label="Portfolio interface mode">
+          <button type="button" className={mode === "command" ? "active" : ""} aria-pressed={mode === "command"} onClick={() => { onModeChange("command"); onOpenCommand(); }}>
+            Command
+          </button>
+          <button type="button" className={mode === "reader" ? "active" : ""} aria-pressed={mode === "reader"} onClick={() => onModeChange("reader")}>
+            Read
+          </button>
+        </div>
+        <a className="contact-link" href="mailto:bhemaraju.138@gmail.com">
+          Contact <Arrow />
+        </a>
+      </div>
     </header>
   );
 }
@@ -66,12 +95,183 @@ function Footer() {
   );
 }
 
+function CommandConsole({ mode, onModeChange, open, onOpenChange }) {
+  const [input, setInput] = useState("");
+  const [history, setHistory] = useState([
+    { kind: "system", text: "HRB research interface ready." },
+    { kind: "system", text: "Type help or choose a command." },
+  ]);
+  const inputRef = useRef(null);
+
+  useEffect(() => {
+    const handleShortcut = (event) => {
+      const tag = document.activeElement?.tagName;
+      const isTyping = tag === "INPUT" || tag === "TEXTAREA" || document.activeElement?.isContentEditable;
+      if ((event.key === "/" && !isTyping) || ((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === "k")) {
+        event.preventDefault();
+        onModeChange("command");
+        onOpenChange(true);
+        window.setTimeout(() => inputRef.current?.focus(), 0);
+      }
+      if (event.key === "Escape" && open) onOpenChange(false);
+    };
+    window.addEventListener("keydown", handleShortcut);
+    return () => window.removeEventListener("keydown", handleShortcut);
+  }, [onModeChange, onOpenChange, open]);
+
+  useEffect(() => {
+    if (open && mode === "command") inputRef.current?.focus();
+  }, [mode, open]);
+
+  const write = (command, response) => {
+    setHistory((current) => [...current.slice(-7), { kind: "command", text: command }, { kind: "system", text: response }]);
+  };
+
+  const navigate = (command, href) => {
+    write(command, `Opening ${href}`);
+    window.setTimeout(() => window.location.assign(href), 120);
+  };
+
+  const runCommand = (rawValue) => {
+    const raw = rawValue.trim();
+    if (!raw) return;
+    const normalized = raw.toLowerCase().replace(/^open\s+/, "").replace(/^cd\s+/, "");
+
+    if (normalized === "clear") {
+      setHistory([]);
+      setInput("");
+      return;
+    }
+    if (normalized === "help" || normalized === "?") {
+      write(raw, "about · research · publications · blogs · simulations · run burden|observability|queue · connect · scatter · whoami · status · read · clear");
+    } else if (normalized === "ls") {
+      write(raw, "about/  research/  publications/  blogs/  simulations/  timeline/");
+    } else if (normalized === "whoami") {
+      write(raw, "Hema Raju Barri: researcher, systems builder, and public-interest technologist studying the institutions around intelligent systems.");
+    } else if (normalized === "status") {
+      write(raw, `route=${window.location.pathname}  mode=${mode}  focus=AI+management+public institutions`);
+    } else if (normalized === "read" || normalized === "mode read" || normalized === "reader") {
+      onModeChange("reader");
+      write(raw, "Reader mode enabled. Press / to return to command mode.");
+    } else if (normalized === "command" || normalized === "mode command") {
+      onModeChange("command");
+      write(raw, "Command mode enabled.");
+    } else if (normalized === "connect" || normalized === "connect path") {
+      if (window.location.pathname === "/" || window.location.pathname === "/about/") {
+        window.dispatchEvent(new CustomEvent("portfolio:path", { detail: { connected: true } }));
+        write(raw, "Path connected. Five moments now resolve into one trajectory.");
+      } else {
+        navigate(raw, "/?run=connect");
+      }
+    } else if (normalized === "scatter" || normalized === "scatter path") {
+      if (window.location.pathname === "/" || window.location.pathname === "/about/") {
+        window.dispatchEvent(new CustomEvent("portfolio:path", { detail: { connected: false } }));
+        write(raw, "Path released into its component moments.");
+      } else {
+        navigate(raw, "/");
+      }
+    } else if (normalized === "email" || normalized === "contact") {
+      write(raw, "Opening a new email to Hema.");
+      window.setTimeout(() => { window.location.href = "mailto:bhemaraju.138@gmail.com"; }, 120);
+    } else if (normalized.startsWith("run ") || normalized.startsWith("simulate ")) {
+      const target = normalized.replace(/^(run|simulate)\s+/, "").trim();
+      if (simulationRoutes[target]) navigate(raw, simulationRoutes[target]);
+      else write(raw, "Simulation not found. Try: run burden, run observability, or run queue.");
+    } else if (commandRoutes[normalized]) {
+      navigate(raw, commandRoutes[normalized]);
+    } else {
+      write(raw, `Command not found: ${raw}. Type help to inspect the interface.`);
+    }
+    setInput("");
+  };
+
+  if (mode !== "command") {
+    return (
+      <button type="button" className="command-launcher" onClick={() => { onModeChange("command"); onOpenChange(true); }}>
+        <span aria-hidden="true">&gt;_</span> Open command mode <kbd>/</kbd>
+      </button>
+    );
+  }
+
+  if (!open) {
+    return (
+      <button type="button" className="command-launcher command-launcher-dark" onClick={() => onOpenChange(true)}>
+        <span aria-hidden="true">&gt;_</span> Resume terminal <kbd>/</kbd>
+      </button>
+    );
+  }
+
+  const quickCommands = ["help", "about", "research", "publications", "blogs", "simulations", "connect"];
+
+  return (
+    <aside className="command-console" aria-label="Portfolio command interface">
+      <div className="command-console-bar">
+        <span>HRB_OS / RESEARCH_INTERFACE</span>
+        <span className="command-console-state">SESSION ACTIVE</span>
+        <button type="button" onClick={() => onOpenChange(false)} aria-label="Minimize command interface">MINIMIZE</button>
+      </div>
+      <div className="command-console-body">
+        <div className="command-history" aria-live="polite">
+          {history.slice(-5).map((entry, index) => (
+            <p className={`command-line ${entry.kind}`} key={`${entry.text}-${index}`}>
+              <span aria-hidden="true">{entry.kind === "command" ? "$" : "::"}</span>{entry.text}
+            </p>
+          ))}
+        </div>
+        <form className="command-form" onSubmit={(event) => { event.preventDefault(); runCommand(input); }}>
+          <label htmlFor="portfolio-command">hema@portfolio:~$</label>
+          <input
+            id="portfolio-command"
+            ref={inputRef}
+            value={input}
+            onChange={(event) => setInput(event.target.value)}
+            autoComplete="off"
+            spellCheck="false"
+            placeholder="type a command"
+          />
+          <button type="submit">RUN</button>
+        </form>
+        <div className="command-shortcuts" aria-label="Suggested commands">
+          {quickCommands.map((command) => <button type="button" key={command} onClick={() => runCommand(command)}>{command}</button>)}
+        </div>
+      </div>
+    </aside>
+  );
+}
+
 function Shell({ children }) {
+  const [mode, setMode] = useState(() => {
+    try {
+      return window.localStorage.getItem("hrb-interface") === "reader" ? "reader" : "command";
+    } catch {
+      return "command";
+    }
+  });
+  const [commandOpen, setCommandOpen] = useState(mode === "command");
+
+  useEffect(() => {
+    document.documentElement.dataset.interface = mode;
+    try {
+      window.localStorage.setItem("hrb-interface", mode);
+    } catch {
+      // The interface remains usable when storage is unavailable.
+    }
+    if (mode === "command") setCommandOpen(true);
+  }, [mode]);
+
   return (
     <>
-      <Header />
+      <Header mode={mode} onModeChange={setMode} onOpenCommand={() => setCommandOpen(true)} />
+      {mode === "command" && (
+        <div className="command-statusbar" aria-hidden="true">
+          <span>INTERFACE: COMMAND</span>
+          <span>ROUTE: {window.location.pathname}</span>
+          <span>SHORTCUT: / OR CTRL+K</span>
+        </div>
+      )}
       <main id="main">{children}</main>
       <Footer />
+      <CommandConsole mode={mode} onModeChange={setMode} open={commandOpen} onOpenChange={setCommandOpen} />
     </>
   );
 }
@@ -825,6 +1025,16 @@ function WritingPage() {
 
 function AboutPage() {
   const [pathMade, setPathMade] = useState(false);
+  useEffect(() => {
+    const handlePathCommand = (event) => setPathMade(Boolean(event.detail?.connected));
+    window.addEventListener("portfolio:path", handlePathCommand);
+    const params = new URLSearchParams(window.location.search);
+    if (params.get("run") === "connect") {
+      setPathMade(true);
+      window.history.replaceState({}, "", window.location.pathname);
+    }
+    return () => window.removeEventListener("portfolio:path", handlePathCommand);
+  }, []);
   const pathMoments = [
     ["Roots", "India", "Where computer science became a way to turn uncertainty into something I could build."],
     ["Leap", "Across an ocean", "I chose unfamiliar rooms before I knew exactly how I would fit inside them."],
