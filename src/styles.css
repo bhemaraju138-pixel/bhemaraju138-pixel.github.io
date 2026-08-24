@@ -1754,3 +1754,76 @@ dd { margin: 0; font-size: 13px; line-height: 1.55; }
   [data-interface="command"] .about-path-intro h1 { font-size: clamp(45px, 13vw, 66px); }
   [data-interface="command"] h1::before { margin-bottom: 8px; }
 }
+
+/* Full-screen research terminal */
+
+html,
+body,
+#root { height: 100%; }
+
+[data-interface="command"] body {
+  padding: 0;
+  overflow: hidden;
+}
+
+.terminal-screen {
+  display: grid;
+  grid-template-rows: 42px minmax(0, 1fr) auto;
+  width: 100%;
+  height: 100dvh;
+  padding: 12px;
+  background: transparent;
+}
+
+.terminal-screen-header {
+  display: flex;
+  align-items: center;
+  padding: 0 15px;
+  border: 1px solid #78eba8;
+  border-bottom-color: #293b31;
+  background: #101813;
+  color: #78eba8;
+  font-family: var(--mono) !important;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 0.13em;
+}
+
+.terminal-workspace {
+  min-height: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  border-right: 1px solid #293b31;
+  border-left: 1px solid #293b31;
+  background: rgba(8, 13, 10, 0.54);
+  scrollbar-color: #385442 #0a110d;
+  scrollbar-width: thin;
+}
+
+.terminal-workspace:focus-visible { outline: 1px solid #78eba8; outline-offset: -2px; }
+
+.terminal-screen .command-console {
+  position: static;
+  z-index: auto;
+  right: auto;
+  bottom: auto;
+  left: auto;
+  width: 100%;
+  margin: 0;
+  border: 1px solid #78eba8;
+  background: #050a07;
+  box-shadow: none;
+}
+
+.terminal-screen .command-console-body { padding: 9px 14px 11px; }
+.terminal-screen .command-history { min-height: 43px; max-height: 68px; }
+.terminal-screen .command-form { margin-top: 6px; }
+
+@media (max-width: 680px) {
+  .terminal-screen { grid-template-rows: 36px minmax(0, 1fr) auto; padding: 6px; }
+  .terminal-screen-header { padding-inline: 10px; font-size: 8px; }
+  .terminal-screen .command-console { right: auto; bottom: auto; left: auto; width: 100%; }
+  .terminal-screen .command-console-body { padding: 7px 9px 9px; }
+  .terminal-screen .command-history { max-height: 58px; }
+  .terminal-screen .command-shortcuts button:nth-child(n+6) { display: none; }
+}
