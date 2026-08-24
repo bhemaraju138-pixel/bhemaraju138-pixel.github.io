@@ -511,8 +511,8 @@ function SimulationsPage() {
         <div className="lens-copy">
           <p className="eyebrow light">See through my lens</p>
           <h2 id="simulation-lens-heading">
-            As AI agents take the stage,
-            <em>I ask who gets to write the next page.</em>
+            Every model begins where the agent benchmark ends.
+            <em>The surrounding institution is part of the system.</em>
           </h2>
           <p>
             I use simulation to expose the institutional choices that disappear when
@@ -931,9 +931,11 @@ function AboutPage() {
               <small>{description}</small>
             </article>
           ))}
-          <blockquote className="path-quote">
-            I wasn’t given a map.<br /><em>So I learned to make one.</em>
-          </blockquote>
+          {pathMade && (
+            <blockquote className="path-quote">
+              <em>AS AI AGENTS TAKE THE STAGE,<br />I ASK WHO GETS TO WRITE THE NEXT PAGE.</em>
+            </blockquote>
+          )}
         </div>
 
         <button

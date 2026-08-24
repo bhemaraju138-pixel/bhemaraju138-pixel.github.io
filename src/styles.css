@@ -1403,8 +1403,13 @@ dd { margin: 0; font-size: 13px; line-height: 1.55; }
   font-family: var(--serif);
   font-size: clamp(20px, 2vw, 27px);
   line-height: 1.35;
+  animation: path-quote-in 520ms ease both;
 }
-.path-quote em { color: var(--red-dark); font-weight: 400; }
+.path-quote em { color: var(--red-dark); font-weight: 500; letter-spacing: 0.035em; }
+@keyframes path-quote-in {
+  from { opacity: 0; transform: translate(-50%, -42%) scale(0.94); }
+  to { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+}
 .path-toggle {
   position: relative;
   z-index: 7;
