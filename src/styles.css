@@ -2641,8 +2641,7 @@ body,
   [data-interface="command"] .ide-editor-content .simulation-interpretation h3 { margin-top: 20px; }
   [data-interface="command"] .ide-editor-content .about-path-intro h1 em { display: inline; }
   [data-interface="command"] .ide-editor-content .about-path-stage { display: block; min-height: 760px; padding: 0; }
-  [data-interface="command"] .ide-editor-content .about-path-stage::before { position: absolute; top: 8%; bottom: 8%; left: 50%; display: block; width: 1px; background: #4fc1ff; content: ""; opacity: 0.12; transform: scaleY(0.16); transform-origin: top; transition: opacity 300ms ease, transform 900ms cubic-bezier(0.65, 0, 0.16, 1); }
-  [data-interface="command"] .ide-editor-content .about-path-stage.is-connected::before { opacity: 0.72; transform: scaleY(1); }
+  [data-interface="command"] .ide-editor-content .about-path-stage::before { display: none; }
   [data-interface="command"] .ide-editor-content .path-stage-label { position: absolute; top: 14px; }
   [data-interface="command"] .ide-editor-content .about-journey-line { display: none; }
   [data-interface="command"] .ide-editor-content .path-card { width: min(43%, 320px); min-height: 112px; }
