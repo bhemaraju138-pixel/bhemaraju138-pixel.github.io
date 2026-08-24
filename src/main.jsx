@@ -497,35 +497,13 @@ function SimulationIndexCard({ simulation }) {
 function SimulationsPage() {
   return (
     <Shell>
+      <section className="simulation-heading page-shell">
+        <h1>SEE THROUGH MY LENS</h1>
+      </section>
       <section className="simulation-index page-shell" aria-label="Available simulations">
         {simulationCatalog.map((simulation) => (
           <SimulationIndexCard simulation={simulation} key={simulation.title} />
         ))}
-      </section>
-      <section className="simulation-lens page-shell" aria-labelledby="simulation-lens-heading">
-        <div className="lens-mark" aria-hidden="true">
-          <span />
-          <span />
-          <i />
-        </div>
-        <div className="lens-copy">
-          <p className="eyebrow light">See through my lens</p>
-          <h2 id="simulation-lens-heading">
-            Every model begins where the agent benchmark ends.
-            <em>The surrounding institution is part of the system.</em>
-          </h2>
-          <p>
-            I use simulation to expose the institutional choices that disappear when
-            we look only at the agent: access, evidence, verification, and response.
-          </p>
-        </div>
-      </section>
-      <section className="simulation-novelty page-shell">
-        <p className="eyebrow">Novelty boundary</p>
-        <h2>Established mathematics. New institutional couplings.</h2>
-        <p>
-          The contribution is not a renamed equation. It is the feedback structure each model makes testable.
-        </p>
       </section>
     </Shell>
   );
