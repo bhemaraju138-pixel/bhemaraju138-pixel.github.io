@@ -127,7 +127,11 @@ button, input { font: inherit; }
 
 h1, h2, h3, p { margin-top: 0; }
 
-h1, h2, h3 {
+h1, h2, h3 { line-height: 1.05; }
+
+h1, h2 { font-family: var(--serif); font-weight: 500; }
+
+h1 {
   font-family: var(--sans) !important;
   font-style: normal;
   font-weight: var(--heading-weight) !important;
@@ -136,7 +140,7 @@ h1, h2, h3 {
   text-transform: uppercase;
 }
 
-h1 em, h2 em, h3 em {
+h1 em {
   font-style: normal;
   font-weight: inherit !important;
 }
@@ -1277,7 +1281,6 @@ dd { margin: 0; font-size: 13px; line-height: 1.55; }
   align-items: end;
 }
 .path-kicker { align-self: start; margin: 0; padding-top: 22px; font-size: 10px; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; }
-.path-kicker span { display: inline-block; width: 30px; height: 1px; margin: 0 10px 3px 0; background: currentColor; }
 .about-path-intro h1 { margin: 0; font-size: clamp(68px, 8.5vw, 126px); font-weight: 500; letter-spacing: -0.065em; line-height: 0.82; }
 .about-path-intro h1 em { display: block; color: var(--red); font-weight: 400; }
 .about-path-intro > p:last-child { max-width: 390px; margin: 0 0 2px; color: var(--muted); font-family: var(--serif); font-size: 18px; line-height: 1.55; }

@@ -845,7 +845,7 @@ function AboutPage() {
     <Shell>
       <section className="about-path-hero page-shell">
         <div className="about-path-intro">
-          <p className="path-kicker"><span /> Hello, I’m</p>
+          <p className="path-kicker">Hello, I’m</p>
           <h1>Hema Raju <em>Barri.</em></h1>
           <p>
             I cross disciplines, institutions, and assumptions, then build the missing
