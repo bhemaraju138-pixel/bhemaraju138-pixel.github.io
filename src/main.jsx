@@ -503,11 +503,13 @@ function SimulationIndexCard({ simulation }) {
       <h2>{simulation.title}</h2>
       <p>{simulation.question}</p>
       <dl>
-        <div><dt>Mathematical core</dt><dd>{simulation.mathematics}</dd></div>
-        <div><dt>Contribution tested</dt><dd>{simulation.contribution}</dd></div>
-        <div><dt>Evidence status</dt><dd>{simulation.status}</dd></div>
+        <div><dt>Model</dt><dd>{simulation.mathematics}</dd></div>
+        <div><dt>Test</dt><dd>{simulation.contribution}</dd></div>
       </dl>
-      <strong>Open simulation <Arrow /></strong>
+      <div className="simulation-card-footer">
+        <small>{simulation.status}</small>
+        <strong>Open <Arrow /></strong>
+      </div>
     </a>
   );
 }
@@ -517,18 +519,16 @@ function SimulationsPage() {
     <Shell>
       <section className="page-intro simulations-intro page-shell">
         <p className="eyebrow">Technical simulations</p>
-        <h1>Models that make institutional feedback calculable.</h1>
+        <h1>Institutional feedback, made calculable.</h1>
         <p className="intro-lede">
-          Each simulation states its equations, exposes its parameters, tests a
-          boundary case, and separates established mathematics from the institutional
-          mechanism being proposed.
+          Three interactive models. Visible equations, adjustable assumptions, explicit limits.
         </p>
       </section>
       <section className="simulation-principles page-shell" aria-label="Simulation standards">
-        <div><span>Equations</span><strong>No hidden scoring rule.</strong></div>
-        <div><span>Stability</span><strong>Boundary conditions are visible.</strong></div>
-        <div><span>Novelty</span><strong>New mechanism, not renamed mathematics.</strong></div>
-        <div><span>Claims</span><strong>Theory-building, not policy forecasts.</strong></div>
+        <div><span>Equations</span><strong>Nothing hidden.</strong></div>
+        <div><span>Stability</span><strong>Boundaries shown.</strong></div>
+        <div><span>Novelty</span><strong>Mechanisms, not labels.</strong></div>
+        <div><span>Claims</span><strong>No false precision.</strong></div>
       </section>
       <section className="simulation-index page-shell" aria-label="Available simulations">
         {simulationCatalog.map((simulation) => (
@@ -537,13 +537,9 @@ function SimulationsPage() {
       </section>
       <section className="simulation-novelty page-shell">
         <p className="eyebrow">Novelty boundary</p>
-        <h2>The mathematics is established. The coupled institutional mechanisms are the experiment.</h2>
+        <h2>Established mathematics. New institutional couplings.</h2>
         <p>
-          Fixed points, Gaussian updating, and Erlang-C queues are not presented as
-          inventions. The contribution is to use them to formalize three mechanisms
-          usually held constant: institutional verification after agent adoption,
-          decaying evidence about rejected strategies, and service capacity that falls
-          when verification intensifies.
+          The contribution is not a renamed equation. It is the feedback structure each model makes testable.
         </p>
       </section>
     </Shell>
@@ -571,13 +567,11 @@ function ObservabilitySimulationPage() {
         <p className="eyebrow">Bayesian partial-feedback simulation</p>
         <h1>The Evidence You Stop Seeing</h1>
         <p className="intro-lede">
-          A decision-maker commits to Strategy A. Strategy B later becomes better,
-          but evidence about B is observed only through a deliberately maintained
-          reserve whose informativeness decays with operational distance.
+          Strategy B becomes superior after commitment to A. Can a decaying evidence reserve reveal the reversal in time?
         </p>
         <div className="status-box technical-status">
           <strong>Evidence status</strong>
-          <p>Analytical thought experiment. Gaussian signals and latent payoff paths are illustrative, not calibrated estimates.</p>
+          <p>Illustrative Gaussian thought experiment; not an empirical estimate.</p>
         </div>
       </section>
 
@@ -588,22 +582,22 @@ function ObservabilitySimulationPage() {
           <label>
             <span>Observability reserve <output>{percent(reserve)}</output></span>
             <input type="range" min="0" max="1" step="0.05" value={reserve} onChange={(event) => setReserve(Number(event.target.value))} />
-            <small>Fractional evidence collected about the unchosen strategy each period.</small>
+            <small>Evidence retained about the unchosen strategy.</small>
           </label>
           <label>
             <span>Evidence decay <output>{evidenceDecay.toFixed(3)}</output></span>
             <input type="range" min="0" max="0.06" step="0.005" value={evidenceDecay} onChange={(event) => setEvidenceDecay(Number(event.target.value))} />
-            <small>Exponential loss of relevance as operations move farther from Strategy B.</small>
+            <small>How quickly unchosen evidence loses relevance.</small>
           </label>
           <label>
             <span>Signal noise σ <output>{signalNoise.toFixed(2)}</output></span>
             <input type="range" min="0.08" max="0.4" step="0.01" value={signalNoise} onChange={(event) => setSignalNoise(Number(event.target.value))} />
-            <small>Standard deviation of the payoff signal.</small>
+            <small>Payoff-signal uncertainty.</small>
           </label>
           <label>
             <span>Reversal period <output>t = {changePoint}</output></span>
             <input type="range" min="10" max="40" step="1" value={changePoint} onChange={(event) => setChangePoint(Number(event.target.value))} />
-            <small>Period when the latent payoff of Strategy B rises above Strategy A.</small>
+            <small>When Strategy B becomes superior.</small>
           </label>
         </div>
 
@@ -623,7 +617,7 @@ function ObservabilitySimulationPage() {
               </div>
             ))}
           </div>
-          <p className="chart-caption">Bar height is Pr(B &gt; A | evidence). The outlined bar marks the latent reversal; the model detects it only when the posterior crosses 80%.</p>
+          <p className="chart-caption">Bars show Pr(B &gt; A | evidence). The outline marks the true reversal; detection begins above 80%.</p>
         </div>
       </section>
 
@@ -633,18 +627,14 @@ function ObservabilitySimulationPage() {
           <Equation>{"w(B,t) = r · exp[−δ(t−1)]"}</Equation>
           <Equation>{"τ(B,t) = τ₀ + Σ w(B,k) / σ²"}</Equation>
           <Equation>{"Pr(B>A | Dₜ) = Φ[(mᴮ−mᴬ) / √(Vᴬ+Vᴮ)]"}</Equation>
-          <p>
-            The conjugate Gaussian update is standard. The experimental object is the
-            reserve weight r interacting with decay δ, producing a measurable delay
-            between a real reversal and an institution’s ability to recognize it.
-          </p>
+          <p>Gaussian updating is standard. The experiment measures how reserve r and decay δ delay institutional recognition.</p>
         </div>
       </section>
 
       <section className="simulation-interpretation page-shell">
-        <article><span>Established result</span><h3>Selective decisions create selective labels.</h3><p>Outcomes for rejected or unchosen options are systematically harder to observe.</p></article>
-        <article><span>Contribution tested here</span><h3>Observability can be budgeted.</h3><p>The model treats counterfactual evidence as a reserve with an explicit opportunity cost and decay rate.</p></article>
-        <article><span>Failure condition</span><h3>Some reserves never become informative.</h3><p>When decay or noise dominates, spending on observation still fails to identify the reversal by the horizon.</p></article>
+        <article><span>Established</span><h3>Decisions create selective labels.</h3><p>Rejected options are harder to observe.</p></article>
+        <article><span>Tested here</span><h3>Observability can be budgeted.</h3><p>Treat counterfactual evidence as a decaying reserve.</p></article>
+        <article><span>Failure</span><h3>A reserve may still be too weak.</h3><p>High decay or noise can hide the reversal.</p></article>
       </section>
 
       <section className="simulation-sources page-shell">
@@ -673,13 +663,11 @@ function VerificationQueuePage() {
         <p className="eyebrow">Endogenous queueing simulation</p>
         <h1>The Queue Answers Back</h1>
         <p className="intro-lede">
-          Agent adoption increases submissions. Congestion triggers verification.
-          Verification slows service, which raises utilization again. The question is
-          whether this feedback crosses the M/M/c stability boundary ρ = 1.
+          Agents increase submissions; congestion raises verification; verification slows service. Does the loop cross ρ = 1?
         </p>
         <div className="status-box technical-status">
           <strong>Evidence status</strong>
-          <p>Steady-state queueing thought experiment. Arrival, service, patience, and response parameters are illustrative.</p>
+          <p>Illustrative steady-state queue; not a program forecast.</p>
         </div>
       </section>
 
@@ -690,22 +678,22 @@ function VerificationQueuePage() {
           <label>
             <span>Agent adoption <output>{percent(agentAdoption)}</output></span>
             <input type="range" min="0" max="1" step="0.05" value={agentAdoption} onChange={(event) => setAgentAdoption(Number(event.target.value))} />
-            <small>Share of potential claimants using an agent; arrival volume rises with adoption.</small>
+            <small>Agent use increases arrival volume.</small>
           </label>
           <label>
             <span>Concurrent reviewers <output>{reviewers}</output></span>
             <input type="range" min="6" max="20" step="1" value={reviewers} onChange={(event) => setReviewers(Number(event.target.value))} />
-            <small>Parallel service channels c.</small>
+            <small>Parallel service channels.</small>
           </label>
           <label>
             <span>Verification response β <output>{verificationResponse.toFixed(2)}</output></span>
             <input type="range" min="0" max="0.9" step="0.05" value={verificationResponse} onChange={(event) => setVerificationResponse(Number(event.target.value))} />
-            <small>Strength of the agency’s verification response to utilization.</small>
+            <small>How verification responds to utilization.</small>
           </label>
           <label>
             <span>Agent-quality gap g <output>{agentQualityGap.toFixed(2)}</output></span>
             <input type="range" min="0" max="0.6" step="0.05" value={agentQualityGap} onChange={(event) => setAgentQualityGap(Number(event.target.value))} />
-            <small>Additional verification induced by unequal error quality across submitted claims.</small>
+            <small>Verification added by unequal claim quality.</small>
           </label>
         </div>
 
@@ -725,7 +713,7 @@ function VerificationQueuePage() {
               </div>
             ))}
           </div>
-          <p className="chart-caption">Bars show utilization as adoption rises from 0% to 100%. Dark bars above the modeled stability boundary indicate that steady-state waiting time does not exist.</p>
+          <p className="chart-caption">Utilization across adoption. Dark bars cross the boundary where steady-state waiting ceases to exist.</p>
         </div>
       </section>
 
@@ -736,19 +724,14 @@ function VerificationQueuePage() {
           <Equation>{"μ(v) = μ₀ / (1 + 1.55v),   ρ = λ / cμ"}</Equation>
           <Equation>{"v* = .06 + .72β·logit⁻¹[9(ρ−.72)] + .20ga"}</Equation>
           <Equation>{"Wq = C(c,λ/μ) / (cμ−λ),   only if ρ < 1"}</Equation>
-          <p>
-            Erlang-C is established queueing mathematics. The simulation adds a
-            feedback loop: congestion raises verification v, verification reduces the
-            service rate μ, and the new μ changes congestion again. A damped iteration
-            solves the fixed point.
-          </p>
+          <p>Erlang-C is standard. The experiment closes the loop between congestion, verification v, and service rate μ.</p>
         </div>
       </section>
 
       <section className="simulation-interpretation page-shell">
-        <article><span>Nonlinearity</span><h3>Small adoption changes can create a phase change.</h3><p>Waiting remains modest until utilization approaches one; beyond it, the steady-state queue diverges.</p></article>
-        <article><span>Distribution</span><h3>Equal waiting creates unequal exit.</h3><p>Different patience parameters turn the same queue into a larger abandonment rate for lower-resource claimants.</p></article>
-        <article><span>Falsifier</span><h3>The loop weakens when service is verification-elastic.</h3><p>Cross-trained capacity, targeted audits, or verification that does not slow service would reduce or break the modeled feedback.</p></article>
+        <article><span>Nonlinearity</span><h3>Small changes can tip the queue.</h3><p>Waiting diverges as utilization crosses one.</p></article>
+        <article><span>Distribution</span><h3>Equal waiting, unequal exit.</h3><p>Different patience creates an abandonment gap.</p></article>
+        <article><span>Falsifier</span><h3>Elastic service breaks the loop.</h3><p>Capacity or targeted audits can restore stability.</p></article>
       </section>
 
       <section className="simulation-sources page-shell">
@@ -1224,20 +1207,14 @@ function BurdenMovesSimulationPage() {
   return (
     <Shell>
       <section className="page-intro experiment-intro page-shell">
-        <p className="eyebrow">Open experiment · Version 1.0 · August 23, 2026</p>
+        <p className="eyebrow">Fixed-point simulation · August 2026</p>
         <h1>The Burden Moves</h1>
         <p className="intro-lede">
-          A stylized fixed-point simulation of agent-mediated public-benefit claiming.
-          The model asks what happens after agents lower the cost of applying and the
-          agency responds to the resulting volume.
+          A fixed-point model of how easier applications can trigger verification and redistribute administrative burden.
         </p>
         <div className="status-box">
           <strong>Evidence status</strong>
-          <p>
-            Theory-building artifact. Parameters are illustrative and are not
-            calibrated to a specific benefit program. Outputs are not causal estimates
-            or forecasts.
-          </p>
+          <p>Illustrative theory model; not a causal estimate or forecast.</p>
         </div>
       </section>
 
@@ -1245,22 +1222,22 @@ function BurdenMovesSimulationPage() {
         <div className="control-panel">
           <div>
             <p className="eyebrow">Simulation controls</p>
-            <h2 id="simulation-controls-heading">Change the institution, not only the agent.</h2>
+            <h2 id="simulation-controls-heading">Change the institution.</h2>
           </div>
           <label>
             <span>Agency capacity <output>{percent(agencyCapacity)}</output></span>
             <input type="range" min="0.25" max="0.55" step="0.01" value={agencyCapacity} onChange={(event) => setAgencyCapacity(Number(event.target.value))} />
-            <small>Share of the synthetic population the agency can process before verification intensifies.</small>
+            <small>Volume processed before verification rises.</small>
           </label>
           <label>
             <span>Verification response <output>{verificationResponse.toFixed(2)}</output></span>
             <input type="range" min="0" max="0.9" step="0.05" value={verificationResponse} onChange={(event) => setVerificationResponse(Number(event.target.value))} />
-            <small>How sharply verification rises when application volume exceeds capacity.</small>
+            <small>Response after volume exceeds capacity.</small>
           </label>
           <label>
             <span>Agent-quality gap <output>{qualityGap.toFixed(2)}</output></span>
             <input type="range" min="0" max="0.5" step="0.05" value={qualityGap} onChange={(event) => setQualityGap(Number(event.target.value))} />
-            <small>Difference in friction reduction and error between lower- and higher-resource users.</small>
+            <small>Assistance-quality difference across users.</small>
           </label>
           <button type="button" className="reset-button" onClick={() => { setAgencyCapacity(0.37); setVerificationResponse(0.55); setQualityGap(0.25); }}>
             Reset baseline
@@ -1299,23 +1276,23 @@ function BurdenMovesSimulationPage() {
           <h2>The loop</h2>
         </div>
         <ol>
-          <li><span>01</span><p>Agents reduce information and completion costs, but their quality and error differ across users.</p></li>
-          <li><span>02</span><p>More eligible and ineligible applicants choose to submit claims.</p></li>
-          <li><span>03</span><p>When volume exceeds capacity, the agency raises verification intensity.</p></li>
-          <li><span>04</span><p>Verification imposes documentation costs that are larger for lower-resource applicants, changing take-up again.</p></li>
+          <li><span>01</span><p>Agents reduce application costs unevenly.</p></li>
+          <li><span>02</span><p>Submission volume rises.</p></li>
+          <li><span>03</span><p>Capacity pressure raises verification.</p></li>
+          <li><span>04</span><p>Documentation costs reshape take-up.</p></li>
         </ol>
       </section>
 
       <section className="interpretation page-shell">
         <div className="section-heading">
           <p className="eyebrow">What the model contributes</p>
-          <h2>Not an answer. A sharper empirical disagreement.</h2>
+          <h2>A testable disagreement.</h2>
         </div>
         <div className="interpretation-grid">
-          <article><h3>Prediction to test</h3><p>Equal, low-error assistance should improve access most when capacity is elastic or verification is targeted rather than volume-driven.</p></article>
-          <article><h3>Failure mode</h3><p>When quality is stratified, better agents can produce claims that pass screening while weaker agents create new documentation demands for their users.</p></article>
-          <article><h3>Design implication</h3><p>Auditing the assistant is insufficient. Evaluation must include institutional response, queueing, appeals, and the distribution of verification costs.</p></article>
-          <article><h3>What would falsify it</h3><p>Stable application volume, non-responsive verification, or equal documentation costs would weaken the burden-shifting mechanism.</p></article>
+          <article><h3>Prediction</h3><p>Elastic capacity or targeted review should improve access.</p></article>
+          <article><h3>Failure mode</h3><p>Unequal agent quality can create new documentation burdens.</p></article>
+          <article><h3>Design implication</h3><p>Audit the institutional response, not only the assistant.</p></article>
+          <article><h3>Falsifier</h3><p>Stable volume or equal documentation costs weaken the mechanism.</p></article>
         </div>
         <div className="download-row">
           <a className="primary-button" href="/data/claiming-under-agents-results.json" download>Download baseline results <Arrow /></a>
