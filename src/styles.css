@@ -2343,7 +2343,7 @@ body,
 .ide-resizer::after { position: absolute; z-index: 1; background: #007acc; content: ""; opacity: 0; transition: opacity 100ms ease; }
 .ide-resizer:hover::after,
 .ide-resizer:focus-visible::after { opacity: 1; }
-.ide-resizer-vertical { width: 1px; background: #2b2b2b; cursor: ew-resize; }
+.ide-resizer-vertical { width: 1px; background: transparent; cursor: ew-resize; }
 .ide-resizer-vertical::before { position: absolute; z-index: 2; inset: 0 -4px; content: ""; }
 .ide-resizer-vertical::after { inset: 0; width: 1px; }
 .ide-resizer-horizontal { position: absolute; top: -3px; right: 0; left: 0; height: 5px; cursor: ns-resize; }
@@ -2604,10 +2604,10 @@ body,
 
 [data-interface="command"] .ide-editor-content > :first-child { padding-top: 24px; }
 [data-interface="command"] .ide-editor-content {
-  background:
-    linear-gradient(90deg, #252526 0, #252526 34px, transparent 34px),
-    #1e1e1e;
+  background: #1e1e1e;
 }
+[data-interface="command"] .ide-explorer { border-right-color: transparent; }
+[data-interface="command"] .ide-inspector { border-left-color: transparent; }
 [data-interface="command"] .ide-editor-content,
 [data-interface="command"] .ide-editor-content * { font-family: var(--vscode-ui) !important; }
 [data-interface="command"] .ide-editor-content :is(code, pre, .equation, .equation *, .model-code, .model-code *) { font-family: var(--vscode-mono) !important; }
