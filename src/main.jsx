@@ -725,14 +725,20 @@ function CommandWorkspace({ children, onModeChange }) {
   const [activeSidebar, setActiveSidebar] = useState("explorer");
   const [rightPanel, setRightPanel] = useState("context");
   const [sidebarVisible, setSidebarVisible] = useState(() => {
+    if (window.innerWidth <= 860) return false;
     const stored = readWorkspaceSetting("hrb-sidebar");
-    return stored ? stored !== "hidden" : window.innerWidth > 860;
+    return stored ? stored !== "hidden" : true;
   });
   const [inspectorVisible, setInspectorVisible] = useState(() => {
+    if (window.innerWidth <= 1240) return false;
     const stored = readWorkspaceSetting("hrb-inspector");
-    return stored ? stored !== "hidden" : window.innerWidth > 1240;
+    return stored ? stored !== "hidden" : true;
   });
-  const [panelVisible, setPanelVisible] = useState(() => readWorkspaceSetting("hrb-panel") !== "hidden");
+  const [panelVisible, setPanelVisible] = useState(() => {
+    if (window.innerWidth <= 680) return false;
+    const stored = readWorkspaceSetting("hrb-panel");
+    return stored ? stored !== "hidden" : true;
+  });
   const [panelMaximized, setPanelMaximized] = useState(false);
   const [panelTab, setPanelTab] = useState("terminal");
   const [quickOpen, setQuickOpen] = useState(false);
@@ -775,7 +781,7 @@ function CommandWorkspace({ children, onModeChange }) {
     setPanelHeight(210);
     setSidebarVisible(window.innerWidth > 860);
     setInspectorVisible(window.innerWidth > 1240);
-    setPanelVisible(true);
+    setPanelVisible(window.innerWidth > 680);
     setPanelMaximized(false);
     setHelpOpen(false);
   };
