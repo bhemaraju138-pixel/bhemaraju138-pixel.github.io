@@ -876,6 +876,7 @@ function DevWorkspace({ children, onModeChange }) {
     <div className="ide-screen">
       <header className="ide-titlebar">
         <div className="ide-title-left">
+          <ModeToggle mode="dev" onChange={onModeChange} />
           <div className="ide-history-controls">
             <button type="button" aria-label="Go back" title="Go Back" onClick={() => window.history.back()}><Icon name="arrow-left" /></button>
             <button type="button" aria-label="Go forward" title="Go Forward" onClick={() => window.history.forward()}><Icon name="arrow-right" /></button>
@@ -894,7 +895,6 @@ function DevWorkspace({ children, onModeChange }) {
           <button type="button" className={sidebarVisible ? "active" : ""} onClick={() => setSidebarVisible((current) => !current)} aria-label="Toggle primary side bar" title="Toggle Primary Side Bar (⌘B)"><Icon name={sidebarVisible ? "layout-sidebar-left" : "layout-sidebar-left-off"} /></button>
           <button type="button" className={panelVisible ? "active" : ""} onClick={() => setPanelVisible((current) => !current)} aria-label="Toggle panel" title="Toggle Panel (⌘J)"><Icon name={panelVisible ? "layout-panel" : "layout-panel-off"} /></button>
           <button type="button" className={inspectorVisible ? "active" : ""} onClick={() => setInspectorVisible((current) => !current)} aria-label="Toggle secondary side bar" title="Toggle Secondary Side Bar"><Icon name={inspectorVisible ? "layout-sidebar-right" : "layout-sidebar-right-off"} /></button>
-          <ModeToggle mode="dev" onChange={onModeChange} />
         </div>
       </header>
 
