@@ -35,7 +35,7 @@ export const research = [
     implication:
       "Sourcing determines who can inspect a system, where operational knowledge accumulates, and who can be held accountable when the system acts on sensitive data.",
     href: "/papers/privacy-sensitive-sourcing.pdf",
-    linkLabel: "Read the presented writing sample",
+    linkLabel: "Read the presented paper",
   },
   {
     year: "2026",
