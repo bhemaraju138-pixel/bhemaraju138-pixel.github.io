@@ -1,4 +1,4 @@
-import { access } from "node:fs/promises";
+import { access, readFile } from "node:fs/promises";
 import { resolve } from "node:path";
 import test from "node:test";
 import assert from "node:assert/strict";
@@ -20,4 +20,22 @@ test("every essay figure, local download, and built route exists", async () => {
       }
     }
   }
+});
+
+test("portfolio routes and route-specific metadata are built", async () => {
+  for (const route of ["research", "writing", "about", "experiments/claiming-under-agents"]) {
+    await access(resolve("dist/client", route, "index.html"));
+  }
+
+  const writingHtml = await readFile(resolve("dist/client/writing/index.html"), "utf8");
+  assert.match(writingHtml, /<title>Writing — Hema Raju Barri<\/title>/);
+  assert.match(writingHtml, /og\.png/);
+
+  const essayHtml = await readFile(
+    resolve("dist/client/experiments/error-message-is-policy/index.html"),
+    "utf8",
+  );
+  assert.match(essayHtml, /<title>The Error Message Is Part of the Policy — Hema Raju Barri<\/title>/);
+  assert.doesNotMatch(essayHtml, /property="og:image"/);
+  assert.doesNotMatch(essayHtml, /name="twitter:image"/);
 });

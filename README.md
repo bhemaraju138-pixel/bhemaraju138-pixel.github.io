@@ -1,15 +1,17 @@
-# Hema Raju Barri — Research Portfolio
+# Hema Raju Barri — Researcher & Systems Builder
 
-An editorial research portfolio on AI agents, public institutions, evidence, and
-equitable access.
+An editorial portfolio spanning AI systems, management, public institutions,
+human–AI interaction, evidence, and empirical methods.
 
-The site distinguishes among:
+The portfolio includes:
 
-- accepted papers and preprints;
-- notes derived from documented 2024–2025 project work;
-- a new, openly labeled stylized simulation published in August 2026; and
-- six public-data experiments on interface recovery, metadata, civic channels,
-  ranking robustness, rulemaking burden, and cross-country missingness.
+- a selected-work archive connecting questions, methods, findings, and implications;
+- a searchable writing notebook that brings essays and experiments into one place;
+- an interactive research compass linking projects across four intellectual lenses;
+- a parameterized simulation of agent-mediated public-benefit claiming;
+- six reproducible public-data experiments on interface recovery, metadata, civic
+  channels, ranking robustness, rulemaking burden, and cross-country missingness; and
+- an About page connecting research, engineering, field work, and education.
 
 Historical project dates describe when work was conducted. Interpretive notes
 are labeled with their actual portfolio publication date.

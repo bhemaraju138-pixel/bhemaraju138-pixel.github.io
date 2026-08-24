@@ -13,9 +13,10 @@ function Arrow() {
 function Header() {
   const path = window.location.pathname;
   const links = [
-    ["/research/", "Research"],
-    ["/experiments/", "Experiments"],
-    ["/timeline/", "Timeline"],
+    ["/research/", "Work"],
+    ["/writing/", "Writing"],
+    ["/experiments/claiming-under-agents/", "Lab"],
+    ["/about/", "About"],
   ];
 
   return (
@@ -23,7 +24,7 @@ function Header() {
       <a className="skip-link" href="#main">Skip to content</a>
       <a className="wordmark" href="/" aria-label="Hema Raju Barri, home">
         <span>HRB</span>
-        <small>Research portfolio</small>
+        <small>Researcher · Builder</small>
       </a>
       <nav aria-label="Primary navigation">
         {links.map(([href, label]) => (
@@ -48,12 +49,13 @@ function Footer() {
     <footer className="site-footer">
       <div>
         <strong>Hema Raju Barri</strong>
-        <p>AI agents · institutions · evidence · equitable access</p>
+        <p>Researcher · systems builder · public-interest technologist</p>
       </div>
       <div className="footer-links">
         <a href="mailto:bhemaraju.138@gmail.com">Email</a>
         <a href="https://github.com/bhemaraju138-pixel">GitHub</a>
-        <a href="/research/">Research</a>
+        <a href="/writing/">Writing</a>
+        <a href="/about/">About</a>
       </div>
       <p className="date-note">
         Historical project dates mark when work was conducted. Portfolio notes were
@@ -134,152 +136,231 @@ function ResearchCard({ item, index }) {
   );
 }
 
+const researchLenses = [
+  {
+    id: "institutions",
+    label: "Institutions",
+    glyph: "I",
+    question: "How do institutions respond when intelligent systems change the cost of acting?",
+    thesis:
+      "AI does not enter a fixed organization. Agencies and firms change verification, sourcing, queues, and evidence requirements in response.",
+    projectIndexes: [1, 4, 6],
+    accent: "coral",
+  },
+  {
+    id: "people",
+    label: "People",
+    glyph: "P",
+    question: "For whom does an intelligent system work—and under which interaction conditions?",
+    thesis:
+      "Performance is relational. The same behavior can help one person and frustrate another because fit depends on the user, task, and stakes.",
+    projectIndexes: [3, 4, 6],
+    accent: "blue",
+  },
+  {
+    id: "evidence",
+    label: "Evidence",
+    glyph: "E",
+    question: "Which analytical choices determine what remains visible and believable?",
+    thesis:
+      "A result is only as stable as the assumptions, missing-data decisions, joins, and counterfactual evidence that produced it.",
+    projectIndexes: [2, 4, 5],
+    accent: "gold",
+  },
+  {
+    id: "systems",
+    label: "Systems",
+    glyph: "S",
+    question: "What infrastructure makes autonomous action reliable, repairable, and contestable?",
+    thesis:
+      "Schemas, failure signals, permissions, and monitoring are governance mechanisms—not implementation details.",
+    projectIndexes: [0, 5, 6],
+    accent: "mint",
+  },
+];
+
+function ResearchCompass() {
+  const [activeId, setActiveId] = useState("institutions");
+  const active = researchLenses.find((lens) => lens.id === activeId);
+
+  return (
+    <div className={`research-compass ${active.accent}`}>
+      <div className="compass-controls" role="tablist" aria-label="Explore research by lens">
+        {researchLenses.map((lens, index) => (
+          <button
+            type="button"
+            role="tab"
+            aria-selected={lens.id === activeId}
+            key={lens.id}
+            onClick={() => setActiveId(lens.id)}
+          >
+            <span>0{index + 1}</span>
+            {lens.label}
+          </button>
+        ))}
+      </div>
+      <div className="compass-reading" role="tabpanel" aria-live="polite">
+        <div className="compass-glyph" aria-hidden="true">{active.glyph}</div>
+        <p className="eyebrow">A question I keep returning to</p>
+        <h3>{active.question}</h3>
+        <p>{active.thesis}</p>
+      </div>
+      <div className="compass-projects">
+        <span className="eyebrow">Follow the thread</span>
+        {active.projectIndexes.map((index) => (
+          <a href={research[index].href} key={research[index].title}>
+            <small>{research[index].year} · {research[index].type}</small>
+            <strong>{research[index].title}</strong>
+            <Arrow />
+          </a>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function NotebookPreviewCard({ essay }) {
+  return (
+    <a className="notebook-preview-card" href={`/experiments/${essay.slug}/`}>
+      <div>
+        <span>{essay.number}</span>
+        <small>Experiment · August 2026</small>
+      </div>
+      <h3>{essay.title}</h3>
+      <p>{essay.standfirst}</p>
+      <strong className="notebook-card-link">Read the field note <Arrow /></strong>
+    </a>
+  );
+}
+
 function Home() {
   return (
     <Shell>
-      <section className="hero page-shell">
+      <section className="hero portfolio-hero page-shell">
         <div className="hero-copy">
-          <p className="eyebrow">Hema Raju Barri · Information systems researcher</p>
+          <p className="eyebrow">Hema Raju Barri · Researcher · Systems builder</p>
           <h1>
-            When AI becomes the claimant, <em>who rewrites the rules?</em>
+            I study the systems <em>around intelligent systems.</em>
           </h1>
           <p className="hero-lede">
-            I study what happens when autonomous systems become counterparties to
-            institutions—changing not only decisions, but the evidence,
-            infrastructure, and verification rules surrounding them.
+            My work crosses AI, management, and public institutions. I build systems,
+            run experiments, and study the less visible choices—interfaces, evidence,
+            incentives, and rules—that determine who technology actually works for.
           </p>
           <div className="button-row">
             <a className="primary-button" href="/research/">
-              Enter the research program <Arrow />
+              Explore selected work <Arrow />
             </a>
-            <a className="secondary-button" href="/experiments/claiming-under-agents/">
-              Run the systems simulation
+            <a className="secondary-button" href="/writing/">
+              Read the notebook
             </a>
           </div>
         </div>
-        <aside className="hero-note">
-          <span className="note-number">Thesis / 01</span>
-          <p>
-            The effect of an AI agent is not contained in the model. It emerges from
-            the fit among the agent, the person, the task, and the institution that
-            can change the rules in response.
-          </p>
+        <aside className="hero-note portfolio-status">
+          <span className="status-pulse"><i /> Current desk</span>
+          <p>Researching robustness and missing-data decisions at Oxford Saïd.</p>
+          <dl>
+            <div><dt>Working across</dt><dd>AI · management · public systems</dd></div>
+            <div><dt>Perspective</dt><dd>Computer science, management, and field research</dd></div>
+            <div><dt>Notebook</dt><dd>Open methods, code, and unfinished questions</dd></div>
+          </dl>
         </aside>
       </section>
 
-      <section className="map-section page-shell" aria-labelledby="system-heading">
-        <div className="section-heading compact-heading">
-          <p className="eyebrow">The object of study</p>
-          <h2 id="system-heading">One action. Four moving parts.</h2>
+      <div className="practice-rail" aria-label="Research practices">
+        <div>
+          <span>01</span> Build the system
+          <span>02</span> Test the behavior
+          <span>03</span> Trace the institution
+          <span>04</span> Publish the uncertainty
         </div>
-        <EvidenceChain />
-      </section>
+      </div>
 
-      <section className="thesis-section page-shell" aria-labelledby="thesis-heading">
-        <div className="section-heading">
-          <p className="eyebrow">Working thesis</p>
-          <h2 id="thesis-heading">The burden rarely disappears. It changes address.</h2>
-        </div>
-        <ol className="propositions">
-          <li>
-            <span>01</span>
-            <h3>Interfaces govern action.</h3>
-            <p>
-              Schemas, permissions, and reference assets decide which tasks an agent
-              can complete and which errors remain invisible.
-            </p>
-          </li>
-          <li>
-            <span>02</span>
-            <h3>Institutions are not fixed endpoints.</h3>
-            <p>
-              As agents lower transaction costs, organizations can change screening,
-              verification, sourcing, and evidence requirements.
-            </p>
-          </li>
-          <li>
-            <span>03</span>
-            <h3>Distribution is a systems property.</h3>
-            <p>
-              Whether AI expands access depends on who has a capable agent, who can
-              satisfy new burdens, and what the institution learns to reward.
-            </p>
-          </li>
-        </ol>
-      </section>
-
-      <section className="selected-section page-shell" aria-labelledby="selected-heading">
+      <section className="compass-section page-shell" aria-labelledby="compass-heading">
         <div className="section-heading split-heading">
           <div>
-            <p className="eyebrow">Selected research</p>
-            <h2 id="selected-heading">Findings that changed the question.</h2>
+            <p className="eyebrow">Interactive research compass</p>
+            <h2 id="compass-heading">Four lenses. One evolving practice.</h2>
+          </div>
+          <p className="section-side-note">
+            Choose a lens to see how projects that look unrelated belong to the same
+            research program.
+          </p>
+        </div>
+        <ResearchCompass />
+      </section>
+
+      <section className="selected-section portfolio-selected page-shell" aria-labelledby="selected-heading">
+        <div className="section-heading split-heading">
+          <div>
+            <p className="eyebrow">Selected work</p>
+            <h2 id="selected-heading">Projects with a point of view.</h2>
           </div>
           <a className="text-link" href="/research/">
-            View the full research map <Arrow />
+            View all research <Arrow />
           </a>
         </div>
-        <div className="card-grid">
-          {research.slice(0, 4).map((item, index) => (
+        <div className="card-grid portfolio-card-grid">
+          {[research[0], research[3], research[5]].map((item, index) => (
             <ResearchCard item={item} index={index} key={item.title} />
           ))}
         </div>
       </section>
 
-      <section className="experiment-band" aria-labelledby="experiment-heading">
+      <section className="notebook-home page-shell" aria-labelledby="notebook-heading">
+        <div className="section-heading split-heading">
+          <div>
+            <p className="eyebrow">From the notebook</p>
+            <h2 id="notebook-heading">Writing in public, with receipts.</h2>
+          </div>
+          <a className="text-link" href="/writing/">
+            Browse all writing <Arrow />
+          </a>
+        </div>
+        <div className="notebook-preview-grid">
+          {publicDataEssays.slice(0, 4).map((essay) => (
+            <NotebookPreviewCard essay={essay} key={essay.slug} />
+          ))}
+        </div>
+      </section>
+
+      <section className="experiment-band portfolio-lab" aria-labelledby="experiment-heading">
         <div className="page-shell experiment-band-inner">
           <div>
-            <p className="eyebrow light">New open experiment · August 2026</p>
+            <p className="eyebrow light">Interactive lab · Open model</p>
             <h2 id="experiment-heading">The Burden Moves</h2>
             <p>
-              A stylized model of heterogeneous applicants, unequal agent quality,
-              agency capacity, and endogenous verification. Change the assumptions;
-              inspect when assistance narrows the access gap and when it widens it.
+              Change agency capacity, verification response, and unequal agent
+              quality. The model reveals when assistance expands access—and when the
+              administrative burden simply reappears somewhere else.
             </p>
           </div>
           <div className="experiment-mark" aria-hidden="true">
-            <span>claim ↓</span>
-            <span>volume ↑</span>
-            <span>verify ?</span>
+            <span>claim ↓</span><span>volume ↑</span><span>verify ?</span>
           </div>
           <a className="light-button" href="/experiments/claiming-under-agents/">
-            Open the model <Arrow />
+            Run the model <Arrow />
           </a>
         </div>
       </section>
 
-      <section className="public-series-section page-shell" aria-labelledby="public-series-heading">
-        <div className="section-heading split-heading">
-          <div>
-            <p className="eyebrow">Six public-data experiments · August 2026</p>
-            <h2 id="public-series-heading">Small tests of where institutional power hides.</h2>
-          </div>
-          <a className="text-link" href="/experiments/">
-            Enter the full series <Arrow />
-          </a>
+      <section className="home-about page-shell" aria-labelledby="home-about-heading">
+        <div className="home-about-statement">
+          <p className="eyebrow">A short introduction</p>
+          <h2 id="home-about-heading">Computer scientist by training. Institution-watcher by habit.</h2>
+          <p>
+            I have built agentic workflows, studied human–AI interaction, worked with
+            municipal policy teams, and replicated econometric studies. The settings
+            change; the habit does not: find the hidden assumption, make it observable,
+            and test whether the conclusion survives.
+          </p>
+          <a className="primary-button" href="/about/">More about me <Arrow /></a>
         </div>
-        <div className="essay-card-grid">
-          {publicDataEssays.slice(0, 3).map((essay) => (
-            <ExperimentEssayCard essay={essay} key={essay.slug} />
-          ))}
-        </div>
-      </section>
-
-      <section className="notes-section page-shell" aria-labelledby="notes-heading">
-        <div className="section-heading">
-          <p className="eyebrow">Research notes</p>
-          <h2 id="notes-heading">Ideas with a falsifiable edge.</h2>
-        </div>
-        <div className="notes-list">
-          {notes.map((note, index) => (
-            <a href={`/notes/${note.slug}/`} className="note-row" key={note.slug}>
-              <span className="note-row-number">0{index + 1}</span>
-              <span>
-                <strong>{note.title}</strong>
-                <small>{note.eyebrow}</small>
-              </span>
-              <span className="row-arrow" aria-hidden="true">↗</span>
-            </a>
-          ))}
+        <div className="home-about-facts">
+          <div><span>Now</span><strong>Research Assistant, Oxford Saïd</strong></div>
+          <div><span>Previously</span><strong>Johns Hopkins · Birmingham Mayor’s Office · AI systems teams</strong></div>
+          <div><span>Methods</span><strong>Experiments · econometrics · simulations · field research · systems engineering</strong></div>
+          <div><span>Always</span><strong>Open code, careful claims, useful questions</strong></div>
         </div>
       </section>
     </Shell>
@@ -401,6 +482,237 @@ function ExperimentsLanding() {
   );
 }
 
+const experimentTopics = ["systems", "government", "government", "methods", "government", "methods"];
+const noteTopics = ["human–AI", "government", "systems", "government"];
+
+function WritingPage() {
+  const [topic, setTopic] = useState("all");
+  const [query, setQuery] = useState("");
+  const writingItems = [
+    ...publicDataEssays.map((essay, index) => ({
+      id: `experiment-${essay.slug}`,
+      title: essay.title,
+      excerpt: essay.standfirst,
+      href: `/experiments/${essay.slug}/`,
+      kind: "Public-data experiment",
+      date: "August 2026",
+      topic: experimentTopics[index],
+      marker: essay.number,
+    })),
+    ...notes.map((note, index) => ({
+      id: `note-${note.slug}`,
+      title: note.title,
+      excerpt: note.standfirst,
+      href: `/notes/${note.slug}/`,
+      kind: "Research note",
+      date: "August 2026",
+      topic: noteTopics[index],
+      marker: `N${index + 1}`,
+    })),
+  ];
+  const normalizedQuery = query.trim().toLowerCase();
+  const visibleItems = writingItems.filter((item) => {
+    const topicMatch = topic === "all" || item.topic === topic;
+    const textMatch = !normalizedQuery || `${item.title} ${item.excerpt} ${item.kind}`.toLowerCase().includes(normalizedQuery);
+    return topicMatch && textMatch;
+  });
+  const topics = ["all", "government", "methods", "human–AI", "systems"];
+
+  return (
+    <Shell>
+      <section className="writing-hero page-shell">
+        <div>
+          <p className="eyebrow">Writing · Experiments · Working ideas</p>
+          <h1>The open notebook.</h1>
+        </div>
+        <p>
+          Essays about AI, institutions, evidence, and the unglamorous infrastructure
+          between a model and a real decision. Experiments include their data, code,
+          exclusions, and the result that would change my mind.
+        </p>
+      </section>
+
+      <section className="writing-feature page-shell">
+        <div className="feature-marker">New / 06</div>
+        <div>
+          <p className="eyebrow">Featured public-data series</p>
+          <h2>Six Boundaries of Machine-Mediated Government</h2>
+          <p>
+            Six small empirical tests of where institutional power hides before an AI
+            system ever makes a decision: in failure messages, metadata, channels,
+            rankings, comment windows, and missing observations.
+          </p>
+          <a className="primary-button" href="/experiments/">Enter the complete series <Arrow /></a>
+        </div>
+        <div className="feature-index" aria-label="Six experiment themes">
+          {["Failure", "Metadata", "Channels", "Ranking", "Procedure", "Missingness"].map((label, index) => (
+            <a href={`/experiments/${publicDataEssays[index].slug}/`} key={label}>
+              <span>0{index + 1}</span><strong>{label}</strong>
+            </a>
+          ))}
+        </div>
+      </section>
+
+      <section className="writing-index page-shell" aria-labelledby="writing-index-heading">
+        <div className="section-heading split-heading">
+          <div>
+            <p className="eyebrow">Browse the archive</p>
+            <h2 id="writing-index-heading">Follow a question, not a format.</h2>
+          </div>
+          <div className="writing-count" aria-live="polite">{visibleItems.length} entries</div>
+        </div>
+
+        <div className="writing-tools">
+          <div className="topic-filters" aria-label="Filter writing by topic">
+            {topics.map((item) => (
+              <button
+                type="button"
+                key={item}
+                className={topic === item ? "active" : ""}
+                onClick={() => setTopic(item)}
+                aria-pressed={topic === item}
+              >
+                {item}
+              </button>
+            ))}
+          </div>
+          <label className="writing-search">
+            <span className="sr-only">Search writing</span>
+            <input
+              type="search"
+              value={query}
+              onChange={(event) => setQuery(event.target.value)}
+              placeholder="Search the notebook…"
+            />
+          </label>
+        </div>
+
+        <div className="writing-list">
+          {visibleItems.map((item) => (
+            <a className="writing-row" href={item.href} key={item.id}>
+              <span className="writing-marker">{item.marker}</span>
+              <span className="writing-row-main">
+                <small>{item.kind} · {item.date} · {item.topic}</small>
+                <strong>{item.title}</strong>
+                <p>{item.excerpt}</p>
+              </span>
+              <span className="writing-row-arrow" aria-hidden="true">↗</span>
+            </a>
+          ))}
+          {visibleItems.length === 0 && (
+            <div className="writing-empty">No note matches that path. Try another word or topic.</div>
+          )}
+        </div>
+      </section>
+
+      <section className="writing-principle page-shell">
+        <span className="eyebrow">Notebook rule</span>
+        <blockquote>
+          A polished argument should still show its seams: the data it excludes, the
+          assumption it depends on, and the observation that could reverse it.
+        </blockquote>
+        <a className="secondary-button" href="/data/public-data-series/public-data-experiments.zip" download>
+          Download the evidence bundle <Arrow />
+        </a>
+      </section>
+    </Shell>
+  );
+}
+
+function AboutPage() {
+  const experience = [
+    ["2026–now", "University of Oxford, Saïd Business School", "Research Assistant", "Missing-data sensitivity, econometric replication, and reproducible simulation infrastructure."],
+    ["2026–now", "Testing Autonomy", "AI SDET", "Evaluation pipelines for LLM, RAG, and agentic workflows, including grounding and failure recovery."],
+    ["2025", "Johns Hopkins Carey Business School", "Research Assistant", "A controlled human–AI study of empathizing and systemizing conversational behavior."],
+    ["2025", "Center for Outbreak Response Innovation", "Research Assistant", "Self-healing public-health data collection with provenance, validation, and human review."],
+    ["2025", "Birmingham Mayor’s Office / Bloomberg Center", "Strategy Analyst", "Municipal evidence integration, streetlighting policy, and implementation pathways."],
+    ["2024–25", "SwiftCollab", "AI Engineer", "Schema-aware agent workflows, monitoring, durable execution, and recovery across external applications."],
+  ];
+
+  return (
+    <Shell>
+      <section className="about-hero page-shell">
+        <div className="about-monogram" aria-hidden="true"><span>H</span><span>R</span><span>B</span></div>
+        <div>
+          <p className="eyebrow">About</p>
+          <h1>I build things to understand how they behave in institutions.</h1>
+          <p className="intro-lede">
+            I am Hema Raju Barri, a researcher and systems builder working across AI,
+            management, public policy, and empirical methods.
+          </p>
+        </div>
+      </section>
+
+      <section className="about-story page-shell">
+        <div className="about-story-lead">
+          <span className="eyebrow">The through-line</span>
+          <h2>From model output to institutional consequence.</h2>
+        </div>
+        <div className="about-story-copy">
+          <p>
+            I began in computer science, where reliability looked like a model that
+            generalized or a deployment that reproduced. Building agentic workflows
+            made the boundary larger: a fluent answer could still fail through the
+            wrong tool, malformed arguments, missing provenance, or poor recovery.
+          </p>
+          <p>
+            Field work in hospitals and city government made it larger again. Data
+            systems determine which problems become visible; workflows determine who
+            absorbs uncertainty; institutions respond when technology changes the
+            volume and form of claims arriving at their door.
+          </p>
+          <p>
+            That is now the center of my work: studying intelligent systems together
+            with the people, evidence, infrastructure, and organizations around them.
+          </p>
+        </div>
+      </section>
+
+      <section className="education-strip page-shell" aria-label="Education">
+        <div><span>2024–25</span><strong>Johns Hopkins University</strong><small>MSE, Engineering Management</small></div>
+        <div><span>2025</span><strong>Imperial College London</strong><small>Winter School</small></div>
+        <div><span>2020–24</span><strong>ANITS</strong><small>BTech, Computer Science</small></div>
+      </section>
+
+      <section className="experience-section page-shell" aria-labelledby="experience-heading">
+        <div className="section-heading split-heading">
+          <div><p className="eyebrow">Selected experience</p><h2 id="experience-heading">Research in the wild.</h2></div>
+          <p className="section-side-note">Across universities, startups, hospitals, and local government.</p>
+        </div>
+        <div className="experience-list">
+          {experience.map(([year, place, role, description]) => (
+            <article key={`${year}-${place}`}>
+              <span>{year}</span>
+              <div><small>{role}</small><h3>{place}</h3></div>
+              <p>{description}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="practice-section page-shell" aria-labelledby="practice-heading">
+        <div className="section-heading"><p className="eyebrow">How I work</p><h2 id="practice-heading">Four commitments.</h2></div>
+        <div className="practice-grid">
+          <article><span>01</span><h3>Build close to the mechanism.</h3><p>Prototypes, data pipelines, and simulations make vague claims concrete enough to break.</p></article>
+          <article><span>02</span><h3>Separate observation from inference.</h3><p>Descriptive evidence, causal claims, and conceptual proposals should never borrow one another’s certainty.</p></article>
+          <article><span>03</span><h3>Publish the audit trail.</h3><p>Code, data decisions, exclusions, and falsifiers are part of the contribution.</p></article>
+          <article><span>04</span><h3>Design for institutional reality.</h3><p>A technically elegant answer is incomplete if nobody can implement, contest, or maintain it.</p></article>
+        </div>
+      </section>
+
+      <section className="contact-panel page-shell">
+        <p className="eyebrow light">Say hello</p>
+        <h2>Good questions travel well.</h2>
+        <p>I am always glad to talk about AI evaluation, public systems, research methods, or an argument you think I have wrong.</p>
+        <div className="button-row">
+          <a className="light-button" href="mailto:bhemaraju.138@gmail.com">Email me <Arrow /></a>
+          <a className="light-button" href="https://github.com/bhemaraju138-pixel">GitHub <Arrow /></a>
+        </div>
+      </section>
+    </Shell>
+  );
+}
+
 function PublicDataEssayPage({ essay }) {
   const currentIndex = publicDataEssays.findIndex((item) => item.slug === essay.slug);
   const previous = publicDataEssays[currentIndex - 1];
@@ -499,13 +811,13 @@ function ResearchPage() {
   return (
     <Shell>
       <section className="page-intro page-shell">
-        <p className="eyebrow">Research</p>
-        <h1>A research program, not a collection of AI projects.</h1>
+        <p className="eyebrow">Selected work</p>
+        <h1>Research built from systems, data, and institutional questions.</h1>
         <p className="intro-lede">
           These studies begin in different settings—civic data, federal sourcing,
-          human–AI interaction, strategy, and municipal policy—but converge on one
-          claim: autonomous systems alter the institutional conditions under which
-          action becomes possible.
+          human–AI interaction, strategy, health surveillance, and municipal
+          policy—but share a method: make the hidden choice observable, then test
+          what changes when it moves.
         </p>
       </section>
 
@@ -542,7 +854,7 @@ function ResearchPage() {
       </section>
 
       <section className="next-questions page-shell">
-        <p className="eyebrow">Questions I want a dissertation to answer</p>
+        <p className="eyebrow">Questions currently on the desk</p>
         <div className="large-question">01 / When does agent assistance change take-up rather than merely shift who completes an application?</div>
         <div className="large-question">02 / Which verification responses return burden to the people agents were meant to help?</div>
         <div className="large-question">03 / What public infrastructure makes machine-mediated claims contestable, inspectable, and equally reachable?</div>
@@ -758,6 +1070,8 @@ function App() {
   const path = window.location.pathname.replace(/\/+$/, "") || "/";
   if (path === "/") return <Home />;
   if (path === "/research") return <ResearchPage />;
+  if (path === "/writing") return <WritingPage />;
+  if (path === "/about") return <AboutPage />;
   if (path === "/experiments") return <ExperimentsLanding />;
   if (path === "/experiments/claiming-under-agents") return <ExperimentPage />;
   if (path === "/timeline") return <TimelinePage />;

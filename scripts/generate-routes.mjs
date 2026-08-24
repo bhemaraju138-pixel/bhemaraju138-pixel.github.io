@@ -1,26 +1,101 @@
-import { copyFile, mkdir } from "node:fs/promises";
+import { copyFile, mkdir, readFile, writeFile } from "node:fs/promises";
 import { resolve } from "node:path";
-import { publicDataEssays } from "../src/content.js";
+import { notes, publicDataEssays } from "../src/content.js";
 
+const siteUrl = "https://bhemaraju138-pixel.github.io";
 const routes = [
-  "research",
-  "experiments",
-  "experiments/claiming-under-agents",
-  ...publicDataEssays.map((essay) => `experiments/${essay.slug}`),
-  "notes/labels-are-not-treatments",
-  "notes/map-is-a-policy-choice",
-  "notes/open-is-not-agent-readable",
-  "notes/who-owns-the-verification-layer",
-  "timeline",
+  {
+    route: "research",
+    title: "Selected Work — Hema Raju Barri",
+    description: "Research across AI systems, human–AI interaction, public institutions, evidence, and empirical methods.",
+  },
+  {
+    route: "writing",
+    title: "Writing — Hema Raju Barri",
+    description: "An open notebook of essays, public-data experiments, methods, code, and unfinished research questions.",
+  },
+  {
+    route: "about",
+    title: "About — Hema Raju Barri",
+    description: "Hema Raju Barri is a researcher and systems builder working across AI, management, public policy, and empirical methods.",
+  },
+  {
+    route: "experiments",
+    title: "Public-Data Experiments — Hema Raju Barri",
+    description: "Six reproducible studies of failure, metadata, participation, ranking, procedure, and missingness in public systems.",
+  },
+  {
+    route: "experiments/claiming-under-agents",
+    title: "The Burden Moves — Hema Raju Barri",
+    description: "An interactive model of agent-mediated public-benefit claiming, agency capacity, verification, and unequal access.",
+    detail: true,
+  },
+  ...publicDataEssays.map((essay) => ({
+    route: `experiments/${essay.slug}`,
+    title: `${essay.title} — Hema Raju Barri`,
+    description: essay.standfirst,
+    detail: true,
+  })),
+  ...notes.map((note) => ({
+    route: `notes/${note.slug}`,
+    title: `${note.title} — Hema Raju Barri`,
+    description: note.standfirst,
+    detail: true,
+  })),
+  {
+    route: "timeline",
+    title: "Research Timeline — Hema Raju Barri",
+    description: "A research path from reliable deployment to human–AI fit, public evidence systems, and institutional response.",
+  },
 ];
+
+const escapeAttribute = (value) => value
+  .replaceAll("&", "&amp;")
+  .replaceAll('"', "&quot;")
+  .replaceAll("<", "&lt;")
+  .replaceAll(">", "&gt;");
+
+function setMeta(html, attribute, key, content) {
+  const pattern = new RegExp(`<meta\\s+${attribute}="${key}"[\\s\\S]*?\\/?>`, "i");
+  const tag = `<meta ${attribute}="${key}" content="${escapeAttribute(content)}" />`;
+  return pattern.test(html) ? html.replace(pattern, tag) : html.replace("</head>", `    ${tag}\n  </head>`);
+}
+
+function removeMeta(html, attribute, key) {
+  const pattern = new RegExp(`\\s*<meta\\s+${attribute}="${key}"[\\s\\S]*?\\/?>`, "i");
+  return html.replace(pattern, "");
+}
+
+function routeHtml(source, record) {
+  const title = escapeAttribute(record.title);
+  const url = `${siteUrl}/${record.route}/`;
+  let html = source.replace(/<title>[\s\S]*?<\/title>/i, `<title>${title}</title>`);
+  html = setMeta(html, "name", "description", record.description);
+  html = setMeta(html, "property", "og:title", record.title);
+  html = setMeta(html, "property", "og:description", record.description);
+  html = setMeta(html, "property", "og:url", url);
+  html = setMeta(html, "name", "twitter:title", record.title);
+  html = setMeta(html, "name", "twitter:description", record.description);
+
+  if (record.detail) {
+    html = removeMeta(html, "property", "og:image");
+    html = removeMeta(html, "property", "og:image:width");
+    html = removeMeta(html, "property", "og:image:height");
+    html = removeMeta(html, "name", "twitter:image");
+    html = setMeta(html, "name", "twitter:card", "summary");
+  }
+
+  return html;
+}
 
 const distRoot = resolve("dist");
 const dist = resolve(distRoot, "client");
+const sourceIndex = await readFile(resolve(dist, "index.html"), "utf8");
 
-for (const route of routes) {
-  const directory = resolve(dist, route);
+for (const record of routes) {
+  const directory = resolve(dist, record.route);
   await mkdir(directory, { recursive: true });
-  await copyFile(resolve(dist, "index.html"), resolve(directory, "index.html"));
+  await writeFile(resolve(directory, "index.html"), routeHtml(sourceIndex, record));
 }
 
 await copyFile(resolve(dist, "index.html"), resolve(dist, "404.html"));
