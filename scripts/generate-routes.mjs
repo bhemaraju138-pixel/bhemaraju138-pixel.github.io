@@ -11,7 +11,8 @@ const routes = [
   "timeline",
 ];
 
-const dist = resolve("dist");
+const distRoot = resolve("dist");
+const dist = resolve(distRoot, "client");
 
 for (const route of routes) {
   const directory = resolve(dist, route);
@@ -20,8 +21,14 @@ for (const route of routes) {
 }
 
 await copyFile(resolve(dist, "index.html"), resolve(dist, "404.html"));
-await mkdir(resolve(dist, ".openai"), { recursive: true });
+await mkdir(resolve(distRoot, ".openai"), { recursive: true });
 await copyFile(
   resolve(".openai", "hosting.json"),
-  resolve(dist, ".openai", "hosting.json"),
+  resolve(distRoot, ".openai", "hosting.json"),
+);
+await mkdir(resolve(distRoot, "server"), { recursive: true });
+await copyFile(resolve("server", "index.js"), resolve(distRoot, "server", "index.js"));
+await copyFile(
+  resolve("server", "wrangler.json"),
+  resolve(distRoot, "server", "wrangler.json"),
 );
