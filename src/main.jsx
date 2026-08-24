@@ -769,6 +769,17 @@ function CommandWorkspace({ children, onModeChange }) {
     setSidebarVisible(true);
   };
 
+  const fitWorkbench = () => {
+    setSidebarWidth(250);
+    setInspectorWidth(360);
+    setPanelHeight(210);
+    setSidebarVisible(window.innerWidth > 860);
+    setInspectorVisible(window.innerWidth > 1240);
+    setPanelVisible(true);
+    setPanelMaximized(false);
+    setHelpOpen(false);
+  };
+
   const openLocalModel = () => {
     setActiveSidebar("extensions");
     setSidebarVisible(true);
@@ -899,6 +910,7 @@ function CommandWorkspace({ children, onModeChange }) {
         </div>
         <button type="button" className="ide-command-center" onClick={() => setQuickOpen(true)} title="Quick Open (⌘P)"><Icon name="search" /><span>HRB_OS / {activeFile}</span><kbd>⌘P</kbd></button>
         <div className="ide-title-actions">
+          <button type="button" onClick={fitWorkbench} aria-label="Fit workbench to window" title="Fit Workbench to Window"><Icon name="layout" /></button>
           <button type="button" className={sidebarVisible ? "active" : ""} onClick={() => setSidebarVisible((current) => !current)} aria-label="Toggle primary side bar" title="Toggle Primary Side Bar (⌘B)"><Icon name={sidebarVisible ? "layout-sidebar-left" : "layout-sidebar-left-off"} /></button>
           <button type="button" className={panelVisible ? "active" : ""} onClick={() => setPanelVisible((current) => !current)} aria-label="Toggle panel" title="Toggle Panel (⌘J)"><Icon name={panelVisible ? "layout-panel" : "layout-panel-off"} /></button>
           <button type="button" className={inspectorVisible ? "active" : ""} onClick={() => setInspectorVisible((current) => !current)} aria-label="Toggle secondary side bar" title="Toggle Secondary Side Bar"><Icon name={inspectorVisible ? "layout-sidebar-right" : "layout-sidebar-right-off"} /></button>
@@ -940,7 +952,7 @@ function CommandWorkspace({ children, onModeChange }) {
           </aside>
         ))}
 
-        {sidebarVisible && <div className="ide-resizer ide-resizer-vertical ide-resizer-sidebar" role="separator" aria-label="Resize primary side bar" aria-orientation="vertical" tabIndex="0" onPointerDown={(event) => beginResize("sidebar", event)} onKeyDown={(event) => resizeWithKeyboard("sidebar", event)} />}
+        {sidebarVisible && <div className="ide-resizer ide-resizer-vertical ide-resizer-sidebar" role="separator" aria-label="Resize primary side bar" aria-orientation="vertical" tabIndex="0" title="Drag to resize · Double-click to reset" onPointerDown={(event) => beginResize("sidebar", event)} onDoubleClick={() => setSidebarWidth(250)} onKeyDown={(event) => resizeWithKeyboard("sidebar", event)} />}
 
         <section className={editorClass} style={{ "--ide-panel-height": `${panelHeight}px` }} aria-label="Research editor">
           <div className="ide-tabs">
@@ -950,7 +962,7 @@ function CommandWorkspace({ children, onModeChange }) {
           <div className="ide-breadcrumb">{editorOpen ? <><span>HRB_PORTFOLIO</span><Icon name="chevron-right" /><span>{path.split("/").filter(Boolean).join("  ›  ") || "about"}</span><Icon name="chevron-right" /><span>{activeFile}</span></> : <span>HRB_PORTFOLIO</span>}</div>
           {editorOpen ? <main className="ide-editor-content" id="main">{children}</main> : <main className="ide-empty-editor" id="main"><Icon name="files" /><p>No editor is open</p><button type="button" onClick={() => setQuickOpen(true)}>Quick Open <kbd>⌘P</kbd></button></main>}
           {panelVisible && <section className="ide-terminal-panel" aria-label="Integrated panel">
-            {!panelMaximized && <div className="ide-resizer ide-resizer-horizontal" role="separator" aria-label="Resize bottom panel" aria-orientation="horizontal" tabIndex="0" onPointerDown={(event) => beginResize("panel", event)} onKeyDown={(event) => resizeWithKeyboard("panel", event)} />}
+            {!panelMaximized && <div className="ide-resizer ide-resizer-horizontal" role="separator" aria-label="Resize bottom panel" aria-orientation="horizontal" tabIndex="0" title="Drag to resize · Double-click to reset" onPointerDown={(event) => beginResize("panel", event)} onDoubleClick={() => setPanelHeight(210)} onKeyDown={(event) => resizeWithKeyboard("panel", event)} />}
             <div className="ide-panel-tabs">
               <div role="tablist" aria-label="Bottom panel">
                 {[["terminal", "TERMINAL"], ["output", "OUTPUT"], ["problems", "PROBLEMS"], ["debug", "DEBUG CONSOLE"]].map(([id, label]) => (
@@ -972,7 +984,7 @@ function CommandWorkspace({ children, onModeChange }) {
           }
         </section>
 
-        {inspectorVisible && <div className="ide-resizer ide-resizer-vertical ide-resizer-inspector" role="separator" aria-label="Resize secondary side bar" aria-orientation="vertical" tabIndex="0" onPointerDown={(event) => beginResize("inspector", event)} onKeyDown={(event) => resizeWithKeyboard("inspector", event)} />}
+        {inspectorVisible && <div className="ide-resizer ide-resizer-vertical ide-resizer-inspector" role="separator" aria-label="Resize secondary side bar" aria-orientation="vertical" tabIndex="0" title="Drag to resize · Double-click to reset" onPointerDown={(event) => beginResize("inspector", event)} onDoubleClick={() => setInspectorWidth(360)} onKeyDown={(event) => resizeWithKeyboard("inspector", event)} />}
 
         {inspectorVisible && <aside className={`ide-inspector ${rightPanel === "llm" ? "llm-open" : ""}`} aria-label="Research context">
           <div className="ide-inspector-tabs" role="tablist" aria-label="Inspector panel">
@@ -992,15 +1004,15 @@ function CommandWorkspace({ children, onModeChange }) {
       <QuickOpen open={quickOpen} onClose={() => setQuickOpen(false)} />
       {helpOpen && <aside className="ide-help-popover" aria-label="Workbench shortcuts">
         <header><strong>Keyboard Shortcuts</strong><button type="button" aria-label="Close help" onClick={() => setHelpOpen(false)}><Icon name="close" /></button></header>
-        <dl>
-          <div><dt>Quick Open</dt><dd>⌘ / Ctrl + P</dd></div>
-          <div><dt>Toggle primary sidebar</dt><dd>⌘ / Ctrl + B</dd></div>
-          <div><dt>Toggle bottom panel</dt><dd>⌘ / Ctrl + J</dd></div>
-          <div><dt>Explorer</dt><dd>⇧⌘ / Ctrl + E</dd></div>
-          <div><dt>Search</dt><dd>⇧⌘ / Ctrl + F</dd></div>
-          <div><dt>Run and Debug</dt><dd>⇧⌘ / Ctrl + D</dd></div>
-          <div><dt>Extensions</dt><dd>⇧⌘ / Ctrl + X</dd></div>
-        </dl>
+        <div className="ide-help-actions">
+          <button type="button" onClick={() => { setHelpOpen(false); setQuickOpen(true); }}><span>Quick Open</span><kbd>⌘ / Ctrl + P</kbd></button>
+          <button type="button" onClick={() => { setHelpOpen(false); setSidebarVisible((current) => !current); }}><span>Toggle primary sidebar</span><kbd>⌘ / Ctrl + B</kbd></button>
+          <button type="button" onClick={() => { setHelpOpen(false); setPanelVisible((current) => !current); }}><span>Toggle bottom panel</span><kbd>⌘ / Ctrl + J</kbd></button>
+          <button type="button" onClick={() => { setHelpOpen(false); selectSidebar("explorer"); }}><span>Explorer</span><kbd>⇧⌘ / Ctrl + E</kbd></button>
+          <button type="button" onClick={() => { setHelpOpen(false); selectSidebar("search"); }}><span>Search</span><kbd>⇧⌘ / Ctrl + F</kbd></button>
+          <button type="button" onClick={() => { setHelpOpen(false); selectSidebar("run"); }}><span>Run and Debug</span><kbd>⇧⌘ / Ctrl + D</kbd></button>
+          <button type="button" onClick={() => { setHelpOpen(false); selectSidebar("extensions"); }}><span>Extensions</span><kbd>⇧⌘ / Ctrl + X</kbd></button>
+        </div>
         <button type="button" onClick={() => { setHelpOpen(false); setPanel("terminal"); }}>Open integrated terminal</button>
       </aside>}
     </div>

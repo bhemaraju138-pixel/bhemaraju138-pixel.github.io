@@ -34,6 +34,9 @@ Extensions and choose Local Research LLM. The first model load downloads and
 caches model files in the browser; prompts and generation remain on the device.
 Use `Cmd/Ctrl+P` for Quick Open, `Cmd/Ctrl+B` for the primary sidebar,
 `Cmd/Ctrl+J` for the bottom panel, and drag the pane boundaries to resize them.
+The Fit Workbench control restores a balanced layout for the current window;
+double-clicking any resize boundary restores that pane's default size. Help-menu
+shortcut rows are also clickable actions.
 
 Historical project dates describe when work was conducted. Interpretive notes
 are labeled with their actual portfolio publication date.
