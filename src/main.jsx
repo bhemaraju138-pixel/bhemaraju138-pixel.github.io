@@ -2,13 +2,15 @@ import React, { useEffect, useMemo, useRef, useState } from "react";
 import { createRoot } from "react-dom/client";
 import { notes, publicDataEssays, research, timeline } from "./content";
 import { runModel, scenarios } from "./model";
+import { buildPortfolioContext, portfolioKnowledge } from "./portfolio-knowledge";
+import { education, experience, pathMoments } from "./profile";
 import { runObservabilityReserve, runVerificationQueue, simulationCatalog } from "./simulations";
 import "@vscode/codicons/dist/codicon.css";
 import "./styles.css";
 
 const percent = (value, digits = 0) => `${(value * 100).toFixed(digits)}%`;
 
-const commandRoutes = {
+const devRoutes = {
   about: "/",
   home: "/",
   profile: "/",
@@ -27,49 +29,7 @@ const simulationRoutes = {
   queue: "/simulations/verification-queue/",
 };
 
-const LOCAL_MODEL_ID = "Qwen2.5-0.5B-Instruct-q4f16_1-MLC";
-const PORTFOLIO_CONTEXT = `
-You are the local research guide inside Hema Raju Barri's portfolio. Answer only
-from the context below. Be concise, distinguish completed work from research
-questions, and say when the portfolio does not contain an answer.
-
-Hema studies the systems around intelligent systems at the intersection of AI,
-management, economics, and public institutions. The recurring concern is how
-agents change access, evidence, verification, and institutional response.
-
-Trajectory and experience:
-- Computer-science training at ANITS (BTech, 2020-2024), followed by an MSE in
-  Engineering Management at Johns Hopkins University (2024-2025) and an Imperial
-  College London winter school in 2025.
-- Research Assistant at Oxford Saïd from 2026, working on missing-data
-  sensitivity, econometric replication, and reproducible simulation infrastructure.
-- AI SDET at Testing Autonomy from 2026, building evaluation pipelines for LLM,
-  RAG, and agentic workflows, including grounding and failure recovery.
-- Research Assistant at Johns Hopkins Carey in 2025 on a controlled human-AI
-  study of empathizing and systemizing conversational behavior.
-- Research Assistant at the Center for Outbreak Response Innovation in 2025 on
-  public-health data collection with provenance, validation, and human review.
-- Strategy Analyst with the Birmingham Mayor's Office and Bloomberg Center in
-  2025 on municipal evidence integration, streetlighting policy, and implementation.
-- AI Engineer at SwiftCollab in 2024-2025 on schema-aware agent workflows,
-  monitoring, durable execution, and recovery across external applications.
-
-Selected work:
-- Agent-Infrastructure Fit: How AI Agents Are Redefining the Governance of Public
-  Digital Data Infrastructure. Coauthored paper; abstract accepted for the 20th
-  ISDSI Global Conference at IMT Hyderabad, with the presentation upcoming in
-  December 2026.
-- Privacy-Sensitive Generative AI Sourcing in Federal Information Systems.
-  Coauthored empirical paper; accepted and presented at INSIGHT 2026.
-- Keeping Strategic Futures Observable in AI Strategy: Counterfactual
-  Observability and Evidence Architecture under Radical Uncertainty.
-  Sole-authored SSRN preprint, April 2026.
-
-The portfolio also contains public-data experiments and three technical
-simulations: Burden Moves, Observability Reserve, and Verification Queue.
-Visitors can inspect the Research, Publications, Blogs, Simulations, and About
-files for the full evidence and caveats.
-`;
+const LOCAL_MODEL_ID = "Qwen2.5-1.5B-Instruct-q4f16_1-MLC";
 
 function Icon({ name }) {
   return <i className={`codicon codicon-${name}`} aria-hidden="true" />;
@@ -87,12 +47,21 @@ function Arrow() {
   return <span aria-hidden="true">↗</span>;
 }
 
-function ModeSwitch({ mode, onChange }) {
+function ModeToggle({ mode, onChange }) {
+  const isDev = mode === "dev";
   return (
-    <div className="mode-switch" role="group" aria-label="Portfolio interface mode">
-      <button type="button" className={mode === "reader" ? "active" : ""} aria-pressed={mode === "reader"} onClick={() => onChange("reader")}>Read</button>
-      <button type="button" className={mode === "command" ? "active" : ""} aria-pressed={mode === "command"} onClick={() => onChange("command")}>Command</button>
-    </div>
+    <button
+      type="button"
+      className={`mode-toggle ${isDev ? "is-dev" : "is-read"}`}
+      role="switch"
+      aria-checked={isDev}
+      aria-label={`Switch to ${isDev ? "Read" : "Dev"} mode`}
+      onClick={() => onChange(isDev ? "reader" : "dev")}
+    >
+      <span className="mode-toggle-label">Read</span>
+      <span className="mode-toggle-track" aria-hidden="true"><span /></span>
+      <span className="mode-toggle-label">Dev</span>
+    </button>
   );
 }
 
@@ -115,7 +84,7 @@ function ReaderHeader({ mode, onModeChange }) {
         ))}
       </nav>
       <div className="header-actions">
-        <ModeSwitch mode={mode} onChange={onModeChange} />
+        <ModeToggle mode={mode} onChange={onModeChange} />
         <a className="contact-link" href="mailto:bhemaraju.138@gmail.com">Contact <Arrow /></a>
       </div>
     </header>
@@ -133,7 +102,6 @@ function ReaderFooter() {
         <a href="/simulations/">Simulations</a>
         <a href="/about/">About</a>
       </div>
-      <p className="date-note">Historical project dates mark when work was conducted. Portfolio notes were published in August 2026 unless otherwise stated.</p>
     </footer>
   );
 }
@@ -230,8 +198,8 @@ function CommandConsole({ onModeChange, onOpenLLM, onPanelChange, onCommand }) {
       const target = normalized.replace(/^(run|simulate)\s+/, "").trim();
       if (simulationRoutes[target]) navigate(raw, simulationRoutes[target]);
       else write(raw, "Simulation not found. Try: run burden, run observability, or run queue.");
-    } else if (commandRoutes[normalized]) {
-      navigate(raw, commandRoutes[normalized]);
+    } else if (devRoutes[normalized]) {
+      navigate(raw, devRoutes[normalized]);
     } else {
       write(raw, `Command not found: ${raw}. Type help to inspect the interface.`);
     }
@@ -241,7 +209,7 @@ function CommandConsole({ onModeChange, onOpenLLM, onPanelChange, onCommand }) {
   const quickCommands = ["help", "about", "research", "publications", "simulations", "llm", "read"];
 
   return (
-    <aside className="command-console" aria-label="Portfolio command interface">
+    <aside className="command-console" aria-label="Portfolio development console">
       <div className="command-console-body">
         <div className="command-history" aria-live="polite">
           {history.slice(-5).map((entry, index) => (
@@ -322,7 +290,7 @@ function ExtensionsSidebar({ onOpenLLM }) {
           <div className="ide-extension-mark" aria-hidden="true"><Icon name="sparkle" /></div>
           <div>
             <h2>Local Research LLM</h2>
-            <p>Qwen 2.5 · 0.5B Instruct</p>
+            <p>Qwen 2.5 · 1.5B Instruct</p>
             <small>WebGPU · Apache 2.0 · no API key</small>
             <button type="button" onClick={onOpenLLM}>Open</button>
           </div>
@@ -433,7 +401,7 @@ function LocalLLMPanel() {
   const initialMessage = {
     id: "welcome",
     role: "assistant",
-    content: "Ask me about Hema's research, publications, simulations, or intellectual trajectory. I answer from a compact portfolio context loaded with the model.",
+    content: "Ask me about Hema's research, publications, simulations, or intellectual trajectory. For each question, I retrieve the most relevant records from this portfolio before answering.",
   };
   const [messages, setMessages] = useState([initialMessage]);
   const [draft, setDraft] = useState("");
@@ -441,6 +409,7 @@ function LocalLLMPanel() {
   const [loadLabel, setLoadLabel] = useState("Not loaded");
   const [progress, setProgress] = useState(0);
   const [isGenerating, setIsGenerating] = useState(false);
+  const [activeSources, setActiveSources] = useState([]);
   const engineRef = useRef(null);
   const transcriptRef = useRef(null);
 
@@ -490,16 +459,19 @@ function LocalLLMPanel() {
     const userEntry = { id: `user-${Date.now()}`, role: "user", content: prompt };
     const assistantId = `assistant-${Date.now()}`;
     const conversation = [...messages.filter((message) => message.id !== "welcome"), userEntry]
+      .slice(-6)
       .map(({ role, content }) => ({ role, content }));
+    const context = buildPortfolioContext(prompt);
+    setActiveSources(context.records);
     setMessages((current) => [...current, userEntry, { id: assistantId, role: "assistant", content: "" }]);
     setDraft("");
     setIsGenerating(true);
 
     try {
       const stream = await engineRef.current.chat.completions.create({
-        messages: [{ role: "system", content: PORTFOLIO_CONTEXT }, ...conversation],
-        temperature: 0.3,
-        max_tokens: 420,
+        messages: [{ role: "system", content: context.prompt }, ...conversation],
+        temperature: 0.1,
+        max_tokens: 360,
         stream: true,
       });
       let response = "";
@@ -527,6 +499,7 @@ function LocalLLMPanel() {
   const clearChat = () => {
     setMessages([initialMessage]);
     setDraft("");
+    setActiveSources([]);
   };
 
   return (
@@ -535,7 +508,7 @@ function LocalLLMPanel() {
         <div className="local-llm-logo"><Icon name="sparkle" /></div>
         <div>
           <p>LOCAL RESEARCH LLM</p>
-          <h2>Qwen 2.5 · 0.5B</h2>
+          <h2>Qwen 2.5 · 1.5B</h2>
           <span>Runs in this browser with WebLLM</span>
         </div>
         <button type="button" className="icon-button" aria-label="Clear chat" title="Clear chat" onClick={clearChat}><Icon name="trash" /></button>
@@ -560,6 +533,11 @@ function LocalLLMPanel() {
         ))}
       </div>
 
+      <div className="local-llm-sources" aria-live="polite">
+        <span>{activeSources.length ? "Evidence loaded" : `${portfolioKnowledge.length} portfolio records indexed`}</span>
+        {activeSources.map((source) => <a href={source.route} key={source.id}>{source.title}</a>)}
+      </div>
+
       <form className="local-llm-composer" onSubmit={submitPrompt}>
         <label htmlFor="local-llm-prompt">Ask the portfolio</label>
         <div>
@@ -582,7 +560,7 @@ function LocalLLMPanel() {
       </form>
 
       <p className="local-llm-credits">
-        Experimental, compact, and fallible. <a href="https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct" target="_blank" rel="noreferrer">Model</a> · <a href="https://github.com/mlc-ai/web-llm" target="_blank" rel="noreferrer">WebLLM</a>
+        Experimental, local, and fallible. <a href="https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct" target="_blank" rel="noreferrer">Model</a> · <a href="https://github.com/mlc-ai/web-llm" target="_blank" rel="noreferrer">WebLLM</a>
       </p>
     </div>
   );
@@ -719,7 +697,7 @@ function DebugConsole({ path, activeFile }) {
   );
 }
 
-function CommandWorkspace({ children, onModeChange }) {
+function DevWorkspace({ children, onModeChange }) {
   const path = window.location.pathname;
   const activeFile = editorFileForPath(path);
   const [activeSidebar, setActiveSidebar] = useState("explorer");
@@ -920,7 +898,7 @@ function CommandWorkspace({ children, onModeChange }) {
           <button type="button" className={sidebarVisible ? "active" : ""} onClick={() => setSidebarVisible((current) => !current)} aria-label="Toggle primary side bar" title="Toggle Primary Side Bar (⌘B)"><Icon name={sidebarVisible ? "layout-sidebar-left" : "layout-sidebar-left-off"} /></button>
           <button type="button" className={panelVisible ? "active" : ""} onClick={() => setPanelVisible((current) => !current)} aria-label="Toggle panel" title="Toggle Panel (⌘J)"><Icon name={panelVisible ? "layout-panel" : "layout-panel-off"} /></button>
           <button type="button" className={inspectorVisible ? "active" : ""} onClick={() => setInspectorVisible((current) => !current)} aria-label="Toggle secondary side bar" title="Toggle Secondary Side Bar"><Icon name={inspectorVisible ? "layout-sidebar-right" : "layout-sidebar-right-off"} /></button>
-          <ModeSwitch mode="command" onChange={onModeChange} />
+          <ModeToggle mode="dev" onChange={onModeChange} />
         </div>
       </header>
 
@@ -1028,7 +1006,8 @@ function CommandWorkspace({ children, onModeChange }) {
 function Shell({ children }) {
   const [mode, setMode] = useState(() => {
     try {
-      return window.localStorage.getItem("hrb-interface") === "command" ? "command" : "reader";
+      const storedMode = window.localStorage.getItem("hrb-interface");
+      return storedMode === "dev" || storedMode === "command" ? "dev" : "reader";
     } catch {
       return "reader";
     }
@@ -1043,7 +1022,7 @@ function Shell({ children }) {
     }
   }, [mode]);
 
-  if (mode === "command") return <CommandWorkspace onModeChange={setMode}>{children}</CommandWorkspace>;
+  if (mode === "dev") return <DevWorkspace onModeChange={setMode}>{children}</DevWorkspace>;
 
   return (
     <>
@@ -1196,7 +1175,7 @@ function NotebookPreviewCard({ essay }) {
   return (
     <a className="notebook-preview-card" href={`/experiments/${essay.slug}/`}>
       <div>
-        <small>Experiment · August 2026</small>
+        <small>Public-data experiment</small>
       </div>
       <h3>{essay.title}</h3>
       <p>{essay.standfirst}</p>
@@ -1354,7 +1333,7 @@ function ExperimentsLanding() {
   return (
     <Shell>
       <section className="page-intro page-shell experiments-landing-intro">
-        <p className="eyebrow">Open methods · Public data · August 2026</p>
+        <p className="eyebrow">Open methods · Public data</p>
         <h1>Experiments that can tell me I am wrong.</h1>
         <p className="intro-lede">
           Six empirical essays test a different institutional boundary: failure,
@@ -1486,8 +1465,17 @@ function SimulationsPage() {
   );
 }
 
-function Equation({ children }) {
-  return <div className="equation"><code>{children}</code></div>;
+function Fraction({ numerator, denominator }) {
+  return <span className="math-fraction"><span>{numerator}</span><span>{denominator}</span></span>;
+}
+
+function Equation({ label, ariaLabel, children }) {
+  return (
+    <figure className="equation">
+      <figcaption>{label}</figcaption>
+      <div className="equation-expression" role="math" aria-label={ariaLabel}>{children}</div>
+    </figure>
+  );
 }
 
 function ObservabilitySimulationPage() {
@@ -1564,10 +1552,29 @@ function ObservabilitySimulationPage() {
       <section className="mathematical-core page-shell">
         <div><p className="eyebrow">Mathematical core</p><h2>Fractional Bayesian evidence.</h2></div>
         <div className="equation-stack">
-          <Equation>{"w(B,t) = r · exp[−δ(t−1)]"}</Equation>
-          <Equation>{"τ(B,t) = τ₀ + Σ w(B,k) / σ²"}</Equation>
-          <Equation>{"Pr(B>A | Dₜ) = Φ[(mᴮ−mᴬ) / √(Vᴬ+Vᴮ)]"}</Equation>
-          <p>Gaussian updating is standard. The experiment measures how reserve r and decay δ delay institutional recognition.</p>
+          <Equation label="Evidence weights" ariaLabel="w A k equals one; w B k equals r times exponential of negative delta times k minus one">
+            <var>w</var><sub>A,k</sub> = 1,&nbsp;&nbsp;
+            <var>w</var><sub>B,k</sub> = <var>r</var> exp[−<var>δ</var>(<var>k</var>−1)]
+          </Equation>
+          <Equation label="Posterior precision" ariaLabel="tau j t equals tau zero plus one over sigma squared times the sum from k equals one to t of w j k">
+            <var>τ</var><sub>j,t</sub> = <var>τ</var><sub>0</sub> +
+            <Fraction numerator={<>∑<sup>t</sup><sub>k=1</sub> <var>w</var><sub>j,k</sub></>} denominator={<>σ<sup>2</sup></>} />
+          </Equation>
+          <Equation label="Posterior mean and variance" ariaLabel="m j t equals prior precision times prior mean plus the weighted signal sum divided by posterior precision; V j t equals one over posterior precision">
+            <var>m</var><sub>j,t</sub> =
+            <Fraction
+              numerator={<><var>τ</var><sub>0</sub><var>m</var><sub>0</sub> + σ<sup>−2</sup>∑<sup>t</sup><sub>k=1</sub><var>w</var><sub>j,k</sub><var>y</var><sub>j,k</sub></>}
+              denominator={<><var>τ</var><sub>j,t</sub></>}
+            />
+            ,&nbsp;&nbsp;<var>V</var><sub>j,t</sub> = <var>τ</var><sub>j,t</sub><sup>−1</sup>
+          </Equation>
+          <Equation label="Probability of reversal" ariaLabel="probability B exceeds A given D t equals the standard normal CDF of the posterior mean difference divided by the square root of the sum of posterior variances">
+            Pr(<var>B</var> &gt; <var>A</var> | <var>D</var><sub>t</sub>) = Φ
+            <span className="math-bracket">[</span>
+            <Fraction numerator={<><var>m</var><sub>B,t</sub> − <var>m</var><sub>A,t</sub></>} denominator={<>√(<var>V</var><sub>A,t</sub> + <var>V</var><sub>B,t</sub>)</>} />
+            <span className="math-bracket">]</span>
+          </Equation>
+          <p>The update is conjugate Gaussian inference on a deterministic expected-signal path. The fractional weight changes how much information the unchosen strategy contributes; it does not create an additional observation.</p>
         </div>
       </section>
 
@@ -1660,11 +1667,28 @@ function VerificationQueuePage() {
       <section className="mathematical-core page-shell">
         <div><p className="eyebrow">Mathematical core</p><h2>An Erlang-C queue inside a fixed point.</h2></div>
         <div className="equation-stack">
-          <Equation>{"λ(a) = λ₀(1 + 1.35a)"}</Equation>
-          <Equation>{"μ(v) = μ₀ / (1 + 1.55v),   ρ = λ / cμ"}</Equation>
-          <Equation>{"v* = .06 + .72β·logit⁻¹[9(ρ−.72)] + .20ga"}</Equation>
-          <Equation>{"Wq = C(c,λ/μ) / (cμ−λ),   only if ρ < 1"}</Equation>
-          <p>Erlang-C is standard. The experiment closes the loop between congestion, verification v, and service rate μ.</p>
+          <Equation label="Arrivals and service" ariaLabel="lambda of a equals lambda zero times one plus 1.35 a; mu of v equals mu zero divided by one plus 1.55 v; rho equals lambda divided by c mu">
+            <var>λ</var>(<var>a</var>) = <var>λ</var><sub>0</sub>(1 + 1.35<var>a</var>),&nbsp;&nbsp;
+            <var>μ</var>(<var>v</var>) = <Fraction numerator={<><var>μ</var><sub>0</sub></>} denominator={<>1 + 1.55<var>v</var></>} />,&nbsp;&nbsp;
+            <var>ρ</var> = <Fraction numerator={<var>λ</var>} denominator={<><var>cμ</var></>} />
+          </Equation>
+          <Equation label="Verification fixed point" ariaLabel="v star equals clip from point zero four to point nine four of point zero six plus point seven two beta times the logistic of nine times rho of v star minus point seven two plus point two g a">
+            <var>v</var><sup>*</sup> = clip<sub>[.04,.94]</sub>{"{"}.06 + .72<var>β</var> <var>s</var>[9(<var>ρ</var>(<var>v</var><sup>*</sup>)−.72)] + .20<var>ga</var>{"}"},&nbsp;&nbsp;
+            <var>s</var>(<var>z</var>) = <Fraction numerator={1} denominator={<>1 + e<sup>−z</sup></>} />
+          </Equation>
+          <Equation label="Erlang-C delay probability" ariaLabel="C of c x equals x to c divided by c factorial times one minus x over c, all divided by the finite series plus that same delay term; x equals lambda over mu">
+            <var>x</var> = <Fraction numerator={<var>λ</var>} denominator={<var>μ</var>} />,&nbsp;&nbsp;
+            <var>C</var>(<var>c</var>,<var>x</var>) =
+            <Fraction
+              numerator={<Fraction numerator={<>x<sup>c</sup></>} denominator={<>c!(1−x/c)</>} />}
+              denominator={<>∑<sup>c−1</sup><sub>n=0</sub><Fraction numerator={<>x<sup>n</sup></>} denominator={<>n!</>} /> + <Fraction numerator={<>x<sup>c</sup></>} denominator={<>c!(1−x/c)</>} /></>}
+            />
+          </Equation>
+          <Equation label="Waiting and abandonment proxy" ariaLabel="W q equals C of c x divided by c mu minus lambda when rho is below one; probability of abandonment for group g equals one minus exponential of negative W q divided by theta g">
+            <var>W</var><sub>q</sub> = <Fraction numerator={<><var>C</var>(<var>c</var>,<var>x</var>)</>} denominator={<><var>cμ</var>−<var>λ</var></>} />,&nbsp;<var>ρ</var>&lt;1;&nbsp;&nbsp;·&nbsp;&nbsp;
+            Pr(abandon<sub>g</sub>) = 1 − exp(−<var>W</var><sub>q</sub>/<var>θ</var><sub>g</sub>)
+          </Equation>
+          <p>The queueing core is Erlang-C. The abandonment calculation is a transparent exponential-patience proxy, not a fitted Erlang-A model. The new coupling is the fixed point linking congestion, verification, and service rate.</p>
         </div>
       </section>
 
@@ -1730,7 +1754,6 @@ function WritingPage() {
       excerpt: essay.standfirst,
       href: `/experiments/${essay.slug}/`,
       kind: "Public-data experiment",
-      date: "August 2026",
       topic: experimentTopics[index],
     })),
   ];
@@ -1774,7 +1797,7 @@ function WritingPage() {
           {visibleItems.map((item) => (
             <a className="writing-row no-marker" href={item.href} key={item.id}>
               <span className="writing-row-main">
-                <small>{item.kind} · {item.date} · {item.topic}</small>
+                <small>{item.kind} · {item.topic}</small>
                 <strong>{item.title}</strong>
                 <p>{item.excerpt}</p>
               </span>
@@ -1813,22 +1836,6 @@ function AboutPage() {
     }
     return () => window.removeEventListener("portfolio:path", handlePathCommand);
   }, []);
-  const pathMoments = [
-    ["Roots", "India", "Where computer science became a way to turn uncertainty into something I could build."],
-    ["Leap", "Across an ocean", "I chose unfamiliar rooms before I knew exactly how I would fit inside them."],
-    ["Learn", "Systems + people", "Engineering taught me how systems run; research taught me to ask whom they run for."],
-    ["Serve", "Inside institutions", "Hospitals and city government made abstract questions of reliability consequential."],
-    ["Become", "Researcher–builder", "I now build models, tools, and evidence that make hidden institutional choices visible."],
-  ];
-  const experience = [
-    ["2026–now", "University of Oxford, Saïd Business School", "Research Assistant", "Missing-data sensitivity, econometric replication, and reproducible simulation infrastructure."],
-    ["2026–now", "Testing Autonomy", "AI SDET", "Evaluation pipelines for LLM, RAG, and agentic workflows, including grounding and failure recovery."],
-    ["2025", "Johns Hopkins Carey Business School", "Research Assistant", "A controlled human–AI study of empathizing and systemizing conversational behavior."],
-    ["2025", "Center for Outbreak Response Innovation", "Research Assistant", "Self-healing public-health data collection with provenance, validation, and human review."],
-    ["2025", "Birmingham Mayor’s Office / Bloomberg Center", "Strategy Analyst", "Municipal evidence integration, streetlighting policy, and implementation pathways."],
-    ["2024–25", "SwiftCollab", "AI Engineer", "Schema-aware agent workflows, monitoring, durable execution, and recovery across external applications."],
-  ];
-
   return (
     <Shell>
       <section className="about-path-hero page-shell">
@@ -1900,9 +1907,9 @@ function AboutPage() {
       </section>
 
       <section className="education-strip page-shell" aria-label="Education">
-        <div><span>2024–25</span><strong>Johns Hopkins University</strong><small>MSE, Engineering Management</small></div>
-        <div><span>2025</span><strong>Imperial College London</strong><small>Winter School</small></div>
-        <div><span>2020–24</span><strong>ANITS</strong><small>BTech, Computer Science</small></div>
+        {education.map(([year, institution, program]) => (
+          <div key={`${institution}-${program}`}><span>{year}</span><strong>{institution}</strong><small>{program}</small></div>
+        ))}
       </section>
 
       <section className="experience-section page-shell" aria-labelledby="experience-heading">
@@ -2108,7 +2115,7 @@ function BurdenMovesSimulationPage() {
   return (
     <Shell>
       <section className="page-intro experiment-intro page-shell">
-        <p className="eyebrow">Fixed-point simulation · August 2026</p>
+        <p className="eyebrow">Fixed-point simulation</p>
         <h1>The Burden Moves</h1>
         <p className="intro-lede">
           A fixed-point model of how easier applications can trigger verification and redistribute administrative burden.
@@ -2168,6 +2175,28 @@ function BurdenMovesSimulationPage() {
               </div>
             </article>
           ))}
+        </div>
+      </section>
+
+      <section className="mathematical-core page-shell">
+        <div><p className="eyebrow">Mathematical core</p><h2>A coupled take-up and verification fixed point.</h2></div>
+        <div className="equation-stack">
+          <Equation label="Eligible applicant utility" ariaLabel="eligible group utility equals point eight eight minus point three five error minus point one verification minus information cost after agent reduction minus verification times document cost minus point zero six">
+            <var>U</var><sup>E</sup><sub>g</sub> = .88 − .35<var>e</var><sub>g</sub> − .10<var>v</var> − <var>I</var><sub>g</sub>(1−<var>R</var><sub>g,s</sub>) − <var>vD</var><sub>g</sub> − .06
+          </Equation>
+          <Equation label="Ineligible applicant utility" ariaLabel="ineligible group utility equals point seven times point zero three plus one point two error minus point five five times information cost after reduction minus verification times document cost minus point one eight">
+            <var>U</var><sup>N</sup><sub>g</sub> = .70(.03 + 1.20<var>e</var><sub>g</sub>) − .55<var>I</var><sub>g</sub>(1−<var>R</var><sub>g,s</sub>) − <var>vD</var><sub>g</sub> − .18
+          </Equation>
+          <Equation label="Take-up and application volume" ariaLabel="application probability for group g equals the logistic of six times utility; total application volume equals the sum of group shares times application probabilities">
+            <var>a</var><sub>g</sub>(<var>v</var>; <var>s</var>) = <Fraction numerator={1} denominator={<>1 + exp(−6<var>U</var><sub>g</sub>)</>} />,&nbsp;&nbsp;
+            <var>A</var>(<var>v</var>; <var>s</var>) = ∑<sub>g</sub><var>q</var><sub>g</sub><var>a</var><sub>g</sub>(<var>v</var>; <var>s</var>)
+          </Equation>
+          <Equation label="Institutional response" ariaLabel="verification fixed point equals clip from point one six to point nine two of point one six plus beta times positive excess volume divided by effective capacity; effective capacity equals K plus the scenario capacity change">
+            <var>K</var><sub>s</sub> = <var>K</var> + Δ<var>K</var><sub>s</sub>,&nbsp;&nbsp;
+            <var>v</var><sup>*</sup> = clip<sub>[.16,.92]</sub>{"{"}.16 + <var>β</var>
+            <Fraction numerator={<>[<var>A</var>(<var>v</var><sup>*</sup>; <var>s</var>)−<var>K</var><sub>s</sub>]<sub>+</sub></>} denominator={<><var>K</var><sub>s</sub></>} />{"}"}
+          </Equation>
+          <p>The scenario table supplies the reduction, error, and capacity terms. Damped iteration solves the fixed point; it is a numerical method, not an additional behavioral assumption.</p>
         </div>
       </section>
 
@@ -2253,7 +2282,7 @@ function TimelinePage() {
       </section>
       <section className="timeline-clarity page-shell">
         <strong>A note on dates</strong>
-        <p>Work periods describe when the underlying project was conducted. The interpretive notes on this portfolio were written and published in August 2026. The new simulation is also dated August 2026.</p>
+        <p>Dates on this page describe when the underlying work was conducted or when a named research output was formally released.</p>
       </section>
     </Shell>
   );

@@ -8,7 +8,7 @@ reviewed by Hema Raju Barri.
 
 The portfolio includes:
 
-- a dual interface: an editorial Read mode and a VS Code–inspired Command mode
+- a dual interface: an editorial Read mode and a VS Code–inspired Dev mode
   with Codicons, an explorer, research editor, context inspector, integrated
   terminal, route navigation, simulation commands, and path controls. The
   workbench includes draggable and keyboard-resizable panes, layout toggles,
@@ -17,8 +17,9 @@ The portfolio includes:
   and Debug launcher for the simulations, Output and Problems views, and a
   read-only research Debug Console;
 - an optional local research-chat extension powered by the Apache-2.0-licensed
-  Qwen 2.5 0.5B Instruct model and WebLLM. The model loads only on request,
-  runs with WebGPU in the visitor's browser, and requires no API key;
+  Qwen 2.5 1.5B Instruct model and WebLLM. The model loads only on request,
+  retrieves a question-specific evidence packet from the portfolio, runs with
+  WebGPU in the visitor's browser, and requires no API key;
 - a publications archive with precise accepted, presented, upcoming, and preprint status;
 - a searchable blog archive that brings essays and experiments into one place;
 - an interactive research compass linking projects across four intellectual lenses;
@@ -28,7 +29,7 @@ The portfolio includes:
   channels, ranking robustness, rulemaking burden, and cross-country missingness; and
 - an About page connecting research, engineering, field work, and education.
 
-Use the Read/Command switch to change interfaces. In Command mode, type `help`,
+Use the Read/Dev switch to change interfaces. In Dev mode, type `help`,
 press `/`, use the visible files and commands to move through the work, or open
 Extensions and choose Local Research LLM. The first model load downloads and
 caches model files in the browser; prompts and generation remain on the device.
@@ -38,8 +39,8 @@ The Fit Workbench control restores a balanced layout for the current window;
 double-clicking any resize boundary restores that pane's default size. Help-menu
 shortcut rows are also clickable actions.
 
-Historical project dates describe when work was conducted. Interpretive notes
-are labeled with their actual portfolio publication date.
+Historical project dates describe when the underlying work was conducted or
+when a named research output was formally released.
 
 ## Local development
 

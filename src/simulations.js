@@ -1,4 +1,5 @@
 const clamp = (value, minimum, maximum) => Math.min(maximum, Math.max(minimum, value));
+const finiteOr = (value, fallback) => Number.isFinite(Number(value)) ? Number(value) : fallback;
 
 function normalCdf(value) {
   const sign = value < 0 ? -1 : 1;
@@ -47,9 +48,14 @@ export function runObservabilityReserve({
   signalNoise = 0.22,
   changePoint = 24,
 } = {}) {
+  const resolvedHorizon = Math.max(1, Math.round(clamp(finiteOr(horizon, 60), 1, 240)));
+  const resolvedReserve = clamp(finiteOr(reserve, 0.12), 0, 1);
+  const resolvedDecay = clamp(finiteOr(evidenceDecay, 0.02), 0, 1);
+  const resolvedNoise = clamp(finiteOr(signalNoise, 0.22), 0.001, 2);
+  const resolvedChangePoint = Math.round(clamp(finiteOr(changePoint, 24), 1, resolvedHorizon));
   const priorMean = 0.5;
   const priorVariance = 0.2 ** 2;
-  const signalVariance = signalNoise ** 2;
+  const signalVariance = resolvedNoise ** 2;
   const selectedMean = 0.62;
   const alternativeBefore = 0.54;
   const alternativeAfter = 0.74;
@@ -63,9 +69,9 @@ export function runObservabilityReserve({
   let detectionPeriod = null;
   const series = [];
 
-  for (let period = 1; period <= horizon; period += 1) {
-    const alternativeMean = period < changePoint ? alternativeBefore : alternativeAfter;
-    const alternativeWeight = reserve * Math.exp(-evidenceDecay * (period - 1));
+  for (let period = 1; period <= resolvedHorizon; period += 1) {
+    const alternativeMean = period < resolvedChangePoint ? alternativeBefore : alternativeAfter;
+    const alternativeWeight = resolvedReserve * Math.exp(-resolvedDecay * (period - 1));
 
     precisionA += 1 / signalVariance;
     weightedMeanA += selectedMean / signalVariance;
@@ -82,7 +88,7 @@ export function runObservabilityReserve({
     const comparisonSd = Math.sqrt(posteriorVarianceA + posteriorVarianceB);
     const reversalProbability = normalCdf((posteriorMeanB - posteriorMeanA) / comparisonSd);
 
-    if (period >= changePoint && detectionPeriod === null && reversalProbability >= 0.8) {
+    if (period >= resolvedChangePoint && detectionPeriod === null && reversalProbability >= 0.8) {
       detectionPeriod = period;
     }
 
@@ -99,16 +105,19 @@ export function runObservabilityReserve({
   const final = series.at(-1);
   return {
     ...final,
-    horizon,
-    reserve,
-    evidenceDecay,
-    signalNoise,
-    changePoint,
+    horizon: resolvedHorizon,
+    reserve: resolvedReserve,
+    evidenceDecay: resolvedDecay,
+    signalNoise: resolvedNoise,
+    changePoint: resolvedChangePoint,
+    priorMean,
+    priorVariance,
+    signalVariance,
     effectiveEvidenceA,
     effectiveEvidenceB,
     observabilityRatio: effectiveEvidenceB / effectiveEvidenceA,
     detectionPeriod,
-    detectionDelay: detectionPeriod === null ? null : detectionPeriod - changePoint,
+    detectionDelay: detectionPeriod === null ? null : detectionPeriod - resolvedChangePoint,
     series,
   };
 }
@@ -145,8 +154,11 @@ function computeVerificationQueue({
   let verification = 0.12;
   let serviceRate = baseServiceRate;
   let utilization = arrivalRate / (reviewers * serviceRate);
+  let converged = false;
+  let iterations = 0;
 
   for (let iteration = 0; iteration < 120; iteration += 1) {
+    iterations = iteration + 1;
     serviceRate = baseServiceRate / (1 + (1.55 * verification));
     utilization = arrivalRate / (reviewers * serviceRate);
     const congestionSignal = 1 / (1 + Math.exp(-9 * (utilization - 0.72)));
@@ -157,7 +169,13 @@ function computeVerificationQueue({
       0.04,
       0.94,
     );
-    verification = (0.68 * verification) + (0.32 * targetVerification);
+    const nextVerification = (0.68 * verification) + (0.32 * targetVerification);
+    if (Math.abs(nextVerification - verification) < 1e-10) {
+      verification = nextVerification;
+      converged = true;
+      break;
+    }
+    verification = nextVerification;
   }
 
   serviceRate = baseServiceRate / (1 + (1.55 * verification));
@@ -171,6 +189,14 @@ function computeVerificationQueue({
   const meanAbandonment = (0.58 * lowResourceAbandonment) + (0.42 * highResourceAbandonment);
   const serviceCapacity = reviewers * serviceRate;
   const completedPerDay = Math.min(arrivalRate, serviceCapacity) * (1 - meanAbandonment);
+  const congestionSignal = 1 / (1 + Math.exp(-9 * (queue.utilization - 0.72)));
+  const verificationTarget = clamp(
+    0.06
+      + (0.72 * verificationResponse * congestionSignal)
+      + (0.2 * agentQualityGap * agentAdoption),
+    0.04,
+    0.94,
+  );
 
   return {
     agentAdoption,
@@ -189,15 +215,18 @@ function computeVerificationQueue({
     highResourceAbandonment,
     abandonmentGap: lowResourceAbandonment - highResourceAbandonment,
     completedPerDay,
+    converged,
+    iterations,
+    fixedPointResidual: Math.abs(verificationTarget - verification),
   };
 }
 
 export function runVerificationQueue(parameters = {}) {
   const resolved = {
-    agentAdoption: parameters.agentAdoption ?? 0.45,
-    reviewers: Math.round(parameters.reviewers ?? 14),
-    verificationResponse: parameters.verificationResponse ?? 0.35,
-    agentQualityGap: parameters.agentQualityGap ?? 0.2,
+    agentAdoption: clamp(finiteOr(parameters.agentAdoption, 0.45), 0, 1),
+    reviewers: Math.round(clamp(finiteOr(parameters.reviewers, 14), 1, 100)),
+    verificationResponse: clamp(finiteOr(parameters.verificationResponse, 0.35), 0, 1),
+    agentQualityGap: clamp(finiteOr(parameters.agentQualityGap, 0.2), 0, 1),
   };
   const result = computeVerificationQueue(resolved);
   const curve = Array.from({ length: 11 }, (_, index) => {

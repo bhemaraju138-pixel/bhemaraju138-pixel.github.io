@@ -33,3 +33,11 @@ test("verification responds to lower capacity", () => {
   });
   assert.ok(lowCapacity.verification > highCapacity.verification);
 });
+
+test("the burden model reports a solved fixed point", () => {
+  for (const scenario of ["No agent", "General-purpose agents", "Unequal private agents", "Audited public agent"]) {
+    const result = runModel({ scenario, ...parameters });
+    assert.equal(result.converged, true);
+    assert.ok(result.fixedPointResidual < 1e-7);
+  }
+});

@@ -12,7 +12,7 @@
     "postbuild": "node scripts/generate-routes.mjs",
     "package:data": "bash scripts/package-public-data.sh",
     "start": "vite preview",
-    "test": "node --test tests/model.test.mjs tests/simulations.test.mjs",
+    "test": "node --test tests/model.test.mjs tests/simulations.test.mjs tests/knowledge.test.mjs",
     "test:data": "python3 tests/verify_public_data.py",
     "test:routes": "node --test tests/public-data-routes.test.mjs",
     "lint": "eslint src scripts --ignore-pattern dist"

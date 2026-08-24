@@ -126,7 +126,7 @@ export const notes = [
   {
     slug: "labels-are-not-treatments",
     title: "Labels Are Not Treatments",
-    eyebrow: "Method note · Work conducted September–December 2025 · Note published August 2026",
+    eyebrow: "Method note · Work conducted September–December 2025",
     standfirst:
       "A clean randomization cannot rescue a treatment that exists only in the prompt writer’s vocabulary.",
     blocks: [
@@ -156,7 +156,7 @@ export const notes = [
   {
     slug: "map-is-a-policy-choice",
     title: "The Map Is a Policy Choice",
-    eyebrow: "Field note · Work conducted June–August 2025 · Note published August 2026",
+    eyebrow: "Field note · Work conducted June–August 2025",
     standfirst:
       "A city does not discover an underserved corridor. It constructs the evidentiary conditions under which that corridor can be seen.",
     blocks: [
@@ -185,7 +185,7 @@ export const notes = [
   {
     slug: "open-is-not-agent-readable",
     title: "Open Is Not Agent-Readable",
-    eyebrow: "Research note · Accepted work developed in 2026 · Note published August 2026",
+    eyebrow: "Research note · Accepted work developed in 2026",
     standfirst:
       "Publication grants permission to look. It does not guarantee the capacity to act faithfully.",
     blocks: [
@@ -214,7 +214,7 @@ export const notes = [
   {
     slug: "who-owns-the-verification-layer",
     title: "Who Owns the Verification Layer?",
-    eyebrow: "Research memo · August 2026",
+    eyebrow: "Research memo",
     standfirst:
       "When AI makes claims cheap to produce, verification becomes the scarce institutional resource.",
     blocks: [
@@ -247,13 +247,13 @@ export const publicDataEssays = [
     slug: "error-message-is-policy",
     number: "01",
     title: "The Error Message Is Part of the Policy",
-    eyebrow: "Interface audit · Published August 23, 2026 · Live public APIs",
+    eyebrow: "Interface audit · Live public APIs",
     standfirst:
       "An agent cannot recover from a failure the institution refuses to name. Error semantics decide who gets the capacity to repair a public transaction.",
     question:
       "When a public API receives a malformed request, does it make failure machine-detectable and repairable, or does it leave the caller to guess?",
     evidenceStatus:
-      "Dated interface audit, not a permanent product ranking. One valid control and one deliberately malformed request were sent to each of eight APIs on August 23, 2026 (ET).",
+      "Point-in-time interface audit, not a permanent product ranking. During one documented audit window, one valid control and one deliberately malformed request were sent to each of eight APIs.",
     metrics: [
       ["APIs probed", "8"],
       ["Invalid requests returning HTTP 200", "3"],
@@ -332,7 +332,7 @@ export const publicDataEssays = [
     slug: "catalog-says-open-columns-say-guess",
     number: "02",
     title: "The Catalog Says Open. The Columns Say Guess.",
-    eyebrow: "Metadata census · Published August 23, 2026 · Six Socrata portals",
+    eyebrow: "Metadata census · Six Socrata portals",
     standfirst:
       "Fresh metadata can describe an undocumented table. Old metadata can describe a stable one. Openness needs a clock for data and a separate clock for meaning.",
     question:
@@ -416,7 +416,7 @@ export const publicDataEssays = [
     slug: "digital-channel-has-a-constituency",
     number: "03",
     title: "The Digital Channel Has a Constituency",
-    eyebrow: "Civic participation analysis · Published August 23, 2026 · NYC 311 + ACS",
+    eyebrow: "Civic participation analysis · NYC 311 + ACS",
     standfirst:
       "Lower-income neighborhoods were not silent in 311. They were differently routed. An AI channel can change whose signal arrives in machine-ready form.",
     question:
@@ -500,7 +500,7 @@ export const publicDataEssays = [
     slug: "priority-list-is-a-parameter",
     number: "04",
     title: "The Priority List Is a Parameter",
-    eyebrow: "Robustness experiment · Published August 23, 2026 · ACS state data",
+    eyebrow: "Robustness experiment · ACS state data",
     standfirst:
       "A ranking can look like evidence after its policy choices have been hidden inside weights. The honest output is sometimes a probability of priority, not a numbered list.",
     question:
@@ -583,7 +583,7 @@ export const publicDataEssays = [
     slug: "thirty-days-is-not-thirty-days",
     number: "05",
     title: "Thirty Days Is Not Thirty Days",
-    eyebrow: "Procedural-burden analysis · Published August 23, 2026 · Federal Register",
+    eyebrow: "Procedural-burden analysis · Federal Register",
     standfirst:
       "A comment window measures calendar time. Participation depends on how much attention must fit inside it and who can parallelize the work.",
     question:
@@ -666,7 +666,7 @@ export const publicDataEssays = [
     slug: "global-comparison-cannot-exist",
     number: "06",
     title: "The Global Comparison That Cannot Be Both Global and Current",
-    eyebrow: "Missingness experiment · Published August 23, 2026 · World Bank Indicators",
+    eyebrow: "Missingness experiment · World Bank Indicators",
     standfirst:
       "Same-year data exclude economies. Latest-value data include more of them by comparing different moments. Coverage has a temporal price.",
     question:
@@ -772,6 +772,6 @@ export const timeline = [
     year: "Now",
     title: "Government as a responding counterparty",
     text: "The Burden Moves simulation formalizes the next claim: an agent’s effect on access depends on how agencies change verification under capacity constraints. It is a theory-building artifact designed to generate testable contrasts.",
-    status: "New simulation published August 2026",
+    status: "Theory-building simulation",
   },
 ];

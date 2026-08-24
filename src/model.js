@@ -7,6 +7,7 @@ const groups = [
 
 const logistic = (value) => 1 / (1 + Math.exp(-value));
 const clamp = (value, low, high) => Math.min(high, Math.max(low, value));
+const finiteOr = (value, fallback) => Number.isFinite(Number(value)) ? Number(value) : fallback;
 
 function scenarioParameters(name, qualityGap) {
   if (name === "No agent") {
@@ -68,12 +69,18 @@ export function runModel({
   verificationResponse = 0.55,
   qualityGap = 0.25,
 }) {
-  const parameters = scenarioParameters(scenario, qualityGap);
+  const resolvedCapacity = clamp(finiteOr(agencyCapacity, 0.37), 0.01, 1);
+  const resolvedResponse = clamp(finiteOr(verificationResponse, 0.55), 0, 1);
+  const resolvedQualityGap = clamp(finiteOr(qualityGap, 0.25), 0, 1);
+  const parameters = scenarioParameters(scenario, resolvedQualityGap);
   let verification = 0.16;
   let groupResults = [];
   let applicationVolume = 0;
+  let converged = false;
+  let iterations = 0;
 
   for (let iteration = 0; iteration < 200; iteration += 1) {
+    iterations = iteration + 1;
     groupResults = groups.map((group) => {
       const informationCost =
         group.informationCost * (1 - parameters.reduction[group.resource]);
@@ -108,10 +115,10 @@ export function runModel({
       0,
     );
 
-    const effectiveCapacity = agencyCapacity + parameters.capacityBoost;
+    const effectiveCapacity = resolvedCapacity + parameters.capacityBoost;
     const targetVerification = clamp(
       0.16 +
-        verificationResponse *
+        resolvedResponse *
           Math.max(0, applicationVolume - effectiveCapacity) /
           effectiveCapacity,
       0.16,
@@ -121,6 +128,7 @@ export function runModel({
 
     if (Math.abs(nextVerification - verification) < 1e-8) {
       verification = nextVerification;
+      converged = true;
       break;
     }
     verification = nextVerification;
@@ -135,6 +143,12 @@ export function runModel({
   const falseApplications = groupResults
     .filter((group) => !group.eligible)
     .reduce((total, group) => total + group.share * group.applyProbability, 0);
+  const effectiveCapacity = resolvedCapacity + parameters.capacityBoost;
+  const verificationTarget = clamp(
+    0.16 + resolvedResponse * Math.max(0, applicationVolume - effectiveCapacity) / effectiveCapacity,
+    0.16,
+    0.92,
+  );
 
   return {
     scenario,
@@ -145,6 +159,9 @@ export function runModel({
     accessGap: highEligible.applyProbability - lowEligible.applyProbability,
     lowResourceBurden: lowEligible.experiencedBurden,
     falseApplicationShare: falseApplications / applicationVolume,
+    converged,
+    iterations,
+    fixedPointResidual: Math.abs(verificationTarget - verification),
     groupResults,
   };
 }
