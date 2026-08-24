@@ -502,6 +502,24 @@ function SimulationsPage() {
           <SimulationIndexCard simulation={simulation} key={simulation.title} />
         ))}
       </section>
+      <section className="simulation-lens page-shell" aria-labelledby="simulation-lens-heading">
+        <div className="lens-mark" aria-hidden="true">
+          <span />
+          <span />
+          <i />
+        </div>
+        <div className="lens-copy">
+          <p className="eyebrow light">See through my lens</p>
+          <h2 id="simulation-lens-heading">
+            As AI agents take the stage,
+            <em>I ask who gets to write the next page.</em>
+          </h2>
+          <p>
+            I use simulation to expose the institutional choices that disappear when
+            we look only at the agent: access, evidence, verification, and response.
+          </p>
+        </div>
+      </section>
       <section className="simulation-novelty page-shell">
         <p className="eyebrow">Novelty boundary</p>
         <h2>Established mathematics. New institutional couplings.</h2>
@@ -869,6 +887,14 @@ function WritingPage() {
 }
 
 function AboutPage() {
+  const [pathMade, setPathMade] = useState(false);
+  const pathMoments = [
+    ["Roots", "India", "Where computer science became a way to turn uncertainty into something I could build."],
+    ["Leap", "Across an ocean", "I chose unfamiliar rooms before I knew exactly how I would fit inside them."],
+    ["Learn", "Systems + people", "Engineering taught me how systems run; research taught me to ask whom they run for."],
+    ["Serve", "Inside institutions", "Hospitals and city government made abstract questions of reliability consequential."],
+    ["Become", "Researcher–builder", "I now build models, tools, and evidence that make hidden institutional choices visible."],
+  ];
   const experience = [
     ["2026–now", "University of Oxford, Saïd Business School", "Research Assistant", "Missing-data sensitivity, econometric replication, and reproducible simulation infrastructure."],
     ["2026–now", "Testing Autonomy", "AI SDET", "Evaluation pipelines for LLM, RAG, and agentic workflows, including grounding and failure recovery."],
@@ -880,16 +906,45 @@ function AboutPage() {
 
   return (
     <Shell>
-      <section className="about-hero page-shell">
-        <div className="about-monogram" aria-hidden="true"><span>H</span><span>R</span><span>B</span></div>
-        <div>
-          <p className="eyebrow">About</p>
-          <h1>I build things to understand how they behave in institutions.</h1>
-          <p className="intro-lede">
-            I am Hema Raju Barri, a researcher and systems builder working across AI,
-            management, public policy, and empirical methods.
+      <section className="about-path-hero page-shell">
+        <div className="about-path-intro">
+          <p className="path-kicker"><span /> Hello, I’m</p>
+          <h1>Hema Raju <em>Barri.</em></h1>
+          <p>
+            I cross disciplines, institutions, and assumptions—then build the missing
+            map between intelligent systems and the people who must live with them.
           </p>
         </div>
+
+        <div className={pathMade ? "about-path-stage is-connected" : "about-path-stage"} aria-live="polite">
+          <div className="path-stage-label">
+            <span>{pathMade ? "My path, so far" : "The pieces, before the path"}</span>
+            <span>{pathMade ? "One direction, still unfolding" : "Connect them below"}</span>
+          </div>
+          <svg className="about-journey-line" viewBox="0 0 1000 500" preserveAspectRatio="none" aria-hidden="true">
+            <path d="M85,340 C175,170 270,150 350,285 C430,420 510,440 580,286 C645,142 735,115 790,245 C835,350 895,360 945,196" />
+          </svg>
+          {pathMoments.map(([label, title, description], index) => (
+            <article className={`path-card path-card-${index + 1}`} key={label}>
+              <p>{label}</p>
+              <h2>{title}</h2>
+              <small>{description}</small>
+            </article>
+          ))}
+          <blockquote className="path-quote">
+            I wasn’t given a map.<br /><em>So I learned to make one.</em>
+          </blockquote>
+        </div>
+
+        <button
+          className="path-toggle"
+          type="button"
+          aria-pressed={pathMade}
+          onClick={() => setPathMade((current) => !current)}
+        >
+          <span aria-hidden="true">{pathMade ? "↺" : "↗"}</span>
+          <span><small>{pathMade ? "Look again" : "A small experiment"}</small>{pathMade ? "Scatter the pieces" : "Connect my path"}</span>
+        </button>
       </section>
 
       <section className="about-story page-shell">
