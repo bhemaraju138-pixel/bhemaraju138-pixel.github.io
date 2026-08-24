@@ -1312,7 +1312,8 @@ dd { margin: 0; font-size: 13px; line-height: 1.55; }
   background: rgba(255, 255, 255, 0.74);
   box-shadow: 7px 8px 0 rgba(23, 25, 31, 0.07);
   backdrop-filter: blur(12px);
-  transition: left 900ms cubic-bezier(0.65, 0, 0.16, 1), top 900ms cubic-bezier(0.65, 0, 0.16, 1), right 900ms cubic-bezier(0.65, 0, 0.16, 1), transform 900ms cubic-bezier(0.65, 0, 0.16, 1);
+  transition: left 900ms cubic-bezier(0.65, 0, 0.16, 1), top 900ms cubic-bezier(0.65, 0, 0.16, 1), right 900ms cubic-bezier(0.65, 0, 0.16, 1), transform 900ms cubic-bezier(0.65, 0, 0.16, 1), opacity 260ms ease;
+  will-change: top, left, transform, opacity;
 }
 .path-card::after { position: absolute; bottom: -18px; left: 50%; width: 9px; height: 9px; border: 2px solid var(--paper); border-radius: 50%; background: var(--red); content: ""; opacity: 0; transform: translateX(-50%) scale(0); transition: opacity 300ms ease 800ms, transform 300ms ease 800ms; }
 .is-connected .path-card::after { opacity: 1; transform: translateX(-50%) scale(1); }
@@ -1324,35 +1325,42 @@ dd { margin: 0; font-size: 13px; line-height: 1.55; }
 .path-card-3 { top: 21%; left: 47%; transform: rotate(-3deg); }
 .path-card-4 { top: 61%; left: 68%; transform: rotate(5deg); }
 .path-card-5 { top: 19%; left: 82%; transform: rotate(-5deg); }
-.is-connected .path-card-1 { top: 56%; left: 0; transform: rotate(-2deg); }
-.is-connected .path-card-2 { top: 22%; left: 18%; transform: rotate(2deg); }
-.is-connected .path-card-3 { top: 54%; left: 41%; transform: rotate(-1deg); }
-.is-connected .path-card-4 { top: 17%; left: 64%; transform: rotate(2deg); }
-.is-connected .path-card-5 { top: 40%; left: 82%; transform: rotate(-2deg); }
+.is-connected .path-card {
+  top: 50%;
+  right: auto;
+  left: 50%;
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.12) rotate(0);
+  transition-delay: 0ms, 0ms, 0ms, 0ms, 620ms;
+}
+.is-connected .path-card::after { opacity: 0; transform: translateX(-50%) scale(0); transition-delay: 0ms; }
 .path-quote {
   position: absolute;
   z-index: 5;
-  top: 38%;
+  top: 50%;
   left: 50%;
-  width: min(460px, 44%);
+  width: min(660px, 62%);
   margin: 0;
-  padding: 19px 28px;
-  border: 1px solid rgba(49, 91, 214, 0.28);
-  background: rgba(248, 250, 255, 0.84);
-  box-shadow: 0 18px 45px rgba(23, 25, 31, 0.1);
+  padding: clamp(34px, 5vw, 58px);
+  border: 1px solid rgba(49, 91, 214, 0.42);
+  background: rgba(248, 250, 255, 0.96);
+  box-shadow: 0 26px 70px rgba(23, 25, 31, 0.18), 0 0 0 10px rgba(232, 237, 251, 0.54);
   backdrop-filter: blur(18px);
   color: var(--ink);
   transform: translate(-50%, -50%);
   text-align: center;
   font-family: var(--serif);
-  font-size: clamp(20px, 2vw, 27px);
-  line-height: 1.35;
-  animation: path-quote-in 520ms ease both;
+  font-size: clamp(25px, 3vw, 39px);
+  line-height: 1.25;
+  animation: path-quote-in 720ms cubic-bezier(0.16, 1, 0.3, 1) 680ms both;
 }
-.path-quote em { color: var(--red-dark); font-weight: 500; letter-spacing: 0.035em; }
+.path-quote em { display: block; color: var(--red-dark); font-weight: 500; letter-spacing: 0.035em; }
+.path-quote em + em { margin-top: 12px; }
+.path-quote strong { font-weight: 700; }
 @keyframes path-quote-in {
-  from { opacity: 0; transform: translate(-50%, -42%) scale(0.94); }
-  to { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+  0% { opacity: 0; transform: translate(-50%, -50%) scale(0.3); }
+  72% { opacity: 1; transform: translate(-50%, -50%) scale(1.08); }
+  100% { opacity: 1; transform: translate(-50%, -50%) scale(1.03); }
 }
 .path-toggle {
   position: relative;
@@ -1446,13 +1454,13 @@ dd { margin: 0; font-size: 13px; line-height: 1.55; }
   .about-path-stage.is-connected::before { opacity: 0.6; transform: scaleY(1); }
   .about-journey-line { display: none; }
   .path-card { width: min(44%, 210px); }
-  .path-card-1, .is-connected .path-card-1 { top: 8%; left: 0; }
-  .path-card-2, .is-connected .path-card-2 { top: 20%; right: 0; left: auto; }
-  .path-card-3, .is-connected .path-card-3 { top: 59%; left: 0; }
-  .path-card-4, .is-connected .path-card-4 { top: 70%; right: 0; left: auto; }
-  .path-card-5, .is-connected .path-card-5 { top: 83%; left: 27%; }
-  .is-connected .path-card { transform: rotate(0); }
-  .path-quote { top: 45%; width: min(520px, calc(100% - 40px)); }
+  .path-card-1 { top: 8%; left: 0; }
+  .path-card-2 { top: 20%; right: 0; left: auto; }
+  .path-card-3 { top: 59%; left: 0; }
+  .path-card-4 { top: 70%; right: 0; left: auto; }
+  .path-card-5 { top: 83%; left: 27%; }
+  .is-connected .path-card { top: 50%; right: auto; left: 50%; transform: translate(-50%, -50%) scale(0.12) rotate(0); }
+  .path-quote { top: 50%; width: min(560px, calc(100% - 40px)); }
   .about-story { grid-template-columns: 1fr; gap: 35px; }
   .education-strip { grid-template-columns: 1fr; }
   .experience-list article { grid-template-columns: 90px 1fr; }
@@ -1493,12 +1501,13 @@ dd { margin: 0; font-size: 13px; line-height: 1.55; }
   .path-stage-label span:last-child { display: none; }
   .path-card { width: 47%; min-height: 146px; padding: 14px; }
   .path-card h2 { font-size: 20px; }
-  .path-card-1, .is-connected .path-card-1 { top: 8%; }
-  .path-card-2, .is-connected .path-card-2 { top: 21%; }
-  .path-card-3, .is-connected .path-card-3 { top: 60%; }
-  .path-card-4, .is-connected .path-card-4 { top: 71%; }
-  .path-card-5, .is-connected .path-card-5 { top: 83%; left: 22%; }
-  .path-quote { top: 47%; width: calc(100% - 20px); padding: 17px 18px; font-size: 21px; }
+  .path-card-1 { top: 8%; }
+  .path-card-2 { top: 21%; }
+  .path-card-3 { top: 60%; }
+  .path-card-4 { top: 71%; }
+  .path-card-5 { top: 83%; left: 22%; }
+  .is-connected .path-card { top: 50%; right: auto; left: 50%; }
+  .path-quote { top: 50%; width: calc(100% - 28px); padding: 30px 22px; font-size: 23px; }
   .experience-list article { grid-template-columns: 1fr; gap: 10px; }
   .experience-list article > p { grid-column: 1; }
 }

@@ -891,7 +891,8 @@ function AboutPage() {
           ))}
           {pathMade && (
             <blockquote className="path-quote">
-              <em>AS AI AGENTS TAKE THE STAGE,<br />I ASK WHO GETS TO WRITE THE NEXT PAGE.</em>
+              <em><strong>AS AI AGENTS TAKE THE STAGE,</strong></em>
+              <em><strong>I ASK WHO GETS TO WRITE THE NEXT PAGE.</strong></em>
             </blockquote>
           )}
         </div>
