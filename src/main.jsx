@@ -26,13 +26,62 @@ const simulationRoutes = {
   queue: "/simulations/verification-queue/",
 };
 
-document.documentElement.dataset.interface = "command";
-
 function Arrow() {
   return <span aria-hidden="true">↗</span>;
 }
 
-function CommandConsole() {
+function ModeSwitch({ mode, onChange }) {
+  return (
+    <div className="mode-switch" role="group" aria-label="Portfolio interface mode">
+      <button type="button" className={mode === "reader" ? "active" : ""} aria-pressed={mode === "reader"} onClick={() => onChange("reader")}>Read</button>
+      <button type="button" className={mode === "command" ? "active" : ""} aria-pressed={mode === "command"} onClick={() => onChange("command")}>Command</button>
+    </div>
+  );
+}
+
+function ReaderHeader({ mode, onModeChange }) {
+  const path = window.location.pathname;
+  const links = [
+    ["/publications/", "Publications"],
+    ["/blogs/", "Blogs"],
+    ["/simulations/", "Simulations"],
+    ["/about/", "About"],
+  ];
+
+  return (
+    <header className="site-header">
+      <a className="skip-link" href="#main">Skip to content</a>
+      <a className="wordmark" href="/" aria-label="Hema Raju Barri, home"><span>Hema Raju Barri</span></a>
+      <nav aria-label="Primary navigation">
+        {links.map(([href, label]) => (
+          <a href={href} key={href} aria-current={path.startsWith(href) || (href === "/about/" && path === "/") ? "page" : undefined}>{label}</a>
+        ))}
+      </nav>
+      <div className="header-actions">
+        <ModeSwitch mode={mode} onChange={onModeChange} />
+        <a className="contact-link" href="mailto:bhemaraju.138@gmail.com">Contact <Arrow /></a>
+      </div>
+    </header>
+  );
+}
+
+function ReaderFooter() {
+  return (
+    <footer className="site-footer">
+      <div><strong>Hema Raju Barri</strong><p>Researcher · systems builder · public-interest technologist</p></div>
+      <div className="footer-links">
+        <a href="mailto:bhemaraju.138@gmail.com">Email</a>
+        <a href="/publications/">Publications</a>
+        <a href="/blogs/">Blogs</a>
+        <a href="/simulations/">Simulations</a>
+        <a href="/about/">About</a>
+      </div>
+      <p className="date-note">Historical project dates mark when work was conducted. Portfolio notes were published in August 2026 unless otherwise stated.</p>
+    </footer>
+  );
+}
+
+function CommandConsole({ onModeChange }) {
   const [input, setInput] = useState("");
   const [history, setHistory] = useState([
     { kind: "system", text: "HRB research interface ready." },
@@ -81,13 +130,16 @@ function CommandConsole() {
       return;
     }
     if (normalized === "help" || normalized === "?") {
-      write(raw, "about · research · publications · blogs · simulations · timeline · run burden|observability|queue · connect · scatter · whoami · status · contact · clear");
+      write(raw, "about · research · publications · blogs · simulations · timeline · run burden|observability|queue · connect · scatter · whoami · status · contact · read · clear");
     } else if (normalized === "ls") {
       write(raw, "about/  research/  publications/  blogs/  simulations/  timeline/");
     } else if (normalized === "whoami") {
       write(raw, "Hema Raju Barri: researcher, systems builder, and public-interest technologist studying the institutions around intelligent systems.");
     } else if (normalized === "status") {
       write(raw, `route=${window.location.pathname}  interface=HRB_OS  focus=AI+management+public institutions`);
+    } else if (normalized === "read" || normalized === "reader" || normalized === "mode read") {
+      write(raw, "Returning to Read mode.");
+      window.setTimeout(() => onModeChange("reader"), 120);
     } else if (normalized === "connect" || normalized === "connect path") {
       if (window.location.pathname === "/" || window.location.pathname === "/about/") {
         window.dispatchEvent(new CustomEvent("portfolio:path", { detail: { connected: true } }));
@@ -150,13 +202,130 @@ function CommandConsole() {
   );
 }
 
-function Shell({ children }) {
+function editorFileForPath(path) {
+  if (path === "/" || path.startsWith("/about")) return "about.md";
+  if (path.startsWith("/publications")) return "publications.md";
+  if (path.startsWith("/blogs") || path.startsWith("/writing")) return "blogs.index";
+  if (path === "/simulations/" || path === "/simulations") return "simulations.run";
+  if (path.includes("burden-moves")) return "burden_moves.sim";
+  if (path.includes("observability-reserve")) return "observability_reserve.sim";
+  if (path.includes("verification-queue")) return "verification_queue.sim";
+  if (path.startsWith("/research")) return "research.md";
+  if (path.startsWith("/timeline")) return "timeline.log";
+  if (path.startsWith("/experiments/")) return `${path.split("/").filter(Boolean).at(-1)}.experiment`;
+  if (path.startsWith("/notes/")) return `${path.split("/").filter(Boolean).at(-1)}.note`;
+  return "not_found.log";
+}
+
+function CommandWorkspace({ children, onModeChange }) {
+  const path = window.location.pathname;
+  const activeFile = editorFileForPath(path);
+  const files = [
+    ["/", "about.md"],
+    ["/research/", "research.md"],
+    ["/publications/", "publications.md"],
+    ["/blogs/", "blogs.index"],
+    ["/simulations/", "simulations.run"],
+    ["/timeline/", "timeline.log"],
+  ];
+
   return (
-    <div className="terminal-screen">
-      <header className="terminal-screen-header">HRB_OS / RESEARCH_INTERFACE</header>
-      <main className="terminal-workspace" id="main">{children}</main>
-      <CommandConsole />
+    <div className="ide-screen">
+      <header className="ide-titlebar">
+        <div className="ide-history-controls">
+          <button type="button" aria-label="Go back" onClick={() => window.history.back()}>←</button>
+          <button type="button" aria-label="Go forward" onClick={() => window.history.forward()}>→</button>
+        </div>
+        <strong>HRB_OS / RESEARCH_INTERFACE</strong>
+        <ModeSwitch mode="command" onChange={onModeChange} />
+      </header>
+
+      <div className="ide-workbench">
+        <nav className="ide-activitybar" aria-label="Workspace shortcuts">
+          <a className="active" href="/" title="Explorer">▱</a>
+          <a href="/research/" title="Research">⌕</a>
+          <a href="/publications/" title="Publications">⑂</a>
+          <a href="/simulations/" title="Run simulations">▷</a>
+          <a href="mailto:bhemaraju.138@gmail.com" title="Contact">＠</a>
+        </nav>
+
+        <aside className="ide-explorer" aria-label="Portfolio explorer">
+          <div className="ide-pane-title"><strong>EXPLORER</strong><span>···</span></div>
+          <div className="ide-tree-group">
+            <p>⌄ OPEN EDITOR</p>
+            <a className="active" href={path}><span>#</span>{activeFile}</a>
+          </div>
+          <div className="ide-tree-group">
+            <p>⌄ HRB_PORTFOLIO</p>
+            {files.map(([href, file]) => (
+              <a className={activeFile === file ? "active" : ""} href={href} key={href}><span>{file.endsWith(".run") ? "▷" : "#"}</span>{file}</a>
+            ))}
+          </div>
+          <div className="ide-tree-spacer" />
+          <div className="ide-collapsed-pane">› OUTLINE</div>
+          <div className="ide-collapsed-pane">› EVIDENCE LOG</div>
+        </aside>
+
+        <section className="ide-editor-shell" aria-label="Research editor">
+          <div className="ide-tabs"><div className="ide-tab active"><span>#</span>{activeFile}<i aria-hidden="true">×</i></div></div>
+          <div className="ide-breadcrumb">HRB_PORTFOLIO <span>›</span> {path.split("/").filter(Boolean).join(" › ") || "about"} <span>›</span> {activeFile}</div>
+          <main className="ide-editor-content" id="main">{children}</main>
+          <section className="ide-terminal-panel" aria-label="Integrated terminal">
+            <div className="ide-panel-tabs"><strong>TERMINAL</strong><span>OUTPUT</span><span>PROBLEMS</span><span>DEBUG CONSOLE</span></div>
+            <CommandConsole onModeChange={onModeChange} />
+          </section>
+        </section>
+
+        <aside className="ide-inspector" aria-label="Research context">
+          <div className="ide-pane-title"><strong>RESEARCH CONTEXT</strong><span>···</span></div>
+          <div className="ide-inspector-body">
+            <p className="ide-inspector-label">ACTIVE QUESTION</p>
+            <h2>Who gets to write the next page?</h2>
+            <p>I study how intelligent systems change evidence, access, verification, and institutional response.</p>
+            <dl>
+              <div><dt>ROUTE</dt><dd>{path}</dd></div>
+              <div><dt>FILE</dt><dd>{activeFile}</dd></div>
+              <div><dt>METHODS</dt><dd>experiments · econometrics · simulation · systems</dd></div>
+            </dl>
+            <div className="ide-command-reference">
+              <span>TRY IN TERMINAL</span>
+              <code>help</code><code>publications</code><code>run queue</code><code>connect</code><code>read</code>
+            </div>
+          </div>
+        </aside>
+      </div>
+
+      <footer className="ide-statusbar"><span>⑂ main</span><span>{activeFile}</span><span>UTF-8 · LF · HRB_OS</span></footer>
     </div>
+  );
+}
+
+function Shell({ children }) {
+  const [mode, setMode] = useState(() => {
+    try {
+      return window.localStorage.getItem("hrb-interface") === "command" ? "command" : "reader";
+    } catch {
+      return "reader";
+    }
+  });
+
+  useEffect(() => {
+    document.documentElement.dataset.interface = mode;
+    try {
+      window.localStorage.setItem("hrb-interface", mode);
+    } catch {
+      // Mode remains available for the current page when storage is unavailable.
+    }
+  }, [mode]);
+
+  if (mode === "command") return <CommandWorkspace onModeChange={setMode}>{children}</CommandWorkspace>;
+
+  return (
+    <>
+      <ReaderHeader mode={mode} onModeChange={setMode} />
+      <main id="main">{children}</main>
+      <ReaderFooter />
+    </>
   );
 }
 
