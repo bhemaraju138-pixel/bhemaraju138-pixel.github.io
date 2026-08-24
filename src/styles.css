@@ -2630,6 +2630,41 @@ body,
 [data-interface="command"] .ide-editor-content .path-card small { font-family: var(--vscode-ui) !important; font-size: 11px; line-height: 1.45; }
 [data-interface="command"] .ide-editor-content .experience-list article { padding-block: 16px; }
 
+/* Keep every editorial panel on the same dark, high-contrast surface. */
+[data-interface="command"] .ide-editor-content :is(
+  .system-map,
+  .essay-resources,
+  .portfolio-status,
+  .research-compass,
+  .compass-projects,
+  .notebook-preview-card,
+  .scenario-result,
+  .interpretation-grid article
+) {
+  border-color: #3a3a3a;
+  background: #181818;
+  color: #d4d4d4;
+  box-shadow: none;
+}
+
+[data-interface="command"] .ide-editor-content .scenario-result { border-left: 3px solid #4fc1ff; }
+[data-interface="command"] .ide-editor-content :is(.scenario-title h3, .outcome-label strong, .metric strong) { color: #f0f0f0; }
+[data-interface="command"] .ide-editor-content :is(.outcome-label, .metric span, .belief-column span, .queue-column span, .chart-caption) { color: #b8b8b8; }
+[data-interface="command"] .ide-editor-content .scenario-title > span { color: #9cdcfe; }
+[data-interface="command"] .ide-editor-content .scenario-title .gap-worse { color: #f48771; }
+[data-interface="command"] .ide-editor-content .scenario-title .gap-better { color: #75beff; }
+[data-interface="command"] .ide-editor-content .metric.warning strong { color: #f48771; }
+[data-interface="command"] .ide-editor-content .bar-track { background: #303030; }
+[data-interface="command"] .ide-editor-content .bar-fill { background: #4fc1ff; }
+[data-interface="command"] .ide-editor-content .bar-fill.secondary { background: #d4d4d4; }
+[data-interface="command"] .ide-editor-content :is(.belief-chart, .queue-chart, .technical-metrics, .metric-row) { border-color: #3a3a3a; background: #181818; }
+[data-interface="command"] .ide-editor-content :is(.belief-bar, .queue-bar) { background: #4fc1ff; }
+[data-interface="command"] .ide-editor-content .queue-bar.unstable { background: #f48771; }
+[data-interface="command"] .ide-editor-content :is(.chart-threshold, .queue-boundary) { border-color: #9d9d9d; }
+[data-interface="command"] .ide-editor-content :is(.chart-threshold span, .queue-boundary span) { background: #181818; color: #cccccc; }
+[data-interface="command"] .ide-editor-content .data-essay-figure img { background: #f7f7f7; opacity: 1; filter: none; }
+[data-interface="command"] .ide-editor-content .data-essay-figure figcaption { color: #b8b8b8; }
+
 @container ide-editor (max-width: 980px) {
   [data-interface="command"] .ide-editor-content .page-shell { width: calc(100% - 42px); }
   [data-interface="command"] .ide-editor-content :is(.portfolio-hero, .experiment-intro, .technical-sim-intro, .technical-model, .mathematical-core, .about-path-intro, .about-story, .research-full, .essay-resources, .home-about, .experiment-band-inner) { grid-template-columns: minmax(0, 1fr); gap: 26px; }
@@ -2640,17 +2675,21 @@ body,
   [data-interface="command"] .ide-editor-content .simulation-interpretation article { min-height: 0; }
   [data-interface="command"] .ide-editor-content .simulation-interpretation h3 { margin-top: 20px; }
   [data-interface="command"] .ide-editor-content .about-path-intro h1 em { display: inline; }
-  [data-interface="command"] .ide-editor-content .about-path-stage { display: block; min-height: 760px; padding: 0; }
+  [data-interface="command"] .ide-editor-content .about-path-stage { display: block; min-height: clamp(470px, 58cqw, 540px); padding: 0; }
   [data-interface="command"] .ide-editor-content .about-path-stage::before { display: none; }
   [data-interface="command"] .ide-editor-content .path-stage-label { position: absolute; top: 14px; }
-  [data-interface="command"] .ide-editor-content .about-journey-line { display: none; }
-  [data-interface="command"] .ide-editor-content .path-card { width: min(43%, 320px); min-height: 112px; }
-  [data-interface="command"] .ide-editor-content :is(.path-card-1, .is-connected .path-card-1) { top: 10%; left: 2%; }
-  [data-interface="command"] .ide-editor-content :is(.path-card-2, .is-connected .path-card-2) { top: 27%; right: 2%; left: auto; }
-  [data-interface="command"] .ide-editor-content :is(.path-card-3, .is-connected .path-card-3) { top: 44%; left: 2%; }
-  [data-interface="command"] .ide-editor-content :is(.path-card-4, .is-connected .path-card-4) { top: 61%; right: 2%; left: auto; }
-  [data-interface="command"] .ide-editor-content :is(.path-card-5, .is-connected .path-card-5) { top: 78%; left: 28.5%; }
-  [data-interface="command"] .ide-editor-content .is-connected .path-card { transform: rotate(0); }
+  [data-interface="command"] .ide-editor-content .about-journey-line { display: block; }
+  [data-interface="command"] .ide-editor-content .path-card { width: clamp(110px, 16.5cqw, 180px); min-height: 128px; padding: clamp(12px, 1.7cqw, 17px); }
+  [data-interface="command"] .ide-editor-content .path-card-1 { top: 25%; left: 3%; transform: rotate(-6deg); }
+  [data-interface="command"] .ide-editor-content .path-card-2 { top: 62%; right: auto; left: 23%; transform: rotate(4deg); }
+  [data-interface="command"] .ide-editor-content .path-card-3 { top: 21%; left: 47%; transform: rotate(-3deg); }
+  [data-interface="command"] .ide-editor-content .path-card-4 { top: 61%; right: auto; left: 68%; transform: rotate(5deg); }
+  [data-interface="command"] .ide-editor-content .path-card-5 { top: 19%; left: 82%; transform: rotate(-5deg); }
+  [data-interface="command"] .ide-editor-content .is-connected .path-card-1 { top: 56%; left: 0; transform: rotate(-2deg); }
+  [data-interface="command"] .ide-editor-content .is-connected .path-card-2 { top: 22%; right: auto; left: 18%; transform: rotate(2deg); }
+  [data-interface="command"] .ide-editor-content .is-connected .path-card-3 { top: 54%; left: 41%; transform: rotate(-1deg); }
+  [data-interface="command"] .ide-editor-content .is-connected .path-card-4 { top: 17%; right: auto; left: 64%; transform: rotate(2deg); }
+  [data-interface="command"] .ide-editor-content .is-connected .path-card-5 { top: 40%; left: 82%; transform: rotate(-2deg); }
   [data-interface="command"] .ide-editor-content .path-toggle { margin-top: 18px; }
   [data-interface="command"] .ide-editor-content :is(.question-matrix, .card-grid, .portfolio-card-grid, .notebook-preview-grid) { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
