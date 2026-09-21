@@ -1314,23 +1314,6 @@ function Home() {
         </div>
       </section>
 
-      <section className="type-studies page-shell" id="type-studies" aria-labelledby="type-studies-heading">
-        <div className="section-heading split-heading">
-          <div>
-            <p className="eyebrow">Other work · Type studies</p>
-            <h2 id="type-studies-heading">Letters, under examination.</h2>
-          </div>
-          <p className="section-side-note">
-            Five independent experiments in drawing, testing, shaping, and rendering type.
-          </p>
-        </div>
-        <div className="type-studies-grid">
-          {typeProjects.map((project, index) => (
-            <TypeStudyCard project={project} index={index} key={project.title} />
-          ))}
-        </div>
-      </section>
-
       <section className="home-about page-shell" aria-labelledby="home-about-heading">
         <div className="home-about-statement">
           <p className="eyebrow">About</p>
@@ -1985,6 +1968,23 @@ function AboutPage() {
               <div><small>{role}</small><h3>{place}</h3></div>
               <p>{description}</p>
             </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="type-studies page-shell" id="type-studies" aria-labelledby="type-studies-heading">
+        <div className="section-heading split-heading">
+          <div>
+            <p className="eyebrow">Other work · Type studies</p>
+            <h2 id="type-studies-heading">Letters, under examination.</h2>
+          </div>
+          <p className="section-side-note">
+            Five independent experiments in drawing, testing, shaping, and rendering type.
+          </p>
+        </div>
+        <div className="type-studies-grid">
+          {typeProjects.map((project, index) => (
+            <TypeStudyCard project={project} index={index} key={project.title} />
           ))}
         </div>
       </section>
