@@ -30,7 +30,7 @@ The portfolio includes:
 
 [Auditing Evidence Claims in Federal High-Impact AI Exclusions](public/papers/auditing-evidence-claims-atracc-2026.pdf), by Hema Raju Barri of Johns Hopkins University and Venkateswarlu Nagineni of Texas A&M University, is accepted at ATRACC in the AAAI Fall Symposium Series 2026.
 
-The complete [code and research artifact package](research/atracc-2026) includes the source snapshot, locked codebook, analysis programs, prompts, saved model outputs, row mappings, protocols, and document checks used in the paper.
+The complete [code and research artifact package](https://github.com/bhemaraju138-pixel/auditing-evidence-claims-atracc-2026) includes the source snapshot, locked codebook, analysis programs, prompts, saved model outputs, row mappings, protocols, and document checks used in the paper.
 
 Use the Read/Dev switch to change interfaces. In Dev mode, type `help`,
 press `/`, use the visible files and commands to move through the work, or open

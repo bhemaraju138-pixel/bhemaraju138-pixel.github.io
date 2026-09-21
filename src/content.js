@@ -55,9 +55,9 @@ export const research = [
     featured: true,
     href: "/papers/auditing-evidence-claims-atracc-2026.pdf",
     linkLabel: "Read the accepted paper",
-    codeHref: "https://github.com/bhemaraju138-pixel/bhemaraju138-pixel.github.io/tree/main/research/atracc-2026",
+    codeHref: "https://github.com/bhemaraju138-pixel/auditing-evidence-claims-atracc-2026",
     codeLabel: "Browse code and artifacts",
-    bundleHref: "/data/atracc-2026-reproducibility.zip",
+    bundleHref: "https://github.com/bhemaraju138-pixel/auditing-evidence-claims-atracc-2026/releases/download/v1.0.0/atracc-2026-code-and-artifacts.zip",
   },
   {
     year: "2026",

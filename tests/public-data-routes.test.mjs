@@ -68,8 +68,14 @@ test("the accepted ATRACC paper publishes its code and artifact bundle", async (
   );
 
   assert.ok(paper);
-  assert.match(paper.codeHref, /research\/atracc-2026$/);
-  assert.equal(paper.bundleHref, "/data/atracc-2026-reproducibility.zip");
+  assert.equal(
+    paper.codeHref,
+    "https://github.com/bhemaraju138-pixel/auditing-evidence-claims-atracc-2026",
+  );
+  assert.equal(
+    paper.bundleHref,
+    "https://github.com/bhemaraju138-pixel/auditing-evidence-claims-atracc-2026/releases/download/v1.0.0/atracc-2026-code-and-artifacts.zip",
+  );
   await access(resolve("research/atracc-2026/README.md"));
   await access(resolve("research/atracc-2026/PACKAGE_MANIFEST.json"));
   await access(resolve("dist/client/data/atracc-2026-reproducibility.zip"));
