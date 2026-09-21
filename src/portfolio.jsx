@@ -70,7 +70,7 @@ const researchExperience = [
 
 const publications = [
   {
-    status: "Accepted - TAS 2026, AAAI Fall Symposium",
+    status: "Accepted, TAS 2026 (AAAI Fall Symposium)",
     title: "Same Numbers, Stale Permission: Operation-Scoped Receipts for Statistical Agents",
     authors: "Hema Raju Barri and C. C. Peddinti",
     summary:
@@ -81,7 +81,7 @@ const publications = [
     caption: "Figure 1 - exact accuracy, conflict acceptance, and complete-set accuracy",
   },
   {
-    status: "Accepted - ATRACC, AAAI Fall Symposium 2026",
+    status: "Accepted, ATRACC (AAAI Fall Symposium 2026)",
     title: "Auditing Evidence Claims in Federal High-Impact AI Exclusions",
     authors: "Hema Raju Barri and Venkateswarlu Nagineni",
     summary:
@@ -92,7 +92,7 @@ const publications = [
     caption: "Table 1 - reconciled evidence-status partition across 110 records",
   },
   {
-    status: "Accepted - INSIGHT 2026, Springer proceedings",
+    status: "Accepted, INSIGHT 2026 (Springer proceedings)",
     title: "Privacy-Sensitive Generative AI Sourcing in Federal Information Systems",
     authors: "Hema Raju Barri and Chandana Charitha Peddinti",
     summary:
@@ -103,7 +103,7 @@ const publications = [
     caption: "Figure 2 - adjusted estimate and leave-one-agency-out comparisons",
   },
   {
-    status: "Accepted - 20th ISDSI Global Conference, Dec. 2026",
+    status: "Accepted, 20th ISDSI Global Conference (Dec. 2026)",
     title: "Agent-Infrastructure Fit: How AI Agents Are Redefining the Governance of Public Digital Data Infrastructure",
     authors: "Hema Raju Barri and Chandana Charitha Peddinti",
     summary:
@@ -114,7 +114,7 @@ const publications = [
     caption: "Figure 1 - agent-infrastructure fit as a governed task system",
   },
   {
-    status: "Under review - AIS2C 2027 IEEE",
+    status: "Under review, AIS2C 2027 (IEEE)",
     title: "RULEBLIND-DCRT: Diagnosability-Conserving Repair Transactions for Stateful Agents",
     authors: "Rohini Arunachalam, Gnanodhay Randhi, and Hema Raju Barri",
     summary:
@@ -252,7 +252,7 @@ function ExperienceSection() {
 
 function PublicationsSection() {
   return (
-    <section className="section-shell" id="publications" aria-labelledby="publications-title">
+    <section className="section-shell publication-section" id="publications" aria-labelledby="publications-title">
       <SectionHeading
         number="02"
         title="Publications"
@@ -265,14 +265,22 @@ function PublicationsSection() {
             <div className="project-copy">
               <div className="project-index">
                 <span>{String(index + 1).padStart(2, "0")}</span>
-                <p>{paper.status}</p>
+                <p>Research paper</p>
               </div>
               <h3>{paper.title}</h3>
-              <p className="authors">{paper.authors}</p>
+              <p className="authors">
+                {paper.authors.split("Hema Raju Barri").map((part, partIndex, parts) => (
+                  <React.Fragment key={`${paper.title}-${partIndex}`}>
+                    {part}
+                    {partIndex < parts.length - 1 && <strong>Hema Raju Barri</strong>}
+                  </React.Fragment>
+                ))}
+              </p>
+              <p className="publication-meta">
+                <span>{paper.status},</span>{" "}
+                <a href={paper.href} target="_blank" rel="noreferrer">Paper</a>
+              </p>
               <p className="project-description">{paper.summary}</p>
-              <a className="project-link" href={paper.href} target="_blank" rel="noreferrer">
-                Read the paper <Arrow />
-              </a>
             </div>
             <figure className="project-visual paper-visual">
               <img src={paper.image} alt={paper.alt} loading="lazy" />
