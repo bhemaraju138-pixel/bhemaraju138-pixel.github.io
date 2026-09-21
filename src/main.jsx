@@ -1,6 +1,6 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import { createRoot } from "react-dom/client";
-import { notes, publicDataEssays, publications, research } from "./content";
+import { notes, publicDataEssays, publications, research, typeProjects } from "./content";
 import { runModel, scenarios } from "./model";
 import { buildPortfolioContext, portfolioKnowledge } from "./portfolio-knowledge";
 import { education, experience, pathMoments } from "./profile";
@@ -99,6 +99,7 @@ function ReaderFooter() {
         <a href="/publications/">Publications</a>
         <a href="/blogs/">Blogs</a>
         <a href="/simulations/">Simulations</a>
+        <a href="/#type-studies">Type studies</a>
         <a href="/about/">About</a>
       </div>
     </footer>
@@ -309,6 +310,7 @@ function SearchSidebar() {
     { href: "/publications/", file: "publications.md", text: publications.map((item) => `${item.title} ${item.type} ${item.venue}`).join(" ") },
     { href: "/blogs/", file: "blogs.index", text: [...notes, ...publicDataEssays].map((item) => `${item.title} ${item.standfirst}`).join(" ") },
     { href: "/simulations/", file: "simulations.run", text: simulationCatalog.map((item) => `${item.title} ${item.question} ${item.mathematics}`).join(" ") },
+    { href: "/#type-studies", file: "type-studies.index", text: typeProjects.map((item) => `${item.title} ${item.category} ${item.description}`).join(" ") },
   ];
   const normalized = query.trim().toLowerCase();
   const matches = normalized ? documents.filter((item) => `${item.file} ${item.text}`.toLowerCase().includes(normalized)) : [];
@@ -724,7 +726,7 @@ function DevWorkspace({ children, onModeChange }) {
   const [treeOpen, setTreeOpen] = useState({ editors: true, portfolio: true, outline: false, evidence: false });
   const [outputEntries, setOutputEntries] = useState(() => [
     { id: "boot", time: new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit", second: "2-digit" }), text: `Workspace opened ${activeFile} at ${path}` },
-    { id: "index", time: "index", text: `${research.length} research records · ${publicDataEssays.length + notes.length} blogs and notes · ${simulationCatalog.length} simulations indexed` },
+    { id: "index", time: "index", text: `${research.length} research records · ${publicDataEssays.length + notes.length} blogs and notes · ${simulationCatalog.length} simulations · ${typeProjects.length} type studies indexed` },
   ]);
 
   const setPanel = (nextPanel) => {
@@ -1180,6 +1182,27 @@ function NotebookPreviewCard({ essay }) {
   );
 }
 
+function TypeStudyCard({ project, index }) {
+  return (
+    <a
+      className="type-study-card"
+      href={project.href}
+      target="_blank"
+      rel="noreferrer"
+      aria-label={`${project.title}: ${project.description} (opens in a new tab)`}
+    >
+      <div className="type-study-meta">
+        <span>{String(index + 1).padStart(2, "0")}</span>
+        <span>{project.category}</span>
+      </div>
+      <span className="type-study-mark" aria-hidden="true">{project.mark}</span>
+      <h3>{project.title}</h3>
+      <p>{project.description}</p>
+      <strong>Visit project <Arrow /></strong>
+    </a>
+  );
+}
+
 function Home() {
   return (
     <Shell>
@@ -1288,6 +1311,23 @@ function Home() {
           <a className="light-button" href="/simulations/">
             Browse simulations <Arrow />
           </a>
+        </div>
+      </section>
+
+      <section className="type-studies page-shell" id="type-studies" aria-labelledby="type-studies-heading">
+        <div className="section-heading split-heading">
+          <div>
+            <p className="eyebrow">Other work · Type studies</p>
+            <h2 id="type-studies-heading">Letters, under examination.</h2>
+          </div>
+          <p className="section-side-note">
+            Five independent experiments in drawing, testing, shaping, and rendering type.
+          </p>
+        </div>
+        <div className="type-studies-grid">
+          {typeProjects.map((project, index) => (
+            <TypeStudyCard project={project} index={index} key={project.title} />
+          ))}
         </div>
       </section>
 

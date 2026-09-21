@@ -1,4 +1,4 @@
-import { notes, publicDataEssays, research } from "./content.js";
+import { notes, publicDataEssays, research, typeProjects } from "./content.js";
 import { education, experience, profileSummary } from "./profile.js";
 import { simulationCatalog } from "./simulations.js";
 
@@ -85,12 +85,24 @@ const simulationRecords = simulationCatalog.map((simulation) => ({
   ]),
 }));
 
+const typeProjectRecords = typeProjects.map((project, index) => ({
+  id: `type-project-${index}`,
+  title: project.title,
+  route: project.href,
+  text: compact([
+    "Independent typography and font-engineering project.",
+    project.category,
+    project.description,
+  ]),
+}));
+
 export const portfolioKnowledge = [
   ...coreRecords,
   ...researchRecords,
   ...essayRecords,
   ...noteRecords,
   ...simulationRecords,
+  ...typeProjectRecords,
 ];
 
 const stopWords = new Set([
@@ -113,6 +125,10 @@ const aliases = {
   publications: ["paper", "publication", "abstract", "preprint", "presented"],
   simulation: ["simulation", "model", "queue", "fixed", "bayesian"],
   simulations: ["simulation", "model", "queue", "fixed", "bayesian"],
+  font: ["font", "typeface", "typography", "glyph", "shaping", "rendering"],
+  fonts: ["font", "typeface", "typography", "glyph", "shaping", "rendering"],
+  typeface: ["font", "typeface", "typography", "glyph"],
+  typography: ["font", "typeface", "typography", "glyph"],
 };
 
 function expandedTokens(value) {

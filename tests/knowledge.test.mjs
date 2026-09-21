@@ -41,6 +41,13 @@ test("technical questions retrieve the relevant simulation", () => {
   assert.ok(records.some((record) => record.title === "The Queue Answers Back"));
 });
 
+test("typography questions retrieve the public type studies", () => {
+  const records = retrievePortfolioRecords("original typeface unit distance glyph", 5);
+  const project = records.find((record) => record.title === "Unit Distance");
+  assert.ok(project);
+  assert.equal(project.route, "https://hema-unit-distance.vercel.app");
+});
+
 test("the generated model prompt requires evidence-bounded answers", () => {
   const context = buildPortfolioContext("Oxford missing data", 4);
   assert.match(context.prompt, /Use only the EVIDENCE PACKET/);

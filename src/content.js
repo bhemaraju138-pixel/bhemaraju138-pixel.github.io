@@ -165,6 +165,49 @@ export const research = [
 
 export const publications = research.filter((item) => item.publicationStatus);
 
+export const typeProjects = [
+  {
+    title: "Unit Distance",
+    category: "Original typeface",
+    mark: "A",
+    description:
+      "An original monospaced display face built from connected unit-distance graphs on a 5 × 7 lattice.",
+    href: "https://hema-unit-distance.vercel.app",
+  },
+  {
+    title: "AxisDoctor",
+    category: "Variable-font diagnostics",
+    mark: "↔",
+    description:
+      "A local-first workbench that samples variable-font axes to surface outline and spacing problems between endpoints.",
+    href: "https://hema-axis-doctor.vercel.app",
+  },
+  {
+    title: "FontFix",
+    category: "Glyph inspection",
+    mark: "Aa",
+    description:
+      "A browser workbench for examining glyph outlines, control points, spacing, metrics, and variation axes.",
+    href: "https://hema-fontfix.vercel.app",
+  },
+  {
+    title: "RenderParity",
+    category: "Rendering comparison",
+    mark: "≡",
+    description:
+      "A cross-platform capture system that locates the first rendering layer where the same font begins to diverge.",
+    href: "https://hema-render-parity.vercel.app",
+  },
+  {
+    title: "ShapeTrace",
+    category: "Shaping inspection",
+    mark: "fi",
+    description:
+      "A local-first microscope that follows text from Unicode input through HarfBuzz to the final positioned glyphs.",
+    href: "https://hema-shape-trace.vercel.app",
+  },
+];
+
 export const notes = [
   {
     slug: "labels-are-not-treatments",
