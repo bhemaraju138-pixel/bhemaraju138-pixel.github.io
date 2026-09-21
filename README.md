@@ -65,3 +65,13 @@ npm run test:routes
 ```
 
 GitHub Actions publishes the static Vite build to GitHub Pages.
+
+## Typeface projects
+
+The source repositories are private. These public project sites present the work:
+
+- [Unit Distance](https://hema-unit-distance.vercel.app)
+- [AxisDoctor](https://hema-axis-doctor.vercel.app)
+- [FontFix](https://hema-fontfix.vercel.app)
+- [RenderParity](https://hema-render-parity.vercel.app)
+- [ShapeTrace](https://hema-shape-trace.vercel.app)
