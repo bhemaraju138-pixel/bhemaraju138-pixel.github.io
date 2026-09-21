@@ -1,82 +1,68 @@
-import { access, readFile } from "node:fs/promises";
+import assert from "node:assert/strict";
+import { access, readFile, readdir } from "node:fs/promises";
 import { resolve } from "node:path";
 import test from "node:test";
-import assert from "node:assert/strict";
-import { publicDataEssays, publications } from "../src/content.js";
 
-test("the public-data series contains six distinct essays", () => {
-  assert.equal(publicDataEssays.length, 6);
-  assert.equal(new Set(publicDataEssays.map((essay) => essay.slug)).size, 6);
-  assert.equal(new Set(publicDataEssays.map((essay) => essay.question)).size, 6);
+const paperFiles = [
+  "same-numbers-stale-permission.pdf",
+  "auditing-evidence-claims.pdf",
+  "privacy-sensitive-generative-ai-sourcing.pdf",
+  "agent-infrastructure-fit.pdf",
+  "ruleblind-dcrt.pdf",
+];
+
+const publicationImages = [
+  "same-numbers-stale-permission.png",
+  "auditing-evidence-claims.png",
+  "privacy-sensitive-sourcing.png",
+  "agent-infrastructure-fit.png",
+  "ruleblind-dcrt.png",
+];
+
+const typeProjectImages = [
+  "unit-distance.png",
+  "axis-doctor.png",
+  "fontfix.png",
+  "render-parity.png",
+  "shape-trace.png",
+];
+
+test("the production entry is the simplified portfolio", async () => {
+  const html = await readFile(resolve("dist/client/index.html"), "utf8");
+  assert.match(html, /Hema Raju Barri \| Researcher and Systems Builder/);
+  assert.match(html, /Research experience, publications, and type-design projects/);
+  assert.doesNotMatch(html, /Blogs|Technical Simulations|interactive models/);
+  await access(resolve("dist/client/404.html"));
 });
 
-test("every essay figure, local download, and built route exists", async () => {
-  for (const essay of publicDataEssays) {
-    await access(resolve("public", essay.figure.src.replace(/^\//, "")));
-    await access(resolve("dist/client/experiments", essay.slug, "index.html"));
-    for (const [, href] of essay.dataLinks) {
-      if (href.startsWith("/")) {
-        await access(resolve("public", href.replace(/^\//, "")));
-      }
-    }
+test("all five publication PDFs are included in the public build", async () => {
+  for (const filename of paperFiles) {
+    const content = await readFile(resolve("dist/client/papers", filename));
+    assert.equal(content.subarray(0, 5).toString(), "%PDF-");
   }
 });
 
-test("portfolio routes and route-specific metadata are built", async () => {
-  for (const route of [
-    "research",
-    "publications",
-    "blogs",
-    "writing",
-    "about",
-    "simulations",
-    "simulations/observability-reserve",
-    "simulations/verification-queue",
-    "simulations/burden-moves",
-  ]) {
-    await access(resolve("dist/client", route, "index.html"));
+test("publication figures, type screenshots, and SwiftCollab evidence are included", async () => {
+  for (const filename of publicationImages) {
+    await access(resolve("dist/client/images/publications", filename));
   }
-
-  const writingHtml = await readFile(resolve("dist/client/writing/index.html"), "utf8");
-  assert.match(writingHtml, /<title>Writing \| Hema Raju Barri<\/title>/);
-  assert.match(writingHtml, /og-minimal\.png/);
-
-  const publicationsHtml = await readFile(resolve("dist/client/publications/index.html"), "utf8");
-  assert.match(publicationsHtml, /<title>Publications \| Hema Raju Barri<\/title>/);
-
-  const simulationHtml = await readFile(
-    resolve("dist/client/simulations/observability-reserve/index.html"),
-    "utf8",
-  );
-  assert.match(simulationHtml, /<title>The Evidence You Stop Seeing \| Hema Raju Barri<\/title>/);
-  assert.doesNotMatch(simulationHtml, /property="og:image"/);
-
-  const essayHtml = await readFile(
-    resolve("dist/client/experiments/error-message-is-policy/index.html"),
-    "utf8",
-  );
-  assert.match(essayHtml, /<title>The Error Message Is Part of the Policy \| Hema Raju Barri<\/title>/);
-  assert.doesNotMatch(essayHtml, /property="og:image"/);
-  assert.doesNotMatch(essayHtml, /name="twitter:image"/);
-
-  await assert.rejects(access(resolve("dist/client/timeline/index.html")));
+  for (const filename of typeProjectImages) {
+    await access(resolve("dist/client/images/type-projects", filename));
+  }
+  await access(resolve("dist/client/images/experience/pava-center-invitation.png"));
+  await access(resolve("dist/client/images/experience/towson-startup-cohort.jpeg"));
 });
 
-test("the accepted ATRACC paper publishes its code and artifact bundle", async () => {
-  const paper = publications.find(
-    (item) => item.title === "Auditing Evidence Claims in Federal High-Impact AI Exclusions",
-  );
+test("removed portfolio sections are not emitted as routes", async () => {
+  await assert.rejects(access(resolve("dist/client/blogs/index.html")));
+  await assert.rejects(access(resolve("dist/client/simulations/index.html")));
+  await assert.rejects(access(resolve("dist/client/experiments/index.html")));
+  await assert.rejects(access(resolve("dist/client/data")));
+  await assert.rejects(access(resolve("dist/client/figures")));
+  await assert.rejects(access(resolve("dist/client/papers/privacy-sensitive-sourcing.pdf")));
+});
 
-  assert.ok(paper);
-  assert.equal(
-    paper.codeHref,
-    "https://github.com/bhemaraju138-pixel/auditing-evidence-claims-atracc-2026",
-  );
-  assert.equal(
-    paper.bundleHref,
-    "https://github.com/bhemaraju138-pixel/auditing-evidence-claims-atracc-2026/releases/download/v1.0.0/atracc-2026-code-and-artifacts.zip",
-  );
-  await access(resolve("research/atracc-2026/README.md"));
-  await access(resolve("research/atracc-2026/PACKAGE_MANIFEST.json"));
-  await access(resolve("dist/client/data/atracc-2026-reproducibility.zip"));
+test("the published artifact contains no AppleDouble metadata files", async () => {
+  const entries = await readdir(resolve("dist/client"), { recursive: true });
+  assert.equal(entries.some((entry) => entry.split("/").at(-1).startsWith("._")), false);
 });

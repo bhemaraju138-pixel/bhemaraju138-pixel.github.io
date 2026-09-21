@@ -5,6 +5,6 @@ export default defineConfig({
   plugins: [react()],
   build: {
     outDir: "dist/client",
-    sourcemap: true,
+    sourcemap: false,
   },
 });
