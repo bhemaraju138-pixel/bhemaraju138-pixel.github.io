@@ -1,0 +1,183 @@
+{
+  "id": "resp_03be29b81faeb8fb016aa026425ef887d297b04a724cffaf5c",
+  "object": "response",
+  "created_at": 1788880450,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1788880451,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": null,
+  "max_output_tokens": 4096,
+  "max_tool_calls": null,
+  "model": "gpt-5.4-mini-2026-03-17",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_03be29b81faeb8fb016aa02642d64c87d2a4622d42c66711c9",
+      "type": "reasoning",
+      "content": [],
+      "encrypted_content": "gAAAAABqoCZD0IunOXQiSzphJFb3nTpTdGPYUw6qhzKWj3RdyRe3GuK_27_LIo5wlSKyCeeG6o1EW7QS2BZwXvy9VDzNajMflHMs60whbNgJrMIuh-2ns7NIL-WbS_QyXvdHZ2V5x1LkJKtdDBCwoELG7zSsxQRaPTC9cda2rK29MdPO1j9a71zJTcI6o95eVYgBTx3WfEGDpZ5ETSw6a28wPhLfLzNiKXQG4B5W_4s9l6TI3tOE2JmXJ4hHQcg0v-vb9eVcrJudVOlaJdqr6Nh3v-NY5w_ozbIFbH6mTKfAqHX0l9JQR6BFGxDp57r-dLJLl-ZD6vOZNE_9fGqC1sDm0nUj2f5t0t-FACXKQVCZdLuv9jdUEJcT5Ohdc5hhIFofE2JLieqXvI7srdZ1a0K5q9FSLG8GVgn2_5t2OiwPhV20rjrKAKG92nhRiF0Tb46Vyz077Em7vvNTIARFW-4U17Rf9l8_GJxrrjjOwJlrYOo85neHDXMFY6KdlsZrfe4FgFwc0GJJbGlWBSFrsBOB2rCG0uS_0I6lyWTBA2CPOfd9Sycmz4-ypfeFhLv0lQp_bzE0QfpLivqCke7fZqi9kSqdBJJ6WKlgMDeZ6PK5TvE2EztlTtIdZO_vTL7iOIg8rUs7kslMDJ_cnjLeT8boVbbUw1qqoMK_uCfjvs5mP-cNrpYox_hqMbYn2n6hpVv10lbhyyIacbtYmX9tJBY-kIz-48ismuzvI5-IRFzEk0fQxbB8Tyt4GzQkfpChtkzXtcxt1F3G9fJb9EeNw8AbHr1dxFu_Hg6NzI6F_65M0PIIEzl8m5xCu1wcu4WfT4hNhrFzWnv8FZVL0eMLQ2PB5TeQFtU0_NXDXnDKnVc7fDUv2zD8X1j_GLO1ECu2b5CPlPI9QZY1XQhOQXLcKl9rLNue5kzSrqWot3ZJICmn7nV8CXXZOyYX1t4pawMM-f-APZE9laGazIiBdQxHaiI8M7DuYeKpCD6TSUTNHZuoc82V-NmlMD3P552PSAmlPZEOB5h_XHzRY7F008fET6RBviIucerbvbARjXZwY2tYBSanLw6F46Hsvt6xtzy-0zXCXyzHx-5KDk6sbJ_azJcbRERAdBwyvvy0eZx2Cb2J0hYFjLKIB9UtZb1rFkylS_VItBfnvANWBKVOmriXt3ilARPwLd8Txo2SipL6YUBylSGHQ5pplyu5FHnpme0RyR0j-_VzBVjynk11TX2xe1FTE8_PZYi5a60pcUHp48VT6kbilAJpw5VP5Gs5HOCsM2w2yY08xodmcfzt6AfooENex_xZMXSXDkDvomlax_qEa7fIGiqvd4aXzbeMK4EwUpy_psq39ANYy3jRzWP7ROJHeEvo-2AmB_v_qsF8MefKr3H2sx-3VO99hJU_5jMlmQWRC3sHZo3uPYPf8K3_f13UXsuO3OhzLDrksuPku2PeR-04NzRXBkw1eK03zhOAIfsXMJvRLujkBvA9yPzz3Xungx8kv3A1ukg6jPjp3eUPk-LwoQW2Exha9FlD4RBYqeajkxFhD4iIAk0lLhuFCveVZU8O4ocl6eFICTHYjonZRcbIFFB-0ytAy4y2SNRAsUvJN0Fe4ooLqiJGMZ8vBWjN0V4nf1YlHABojlZ9iZs6qJsAM567ASP_qOJLAbYucRIigGE0rUcBBpsDdjC_V_5KYWuR-9kdQuWvAVmmuBEmRNlZrRXNyVgNxfE9XKzWPA-SIo1-XbR8",
+      "summary": []
+    },
+    {
+      "id": "msg_03be29b81faeb8fb016aa0264380c087d2ad44acf2840cf408",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"id\":\"M-6259714b6d0ef61c\",\"P\":\"NO\",\"O\":\"YES\",\"W_ind\":\"NO\",\"W_opt\":\"NO\",\"W_nar\":\"NO\",\"H\":\"YES\",\"status\":\"D\",\"ambiguity\":\"\\\"decision/actions are performed by humans\\\" supports human review/discretion; \\\"multiple sources of information\\\" is too generic to establish an independent non-AI basis.\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "current_turn",
+    "effort": "low",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": false,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "atracc_coding",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "P": {
+            "type": "string",
+            "enum": [
+              "YES",
+              "NO",
+              "UNCLEAR"
+            ]
+          },
+          "O": {
+            "type": "string",
+            "enum": [
+              "YES",
+              "NO",
+              "UNCLEAR"
+            ]
+          },
+          "W_ind": {
+            "type": "string",
+            "enum": [
+              "YES",
+              "NO",
+              "UNCLEAR"
+            ]
+          },
+          "W_opt": {
+            "type": "string",
+            "enum": [
+              "YES",
+              "NO",
+              "UNCLEAR"
+            ]
+          },
+          "W_nar": {
+            "type": "string",
+            "enum": [
+              "YES",
+              "NO",
+              "UNCLEAR"
+            ]
+          },
+          "H": {
+            "type": "string",
+            "enum": [
+              "YES",
+              "NO",
+              "UNCLEAR"
+            ]
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "S",
+              "U",
+              "D"
+            ]
+          },
+          "ambiguity": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "P",
+          "O",
+          "W_ind",
+          "W_opt",
+          "W_nar",
+          "H",
+          "status",
+          "ambiguity"
+        ],
+        "additionalProperties": false
+      },
+      "strict": true
+    },
+    "verbosity": "low"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 1429,
+    "input_tokens_details": {
+      "cache_write_tokens": 0,
+      "cached_tokens": 1280
+    },
+    "output_tokens": 183,
+    "output_tokens_details": {
+      "reasoning_tokens": 87
+    },
+    "total_tokens": 1612
+  },
+  "user": null,
+  "metadata": {}
+}

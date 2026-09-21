@@ -1,0 +1,125 @@
+You are one blinded coding pass in an AI-governance measurement audit. Code every record independently. Do not use tools, browse, or infer hidden agency practices. Return exactly one compact JSON object per line, in input order, with no markdown or prose.
+
+LOCKED CODEBOOK SHA-256: 0a1dffe440a2e8d837339873e891c5cabef8076f806ec8f971f52fd314eeaa84
+
+# ATRACC Public-Rebuttal Codebook v3 (Locked Before Validation)
+
+## Scope and estimand
+
+The unit is one 2025 federal AI inventory record whose `is_high_impact` value is
+exactly `Presumed High-Impact, but Not High-impact`. The estimand is whether the
+publicly disclosed rationale carries a minimally intelligible rebuttal to the
+presumption under OMB M-25-21. It is not a finding about legal compliance,
+internal evidence, the system's actual effects, or agency intent.
+
+Coders see the inventory record but not the legacy regex flags or legacy S/U/D
+label. Coding uses only the disclosed rationale for the primary label. Linked
+artifacts are evaluated separately and never silently change the primary label.
+
+## Component questions
+
+For every record, assign each component `YES`, `NO`, or `UNCLEAR` and quote the
+shortest load-bearing passage. Do not infer a component from the use-case title
+when it is absent from the rationale.
+
+### P — policy predicate
+
+`YES` only when the rationale identifies the high-impact threshold being denied
+or a recognizably equivalent predicate: principal basis; legal, material,
+binding, or similarly significant effect; effect on rights or safety; or a
+specific consequential decision/action tied to the threshold. Merely writing
+"not high impact" is `NO`.
+
+### O — AI output and use
+
+`YES` only when the rationale identifies what the AI supplies (for example,
+alert, score, recommendation, classification, report, translation, or detected
+object) and how it enters a workflow. A bare statement that humans use "the
+system" is `UNCLEAR` unless the informational role is recoverable from the same
+rationale.
+
+### W-ind — independent-basis mechanism
+
+`YES` requires both (a) an identifiable non-AI evidence source, procedure, or
+institutional check and (b) an explicit relation showing that the consequential
+action does not principally depend on the AI output. Generic words such as
+"validate," "verify," "other information," "review," "multiple sources," or
+"broader process" are not sufficient unless the source/process and constraining
+role are stated. Human review of the AI output is not independent evidence by
+itself.
+
+### W-opt — non-AI alternative
+
+`YES` only when an affected person or decision maker can actually proceed
+through a non-AI path and the rationale states that this path avoids dependence
+on the AI output. "Optional," "may," or "manual" without identifying the
+alternative and its availability is `UNCLEAR`.
+
+### W-nar — narrow operational mechanism
+
+`YES` only when the rationale identifies a technically or procedurally bounded
+output and explains why that bound prevents the output from serving as a
+principal basis for a consequential action. Labels such as "informational
+only," "recommendation only," "administrative," "pilot," or "research" are
+not mechanisms without the limiting connection.
+
+### H — human-review warrant
+
+`YES` when human review, approval, discretion, or final decision-making is
+offered as a load-bearing reason for the negative determination. Do not code H
+when a human is merely identified as the recipient and the rationale instead
+rests on a separately stated W mechanism.
+
+## Primary status
+
+- `S` (visible minimum support): P=`YES`, O=`YES`, and at least one of W-ind,
+  W-opt, or W-nar=`YES`. A human-review statement may coexist with S only when a
+  qualifying W mechanism is independently present.
+- `D` (public defeater undefeated): H=`YES`, no W component is `YES`, and human
+  oversight/discretion is a load-bearing reason offered for the exclusion.
+- `U` (publicly unresolved): all other cases, including missing text, generic
+  conclusion language, a predicate without an output, an output without a
+  mechanism, or ambiguous evidence.
+
+The priority rule is: test S first under the strict conjunction; otherwise D if
+the human-review condition holds; otherwise U. Uncertainty is never converted
+to support.
+
+## Discourse and negation rules
+
+1. Components must be asserted, not quoted hypotheticals or future intentions.
+2. Negation attaches to its grammatical object. "Not dependent on the tool" is
+   potentially load-bearing; "not solely automated" normally establishes only
+   H unless a non-AI basis is also named.
+3. Evidence in disconnected clauses is not automatically combined. The
+   rationale must make the limiting relation intelligible.
+4. Development stage, pilot status, or current non-deployment is recorded as a
+   separate temporal defense, not as W, because the determination may be
+   revisited when deployment changes.
+5. If two reasonable readings yield different statuses, code `U` and record the
+   ambiguity.
+
+## Linked-artifact recovery
+
+Artifacts receive a separate six-part code: retrievable; same system; temporally
+applicable; same policy predicate; qualifying W mechanism; passage-level anchor.
+An inventory-only U may be reported as `U→S candidate` only when all six are
+`YES`. The arrow denotes recoverable public evidence, not a retroactive change
+to what the inventory rationale itself disclosed.
+
+## Required audit trail
+
+Every coding record contains: blinded record ID, component values, primary
+status, exact supporting excerpts, ambiguity note, confidence, lens name, model
+and protocol version. No agreement coefficient is described as inter-rater or
+human reliability unless genuinely independent human coders participate.
+
+
+
+THIS PASS LENS: policy-burden mapping. Map the text to the principal-basis burden in M-25-21. Distinguish a conclusion from an answer to the burden.
+
+Apply the primary-status formula mechanically after component coding. Quote only short exact excerpts from the rationale; use an empty string when none exists. Confidence must be between 0 and 1. Required schema:
+{"id":"...","P":"YES|NO|UNCLEAR","O":"YES|NO|UNCLEAR","W_ind":"YES|NO|UNCLEAR","W_opt":"YES|NO|UNCLEAR","W_nar":"YES|NO|UNCLEAR","H":"YES|NO|UNCLEAR","status":"S|U|D","excerpts":{"P":"...","O":"...","W":"...","H":"..."},"ambiguity":"...","confidence":0.0}
+
+RECORDS:
+[{"id": "MISSING-404BD6C1AE03", "inventory_id": "", "agency": "HHS", "use_case_name": "Structuring Notice of Concern Data", "development_stage": "Deployed", "topic_area": "Benefits Processing", "rationale": "The use of AI is narrowly focused on extracting key data points from unstructured narratives and validating data completeness. The outputs do not serve as a principal basis for decisions or actions with legal, material, binding, or significant effect on any of the 6 cases outlined in M-25-21, page 19."}, {"id": "MISSING-2045216ACC4E", "inventory_id": "", "agency": "HHS", "use_case_name": "Enhanced Direct Enrollment Outlier Detection", "development_stage": "Pre-deployment", "topic_area": "IT", "rationale": "The Enhanced Direct Enrollment Outlier Detection use-case is not considered high-impact as it does not serve as the basis for decisions or actions that affect civil rights, liberties, privacy, critical resources, safety, or strategic assets. The AI models within this use-case use machine learning techniques to detect anomalous or inconsistent patterns relative to standard partner actions and other application channels outside of the EDE pathway. The findings are shared with the agency divisions in the form of different reports and tables. The data alone is not enough to determine fraud, however, can be used by CMS in tandem with other data to determine if CMS should take any corrective actions. CMS makes all determinations on actions."}, {"id": "MISSING-F55AC1E5A2AD", "inventory_id": "", "agency": "HHS", "use_case_name": "Agent/Broker Fraud Analysis (ABCQI)", "development_stage": "Pre-deployment", "topic_area": "IT", "rationale": "The Agent/Broker Fraud use-case is not considered high-impact as it does not serve as the basis for decisions or actions that affect civil rights, liberties, privacy, critical resources, safety, or strategic assets. The AI models within this use-case use machine learning techniques to detect patterns that are inconsistent or anomalous relative to standard consumer, agent broker, and partner actions. Our findings are shared with the agency divisions in the form of reports and tables and can be used in combination with additional information derived outside of this AI tool to determine if CMS should take any corrective actions. All outcomes are internal facing. CMS makes all determinations on actions."}, {"id": "MISSING-7DF6162305FD", "inventory_id": "", "agency": "HHS", "use_case_name": "CDER Regulatory Science Research (RSR) Projects AI for Process Control in Advanced Manufacturing", "development_stage": "Deployed", "topic_area": "Science", "rationale": "This project explores the use of AI in advanced pharmaceutical manufacturing as part of an exploratory R&D effort focused on model predictive control strategies. The AI components are used solely in a research context to improve understanding of AI-enabled control systems and inform future regulatory readiness. The project does not involve operational use, decision-making, or direct impact on the public or regulated entities. Therefore, it does not meet the definition of a high-impact AI use case under OMB M-25-21."}, {"id": "MISSING-E9650DD065E1", "inventory_id": "", "agency": "HHS", "use_case_name": "Developing an Objective and Quantitative Endpoint for Atopic Dermatitis in Pediatric and Adult Populations", "development_stage": "Deployed", "topic_area": "Health and Medical", "rationale": "The purpose of this study is to validate the Emerald technology to see if it accurately detects the motion of an individual scratching. The act of scratching would not be considered to have a significant effect on human health and safety, which means this study is not a high-impact AI use case based on the definition in OMB M-25-21."}, {"id": "MISSING-18A285367578", "inventory_id": "", "agency": "HHS", "use_case_name": "FOIA REDACTION (FRED) TOOL", "development_stage": "Deployed", "topic_area": "Health and Medical", "rationale": "FRED should not be considered a high-impact AI use case because: a. It operates as a recommendation system only, with mandatory human review and approval required for all outputs. b. No automated decisions are made - humans retain full control over all redaction decisions. c. It serves as an assistive tool to improve efficiency while maintaining human oversight and accountability for all FOIA compliance decisions."}, {"id": "MISSING-AB553836F519", "inventory_id": "", "agency": "HHS", "use_case_name": "AI-Powered Video Analytics for Law Enforcement", "development_stage": "Deployed", "topic_area": "Law Enforcement", "rationale": "AI is used to filter relevant video, but outputs are verified by humans, decisions/actions are performed by humans"}, {"id": "MISSING-4B41CCE5A80E", "inventory_id": "", "agency": "HHS", "use_case_name": "Computer Vision to translate and mine Product Labeling photos to analyze labeling for potential violations", "development_stage": "Pre-deployment", "topic_area": "Health and Medical", "rationale": "The Computer Vision (CV) project aims to automate label extraction (identification of label information) for regulatory compliance, reducing manual effort and improving accuracy in detecting label discrepancies."}, {"id": "MISSING-94D0D1898672", "inventory_id": "", "agency": "HHS", "use_case_name": "NICHD RPAB AI/ML NICHD Relevance Model", "development_stage": "Pilot", "topic_area": "Admin Functions", "rationale": "The primary objective is to improve the efficiency, accuracy, and consistency of grant application referral assignments while streamlining the internal process for referring new applications. The AI-generated output supports subject matter experts by providing additional information that helps them make faster decisions and prioritize applications for review. All AI output is used solely as an assistive tool, and every referral decision undergoes 100% human review. Therefore, this use case does not meet the definition of a high-impact AI."}, {"id": "MISSING-91EA622F8902", "inventory_id": "", "agency": "HHS", "use_case_name": "Internal Referral Module (IRM)", "development_stage": "Deployed", "topic_area": "Admin Functions", "rationale": "The output from this AI use case does not drive any agency decision, including the categories listed in section 6 of the memorandum. The output is a recommendation to assign a grant application to the appropriate Agency staff based on the scientific content of the application. The person to whom the grant application has been referred to can accept, reject, or reassign the application based on their expertise."}, {"id": "MISSING-8A490802AE57", "inventory_id": "", "agency": "HHS", "use_case_name": "NICHD RPAB AI/ML Application Referral System", "development_stage": "Deployed", "topic_area": "Admin Functions", "rationale": "The primary objective is to improve the efficiency, accuracy, and consistency of grant application referral assignments while streamlining the internal process for referring new applications. The AI-generated output supports subject matter experts by providing additional information that helps them make faster decisions and prioritize applications for review. All AI output is used solely as an assistive tool, and every referral decision undergoes 100% human review. Therefore, this use case does not meet the definition of a high-impact AI."}, {"id": "MISSING-C38B75F17C3C", "inventory_id": "", "agency": "HHS", "use_case_name": "NLP Automated Referral", "development_stage": "Deployed", "topic_area": "Admin Functions", "rationale": "First, the NLP Automated Referral tool produces non-binding recommendations regarding which NIGMS program officer is most appropriate to manage an incoming grant application, along with two alternative suggestions. Program officers must actively accept the assignment or refer the application to a more appropriate program officer, and they have full discretion to ignore or override the AI tool\u2019s recommendations. The system\u2019s output is therefore not a principal basis for any legal or binding decision; it is one of several informational inputs to an internal workflow choice made by human staff. Second, all funding and programmatic decisions are made through established peer review and programmatic processes, governed by existing NIH/NIGMS policies and human judgment. Final funding decisions are made by the NIGMS Director in consultation with the NIGMS Advisory Council, the NIGMS Deputy Director, and the NIGMS Division Directors, not the individual program officers who manage the applications. As a result, the AI\u2019s output does not directly affect an individual\u2019s or organization\u2019s access to Federal funding or other critical government resources or services, nor does it alter anyone\u2019s legal status or rights. Finally, the NLP Automated Referral tool does not fall into any of the categories of AI use cases identified in Section 6 of M-25-21 that are automatically designated high-impact. It is a routing tool used for internal staff portfolio management."}, {"id": "NASA-234", "inventory_id": "NASA-234", "agency": "NASA", "use_case_name": "MLNav (Machine Learning Navigation)", "development_stage": "Deployed", "topic_area": "Science", "rationale": "Low-speed engagements with terrain features on Mars; part of core mission parameters. Mars Rover cannot harm humans or impact rights."}, {"id": "NASA-398", "inventory_id": "NASA-398", "agency": "NASA", "use_case_name": "Autonomous WAiting Room Evaluation (AWARE)", "development_stage": "Deployed", "topic_area": "Administrative functions", "rationale": "This AI processes images of people waiting in the Langley Badge & Pass office. The people are counted and their images immediately deleted to avoid privacy issues."}, {"id": "NASA-487", "inventory_id": "NASA-487", "agency": "NASA", "use_case_name": "AI Digital Assistants (HRP) [was \"Doc in a Box\" for Earth Independent Medical Operations (EIMO)]", "development_stage": "Pilot", "topic_area": "Health and Medical", "rationale": "Digital assistant does not take any action, only gives information for a crew to act upon. Informational purposes only."}, {"id": "TBD-R01", "inventory_id": "TBD", "agency": "STB", "use_case_name": "Copilot for Appian", "development_stage": "Pre-deployment", "topic_area": "Other", "rationale": "AI may be integrated in decision or activity pipelines in high-impact categories without meeting the definition of high-impact because the Al's output does not actually \"serve as a principal basis for\" the relevant type of agency action or decision, as described in OMB Memo M-25-21 definition of \"high-impact Al.\""}, {"id": "TBD-R02", "inventory_id": "TBD", "agency": "STB", "use_case_name": "RelativityOne", "development_stage": "Pre-deployment", "topic_area": "Other", "rationale": "AI may be integrated in decision or activity pipelines in high-impact categories without meeting the definition of high-impact because the Al's output does not actually \"serve as a principal basis for\" the relevant type of agency action or decision, as described in OMB Memo M-25-21 definition of \"high-impact Al.\""}, {"id": "TREAS-94", "inventory_id": "TREAS-94", "agency": "TREAS", "use_case_name": "AI Contract Document Toolbox", "development_stage": "Deployed", "topic_area": "Procurement and Finance Mgmt", "rationale": "AI Contract Document Toolbox drafts procurement narratives, supports vendor evaluations, and aids source selection. It offers recommendations but does not approve contracts. Final decisions are made by agency officials using multiple information sources."}, {"id": "TREAS-IRS-75", "inventory_id": "TREAS-IRS-75", "agency": "TREAS", "use_case_name": "Procurement Research", "development_stage": "Pre-deployment", "topic_area": "Procurement and Finance Mgmt", "rationale": "Research effort may examine AI bias (e.g. large vs. small business) in drafting procurement documents as market research / proposal evaluation. Research effort and not an operational use case where AI will make or influence government decisions."}, {"id": "TREAS-IRS-9", "inventory_id": "TREAS-IRS-9", "agency": "TREAS", "use_case_name": "Vendor Risk Analytics", "development_stage": "Pilot", "topic_area": "Procurement and Finance Mgmt", "rationale": "AI makes recommendations only and any contracting decisions would go through multiple layers of review by agency officials."}, {"id": "USDA-048", "inventory_id": "USDA-048", "agency": "USDA", "use_case_name": "Dam Inspection Report Document Processing", "development_stage": "Deployed", "topic_area": "Admin Functions", "rationale": "The AI is used for information extraction that informs dam portfolio decisions. However, the principal basis for decisions is made by humans for the repairs, and is vetted through aerial imagery analysis, the Oklahoma Conservation Commission, and associated dam sponsors."}, {"id": "USDA-175", "inventory_id": "USDA-175", "agency": "USDA", "use_case_name": "AI for Environmental Permitting Review", "development_stage": "Pilot", "topic_area": "Energy and Environment", "rationale": "AI is not making any final decisions, only recommendations for authorized staff to review."}]

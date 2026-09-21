@@ -1,0 +1,183 @@
+{
+  "id": "resp_081437efff5764b3016aa0270af14887d2be74670e84fd2681",
+  "object": "response",
+  "created_at": 1788880650,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1788880657,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": null,
+  "max_output_tokens": 4096,
+  "max_tool_calls": null,
+  "model": "gpt-6-astra",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_081437efff5764b3016aa0270c685487d29f46dae7015e18a3",
+      "type": "reasoning",
+      "content": [],
+      "encrypted_content": "gAAAAABqoCcRVinCVLCks1uiJRR3DXhl-0Dsgf61hvE9wRvSvvAMR6TXzp_vqfCC792j5ZYgJSinhI5aITx6Y2m38igigCD7LGSoySQGUpwayCOPHAzp0ZtFpdp5SpMfO9H6xQ1cxcSxgyrcIKCgGS4v_DhbRQJ2wEZi-mp4hgad1xMR0Yjf4C_e9FO79d9cEtNAQGCimuOCBMX81lkrh0gJnGqUE64zEufOSoYv8f35sizcDmH06v6Rw-guDFRFjqW23X71u-CL28TPbCMdGeATCLjsxSneNXkZS5D2yr72Q3h9kLQLAQHAlYuLfxLUaXadHtFsrtPdhuN4ylPd5Ji_ghCIgLxIZQrRErc4r9FHU6pr_uc3i3019bG1nNDhWfHPK9F3zCGsa8a2pylOGwhE3Lbp3aQud-9NSeSsme8--C-OETgm_3VXK6Gdjg6e106nzEyXbMszDJSfwlqAi0wfflQKbXWeewqGhQ5UajXAR2_KNB-fz4hduaWHOZOuQlOEZlWOHotKLRfPAo0IcikZ-XtwF_NcX3n8xNLMpVJ97qsVptiYCXq8uEESmfFU7Bx3FOTQ8i5LpFMsC3jp3FyBzmBmRjH1JPkl-XQ9Qihc1JbL9QIcSkrUnLffDe85vhaO8SP0NdrHHedeQRHFyj6nvB-Ut_l_3qAYZm17wIRlWaLgre3dBwk_TmahwmcFxBP0AgOyw8eKTzrOForBld7uRayy8ByxuEL5pt48LG806CrYSQ0qRRJf6nwAjftvW8usPePhuymRD5Y5GUnyeSIHLW-Vs7VUQN91ZYl3nectdYEG76y6GHJ2fgXqaVIlqK0yNvI9GlE-wqmyUXmaYS7-feI7HJyOBZcO0JJQZFk54UBH4X5luWPbOk5yI7tZ35xH5s9kleYhMP8rB2Yg8g_-oHXQpdvSYybb6aCi9nYWjKgdRmfYu7PcDmPJzAcJtKnvUHss79eDRDj0sIQPcHhZStco7OvN1ISqnpNq1oHMXeFdZszOTzWw8wHuQjxZnJ70ShxK6dOw0vdrjluaefw7OMyWx1r3I0eR1vvhgYS__Edcm1bVdmMwsWueGeE8634hK6yNx2bJMYmVzXqwrvKm1AGQwqonw0Ba8SLBWtYk3UhmvBMVBirlE2629JUpp7P2ytcRYJjLFSz7gHXuqZyezLDU7UNA0kNb3NESy90eNSMgs5RfrfFL64vIgCGsyvJh_zWY6CKQYA20AhT29HCzwRDZfVeLQD1lNTpQJorJQYFAlmtdIx6UMC6iux3YZXmQu2QiBkMFJmyA5XUik1-KI_ZSZ9v6XJmFa2oueQEvDtjjxOAUJRW5Iq6ddfqzR0j4Pc1pOx9h6fQEYEliRsKoWlYXy0Uff2lP1cMtGIhuTQlL4OCpnHHSJgB855SxbcIXK37p8NAQ4esTVYLisHKDmWoZZTMGsw==",
+      "summary": []
+    },
+    {
+      "id": "msg_081437efff5764b3016aa0270e01c487d28a49a343fdc21e59",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"id\":\"M-6c668ded2ed4a984\",\"P\":\"YES\",\"O\":\"UNCLEAR\",\"W_ind\":\"NO\",\"W_opt\":\"NO\",\"W_nar\":\"NO\",\"H\":\"NO\",\"status\":\"U\",\"ambiguity\":\"P: \u201cdo not produce an action or serve as a principal basis for a decision\u201d. O: \u201cThe AI predicts aircraft landing locations\u201d identifies output but not its workflow use. W_ind, W_opt, H: no supporting passages. W_nar: \u201cThe AI outputs do not produce an action\u201d asserts a limitation without explaining an operational mechanism. Confidence: high. Lens: public-rationale-only. Model: API assistant (version unavailable). Protocol: ATRACC Public-Rebuttal Codebook v3.\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "low",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": false,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "atracc_coding",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "P": {
+            "type": "string",
+            "enum": [
+              "YES",
+              "NO",
+              "UNCLEAR"
+            ]
+          },
+          "O": {
+            "type": "string",
+            "enum": [
+              "YES",
+              "NO",
+              "UNCLEAR"
+            ]
+          },
+          "W_ind": {
+            "type": "string",
+            "enum": [
+              "YES",
+              "NO",
+              "UNCLEAR"
+            ]
+          },
+          "W_opt": {
+            "type": "string",
+            "enum": [
+              "YES",
+              "NO",
+              "UNCLEAR"
+            ]
+          },
+          "W_nar": {
+            "type": "string",
+            "enum": [
+              "YES",
+              "NO",
+              "UNCLEAR"
+            ]
+          },
+          "H": {
+            "type": "string",
+            "enum": [
+              "YES",
+              "NO",
+              "UNCLEAR"
+            ]
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "S",
+              "U",
+              "D"
+            ]
+          },
+          "ambiguity": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "P",
+          "O",
+          "W_ind",
+          "W_opt",
+          "W_nar",
+          "H",
+          "status",
+          "ambiguity"
+        ],
+        "additionalProperties": false
+      },
+      "strict": true
+    },
+    "verbosity": "low"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 1521,
+    "input_tokens_details": {
+      "cache_write_tokens": 1518,
+      "cached_tokens": 0
+    },
+    "output_tokens": 208,
+    "output_tokens_details": {
+      "reasoning_tokens": 41
+    },
+    "total_tokens": 1729
+  },
+  "user": null,
+  "metadata": {}
+}

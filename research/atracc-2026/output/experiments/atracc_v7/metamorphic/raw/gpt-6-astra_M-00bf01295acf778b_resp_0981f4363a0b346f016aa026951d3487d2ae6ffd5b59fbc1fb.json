@@ -1,0 +1,183 @@
+{
+  "id": "resp_0981f4363a0b346f016aa026951d3487d2ae6ffd5b59fbc1fb",
+  "object": "response",
+  "created_at": 1788880533,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1788880541,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": null,
+  "max_output_tokens": 4096,
+  "max_tool_calls": null,
+  "model": "gpt-6-astra",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_0981f4363a0b346f016aa026982c6487d29d78acb881dbed4b",
+      "type": "reasoning",
+      "content": [],
+      "encrypted_content": "gAAAAABqoCadLxunjzaK1mhloE0nekiD6zVj7aAEGVKMBlb5zIWKAnPEyVlBLqHmhF9le2En5_14bW7RttP-gkVcpQSCDcKcipvESBPc2PwjY774voUrvZlNdizaZOsxYABz2JYP26O-8uTRzkqOJI4CymDwak1aqZJ-8raf6k7GHxrVydOVlrjotkWH7kgOtXNrF7Ki4sbqfsdSkr6a7hdSaUoWLzKfVlukvTo20Yi1tAN8Ew8epZVDAkUmaNS0aqbbS0V4PgC8lb2bVNUHgVJTWXINSCJaxYbinPkKiRS3kr1XB1GtKgq9O5hBTd5z83bXaw02OqQ0iAZ7nBEuCUZ48n8tSrh9HF8UuvtvgQ-JvjBd_zh4FlrF0DvjYHv7tgF10Su4Wi8eGlSLeACbPSxuGpehNW19k--LlIvLBIkVETd-ryJ313_gjMefTiH1AWgOUNPi-MB4OAUe6dFq4VNf0Dnic_TFNRYXo4L6RthGYw0UIxZ3gP8gsZaUFXXNWZe1zg4HK1zaSGYwaFno-mGq9N0FMwPXDpIIqs2uTPXPv1YxZA_eaaJb1zYjuNnZM22YAo41J9XpJ6naNtuTBaj9vyB3KST2d8grQuw6VH9tE6xguB7I7UNS15X1GTwu0Dyzyno61_VzOh8jDkvYb6zkIrVTPuNU2BDFeZudHV9tDag69ij62yv_AqqhHtgOENSpAoq5ch71a8n1ICkiJXZRZHkDMZ08rTHpgXOJbds2xCVW9f1xvkERGINDawpM_tCWdcmfvJXyUns6S9R7Njxa7NXtH1SAIEcNZxj2aCpS1KWxnx_rYZLDG_Jri2BPK7CfL1wzF-auPtmefsHN2iARutPbnm2ofS-zGvLaqgQsNq_F8ZknV58FVcT1lLjUxYMQo27F4iUioOfpBEM6nwdjD99Upxe6gKmw0WWowumGMntm2AG3ATNogw1RrHNRHRTLSzP_hliep10OTUa54Zj311OOs-8TFka8gyDMGuGuWLhHPU4oOOdnNdYEq6Nd9O-bi6zMCT8jqLf2a87vKXi98PtxxUK_0eZpgHgCjIEQfyDW3NDUgg8M86kn_JTIL1GteuoZ7ogiLrXvMLMwacv1voxxfiFsu6TgAnzf6TDBdt1BMhTAvmWsfNiTdGSSaHdY9bad9mxaSqom7DvD3qQQkYdxo7pCHWjx-15iZR_qdGMvz-0aF8pdhOhkWj7OJD-SN2lO_R3IqtNQhbCkveISxtgo5OBlgaMm_ybR8-keTrUea05dIJYx-eHBdSBdfA84m7qFmIqFNqLKC6qBmS45LT2kDSmTMyuIRh5YW_iO9mzk5zYiVNmYzINtvdTD1IXM0-0jlZTkLUPZfO75uB9jSwl6Y38KGv95eEC7-AuruOIVw_WLFv2_mv9quhVYbFrl4G4pI6R5ulxm26xTRom4m8sYq-UfbntbUoIJR1tgtM6kyYrh8Dw8DqIVHa2mb7X19nPcCdqulrafOnA9NkdyyMkIUlHXmr5hvM8JfSXHcTvpVSis31Y=",
+      "summary": []
+    },
+    {
+      "id": "msg_0981f4363a0b346f016aa0269aa8fc87d29e57326cda9fa49b",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"id\":\"M-00bf01295acf778b\",\"P\":\"NO\",\"O\":\"YES\",\"W_ind\":\"NO\",\"W_opt\":\"NO\",\"W_nar\":\"NO\",\"H\":\"NO\",\"status\":\"U\",\"ambiguity\":\"O: \\\"uses facial recognition technology\\\" \\\"to create a log of access\\\". No threshold predicate, independent basis, non-AI alternative, limiting connection, or human-review warrant is stated. Logging alone does not establish a qualifying operational bound. No material ambiguity. Confidence: high. Lens: public-rationale-only. Model: ChatGPT. Protocol: ATRACC Public-Rebuttal Codebook v3.\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "low",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": false,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "atracc_coding",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "P": {
+            "type": "string",
+            "enum": [
+              "YES",
+              "NO",
+              "UNCLEAR"
+            ]
+          },
+          "O": {
+            "type": "string",
+            "enum": [
+              "YES",
+              "NO",
+              "UNCLEAR"
+            ]
+          },
+          "W_ind": {
+            "type": "string",
+            "enum": [
+              "YES",
+              "NO",
+              "UNCLEAR"
+            ]
+          },
+          "W_opt": {
+            "type": "string",
+            "enum": [
+              "YES",
+              "NO",
+              "UNCLEAR"
+            ]
+          },
+          "W_nar": {
+            "type": "string",
+            "enum": [
+              "YES",
+              "NO",
+              "UNCLEAR"
+            ]
+          },
+          "H": {
+            "type": "string",
+            "enum": [
+              "YES",
+              "NO",
+              "UNCLEAR"
+            ]
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "S",
+              "U",
+              "D"
+            ]
+          },
+          "ambiguity": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "P",
+          "O",
+          "W_ind",
+          "W_opt",
+          "W_nar",
+          "H",
+          "status",
+          "ambiguity"
+        ],
+        "additionalProperties": false
+      },
+      "strict": true
+    },
+    "verbosity": "low"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 1472,
+    "input_tokens_details": {
+      "cache_write_tokens": 1469,
+      "cached_tokens": 0
+    },
+    "output_tokens": 198,
+    "output_tokens_details": {
+      "reasoning_tokens": 55
+    },
+    "total_tokens": 1670
+  },
+  "user": null,
+  "metadata": {}
+}

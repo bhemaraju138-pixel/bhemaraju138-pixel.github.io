@@ -1,0 +1,82 @@
+[
+  {
+    "id": "EXT-a373f019cd",
+    "pair_id": "hiring_content",
+    "condition": "mechanism",
+    "expected_status": "S",
+    "source_url": "https://www.opm.gov/chcoc/latest-memos/use-of-artificial-intelligence-in-the-federal-hiring-process.pdf",
+    "source_pdf_page": 3,
+    "provenance": "Agent-authored paraphrase of OPM illustrative workflow",
+    "boundary": "Codebook-conformance expectation fixed before prospective coding, not human ground truth or a legal determination"
+  },
+  {
+    "id": "EXT-fb680b3746",
+    "pair_id": "hiring_content",
+    "condition": "human_only",
+    "expected_status": "D",
+    "source_url": "https://www.opm.gov/chcoc/latest-memos/use-of-artificial-intelligence-in-the-federal-hiring-process.pdf",
+    "source_pdf_page": 3,
+    "provenance": "Agent-authored mechanism-removal counterfactual; not OPM text",
+    "boundary": "Codebook-conformance expectation fixed before prospective coding, not human ground truth or a legal determination"
+  },
+  {
+    "id": "EXT-bcfa6896aa",
+    "pair_id": "applicant_review",
+    "condition": "mechanism",
+    "expected_status": "S",
+    "source_url": "https://www.opm.gov/chcoc/latest-memos/use-of-artificial-intelligence-in-the-federal-hiring-process.pdf",
+    "source_pdf_page": 3,
+    "provenance": "Agent-authored paraphrase of OPM illustrative workflow",
+    "boundary": "Codebook-conformance expectation fixed before prospective coding, not human ground truth or a legal determination"
+  },
+  {
+    "id": "EXT-4821c27789",
+    "pair_id": "applicant_review",
+    "condition": "human_only",
+    "expected_status": "D",
+    "source_url": "https://www.opm.gov/chcoc/latest-memos/use-of-artificial-intelligence-in-the-federal-hiring-process.pdf",
+    "source_pdf_page": 3,
+    "provenance": "Agent-authored mechanism-removal counterfactual; not OPM text",
+    "boundary": "Codebook-conformance expectation fixed before prospective coding, not human ground truth or a legal determination"
+  },
+  {
+    "id": "EXT-7ac645fe8c",
+    "pair_id": "preoffer_quality",
+    "condition": "mechanism",
+    "expected_status": "S",
+    "source_url": "https://www.opm.gov/chcoc/latest-memos/use-of-artificial-intelligence-in-the-federal-hiring-process.pdf",
+    "source_pdf_page": 4,
+    "provenance": "Agent-authored paraphrase of OPM illustrative workflow",
+    "boundary": "Codebook-conformance expectation fixed before prospective coding, not human ground truth or a legal determination"
+  },
+  {
+    "id": "EXT-296eaedbb0",
+    "pair_id": "preoffer_quality",
+    "condition": "human_only",
+    "expected_status": "D",
+    "source_url": "https://www.opm.gov/chcoc/latest-memos/use-of-artificial-intelligence-in-the-federal-hiring-process.pdf",
+    "source_pdf_page": 4,
+    "provenance": "Agent-authored mechanism-removal counterfactual; not OPM text",
+    "boundary": "Codebook-conformance expectation fixed before prospective coding, not human ground truth or a legal determination"
+  },
+  {
+    "id": "EXT-6877435c0d",
+    "pair_id": "aggregate_analysis",
+    "condition": "mechanism",
+    "expected_status": "S",
+    "source_url": "https://www.opm.gov/chcoc/latest-memos/use-of-artificial-intelligence-in-the-federal-hiring-process.pdf",
+    "source_pdf_page": 4,
+    "provenance": "Agent-authored paraphrase of OPM illustrative workflow",
+    "boundary": "Codebook-conformance expectation fixed before prospective coding, not human ground truth or a legal determination"
+  },
+  {
+    "id": "EXT-8d16ad31d3",
+    "pair_id": "aggregate_analysis",
+    "condition": "human_only",
+    "expected_status": "D",
+    "source_url": "https://www.opm.gov/chcoc/latest-memos/use-of-artificial-intelligence-in-the-federal-hiring-process.pdf",
+    "source_pdf_page": 4,
+    "provenance": "Agent-authored mechanism-removal counterfactual; not OPM text",
+    "boundary": "Codebook-conformance expectation fixed before prospective coding, not human ground truth or a legal determination"
+  }
+]

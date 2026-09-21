@@ -1,0 +1,183 @@
+{
+  "id": "resp_0e2765ec3a4f43c4016aa026be1f5c87d29b85cb2ebcba53f4",
+  "object": "response",
+  "created_at": 1788880574,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1788880582,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": null,
+  "max_output_tokens": 4096,
+  "max_tool_calls": null,
+  "model": "gpt-5.4-mini-2026-03-17",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_0e2765ec3a4f43c4016aa026be749487d28ffe3db02eda278c",
+      "type": "reasoning",
+      "content": [],
+      "encrypted_content": "gAAAAABqoCbGsCSDvEw1vfahA_CAg98chmg7kj3Bsrp7C65QeiHVFsrrULt572WJK4E8aHPKFlMQ9xONnmu0zRk71DTrFzmMoZMstEENSFvcFB4sC3bvknUeEH_IzV-RO0Bzpq10dVjlHKvO5DCJKUTZ80xfi-0hRQMbqYJRtm4YlkRET6y_1BA3kF5GOjsDGbG7889jKRtTrV6nncZGXpk-Bth3AK1doWJLmW-99YNdtJ6U1PeQAtdknze17QOT0aKeDvHMjwrnH-WV4XwwcRe5yq-f0zItX6ZNJt-lAPirmzoQMeaDyBm4KPftyqQJopTv0_3IHT5s5_aonMsTQT4fzVThv6BqviAvM0Ik0jkljDGa519o5I7l6my2-Vlay4WRYHxAMdGkQTLzlrR8JZCcFpAtLoWP7Vr9u8_z5RKYXqmFC3zm9wB1xymzL4TX9rd45zsFF32pJ8Hdd-1NIMySgeR2GALRJ6ruz2bKXrJa8mgOU5c-ZKoy66CnDozxNhwoOcNYweObv9_6nIuSdvUVEis55A7mrAb4UJQS8z8vHRooZK010kB9q_QuTYGlpHlAdWG8g6_94xtdpBcMrcVOp7a087cJYavVSjvHMPrgbabgKeT8vRpOt_MWepJgl7yf0Y5ym19VR6IINeJtSLafiJ-JERqgOsvoxTiZ3d7nyu74VoqCYsaCqS6d4SwvdcCM2-Jlw9XlfctiqWJ4MucgTWz_AUpPn-zhmGnt9ixZ0xsztDIMpxiQFDbwxdiQSAnOGTwDM12eBlIUFkIV5wstQjIHrmnE8B0K-cWlnlO7BjGGL6g8ngwCQ-gMb8_wprz4-UEEh2GmgbnIi40QMxuE5QH1t_jsqlGKVDIMkY4nvzitnmlX1jQr1mQoePhlWId3Xh4vIa8UT_J-dDUl9wZCssm6-3esYf_wnwfr5T-qFHFjWPPz1l3_Sa-De00J3g9FuOXfHL5M4XvAk8peru9lt1OuoN4lhfF--7COSs08PSgpTmamDeawkzP62jaf5V8Ec3cso265jLkBricgofVPtmwy910s6WjdB9auDgJYlBmAHKX2gFwpk3jEo9Ffvb_4G52GjvbLE-tZB3fddB3XUWdgKQQdDKegN2rM20aBUttlhWqKqFIyWhWo9etZv2_-0FZTmbeX9Nbzc04nfXStBNgtJlaeRzk9YLqUJLlBcbrNxWFQbPu-7Tzbmpr2IHm29N3uyMWjMsnyuiDJ5fsaoD1VP4TsSOXQ48fmGopYx6qiBVGuIdLpt1da-3o-rqcOZDbqInNoEdGdGsbtcJ6x-4Dw8n35QACeR2Ki15WKnZLQzjyixG08S20nVnT3E342xmqR22nDkhhp2HpKKgq8xCEsvPqumQ==",
+      "summary": []
+    },
+    {
+      "id": "msg_0e2765ec3a4f43c4016aa026bea6cc87d283063cd472550f84",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"id\":\"M-5ac4ac22a3cbb396\",\"P\":\"YES\",\"O\":\"NO\",\"W_ind\":\"NO\",\"W_opt\":\"NO\",\"W_nar\":\"NO\",\"H\":\"NO\",\"status\":\"U\",\"ambiguity\":\"Predicate is stated, but no AI output/use or qualifying mechanism is disclosed.\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "current_turn",
+    "effort": "low",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": false,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "atracc_coding",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "P": {
+            "type": "string",
+            "enum": [
+              "YES",
+              "NO",
+              "UNCLEAR"
+            ]
+          },
+          "O": {
+            "type": "string",
+            "enum": [
+              "YES",
+              "NO",
+              "UNCLEAR"
+            ]
+          },
+          "W_ind": {
+            "type": "string",
+            "enum": [
+              "YES",
+              "NO",
+              "UNCLEAR"
+            ]
+          },
+          "W_opt": {
+            "type": "string",
+            "enum": [
+              "YES",
+              "NO",
+              "UNCLEAR"
+            ]
+          },
+          "W_nar": {
+            "type": "string",
+            "enum": [
+              "YES",
+              "NO",
+              "UNCLEAR"
+            ]
+          },
+          "H": {
+            "type": "string",
+            "enum": [
+              "YES",
+              "NO",
+              "UNCLEAR"
+            ]
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "S",
+              "U",
+              "D"
+            ]
+          },
+          "ambiguity": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "P",
+          "O",
+          "W_ind",
+          "W_opt",
+          "W_nar",
+          "H",
+          "status",
+          "ambiguity"
+        ],
+        "additionalProperties": false
+      },
+      "strict": true
+    },
+    "verbosity": "low"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 1437,
+    "input_tokens_details": {
+      "cache_write_tokens": 0,
+      "cached_tokens": 1280
+    },
+    "output_tokens": 108,
+    "output_tokens_details": {
+      "reasoning_tokens": 29
+    },
+    "total_tokens": 1545
+  },
+  "user": null,
+  "metadata": {}
+}

@@ -1,0 +1,183 @@
+{
+  "id": "resp_09a513b7abc5d41a016aa0264802d487d2b94e20984c27da7e",
+  "object": "response",
+  "created_at": 1788880456,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1788880461,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": null,
+  "max_output_tokens": 4096,
+  "max_tool_calls": null,
+  "model": "gpt-6-astra",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_09a513b7abc5d41a016aa0264925b487d2aed10036a4433688",
+      "type": "reasoning",
+      "content": [],
+      "encrypted_content": "gAAAAABqoCZNzSBh8h_NVKZtjIdhSbMrcsPfg79HgY9p2R34zvP7bCIhrHLVprcpSm0fwyx4a1P1MDtift0SDnqDEnhqaqzVX63J-I0M4K_3GiZ_GMAhKn4p6ZmDrtk9Srnd-X0mng2_PqkTRxA0VUYZr17HeWdcvts7ZCUACxT3_gEu-99AhX4eWCmM9ALqoIjKNN3vM7ZjvRsfT8GLNgPnFGEGnfomaDNLuFWas5Xh-hkv3_f1CJFTMVSBp1cLJLAInW1geNRYIorLIpoqhjcHjTWs6YrOSe5wxu68w8EBw4FFNRnm6lzgxZq6NYl2dhMJqaf825ZCKOQ1YOFqmTTJJmOMdMJc5GqLAV7VgJyaJkBiSSkJJcU9wDHiFTC5hwQKoohkXgexcaLPgpK6MZdxRYkcLsFH43xfgG1Y-NMO9bALHlnI0j0Oo831FHxyLOqmP6hzxhjgqej4bZqM4QB3OO0zM2xcdf21jMPtKeSC2_-cI0Pxqd6rIWAYVeDyJ4VHZ8qWtFWuPDJyS7suHgPXiAwUBfKngWPSk9wCCKVlzfk0jYg4QfZmQmzZE-veCmcZ1vFBujG-TEmbfu4_58_IjkUmbIwUqY85Z-_itMMpaKy2NJim0JZ3ftwNF0GDQ2kdYAx7_OVAPCLsn5qsoiarKQk41KSsugp9OB8T-4-LSR4e5-RlxkNXkpxeVW77RrAcYXTn4l4Ge_adKfqscyKJ0V5qL4d1ZbfMwiTIDhOlCyDNwsZIlOsFeoa_eOgSAPRXAaClCmMzdSLG5O4GbAhmF5uRnWRA8Mxq7KLho7fnDyzNBvXlnrCrl8jkJLm91r6QO1dQNleVeuC4FlhRO2N1PCZTy2V4ER4Es2q8CIEkhJXBHWMk7w_QXBogMT4ap926IqdpvCfDSgwBZyr3mEqBszW5Cp78vtC7Xb71j6I4cWnf_lUI-Ud_lQJL-0VpdvgNivCSGIVd5MZQGd6dZ0UJfhf-4gb5dii8wKHwHmiYZjjuOPPIhzkTWe25BlL7dJymOLrizA9blSBi---1YlJPuU-nT8XocyQzBWAtH1zZcVgY0qEy-4LDmW2-_iOtf-6Z-IBHBaMs3I_BtzHwtIjLWkbj9cpRemxf-1y-y4drdIajmSc4qh2atOd8L4lFlHWt7AKGud1HI29z1vFenktPDJ7ESYvfJ2iUS9CrgD217WMbSn0A7jNySMGe18THRokGPnFRL7In_37h_K7oE5M-cZgalJufrZelQhT0mhWRKkZq4o6tkwb75RJ6s5Knp9R02NfrJ3N0kKbqogm8viKxgalj1rm1ILENltAjm7see48AajMrB6Q=",
+      "summary": []
+    },
+    {
+      "id": "msg_09a513b7abc5d41a016aa0264a995c87d2afc1a17477027cba",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"id\":\"M-11102f25fb992429\",\"P\":\"NO\",\"O\":\"UNCLEAR\",\"W_ind\":\"NO\",\"W_opt\":\"NO\",\"W_nar\":\"NO\",\"H\":\"NO\",\"status\":\"U\",\"ambiguity\":\"Only workflow integration is disclosed: \\\"integrated into all LANL\\\\ncollaboration and productivity services within M365 including email and Teams.\\\" No AI output, policy predicate, qualifying mechanism, or human-review warrant is stated. Confidence: high. Lens: inventory-only public rebuttal. Protocol: ATRACC v3. Model version: unavailable.\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "low",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": false,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "atracc_coding",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "P": {
+            "type": "string",
+            "enum": [
+              "YES",
+              "NO",
+              "UNCLEAR"
+            ]
+          },
+          "O": {
+            "type": "string",
+            "enum": [
+              "YES",
+              "NO",
+              "UNCLEAR"
+            ]
+          },
+          "W_ind": {
+            "type": "string",
+            "enum": [
+              "YES",
+              "NO",
+              "UNCLEAR"
+            ]
+          },
+          "W_opt": {
+            "type": "string",
+            "enum": [
+              "YES",
+              "NO",
+              "UNCLEAR"
+            ]
+          },
+          "W_nar": {
+            "type": "string",
+            "enum": [
+              "YES",
+              "NO",
+              "UNCLEAR"
+            ]
+          },
+          "H": {
+            "type": "string",
+            "enum": [
+              "YES",
+              "NO",
+              "UNCLEAR"
+            ]
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "S",
+              "U",
+              "D"
+            ]
+          },
+          "ambiguity": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "P",
+          "O",
+          "W_ind",
+          "W_opt",
+          "W_nar",
+          "H",
+          "status",
+          "ambiguity"
+        ],
+        "additionalProperties": false
+      },
+      "strict": true
+    },
+    "verbosity": "low"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 1421,
+    "input_tokens_details": {
+      "cache_write_tokens": 1418,
+      "cached_tokens": 0
+    },
+    "output_tokens": 155,
+    "output_tokens_details": {
+      "reasoning_tokens": 24
+    },
+    "total_tokens": 1576
+  },
+  "user": null,
+  "metadata": {}
+}

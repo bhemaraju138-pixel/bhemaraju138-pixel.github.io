@@ -1,0 +1,34 @@
+{
+  "codebook_path": "protocols/atracc_locked_codebook_v3.md",
+  "codebook_sha256": "0a1dffe440a2e8d837339873e891c5cabef8076f806ec8f971f52fd314eeaa84",
+  "source_path": "tmp/omb-data/2025-Federal-Agency-AI-Use-Case-Inventory-main/Data/2025_individually_reported_AI_use_cases.csv",
+  "source_sha256": "a62721202ca4b110ce3c53ffdb688d05ad27a35971a7afda4f1179b2493e31d0",
+  "records": 110,
+  "lenses": {
+    "1": {
+      "name": "literal entailment",
+      "instruction": "Credit only propositions entailed by the disclosed words. Penalize missing links and do not repair vague prose."
+    },
+    "2": {
+      "name": "policy-burden mapping",
+      "instruction": "Map the text to the principal-basis burden in M-25-21. Distinguish a conclusion from an answer to the burden."
+    },
+    "3": {
+      "name": "linguistic scope and negation",
+      "instruction": "Resolve negation, modality, coreference, clause attachment, and whether evidence is connected to the claimed limit."
+    },
+    "4": {
+      "name": "adversarial false-positive audit",
+      "instruction": "Assume a weak rationale may use persuasive keywords. Try to falsify every proposed YES, especially validation and human review."
+    },
+    "5": {
+      "name": "assurance-case completeness",
+      "instruction": "Ask whether a skeptical outsider can reconstruct claim, mechanism, and rebuttal from the public rationale without hidden premises."
+    }
+  },
+  "blinding": "Legacy regex flags and labels excluded from every panel prompt.",
+  "missing_id_rule": "Blank inventory IDs receive MISSING- plus the first 12 SHA-256 hex characters of agency|use_case_name.",
+  "duplicate_id_rule": "Repeated public IDs receive deterministic R01/R02 suffixes in source-row order.",
+  "consensus_rule": "4/5 same status required; otherwise U. Component majority uses YES/NO/UNCLEAR with ties UNCLEAR.",
+  "integrity_boundary": "Computational expert-model panel, not independent human coding."
+}

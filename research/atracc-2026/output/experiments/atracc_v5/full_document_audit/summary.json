@@ -1,0 +1,20 @@
+{
+  "target_records": 9,
+  "pdf_record_pairs": 7,
+  "distinct_pdfs": 6,
+  "unresolved_document_identity": 2,
+  "complete_semantic_outputs": 14,
+  "missing_retrieval_echoes": 4,
+  "strict_recoveries": 0,
+  "recoveries_without_time_requirement": 1,
+  "verified_mechanism_and_anchor_pairs": 2,
+  "fieldwise_unanimous_yes": {
+    "same_system": 1,
+    "temporally_applicable": 0,
+    "same_predicate": 3,
+    "qualifying_mechanism": 3,
+    "passage_anchor": 3
+  },
+  "normalization": "Successful full PDF extraction establishes retrievability independently. Four model responses omitted that redundant key; all semantic labels and raw responses are retained.",
+  "coverage": "Seven record-document pairs assessed with complete page-indexed PDF text; two collection URLs did not identify a matching document in a bounded follow-up search. No claim of exhaustive web discovery."
+}

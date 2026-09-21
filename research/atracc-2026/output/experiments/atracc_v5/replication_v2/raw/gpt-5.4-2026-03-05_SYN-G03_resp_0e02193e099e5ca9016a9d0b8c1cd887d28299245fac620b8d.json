@@ -1,0 +1,101 @@
+{
+  "id": "resp_0e02193e099e5ca9016a9d0b8c1cd887d28299245fac620b8d",
+  "object": "response",
+  "created_at": 1788677004,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1788677009,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": null,
+  "max_output_tokens": 12288,
+  "max_tool_calls": null,
+  "model": "gpt-5.4-2026-03-05",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_0e02193e099e5ca9016a9d0b8caf9487d2b598e9d3ef878e13",
+      "type": "reasoning",
+      "content": [],
+      "encrypted_content": "gAAAAABqnQuRF_eYp9OMr6hY3vccSI65fI3lQl-qZ5TMu-BtcQbxwYKutKbrTzIDgJ3HMAmjCPcG-ae0TV3udmOcZqXL2iB3hD4cRbldh83rXBDGg6TWnH0KG1JdvJa2DlQJ9q3W0HCYAqKuDv77PKqM7ykbOP95MpckOo8P8e_T2FfxQ2ezpVSdD-wWJvmDn0K00DdlU7OHAKaWntv7BmPAHp6DsMly9rEmVwirRQ0XYrCYo_24xGVCmuSWpnqo4vYqB7DAOnjVwwxGPqcQKV0w5xJ4B_9RWf8eFRhsr2LkUCGVTu3kQvSkHuERop86HO0TOJ-qlcRBe-asA-Ao50Vz9zosF7PHlsamHXJQf6S3Fmbn789BelHvn2Hnxf_gvCIL0S9sqBux53ypmzIzzwfghSF5GA43oPX-lKV6e78YIpbBMQVAmluLA8kxwPhyu01WhPEab_2dow6TJUCznV99UfNz5h1p4xo7gCh21UnpQH6YkXsaVi6E7BkrwGhyW2psGA1SaSSraLIhHsZyP65bFzlgkMQv91EDMZV0yGQDqu75SBo-zsSHzLFEW27vOa7LZwU-TiOBeQV2bAjTEV_kzQN0I4swDY9G38JVL0Zy0PvImbRb_YBUBhrabMipMAyy-xQBNqj9bCxVeU47coNQrvFFoDDb3BIO00kqv-ps7CLVGmAXCIsiNLWiwrA6NZ0Lf307cF3xIeRO3Y4_94HG1BdHIRNNaVxSJmGeKvgccvgFOp51eUS97VeTHM-i30bhEbFgGbQYraKLFhKeCD4Jc0U4OTdk2JiyrF7LmgtkFvWKQAb-Zlu_CU46DRmrtzCXUt95BHfeXWfWZQE8GtZPPKDHlyqRVUIQexh3LqI6kJM3o308ZrIeCGtjBqoa40LwfhG5rE50b3ArnAl6FdnTCtw2V5KNajzVfm2p7E7-5O92yBlwJ57JbJNq1IVuRO74vh4xzo_cg61quOu7Gm_Sw__2CMA-ZemfKdfgN65-OrW7FOSSUxG9co4L5qwewR6V3BmHNy2FBpeTTYqKMvwDK-DThiUQ1xPHtvXA4jJ374FMHGD-uAVK-5I71eA45HA3oizBEAkxb5tAFOCE5KU0hh2kHKqGUjmzWSaZA3TuQSt86jGFHUiq6QvIbtxC6H1c4qSyVap5M9RgyahkvadstF1ByvYh9HI52lk9Byk-iDHg-hx_NLFUBcs0fY4h038JE9XSQBCHAlEThShiU5_tHganH2B3N4BxW6eLpWpBt-eCCMeT3tkn_gTwKO3LQPRzhRGPyUCZ4baQ4KyLykbClOO_zfD0xSCJRyhZDgqqXdHinAwjLNV87xftHvrYB_RnMSdX_3CGbGT4fjADija7eEcrmJ_yOox-e8Oz6Z3VIvS0ZIwAR5MoegaoqUq_WRRWTSDAgBDE1jEJW9Zj14oLAXxQPea82OI9r64hfGxxaytLaDPm-kg3hugjND7Pl3sNycybdk7TphluXN2i7_wuZzm4ftOP2L7OgZ3p_TDvHevm1e5QQ1fCdrC3TgPqziBRfl-EHUVmLTHtMJF-BYDjVM24ZzBjvWw3xLuPyxG_PHdhVVOg8PBD4Rv-bkwNnpuz_kSYjsm80BA1VfJA2rCS6FenhD6pf3deLw1ztSDKx5F_bSML0M5h0OlZBt8fdLNhHZqP8XoyXx7fBg196fJ67fquj2gFic_JCTqJbXD0vnv79OaZzKIZ5oNVY_vNHaNnliRA3ZxKbN80VGMlXThloY4pUeLb19JdM_kqHwn6_ah3LsydfBPvzKNzZVz6wYMlvhOGKyqhx4VBhFON-4Ho7IAULDGNQTm-oR8Ohyrqqx6MIswG-IL8wUxJg6m_25jCVPw8P8xZuOLDYF0x8YFU5PBkozSLXDBM6UDr4zeJe4PqUQNjNCNSTYkijYb8Iwp62M2E239yADrgS7EqPW9XaWtd9E-9uY3MWL6DHHT1JQ4MWS1Yl8yrDYMtiE0-qwpUo0usIre3KJXMCEKtw1aMO_HdYzM5G79zVrRCZjUF-JJQfVABEj7noX8TjDpJpFYQxavOvEo8HDhkb9J31OLu0evzvgffcmsQoONZVUIuW_IaBWg7Q8DpMupTwQYj2NvjjcC9UVerWrFYn5FvwE06S7uoxJfeUkZZuQ_r0qTkogO5yprfZ5s1gxgBqdFuodh_2xcTjJCZlk3JsqcdG7U8Z0NAMAjXW9_Vt4OXOx0FZuMpyCpbyoDm-EMtxikb_2NOiUP9McA9lXH8Sle8uR42Jlv8d9K-tH9MZXn7yCE_NtkKmc6CQiRCNVJOY0kR_TrGCL31Mj9lpCsio8sWFMgsjyJ2dVzSksTSG4iazrTuGLHFAeWO8NUviQR-ra3faYxWPFb1r18A_IRlVmhP34pRS8l-qP8D_6lnd10OwxdNWr5d_Jlq2clrjO0xqpHhcf-XfTdLRCbP9DwN_Fz1MWJtth8b6pPVsclemHCbR7PhF56aE135ljNrYKGEIOJDCH1oPNlkVqSbRuHOUNWeDAtoDhucoPUpXsqeodpD1kW9N5rQsMkIz2s00-pIN2h-Wtht2wNq87DLWv_wFJX-4k3Kt6Uca1xrhrCG1tag860XGiUK6YTCRBadOeSxOIWrRCzd8oW72TYi_ki9Ru2qNFaal8GItzLh8d5LHsl6Hn3zeq8YeBWn5L1DC0JgpiJAnDUrzC5MBj2NXj6Xc1sMJdLX1_j643oRXGmLU57OgSxQfeVJMXiUD85MMWoLAxF3eeDW8vipkt-oWe1hscqBikXuETUWc8MvPkq6expyRZnJgcfBOTV3NRF_uPnWFG8cwahoRNrOCDRmfH9yobRoInERfXzEUuF4jcaQzUVWufg0_dK_Ew13gYrg_EkuS7BIPbI84uYAxbo1FI_3McNKlmh5BTUZlAvxNI1YLJlqragIiWGBBlybgNRe33XAiKO_kzw-JvJBGAbKg8wXVImOxo8owJDtzZQdb3rW1Kk8_gXuUqLW8Gbg27VjODJCb8AOLA9L4-pc39VtkZmjsBH8uWws7NSYawk6-PJ4Neyrq1ds5uP_R_aDIMwbDBUA2Z7VMU2qe3aqICV_jq6-7PjVubY_EkIFJvAM2FqtXvTMN7ZLFkgLF0anYMDgan9hJW0oiyhTr6h2-KwxstvPxLctCBmWAcOrwgCj8Jg2iFtFNY5QxBsLXc_0OJT7lDT-UOVXG2ulbqxBvAVXB3N_BR-rjkjVT4qCMNelI_Ecds2bgyVKQXjrm7TiFyjQ747greggnjZHeeWycFeDO7S5qE65qbt_db72TXWD0kQVSqekEtYlIHGOcuMF7W5QMhJLj6JOPiNoA-PCTwDhDG5XPFvzLLWrdnSIHsLSGVYot9viFpAVndpr75-opPFxZ_SDXkiefnE6WPwJ15tgcY2XgAtNBBMF3nn0IYQQvbOy4-6RHUAu6CNYMQGpcrRuz5bbf3uninrGTcCbMXEkAF4cTgbI5FhTLKz25zxDqw-WaRtdiWT1IGfNTF8n4CkIOdhO2cFU9z_Vr0RrPwvjFU94DF3CagkbNE4nAwwJdhMg24iWuXSrkgQQF4h_5R5g3bNN_jL9B1aGNtX2DS8PDosoqi4jJcYttni70g_BQeTjeGQkOq6Kw4hWlw9VfC_HDKEItZ_X42a1Q05emJqKAP4Tcc_Mkv8yn_ECu4vt2YDKVv4QBq2_wQ5qD-VCcSykdrnu0WlbANYSQ6d-uy5Ag-hj3SDCSq2FhIVcf9XPrKFBk46PQ7liHU_pfLdrSLaGw2LCgOyfV6MWT7rKVs9BknKgiAcWFDN9r0MIqpKu6POxhp89T9JYWn7ss0Nz2ksq3wBs1nqjFxc5hUezqPCNbDFebOaIyXXJXcUOiVRRGCy1_kNuXikew1mc7nGzMaw=",
+      "summary": []
+    },
+    {
+      "id": "msg_0e02193e099e5ca9016a9d0b90447487d297bdb5da82d26d44",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"id\":\"SYN-G03\",\"P\":\"NO\",\"O\":\"YES\",\"W_ind\":\"NO\",\"W_opt\":\"NO\",\"W_nar\":\"NO\",\"H\":\"NO\",\"status\":\"U\",\"excerpts\":{\"P\":\"\",\"O\":\"produces a priority ranking of disaster-relief applications that FEMA regional staff use to sequence site visits\",\"W\":\"\",\"H\":\"\"},\"ambiguity\":\"The rationale clearly states the output and workflow use, but it does not identify the denied high-impact predicate or explain any limiting mechanism; sequencing site visits might seem narrow, but no explicit non-principal-basis connection is stated.\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "current_turn",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": false,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "text"
+    },
+    "verbosity": "low"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 1306,
+    "input_tokens_details": {
+      "cache_write_tokens": 0,
+      "cached_tokens": 0
+    },
+    "output_tokens": 568,
+    "output_tokens_details": {
+      "reasoning_tokens": 440
+    },
+    "total_tokens": 1874
+  },
+  "user": null,
+  "metadata": {}
+}

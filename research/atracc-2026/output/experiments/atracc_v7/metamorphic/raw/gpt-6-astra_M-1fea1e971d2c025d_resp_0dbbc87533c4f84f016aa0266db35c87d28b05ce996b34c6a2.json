@@ -1,0 +1,183 @@
+{
+  "id": "resp_0dbbc87533c4f84f016aa0266db35c87d28b05ce996b34c6a2",
+  "object": "response",
+  "created_at": 1788880493,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1788880504,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": null,
+  "max_output_tokens": 4096,
+  "max_tool_calls": null,
+  "model": "gpt-6-astra",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_0dbbc87533c4f84f016aa0266ed6d087d2aeda03a186351de9",
+      "type": "reasoning",
+      "content": [],
+      "encrypted_content": "gAAAAABqoCZ7I4qyqPV8uDrB_VTKuagUbNQm7XLVbupOduir92PfpPGyIGf0cOVaJd64fPpgvjwHOxmh2h0O0DwACIXHe1lhdb1_coO0tmEeQUGzCFrPievjftrA9HO5iJru7e6-lQCC_KG6T1zYKLy0OT52qrwEl4xlEikWwWtLO9VTJ820g18MSuGTnEzn9Ssvhk2lqgqLZZItXi2G45sCrQKANOstt8_HOpln_sTLNzA-qtSbex95uppe75rYI05IXV2x5ejByVtfTxAydQ-5z4UhPX4kqRImUDNaC1V3OT45ASrhTYJCmUSMvG2Ot7T7Ln9kzMYW6UXhXYXYoeLdiWBTZmhhd6eEXini6B74Vp7gNi4yP7T7DmPVNHgVsRUsFwyI3Q2ERcvUPlSy8-V3iUVeVZdC32EFxyc7fCwBn0HnXeu8xESqF_HAUxWMVgqUdc0QWscHzEiBF_TwrIe0jb-_LpC2xjfhcaUUsYwFreCBlsw6H2LZA1ajfSr6fjqxvahmpO22RW4ds8WhRND8zj-NqjkzDFVQbSdHKchD86DT518EvwDN1wSCNnkhWYZLmY8rlRAppFm0LVlOb0nhYDmxr7OgZVcNv5Wx88LW4Z0vK1ZyIGay3ZCz-wt0K4OuxyrZKwxG8mJV5aZk-gcv-wkzIkwUeuOLca56rNqJ-K0ekyZ761DDaUvdUUTuEHHQLenPcPDsVhR21tWhs8_5tueBZqlaS5LaljVsAdqkdPhjsVIDAz_i4tx3pmyl0y_16lt-LMmTzyKa8NCsVt-XDFZZIXD5zVUFfvnoqCVixMemCm64rWtzSsk9bjIYfd261EdckqXYVSj78FdTjND955zhh69eW4AAPdOx8T7q2rN7N-kZThUDrUdjY2kcMoEouiD1deOuDAb0tSrRMi7SIYy2eoT544ECp9pVt6oJPPHYyDWdTWgw0w_w8WZyp5C4I97BGVUk74lic7erLBjupJHNmewYo9jv-7AE6JUX61UjnrfLNH-64ESxEoCeNeNKbHZtguRqMlkFQNsGUrtaOo2HFAkjf-1DRJF07cWIA0S-Z1l7o_I5xHSEPLtNhfF6QWVRvobvhYXrYs9qKbGufAk3NhRuRP0PpdhNB1uXBngIEkFDfcTl_5h4YbPYCVNyTHkp_EzjodHDsSLWjmuUp4Xup-smso5KmYDRZVcsSvN9LqyNlYEDMUaW6oA5rAb8a-HTbX38P1EywzJ4hMYabPdwGr-RMBPUeSxFZMnEvmTMe4xbuM6bROJ6_p3LHmJHKXiiL59kaUGdDFlx7tF_z_EbEtYluAobFWOasdee_kzVFv5OqTBxI_zcHQeINNs2qRVfNEFkOzeC5irFL0_pZVrHXP8VTpw4nWnwHdzAEONYZBhMqebPXUPEqI3797cWqX2eA-mDsHRd20fabjjR7lZfPppCD2gt7S5g7SmZIULuy61H3EMvAK7aA1TpL_boxHm-lvSH",
+      "summary": []
+    },
+    {
+      "id": "msg_0dbbc87533c4f84f016aa02671af4487d2862d6f670cb4d739",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"id\":\"M-1fea1e971d2c025d\",\"P\":\"YES\",\"O\":\"YES\",\"W_ind\":\"YES\",\"W_opt\":\"NO\",\"W_nar\":\"NO\",\"H\":\"YES\",\"status\":\"S\",\"ambiguity\":\"P: \\\"Neither the AI or output of AI serves as a principal basis for a decision or action.\\\" O: \\\"processes data from radar, infrared sensors, and video surveillance to detect and track suspicious activities\\\"; \\\"the information is sent through SMS or email to the field for response\\\". W_ind: \\\"independently checks the relevant facts against the original non-AI source records\\\"; \\\"The action may proceed only on that non-AI evidentiary basis\\\". W_opt: no non-AI alternative path stated. W_nar: no qualifying operational bound stated. H: \\\"Human review takes place prior to any final decision to act\\\". Ambiguity: none material. Confidence: high. Lens: public-rationale-only. Model: ChatGPT (version unspecified). Protocol: ATRACC Public-Rebuttal Codebook v3.\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "low",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": false,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "atracc_coding",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "P": {
+            "type": "string",
+            "enum": [
+              "YES",
+              "NO",
+              "UNCLEAR"
+            ]
+          },
+          "O": {
+            "type": "string",
+            "enum": [
+              "YES",
+              "NO",
+              "UNCLEAR"
+            ]
+          },
+          "W_ind": {
+            "type": "string",
+            "enum": [
+              "YES",
+              "NO",
+              "UNCLEAR"
+            ]
+          },
+          "W_opt": {
+            "type": "string",
+            "enum": [
+              "YES",
+              "NO",
+              "UNCLEAR"
+            ]
+          },
+          "W_nar": {
+            "type": "string",
+            "enum": [
+              "YES",
+              "NO",
+              "UNCLEAR"
+            ]
+          },
+          "H": {
+            "type": "string",
+            "enum": [
+              "YES",
+              "NO",
+              "UNCLEAR"
+            ]
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "S",
+              "U",
+              "D"
+            ]
+          },
+          "ambiguity": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "P",
+          "O",
+          "W_ind",
+          "W_opt",
+          "W_nar",
+          "H",
+          "status",
+          "ambiguity"
+        ],
+        "additionalProperties": false
+      },
+      "strict": true
+    },
+    "verbosity": "low"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 1619,
+    "input_tokens_details": {
+      "cache_write_tokens": 1616,
+      "cached_tokens": 0
+    },
+    "output_tokens": 284,
+    "output_tokens_details": {
+      "reasoning_tokens": 46
+    },
+    "total_tokens": 1903
+  },
+  "user": null,
+  "metadata": {}
+}

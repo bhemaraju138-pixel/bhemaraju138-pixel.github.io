@@ -1,0 +1,183 @@
+{
+  "id": "resp_0a0de98ffcd5af77016aa026363e8087d283b77b7a6e1a0923",
+  "object": "response",
+  "created_at": 1788880438,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1788880455,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": null,
+  "max_output_tokens": 4096,
+  "max_tool_calls": null,
+  "model": "gpt-6-astra",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_0a0de98ffcd5af77016aa02636eb2087d28674aa37cc381a73",
+      "type": "reasoning",
+      "content": [],
+      "encrypted_content": "gAAAAABqoCZHfklS7SDMloDFCVOLMPzW88CCEyQFAXqCBj6ktF9YwL7usq3awRgCC0QUNt4FssRLutty0rCMMlzvVVrjd9mLkZGiaCi-MoVTPtjoukJCOCVmcStHGzO8Vk0FTFJEmAqC2mSzoB_i5KDeeZV1NCDgraVt2piO7GYZ1GVljNXxbu9QbJbv3yg0ty1g5Gjf_ZhQRr47rdSFCblK6Qrr9uTwdAnm2Y1P9i1EGeeDw7envwxa8L9A_FewGzDnlkjSm_NCxuAOG6EZ4xLRp8jWg9VeH1vfrHiGkbyGZRTNNLJgRXWDXmrzXnZDnQyNuWLb12iBDFNVFjHv_6KVbe1-auxgtTdVRqHRi8dGneVbT7nUfbwVGZCtrdbGSZ8FQvcckepDuC1mx-gmDiI-zJhgkVj8XYQQMGj0MM38NvHgg0LCH5kENcQjoZzIVb9SujpqIlOT9WQoXTiue3t253f6eWZBBpa9DDS-Ko32FQHzmzLK9JZ0IcG2Jm4mYv1JD17wiiw2ly9gZbWFsqv82IdKcBfVCnCjgwA_9azehdSpILvwdxyIxl82h7MrGrDwTJ8iT1SD_Bxda_j10n3WlZWts3yd9hVgycWaWLxCljT-tOlJH9tDjdh82FjunV2jVdfGO9JLi3oZVfcA1VGMKVqNraAdHDf16VKyoGrrlgGeba09IFDGtLo6p6fjbgL7wk2lE0B9Cfb30a9tJLQ91Oc_yhEuUZugX3FldWnF6we4C48RQidOM8gQbR6wJ82Ozisrg6DBvfsAo1_KF6ublGb9vSY6qdmQGJXSUz-HIrHLafx40r_P6wB9leLtWnFWcJcCKjEDWFjJdrdX6gevK3gFzjOhCad8fz1Ne5I4k3br2mgUL1f6DSV0TrXz-XJCpsMU20rwY_fV4U8WdqAfmjx9SWhHj35XmFhdqncPLNBBYdXs2daFJF67URzKy9bqX7DDO4JMSgi_YL__NqRp6f4rSUweHVGfPj6QISrdKtjFsGFDaQavLemofNuAn1f_x2-mFcH6qk56md28__Nara9oN8RzYmPt69Opp6XeYK5jmGM2TtB8eenx8wLNxZ3eEbuVNVvo8B0pcMJLat2o1Kija_A_C9XB2sdtcaBj5SdyXJMw6rMbcSb4oePZCJko8SOICAe5mgWgCjC5T57RY6L4InGQ5MGZpFUQXcPcCcK67UFBA0eyIfVJiZMpOoKt81EFz7zmDes5XAzfClfHioIgoGqO38i36ZG7Tpuocj6cqMtP922vDYPk5Pnbjd8jISjjbBmGeP4zyTRF_Abb4PQbl5oPsT8imyjwWAaUSwHvyNqZj8WVz-R7u5rqq8I4_cYmr5CtrgOlLtPDZNtxHzPc8qs_p4fpx6b4ztlK8BF4AwXLx1sRBd5DK6VZp4Oz2HVii-1y7XJJ77Z4H0H0-526r5CGIEXSpKSVH--dWh2RuD_HeMyleLHBA_5VwZ6cyrc0puTbwl9UKXFNVR-WFM2RbqtwI3qdR2x-GB5ErkjgkmXuQUShlErMgeEPU82efeQK-JNNnVxeOeMiZh_rReRJO9jM5sJaAHcvSCYZssYq7kvScbP9WBmYHZmhA82L7TODD8_TWOwR5jOSyqbAd_CF-y_V7u3-lnNT_aA3wNUhjmrtACrBx3_x1ohmCtQtdVFd7rTiF9DE7Q8JqR89B3m2jWHdrHFMZNedYtJIr7D3VHOuc4vIbrzAnmVLPlAhIZW0GBIWc8oGXNtXhETP5hbXxifwALOW4ZRVFZULJpjY6imozZF9TmKJVw9cg0E8bg7XZBZgCuX6Fh-_4nLP_b4yk4lr_A4c_vCB_WLv7CRqsaXlcil7KMhL_U1k4Wj_my2u5BnFARNe4C8NhvgvzBM1Ue88CfPMASoyQ3P7wcT5DWd_k-HGmN9iKSGf9WYHmZiSzFgwOyGDH1fzIRvl0qC6SLXdYVkY3pnbfoWuG_xNvdsiiKEGmDsRiZ6t8IxYthJGLvy6ZPaCyKSpm8ikCNf7QVj7OASRW9ih7PYdI32cWrpqow7jrpWsOnYAJDgwNpAQfMHJwy_183Po8DAxWMOZfyQeIhmsdlQvlSLIRCE-Wyb4BB2f8LGjTjBZEnb3ErLcqsr8Pnw-F7F73qKhBZizC68jUSQVAbSG2LLHESF-7GQGZKsIPy4lEkAdkwRNwatujkBf",
+      "summary": []
+    },
+    {
+      "id": "msg_0a0de98ffcd5af77016aa0263bdcd487d29a315350e211d007",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"id\":\"M-d3bc773d4c0fa2b3\",\"P\":\"YES\",\"O\":\"YES\",\"W_ind\":\"NO\",\"W_opt\":\"NO\",\"W_nar\":\"YES\",\"H\":\"YES\",\"status\":\"S\",\"ambiguity\":\"P: \u201cdo not serve as a principal basis\u201d; O: \u201cprovides alerts when it detects the presence of an IoI\u201d; W-nar: \u201cmerely alerts to the presence of an item\u201d and \u201cdoes not identify or track specific individuals,\u201d with activity classification reserved for the user. H: \u201ca trained agent or user, reviews the image to identify and classify the activity taking place.\u201d W-ind: image review is identified, but no explicit independent-basis constraint on consequential action is stated. W-opt: no alternative stated. The limiting mechanism is presence detection rather than individual identification or activity classification, not merely human oversight. Confidence: moderate. Lens: public-rebuttal; model: OpenAI API assistant; protocol: ATRACC v3.\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "low",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": false,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "atracc_coding",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "P": {
+            "type": "string",
+            "enum": [
+              "YES",
+              "NO",
+              "UNCLEAR"
+            ]
+          },
+          "O": {
+            "type": "string",
+            "enum": [
+              "YES",
+              "NO",
+              "UNCLEAR"
+            ]
+          },
+          "W_ind": {
+            "type": "string",
+            "enum": [
+              "YES",
+              "NO",
+              "UNCLEAR"
+            ]
+          },
+          "W_opt": {
+            "type": "string",
+            "enum": [
+              "YES",
+              "NO",
+              "UNCLEAR"
+            ]
+          },
+          "W_nar": {
+            "type": "string",
+            "enum": [
+              "YES",
+              "NO",
+              "UNCLEAR"
+            ]
+          },
+          "H": {
+            "type": "string",
+            "enum": [
+              "YES",
+              "NO",
+              "UNCLEAR"
+            ]
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "S",
+              "U",
+              "D"
+            ]
+          },
+          "ambiguity": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "P",
+          "O",
+          "W_ind",
+          "W_opt",
+          "W_nar",
+          "H",
+          "status",
+          "ambiguity"
+        ],
+        "additionalProperties": false
+      },
+      "strict": true
+    },
+    "verbosity": "low"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 1614,
+    "input_tokens_details": {
+      "cache_write_tokens": 1611,
+      "cached_tokens": 0
+    },
+    "output_tokens": 346,
+    "output_tokens_details": {
+      "reasoning_tokens": 128
+    },
+    "total_tokens": 1960
+  },
+  "user": null,
+  "metadata": {}
+}

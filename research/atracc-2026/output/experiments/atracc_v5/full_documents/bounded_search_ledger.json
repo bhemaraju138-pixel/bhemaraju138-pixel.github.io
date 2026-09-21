@@ -1,0 +1,26 @@
+{
+  "recorded_utc": "2026-09-06T06:51:27.214525+00:00",
+  "scope": "Bounded follow-up of collection URLs on 2026-09-06; no claim of exhaustive public-document discovery.",
+  "cases": [
+    {
+      "case_id": "DHS-401",
+      "collection": "https://www.dhs.gov/collections/privacy-impact-assessments-pia",
+      "queries": [
+        "site.dhs.gov \"SPVAA\" privacy impact",
+        "site.dhs.gov \"Vault Access Log\" \"privacy assessment\""
+      ],
+      "result": "Cached collection did not identify a case-matching PDF. Search returned a DHS FOIA activity report mentioning the use case, not a substantive PIA. No case document was substituted."
+    },
+    {
+      "case_id": "MISSING-6FB970D7652E",
+      "collection": "https://www.hhs.gov/privacy/privacy-impact-assessments/index.html",
+      "system_hint_from_inventory": "ACF Horizon",
+      "queries": [
+        "site.hhs.gov \"ACF Horizon\" \"privacy\"",
+        "site.hhs.gov \"Horizon\" \"impact assessment\"",
+        "site.healthit.gov \"Structuring Case Information\""
+      ],
+      "result": "Direct HTTP request returned 403; web page reader successfully inspected the collection. Text search found no Horizon entry. Search found a different Horizon-based facility-design inventory use, which was not substituted for this case."
+    }
+  ]
+}

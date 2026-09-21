@@ -1,0 +1,101 @@
+{
+  "id": "resp_018ffb0590bb5b01016a9d0b41315487d2a4fe1fe5586cdc66",
+  "object": "response",
+  "created_at": 1788676929,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1788676932,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": null,
+  "max_output_tokens": 12288,
+  "max_tool_calls": null,
+  "model": "gpt-5.4-2026-03-05",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_018ffb0590bb5b01016a9d0b41bc7c87d2bb7036a5b6f866ad",
+      "type": "reasoning",
+      "content": [],
+      "encrypted_content": "gAAAAABqnQtEZIQeZXmy6r4AxmYD0yBA5cGIM0HeIqLH6YQ8bPhsJMCTTW3M_838vD8NWVKQNEJqFkgsFdM3kPf_3gUfxWhKHqfOM4bfuOh2jANOTaqHv53hGQ8pWrpQKEoxlDsqlGArFdmS1PF_ap7qR7zCBwopZMnR5gVVv3J14P91cpZl0l14y4C-6JurU7kupBVEHJ4Yq7--azn2yZwSHXCfLwG1qahjT4KWHBcI6fLzwYh6e3xV_87m9LU4CKUoIvpjKKhjfr1949lI5fZEXU-CgSzwYckcpkuT83hgHaBspVsM0W-ZaPRSw1h64bhs4oEnBsfrjhwwXxrjQODiX1_L2PmXC-GvQrz3dvbljw2OPzZwBo_MnFKhxqeFM7hhlv0uFRBIGHu49-R7nY0Ux9ijO2rTA43-nrb2r7vxx09TTfJeTBzGt7s6NSrD37DT8MQNpOwEk3JzbfW8knl5q-3-yc3_OkYqkaEUHZR3wDYOLY5u43_6AGTXzRWWj4yEXbXXGFfaqyXUD2yA3o4fL6tSSTi5Ae5k1RnajfpVnC62urDmstERVKzLwpgBSRhMRodc_8_YtbbZwq-zHHTN9bgYcZEJFBvL-aPxaG-RNIZ5eSgs1b1QxVIoGzx97_QoqZ2Uqhi-a8VgB4Y0LfIPf6vURupUnH2ehmPOFhzcApo5egbwZmBnD_fxN994iJLCmCecIS1yUIRYh3g_7k8skOmlPTNbh9YQPagu1Dzqex_ZXAKjdp_bLHOlgfNnN7y17vUQHftgUwINk5Zp52EpSZ18Ly6mUGCNr7JvQi5aO7NOB8HMQn3Tw-CVvHqLUVDns52gmWJjhZXHYEKnoSIAtIxJOAS-Vl5jrCmJEAtV--kd7h6cRW4uR8zEkvKwi0tW_bR0okB2JctcfeA6N1PfjyCXA7Lq12FDQuNzBMVPM8Ab4A2sLxna5greLDsGwW-1qLbVhIM6cxcJGRQYvYOX-iZq5vGrUlP_UeZGv0MiNX2p3suaTu9lATdzPSg65C932hgpV0gxmwNUu4jcPSMBHnOLSqFsiEdVC7dN4VQgNfsuU4154pfizz0M1pQa0OyW1H0NhdmWmx_L0by2DG3SpjeMp75IodDJEBRWDqimDP4CKI7uvZwP9Dhn51Sp2JnRNYZDo7BRUiHMGXYseQnx-yGEVUKovVMpFhA1lMgte6BFYp0dx9SSBLJhun-fjK8ZbNUTGWVpGWZlUKaJ6lQaOEIgAmZvQYt1YfN5x33iZow1l8y_QtSwFQhEBXyNEbadzUs70O2coVmtgEEu4BNzaFsVYfO8NXHQBV1CY8b64K5fX9bK5CrbLmFzRCijSUhSIts63sZJl1ag_NQkDPqylbEjePfxL9-KhESWTf72HZuoBi4flg0Ztv19tp6Dt5QZQurbpFp6hrsyZX6zF40avZ0LyW488Dx17-PF4RaSvhQ51TbuE_20rFI3ofMKwOLkH9sE3nGbWZLvEXm3cOSa9VhsFOdGl_Cir1Xyn9kPhGziz7I49afPOWoGrotDUoXcDanPr2D9zM9NLlm1-S5HYJArE8_Qcx0XnHVWbBosIdrx0uIEU0WVh3Ssm0NWx6bAy3P_Ah3iICozAjfcf452Jz0VNRsc9TpcKOs4TgnQScFTDruZhFAyexaUs2cL8UiDL7kYitgSHlSX3RhmwIbYF4SQnJp5hr9cv01vIF9-z0YmULHIoiBql2sP2ZdTB6aaE0L9bWs4VO519ZtoKl6Iy0btgbJ53WzmiBqQkbin82PJV5oDTKQwzIKNoR3e5s-GFxFE1WPu6jLrN7-KW6XdHz1DHjeLZSatXwgOayzwUNoGoGK1pff-BeKENGcxD6N__KPrzhLtu0p65KwUR6Cc5zJOhNO78yXgxF7smMfgJ92jxaJ_atvgshitezu95QxwZGPWZdLu5i1KRBiXJhkopQI8Jym2kUvrWFZbyiBcRlse3Xo4s-6g5pW9pwIDpLtvn0WyS-ivpf4mLy55WvACbrOU-9ssgtIkIS22KjRJb2vdp4TGn8-l3FCPVn5qWB0ztEsh800XxtHiFJLuo9gESGgOwkoZNTxwk370P5HKhj91bg-opPagpoazOc9k-_G-xABg459prcXU4o58Zi6Hi4oGIfwYu-5DYIUCQZS9e2_F2HTRYbOwXAEys9H85zCtxpfdEs6rLJ00dLmVjupcGM5W-y_Iy7mOp8TiVP6xtGy9c3hLHYNHBFwurKen-SfpTfW_FvZu5EswFB10yEFxhAY8ZNQJsBCMCY_GI9b2dsxk_fqU219Gfqwordkp5nJvWcUAjTjOa2UaqPz5dAzPLW3JILv4vvsUzT0kfxalAvOOHEgNDPX7EHiBdmcpool4PJKSWnbzemC81hKgd2_mGiYdnLWBxY_yhaxtXssxvbGJNKjC4bEcIOCwjUqWsl7q6mjTDBMb14i_6iE4yyZiouV8uI6W6wzUHemv5u5HHu5-gfmPp-o=",
+      "summary": []
+    },
+    {
+      "id": "msg_018ffb0590bb5b01016a9d0b43cf6887d2b2365ea7421fcb27",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"id\":\"T-93d9abe92b75\",\"P\":\"NO\",\"O\":\"NO\",\"W_ind\":\"NO\",\"W_opt\":\"NO\",\"W_nar\":\"NO\",\"H\":\"NO\",\"status\":\"U\",\"excerpts\":{\"P\":\"\",\"O\":\"\",\"W\":\"\",\"H\":\"\"},\"ambiguity\":\"Rationale is only 'This deals with international safeguars approaches.' It does not state any high-impact predicate, AI output/use, limiting mechanism, or human-review basis; 'safeguars' appears to be a typo.\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "current_turn",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": false,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "text"
+    },
+    "verbosity": "low"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 1298,
+    "input_tokens_details": {
+      "cache_write_tokens": 0,
+      "cached_tokens": 0
+    },
+    "output_tokens": 334,
+    "output_tokens_details": {
+      "reasoning_tokens": 220
+    },
+    "total_tokens": 1632
+  },
+  "user": null,
+  "metadata": {}
+}

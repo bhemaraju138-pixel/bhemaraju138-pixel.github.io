@@ -1,0 +1,15 @@
+{
+  "created_utc": "2026-09-06T06:38:51.139026+00:00",
+  "models": [
+    "gpt-5.4-2026-03-05",
+    "gpt-5.4-mini-2026-03-17"
+  ],
+  "endpoint": "https://api.openai.com/v1/responses",
+  "reasoning_effort": "high",
+  "max_output_tokens": 4096,
+  "records": 138,
+  "inputs_sha256": "24ecb59baace68acd1a214294035a15fcc3c8877765566903a5e49e83fdb6076",
+  "codebook_sha256": "0a1dffe440a2e8d837339873e891c5cabef8076f806ec8f971f52fd314eeaa84",
+  "design": "Post-review prospective computational replication; not preregistration or independent human validation. Same-provider models; no cross-provider independence claim.",
+  "rules": "Record every first response; retry transport only. Missing or malformed outputs are not counted as a substantive U. No legacy labels or agency/title metadata in prompts."
+}

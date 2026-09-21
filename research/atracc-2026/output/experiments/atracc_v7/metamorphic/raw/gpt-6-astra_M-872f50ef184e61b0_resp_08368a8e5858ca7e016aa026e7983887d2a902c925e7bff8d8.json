@@ -1,0 +1,183 @@
+{
+  "id": "resp_08368a8e5858ca7e016aa026e7983887d2a902c925e7bff8d8",
+  "object": "response",
+  "created_at": 1788880615,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1788880623,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": null,
+  "max_output_tokens": 4096,
+  "max_tool_calls": null,
+  "model": "gpt-6-astra",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_08368a8e5858ca7e016aa026e8b44c87d28c08923f19a3d3b6",
+      "type": "reasoning",
+      "content": [],
+      "encrypted_content": "gAAAAABqoCbvwlzF0ZmnCVABSam79_fYLNYhKcwECDsBlQWkysoNOw-u1ICBMyMvKaK3cT9VM_3RsFxFccPTQIDzeICJuDy1rOOneOeXKwdTYp4HOVmXQG8T8Lq49pLe4cfyqY5plTjrrnnJ84IjuQ-Pnu51KlSpirXckD5dDwC-A7IeRDbIUuyegijR3Puj7QsT4IKzOMAivjCmqefwJ8IZpXomuxS8zYm28zkf2Tk33Cx96PkMR2jYqgsNmdTHcRh0888w7gv-_RPLJ1EjjRKY-ILVUL32d1F_rmFs-P3yohQkven0SvNe3r1h7AOWE_7D-veFs8lngzCNdNuwVqQ5gwtJB7qXSCCKnKfNGO6ckjyYKSuffaqDiTv1yOmUj5dZDa5KKZgnpy4P2lebjY0M4Ivm2-oZCZPUH5TM3s57fHr2dktWBDzlHoaunc5FY8dgH23TYcsSvRaXClZkxiwW94aQHNpGxoX6McGtI_bZQz1F3ha9PTXdlPUTvsi-68TdRcTAFBEZIkHRSTNBBSojjeoE4ZUmT_sdjTDSN1rY8dyq7KEUVGv280oMD2lK3JoSJV0Te-llPlmh6WJxvFmApFZTzC5B68WLWEaoTKb30ToGlectDYXvA5LCnbTezbpyQX1e-iJKbXlzU-A7BqfjSeLNHfadkVhunPa8GiUXpJ8rhcGG-0LoZVRzruTQPFmDgsXiObZOupFbT-lmQuzdfLkiu5Jb6rAbKCOKz3_m5pj30AfDE28NmVqE1PtJ-qmZKjrjVPKqUrwXtRxHSaRohmWnfSbIo52CwG_1B4JkhNd_iD11rjwZHvI1oZ1nIkn57W6lC3GV5goxQabHmv4FwiZYAi-ZiKzAH5j_6qTH1HcBdx7qPCJXFRx7ojmle2HO_tIuZ_iBAAHt0hMla_n2rlw1tiEykS1_sJC8A1FmFDEFXLYGCcYB-JHuR74BetVZlJE34TmaPd2QVneNz3pm852GhShkRAy0hh6BrW6KjY-cdJaASPRDfyvVptd_bCfIcpb42IM90DG33nSM_0MZ_wSYwU4LwXwc-lO2AIwCzneZjO0DjkwAToxpVxEy-U2D8uvLikN0y-C-D4KSrfoG-w7eWwKqNherST7HcUwuTQK_l2ouBouRNVkIvU_W_VDoN9Iy9y_-1mYYvZyfQm981xFhYmD-acLh7VLweZ-X80mmt4qDADt9RubqZzO5jNb2t_mIHyUNXzk3OXp0MXofgHtJ0MfUy-ub55oFFZUimV_pcK_EJsinwSvnKtunt0JitUghrlzI6N8oV3CxDCTm_p4Z2uSKnIitUN5DddbweO403ezrScDNWcf0LA9dnxqu0KMHVan2Ib16N7KKWu1lVA12nTxWMGZGit76T7E6EI_0jStWI5M7Lm3CCplKbzsaQA4bApg2LQS6lHL_lci470iIRs9H1g==",
+      "summary": []
+    },
+    {
+      "id": "msg_08368a8e5858ca7e016aa026eb0a9887d2bdef0f7e328cfe96",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"id\":\"M-872f50ef184e61b0\",\"P\":\"NO\",\"O\":\"YES\",\"W_ind\":\"NO\",\"W_opt\":\"NO\",\"W_nar\":\"NO\",\"H\":\"NO\",\"status\":\"U\",\"ambiguity\":\"O: \\\"uses facial recognition technology ... to create a log of access to a seized property vault.\\\" No policy predicate, independent basis, non-AI alternative, or human-review warrant is stated. W_nar: \\\"create a log of access\\\" identifies a bounded output but does not explain why it cannot principally support consequential action. No material ambiguity. Confidence: high. Lens: inventory-only public rebuttal. Model: OpenAI API assistant; version unspecified. Protocol: ATRACC Public-Rebuttal Codebook v3.\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "low",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": false,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "atracc_coding",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "P": {
+            "type": "string",
+            "enum": [
+              "YES",
+              "NO",
+              "UNCLEAR"
+            ]
+          },
+          "O": {
+            "type": "string",
+            "enum": [
+              "YES",
+              "NO",
+              "UNCLEAR"
+            ]
+          },
+          "W_ind": {
+            "type": "string",
+            "enum": [
+              "YES",
+              "NO",
+              "UNCLEAR"
+            ]
+          },
+          "W_opt": {
+            "type": "string",
+            "enum": [
+              "YES",
+              "NO",
+              "UNCLEAR"
+            ]
+          },
+          "W_nar": {
+            "type": "string",
+            "enum": [
+              "YES",
+              "NO",
+              "UNCLEAR"
+            ]
+          },
+          "H": {
+            "type": "string",
+            "enum": [
+              "YES",
+              "NO",
+              "UNCLEAR"
+            ]
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "S",
+              "U",
+              "D"
+            ]
+          },
+          "ambiguity": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "P",
+          "O",
+          "W_ind",
+          "W_opt",
+          "W_nar",
+          "H",
+          "status",
+          "ambiguity"
+        ],
+        "additionalProperties": false
+      },
+      "strict": true
+    },
+    "verbosity": "low"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 1467,
+    "input_tokens_details": {
+      "cache_write_tokens": 1464,
+      "cached_tokens": 0
+    },
+    "output_tokens": 211,
+    "output_tokens_details": {
+      "reasoning_tokens": 43
+    },
+    "total_tokens": 1678
+  },
+  "user": null,
+  "metadata": {}
+}

@@ -1,0 +1,18 @@
+{
+  "cases": {
+    "path": "output/experiments/atracc_v4/conformance/atracc_50_synthetic_conformance_cases.csv",
+    "sha256": "3c588a63c5c061462e99f0559b985d80f7b2ef4dc691784de472a8c245fcdc2d"
+  },
+  "script": {
+    "path": "experiments/atracc_conformance_v1.py",
+    "sha256": "bbb43010b0b007e140de5d3b4e8dc7ef6bdd8085a7a5b7aa1a2ccd84694ce291"
+  },
+  "results": {
+    "path": "output/experiments/atracc_v4/conformance/atracc_50_lexical_conformance_results.csv",
+    "sha256": "ebc6ca69a5b7551091af64b8a68706d15d5f53c7c3afc1bb7f4efbfb744d0581"
+  },
+  "summary": {
+    "path": "output/experiments/atracc_v4/conformance/atracc_50_conformance_summary.json",
+    "sha256": "3c8ef6fe7861ac0e5e5c39c408243c50a2fcebbede2e8ebc5ef963fc17c15992"
+  }
+}

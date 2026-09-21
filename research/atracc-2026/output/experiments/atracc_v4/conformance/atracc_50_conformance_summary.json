@@ -1,0 +1,38 @@
+{
+  "interpretation_boundary": "Purpose-built synthetic construct-conformance test; not independent human ground truth and not an accuracy estimate for the public inventory.",
+  "cases": 50,
+  "scoreable_cases": 47,
+  "contested_cases": 3,
+  "expected_status_counts": {
+    "S": 12,
+    "D": 13,
+    "U": 22,
+    "contested": 3
+  },
+  "formula_mismatch_count": 0,
+  "formula_mismatch_ids": [],
+  "lexical_status_correct": 43,
+  "lexical_status_accuracy": 0.9148936170212766,
+  "component_correct_out_of_47": {
+    "P": 46,
+    "O": 30,
+    "Wind": 47,
+    "Wopt": 47,
+    "Wnar": 47,
+    "H": 43
+  },
+  "component_accuracy": {
+    "P": 0.9787234042553191,
+    "O": 0.6382978723404256,
+    "Wind": 1.0,
+    "Wopt": 1.0,
+    "Wnar": 1.0,
+    "H": 0.9148936170212766
+  },
+  "lexical_status_mismatch_ids": [
+    "C04",
+    "F01",
+    "J04",
+    "J08"
+  ]
+}

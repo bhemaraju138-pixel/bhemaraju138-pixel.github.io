@@ -1,0 +1,7 @@
+{
+  "condition": "high reasoning, 4096 maximum output tokens",
+  "logged_results": 36,
+  "valid_component_results": 17,
+  "incomplete_api_responses": 19,
+  "handling": "Entire initial run stopped for output-budget exhaustion. All 138 inputs per model were restarted under the medium/12288 condition, with no answer-based selection. In-flight requests terminated at the client may not have a local completed-response record. Pilot labels excluded from reported replication."
+}

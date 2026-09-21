@@ -1,0 +1,183 @@
+{
+  "id": "resp_0de78085ce3e76f2016aa026db782887d2924956f02c809a33",
+  "object": "response",
+  "created_at": 1788880603,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1788880604,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": null,
+  "max_output_tokens": 4096,
+  "max_tool_calls": null,
+  "model": "gpt-5.4-mini-2026-03-17",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_0de78085ce3e76f2016aa026dbe52887d28d051e98303fe29b",
+      "type": "reasoning",
+      "content": [],
+      "encrypted_content": "gAAAAABqoCbclu-NwtrYnc78vwTV62_zci-Tgzz_vsEBoQiTEFm8p0gOp2mnbCm9rdCE61hsplHNc-3bukM_1Q5xPgS4m4E9r2Df2Xe5HBjIBdx4JGxcHTuWyR_Tqf8fcQw7T9b1A8JFWnXc8r3_aAseSGT-AeFIP4oYYD5pC74oWqGMVfa_Wnx1R8QrKeScez4MrzNFUmYi8s9Wk4iQKtkEOXVicp3qFR6mfR0pDqmvcKj5QtQwj1bUChbjQdoCz2H0eL829_uMt9_DRlU_3lrALvPfKo4h3EDn5HeTJcmxZY0HJHPNWDz5PTCUN5bQzKUiLil5QkQ8NqjHWv67BqX286DSHa-n9tPLSnPK8wz9DKyPNe81B_7xKYZCwUBBblaHpfOeYtJY_FG-YpgzCCTygxrdj4ReEV3ZjYFYTox6We6EwjJBDjWvF4rKP3ratgqzLbksjy0-_EN4UUWNSatQGPgSSF8ID4y_BfpGgUV6rt_ugqo1R_9kZbldtYPEpmocfJv9peiGeT8nbYpVac1aFtiX0Y0cp_kFtHIz50P4P_9prNQHvyzcLmPf4e3LR6JBZe62pCSlhW1M-sI8UmyzV9FtRbOn1ZdBNZufnydoGNwUizAkyOAGbqEtMYlq4GVYitTybiSr14iLcW9mHOJ6hc7bbw3U4Xo_96i0qWzwryq7id7zdesKWvOKRNF3uii0-e-ypFt8nHrxK-aurQ2rJwamlNtOhP64MwjSDkG28AkSm3KAK403nC8AEihQEEcxeuKnEovhD0QFpMokOhN_VYggg7rOGt9EvJ8bGeB6T4l3BkqyZASgCECp1dWlN_HPLDwUZk9Jm6m4-cliuT3BUa1TsHIA16jzZ_5uLkDjHyCPl5eFz2xkf6fGEhUNEqcwLNqN2FNcXKntbCODVzYcYu0I-oQhSxnLzED9pfjUoLrg3qr-EgDA1usbNIAnIhyjLj1S5P_YaDjAH3FlbQwCkm0oNlYkvN65hlutiWn_48XoxypPzy89wLxi5mzReoZaZOvZGSq1UigeXjMvP87wFWdz3uvyj8RIsfYKWigPW0vpRh8I5hAQmCSWsX5hruaHrJdEM4k0nhPrjJ62PfIv935EqfjXKa2bapbcv2AYv5GrP1GsuvxPcGjNM4_C55sEto_fOXnxyWnu64sIP8jlThPgH2W0HWqA7aECBbJRuA5Y55A_kA8SqRbj-HR9b-dRHealswFRmJwTHmZQHRhZE4Wkqt9JuwB66VIw7otSecyAUrnvwDwpy7DRgW-Xb8BUebpiOrg5_tJ7mnl0QgCfNWxV4xjxuEL8M6UIysGz2jhuGgzjQ5XDL4cceJIBPRx3L8hXsdzpDpymZgQUigpRpxOkEGXPkMaoXpHgRI353HSbVciwwOGGKDRfm7lDbGer_LfR9IDOV6mb0xV6IH5uQ4u5ap5en6rLo2rpfEC50hKo0eZ-n3_IknsKuHmE8wxQTYqQlZ4h6AP9FOs-LscL_vNfwmrfR278JnNjMUGSvWIj5c6ul8EVdgcmWdUeH6t2IMB2hy7HMBZZ_qxpuTm--dKNDjefWyZMti9vp58igLyN_Js_YWFUqKDiFs5KhupLu2KEI83DYGOWdLaRSX15ON8xNDIqF4DsAxz-O_TxFt2HpqccDStRSEH_hBAgTZrRgxmL2PhVaxvKLQR8OGfJ28MujyF2KA==",
+      "summary": []
+    },
+    {
+      "id": "msg_0de78085ce3e76f2016aa026dc62e887d2873bbb722f10a0dd",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"id\":\"M-495ecd9977493963\",\"P\":\"UNCLEAR\",\"O\":\"YES\",\"W_ind\":\"NO\",\"W_opt\":\"NO\",\"W_nar\":\"NO\",\"H\":\"YES\",\"status\":\"D\",\"ambiguity\":\"The rationale states label extraction for regulatory compliance, but it does not clearly identify a denied high-impact predicate; the human final decision is load-bearing.\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "current_turn",
+    "effort": "low",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": false,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "atracc_coding",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "P": {
+            "type": "string",
+            "enum": [
+              "YES",
+              "NO",
+              "UNCLEAR"
+            ]
+          },
+          "O": {
+            "type": "string",
+            "enum": [
+              "YES",
+              "NO",
+              "UNCLEAR"
+            ]
+          },
+          "W_ind": {
+            "type": "string",
+            "enum": [
+              "YES",
+              "NO",
+              "UNCLEAR"
+            ]
+          },
+          "W_opt": {
+            "type": "string",
+            "enum": [
+              "YES",
+              "NO",
+              "UNCLEAR"
+            ]
+          },
+          "W_nar": {
+            "type": "string",
+            "enum": [
+              "YES",
+              "NO",
+              "UNCLEAR"
+            ]
+          },
+          "H": {
+            "type": "string",
+            "enum": [
+              "YES",
+              "NO",
+              "UNCLEAR"
+            ]
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "S",
+              "U",
+              "D"
+            ]
+          },
+          "ambiguity": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "P",
+          "O",
+          "W_ind",
+          "W_opt",
+          "W_nar",
+          "H",
+          "status",
+          "ambiguity"
+        ],
+        "additionalProperties": false
+      },
+      "strict": true
+    },
+    "verbosity": "low"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 1440,
+    "input_tokens_details": {
+      "cache_write_tokens": 0,
+      "cached_tokens": 1280
+    },
+    "output_tokens": 165,
+    "output_tokens_details": {
+      "reasoning_tokens": 75
+    },
+    "total_tokens": 1605
+  },
+  "user": null,
+  "metadata": {}
+}

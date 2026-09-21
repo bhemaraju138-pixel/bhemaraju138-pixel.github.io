@@ -1,0 +1,101 @@
+{
+  "id": "resp_09aa794e87dcea41016a9d0bb89cd487d28f8459ea71872553",
+  "object": "response",
+  "created_at": 1788677048,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1788677052,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": null,
+  "max_output_tokens": 12288,
+  "max_tool_calls": null,
+  "model": "gpt-5.4-2026-03-05",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_09aa794e87dcea41016a9d0bb9036087d2ad9728334f397992",
+      "type": "reasoning",
+      "content": [],
+      "encrypted_content": "gAAAAABqnQu8dDRkSgVRb_5XesexthB03SXzV9ydi0awHgVzU7qnXWxFZY3GFHUeWNJjkM5URRylXzvZb1lu2nnEIFK0CvMLfZmKKUxeVHgqZDz_9yd_UqXur4lEoIQE-pHMIUJ2srEAYx3lOd1cCetSsgvciKNt1jHGdO8PTzTmVS_JHyFQwKjruQFt6a6sSsun6uNfvsgbaz9uLTIEBNdIMqHGB-mKy0Uf4dwwNAWIafY1kFo7M2H8xvP4iuP20l_LVk6oO9fI9--PXiNCmNzH6mC98aIfJunfjcDFnmQMpbjwz0Ym4ZySWNt9nuxi9wGPg_kewjQJqMA64JWnY0jyI3Bv_7sZP20dNhvg3hJBDGxk5_mXdRoni3eiuV4VhfdXZNcQ_Kx2AaHMhGCSifZEF3fyQcb8A--ZkMk-MknI0bUzJ3o2LQVmBdwFEe6Pn8A1c0_cBYYB03HfAY73aq6nkHcfuMCbj1PoyWqWUuhjZQEeNFEUS67VXno-hWeYO2yRWc27HLERo4GwuNG5azeGrj1l23O9-ak159YhnUWKMTMQBy-g6zD3li_3583miQclJpoFOn5q0fu5pbaUl7VrNz5kqiVBDLGKs6RXOYtdZ6XRSxXCLldrqwARnjVGZ3iKynzpm59c2UfsUYPcQyXSbdgZVrHbg3BJAE9u1PPdanfSoZHjIpqPlajLieVlN54foYT1r0TI8PTSjvvz2phUvQKDPjzYoeBlG7sQI_f386f44xDbUOhTQw8b_BANneQoyogkB9XhfSEULgFqug71vKyKwEBotpxFXDrH4opzG2KdHWe9dLqQqI5YbUDaHJK-g9kUYQhoBE7yEapvLkgbmD5K_wEHdoQdss2zMwdSKhwbSrNlPveGlOYPizzJLRbJQl79DQExDNp5_C7rYGL1_pXeR6EUvjpV68lKGTFnf6x4HmeTSy5TImXCLXKYyGFb7qniteIt2kdS53qFNZ27u3qTcSklNv5SoNXipHoHeFSXlEU3pmMP_7NInOT8blK6VqwNw1No6PKoXpKal6Q1iGf2YC-QTUzn6lBccUknqAmbweSSG_io1IV_X-rnE3zSJVom6t6MUd8IVsXmKGX8eeTjow4Q8br-Aov9-OMaGPCMGkE_-mH6jlgPGhFn-jotAC2PfuquU86rye7jNy6iuiuwXTJcGFSjBsDrJO6QEFx9qlPEz-D-tvVewASgMUBd6Lxl15H1LxCK6famt8pYPJt--mVhXIjfieNxs3qnnU3YzxnmXIKPzh3p6uz5lvRGcLjbJfJqypVwJQH6wu7mgiuImsQzjvMdN0NfnPZ4AN0wQrNumayCh7ChxOuETE-n-4fOqLNGHRKG0FNw1UMFddlZWqe8BAmD66eR5NyohtR4-ZBRfzcZnjR4WZ2xcN8_uDLZL2ovBp37ILTWIaVuiI9NoDO0tjO7aSquX3YvU6doSJPMFzvaj9NlNTAcieAaTjeJRrBr5JdUCDJw3yzTwEfHXmv-50x8_EYViFRVeyN0craCgIPNgvBVvgDPazQuF2mlhwFdJb-4kNbU5ya6mrvEkzT2Fs3zuiJby-NFXQX_NFPUxqJe_l6Yw0v3rxweFQ62-KbZcUBBH5jcr4gnRFdl4EvGI8IS64HGTG7VmiP9QMpmxL1za4BGx2x-38gg3X-n6PX_QvNrj0-4R0FauqfbQ4WmIsYiQ08S2aUj52T6Z4mTEAmxFkKKn8wxeMrO6B0CPlxdRkUlsV-dtAUlfOfuShcOeNryB3Xzgd3pNM7eGSzce9AU-jJnFMEqDqn5krffovG5PphvkjLBoOpiWyqDNU5vGOr4gp4KK1skWywROOuco0BHa-nMUUVc7sWKbZexI2s35SjRlY1IFtdpPMeIn1BtUdiAvfFzLiD5GDW--RSdIGr4xwtWraQt_J8Q7jX1sDbhoqvqFB0tS3639luJjoZGsYum0IPpgCBO31CYzmmDCFRXMSmSxLwbWMhi2y6TdQ2_zOEi7mOXr0TqJJBn4dN3O-dO4PLSAlhDBtdt-mt1lqYytKjCEN-7d6YuBB1q4KX6dTgwzLnn9lRDmt5YvOgkx5DQ5j6Pwrg4WaMCW4NAgHxhcIJfdZgY0sReRx54S0WB1biexTXmZvoEpSovixZnjrLjQ_v6L3ZxdyYwzqX2UQwPKi92g3lCMIri8dq8ku9FTkWMi5ApV8K0PNlGA2Dd0MdzjBizo_Oy6IIpRmDVaH3WmCxkXYU7KcIbY-aFlUvsysuwhI93wKr6ffSHvQ14qxtqGHp3I3AlVq015U9IskxUMO5l66FwLN2wETH5TmcyjAM1lTN4zKBp-r5FfFrw-1SRFqHxb_3ICb7lM1eQ51eqgBNyRHBDn0HDEV97WbgGx2O7kNcRaFBiDnMsxJ7jRFAmnNGBHqMdu7PTy4lBoCyy6B_MvbmKirgg6aM5qsx5ACKsDl73tkS4ax5U9Rv6-UQbJpvGZCEcisX-ybTIrbsUMMWRvwcYstHRaM4lDcGQ-P-ex-4wVFcrgzur5_6SCLOnuam3inQW5CVOCDjMriNYT1_lgrx0qWEuZ3ZbPfWSn2Bwwv0VR995IoLcobwpzvq9er7rciUwCMtZjcw63u9H9ccL-TN1kpTbXdLsxa72Duf6JocO8yVB-p2vD69W18508HME6j6wfYu6ZqDrNzNwMx_LO1qlLykpFueztfagdjEJzWEVefG7HSBeMLdKDpyY4iAiK_PxnuCvsC21GtpWNP2YZNQguqcJKOgR8O4lqPHkWfy-SoSYKG-RjHxzzj6WynQXYsEcJaQSOvD_rmvqXq01F0yFTaHoijq4eFCis9snl_rrjdAUHUlQ4JCUnM4Y7gFb-HCytsosyHi6LSolV8fC4StSf5pVTh-f41Bt1sNYkQzehps1wvk3iZDGtZcOaPwL2gBFcBgAbssY0hUPIe4wpCxKjWqginLcDnmWMjUW6chPh5vi-BIX2vSYzQGAfG9W2eOEsS6haatqqNbnY_GsUM9YRiQVCNv0Cr4tEDNgVxPnA86jI2hR5imNcP7Ryl0vlrCMoWDEKTcaj4Ozx7w1Bjr2prqHpjDFaC74R4fWstuP-FFkpfcWzhmOCw8ukuNRG4sS2_6CL7FAHaBaHAjFexU2It8jydIwWaSvzEtziH9PSxx1S1i3NQkOZfVZ1LcTbPakPLwIhyxPYMIFFdToeVkVNX1vxvKj-CtLFKPduXNaji19OHxTC21ZwFbDWnr0SYlp2wFQiCVFXlwVzojyzb62IqZs2x0SvYRaTI_Vx4-RAZvM9-Amuqw9M2Ib26CUz9PoxhCDXJ9WNIAEywAJI-P6XZnKWyoCeTxVX_MeG6uKShX5W-mObIbBxGi2uPRo7wsvFd6dDYBqKYTkwSQPZM5tVAfPZiNnem3gB8YnGj-7OJYy2opHd7Bm6o4x6qo9IBrXMLOw91emP3z1z9Hi69Z2Po8exIU0dL0X3wPbZFcfTl2he6vIvTEdeX3rUDxL0W8Hx-d8mwzQb-o0mmwtBZfuf7JeLxN4sBD-",
+      "summary": []
+    },
+    {
+      "id": "msg_09aa794e87dcea41016a9d0bbbc68087d28fa66395f2fba7d9",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"id\":\"R-06\",\"P\":\"NO\",\"O\":\"UNCLEAR\",\"W_ind\":\"NO\",\"W_opt\":\"NO\",\"W_nar\":\"NO\",\"H\":\"NO\",\"status\":\"U\",\"excerpts\":{\"P\":\"\",\"O\":\"integrated into all LANL collaboration and productivity services within M365 including email and Teams\",\"W\":\"\",\"H\":\"\"},\"ambiguity\":\"The rationale identifies where the system is integrated, which suggests workflow context, but it does not state what AI output it provides or any policy-threshold rebuttal mechanism.\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "current_turn",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": false,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "text"
+    },
+    "verbosity": "low"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 1310,
+    "input_tokens_details": {
+      "cache_write_tokens": 0,
+      "cached_tokens": 0
+    },
+    "output_tokens": 476,
+    "output_tokens_details": {
+      "reasoning_tokens": 362
+    },
+    "total_tokens": 1786
+  },
+  "user": null,
+  "metadata": {}
+}

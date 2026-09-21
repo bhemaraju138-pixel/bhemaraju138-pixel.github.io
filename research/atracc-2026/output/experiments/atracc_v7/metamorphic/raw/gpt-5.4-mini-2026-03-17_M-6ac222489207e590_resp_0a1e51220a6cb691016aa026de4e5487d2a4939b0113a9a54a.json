@@ -1,0 +1,183 @@
+{
+  "id": "resp_0a1e51220a6cb691016aa026de4e5487d2a4939b0113a9a54a",
+  "object": "response",
+  "created_at": 1788880606,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1788880607,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": null,
+  "max_output_tokens": 4096,
+  "max_tool_calls": null,
+  "model": "gpt-5.4-mini-2026-03-17",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_0a1e51220a6cb691016aa026debd6487d28653155678f4bcb2",
+      "type": "reasoning",
+      "content": [],
+      "encrypted_content": "gAAAAABqoCbfNZcFY13WKDll-wuxnVIbAz2ysCJhLHb5Ejppgf-5RE0wbB6_mlESd-7j1ZdOAfeHBILhv6wN7IUqmmeweGfR123hYSY68qoTxthFAeODoU4YaqgVKmeD4URU6vJtmy6W5ZcuDpfr3FscIVynDjHp0XKZqtcIPuu-04VXlcEjB86YoN1Nb7kRtlu_iqwfM4V8QkvsXXJVfEoOJ7ZYzE2CdkC4F1EtNWyvji4LCxHsa14VFBpDlX2K2UYY8oLwSJsqLuLXeVNWoCCJw47H6btZVYR2cIfVDokOIvXw6MR8wWGbXAgapU4yL6n9HE6yc7tO6PCfSnwIOfjgJi678BEvKRMr_zLHcKzGyUMnliLuJ8KykwtyNdYjB2q_OU-SiAHZ2r14nQxTu7chkWAwqwiUb-IABT50G0WVXLJBRFotY9pVISnEO9yRsxLktmmYD6tZPo9N_XcSkMt_yY1Qm-5gVLh5OcDiBsTy1GuXWBsfi__a-YlxOw3GT2UN35seDhskvWAU9J9sBX6Nm4OwkUDPSoKLRM6ntf_Yygt1KUy19icDDY8SS9PY0fwLuJpHOs6NdL8-oLC4ZbMgZXfP3Ygu-xDNmv185C6XdvEPgMidYqVOZy4KQX_iZa8PSQ5g3Fy5dU5UnOR9K5B1V5Khr5QijV1Lr_vRBs1YGi1WrnD0Ybebh_dxJ8YiAZL46zKC5y9k76gfW_FOuU1PYYMfOzGmcl6Ty2nhchi_q_aqxq3OWFs0Hw1sUDr4jFaXedI9ONImfSIEb9W8VFwbz5Mn21ZSVh64GIpljov67ZHpOx_gH20UB1kinyF0NDZscPZRZoy2IajfEotbkj7obNHF2hkgBDy7izZoda6REQkNzTRS0jPTYrkRb-xrN5xwpR-C_JXVgFV6oNgU1MHVekfEbhUR8zuSYL5xYViYxee3AzGqfjTrGq6SS0bdO0FaZh99n5a9pKIGTrsaD7Amb6XQ8aOP8UzGhz9P3jUVscUkeOW16-cY5Qpm4LVSqb5s8GrhtTeshtgruP2M4DDWR6V32iCHss2R4Di7EuBhzjTLIWXke4gMp4DT2pzlbdfKwmftv5-ezP_eEAdUYF01eu9OPF0sQhuKCqLdDxOJTbDjl3X_3xdaoxWyZOD1YgCKdKhrEG8be4wh9RLKCgf6jqEwFF9fwE1OZO2njIhuTdIOj8JLGXUgzqfiHN8_NNgwhJluZSZK6telYrAMbtDighYzNtwnst64HRNSrDIx_GKzCWOA-duAUjU3ulfJ-G-jgeMElny8bQv8Tm-i6_xn4rYBWQ4EJxscCTQK7m2FnjsdzUy7n0YBl8CwZkDlpch06CHsiL_yuwzYDFr9-HeRLlYpUgh3_pxJPWImsSGgVj4dZcq-FGzaq6xD0lSvm4y4JGLiJTiWdqc2nEAsI6FFkHYmS6dt3-2dCvDfQwARoiwfOgGQZqgdxsNQ5yxSEmrRmNWsxMGyoj5jvNYXnIyd6dDOuqq6IzfnO62-f12jxV5snuoohQFgaPGntR-ZeXjPLJ-rmNuJCsqo9MgGzh_pT72mtQB35cIGL0yqJjwBIIGUFaahKUsMLbLeTJU_X5I_zSV6P5djwjlrMA2RO1lS853q_Uiv5C82F7DyuXXkot_qKvjpsTOmqK0BZjtLqd-gYICTR8V515DZfpI0fPo3KlYhJjvOcJOdarSOVXu2xpy9tWBWSk3mXt_xBv0QvVKtqhPa8mlidxMIUWJWaIuT2BOCWtyMHy_MC0AqHhTcbaJGC9W716E=",
+      "summary": []
+    },
+    {
+      "id": "msg_0a1e51220a6cb691016aa026df576c87d293b22a468346417f",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"id\":\"M-6ac222489207e590\",\"P\":\"YES\",\"O\":\"YES\",\"W_ind\":\"NO\",\"W_opt\":\"NO\",\"W_nar\":\"NO\",\"H\":\"YES\",\"status\":\"D\",\"ambiguity\":\"Human review is the only stated limiting reason; no separate non-AI basis, alternative path, or narrow mechanism is identified.\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "current_turn",
+    "effort": "low",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": false,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "atracc_coding",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "P": {
+            "type": "string",
+            "enum": [
+              "YES",
+              "NO",
+              "UNCLEAR"
+            ]
+          },
+          "O": {
+            "type": "string",
+            "enum": [
+              "YES",
+              "NO",
+              "UNCLEAR"
+            ]
+          },
+          "W_ind": {
+            "type": "string",
+            "enum": [
+              "YES",
+              "NO",
+              "UNCLEAR"
+            ]
+          },
+          "W_opt": {
+            "type": "string",
+            "enum": [
+              "YES",
+              "NO",
+              "UNCLEAR"
+            ]
+          },
+          "W_nar": {
+            "type": "string",
+            "enum": [
+              "YES",
+              "NO",
+              "UNCLEAR"
+            ]
+          },
+          "H": {
+            "type": "string",
+            "enum": [
+              "YES",
+              "NO",
+              "UNCLEAR"
+            ]
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "S",
+              "U",
+              "D"
+            ]
+          },
+          "ambiguity": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "P",
+          "O",
+          "W_ind",
+          "W_opt",
+          "W_nar",
+          "H",
+          "status",
+          "ambiguity"
+        ],
+        "additionalProperties": false
+      },
+      "strict": true
+    },
+    "verbosity": "low"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 1454,
+    "input_tokens_details": {
+      "cache_write_tokens": 0,
+      "cached_tokens": 1280
+    },
+    "output_tokens": 176,
+    "output_tokens_details": {
+      "reasoning_tokens": 90
+    },
+    "total_tokens": 1630
+  },
+  "user": null,
+  "metadata": {}
+}

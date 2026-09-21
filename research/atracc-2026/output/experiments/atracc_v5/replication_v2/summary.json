@@ -1,0 +1,108 @@
+{
+  "total_requests": 276,
+  "human_labels": 0,
+  "models": {
+    "gpt-5.4-2026-03-05": {
+      "valid": 138,
+      "requests": 138,
+      "inventory_n": 70,
+      "template_counts": {
+        "U": 24,
+        "D": 14,
+        "S": 32
+      },
+      "mapped_record_counts": {
+        "U": 59,
+        "D": 17,
+        "S": 34
+      },
+      "agreement_with_reconciled_templates": 55,
+      "mapped_record_agreement": 95,
+      "conformance_scoreable": 47,
+      "conformance_correct": 42,
+      "external_n": 8,
+      "external_correct": 8,
+      "repeat_n": 10,
+      "repeat_status_agreement": 6,
+      "repeat_component_vector_agreement": 5,
+      "formula_status_mismatches": 7,
+      "conformance_components_out_of_47": {
+        "P": 39,
+        "O": 34,
+        "W_ind": 44,
+        "W_opt": 47,
+        "W_nar": 41,
+        "H": 40
+      },
+      "without_DOJ_counts": {
+        "U": 27,
+        "D": 17,
+        "S": 34
+      },
+      "nonempty_template_counts": {
+        "U": 23,
+        "D": 14,
+        "S": 32
+      },
+      "nonempty_excerpt_checks": 397,
+      "nonliteral_excerpt_checks": 12
+    },
+    "gpt-5.4-mini-2026-03-17": {
+      "valid": 138,
+      "requests": 138,
+      "inventory_n": 70,
+      "template_counts": {
+        "U": 27,
+        "D": 14,
+        "S": 29
+      },
+      "mapped_record_counts": {
+        "U": 61,
+        "D": 17,
+        "S": 32
+      },
+      "agreement_with_reconciled_templates": 53,
+      "mapped_record_agreement": 92,
+      "conformance_scoreable": 47,
+      "conformance_correct": 42,
+      "external_n": 8,
+      "external_correct": 8,
+      "repeat_n": 10,
+      "repeat_status_agreement": 7,
+      "repeat_component_vector_agreement": 2,
+      "formula_status_mismatches": 0,
+      "conformance_components_out_of_47": {
+        "P": 39,
+        "O": 33,
+        "W_ind": 44,
+        "W_opt": 46,
+        "W_nar": 45,
+        "H": 42
+      },
+      "without_DOJ_counts": {
+        "U": 29,
+        "D": 17,
+        "S": 32
+      },
+      "nonempty_template_counts": {
+        "D": 14,
+        "U": 26,
+        "S": 29
+      },
+      "nonempty_excerpt_checks": 353,
+      "nonliteral_excerpt_checks": 31
+    }
+  },
+  "interpretation": "Agreement with archived/reconciled codings and conformance with construction-time expectations are not independent criterion accuracy.",
+  "between_models": {
+    "inventory_templates": 70,
+    "status_agreement": 52,
+    "component_vector_agreement": 22,
+    "both_agree_with_reconciled": 46
+  },
+  "usage": {
+    "input_tokens": 376742,
+    "output_tokens": 432526,
+    "total_tokens": 809268
+  }
+}

@@ -1,0 +1,183 @@
+{
+  "id": "resp_043adfb263f4429f016aa026b44b1887d287f18430cef8feeb",
+  "object": "response",
+  "created_at": 1788880564,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1788880571,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": null,
+  "max_output_tokens": 4096,
+  "max_tool_calls": null,
+  "model": "gpt-6-astra",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_043adfb263f4429f016aa026b55e2487d29e7b203c6201e562",
+      "type": "reasoning",
+      "content": [],
+      "encrypted_content": "gAAAAABqoCa7W3y2zYmg6xN9lc5OuPnM83jVOFQ6xB8diWzQeSYexYyatfw7owEWvgUPJnQ7Q_RDSVokUrcvP5bmE2Km_6q-33p31mu48IV9q1Te0z_89MnYsjc3_3L8OPOyxjkgvVTLJ_Jzl2mwmptEyPLTePczhQGk39tgEBiE2FcIDKGm170TUypoJJRVOryHUIUpNUOGm8N62fp4EMex4C0-NY3PY3bgdNrcN2dw-9npbDIkEi8_I8ElBx_tpZBIixTTfScNt_oks4-cS9wyA6RZ91W98kEqYlg1jekHVwwU_7TesBRTV_9T0g16rQfWy82QLfpGwCve5d0LTHEP4b_p5DjjC3x-4r9tlH_94eFZptrneAcUjY2haTZ6ztDAcmYiYaU_rZRYZkRsU2zeU2dejHg4Yu2GoaPSYtgOWIwSzgZQ93diF6NA6wHW-dx-ae9eRsT0kMfOMtgY4qEyZfHmmlr51NNIwqgRlsSJkyPHxy2PhGJ1h0OaQD675t_-aA9rKuq0rs8XvlFJPLYKD2SdMl7GCxzoQoFB39Tit06pKN_Q2ZTWjcjuZTiial2auOxx4LP5FGRZjELZ8TZQAWHUpZ3n0C5M0mBbrxdWA5cQYnfMsElfNK33DFv8RxWjjhkPQxjtTzOScER4EOaL9LHdY4XMBue4OriJPQkrgRgBJ8IjG3ofKcT4IHM2LpAIUgwiCSfUHPRF_YIAqzbgtRBioE8EPKAbmEwu8GbNHwadvLeiHiH_7CfXVRL-tPmIxJkWHEUMq-iwf2pPik2v8_Y6dizILiMaw3IMTmm9QDBDAOOINL3ugql1A1Mhzlzxq48v3vG8dcLztPgicGFPeUBdRmWoPE6XWyZYU2K8rwMHfxVarfcyhFfpJ1nRnNC2KdxeEd7sxrpwf1y_OmtgYHQBA4oQJmyKrm0D9aI4xItJxUmupnAtPBjHhnMQ-thj7cM_SbCC2fQEiekc-vWGrfIIewAGwYKKNc-2JgNn_j45fl2jLQEg5Mbmk9fw7WJqUBL22WR3BaRCESFNM9PUVMpZm2M-iBQqAuPdSe-32JSTllITQztTMSXcuwG5NLxbcx9FCPfSIuI9ukQbtlf4N75lpK93I8G2RvnQo-9USodl0bixvBEBv1ekRYXiE0DZDfWJXAekSwaINc0dRna9kU8itKPvjsQ7dEUSAyraZH2DbJSWXwDx6jQ_k5Su_QX4WMC4fmULgj3_JwJfTl1k_dC8oK_iSV-gOq8TL9co0Fh0-lAdOjCyCkjgVhGa3OlPr_kVsDIpLnJhPCgLOgBdnurc5us_Psjf7KKSKW7Zj8S5SHnnoY5N4gvnCmt-usHYiKkxV8zQRLCwHh4h0HQT6UxQ3Elbd5N9v0R0ab62qhhjl7absVhx3IXzivBSaUcbTU7HfQm1hVKwrxAF1p8n8NhsFrakGL8L8dEhvwVTir4awPXuM9o=",
+      "summary": []
+    },
+    {
+      "id": "msg_043adfb263f4429f016aa026b75f6487d29c095e182aa408f7",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"id\":\"M-0a256e11550f50ff\",\"P\":\"NO\",\"O\":\"UNCLEAR\",\"W_ind\":\"NO\",\"W_opt\":\"NO\",\"W_nar\":\"NO\",\"H\":\"YES\",\"status\":\"D\",\"ambiguity\":\"P: no threshold predicate stated. O: \\\"integrated into all LANL collaboration and productivity services\\\" identifies a setting, but not a specific output or its workflow role. W_ind, W_opt, W_nar: no qualifying mechanism stated. H: \\\"A human reviews the AI output and makes the final decision.\\\" Human review is the only offered warrant. Confidence: high. Lens: public-rationale-only. Model: unspecified. Protocol: ATRACC Public-Rebuttal Codebook v3.\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "low",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": false,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "atracc_coding",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "P": {
+            "type": "string",
+            "enum": [
+              "YES",
+              "NO",
+              "UNCLEAR"
+            ]
+          },
+          "O": {
+            "type": "string",
+            "enum": [
+              "YES",
+              "NO",
+              "UNCLEAR"
+            ]
+          },
+          "W_ind": {
+            "type": "string",
+            "enum": [
+              "YES",
+              "NO",
+              "UNCLEAR"
+            ]
+          },
+          "W_opt": {
+            "type": "string",
+            "enum": [
+              "YES",
+              "NO",
+              "UNCLEAR"
+            ]
+          },
+          "W_nar": {
+            "type": "string",
+            "enum": [
+              "YES",
+              "NO",
+              "UNCLEAR"
+            ]
+          },
+          "H": {
+            "type": "string",
+            "enum": [
+              "YES",
+              "NO",
+              "UNCLEAR"
+            ]
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "S",
+              "U",
+              "D"
+            ]
+          },
+          "ambiguity": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "P",
+          "O",
+          "W_ind",
+          "W_opt",
+          "W_nar",
+          "H",
+          "status",
+          "ambiguity"
+        ],
+        "additionalProperties": false
+      },
+      "strict": true
+    },
+    "verbosity": "low"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 1435,
+    "input_tokens_details": {
+      "cache_write_tokens": 1432,
+      "cached_tokens": 0
+    },
+    "output_tokens": 204,
+    "output_tokens_details": {
+      "reasoning_tokens": 39
+    },
+    "total_tokens": 1639
+  },
+  "user": null,
+  "metadata": {}
+}

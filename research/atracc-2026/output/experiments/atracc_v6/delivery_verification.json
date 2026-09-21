@@ -1,0 +1,100 @@
+{
+  "pdf_path": "output/previews/atracc_v6_balanced/Barri_ATRACC_2026_Public_Rebuttal_Audit_V6.pdf",
+  "pdf_sha256": "90d3935e0d7f8089e105dd4ccb4cc443a6eee03b5e813d60ae402e83c957afa6",
+  "docx_sha256": "baab71a73e7d635b8594d0af305ebeb6062bbd2e44211ecb7572f62c849e0ba4",
+  "manuscript_sha256": "b157a718454acf276351577e513c5fb61a5f43d957cb39beebfb438395e7c8ac",
+  "page_count": 8,
+  "references_begin_page": 8,
+  "pages": [
+    {
+      "page": 1,
+      "words": 655,
+      "text_bounds_points": [
+        54.1,
+        91.58,
+        558.27,
+        694.41
+      ]
+    },
+    {
+      "page": 2,
+      "words": 771,
+      "text_bounds_points": [
+        54.1,
+        55.33,
+        558.34,
+        694.06
+      ]
+    },
+    {
+      "page": 3,
+      "words": 737,
+      "text_bounds_points": [
+        54.1,
+        55.76,
+        558.44,
+        694.76
+      ]
+    },
+    {
+      "page": 4,
+      "words": 688,
+      "text_bounds_points": [
+        54.1,
+        55.76,
+        558.24,
+        696.86
+      ]
+    },
+    {
+      "page": 5,
+      "words": 670,
+      "text_bounds_points": [
+        54.1,
+        55.76,
+        558.24,
+        699.06
+      ]
+    },
+    {
+      "page": 6,
+      "words": 734,
+      "text_bounds_points": [
+        54.1,
+        55.76,
+        558.29,
+        701.11
+      ]
+    },
+    {
+      "page": 7,
+      "words": 739,
+      "text_bounds_points": [
+        54.1,
+        55.76,
+        558.26,
+        695.76
+      ]
+    },
+    {
+      "page": 8,
+      "words": 373,
+      "text_bounds_points": [
+        54.1,
+        54.94,
+        558.33,
+        384.94
+      ]
+    }
+  ],
+  "native_equations": 2,
+  "tables": 4,
+  "tracked_changes": 0,
+  "comments": 0,
+  "headers_and_footers": 0,
+  "page_numbers": false,
+  "font_check": "All fonts embedded TrueType; Times New Roman body/headings and Courier New code. No Type 3 or CID fonts.",
+  "visual_check": "All eight final pages inspected. Pages 1-7 are byte-identical to the previously inspected rendering, and the newly balanced reference page was inspected. No clipping, overlap, broken tables or missing symbols observed.",
+  "renderer": "Bundled LibreOffice via render_docx.py with tmp/atracc-fonts.conf",
+  "python_document_runtime": "3.12.14"
+}

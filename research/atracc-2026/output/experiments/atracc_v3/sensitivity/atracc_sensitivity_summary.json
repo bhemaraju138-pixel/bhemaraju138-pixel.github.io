@@ -1,0 +1,61 @@
+{
+  "items": 110,
+  "passes": 5,
+  "fleiss_kappa_nominal": 0.8451713326856839,
+  "mean_pairwise_agreement": 0.9072727272727272,
+  "mean_pairwise_cohen_kappa": 0.8453063956852546,
+  "vote_threshold_curve": [
+    {
+      "threshold": 3,
+      "S": 31,
+      "U": 59,
+      "D": 20,
+      "lower": 0.2818181818181818,
+      "upper": 0.8181818181818182
+    },
+    {
+      "threshold": 4,
+      "S": 25,
+      "U": 69,
+      "D": 16,
+      "lower": 0.22727272727272727,
+      "upper": 0.8545454545454545
+    },
+    {
+      "threshold": 5,
+      "S": 22,
+      "U": 76,
+      "D": 12,
+      "lower": 0.2,
+      "upper": 0.8909090909090909
+    }
+  ],
+  "leave_one_lens_out_ranges": {
+    "S": [
+      25,
+      30
+    ],
+    "U": [
+      63,
+      67
+    ],
+    "D": [
+      17,
+      18
+    ]
+  },
+  "legacy_vs_consensus_kappa": 0.456280893131072,
+  "legacy_class_metrics": {
+    "S": {
+      "precision": 0.6,
+      "recall": 0.48,
+      "f1": 0.5333333333333332
+    },
+    "D": {
+      "precision": 0.6666666666666666,
+      "recall": 0.375,
+      "f1": 0.4800000000000001
+    }
+  },
+  "interpretation": "Agreement is among blinded computational passes, not independent human coders. Threshold and leave-one-lens-out results quantify coding-rule sensitivity."
+}

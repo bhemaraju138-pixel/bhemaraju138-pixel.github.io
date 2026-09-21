@@ -1,0 +1,183 @@
+{
+  "id": "resp_0b1517df558e4494016aa02677498c87d2ac2ec51ba53d01c9",
+  "object": "response",
+  "created_at": 1788880503,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1788880516,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": null,
+  "max_output_tokens": 4096,
+  "max_tool_calls": null,
+  "model": "gpt-6-astra",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_0b1517df558e4494016aa02678901c87d293b2d72f494a434b",
+      "type": "reasoning",
+      "content": [],
+      "encrypted_content": "gAAAAABqoCaEBGjHtj_bRDoXW166_xS6xsy0tEnNFmNzdQpNtz2T1NXlMCixXYDjxK2tRDN5RM4MjMwcpuc4WW1YBzIud6Q8_CJULRHvdVNU0VtGC9iexlUBYNhwqqmQWZLxUNXlKy2Q0HwCpdT6W9ZASSKMSXs0-bmU2iT4Ee2KjbN1y36-pBV129MDJezGEmIbgbbl1F3qdFuyFERohvCblKQ992d_b4FIkHwSDSmN2oTEwL-oNerzxF3qat9BIt11eqpKO2bdTnbMY9xqNo5xz4dz1HP3Z2jCNtw0RTHo8ee3JuwcCWWy4NPhKtkWCr4ybAQVphKIqHDDCTIEf9M2aEfAdX8BrWr4sdxw4g6iYKgg_IkT6L6vAwSd9evAwFfHX9y7huirqlRRJqo2Pz8qmJip3jmFJxEITxMvCTKYe7N3tX3ZbE4V6APLHGeiouA8gL9NphF94NJMAa-ByEplvC70RJ7VWvL5rdrx6FaosdxIimeGXVMnKKdl9_Hrgs_bZVRcFNMIAfnuCkgTaGQM2SGuMQHMEZQLy2pFMHzO9dfmx0p0UMBnDfoAHvgROhJu6iIt18eHMjPPD0YdMjkLsAtVQAt8AlF82htKCV-q-8ELC6oOa4rgojg87ydyr9Adh4lpfK1v-ff40dmQIQH9HB7Jnf5B4EG4fhH-z-z8eK-kDSkz-rv7WzW5heTxxUrWZztFimKJ23djS6f8oR_-cqj0qrum80gay9iLhW2Kl7KsuDYT1erxemxV_I61XKjigUU-Dvib1aHR-O4tJzyVBMPrlUgnPsUDgs9z9WiLzLENBMLL2nigFhaJS3U5as_RXhbS4JEA4xzmd4WTC98IWoGJmxbfVcbDT5yUVwqY4yYCKWTaR2llZLgahtQXLNXf0CIKdlpafj_PGox7EiLy8bCQ1b7HL7r8JDF8H3VgRbBSaM4_O-iki10CMBjkI_ZNIwUwl4RWtxOPxt1ZROEl8CAIGBJGHA7yVIqu4TzmWXTzP8N15Xd5GbE-irLFp3rdL0kDaN9teSMQU6omuEKhka-iXIw0AH0q0NO3X6LVMYi8sCZj4aa3PSV8FKmqj0kXWdRsPVLoTsTYkInD7LKgFEb4TYBznaoAc657-_4MwocJ5zjIXljTffl58kQazWy8DIxip9O6l9UHrVKLhjJLLSaAsGKciH7JTNkohiILAcR2NmtXVT0ERcCK7ITh2PT_fv6JJh7R6I2QIqHvVry5OQEr5qvKPOJhgfW6hhrYnYl9ZqTYG08IJ02HvfrGrbtQzHBvaPvM79Gu4bdSaE6rqoDrn2sjBug6PCahV_gy9d9vPn-wrfCdlrmnXfmMIVNiqs7WPIac1LHhOKYvSh3x8DtM_-8asbOSDzeXDSpsttmgrhnM_b-r71BRnB60ngMBPFpLy8JpjHEpf5SZbDEyb-5l2IZCMxMvaT7F7JUgRttdMQM7JwAUAzrAwnrGnRzvBbb3BbC0qC3EnmzC2qyN44gOntpbdzJzOto_AOThC1GT-M6SQ0Do1FuHnJfipqsZLaEkhdm-OU1x8jFCHY4CVpWAXhSNyrN7tePgO7s7N1AZ5yGxOd9ZeHLvIWm4RZaZcpxd0d3UC0cniIiebRTjjLR5TvlfG8b8ZNlGK9g5MiKvDgJx414hyWMs3qi0jOp5ay7nIERkO7vXFHYkkx-ZEvyets3ZJwAxB57Bg1KqD_XtMWYLi_QreR4NC_zzzU1ZT2ZJXgWReEQEMjvWz6WsKggaC2e_gv31XoxDjqr7VaRI1bMYoxVZ2krVmNTSPA8Us_hkJqB4DZ1G_JA7LAQ56rDZTfisQPhgTMP4IugZomo6AFzyUoYUaWQB9M3HoAW4UtR7F-WncTbyNxK0e_D2P2YdJvvt0o8KGUJWRhEj4-YCpjOv9N0nIKoFOf6j-Q2SKcHVcY26pRlmnh3-S_0Mh9xStzrbBK8-AjfqxDhbC-j4wMkLu9HzlMAl9drtZg-ECZfI4vultOWnyOG6CogYVtSuifjLnEYdO7PkgvBLoDM4X4wzP2AGQpV2I_vgl6q2U67Er1ajh6ogrmyBrVEsyI5yCcuFnp0hFoAJ3rg37lvNc9UX-rpmuZnQ6gIcqRE0RbYVQhgwiQAlSLzFbawpyAXdmWTNAUgYqyTBRp4zPbYddCZeaH8LlnfIEybdwG4PJIDXxCdQKmijiyXTwkC8LDRJOKEh85THxlh4PAcln232seksziz2gTolem5KiQVRhjnCRMjscVJdajPaiwnJsMHZSr1HzeQa1zyTztwVjyt3THXuV0Fov6vXNJF7Dw52wqIe7DHCy-2naMFFQJYBqXFBz1qMPUJuGLHtWszP3EyPmIPVvCoZLHjR538eQ5BsPkWUmlvcW_SNgtoZDMRyi8KlMwc-VfXhYIifN6BUda6hbcC81ysktx5fUvKb2Tt_UJT-j8Kj6KM3-cMuHhiUEKTgyCfAGJ_e7AceBfz7bXBb6w4LWO0ADUsL57mcSU-OG6QeM9HMK4KOmtkN4FAeP5GLt1WLmR5poOdsNQA9tkh6coreAnTYboDy5ncJWOaxhZ2f1P1Igc1IxzE84kU0ztg6UaG7k1R07QZx40ifemXDwQ10RoA=",
+      "summary": []
+    },
+    {
+      "id": "msg_0b1517df558e4494016aa0267ff0ac87d2869230466439ea22",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"id\":\"M-526a6275086dc50f\",\"P\":\"YES\",\"O\":\"YES\",\"W_ind\":\"YES\",\"W_opt\":\"NO\",\"W_nar\":\"NO\",\"H\":\"YES\",\"status\":\"S\",\"ambiguity\":\"P: \u201cNeither the AI or output of AI serves as a principal basis for a decision or action.\u201d O: \u201cdetect and track suspicious activities\u201d and \u201cthe information is sent through SMS or email to the field for response\u201d. W_ind: \u201cpersonal interaction leads to any follow-up decisions\u201d identifies a non-AI procedure and explicitly grounds follow-up decisions in it. W_opt/W_nar: no qualifying passage. H: \u201cHuman review takes place prior to any final decision to act\u201d. The independent-basis passage concerns follow-up decisions, not the initial response; image review alone would not qualify. Confidence: moderate. Lens: public-rationale-only. Model: GPT-5. Protocol: ATRACC Public-Rebuttal Codebook v3.\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "low",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": false,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "atracc_coding",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "P": {
+            "type": "string",
+            "enum": [
+              "YES",
+              "NO",
+              "UNCLEAR"
+            ]
+          },
+          "O": {
+            "type": "string",
+            "enum": [
+              "YES",
+              "NO",
+              "UNCLEAR"
+            ]
+          },
+          "W_ind": {
+            "type": "string",
+            "enum": [
+              "YES",
+              "NO",
+              "UNCLEAR"
+            ]
+          },
+          "W_opt": {
+            "type": "string",
+            "enum": [
+              "YES",
+              "NO",
+              "UNCLEAR"
+            ]
+          },
+          "W_nar": {
+            "type": "string",
+            "enum": [
+              "YES",
+              "NO",
+              "UNCLEAR"
+            ]
+          },
+          "H": {
+            "type": "string",
+            "enum": [
+              "YES",
+              "NO",
+              "UNCLEAR"
+            ]
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "S",
+              "U",
+              "D"
+            ]
+          },
+          "ambiguity": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "P",
+          "O",
+          "W_ind",
+          "W_opt",
+          "W_nar",
+          "H",
+          "status",
+          "ambiguity"
+        ],
+        "additionalProperties": false
+      },
+      "strict": true
+    },
+    "verbosity": "low"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 1587,
+    "input_tokens_details": {
+      "cache_write_tokens": 1584,
+      "cached_tokens": 0
+    },
+    "output_tokens": 392,
+    "output_tokens_details": {
+      "reasoning_tokens": 179
+    },
+    "total_tokens": 1979
+  },
+  "user": null,
+  "metadata": {}
+}

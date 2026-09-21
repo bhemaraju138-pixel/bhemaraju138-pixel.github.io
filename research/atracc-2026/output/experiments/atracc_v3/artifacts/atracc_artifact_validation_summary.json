@@ -1,0 +1,16 @@
+{
+  "artifacts": 22,
+  "http_resolved": 19,
+  "two_pass_all_field_agreement": 10,
+  "strict_recovery_n": 0,
+  "inventory_U_to_S_candidates": 0,
+  "field_yes_counts": {
+    "retrievable": 19,
+    "same_system": 5,
+    "temporally_applicable": 7,
+    "same_predicate": 5,
+    "qualifying_mechanism": 3,
+    "passage_anchor": 3
+  },
+  "integrity_boundary": "Strict recovery requires two-pass unanimity on every field; computational, not human adjudication."
+}

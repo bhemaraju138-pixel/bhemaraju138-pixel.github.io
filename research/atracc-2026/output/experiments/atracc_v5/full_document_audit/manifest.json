@@ -1,0 +1,60 @@
+{
+  "created_utc": "2026-09-06T06:42:06.934613+00:00",
+  "models": [
+    "gpt-5.4-2026-03-05",
+    "gpt-5.4-mini-2026-03-17"
+  ],
+  "reasoning_effort": "medium",
+  "max_output_tokens": 12288,
+  "target_original_U_records": 9,
+  "complete_pdf_record_pairs": 7,
+  "excluded_for_no_identified_document": [
+    "DHS-401",
+    "MISSING-6FB970D7652E"
+  ],
+  "procedure": "Every extracted PDF page supplied; no excerpt cap. Exact normalized quotations checked against cited PDF pages. No human-validation claim.",
+  "files": [
+    {
+      "case_id": "DHS-183",
+      "characters": 48359,
+      "pages": 15,
+      "sha256": "7a32f3d5211bec86f1ac66ba1343db6f0c721cf030ce2585db634f7478852436"
+    },
+    {
+      "case_id": "DHS-188",
+      "characters": 172850,
+      "pages": 54,
+      "sha256": "eaa036328d636c01484f9283aaaba2459dd69e213a478952a84428ed5ad71599"
+    },
+    {
+      "case_id": "DHS-24",
+      "characters": 81097,
+      "pages": 28,
+      "sha256": "ac6dc5f3844aeab02b4b0411280faa49eed90608daa8997fa3f10d0fb9439e26"
+    },
+    {
+      "case_id": "DHS-310",
+      "characters": 128558,
+      "pages": 39,
+      "sha256": "58d9bbd1f2049773e219b8e7c84235bb0889832e5a6a00f75061a1c63e8dc66c"
+    },
+    {
+      "case_id": "DHS-81",
+      "characters": 36762,
+      "pages": 12,
+      "sha256": "fea4e6b77529807e57207b5782cb4c6621d7bd2f49ca4b608c1b11e5b060d35f"
+    },
+    {
+      "case_id": "DHS-95",
+      "characters": 36762,
+      "pages": 12,
+      "sha256": "fea4e6b77529807e57207b5782cb4c6621d7bd2f49ca4b608c1b11e5b060d35f"
+    },
+    {
+      "case_id": "DHS-2578",
+      "characters": 52767,
+      "pages": 17,
+      "sha256": "3a006d686c85852cd39bc87810aa80acdb6f8261f8e1081573ac9e7fad7f0df5"
+    }
+  ]
+}

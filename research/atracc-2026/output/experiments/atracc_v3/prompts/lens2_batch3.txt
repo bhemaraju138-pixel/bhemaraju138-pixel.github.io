@@ -1,0 +1,125 @@
+You are one blinded coding pass in an AI-governance measurement audit. Code every record independently. Do not use tools, browse, or infer hidden agency practices. Return exactly one compact JSON object per line, in input order, with no markdown or prose.
+
+LOCKED CODEBOOK SHA-256: 0a1dffe440a2e8d837339873e891c5cabef8076f806ec8f971f52fd314eeaa84
+
+# ATRACC Public-Rebuttal Codebook v3 (Locked Before Validation)
+
+## Scope and estimand
+
+The unit is one 2025 federal AI inventory record whose `is_high_impact` value is
+exactly `Presumed High-Impact, but Not High-impact`. The estimand is whether the
+publicly disclosed rationale carries a minimally intelligible rebuttal to the
+presumption under OMB M-25-21. It is not a finding about legal compliance,
+internal evidence, the system's actual effects, or agency intent.
+
+Coders see the inventory record but not the legacy regex flags or legacy S/U/D
+label. Coding uses only the disclosed rationale for the primary label. Linked
+artifacts are evaluated separately and never silently change the primary label.
+
+## Component questions
+
+For every record, assign each component `YES`, `NO`, or `UNCLEAR` and quote the
+shortest load-bearing passage. Do not infer a component from the use-case title
+when it is absent from the rationale.
+
+### P — policy predicate
+
+`YES` only when the rationale identifies the high-impact threshold being denied
+or a recognizably equivalent predicate: principal basis; legal, material,
+binding, or similarly significant effect; effect on rights or safety; or a
+specific consequential decision/action tied to the threshold. Merely writing
+"not high impact" is `NO`.
+
+### O — AI output and use
+
+`YES` only when the rationale identifies what the AI supplies (for example,
+alert, score, recommendation, classification, report, translation, or detected
+object) and how it enters a workflow. A bare statement that humans use "the
+system" is `UNCLEAR` unless the informational role is recoverable from the same
+rationale.
+
+### W-ind — independent-basis mechanism
+
+`YES` requires both (a) an identifiable non-AI evidence source, procedure, or
+institutional check and (b) an explicit relation showing that the consequential
+action does not principally depend on the AI output. Generic words such as
+"validate," "verify," "other information," "review," "multiple sources," or
+"broader process" are not sufficient unless the source/process and constraining
+role are stated. Human review of the AI output is not independent evidence by
+itself.
+
+### W-opt — non-AI alternative
+
+`YES` only when an affected person or decision maker can actually proceed
+through a non-AI path and the rationale states that this path avoids dependence
+on the AI output. "Optional," "may," or "manual" without identifying the
+alternative and its availability is `UNCLEAR`.
+
+### W-nar — narrow operational mechanism
+
+`YES` only when the rationale identifies a technically or procedurally bounded
+output and explains why that bound prevents the output from serving as a
+principal basis for a consequential action. Labels such as "informational
+only," "recommendation only," "administrative," "pilot," or "research" are
+not mechanisms without the limiting connection.
+
+### H — human-review warrant
+
+`YES` when human review, approval, discretion, or final decision-making is
+offered as a load-bearing reason for the negative determination. Do not code H
+when a human is merely identified as the recipient and the rationale instead
+rests on a separately stated W mechanism.
+
+## Primary status
+
+- `S` (visible minimum support): P=`YES`, O=`YES`, and at least one of W-ind,
+  W-opt, or W-nar=`YES`. A human-review statement may coexist with S only when a
+  qualifying W mechanism is independently present.
+- `D` (public defeater undefeated): H=`YES`, no W component is `YES`, and human
+  oversight/discretion is a load-bearing reason offered for the exclusion.
+- `U` (publicly unresolved): all other cases, including missing text, generic
+  conclusion language, a predicate without an output, an output without a
+  mechanism, or ambiguous evidence.
+
+The priority rule is: test S first under the strict conjunction; otherwise D if
+the human-review condition holds; otherwise U. Uncertainty is never converted
+to support.
+
+## Discourse and negation rules
+
+1. Components must be asserted, not quoted hypotheticals or future intentions.
+2. Negation attaches to its grammatical object. "Not dependent on the tool" is
+   potentially load-bearing; "not solely automated" normally establishes only
+   H unless a non-AI basis is also named.
+3. Evidence in disconnected clauses is not automatically combined. The
+   rationale must make the limiting relation intelligible.
+4. Development stage, pilot status, or current non-deployment is recorded as a
+   separate temporal defense, not as W, because the determination may be
+   revisited when deployment changes.
+5. If two reasonable readings yield different statuses, code `U` and record the
+   ambiguity.
+
+## Linked-artifact recovery
+
+Artifacts receive a separate six-part code: retrievable; same system; temporally
+applicable; same policy predicate; qualifying W mechanism; passage-level anchor.
+An inventory-only U may be reported as `U→S candidate` only when all six are
+`YES`. The arrow denotes recoverable public evidence, not a retroactive change
+to what the inventory rationale itself disclosed.
+
+## Required audit trail
+
+Every coding record contains: blinded record ID, component values, primary
+status, exact supporting excerpts, ambiguity note, confidence, lens name, model
+and protocol version. No agreement coefficient is described as inter-rater or
+human reliability unless genuinely independent human coders participate.
+
+
+
+THIS PASS LENS: policy-burden mapping. Map the text to the principal-basis burden in M-25-21. Distinguish a conclusion from an answer to the burden.
+
+Apply the primary-status formula mechanically after component coding. Quote only short exact excerpts from the rationale; use an empty string when none exists. Confidence must be between 0 and 1. Required schema:
+{"id":"...","P":"YES|NO|UNCLEAR","O":"YES|NO|UNCLEAR","W_ind":"YES|NO|UNCLEAR","W_opt":"YES|NO|UNCLEAR","W_nar":"YES|NO|UNCLEAR","H":"YES|NO|UNCLEAR","status":"S|U|D","excerpts":{"P":"...","O":"...","W":"...","H":"..."},"ambiguity":"...","confidence":0.0}
+
+RECORDS:
+[{"id": "DHS-57", "inventory_id": "DHS-57", "agency": "DHS", "use_case_name": "Identity Match Option (IMO) Tool for Record Compilation", "development_stage": "Retired", "topic_area": "", "rationale": "The use case compiles records from across a variety of USCIS systems to provide a comprehensive history of a person\u2019s interaction with USCIS. The AI output can be visualized through a report or dashboard to assist with case review ensuring access to useful and accurate records. (SEE DHS CAIO SUPER MEMO FY24) ------ The AI outputs do not serve as a principal basis for a decision or action concerning a specific individual or entity that has a legal, material, binding, or similarly significant effect on that individual\u2019s or entity\u2019s civil rights, civil liberties or privacy, equal opportunities, or access to or the ability to apply for critical government resources or services. The use case compiles records from across a variety of USCIS systems to provide a comprehensive history of a person\u2019s interaction with USCIS. The output of this can be visualized through a report or dashboard to assist with case review ensuring access to helpful and accurate records. Adjudicators review the outputs of this use case, alongside other information and insights, to process a case and make a final determination. The adjudication process can be conducted without this tool, however, doing so would significantly increase the time and effort required to process immigration requests."}, {"id": "DHS-65", "inventory_id": "DHS-65", "agency": "DHS", "use_case_name": "Aircraft Landing Location Predictor (KESTREL)", "development_stage": "Deployed", "topic_area": "Transportation", "rationale": "The AI predicts aircraft landing locations. The AI outputs do not produce an action or serve as a principal basis for a decision that has the potential to significantly impact the safety of human-life or well-being, climate or environment, critical infrastructure, or strategic assets or resources. The AI outputs do not serve as a principal basis for a decision or action concerning a specific individual or entity that has a legal, material, binding, or similarly significant effect on that individual\u2019s or entity\u2019s civil rights, civil liberties or privacy, equal opportunities, or access to or the ability to apply for critical government resources or services."}, {"id": "DHS-81", "inventory_id": "DHS-81", "agency": "DHS", "use_case_name": "Passport Anomaly Model", "development_stage": "Deployed", "topic_area": "Law Enforcement", "rationale": "The AI outputs do not serve as a principal basis for a decision or action concerning a specific individual or entity that has a legal, material, binding, or similarly significant effect on that individual\u2019s or entity\u2019s civil rights, civil liberties or privacy, equal opportunities, or access to or the ability to apply for critical government resources or services. The AI output is an assessment of passport validity in response to an officer's request for passport validation. This result could be related to an inconsistency or abnormality in a passport's pattern. This is a tool available to CBP officers for confirming the validity of a passport. This result is used to notify the CBP officer that a passport may require review, as it may be part of a newly released sequence, may be invalid, or even possibly fraudulent. This is only one piece of information provided to CBP Officers during the normal course of their duties. The officers would use any results provided to research the validity of the passport through other sources."}, {"id": "DHS-86", "inventory_id": "DHS-86", "agency": "DHS", "use_case_name": "Agriculture Commodity Model (AGC)", "development_stage": "Deployed", "topic_area": "Law Enforcement", "rationale": "The AI outputs do not produce an action or serve as a principal basis for a decision that has the potential to significantly impact the safety of human-life or well-being, climate or environment, critical infrastructure, or strategic assets or resources. The use case identifies agricultural pest risk in cargo shipments entering the United States. If a cargo shipment is identified as high-risk for pest infestation, it is prioritized for inspection. The model does not track or identify individuals."}, {"id": "DHS-95", "inventory_id": "DHS-95", "agency": "DHS", "use_case_name": "Trade Entity Risk Model", "development_stage": "Deployed", "topic_area": "Law Enforcement", "rationale": "The Trade Entity Risk model/tool enhances cargo predictive threat models by providing a comprehensive risk profile that aggregates historical trade entity transactions, trading partner relationships, reviews, examinations, and violations (within CBP data holdings) to create quantifiable risk measures for all trade entities. The AI model serves as an input to larger AI/ML cargo risk targeting models to better assess cargo threats and inform focus areas for trade targeting. Its outputs are not directly shared with users or operators and the output does not serve as a principal basis for decision or actions."}, {"id": "DOE-574", "inventory_id": "DOE-574", "agency": "DOE", "use_case_name": "M365 Copilot", "development_stage": "Pilot", "topic_area": "Other", "rationale": "The M365 Copilot and it's variants are integrated into all LANL collaboration and productivity services within M365 including email and Teams."}, {"id": "DOE-579", "inventory_id": "DOE-579", "agency": "DOE", "use_case_name": "MR-DT", "development_stage": "Pre-deployment", "topic_area": "Science", "rationale": "This deals with international safeguars approaches."}, {"id": "DOE-588", "inventory_id": "DOE-588", "agency": "DOE", "use_case_name": "AI-Assisted Strategies and Solutions for Environmental Technology (AI-ASSET)", "development_stage": "Pre-deployment", "topic_area": "Energy and Environment", "rationale": "In development stage and impact has not been determined"}, {"id": "DOE-629", "inventory_id": "DOE-629", "agency": "DOE", "use_case_name": "Consolidated Nuclear Waste Glass Database", "development_stage": "Pre-deployment", "topic_area": "Energy and Environment", "rationale": "In development stage and impact has not been determined"}, {"id": "DOE-713", "inventory_id": "DOE-713", "agency": "DOE", "use_case_name": "Performance Monitoring at the Salt Waste Processing Facility (SWPF)", "development_stage": "Pre-deployment", "topic_area": "Energy and Environment", "rationale": "In development stage and impact has not been determined"}, {"id": "DOJ-0009", "inventory_id": "DOJ-0009", "agency": "DOJ", "use_case_name": "CargoNet", "development_stage": "Deployed", "topic_area": "Law Enforcement", "rationale": "Does not produce an output that serves as a principal basis for decisions or actions with legal, material, binding, or significant effect on any of the individuals or entities identified in OMB-25-21."}, {"id": "DOJ-0014", "inventory_id": "DOJ-0014", "agency": "DOJ", "use_case_name": "Dun & Bradstreet Business Establishments Data", "development_stage": "Deployed", "topic_area": "Procurement and Finance Mgmt", "rationale": "Does not produce an output that serves as a principal basis for decisions or actions with legal, material, binding, or significant effect on any of the individuals or entities identified in OMB-25-21."}, {"id": "DOJ-0019", "inventory_id": "DOJ-0019", "agency": "DOJ", "use_case_name": "LexisNexis Accurint", "development_stage": "Deployed", "topic_area": "Law Enforcement", "rationale": "Does not produce an output that serves as a principal basis for decisions or actions with legal, material, binding, or significant effect on any of the individuals or entities identified in OMB-25-21."}, {"id": "DOJ-0021", "inventory_id": "DOJ-0021", "agency": "DOJ", "use_case_name": "Mark43 Public Safety Records", "development_stage": "Deployed", "topic_area": "Law Enforcement", "rationale": "Does not produce an output that serves as a principal basis for decisions or actions with legal, material, binding, or significant effect on any of the individuals or entities identified in OMB-25-21."}, {"id": "DOJ-0022", "inventory_id": "DOJ-0022", "agency": "DOJ", "use_case_name": "National Insurance Crime Bureau ISO ClaimSearch", "development_stage": "Deployed", "topic_area": "Procurement and Finance Mgmt", "rationale": "Does not produce an output that serves as a principal basis for decisions or actions with legal, material, binding, or significant effect on any of the individuals or entities identified in OMB-25-21."}, {"id": "DOJ-0029", "inventory_id": "DOJ-0029", "agency": "DOJ", "use_case_name": "Southwest Border Transaction Record Analysis Center (SWBTRAC)", "development_stage": "Deployed", "topic_area": "Procurement and Finance Mgmt", "rationale": "Does not produce an output that serves as a principal basis for decisions or actions with legal, material, binding, or significant effect on any of the individuals or entities identified in OMB-25-21."}, {"id": "DOJ-0030", "inventory_id": "DOJ-0030", "agency": "DOJ", "use_case_name": "Spokeo", "development_stage": "Deployed", "topic_area": "Law Enforcement", "rationale": "Does not produce an output that serves as a principal basis for decisions or actions with legal, material, binding, or significant effect on any of the individuals or entities identified in OMB-25-21."}, {"id": "DOJ-0031", "inventory_id": "DOJ-0031", "agency": "DOJ", "use_case_name": "Thomson Reuters CLEAR", "development_stage": "Deployed", "topic_area": "Law Enforcement", "rationale": "Does not produce an output that serves as a principal basis for decisions or actions with legal, material, binding, or significant effect on any of the individuals or entities identified in OMB-25-21."}, {"id": "DOJ-0032", "inventory_id": "DOJ-0032", "agency": "DOJ", "use_case_name": "TransUnion TLOxp Online Investigative Services", "development_stage": "Deployed", "topic_area": "Law Enforcement", "rationale": "Does not produce an output that serves as a principal basis for decisions or actions with legal, material, binding, or significant effect on any of the individuals or entities identified in OMB-25-21."}, {"id": "DOJ-0033", "inventory_id": "DOJ-0033", "agency": "DOJ", "use_case_name": "Veritone Redact", "development_stage": "Deployed", "topic_area": "Admin Functions", "rationale": "Does not produce an output that serves as a principal basis for decisions or actions with legal, material, binding, or significant effect on any of the individuals or entities identified in OMB-25-21."}, {"id": "DOJ-0040", "inventory_id": "DOJ-0040", "agency": "DOJ", "use_case_name": "SAS (Forecasting, predictive analytics, data/statistical analysis)", "development_stage": "Pre-deployment", "topic_area": "Law Enforcement", "rationale": "Does not produce an output that serves as a principal basis for decisions or actions with legal, material, binding, or significant effect on any of the individuals or entities identified in OMB-25-21."}, {"id": "DOJ-0041", "inventory_id": "DOJ-0041", "agency": "DOJ", "use_case_name": "R (Forecasting, predictive analytics, data/statistical analysis)", "development_stage": "Pre-deployment", "topic_area": "Law Enforcement", "rationale": "Does not produce an output that serves as a principal basis for decisions or actions with legal, material, binding, or significant effect on any of the individuals or entities identified in OMB-25-21."}]

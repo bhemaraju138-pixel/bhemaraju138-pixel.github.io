@@ -40,4 +40,5 @@ yarn-error.log*
 /outputs/
 /work/
 /experiments/.cache/
-/experiments/__pycache__/
+**/__pycache__/
+*.py[cod]

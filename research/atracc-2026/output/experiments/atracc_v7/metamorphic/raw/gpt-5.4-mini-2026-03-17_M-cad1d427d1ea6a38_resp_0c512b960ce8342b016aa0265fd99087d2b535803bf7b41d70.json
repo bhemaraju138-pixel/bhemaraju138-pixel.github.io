@@ -1,0 +1,183 @@
+{
+  "id": "resp_0c512b960ce8342b016aa0265fd99087d2b535803bf7b41d70",
+  "object": "response",
+  "created_at": 1788880479,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1788880481,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": null,
+  "max_output_tokens": 4096,
+  "max_tool_calls": null,
+  "model": "gpt-5.4-mini-2026-03-17",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_0c512b960ce8342b016aa026605d9887d2b0dc97372c9aee50",
+      "type": "reasoning",
+      "content": [],
+      "encrypted_content": "gAAAAABqoCZhk961zQN9V8GnsvzbVGpjcO3GyfOS21i61rAoBB27b_2LIG71cBfWbUb0WkRJZ8e3PjII0za44HMIzB4wIVMKZNVs7vRtfKm0OLgPG-cT6g6VnD6qkzAQec5UrEUMk2Ycmj6JdJ2Q6tJ_OHJg4_AyUPecMvCznQ3BCJSCpOQzzr53VAhqrQwfMrRaEewM3TIkEPrfPtud0qtUkJL6YM1Tnb8WXgAiB0GZ3p_muBe_T0JFX_skbN6M3v72X9NqNQ5X62W7GVEDdAD1zMe2vMXFN5sjmcF4_xfApc39rffgzSmWZvLPBxSSyLuHCEM4JOU0nYDGMcwjE_3BVcnRJPsil9nlKX5UDFh1SoIQrQlTI7LgPpygyJoZA0e7nv4a4-H-H4D-p61zADemWedRXCuzMS8ricImzmv4OhANpmgaH1Ve6Ip1oqpE4DUxh4Bm5NOa08RMaHJai0rDbO-5Vg9m0wi3BqOQah4AXNQ_kWB7Y1I8WyL7ClyxgPGUi5tPlOwZPrkLP1GdjWgHxuMJ4ngRRDW0sJOtXITP1BsT4nInswA3xTX0rFeDKlJkzlMfxVdhcWA_Gwuvvm_Ha6_IuWq7G5WRlYXZKtgY_3qjCi5k7gPnzkUDZOsbvBkQrwio3QQfS3ZwC_QpzeXna-l3X83fS_O71mMWMSoHkW3batxdxSy1SPRiOo403gcG4sIuK8vHADfSzyd7Ds7IPGlrAcipvv4IDTGLHXeW0g9I9YD8l7iFJBVTDiujKlHERwhCuQ717kKXd7fVaEGP8qxFp74VYfShuulN5K70_BKTJsBu0McLVo-_JDiPwdaxN3gWHGRrv7bQB5RKYjnfUDm4Yzb5koxQ5B0KThxwxA3YxuyHUAIpFxbz12OTNn1aYANspdNM2ns2X-v4Xjp0SCdp8j-ipW3TnQnyAl4g2Y_FpM40IBLhSQ8TRcPtRnb_UMp7BtIn8JPPSPTTLhEV0Y9YgXF-EhtxSWQyBk_lzH39FDgIm9MpknzuVqFiAsNeSZV0zogeuQuYp1c36cxHP0mcrep0VkKc1BBSEzbuuKeGbDp7sYLdFdsLXT80SFFX1oWh2tEgVSGQC3eIeNB9sByUxKzrDpzVHucVe-wJKPDqNRo3CMH9pkFJVvPTxvIWvtdHkMfD4is2dtTQqaeDs-YHlxO9uuHAVZX0h4G_02hM4KRMTbu_M4hG28KHx7kPlH1Jwy1f5uybsZqhZEKCJxZU_0pZ56zfB13809QlUG73GVBJb_5cv4FdmM1zIg4HCWsXk24I9h3Wn28J0p3A2xUlOtbMiDFDUK3Jvl25YQj2L6_sj_-Qam802CQq7pC1OePF5pEZd-3eI2jzCZnFCK1ZRMS7EL0Cr7nM_WJ9fizMlejFcx2eWWupt4TtxqA8t39vCf5lH0ERm3wLl7_qj4pByyCiSixNsf4S-m_KmiVbqUF2llSsz1KhiLWbeS662ZxL8kADwxLDfpz0JsHMKPpUx-KyABZArkFzF2O1mbSgAdvAtXMmPfU2MK-L3Z8zA2TbBeeNUTUSCpx8NpgMbk-4RCFYIGnF2Wm1RxqXsYSOwPiQjoEjhVRZGLSVZJYB7pLa-p6OSJE1-Y6CrKwucH0XlkBoMooYm4vQfbkY33q6TNXj2cQ=",
+      "summary": []
+    },
+    {
+      "id": "msg_0c512b960ce8342b016aa02660e60c87d2b462c7fd1c82cca7",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"id\":\"M-cad1d427d1ea6a38\",\"P\":\"YES\",\"O\":\"YES\",\"W_ind\":\"NO\",\"W_opt\":\"NO\",\"W_nar\":\"NO\",\"H\":\"NO\",\"status\":\"U\",\"ambiguity\":\"Rationale states the output is not a principal basis, but it gives no qualifying W mechanism; the only limiting language is that outputs are not directly shared and serve as an input to larger models, which is insufficient under the codebook.\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "current_turn",
+    "effort": "low",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": false,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "atracc_coding",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "P": {
+            "type": "string",
+            "enum": [
+              "YES",
+              "NO",
+              "UNCLEAR"
+            ]
+          },
+          "O": {
+            "type": "string",
+            "enum": [
+              "YES",
+              "NO",
+              "UNCLEAR"
+            ]
+          },
+          "W_ind": {
+            "type": "string",
+            "enum": [
+              "YES",
+              "NO",
+              "UNCLEAR"
+            ]
+          },
+          "W_opt": {
+            "type": "string",
+            "enum": [
+              "YES",
+              "NO",
+              "UNCLEAR"
+            ]
+          },
+          "W_nar": {
+            "type": "string",
+            "enum": [
+              "YES",
+              "NO",
+              "UNCLEAR"
+            ]
+          },
+          "H": {
+            "type": "string",
+            "enum": [
+              "YES",
+              "NO",
+              "UNCLEAR"
+            ]
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "S",
+              "U",
+              "D"
+            ]
+          },
+          "ambiguity": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "P",
+          "O",
+          "W_ind",
+          "W_opt",
+          "W_nar",
+          "H",
+          "status",
+          "ambiguity"
+        ],
+        "additionalProperties": false
+      },
+      "strict": true
+    },
+    "verbosity": "low"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 1512,
+    "input_tokens_details": {
+      "cache_write_tokens": 0,
+      "cached_tokens": 1280
+    },
+    "output_tokens": 184,
+    "output_tokens_details": {
+      "reasoning_tokens": 73
+    },
+    "total_tokens": 1696
+  },
+  "user": null,
+  "metadata": {}
+}

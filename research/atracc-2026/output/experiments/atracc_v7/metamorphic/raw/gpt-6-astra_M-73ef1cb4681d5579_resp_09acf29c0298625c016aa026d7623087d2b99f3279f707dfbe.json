@@ -1,0 +1,183 @@
+{
+  "id": "resp_09acf29c0298625c016aa026d7623087d2b99f3279f707dfbe",
+  "object": "response",
+  "created_at": 1788880599,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1788880610,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": null,
+  "max_output_tokens": 4096,
+  "max_tool_calls": null,
+  "model": "gpt-6-astra",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_09acf29c0298625c016aa026d8377887d299bee8934bd551e9",
+      "type": "reasoning",
+      "content": [],
+      "encrypted_content": "gAAAAABqoCbifjMGO8DAWsZVGpUVbavyI0a3zKwHk_tkq7ZGvuDOu9JlJVamNvUtbLDwyvUhP4rYic8Oun9DeZ3YgaqO9cy770oxOeUB-Ibv_bzNxJ-eif5_7ORPYkqzw2Z9n2ficU41-Zpsg8ezKDGv-90zBSy0SnQp2OoTo4lO-ZSyIyfkTcaHpOecY-rpPHJ8duHzoifdg7shCRoPk8aZvf9kqsx2kx-KmeUhAkSKOEaHIFqbacMBKvIVYtXrFacLXBR81PonHT-zdQQjXbmYP-LofiUkyVkOYmfC0vIiWMOmBtuhDM87tcjo_Gw3Pd0ZVDiVvmVMVhtEWySFmeYToiwOwUsHvAj0vV7Ic7tZoWoyVpteMDF3uM6Th5Iz-Fm3GaR75yYCXEAorZgHXlN6fRKlvNUO02xpuKY50JRCS2MTRGSVOJ6pWhVSD4lVb8vkHKCOiY7-g5p1rz95EJQxEPBD5EKl-ltUc1TPLgwqSHfjgRecD6kSRv3MxK2YRxJC_cGriJNpxQggEjKVOTBRreavltcLMjOMmvg0O-0KYn7NDNy8PhNBQ0tIFyeBWAICXOwrDM8XN_Xa7myGU3JsjK42VYN7qV7K1lKlkBH4USAJjp0WxOvDVAxOUcBTgcVSMR5zQ8gcAr7lJeg1KegYj-M2o9yWq6LKd-XitlH9fGzn-SuBKqIc-652Yr4TUgxXL1s6tL_ZfkWPaDm3IbnYoJqEeS2rNqfHeBBbxkmxAwXPF2oAqklKgTkfuyhHgOlDxB6QSEDjSlsYaQwf6-hVs7uKWo8Wpt9plqoOf3ynypHFOf03WD6VFxls5lRo3seqmAe2Ck3XKT_fkam6pt4UkqIYSIauJE1uMiuW03KUG0cMTiVa3qmOwq_LonqjZE4upFz97QCZNmlWG8m-k0Ywis3uJqaSJQcqht8KClvrPSrqihV-2fcoJbWEy3zvFhaOh_Qyv0uNFuyqr1KIJD_pmnYkWoCV9TkDY7V5v3ccQ15DnHk89VPsyxcA_hFvrqWd0Ar9WOGuQGhlM0yq-m_cs-DLXKuVEWImcsQpnExzWJbevbriO4itxHnZZInRA8kGzrEHmSp-EbQWM3uGvxVg4B2iKrhtAeSTihulUIV7VRGhR8tgFVNhGUoLqcxLQUVw_yMFUb298n7htDnPYe6FjqbAufddNEZf5lOlJEnKNRPCRvY1v1O6sqOY2tRyBcglrVwiT1q4-fAwFHKO3kX0_Mfb3TNOmp_nZh13jnPdXyqlKZbRZ5zeC1rjofZnVyBKjaOaYk9cAoqe6SU4uOrUoCn96aAJVQhI9tcMBkrZnr5LcvuuW2yNniickWQgE1sfG9AYkmG_Fs-BNbrNVHs7zHBlLxnUBHlv_uRg6DjE7t8Bu9384l3RFc94nB5DGV2MScU39qq6gDb769qxWl7TMyTbwpHxBCEH4yPgUdUg0iQeJKUovuH_kR-rZMaCc7RLlSyNF7Gl5r9oge3IKLtEhLMPQI0ehyNKglAZDbVJnQoXTPeYhcVCXdGnhiAJ5ozl3qwueIWwnQApymi5ysuQcTrgXVuUEetzC-ucd4FMzx47_834mu7VEcAyf3Pd3vuJTvqF2eh0l0TwTyik-CPCL-l2nWsUTOh9EIf_uSz0PGq-scajbxjEZ1kehgkfy-UdtISW0NtLmraBneRLKdiMZBgMZwX2Cl9loMKH5-2yNBvCaMUIXPTHD8UOCQweRa49T4u1Bee7Ob_9gJUJHeEjm5R2SZw-bkz0lYiAtk3TLmbws5L4viJuQJoO9RItzN77SblNR89AiVsPioUNczeB-2g86mtAVCqZlA2SeHT2f7IPdgzTXAx-fmENV5rCbFfXa8HGnIkSljiy1vM8BUf69gPlDhkzatDZUfTrMuolidFTZWZGFv0FxCD4riRF62ZWnL04JcXq6gjEHoXYzqA4DHehjRfJSLCNBoFMF6j0-ZfpIfOb-R9r5kbetfPYcHanevev6rMxR4kYe71XANXEEiGl_bicnoFIiDm0DOjuWT8nDXhaISVmo3ahYIQ7OqvaX8hFL7wrn9X-QLx6DsUJTcfv8GYH9DE6ZvRpEwIPgCtddS1MJfdKHLbg-SlTLPfMSWU2zfQ72Sa9m08sNHk-GQJzSt7-iZUeC3KQ9J3CwxKbWqOp9DEzSOWl9WlWJXZL-M_Pn4C4wFeir__AMuIWV1oFzQDSqreodIe_3lmtAWpbq3lMuKcXdWTxfTgV-9cIh5BvEOHsJJgK_MhKSnYFF53L6sYA7lw71pKyarwUkelrzETtIG0=",
+      "summary": []
+    },
+    {
+      "id": "msg_09acf29c0298625c016aa026dd149087d2913e5e0ab6d44652",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"id\":\"M-73ef1cb4681d5579\",\"P\":\"YES\",\"O\":\"YES\",\"W_ind\":\"NO\",\"W_opt\":\"NO\",\"W_nar\":\"NO\",\"H\":\"YES\",\"status\":\"D\",\"ambiguity\":\"P: \u201clegally binding or material decisions\u201d. O: \u201coutputs serve primarily as inputs to an investigative process\u201d; \u201cintegrating them into any official case management system\u201d. W_ind: \u201cincludes judicial review and other safeguards\u201d names a check but does not explain how it constrains reliance on AI; \u201cdistancing\u201d from direct impact does not establish an independent principal basis. W_opt: no non-AI alternative stated. W_nar: \u201crather than making legally binding or material decisions itself\u201d does not identify an operational bound preventing principal reliance. H: \u201cA human reviews the AI output and makes the final decision.\u201d Ambiguity: investigative-process language suggests separation but leaves its limiting mechanism unspecified. Confidence: moderate. Lens: public-rationale-only. Model: ChatGPT. Protocol: ATRACC Public-Rebuttal Codebook v3.\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "low",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": false,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "atracc_coding",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "P": {
+            "type": "string",
+            "enum": [
+              "YES",
+              "NO",
+              "UNCLEAR"
+            ]
+          },
+          "O": {
+            "type": "string",
+            "enum": [
+              "YES",
+              "NO",
+              "UNCLEAR"
+            ]
+          },
+          "W_ind": {
+            "type": "string",
+            "enum": [
+              "YES",
+              "NO",
+              "UNCLEAR"
+            ]
+          },
+          "W_opt": {
+            "type": "string",
+            "enum": [
+              "YES",
+              "NO",
+              "UNCLEAR"
+            ]
+          },
+          "W_nar": {
+            "type": "string",
+            "enum": [
+              "YES",
+              "NO",
+              "UNCLEAR"
+            ]
+          },
+          "H": {
+            "type": "string",
+            "enum": [
+              "YES",
+              "NO",
+              "UNCLEAR"
+            ]
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "S",
+              "U",
+              "D"
+            ]
+          },
+          "ambiguity": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "P",
+          "O",
+          "W_ind",
+          "W_opt",
+          "W_nar",
+          "H",
+          "status",
+          "ambiguity"
+        ],
+        "additionalProperties": false
+      },
+      "strict": true
+    },
+    "verbosity": "low"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 1509,
+    "input_tokens_details": {
+      "cache_write_tokens": 1506,
+      "cached_tokens": 0
+    },
+    "output_tokens": 360,
+    "output_tokens_details": {
+      "reasoning_tokens": 127
+    },
+    "total_tokens": 1869
+  },
+  "user": null,
+  "metadata": {}
+}

@@ -1,0 +1,183 @@
+{
+  "id": "resp_0bea480f54cda14b016aa02699f5fc87d2b30ecc33dd9ad496",
+  "object": "response",
+  "created_at": 1788880537,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1788880544,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": null,
+  "max_output_tokens": 4096,
+  "max_tool_calls": null,
+  "model": "gpt-6-astra",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_0bea480f54cda14b016aa0269bfde087d2a11d99b4d6715674",
+      "type": "reasoning",
+      "content": [],
+      "encrypted_content": "gAAAAABqoCag5gEi9qNJHPQ87Jebj0Mzekr6nGlimpNTw4Kb76wuQpYFrEW-3PY49z3KNQKloEgQrSUtHrspxDXb7fF6OyLn_8C7cZo2o56NDdBmtoxL5NIVUy_gu2CGPR3H56pUzPvaEBVJA_nIdDk3EdHxySyqDEKh7OmEt_mriqATWByZPZ1sMN2zCye1dwxLVtCyUX26PuSPdDtwlFAQ0IJuOARdXHtm8fxYuGxu8eXpPqz_5LUsd2AXL64MCFaazND2nJ92y8195ocDpBlOk1A3CVmkRzua78EjdviQY_6nF7zMymKQaqrK91g-pONilNlE5_F32k_XM7GI-qW9_Seg1UkXQlx2G8EvbzikN1vSvLYC4bG_vAxDGrXwDMfR_3wqbjV2xtge9maIaf5LJs4NWuVth2VtDS7rZ0lg7YKJQ4G3ILj2fTj4uquhlcpaFfGlfFwIAUOtVY7It9TMsG3GK9NvhHmNtKAhOkSyLf3_vGur3Wn4IX7DZLu29npZNNz7tL5cg_DrcdekWdGGuL7a-h8a07aMwty9JgSXy0zmdCi36b17yWUfwhHrNJ8SA89pcFBBxMiGrVOoKg2xcD7S208Nc3n5ZDofujmxXlhR25h5vMcobujQ396OgaNCN167bzKMPhc_mg9V16q2bHBe6fIypENESjIMk7KG3SPqhj9RcFantLZV3rWLInOaqawntJ5rbtJdvFB3RhNj-zNGEuPfZo1ixTYHRcIIstpnqg97o9ikpj91d4Tdg3Jn7aScms3iEunYJnju3fimOVzwOlVAZZvJKiXOx8uF3U-T3KAgXH9UXzaq9eljlbzwkWEyxgFZkiIRN-AybNoiyGPnz37y9HMCkaUMR5vLmNy56IG33N2Q4WoaCy8X1sqi-gOiWQKAL9gWGx80leyvovBgXSpE0GHah2O4Eas1-w8hYVWWLvxtJiotpzTa_VQorrrKYEfHL4Jm2ezsl1xxXSTAdi4cHmkrYHzWV14PxlIfdUlhDGkAPz_qwKwBF5QEyvtlTscaQo2_xrh1j1ivumKy5O1CkoPunC-UPdWQZ4S28thinmLbBQRJZ5OI1OUL_NTlpD4MD11wtkthWHQZJGATu23cF-6R5ZNl_grt4GMZrW1y7tEjzWnaDdZcNIke37EhU99md6xz8wWvYT5tyXCSa-zQP7YHGHung985wSmKBsnL6GA9T59DmIMhBlPELE6faFd5Og8AZdzVNN8l7KM69SmSYSIC03jJEK272ikRtl3rzAFu_ewnshfRUEPmzFUte3oN3pzYHOB3DG2pdAUUnrifHr6TC3HgHO4izwGXog4MNELnDPnis6tz3L6h53ahODnA4JuyYJ3qk262Ppry86pp2V6vfa_TchRBGaVeCDsgBmTejG0fGlBsDxzJATX4fQR-fmbGxJYDWXHjnfILomdtEQ==",
+      "summary": []
+    },
+    {
+      "id": "msg_0bea480f54cda14b016aa0269dca5487d2a0601c42f23d5436",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"id\":\"M-306050aa4d18cdba\",\"P\":\"NO\",\"O\":\"UNCLEAR\",\"W_ind\":\"NO\",\"W_opt\":\"NO\",\"W_nar\":\"NO\",\"H\":\"NO\",\"status\":\"U\",\"ambiguity\":\"O: \\\"integrated into all LANL collaboration and productivity services within M365 including email and Teams\\\" identifies an environment, but no AI output or informational role. No passages support P, W-ind, W-opt, W-nar, or H. Confidence: high. Lens: public-rationale-only. Protocol: ATRACC Public-Rebuttal Codebook v3. Model version: not supplied.\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "low",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": false,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "atracc_coding",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "P": {
+            "type": "string",
+            "enum": [
+              "YES",
+              "NO",
+              "UNCLEAR"
+            ]
+          },
+          "O": {
+            "type": "string",
+            "enum": [
+              "YES",
+              "NO",
+              "UNCLEAR"
+            ]
+          },
+          "W_ind": {
+            "type": "string",
+            "enum": [
+              "YES",
+              "NO",
+              "UNCLEAR"
+            ]
+          },
+          "W_opt": {
+            "type": "string",
+            "enum": [
+              "YES",
+              "NO",
+              "UNCLEAR"
+            ]
+          },
+          "W_nar": {
+            "type": "string",
+            "enum": [
+              "YES",
+              "NO",
+              "UNCLEAR"
+            ]
+          },
+          "H": {
+            "type": "string",
+            "enum": [
+              "YES",
+              "NO",
+              "UNCLEAR"
+            ]
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "S",
+              "U",
+              "D"
+            ]
+          },
+          "ambiguity": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "P",
+          "O",
+          "W_ind",
+          "W_opt",
+          "W_nar",
+          "H",
+          "status",
+          "ambiguity"
+        ],
+        "additionalProperties": false
+      },
+      "strict": true
+    },
+    "verbosity": "low"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 1420,
+    "input_tokens_details": {
+      "cache_write_tokens": 1417,
+      "cached_tokens": 0
+    },
+    "output_tokens": 180,
+    "output_tokens_details": {
+      "reasoning_tokens": 36
+    },
+    "total_tokens": 1600
+  },
+  "user": null,
+  "metadata": {}
+}

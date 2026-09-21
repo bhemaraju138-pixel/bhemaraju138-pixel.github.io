@@ -1,0 +1,183 @@
+{
+  "id": "resp_0734d4bf748ad53c016aa02675484087d2918e46997ee1003c",
+  "object": "response",
+  "created_at": 1788880501,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1788880508,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": null,
+  "max_output_tokens": 4096,
+  "max_tool_calls": null,
+  "model": "gpt-6-astra",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_0734d4bf748ad53c016aa02676dec087d2b7ac98c82c7414c1",
+      "type": "reasoning",
+      "content": [],
+      "encrypted_content": "gAAAAABqoCZ8-V4AODJ0seHDzlGJqKfYS5-FRHw18h09MIK-i0jw66cKoICgteP3Bitfqf2zxBPKVk_AkNhWBSvinw0WOb5Q3hoeCvIyZwLrbTdHnysxUWts3s0BGpPtYqhrOfxMCoFnU6uMKGnuEdMQ9Q8OjRf9HudzxU-J_PQ42P_K5sZZDnjVbuOmK20maJofV4fkbKvwLzHX_XMsSlme5q9G9EOWTf3u3GwKyoDybgG51WU9ItmK_bx5pgjdo5DAUkSAkZBXRNIsWvgdzqnmkX6bUgTR-FzUX2XpnUKojKGUoiQ9HRZrxHpIEBMmt32YULJwZyQ7vwVoyzRDrtwlg1_JRPCIaroRsSZrvT3DL17yG1Wj10CjOs46zUtCKsle-2e2zKHnAILMqPot5Cj13qZ3DtjhgSU_wHHOu9q6lekfdtkWmoSvjJVdSeKEYtaf3yx8QjgXTAb3_3EeO3FZZzUlUFi6BqYIEwxpcTztkJFIc0ap1M4cfrZDsHgHmOTqrnYDgH5WE95nTj0S0XjBGC8MZ0QhZUgKriH7buNkLUi-7DTclKIufDVXzMrWoszFjJtsNvSsGDYfPLv_CddnDG1O8P2Uq5E-NNw-WLOlXDPZUO4QbXYlceAYaeTlVFrTqNbFdH1IPjthBV8QXyfMzWnJHyEZBZrhzWDFLNQJkqHARc55eNE7rOhCBgzGmYbhu1YV6B25QMK5nmq-Wngvj4y5dMikb7Q8X8mXVb12hh2Sj3t5k4RychwaWztiz9oWSLBPnblKENtPSXlmsFGnEQwppI3F5S2nkvvS42A1p0bIV0OIQfIE-FhOSe1TGeiOBKcj-lpvPHWMfytYfpiXlwrEG3b9jOQwF29muDObb7_N5RuD_oclX5R9cfFByntt610dc27vsy2FAi0CHuqYdz6iovv6PCvDA74BStGbwRWFAuoiUlIDksEhxi9gEReZJMoCJG6jLlEnlJVnzQrII5lmWIsWlpuEFVcGQkqXLJ8LU300Fv_AsqK3cQNvAMERhwU84pxTh27CsaSAya2VZltHpBYNLBEmDd1k85CU3yG3DGnjlkPQYJ9IcsUwmSlSYtwZ_dGnTVKo91_B5xlDvR1Yag9cIZN7B7JiwwZ8hpMJtj2N-yh4UI2SPm1Q-VzIGmjcioU1u4IQPKfwKMTqRhcQaefQUHLjRQvmTWHfVYFRS_wXYGPN9OsE7ybH3Gb0JtgiDzPSRpJT2oO14KT1Cjf54Zw1ChLahiQP8lB0dwNITI4MNVtZHkASyGKEQkkR65rgRNneURZUpSKrXxVJhUjBXw9ARKyhMrlXG3ap0yi7Ih3kFf0dNTWq4-4UXdbvjKAJzSrnjc0Q4cBGCbedUcncUybt79xdra0wWWOjxKqtqPYszjY=",
+      "summary": []
+    },
+    {
+      "id": "msg_0734d4bf748ad53c016aa0267887c087d2bfc9d469d674b1e9",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"id\":\"M-8fc8ecd35ca63565\",\"P\":\"YES\",\"O\":\"YES\",\"W_ind\":\"NO\",\"W_opt\":\"NO\",\"W_nar\":\"NO\",\"H\":\"YES\",\"status\":\"D\",\"ambiguity\":\"P: \\\"does not drive any agency decision\\\". O: \\\"a recommendation to assign a grant application to the appropriate Agency staff based on the scientific content of the application\\\". H: \\\"can accept, reject, or reassign the application based on their expertise\\\". Staff expertise and discretion do not identify an independent evidentiary basis, an available non-AI path, or a bound preventing principal reliance. No material ambiguity. Confidence: high. Lens: public-rebuttal inventory-only. Model: ChatGPT; protocol: ATRACC Public-Rebuttal Codebook v3.\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "low",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": false,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "atracc_coding",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "P": {
+            "type": "string",
+            "enum": [
+              "YES",
+              "NO",
+              "UNCLEAR"
+            ]
+          },
+          "O": {
+            "type": "string",
+            "enum": [
+              "YES",
+              "NO",
+              "UNCLEAR"
+            ]
+          },
+          "W_ind": {
+            "type": "string",
+            "enum": [
+              "YES",
+              "NO",
+              "UNCLEAR"
+            ]
+          },
+          "W_opt": {
+            "type": "string",
+            "enum": [
+              "YES",
+              "NO",
+              "UNCLEAR"
+            ]
+          },
+          "W_nar": {
+            "type": "string",
+            "enum": [
+              "YES",
+              "NO",
+              "UNCLEAR"
+            ]
+          },
+          "H": {
+            "type": "string",
+            "enum": [
+              "YES",
+              "NO",
+              "UNCLEAR"
+            ]
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "S",
+              "U",
+              "D"
+            ]
+          },
+          "ambiguity": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "P",
+          "O",
+          "W_ind",
+          "W_opt",
+          "W_nar",
+          "H",
+          "status",
+          "ambiguity"
+        ],
+        "additionalProperties": false
+      },
+      "strict": true
+    },
+    "verbosity": "low"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 1470,
+    "input_tokens_details": {
+      "cache_write_tokens": 1467,
+      "cached_tokens": 0
+    },
+    "output_tokens": 213,
+    "output_tokens_details": {
+      "reasoning_tokens": 33
+    },
+    "total_tokens": 1683
+  },
+  "user": null,
+  "metadata": {}
+}

@@ -1,0 +1,183 @@
+{
+  "id": "resp_068a48669060fb9f016aa02715d5fc87d29f9a643e604527e2",
+  "object": "response",
+  "created_at": 1788880661,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1788880663,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": null,
+  "max_output_tokens": 4096,
+  "max_tool_calls": null,
+  "model": "gpt-5.4-mini-2026-03-17",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_068a48669060fb9f016aa0271640e487d28cdae662d6236839",
+      "type": "reasoning",
+      "content": [],
+      "encrypted_content": "gAAAAABqoCcXNXyUMzkgRrkpihaK6ZlN-8LkasWoFpnc52GEPgul7SaH6QcHZ-HqYmpEotCPRG6RzVA81Jkxz9hEnjINPbbp3yP8_KaT8e2L1d-kQPxnDuNcoG6yaDiTH8c5xBeOKwCE3kG0KXOYPRzZn8Os1mmN39nyYgDkpcMA34MBzDx8R7Ro72yL74GmzmMdrV94CPZXQLHTBjaVqNWGLdXfCP06m7SKS1odYxYIrjr2u0eCDHjOhY7rpFRZxW-y5t5ypfEDRIzy0xmlRnG_GOZ5U5yCn6kIvAJnjoLfov-IPLnNs_nIKoz83eCcF9s4SJoGjSXapJQUbqYMfibaKxmGtU11QnlQHqWcyINNjJJH2wV3Lo-VcOpJcDYS4S18TWf4M1tBLmXL_jvpZYygxCLWpwaB9_WvBPmcb1gc7xrrIC2D1BkhHvpvAazUJ3Cy4uaaxzYmnWqlrAgCSDMBbEVNEkKHNQDM5J7yu0mBippX2EYECPB17Y2RzP8VoGHMojyWLIur9O5Ki2qxhaHboIaN2cAItCz61nb6OsiXaKnTqPn-i3_VHpY3WKaw4eIHRlBzohc08nAJZm_SGD-By6wIj3S9Kzhc3OvW1jvNPLpRzHTvh5eTp29Lbo70BQoSNaLQnxqGvi4rg66L44iUlHb1Bo37hdN_v7CLy7ZFcoGzhMqbN1-R7T05inLX87o_sb0pgDSmM2FlUzrlCFQrgTjKTv6xX13W_Jkco_SbW4wYf-zd0qM-5yvbnrqiyZnfIRN9npzSF46ae4rVYlpgEFhy54yYoWZO9qjVzOcz5CTVRDJ0YfiZZxMzUrx0hy0OZQcCueEt5P7n4cK6wV3F_O3OWppDitu7qtfwFCeZQwSL1k6YH78-ESQofr_nF4b7GDjfsnzt9FbtCbgQ4t1o-54YsQPyzbL9uVvfWp1xSqDKnCern1z3x4lvj5seFNAZg8ryp5MOwyZI2ow8PF2UEWMz8LIWwcCu4HsKmvENtYf91VioZ-kRyqMLephlQxsKoM_bNlhSLQaQjJayn8LtPLkoU8LjAL05vm09eaz3a9SdQYXIpF5TAe_Y34D5SOPyTcm9WjeKUyt-1LNSBoq5dmqNxUXCbUx7KZuxoT89KZpx_lRnQFgh9ycu8qtQMnlYzO7ouLnOTLWZZjJ-QztEO2NyjBXiOOPMJgO8eNSrMtApAyu4e8102xDIC2JL0bGM_kxF5tp_VYOxi4is2QLPYAt65ibgBez2V9B4ljnwObKlV8fL70oz8U9zN1qep19aDonlS6Yx5gxOsUMA5imqjJ4Otdk4ZgfG-qJt-BYAnV7GXeb4ygirRQ1Kl2YS3Tmj69QpF9-cY0DDqruklf7ESm_BJxI-KCo1MrHfPvDaU0JQ3OakMFR9ULFYeJz_OQ992q1bmk-5ByJMj54V-kIcIC2kdUjn4hlIeWNoZaiVJe0HhBadodX4IzG0bcvpPjwvwBCzx3721zGHsZAEsmKEE3E3ttYAabka3xvh5xJBRUsm1kcNdoEleljK-d9C7FP8gMn9lCathexK80WUdE4L_cqSjwrSJ5DTxvpR-ND9pZ_pEXaktHlh14dJHbRphsMRoV6ZsPVN37tYg1dNiQkLpuq8YXKyhM5vi2XEkpxE2jddTx3zx9_71mjKXHa_72hkNu7Hey3wUS45QnQH7I3zp_ltEvfRZEtjJwcuYfcH7JSh4Ol0jmamgHCTayXUbMiHw_tGSGruuLSiz0jvtvMA-y8pZiZK4kH4x83ajqpmttVXjnTxWnSx9bSzgnQeqU5p-ugOHhTn",
+      "summary": []
+    },
+    {
+      "id": "msg_068a48669060fb9f016aa0271702d487d29cf1e4be06e9ffb8",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"id\":\"M-8783b0a9c3bf0f13\",\"P\":\"YES\",\"O\":\"YES\",\"W_ind\":\"YES\",\"W_opt\":\"NO\",\"W_nar\":\"NO\",\"H\":\"NO\",\"status\":\"S\",\"ambiguity\":\"None; the rationale expressly states a non-AI evidentiary basis controls the decision and the AI output is informational.\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "current_turn",
+    "effort": "low",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": false,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "atracc_coding",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "P": {
+            "type": "string",
+            "enum": [
+              "YES",
+              "NO",
+              "UNCLEAR"
+            ]
+          },
+          "O": {
+            "type": "string",
+            "enum": [
+              "YES",
+              "NO",
+              "UNCLEAR"
+            ]
+          },
+          "W_ind": {
+            "type": "string",
+            "enum": [
+              "YES",
+              "NO",
+              "UNCLEAR"
+            ]
+          },
+          "W_opt": {
+            "type": "string",
+            "enum": [
+              "YES",
+              "NO",
+              "UNCLEAR"
+            ]
+          },
+          "W_nar": {
+            "type": "string",
+            "enum": [
+              "YES",
+              "NO",
+              "UNCLEAR"
+            ]
+          },
+          "H": {
+            "type": "string",
+            "enum": [
+              "YES",
+              "NO",
+              "UNCLEAR"
+            ]
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "S",
+              "U",
+              "D"
+            ]
+          },
+          "ambiguity": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "P",
+          "O",
+          "W_ind",
+          "W_opt",
+          "W_nar",
+          "H",
+          "status",
+          "ambiguity"
+        ],
+        "additionalProperties": false
+      },
+      "strict": true
+    },
+    "verbosity": "low"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 1492,
+    "input_tokens_details": {
+      "cache_write_tokens": 0,
+      "cached_tokens": 1280
+    },
+    "output_tokens": 186,
+    "output_tokens_details": {
+      "reasoning_tokens": 96
+    },
+    "total_tokens": 1678
+  },
+  "user": null,
+  "metadata": {}
+}

@@ -1,0 +1,16 @@
+{
+  "artifacts": 22,
+  "passes": {
+    "1": [
+      "traceability",
+      "Require explicit system identity, dates/scope, the relevant policy burden, and a passage-level mechanism. Do not infer across documents."
+    ],
+    "2": [
+      "adversarial burden",
+      "Try to disprove recovery. Generic privacy, accuracy, review, or governance language is not a rebuttal to principal-basis influence."
+    ]
+  },
+  "strict_recovery_rule": "All six fields YES in both passes.",
+  "excerpt_rule": "First 3,500 characters plus merged windows around title and burden-bearing terms, capped at 22,000 characters.",
+  "integrity_boundary": "Two computational passage audits, not human review."
+}

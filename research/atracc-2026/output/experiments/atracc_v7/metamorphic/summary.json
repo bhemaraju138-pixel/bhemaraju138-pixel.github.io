@@ -1,0 +1,333 @@
+{
+  "design": "Prospective metamorphic test of a locked semantic codebook. Constructed variants test expected response relations; they are not agency evidence, criterion labels, or replacements for human annotation.",
+  "source_templates": 70,
+  "conditions": [
+    "original",
+    "whitespace",
+    "human_review",
+    "multiple_sources",
+    "independent_basis"
+  ],
+  "models": {
+    "gpt-6-astra": {
+      "n": 70,
+      "base_no_W": 53,
+      "base_W_ind_not_yes": 63,
+      "base_non_S": 53,
+      "whitespace": {
+        "exact_component_vectors": 60,
+        "exact_component_vectors_pct": 85.7,
+        "same_circuit_status": 69,
+        "same_circuit_status_pct": 98.6,
+        "same_reported_status": 69,
+        "same_reported_status_pct": 98.6
+      },
+      "human_review": {
+        "new_any_W_among_base_no_W": 1,
+        "denominator_base_no_W": 53,
+        "new_any_W_pct": 1.9,
+        "nonS_to_S": 1,
+        "denominator_base_non_S": 53,
+        "eligible_originals_P_yes_O_yes_no_W": 31,
+        "eligible_to_S": 1
+      },
+      "multiple_sources": {
+        "new_any_W_among_base_no_W": 1,
+        "denominator_base_no_W": 53,
+        "new_any_W_pct": 1.9,
+        "new_W_ind_among_base_not_yes": 1,
+        "denominator_base_W_ind_not_yes": 63,
+        "new_W_ind_pct": 1.6,
+        "nonS_to_S": 1,
+        "denominator_base_non_S": 53,
+        "eligible_originals_P_yes_O_yes_no_W": 31,
+        "eligible_to_S": 1
+      },
+      "independent_basis": {
+        "W_ind_yes_all": 70,
+        "W_ind_yes_all_pct": 100.0,
+        "new_W_ind_among_base_not_yes": 63,
+        "denominator_base_W_ind_not_yes": 63,
+        "new_W_ind_pct": 100.0,
+        "nonS_to_S": 40,
+        "repair_eligible_originals": 31,
+        "repair_eligible_to_S": 31
+      },
+      "circuit_reported_mismatches": 0,
+      "condition_counts": {
+        "original": {
+          "circuit_status": {
+            "D": 24,
+            "S": 17,
+            "U": 29
+          },
+          "reported_status": {
+            "D": 24,
+            "S": 17,
+            "U": 29
+          },
+          "W_ind": {
+            "NO": 62,
+            "UNCLEAR": 1,
+            "YES": 7
+          }
+        },
+        "whitespace": {
+          "circuit_status": {
+            "D": 23,
+            "S": 18,
+            "U": 29
+          },
+          "reported_status": {
+            "D": 23,
+            "S": 18,
+            "U": 29
+          },
+          "W_ind": {
+            "NO": 60,
+            "UNCLEAR": 2,
+            "YES": 8
+          }
+        },
+        "human_review": {
+          "circuit_status": {
+            "D": 53,
+            "S": 17
+          },
+          "reported_status": {
+            "D": 53,
+            "S": 17
+          },
+          "W_ind": {
+            "NO": 61,
+            "UNCLEAR": 1,
+            "YES": 8
+          }
+        },
+        "multiple_sources": {
+          "circuit_status": {
+            "D": 51,
+            "S": 17,
+            "U": 2
+          },
+          "reported_status": {
+            "D": 51,
+            "S": 17,
+            "U": 2
+          },
+          "W_ind": {
+            "NO": 60,
+            "UNCLEAR": 2,
+            "YES": 8
+          }
+        },
+        "independent_basis": {
+          "circuit_status": {
+            "S": 57,
+            "U": 13
+          },
+          "reported_status": {
+            "S": 57,
+            "U": 13
+          },
+          "W_ind": {
+            "YES": 70
+          }
+        }
+      },
+      "usage": {
+        "input_tokens": 533096,
+        "cached_input_tokens": 0,
+        "output_tokens": 96707,
+        "reasoning_tokens": 24656
+      }
+    },
+    "gpt-5.4-mini-2026-03-17": {
+      "n": 70,
+      "base_no_W": 51,
+      "base_W_ind_not_yes": 62,
+      "base_non_S": 52,
+      "whitespace": {
+        "exact_component_vectors": 38,
+        "exact_component_vectors_pct": 54.3,
+        "same_circuit_status": 61,
+        "same_circuit_status_pct": 87.1,
+        "same_reported_status": 59,
+        "same_reported_status_pct": 84.3
+      },
+      "human_review": {
+        "new_any_W_among_base_no_W": 4,
+        "denominator_base_no_W": 51,
+        "new_any_W_pct": 7.8,
+        "nonS_to_S": 4,
+        "denominator_base_non_S": 52,
+        "eligible_originals_P_yes_O_yes_no_W": 33,
+        "eligible_to_S": 4
+      },
+      "multiple_sources": {
+        "new_any_W_among_base_no_W": 6,
+        "denominator_base_no_W": 51,
+        "new_any_W_pct": 11.8,
+        "new_W_ind_among_base_not_yes": 2,
+        "denominator_base_W_ind_not_yes": 62,
+        "new_W_ind_pct": 3.2,
+        "nonS_to_S": 6,
+        "denominator_base_non_S": 52,
+        "eligible_originals_P_yes_O_yes_no_W": 33,
+        "eligible_to_S": 6
+      },
+      "independent_basis": {
+        "W_ind_yes_all": 70,
+        "W_ind_yes_all_pct": 100.0,
+        "new_W_ind_among_base_not_yes": 62,
+        "denominator_base_W_ind_not_yes": 62,
+        "new_W_ind_pct": 100.0,
+        "nonS_to_S": 39,
+        "repair_eligible_originals": 33,
+        "repair_eligible_to_S": 31
+      },
+      "circuit_reported_mismatches": 6,
+      "condition_counts": {
+        "original": {
+          "circuit_status": {
+            "D": 27,
+            "S": 18,
+            "U": 25
+          },
+          "reported_status": {
+            "D": 26,
+            "S": 18,
+            "U": 26
+          },
+          "W_ind": {
+            "NO": 58,
+            "UNCLEAR": 4,
+            "YES": 8
+          }
+        },
+        "whitespace": {
+          "circuit_status": {
+            "D": 22,
+            "S": 20,
+            "U": 28
+          },
+          "reported_status": {
+            "D": 21,
+            "S": 20,
+            "U": 29
+          },
+          "W_ind": {
+            "NO": 59,
+            "UNCLEAR": 3,
+            "YES": 8
+          }
+        },
+        "human_review": {
+          "circuit_status": {
+            "D": 52,
+            "S": 17,
+            "U": 1
+          },
+          "reported_status": {
+            "D": 49,
+            "S": 17,
+            "U": 4
+          },
+          "W_ind": {
+            "NO": 61,
+            "UNCLEAR": 2,
+            "YES": 7
+          }
+        },
+        "multiple_sources": {
+          "circuit_status": {
+            "D": 25,
+            "S": 20,
+            "U": 25
+          },
+          "reported_status": {
+            "D": 24,
+            "S": 20,
+            "U": 26
+          },
+          "W_ind": {
+            "NO": 56,
+            "UNCLEAR": 5,
+            "YES": 9
+          }
+        },
+        "independent_basis": {
+          "circuit_status": {
+            "S": 57,
+            "U": 13
+          },
+          "reported_status": {
+            "S": 57,
+            "U": 13
+          },
+          "W_ind": {
+            "YES": 70
+          }
+        }
+      },
+      "usage": {
+        "input_tokens": 533096,
+        "cached_input_tokens": 441600,
+        "output_tokens": 76336,
+        "reasoning_tokens": 49637
+      }
+    }
+  },
+  "cross_model": {
+    "original": {
+      "same_component_vector": 36,
+      "same_component_vector_pct": 51.4,
+      "same_circuit_status": 58,
+      "same_circuit_status_pct": 82.9,
+      "same_reported_status": 57,
+      "same_reported_status_pct": 81.4
+    },
+    "whitespace": {
+      "same_component_vector": 35,
+      "same_component_vector_pct": 50.0,
+      "same_circuit_status": 54,
+      "same_circuit_status_pct": 77.1,
+      "same_reported_status": 53,
+      "same_reported_status_pct": 75.7
+    },
+    "human_review": {
+      "same_component_vector": 43,
+      "same_component_vector_pct": 61.4,
+      "same_circuit_status": 57,
+      "same_circuit_status_pct": 81.4,
+      "same_reported_status": 54,
+      "same_reported_status_pct": 77.1
+    },
+    "multiple_sources": {
+      "same_component_vector": 18,
+      "same_component_vector_pct": 25.7,
+      "same_circuit_status": 28,
+      "same_circuit_status_pct": 40.0,
+      "same_reported_status": 27,
+      "same_reported_status_pct": 38.6
+    },
+    "independent_basis": {
+      "same_component_vector": 27,
+      "same_component_vector_pct": 38.6,
+      "same_circuit_status": 64,
+      "same_circuit_status_pct": 91.4,
+      "same_reported_status": 64,
+      "same_reported_status_pct": 91.4
+    }
+  },
+  "verification": {
+    "checks": 13,
+    "passed": 13
+  },
+  "total_usage": {
+    "input_tokens": 1066192,
+    "cached_input_tokens": 441600,
+    "output_tokens": 173043,
+    "reasoning_tokens": 74293
+  }
+}

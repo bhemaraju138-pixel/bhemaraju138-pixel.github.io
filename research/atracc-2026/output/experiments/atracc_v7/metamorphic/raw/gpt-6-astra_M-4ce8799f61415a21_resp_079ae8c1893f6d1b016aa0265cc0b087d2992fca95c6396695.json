@@ -1,0 +1,183 @@
+{
+  "id": "resp_079ae8c1893f6d1b016aa0265cc0b087d2992fca95c6396695",
+  "object": "response",
+  "created_at": 1788880476,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1788880488,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": null,
+  "max_output_tokens": 4096,
+  "max_tool_calls": null,
+  "model": "gpt-6-astra",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_079ae8c1893f6d1b016aa0265e115c87d29eb5d4be3b43ca9a",
+      "type": "reasoning",
+      "content": [],
+      "encrypted_content": "gAAAAABqoCZolS2uWKVew0e_IKGCveqnji2lBCgX0gCxfST3ernjMJkVGRQJcXEH1xwAMUD_bQ_I0dXKD1c9YMqB6syhRmWP36YWqezpkJ7MLHht37_5i31rerbj8d4CE_Zqmk9CWWKhJsjlFUG5eMvcEvn7JhQf8cjFMisJ3wN7zgU9TajCqGF5Fc2lofQyF-gZARWR05AITWCEQHsyz4ZtWVOwyX2jNO-kzmpM7sEHRG7Ym6qh5CpfyQgNIL4f3yq_BkeyoXYGaATSHO7nez0WzpWbBJWwI56FsCE-VjqabDemZ64tWTS4Y1nK09IS9323yIbDpvQC4NDkMxb8wG4vsWEW9r9WKAztFUt8F61M-y1789zP_0yKCHj26b19pU7-zH431plvnEUrL0a8-q3foch0izIFqgHRe_OLzZc8sJ4UCPAGZqMgy06xYe4Dx16Il1iZUfSTPOA_TNBNVHx78veKE3GZcYz3H6bS0Kp5eQC_nX9QCnYDJQQLYlVo5quW5V1rRY0c9M95Ggq_qfCRi8SC5SOLW7z_8GRmHQfga6i047vONnN63tAJGgREOt67ptMhI4UFsMN7Qqi92FBspPMbFLEMI7kLlXEAMijJQz3pi5kBrgv9mofvb3Xol9PXFqWD7cdODxaJ0akvPfiIar6V4o2SDWx8-h5Gk-Fn6c12gbKIxFGOFg3-b86FBuFoH6qmfxKg-5Vuy3hj5bNHKEpNv_i_enhwE-mtlerb3pPbSEBxrCSvFbf_WdqRYps8de45-gp4L3vOqu1GW4wjppgPyQwQV8yVbYFlhSjBhSkg3UFVf-l53317BwuhGA5cPJU1wF7Uuw9jwvGK6183HoW7hOolg2UbYUqSssD7gJurAsUVeiE_4souvsI3D8E6nEYARDOwOy-MGDxGyAyUXWQIztA2zREnUve2DMpq2Zl9r6ULjNldbqoytLqJxLfKz3n_4ivXf6aIRqvnPfMITmdOeKlU5YzegS56GXeR9fwP0cbxz_4N8R52LUIYvDfB4VMs0sNrQlORAGe4lpMIDjKyb7JxpE_oqkVmCrNd9iwwWIVzo7XqQzBHlmlz-SMdJSaIP4yXFuA2QGaZCTorueOrD-gWYkS67OWKTe25kIHATX7tX7SwlukiHjES9jzG2EpvRIDnFfsazMjtFbMKtJZXIph6sZJ3hGE467TNmOgjgowFHUvy2a75aN_V9G-Yn1c5NH_Ht6xzJTjGY6XzP2oVCcOsPZGAzm_oZ6-Uj0PTtUDVD1Qe9hxK003p95MdO3wTNufLGvgz5b6j3LtxvruuiB8wrtAfldvSU3kR-g599YpURWOwY03I-WqticgeGfJZvTKAuyCLlQLWaZEbFeMAStU_uwIU6N1NDhmd0RZJLf3JDwhqDRyxcN47jS7MqRr-YRkwZ6Y1TxxHKYxBd_B-0HLGeKr67hCRLyzeLtGCcAmyTAj2_R0YLcCfROIBlbFBbjqhbonYMtQgwiGj-Rk5_ybTCvwwlO7sYWcdlw67wyCZTueuS0ful0FeDMzIWIKDIFJOh2B9_kKDxavJ9jASvriUPIZP661qgMx5hhoil9NU_4W2L3qXLdJV4w4yVA5KyrutKC4rzx13kH4z9q-TraIhruQ4dNz6Fv9EJvsNbhWWcs-ciCQy098pC_r5uOkpGFNliZ5mbLMnO93s-Pl7RjgZ56vnHROaaIm6aatvRynBaM-LWsMabbebDVgb1GwKOY2dVOmGbvGd7aTGfUVRnj3nF7oT8GnlEDNuyGFvxxaxs38X2o0cJJ2vc8WM-1-JFs716pwv3bcLhNne3F8_PFwHBVogE0b0NLUp4L2aW6bRPKUF7wNpwlY7un7HsHs2t0hbQfLKuMIp2su1lMYEjKIs9Q_TwkI26na95fNx1YKC3u-zC_oHUrBUC7QZJH1OyGPS6dnS9S5IguawBYTLaUp8qYXSrgNDiqrKXBiZpZUVgRL7af-G1MuqzIUcWe7mYlHQ3t4XZMJRgnt3GHrp6tSv_nXlW0Hmq0qARnZyN29eTt48oJYB6xLZ4Jw4LWFcZKevVSlwzc1oisUNdri28r123RljsPIr2eES84IWXyG27AeA14_7HpJENdycueDPDN47JlpAWnzZGmwvcHXFxxBAzX0m9XJHE-gvzahoyabtl4rcSi30eRWbsPl-LjnKygxQSmPJBjnQacJjSJwE7A3eVK0w7Op51UdHO9AgPA_e8uPI0C-3cv2u1jXb-qpY2BR9zBlRYHW6nItD8ofCM7Mdi5VqQJbk7va_PkrXFT0Wq5Z0IuNqUWYETDYjfe-ZIER1Qbj3HhMn9K9WtdWYEVu7udtdTCH3XklEf3Yq-ztpVOs=",
+      "summary": []
+    },
+    {
+      "id": "msg_079ae8c1893f6d1b016aa02663672487d2be9440bd7f11abd8",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"id\":\"M-4ce8799f61415a21\",\"P\":\"YES\",\"O\":\"YES\",\"W_ind\":\"UNCLEAR\",\"W_opt\":\"NO\",\"W_nar\":\"YES\",\"H\":\"YES\",\"status\":\"S\",\"ambiguity\":\"P: \\\"do not serve as a principal basis\\\" for an action with \\\"a legal, material, binding, or similarly significant effect\\\". O: \\\"identifies whether a fingerprint collected is of sufficient quality to pass the FBI fingerprint check process\\\". W_nar: \\\"only quality fingerprints are passed forward for matching against the FBI Identity History Summary Check\\\"; this quality-assurance step \\\"is not determinative of the overall adjudication decision\\\". W_ind: \\\"Results of FBI fingerprint checks are subsequently reviewed by a human\\\" identifies downstream evidence, but does not explicitly establish its independent, constraining role. W_opt: no alternative stated. H: \\\"A human reviews the AI output and makes the final decision.\\\" No status-changing ambiguity: the bounded quality-screening mechanism supports S independently of human review. Confidence: high. Lens: public-rationale-only. Model: OpenAI GPT; specific version unavailable. Protocol: ATRACC Public-Rebuttal Codebook v3.\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "low",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": false,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "atracc_coding",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "P": {
+            "type": "string",
+            "enum": [
+              "YES",
+              "NO",
+              "UNCLEAR"
+            ]
+          },
+          "O": {
+            "type": "string",
+            "enum": [
+              "YES",
+              "NO",
+              "UNCLEAR"
+            ]
+          },
+          "W_ind": {
+            "type": "string",
+            "enum": [
+              "YES",
+              "NO",
+              "UNCLEAR"
+            ]
+          },
+          "W_opt": {
+            "type": "string",
+            "enum": [
+              "YES",
+              "NO",
+              "UNCLEAR"
+            ]
+          },
+          "W_nar": {
+            "type": "string",
+            "enum": [
+              "YES",
+              "NO",
+              "UNCLEAR"
+            ]
+          },
+          "H": {
+            "type": "string",
+            "enum": [
+              "YES",
+              "NO",
+              "UNCLEAR"
+            ]
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "S",
+              "U",
+              "D"
+            ]
+          },
+          "ambiguity": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "P",
+          "O",
+          "W_ind",
+          "W_opt",
+          "W_nar",
+          "H",
+          "status",
+          "ambiguity"
+        ],
+        "additionalProperties": false
+      },
+      "strict": true
+    },
+    "verbosity": "low"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 1600,
+    "input_tokens_details": {
+      "cache_write_tokens": 1597,
+      "cached_tokens": 0
+    },
+    "output_tokens": 409,
+    "output_tokens_details": {
+      "reasoning_tokens": 148
+    },
+    "total_tokens": 2009
+  },
+  "user": null,
+  "metadata": {}
+}

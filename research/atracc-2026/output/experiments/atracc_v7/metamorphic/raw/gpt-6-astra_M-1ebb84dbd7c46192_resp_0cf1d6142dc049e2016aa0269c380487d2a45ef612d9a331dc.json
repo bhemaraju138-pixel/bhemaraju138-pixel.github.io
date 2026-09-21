@@ -1,0 +1,183 @@
+{
+  "id": "resp_0cf1d6142dc049e2016aa0269c380487d2a45ef612d9a331dc",
+  "object": "response",
+  "created_at": 1788880540,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1788880546,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": null,
+  "max_output_tokens": 4096,
+  "max_tool_calls": null,
+  "model": "gpt-6-astra",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_0cf1d6142dc049e2016aa0269d0dbc87d2ab70ea72713db603",
+      "type": "reasoning",
+      "content": [],
+      "encrypted_content": "gAAAAABqoCaitNqBjRpV7QSorTx8N6cq09PcA54ZSUBVQatmuEhZutwU67BLjEym9f_qBgunQEsOtKaU2pNT0L2KkpVY3tpypEvpfNFTr8WaGt6URmqsp71SCvzl-KJ349-CP9Nx7f4JzAN3g8nZkxt_Lnmwul9imMpGAoXZaR6MSxPYrpNnz4RhmQrJ4ZM4aPdQMwjn7YvRcwNXD6bbRbg0nHrwe09hGYc1bsZSgyCvuIUyF3bb0bln4nEZbvOf_xrB7HjbZ-Gl7PCbWxc2j2YaMeVpG5-7GpOAJVr1oZ1wffQtMlej6cbJAmaYic38jAmX9tiMXa3AeYGz1jghRJvunt4F7CqRMM65sSDOdh_5LVqyII1LA5VyCaZh7lGaDzcg3SjaH1VS-mjy1_3zN2IQC8ukFNpW0r-FSIh4E4VbGXGQA9fUGE5npmJeo3kIdvZw1_v6lm1XXmIcA0A-jHJNrntHbOgESVi_rFpAAukp3HbHDW7hKszRQOyoZlv9RbEYdX_sC2jEOlloVmOgFelKMtNkbBxfKL54Q2wbaysjCCKgxAvNUFlC9LT-Hspi2lIt4xLXUIQz8KEzWyvcTFuxTWz2FWJXMlrvcf5fxi3owwn5BeWA1M-ixKJaMVMMkjTho2tgKxINT1voN4A-Phxp2AmyhiOLdhDycnxIZ1BbBgKl4epYFLjvxnMfJwDRN7ULNX0LkpWmvIIyO35qZ_k5dB8u2xNlBTP2JmI0pyN0biTfv9KKqmH9JCXOTJ42QqLJ-mKrN76zLdozxRT4vodetFnecFQwTjD11ePQeFgZIVg0Qc7MZjoZWJDLs2pzPXIknLwXBiZVV8tQdzMFN_2VpA-1c1j_Kvbs34LOjgI7bdBUA7M9XsTdoEsrIqu0CMmajUCEfIi31KipAkCMXNh0nqzz8FYq3OIMcgkUbf6tL8afaqciVbfa6saDisKcWsHwMW5Fxrd8NzplRXfbC-8jpxHgcjvwbkThU--W6sf2djQpSEoVhy-e_gQxwT8S41K6QaYDV5CaG7DbJpwLhVpSoWWhzlkoTcQsDvTM619IpoRXkL4s7CI33m_FhUiLRINWriD53bT_I-YIhFDFIg0BLlNPIYH0BKAnPAp5bblax4k_B3-LEyIGsh6pykblKcV6Ofr3syha7pIv19olBIeWwNDzrSDcddFSWBLB8ehRcL1NrCkN6qYttNg_AakQn-2BQKmGisTPZTR2xmH_1f3awTkqF9236zFIZrgxh6NyATqVWGww_aFJiZrUNShM4a4tveZKuf6jIJ1aAx826hg2Mk23en3IGn8JWPAj6W1H1SXX2VVaHeh-aysYH2lBpoJAU9MdJ-FD9QzQW6oZIVHcVsqkHqIlgjWzbUm6LyZZLGuFLV66jRExWHXDEPhpZ4neP3-gO57mychyzO_HvbMCrrRiFSq3sme9Iwi3Dnf20WQreqRErds6LEixiuICvNf5YmFsyigja3_1BINweYyJl1WgXRSrUdXI7d2KzbLoegqJIy95D7Y=",
+      "summary": []
+    },
+    {
+      "id": "msg_0cf1d6142dc049e2016aa0269ed87087d2a75442a4edff72d1",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"id\":\"M-1ebb84dbd7c46192\",\"P\":\"NO\",\"O\":\"UNCLEAR\",\"W_ind\":\"NO\",\"W_opt\":\"NO\",\"W_nar\":\"NO\",\"H\":\"YES\",\"status\":\"D\",\"ambiguity\":\"P: no threshold identified. O: \\\"AI output\\\" leaves the output and workflow unspecified. W_ind/W_opt/W_nar: no qualifying mechanism stated. H: \\\"A human reviews the AI output and makes the final decision.\\\" Human oversight is the only stated warrant. Confidence: high. Lens: public-rebuttal, rationale-only. Model: OpenAI assistant. Protocol: ATRACC Public-Rebuttal Codebook v3.\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "low",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": false,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "atracc_coding",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "P": {
+            "type": "string",
+            "enum": [
+              "YES",
+              "NO",
+              "UNCLEAR"
+            ]
+          },
+          "O": {
+            "type": "string",
+            "enum": [
+              "YES",
+              "NO",
+              "UNCLEAR"
+            ]
+          },
+          "W_ind": {
+            "type": "string",
+            "enum": [
+              "YES",
+              "NO",
+              "UNCLEAR"
+            ]
+          },
+          "W_opt": {
+            "type": "string",
+            "enum": [
+              "YES",
+              "NO",
+              "UNCLEAR"
+            ]
+          },
+          "W_nar": {
+            "type": "string",
+            "enum": [
+              "YES",
+              "NO",
+              "UNCLEAR"
+            ]
+          },
+          "H": {
+            "type": "string",
+            "enum": [
+              "YES",
+              "NO",
+              "UNCLEAR"
+            ]
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "S",
+              "U",
+              "D"
+            ]
+          },
+          "ambiguity": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "P",
+          "O",
+          "W_ind",
+          "W_opt",
+          "W_nar",
+          "H",
+          "status",
+          "ambiguity"
+        ],
+        "additionalProperties": false
+      },
+      "strict": true
+    },
+    "verbosity": "low"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 1417,
+    "input_tokens_details": {
+      "cache_write_tokens": 1414,
+      "cached_tokens": 0
+    },
+    "output_tokens": 201,
+    "output_tokens_details": {
+      "reasoning_tokens": 49
+    },
+    "total_tokens": 1618
+  },
+  "user": null,
+  "metadata": {}
+}

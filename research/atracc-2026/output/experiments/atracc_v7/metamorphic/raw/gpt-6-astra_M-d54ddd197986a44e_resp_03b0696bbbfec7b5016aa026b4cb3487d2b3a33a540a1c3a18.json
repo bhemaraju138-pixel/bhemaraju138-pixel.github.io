@@ -1,0 +1,183 @@
+{
+  "id": "resp_03b0696bbbfec7b5016aa026b4cb3487d2b3a33a540a1c3a18",
+  "object": "response",
+  "created_at": 1788880564,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1788880571,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": null,
+  "max_output_tokens": 4096,
+  "max_tool_calls": null,
+  "model": "gpt-6-astra",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_03b0696bbbfec7b5016aa026b5b04c87d2be2e2225060347a3",
+      "type": "reasoning",
+      "content": [],
+      "encrypted_content": "gAAAAABqoCa7x_6MvRaT3IZoWHeHqsslJVlUFNJ9jE0bAHA7-Qm4Ex-nrMgYQ4bDlBeieF8hbPIiGYMR08bEJfHf9ase3eXTBg2OuGZgUnuIFIgzAIdxujAvkdNCD-pDHiP9oB9ELpOIjnqHJc2S-Pk5LHAJ_AIVIoudgqDVyU2B6C0bO6sDI8A3rrfnCDOg0Iw0Rv_zab3pXzZ5C6KyqL-ZLGpmrn0VSeAqq2rhBMDZ8rSB61PHa0JyqjEsAKNQAmAZISVmKRicY4bafhLSoT11JotyJS_OXAC1L0n92Bo1Hmb98FDAjDNuSjNWlsRLOC-6kABPiw6P1nyl6dQSH5X4EjRqI18zqMKEWTqSMdi8EjzUjKgkbiKDmmU3RwHnT7he5o9QrFib33HfEmKgNxc5JZpEb-jSvpE2Imxj3029XvKuzegDL4lRPWv1aifBa0bIUUEHEx4iBhT4jCXER1THurN8r6QMCwv-gCO3xdHjU_IKXcAOFeNMRm7ciTKcQIzNSFrSj_ea-KvcSoRcZ3qWG_syGCmpWRuTxzpYU6afnTfRD5M9qOZHZ2pKa1TdEilHwM9s3e8fI-Qf5huvgR1JwGq_LH4RzJOIUArTIRL_32Zr-MeQPuau3bq7EohFlcHdiQCA4OwX-H0hp6u4thjk5WYoLCBnirT8_rmNIl57u3bjbExE8sHtgvaMVtVmJo5rE0U99WFZbi5e9dJiL9dHLhc4zQqijwfkIhC5m7GD8HWdSyDku3Sdrg-_tl8FC5LQbtBbeTSGHd5KBvfWfo2eBEPdQxIp5_pHEmmsZfeu4DKV3uFoXM6gu9ud6i0_uXgb9yc9lwwf4FSD02Q5-QhQ6VfGHb9GdCiosUCWowAwtsrBXYiRTVBPEO2RZBH9iPMzjmJ0a3OYIPURdGFapR9no4qBeCMXnQoFNB3FJaL1IpKj85ve_MSlYEIkyy7YfTxh-63Enb6fBHliEZV7Iq-uK3RyYDdmWpo0h5UpF4HP_TF8Le6_XeGfmncj_VUEV4QYU1bUryfMW-X-ok9ahvCICu6JfXJpEQBrgHgiL8271xyJnxChHykEx19n7vLXC561GCVCqC-aYJITfE91sI78aEgzcCzHkQHzH9QQkBrJZ-RrQbB5PXfszfnSTDj0TKNwK4K9Im0-9MX5BeOELQiilx2AevO_nhuXzkFxNCJFbQBEFgq0ZXAGlsWsNRzNqZ1Ay0E-b1JrA645JV-jaByBNMT6la9h3wXlPAE_iAKHVbCeUosIkZ1Wvz-bnhtmbkxAtYag3A_QZhvx-RfDUyJbRRjtsVR1TbU3CI-L38H3J33E3YefDtM=",
+      "summary": []
+    },
+    {
+      "id": "msg_03b0696bbbfec7b5016aa026b7333887d28f28ec70ece8114c",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"id\":\"M-d54ddd197986a44e\",\"P\":\"YES\",\"O\":\"YES\",\"W_ind\":\"NO\",\"W_opt\":\"NO\",\"W_nar\":\"NO\",\"H\":\"NO\",\"status\":\"U\",\"ambiguity\":\"P: \\\"do not produce an action or serve as a principal basis for a decision\\\" with significant effects. O: \\\"only provides the officer with complied public information.\\\" W_ind/W_opt: no independent decision basis or available non-AI path stated. W_nar: public-information compilation bounds the output but does not explain why it cannot be a principal decision basis. H: the officer is merely a recipient; human review is not offered as a warrant. Confidence: high. Lens: public-rationale-only. Model: OpenAI assistant; protocol: ATRACC Public-Rebuttal Codebook v3.\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "low",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": false,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "atracc_coding",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "P": {
+            "type": "string",
+            "enum": [
+              "YES",
+              "NO",
+              "UNCLEAR"
+            ]
+          },
+          "O": {
+            "type": "string",
+            "enum": [
+              "YES",
+              "NO",
+              "UNCLEAR"
+            ]
+          },
+          "W_ind": {
+            "type": "string",
+            "enum": [
+              "YES",
+              "NO",
+              "UNCLEAR"
+            ]
+          },
+          "W_opt": {
+            "type": "string",
+            "enum": [
+              "YES",
+              "NO",
+              "UNCLEAR"
+            ]
+          },
+          "W_nar": {
+            "type": "string",
+            "enum": [
+              "YES",
+              "NO",
+              "UNCLEAR"
+            ]
+          },
+          "H": {
+            "type": "string",
+            "enum": [
+              "YES",
+              "NO",
+              "UNCLEAR"
+            ]
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "S",
+              "U",
+              "D"
+            ]
+          },
+          "ambiguity": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "P",
+          "O",
+          "W_ind",
+          "W_opt",
+          "W_nar",
+          "H",
+          "status",
+          "ambiguity"
+        ],
+        "additionalProperties": false
+      },
+      "strict": true
+    },
+    "verbosity": "low"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 1524,
+    "input_tokens_details": {
+      "cache_write_tokens": 1521,
+      "cached_tokens": 0
+    },
+    "output_tokens": 208,
+    "output_tokens_details": {
+      "reasoning_tokens": 25
+    },
+    "total_tokens": 1732
+  },
+  "user": null,
+  "metadata": {}
+}

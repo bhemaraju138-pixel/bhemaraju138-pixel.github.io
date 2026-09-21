@@ -2,7 +2,7 @@ import { access, readFile } from "node:fs/promises";
 import { resolve } from "node:path";
 import test from "node:test";
 import assert from "node:assert/strict";
-import { publicDataEssays } from "../src/content.js";
+import { publicDataEssays, publications } from "../src/content.js";
 
 test("the public-data series contains six distinct essays", () => {
   assert.equal(publicDataEssays.length, 6);
@@ -60,4 +60,17 @@ test("portfolio routes and route-specific metadata are built", async () => {
   assert.doesNotMatch(essayHtml, /name="twitter:image"/);
 
   await assert.rejects(access(resolve("dist/client/timeline/index.html")));
+});
+
+test("the accepted ATRACC paper publishes its code and artifact bundle", async () => {
+  const paper = publications.find(
+    (item) => item.title === "Auditing Evidence Claims in Federal High-Impact AI Exclusions",
+  );
+
+  assert.ok(paper);
+  assert.match(paper.codeHref, /research\/atracc-2026$/);
+  assert.equal(paper.bundleHref, "/data/atracc-2026-reproducibility.zip");
+  await access(resolve("research/atracc-2026/README.md"));
+  await access(resolve("research/atracc-2026/PACKAGE_MANIFEST.json"));
+  await access(resolve("dist/client/data/atracc-2026-reproducibility.zip"));
 });

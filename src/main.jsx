@@ -1741,6 +1741,12 @@ function PublicationsPage() {
               <div className="button-row publication-actions">
                 <a className="primary-button" href={item.href} target={item.external ? "_blank" : undefined} rel={item.external ? "noreferrer" : undefined}>{item.linkLabel} <Arrow /></a>
                 {item.secondaryHref && <a className="secondary-button" href={item.secondaryHref} target="_blank" rel="noreferrer">{item.secondaryLabel} <Arrow /></a>}
+                {item.codeHref && (
+                  <a className="secondary-button" href={item.codeHref} target="_blank" rel="noreferrer">{item.codeLabel} <Arrow /></a>
+                )}
+                {item.bundleHref && (
+                  <a className="text-link" href={item.bundleHref} download>Download reproducibility bundle <Arrow /></a>
+                )}
               </div>
             </div>
           </article>

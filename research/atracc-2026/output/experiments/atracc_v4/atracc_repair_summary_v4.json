@@ -1,0 +1,77 @@
+{
+  "records": 110,
+  "unresolved_records": 69,
+  "unresolved_repair_depth": {
+    "0": 5,
+    "1": 12,
+    "2": 43,
+    "3": 9
+  },
+  "unresolved_missing_role_counts": {
+    "output/workflow role": 49,
+    "qualifying mechanism": 63,
+    "policy predicate": 13
+  },
+  "unresolved_one_role_away": 12,
+  "unresolved_one_role_breakdown": {
+    "qualifying mechanism": 11,
+    "output/workflow role": 1
+  },
+  "unresolved_adjudication_only": 5,
+  "defeater_records": 16,
+  "defeater_repair_depth": {
+    "1": 10,
+    "2": 6
+  },
+  "defeater_missing_role_counts": {
+    "output/workflow role": 2,
+    "qualifying mechanism": 16,
+    "policy predicate": 4
+  },
+  "artifact_recovery_ladder": [
+    {
+      "stage": "retrievable",
+      "surviving_artifacts": 19,
+      "field_yes": 19,
+      "field_unclear": 0,
+      "field_no": 3
+    },
+    {
+      "stage": "same_system",
+      "surviving_artifacts": 5,
+      "field_yes": 5,
+      "field_unclear": 11,
+      "field_no": 6
+    },
+    {
+      "stage": "temporally_applicable",
+      "surviving_artifacts": 3,
+      "field_yes": 7,
+      "field_unclear": 14,
+      "field_no": 1
+    },
+    {
+      "stage": "same_predicate",
+      "surviving_artifacts": 1,
+      "field_yes": 5,
+      "field_unclear": 8,
+      "field_no": 9
+    },
+    {
+      "stage": "qualifying_mechanism",
+      "surviving_artifacts": 0,
+      "field_yes": 3,
+      "field_unclear": 5,
+      "field_no": 14
+    },
+    {
+      "stage": "passage_anchor",
+      "surviving_artifacts": 0,
+      "field_yes": 3,
+      "field_unclear": 6,
+      "field_no": 13
+    }
+  ],
+  "artifact_complete_chain": 0,
+  "interpretation": "Repair sets identify missing public argumentative roles under the locked codebook; they do not assert that the corresponding internal facts exist. Zero-deficit U cases are aggregation disagreements requiring adjudication, not additional disclosure."
+}

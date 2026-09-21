@@ -1,0 +1,101 @@
+{
+  "id": "resp_08ef85e8c47493e2016a9d0b84d88487d2a899edd454adfcb3",
+  "object": "response",
+  "created_at": 1788676996,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1788677001,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": null,
+  "max_output_tokens": 12288,
+  "max_tool_calls": null,
+  "model": "gpt-5.4-2026-03-05",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_08ef85e8c47493e2016a9d0b85480087d2abb17b90ed228e8f",
+      "type": "reasoning",
+      "content": [],
+      "encrypted_content": "gAAAAABqnQuJuofjRMtnlHUgcj99MU8loeQCCjeVCiJlGdspMcdeC7ZtH_TvQ1rXzlSXi58uluN1mmkeH_N6NgWGvRveaniG5hzOk2aLW7XdXHog7tKV0mqYIKViwg9U09aa4VEgJnJAIV8sUUaj_sQCLBNwom4-033fLAVDUwLUeuxgl8SsigXtiAmOr1RODs1LmNOlprwxTqdUd2yhSdSF2wW8BwY3y2cw2gjRrnv37oCzoX0HNElIF9HIQdrDOqfCjYxIk94hgIyOsKWUZR5NMuKMsLAtZPMTiNpcT0TNl0PY2LIAdqL--cqv3lCnt96qlCb4FZo6_wasL4FRCmFV-aouspli-VM5fqck2d8TOQWB65d74vEuY1CzYZuvutQw1zMcZtoOg1SNDW8kGtDF4f4ILsvStnyPES2I4kSPGf4zrrzs1HrJbbXzh-bN_FOKeMIxT8WCw1-yOCVQr65gC9fYg1royKpLF6jbEIDbhDJDEMaQRUaIVIF3fwP-pSDmk_XXBXnx5uUyqB3fIZfDloT0DGcPsm049oeG-9tIxYn62K2AkxZpCpT1FnqpjGJIuviEZqparK3tqotxKeJI7VJmi_k1aOZmbyxL_wnfkdLVB_ILhqazG1UZsilwiTDe2rhufYAe22Z-O8nUlamjXvbQRAGJp2X4OcbYbzuVUZrFmrxNTjNlOeZDMDFdQsFm2TK2Jt6wD8PUVx1juMLu95HKS_eDd0QW1LeKYyjBtF35fV5kkD7Hl9j7_zxiKRAkbwcWkk63azL7fk6twId48oQq__wdavBz4jzChUit9Hso8szs6v1iJca6AgRNR_HHjAJRZH_euYtPwX_k48ObcCjdVsr5Zz4GwF8N1Nxo-2ny__fQNrqg5yRXOOdYY5Q47Ca9iC6vUHkOZbVvRJ1vZPlJGW_sehgY2sZF-P6nPYU-Iu79fOePHJe7iYhBLzfuK0UCJFwTPm9WkCIVLrI98x7A4eBF2lGfDUY3FOIsT59LJZbkdW2XSLicnP3aay94qIitr7ieBwzqG2P2FrmoZczHyCMkq08UNlE8oJhlVsqlGe3kTwznjO7c0EFqSzOGsTYuhXfMy3LiTBBVl-uUfT2VOTGzG2ayyL9NiHCUd3wdqFMKf0o4W-DHw2Vllyob8xE4hks5Eax1hJn61WfvrKf1EMoVZXIZKZPU-QXc1L-CMqDExXOQAWhQg05nofQ191MUWJjVrIgpcPdp_RFefqAfZzSSdSmxsGOPI2kLvDfjb5Ctr9hryKPTZM6Ec4xdEp8PwR7y-0EuQr9YanGr1SQGkRIbLC-BoBp8btXA8GOBic_jxKIBoEbN8JBatEFrEqw0e3dy94tiodxkR4-T8R1ab-D3wFDWHTHwmjqk2dnFpBI9b36dOE9O4MfrzElxu65Vy-1h4l9KzMVZwqHWO257d560Cf1uhEYanYUl_iCKSl8nd1iDMRlbiRalCWeG7qTLeYZSjGUmgnRTx4iL06E2dnITiZNLSO09hF0IduKO3Ihjd6mQDXlWlYcK1By-cdx-fEsow-3felF858F_7DzeZJJUExaUheDeDGhPAAF4b-PcGEx2AfdgbcJi6JaCygerAAONRaiM6hX3x5mfWqDd78c8h0T2lI9e_PHhEY5CH5THIbgAff12HAPYUusvmvSkBOqbMmMFfn3H2JlteTCE6bGpWzdZUuLGIe-6PEv19k5c4xqBnSOQQj9sEYVLeduXkQbXuFUASYgbpLYPAmsXjmt9eBmTi1vMgSPfozJo-i81h8qzN2nv212p_8ixPRRgMyNbiQ8O2m3MrMab9Wqzb2N6j0kjsJiF45HstsWWCPRzZr6N5hb8ChKVk6YhwEiXhUysZbEXTCSsmRhWHGg8G3B76jiUV_pilrYJICgkneIOy6GnxXOFAPU531pRvda55at29owUz63M-CRO2gfnCy7rJMnBUplE-8OPDv4xCnL7umP7G0rywucZXUdFzI7LXbz1wFICD-znI8YFt4s_8lB6ct548f0TrfD5Rr2TUVF9ZQWIniHe9ru1gQGzcENBvt2Qct44AMS_Mm6ZB2pY0u-5g16jR8KiNpRErrxXG-pJBjNvov48b02qKrgkGjIOaNTtLQcrBSfuaQ46FKgHtMwc_HjAjLYUeyBhT4B5Lh58_ITIhypzRs2t8PE8zBMkR-qKIRZJ4yTSZiGf4etgrBC0ayK6vtllVHQjtMBH2TahT4XpbpB4_assnGZ9YOSTfTV8fJdOEsnRkZnJi_YzxQwhzu5Ao6ZuH9jfcCmLJ6bzlIkoLbeOSdGV6PLISnwmlg3B3BPgDJisxo7pSd4w9MwohM1UhyecqFZABHTemP_He0xU5mJKX_L4HSVlOPeBuWCYbMSCH5jdnW-DWzdpl2tQTvaHEcPR7GiUX5b-8yYFtohEZVx1BjJKyPynMsC_oBF4e3gPDA0NQ5tHn0Inthng10U_UWOcLl59WjyU-FNkaLwn-7qeoSVoF2Hz_TJYTT4Q-YQQsaazPTVjc2UFcMrN1ReUYNwIfPEdRg71XxZ7UjIPMyQa6No29M5--60rOVFwLoZNNAR92NjXmJf-VcccDj5jR-rVRQ9uVaHBBGjqQH2V-psaDWEuGDJ9xLhgBZ-rTpJAmYmYk7dglHfcQFAJU-GKtykA76LMS4KuIRZoRnUxtYIH2DeUJprECGU1GoX5SR6-bGlhtn8WdJBaWU5q2DRSVEAxBSRGbLzqCpGDYbNw63rodNC2M5i8MWPMW34tP92WDgRQjauZsca73uGHnU8JslS_urFmNhslzyfKGAxaTFoV4RR1a898wvyVkH2NLdqiS7VoP-IG2DZzdt6sZZ_HyMK0CbcHklUdN9LzYs21Xq7II_FDKuNestj3e6zPy0VWMRbfYUExC8g9nWIklT0K4HhSNlOvJ5rdxCQ5ncdFBhi-jAeneEWsFxDMFRD1rFRm7cXtduAg6q6Xr2Z_JOlYUUsL8qtoBJVw_OAjuo3T5hPM17wwKKz8DJYwsDkC_zrlgwuk5JdJasdgYsCw0GeY-3CuNSNevWxKVvgJFcvX_fY04HrHkaEHzOM5sKMV4qm7xOzIVjN5h595A5CSHO2cJYpKC2GKz7WkHYgKJ3pC4L9nk4wlauhP7AtCL8gGwfojHDSIIu0D9zmk4q8CaUwCGguxZNljY66h0BmOzu_8lR-W6UkTZJrrZTFalBD8r_DvfFWVpFPAhG2gMOBoh2tpUU0kBHIFHLl1CiuH0QPE28Us1er75jkIVQ48qqNLBP-qvWGyzlOti2xOTN-u32pnnjXH3Np313FWsWOM28t_d8SjiDcymlhsutwvqAsLIlMqLvFGeScRNdhMiNUl3FsLSmHJKd0Gt-7qjn3_9XRYd0kbrpewKDrW2sJJKqUOg91pL1vMEGA3vhw754UhmIjXRX9uPA8AyuxqaUXsYFrMM4kYDwt93Tyl5GRGYE7eFS-0OAooqoZpe5_bEulQ-btfDjylnleD4lpyjvLqh0ggzAKhgU5Tp-jLOUtHfsQiNGKkPj7d2l4KNx9jd5B_5uIewXNuctokFjwl5olY3VDAHU6LZ_l3oYTqKSVpdE1Nl1OIv-k78rbmtYCMMn5CN-CuasvmgCEiw209kuLPMBd24sQDKNBJDuv3k-tb8EuKePOqcqr8WziKRunfiCcEUm_ND5pOl1VDXlVy0vVFD6i_v1oTE5vzVeAL2XRZtLvT",
+      "summary": []
+    },
+    {
+      "id": "msg_08ef85e8c47493e2016a9d0b88307c87d293d768c22e828c92",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"id\":\"SYN-E03\",\"P\":\"YES\",\"O\":\"YES\",\"W_ind\":\"NO\",\"W_opt\":\"NO\",\"W_nar\":\"YES\",\"H\":\"NO\",\"status\":\"S\",\"excerpts\":{\"P\":\"does not rely on the AI's interview-scheduling priority score as the principal basis for any adjudication outcome\",\"O\":\"the score is attached to the applicant's file as the assigned queue position for interview scheduling\",\"W\":\"the score is attached to the applicant's file as the assigned queue position for interview scheduling\",\"H\":\"\"},\"ambiguity\":\"Queue-positioning for interview scheduling is a bounded procedural role, supporting W-nar, though the rationale does not elaborate further on why scheduling cannot itself be consequential.\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "current_turn",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": false,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "text"
+    },
+    "verbosity": "low"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 1328,
+    "input_tokens_details": {
+      "cache_write_tokens": 0,
+      "cached_tokens": 0
+    },
+    "output_tokens": 542,
+    "output_tokens_details": {
+      "reasoning_tokens": 389
+    },
+    "total_tokens": 1870
+  },
+  "user": null,
+  "metadata": {}
+}

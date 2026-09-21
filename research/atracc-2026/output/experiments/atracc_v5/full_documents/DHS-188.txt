@@ -1,0 +1,2373 @@
+   Privacy Impact Assessment
+             for the
+
+TECS System: Platform
+    DHS/CBP/PIA-021
+      August 12, 2016
+
+           Contact Point
+          John Maulella
+    Office of Field Operations
+  Customs and Border Protection
+          (202) 344-2605
+        Reviewing Official
+       Jonathan R. Cantor
+   Acting Chief Privacy Officer
+ Department of Homeland Security
+          (202) 343-1717
+                                                                    Privacy Impact Assessment
+                                                                   DHS/CBP/PIA-021 TECS Platform
+                                                                                          Page 1
+
+
+
+
+Abstract
+        The Department of Homeland Security, U.S. Customs and Border Protection owns and
+operates the TECS (not an acronym) system. The TECS Platform facilitates information sharing
+among federal, state, local, and tribal government agencies, as well as with international
+governments and commercial organizations. CBP’s mission includes the enforcement of the
+customs, immigration, and agriculture laws and regulations of the United States and the
+enforcement at the border of hundreds of laws on behalf of numerous federal agencies. Through
+the TECS Platform, users are able to input, access, or maintain law enforcement, inspection,
+intelligence-gathering, and operational records. CBP is publishing this Privacy Impact
+Assessment as a complement to the previously published DHS/CBP/PIA-009, CBP Primary and
+Secondary Processing PIA from 2010, to provide notice to the public and to assess the privacy
+risks and mitigations associated with the TECS Platform.
+Overview
+        DHS is charged with ensuring compliance with federal laws at the border, including those
+preventing contraband, other illegal goods, and inadmissible persons from entering or exiting the
+United States. 1 DHS’ border authorities permit the inspection, examination, and search of
+vehicles, persons, baggage, and merchandise to ensure compliance with any law or regulation
+enforced or administered by DHS and its components, and to determine if the merchandise is
+subject to duty or being introduced into the United States contrary to law. DHS/CBP’s mission
+includes the enforcement of the customs, immigration, and agriculture laws and regulations of
+the United States and the enforcement at the border of hundreds of laws on behalf of numerous
+federal agencies.
+       Accordingly, all travelers entering the United States must undergo DHS customs and
+immigration inspection to ensure that they are legally eligible to enter (as a U.S. citizen or
+otherwise) and that their belongings are not being introduced into the United States contrary to
+law. It is not until those processes are complete that a traveler, with or without his/her
+belongings, is permitted to enter the United States.
+        Depending on the method of conveyance used to travel to the United States (e.g., air, sea,
+or land (pedestrian and vehicle)), CBP collects certain information from, and about, the traveling
+public at various stages of the international trip. As part of the inspection and admissibility
+process, CBP performs law enforcement queries on the traveling public prior to and/or at the
+time of performing an inspection, including making admissibility determinations that may permit
+entry into the United States. Generally, CBP collects information:
+
+
+
+1
+    See authorities listed in Section 1.0.
+                                                                         Privacy Impact Assessment
+                                                                        DHS/CBP/PIA-021 TECS Platform
+                                                                                               Page 2
+
+
+
+
+        1) Prior to arrival in the United States (e.g., Advance Passenger Information System 2),
+       2) At the time of arrival (e.g., Nonimmigrant Inspection System, 3 Border Crossing
+Information system 4), and
+        3) As appropriate, throughout its inspection of the international traveling public to detail
+certain enforcement related circumstances (e.g., TECS, 5 Seized Assets and Case Tracking
+System (SEACATS) 6).
+       These different types of information collections are physically located within the
+information technology (IT) architecture of TECS with discrete System of Records Notices
+(SORN) in place, recognizing each system’s discrete purpose, distinct authority, differing
+populations, access rules, and retention periods. The inclusion of these systems within the TECS
+IT architecture, often described as residing upon the “TECS Platform,” facilitates the collection
+and cross-referencing of these data sets as a traveler crosses the border.
+        TECS System
+       The TECS (not an acronym) System is the updated and modified version of the former
+Treasury Enforcement Communications System. TECS is owned and managed by CBP. TECS is
+both an information-sharing platform, “TECS Platform,” which allows users to access different
+databases that may be maintained on the platform or accessed through the platform, and the
+name of a law enforcement system, “TECS, 7” that includes temporary and permanent
+enforcement, inspection, and operational records relevant to the antiterrorism and law
+enforcement mission of CBP and numerous other federal agencies that it supports.
+        TECS not only provides a platform for interaction between these different types of
+information (e.g. APIS, BCI, TECS, and SEACATS) and defined TECS users, but also serves as
+a data repository to support law enforcement “lookouts,” border screening, and reporting for
+CBP’s primary and secondary inspection processes, which are generally referenced as TECS
+Records or Subject Records. For the purposes of this PIA, “Subject Records” is a generic term
+that will be used to describe the enforcement or inspection records located in the TECS module
+of the TECS Platform pertaining to individuals. Such records include, but are not limited to,
+those records related to a violation of law discovered by CBP or another authorized user agency
+or a CBP officer narrative concerning an interaction between CBP and a person. Subject Records
+encompass not only violations of laws enforced by CBP, but may also include information on
+violations of other federal and state laws.
+
+2
+  DHS/CBP-005 Advance Passenger Information System (APIS), March 13, 2015, 80 FR 13407.
+3
+  DHS/CBP-016 Nonimmigrant Information System, March 13, 2015, 80 FR 13398.
+4
+  DHS/CBP-007 Border Crossing Information (BCI), January 25, 2016, 81 FR 404.
+5
+  DHS/CBP-011 U.S. Customs and Border Protection TECS, December 19, 2008, 73 FR 77778.
+6
+  DHS/CBP-013 Seized Assets and Case Tracking System, December 19, 2008, 73 FR 77764.
+7
+  DHS/CBP-011 U.S. Customs and Border Protection TECS, December 19, 2008, 73 FR 77778.
+                                                                           Privacy Impact Assessment
+                                                                           DHS/CBP/PIA-021 TECS Platform
+                                                                                                  Page 3
+
+
+
+
+        TECS Compliance Framework
+       In order to provide more transparency as it relates to the functions and data in TECS,
+CBP published separate Privacy Impact Assessments (PIA) and Privacy Act System of Records
+Notices (SORN) for the CBP sub-systems based on the purpose and use of the information. CBP
+also maintains other federal agency data on TECS to stage the information for use by CBP at the
+time an individual presents himself/herself to CBP. This allows TECS to work more efficiently
+and reduces the performance impact on the originating systems.
+        TECS privacy compliance documentation is divided into three categories:
+        1. TECS Primary and Secondary Inspections Process – CBP conducted a PIA in 2010 to
+           describe CBP’s use and modernization of TECS as it relates to the primary and
+           secondary inspection processes (including information collected in advance of arrival,
+           during inspections at the United States port of entry (POE), and retention of
+           information and reports following interactions during U.S. border crossing activities)
+           to ensure compliance with the numerous laws enforced by CBP, including
+           determining the admissibility of persons attempting to enter the United States. The
+           information collected pertaining to an individual’s travel forms the operational basis
+           for much of the TECS system and is discussed in more detail in the CBP Primary and
+           Secondary Processing PIA, 8 as well as in section 1.2 of this PIA.
+        2. TECS Platform – This PIA describes TECS Platform, which includes the information
+           access and system linkages facilitated for CBP, DHS, and other federal agency
+           systems that link to TECS and share data within the TECS user community. The
+           TECS Platform, which houses many of these records and provides a portal to several
+           other systems and services to facilitate screening, vetting, and analysis activities for
+           CBP and external agency users.
+        3. TECS source systems – Covered by their own individual PIAs and SORNs, as noted
+           in the Appendices to this PIA.
+        TECS Platform
+       The TECS Platform is the underlying infrastructure designed to facilitate the maintenance
+and sharing of law enforcement, inspection, intelligence-gathering, and operational records
+among the TECS user community. TECS is also used by other agencies, known as Partner
+Government Agencies (PGA), which are provided with access to TECS (for a full list of current
+PGAs with access to TECS, please see Appendix 4). The TECS Platform serves as a mechanism
+to query the databases of other law enforcement agencies, and serves as a centralized platform to
+
+8
+ DHS/CBP/PIA-009, CBP Primary and Secondary Processing, and DHS/CBP/PIA-009(a), TECS System: CBP
+Primary and Secondary Processing (TECS) National SAR Initiative, available at http://www.dhs.gov/privacy
+                                                                         Privacy Impact Assessment
+                                                                        DHS/CBP/PIA-021 TECS Platform
+                                                                                               Page 4
+
+
+
+
+access CBP and other PGA records. TECS maintains records that are owned by CBP, and
+records that are owned by external agencies. External partner agencies that input records into
+TECS, without a Lookout record, are maintained by the external partner agency for purposes of
+the Privacy Act of 1974. 9 Records maintained within TECS that are owned and maintained by
+CBP include information about individuals who have violated, or are suspected of violating, a
+law or regulation that is enforced or administered by CBP (to include Lookout records uploaded
+by other agencies); to provide a record of inspections conducted at the border; to determine
+admissibility into the United States; and to record information regarding individuals, vehicles,
+cargo, firms, and organizations to whom the Department of Homeland Security (DHS)/CBP has
+issued detentions and warnings. TECS also retains records on individuals who have been given
+access to the system for authorized purposes. TECS information is maintained in multiple
+databases that have been integrated into a single information technology architecture – known as
+the “TECS Platform” – in order to facilitate timely collection and comprehensive cross-
+referencing of datasets.
+        This Privacy Impact Assessments (PIA) reviews the framework in which TECS Platform
+data is maintained, describes the data security and auditing mechanisms by which this data is
+secured, and evaluates the methods by which data is shared or restricted among DHS/CBP and
+the other international, national, federal, state, local, and tribal agencies and commercial
+organizations. CBP has previously published separate PIAs to address the use of TECS as it
+relates to the primary and secondary inspection processes 10 at ports of entry, as well as
+procedures for processing travel documents at the border. 11
+        TECS Platform Access
+        The TECS Platform functions as a data repository through which users are able to access
+different databases and perform functions and services according to their defined permissions.
+Users access information via their online access profile, which is defined according to each
+individual TECS user’s particular job roles and responsibilities, known as a “TECS Profile”; the
+management of TECS profiles is discussed in detail in section 8.3. Accordingly, a “TECS user”
+is someone from CBP (or other DHS component) or another law enforcement entity at the
+federal or state level who has access to TECS. CBP and (when appropriate) the PGA assess
+access according to the user’s responsibilities to enable the TECS user to access only information
+within the scope of his or her professional responsibilities. TECS users must generally be U.S.
+nationals. However, there is a limited exception for Foreign Service nationals who support
+missions overseas, including those who support CBP attachés, U.S. Immigration and Customs
+9
+  5 U.S.C. § 552a.
+10
+   DHS/CBP/PIA-009, CBP Primary and Secondary Processing, and DHS/CBP/PIA-009(a), TECS System: CBP
+Primary and Secondary Processing (TECS) National SAR Initiative, available at http://www.dhs.gov/privacy
+11
+   DHS/CBP/PIA-004(e), Western Hemisphere Travel Initiative (WHTI) and DHS/CBP/PIA-007, Electronic System
+of Travel Authorization (ESTA), available at http://www.dhs.gov/privacy
+                                                                                  Privacy Impact Assessment
+                                                                                 DHS/CBP/PIA-021 TECS Platform
+                                                                                                        Page 5
+
+
+
+
+Enforcement (ICE) foreign offices, or the U.S. Department of State (DOS). ICE provides access
+to TECS data for local and tribal law enforcement agencies. 12
+       The TECS Platform contains datasets that, while being physically located within the
+TECS IT architecture, are covered by different SORNs and PIAs, as mentioned above. A list of
+the applicable PIAs and SORNs for each of these TECS subsystems, as well as an outline of their
+functions is provided in Appendix 1.
+        The TECS Platform is also a mechanism for querying the databases of other law
+enforcement agencies, and for hosting Lookout records input by other agencies for CBP to take
+action at Primary or Secondary Inspection (see previously published 2010 PIA 13 for more
+information on this process). For example, authorized users can use the TECS Platform to query
+records maintained within the Federal Bureau of Investigation (FBI) Criminal Justice
+Information Service’s (CJIS) National Crime Information Center (NCIC); Interstate
+Identification Index (III); the International Justice & Public Safety Network (Nlets); and the
+Nlets interface to Canadian Police Information Centre (CPIC). 14 A full list of the systems
+external to CBP that TECS users may query is available in Appendix 2.
+         1. Types of TECS Access Levels
+        With more than 90,000 users, TECS requires a sophisticated and configurable access
+control process. CBP grants access to TECS based on four different access levels:
+             •    Access Level 1: Data that is available to all TECS users with an appropriate type
+                  of background investigation.
+             •    Access Level 2: Data that is available only to employees of the agency that
+                  entered the data. This level is no longer in use.
+             •    Access Level 3: Data that is available to classes of users based on the owning
+                  agency, specifying that the information be made available to a set of users.
+             •    Access Level 4: Data that is restricted to specific individuals as specified, or the
+                  individual creating the record (reserved for Grand Jury data).
+        For basic, Level 1 access, CBP requires that all TECS users must have a completed and
+favorably adjudicated background investigation of one of the types listed below. Background
+investigations must be periodically updated. The frequency at which reinvestigation is required
+
+12
+   See DHS/ICE/PIA-004(a) - ICE Pattern Analysis and Information Collection (ICEPIC) Update (October 26,
+2011), available at http://www.dhs.gov/privacy.
+13
+   DHS/CBP/PIA-009, CBP Primary and Secondary Processing, and DHS/CBP/PIA-009(a), TECS System: CBP
+Primary and Secondary Processing (TECS) National SAR Initiative, available at http://www.dhs.gov/privacy
+14
+   Information on the NCIC is available at https://www.fbi.gov/about-us/cjis/ncic. Information on Nlets is available
+at http://www.nlets.org. The Privacy Impact Assessment for the Canadian Police Information Centre is available at
+http://www.rcmp-grc.gc.ca/en/privacy-impact-assessment-canadian-police-information-centre.
+                                                                              Privacy Impact Assessment
+                                                                             DHS/CBP/PIA-021 TECS Platform
+                                                                                                    Page 6
+
+
+
+
+depends on the level of the initial investigation. Access to TECS functions and data will be
+limited depending on the type of background investigation that has been completed. The initial
+background investigation for all TECS users must be one of the following:
+            •    Type 1: Access National Agency Check with Inquiries (ANACI), as defined by
+                 Office of Personnel Management (OPM). 15 Users with this type of background
+                 investigation may have access to any of the functions authorized for the user’s
+                 agency, and access to data from TECS agencies when specifically granted this
+                 access by the owning agency.
+            •    Type 2: Background Investigation (BI), as defined by OPM. Users with this type
+                 of background investigation may be given access to any of the functions and data
+                 authorized for use by the agency.
+        External TECS user agencies are responsible for ensuring that none of their personnel
+will serve as a TECS user without one of these types of completed background investigations.
+Full TECS access requires a BI. All external TECS user agencies must conduct an annual review
+of their TECS users to ensure that each user has a properly completed and active background
+investigation.
+        2. User Functionality
+        All TECS users have the option of designating the data they enter into TECS as access
+Level 1, 3, or 4, and specifying which TECS users may access this data. All TECS users, as part
+of training and on-boarding agreements, understand and agree that any data designated as Level
+1 will be accessible to all TECS users. Level 1 may be disseminated to other TECS agencies,
+without prior notification to CBP.
+        All external TECS users must sign a Memoranda of Agreement (MOA) with CBP that
+outlines their access levels and roles and responsibilities as a TECS user. A typical TECS
+agreement includes the following provisions:
+            a) Data Access: External TECS users are typically granted access to the following
+               types of records:
+                 1. TECS Level 1 records.
+                 2. TECS Level 3 and 4 records owned by the external TECS agency itself, and
+                    entered into TECS at the option of the external agency.
+                 3. TECS Level 3 and 4 records owned by another TECS User Agency, with that
+                    other owning agency’s authorization. This authorization will be documented
+
+15
+  Per Office of Personnel Management and DHS/CBP Security Policy, reinvestigation is required every ten (10)
+years for the ANACI and every five (5) years for the BI.
+                                                         Privacy Impact Assessment
+                                                        DHS/CBP/PIA-021 TECS Platform
+                                                                               Page 7
+
+
+
+
+       by a memorandum from the owning agency to the CBP TECS Custodian of
+       Records, explicitly stating the class of records and access to be granted.
+   4. Primary Query History (PQH) records. These are records of the primary
+      queries made at ports of entry that can be used to identify individuals or
+      vehicles entering the country, and may include queries in support of Border
+      Patrol activities at checkpoints.
+   5. Images associated with accessible records.
+   6. Inspection Results Records: These records are the results of CBP secondary
+      inspections at ports of entry. They provide the disposition (e.g., admitted at B2
+      or adverse action) and short comments on the inspection.
+   7. I-94 Records: These records include the entry and exit information from I-94,
+      I-94W, and I-95 forms for most travelers other than U.S. citizens or lawful
+      permanent residents.
+b) Access to Functions: TECS users are typically granted access to the following sets
+   of functions:
+   1. User Profile Record (UPR) Functions: These functions allow TECS users to
+      create, modify, retrieve, and display records describing users of the system.
+   2. Subject Record Creation and Update: These functions allow TECS users to
+      create, modify, and/or delete records on person, business, vehicle, vessel, and
+      aircraft subjects. All records created by external agencies that are not
+      considered Lookout records, are owned and maintained by the creating
+      external agency. DHS/CBP does not assert ownership, accuracy, or Privacy
+      Act coverage to these non-DHS and non-Lookout records.
+   3. Subject Query Functions: These functions allow TECS users to retrieve and
+      display records on person, business, vehicle, vessel, and aircraft subjects
+      based on query parameters. These functions also allow access to primary
+      query history (crossing information), inspection results, and I-94 data.
+   4. Record Linking: This function retrieves and displays records that are related
+      to records found during a subject query.
+   5. Management Information (MI) Reports: These functions allow TECS users to
+      request formatted reports for display or printing.
+   6. Printing: This function allows TECS users to print records or groups of
+      records retrieved through query functions or reports obtained through the MI
+      function.
+                                                                                  Privacy Impact Assessment
+                                                                                 DHS/CBP/PIA-021 TECS Platform
+                                                                                                        Page 8
+
+
+
+
+                  7. Primary Query History: This function provides on-line query and display, or
+                     off-line reports, of historical information on primary queries performed at
+                     ports of entry.
+                  8. Batch Access for vetting purposes. External users are provided with access to
+                     the TECS CBP-vetting web capability that allows for the submission of data
+                     files to TECS for screening of persons of interest to the external agency. The
+                     response data from this query will also be provided in a batch file format.
+                  9. System Support: This function includes help, an on-line user guide, access to
+                     edit tables, and a variety of other general functions.
+                  10. Reference Library (RL) Function: This function includes an on-line user guide
+                      for available TECS systems.
+        TECS is the repository for data from many separate agency sources. This data includes
+sensitive law enforcement information. Each agency supplying data is considered to be the
+owner of that data and is responsible for its content and validity.
+
+
+Section 1.0 Authorities and Other Requirements
+         1.1      What specific legal authorities and/or agreements permit and
+                  define the collection of information by the project in question?
+        While the authority for each specific database is described in the appropriate SORNs and
+PIAs listed in Appendix 1, the data collected in TECS is generally authorized by CBP’s general
+statutory authority, including the following statutes and regulations:
+         •     Homeland Security Act of 2002; 16
+         •     Tariff Act of 1930, as amended; 17
+         •     Aviation and Transportation Security Act of 2001; 18
+         •     Enhanced Border Security and Visa Reform Act of 2002; 19
+         •     Section 103(a)(1) of the Immigration and Nationality Act (INA) of 1952, as
+               amended; 20
+
+16
+   Pub. L. 107-296, 116 Stat. 2135.
+17
+   19 U.S.C. §§ 66, 1433, 1459, 1485, 1624, 2071.
+18
+   Pub. L. 107-71, 115 Stat. 597.
+19
+   Pub. L. 107-173, 116 Stat. 543.
+20
+   8 U.S.C. § 1103(a)(1), to enforce and administer the immigration laws (as defined in section 101(a)(17) of the
+INA) with respect to matters within the jurisdiction of CBP.
+                                                                                  Privacy Impact Assessment
+                                                                                 DHS/CBP/PIA-021 TECS Platform
+                                                                                                        Page 9
+
+
+
+
+         •     Title 8 of the United States Code, Aliens and Nationality; 21
+         •     18 U.S.C. Chapter 27 (customs crimes); 22
+         •     Title 19 of the United States Code, Customs Duties; 23
+         •     Illegal Exportation of War Materials; 24
+         •     Search and Forfeiture of Monetary Instruments; 25
+         •     Passenger Manifests; 26 and
+         •     CBP regulations promulgated pursuant to Titles 8, Aliens and Nationality, and 19,
+               Customs Duties, of the Code of Federal Regulations. 27
+         1.2      What Privacy Act System of Records Notice(s) (SORN(s)) apply
+                  to the information?
+        Data from the following CBP systems of records is maintained in the TECS Platform IT
+architecture:
+         •     DHS/CBP-005 Advance Passenger Information System (APIS): This SORN covers
+               the required advanced submission of passenger and crew information for certain air
+               and sea carriers and any other forms of passenger transportation, including rail, that is
+               (or may subsequently be) mandated or provided on a voluntary basis.
+         •     DHS/CBP-007 Border Crossing Information (BCI): This system collects and reviews
+               border crossing information regarding persons entering and (if applicable) exiting the
+               United States.
+         •     DHS/CBP-008 Non-Federal Entity Data Systems (NEDS): This system supports the
+               use and collection of certain travel documents, such as Enhanced Driver’s Licenses,
+               issued by other government authorities, such as states, Canadian provinces, or
+               Canadian territories.
+
+
+21
+   8 U.S.C. §§ 1185, Travel control of citizens and aliens; 1221, Lists of aliens and citizen passengers arriving and
+departing; 1225, Inspection by immigration officers; and 1357, Powers of immigration officers and employees.
+22
+   Available at https://www.law.cornell.edu/uscode/text/18/part-I/chapter-27
+23
+   19 U.S.C. §§ 482, Search of vehicles and persons; 507, Officers to make character known; assistance for officers;
+1431, Manifests; 1461, Inspection of merchandise and baggage; Examination of baggage; 1499, Examination of
+merchandise; 1581, Boarding vessels; 1582, Search of persons and baggage; regulations; 1595a, Forfeitures and
+other penalties; and 1644a, Ports of Entry.
+24
+   22 U.S.C. § 401.
+25
+   31 U.S.C. § 5317.
+26
+   49 U.S.C. § 44909.
+27
+   Available at https://www.gpo.gov/fdsys/pkg/CFR-2012-title8-vol1/pdf/CFR-2012-title8-vol1.pdf and
+https://www.law.cornell.edu/cfr/text/19/chapter-I
+                                                                      Privacy Impact Assessment
+                                                                     DHS/CBP/PIA-021 TECS Platform
+                                                                                           Page 10
+
+
+
+
+       •     DHS/CBP-009 Electronic System for Travel Authorization (ESTA): This web-based
+             application and screening system is used to determine whether certain aliens are
+             eligible to travel to the United States under the Visa Waiver Program.
+       •     DHS/CBP-011 U.S. Customs and Border Protection TECS: This system of records
+             consists of the enforcement, inspection, and intelligence records relevant to the anti-
+             terrorism and law enforcement mission of CBP and other federal agencies that use
+             TECS. The purpose of this system is to track individuals who have violated or are
+             suspected of violating a law or regulation that is enforced or administered by CBP, to
+             provide a record of any inspections conducted at the border by CBP, to determine
+             admissibility into the United States, and to record information regarding individuals,
+             firms, and organizations to whom DHS/CBP has issued detentions and warnings.
+       •     DHS/CBP-013 Seized Assets and Case Tracking System: This system collects and
+             maintains seizure data and information about current, former, and suspected violators
+             of customs, immigration, agriculture, or other laws and regulations enforced and
+             administered by DHS/CBP.
+       •     DHS/CBP-016 Nonimmigrant Information System (NIIS): This system maintains
+             arrival and departure information collected from foreign nationals entering and
+             departing the United States. on such forms as the I-94, I-94W, or through interviews
+             with CBP officers.
+       The information contained in TECS Platform datasets or sub-systems is detailed in
+separate PIAs and SORNs. A comprehensive list of the systems that reside on, interface with,
+and are accessed through the TECS Platform are listed in Appendices 2, 3, and 4.
+       1.3      Has a system security plan been completed for the information
+                system(s) supporting the project?
+        Yes. A system security plan has been completed for the TECS application as part of the
+Certification and Accreditation (C&A) process in accordance with the requirements defined
+under the Federal Information Security Management Act (FISMA). The most recent C&A for
+TECS was completed in December 2014. Additionally, the TECS Modernization effort, a multi-
+year upgrade to the TECS system and functionality, received its initial C&A in December 2009,
+with a new Authority to Operate (ATO) issued in December 2014. Both TECS and TECS
+Modernization are included in the current Security Authorization Package.
+                                                                                Privacy Impact Assessment
+                                                                               DHS/CBP/PIA-021 TECS Platform
+                                                                                                     Page 11
+
+
+
+
+        1.4      Does a records retention schedule approved by the National
+                 Archives and Records Administration (NARA) exist?
+        The TECS Platform retains each subset of data according to the specific retention
+schedule described in each subset’s SORN. As of the date of publication of this PIA, CBP is in
+the process of obtaining approval from NARA for the current retention schedules that conform to
+the associated SORNs.
+        1.5      If the information is covered by the Paperwork Reduction Act
+                 (PRA), provide the OMB Control number and the agency number
+                 for the collection. If there are multiple forms, include a list in an
+                 appendix.
+       Most of the information maintained within the TECS Platform is covered by the
+Paperwork Reduction Act, if it is not law enforcement-related. Information collections approved
+by OMB are described in the subsystem SORNs and PIAs. Specific information collections
+relevant to passenger information collections include:
+        1. OMB 1651-0088 – Passenger and Crew Manifest for Passenger Flights
+        2. OMB 1651-0103 – Passenger List/Crew List
+        3. OMB 1651-0107 – Application for Waiver of Passport or Visa
+        4. OMB 1651-0111 – Arrival and Departure Record
+
+Section 2.0 Characterization of the Information
+         The following questions are intended to define the scope of the information requested and/or collected, as
+well as reasons for its collection.
+
+        2.1      Identify the information the project collects, uses, disseminates, or
+                 maintains.
+        The TECS Platform collects, uses, and disseminates information from CBP and PGA
+systems as outlined in the Appendices to this PIA. The TECS Platform is comprised of several
+modules designed to collect and maintain Lookout, Screening, Travel Document, Encounter,
+User Profile, and Audit data from the source databases and subsystems, as described in the
+Overview and covered in the PIAs and SORNs listed in Appendix 1. Generally, CBP collects
+information on individuals prior to arrival (e.g.., APIS), at the time of crossing (e.g.., NIIS, BCI),
+and throughout the inspection process of the international traveling public to document
+enforcement encounters, actions, and observations (e.g.., when a traveler is referred to Secondary
+Inspection (TECS: if law enforcement action is taken, SEACATS: if a seizure occurs)). The
+collection of this information is described in detail in the TECS Primary and Secondary
+                                                                           Privacy Impact Assessment
+                                                                          DHS/CBP/PIA-021 TECS Platform
+                                                                                                Page 12
+
+
+
+
+Processing PIA. 28 PGAs provide data, either for ingestion into TECS or through a query of the
+source system, when the information is relevant to CBP’s missions. For example, Department of
+State passport information is ingested into TECS so that a CBP Officer can quickly verify a
+person’s identity and passport information.
+        Lookout Records Services
+        TECS Lookout Records Services provide access to create, maintain, or query Lookout
+record information. A TECS Lookout record may be created by CBP, or other TECS partner
+agencies. Lookout records are created based on law enforcement, anti-terrorism, travel document
+fraud, or other interests (for example, if a traveler to a medical outbreak area posed a public
+health threat). Such interests are based on previous violations of law, suspicion of violations, or a
+business or occupation in which the law enforcement community has an interest. Lookout
+records created by external agencies are considered under the control of CBP, with a nexus to
+border security, because they are used by CBP Officers at primary and secondary inspection
+processing at the ports of entry.
+        TECS Lookout Records Services provides authorized users with the ability to create a
+Lookout Record and indicate whether the system should notify the record owner if the record is
+queried by another user or displayed as part of an encounter. The notification provides the record
+owner with the date, time, and location of query or encounter. A Lookout Record is limited to
+providing only enough identifying information to correspond to a particular individual or
+conveyance when queried, as well as an explanation of the reason for the Lookout. Authorized
+users may further place the Lookout Record “on Primary,” which informs CBP officers at Ports
+of Entry of what action (if any) is required to be taken when the subject of a Lookout Record is
+encountered crossing the border. For example, the Lookout may indicate that a subject is armed
+and dangerous, requires visa verification, or should be referred to secondary inspection for
+further customs, immigration, or agriculture inspection by CBP Officers.
+        Screening Services
+        TECS Screening Services supports a number of system interfaces that enable authorized
+users to query TECS Lookout Records, NCIC and Nlets, and encounter data (including crossing,
+arrival, departure, secondary inspection, and air manifest information); users access this
+information in support of screening, intelligence, and vetting activities. CBP’s collection of this
+information is discussed in detail in the TECS System: CBP Primary and Secondary Processing
+PIA. 29 In conjunction with Lookout Records Screening, the TECS Platform maintains external
+interfaces with the DHS Watchlist Service (WLS), NCIC/Nlets, and customized vetting services.
+
+28
+  DHS/CBP-013, Seized Assets and Case Tracking System, available at http://www.dhs.gov/privacy
+29
+  DHS/CBP/PIA-009, CBP Primary and Secondary Processing, and DHS/CBP/PIA-009(a), TECS System: CBP
+Primary and Secondary Processing (TECS) National SAR Initiative, available at http://www.dhs.gov/privacy
+                                                                                Privacy Impact Assessment
+                                                                               DHS/CBP/PIA-021 TECS Platform
+                                                                                                     Page 13
+
+
+
+
+Examples of vetting services include queries of border crossing history, Non-Immigrant
+Information System (NIIS) information, etc. DHS WLS data is provided by the Terrorist
+Screening Center (TSC) and shared with DHS and its components on a need-to-know basis, as
+documented in the DHS/ALL/-027(b) DHS Watchlist Service PIA Update. 30 Additionally,
+NCIC/Nlets service provides a real-time interface to the FBI CJIS, NCIC, NCIC III, Nlets, and
+Nlets interface to CPIC.
+        Travel Document Services
+        CBP holds a repository of travel document records and associated border crossing
+histories as part of the TECS Platform. Travel document records stored within the repository are
+non-CBP travel-related records such as Department of State passports (including ePassports),
+immigrant visas (IV), and non-immigrant visas (NIV); and U.S. Citizenship and Immigration
+Services (USCIS) Lawful Permanent Resident (LPR) cards and other travel documents.
+Additionally, the Travel Document Services provides access to Enhanced Tribal Cards (ETC)
+and Enhanced Drivers Licenses (EDL) that are queried by CBP at primary, but are not shared
+with other agencies through the TECS Platform. This information is collected through system-to-
+system interfaces, which are listed in Appendices 2 and 3. The specific data elements of these
+travel documents are enumerated in the relevant Department of State, USCIS, and CBP
+SORNs. 31
+        Encounter Data Services
+        Encounter data services provide access to information collected during a traveler’s
+encounter with CBP while entering or exiting the United States. The TECS Primary and
+Secondary Processing PIA 32 references “subject records” to describe information collection as
+part of a traveler or vehicle encounter with CBP at either a port of entry or checkpoint. Encounter
+Data includes Currency and Monetary Instruments Report (CMIR) data, border crossing history,
+NIIS data, Memorandum of Information Received (MOIR) reports 33 and Secondary Inspection
+reports. 34
+
+
+30
+   DHS/ALL/PIA-027(b), DHS Watchlist (WLS) Update, available at http://www.dhs.gov/privacy
+31
+   See Overseas Citizens Services Records-STATE-05 (May 02, 2008), Passport Records – STATE-26 (March 24,
+2015), and Visa Records – STATE-39 (October 25, 2012), available at https://foia.state.gov/Learn/SORN.aspx. See
+CBP/DHS-005, Advance Passenger Information System (APIS), DHS/CBP-016, Non-immigrant Information
+System (NIIS), DHS/ICE-001, Student and Exchange Visitor Information System (SEVIS), DHS/USVISIT-001
+Arrival and Departure Information System (ADIS), DHS/USCIS/ICE/CBP-001, Alien File, Index, and National File
+Tracking System, all available at http://www.dhs.gov/privacy
+32
+   DHS/CBP/PIA-009, CBP Primary and Secondary Processing, and DHS/CBP/PIA-009(a), TECS System: CBP
+Primary and Secondary Processing (TECS) National SAR Initiative, available at http://www.dhs.gov/privacy
+33
+   CBP officers and agents may use a free-form text field in TECS to document observations or interactions with an
+individual at the border; these reports are known as Memoranda of Information Received (MOIRs).
+34
+   DHS/CBP-007, Border Crossing Information (BCI) System of Records Notice, available at
+http://www.dhs.gov/privacy
+                                                                            Privacy Impact Assessment
+                                                                            DHS/CBP/PIA-021 TECS Platform
+                                                                                                  Page 14
+
+
+
+
+        TECS Security Services
+        TECS Security Services consists of three components: Internal Affairs and Background
+Investigation Support; User Access Management; and Auditing. These components provide
+built-in checks to ensure data residing on the Platform is accessed by only those who have a
+need-to-know (a job function requiring access to the information) and designated authority to
+receive the data accessed. The components also monitor TECS to ensure that users are not
+inappropriately accessing or using their data.
+        User Profile and Maintenance Data
+        The TECS Platform maintains information specifically about TECS users and the actions
+users take in the system. CBP collects information about the user as part of the application
+process to obtain TECS access, including complete name (last name, first name, and middle
+name or initial), Foreign Service National indicator, Social Security number, 35 badge number,
+work and home addresses, telephone numbers, occupation, supervisor’s names, background
+investigation status, security clearance level, and certifications (i.e., NCIC and TECS Privacy
+Awareness certified). CBP maintains historical background investigation data on the TECS
+Platform to verify user access. However, the current system of records for background
+investigation information is the Integrated Security Management System (ISMS). 36 TECS access
+rights are verified through ISMS to determine whether CBP employees and contractors have the
+appropriate background investigation required for access to the TECS system. CBP shares user
+profile data on the TECS Platform on a limited basis with auditors, internal affairs personnel, and
+other individuals who have a need-to-know to perform their job functions.
+        Audit Data
+        Audit logging captures the activity of a user accessing TECS including user identifier,
+date, time, and location of the access, as well as the type of activity performed. The system
+captures all query requests and results, including search attempts for which the user is denied
+access to the results. Logs are also maintained related to the creation of TECS records, including
+TECS Lookout Records.
+        2.2     What are the sources of the information and how is the
+                information collected for the project?
+      The TECS Platform is a repository of data collected directly by CBP, datasets collected
+by other DHS components, and data sourced from other federal, state, and international
+government agency systems of records that resides on, or is accessed through, the TECS
+35
+   CBP is transitioning away from the SSN-generated HashID for CBP users on modernized TECS. CBP is looking
+into an alternate Federal ID for non-CBP users but for the time being, SSN is still used for authentication.
+36
+   DHS/ALL/PIA-038 Integrated Security Management System, available at http://www.dhs.gov/privacy.
+                                                                               Privacy Impact Assessment
+                                                                               DHS/CBP/PIA-021 TECS Platform
+                                                                                                     Page 15
+
+
+
+
+Platform. See Appendices 2 and 3 for a list of TECS interfaces. TECS also maintains limited
+information on individuals who have been granted access to the system, as explained above.
+        DHS-collected Data
+        Traveler information in TECS is collected directly and indirectly from travelers while
+entering and exiting the United States. Data collected directly from travelers includes border
+crossing information obtained during CBP primary inspections, 37 documentation of a physical
+inspection of a traveler or their baggage in an “incident log” as a part of secondary inspection or
+as a result of a CBP enforcement action, such as a seizure of merchandise. Some of this
+information consists of notes on information collected from electronic devices pursuant to a
+border search. 38 CBP obtains travel document information in advance of a traveler’s arrival or
+departure through APIS from air, land, and sea carriers. CBP also obtains travel document
+information through Trusted Traveler programs. 39 Separately, as explained above in the
+Encounter Data section, CBP Officers may record an interaction with a member of the public
+when it is anticipated that information pertaining to that encounter may be of future value. This
+is typically done in situations when a violation of the law is discovered in order to provide
+context, and/or to establish or supplement a Lookout record. The CBP Office of Professional
+Responsibility also uses the TECS Platform to track background information garnered from
+background investigations. Since the development of DHS’s ISMS, the TECS Internal Affairs
+background investigation feature is used by internal affairs for historical purposes and by Office
+of Information Technology (OIT) to verify whether a user has the appropriate background
+investigation required for systems access. TECS interfaces with other DHS systems, such as the
+U.S. Citizenship and Immigration Services (USCIS) Person Centric Query Service and Central
+Index System. 40
+        TECS user information is collected directly from the user. Historical information in
+TECS related to users’ background investigations were collected through CBP Office of
+Professional Responsibility; the background information was gathered both directly from the
+subject, as well as persons interviewed in the course of the background investigation. Training
+and audit records are collected as part of an automated process on the TECS Platform.
+        Other Government Agency Data
+        The TECS Platform is not only a repository of enforcement, inspection, operational, and
+
+37
+   As described in the BCI SORN, CBP maintains information for each instance of an individual’s entry into the
+United States at official ports of entry including airports, land border crossings, or sea ports. Border crossing
+information includes biographic and biometric information, photographs, information provided by commercial
+carriers, and the time of the location of the border crossing.
+38
+   DHS/CBP/PIA-008, Border Searches of Electronic Devices, available at http://www.dhs.gov/privacy.
+39
+   DHS/CBP-002, Global Enrollment System, available at http://www.dhs.gov/privacy.
+40
+   DHS/USCIS/PIA-010, Person Centric Query Service and DHS/USCIS/PIA-009, Central Index System, available
+at http://www.dhs.gov/privacy.
+                                                                                    Privacy Impact Assessment
+                                                                                   DHS/CBP/PIA-021 TECS Platform
+                                                                                                         Page 16
+
+
+
+
+security records, but also an information-sharing platform through which the TECS user
+community facilitates the processing of international travelers and checks for possible links to
+terrorism or law enforcement violations. CBP enforces many different agencies’ laws at the
+border. Thus, CBP affords other agencies access to TECS to view and enter data on the TECS
+Platform consistent with each respective law enforcement agency’s legal authority to do so, and
+in conformance with memoranda of understanding/agreement executed between CBP (or the
+legacy U.S. Customs Service) and the PGA. Accordingly, the TECS Platform includes data from
+other federal, state, local, tribal, and foreign law enforcement entities. This data is provided to
+TECS via system-to-system interfaces and/or through online user input. Information collected by
+CBP and other DHS components can be shared by, and supplemented with, other local, state,
+national, foreign, and international law enforcement entities’ systems via system-to-system
+interfaces. TECS also allows direct access to other major law enforcement systems, so that
+authorized TECS users may query CJIS, NCIC, Nlets, and CPIC, and others in order to obtain
+law enforcement information regarding persons of interest, including Lookouts.
+         2.3      Does the project use information from commercial sources or
+                  publicly available data? If so, explain why and how this
+                  information is used.
+        The TECS Platform receives advance passenger information from commercial carriers
+pursuant to its statutory mandate. 41 TECS does not receive direct feeds of information from
+commercial data aggregators, and it does not collect direct feeds from public news sources.
+TECS users may incorporate publicly available information into narrative reports contained in
+TECS (such as MOIRs) if the user determines that the information is relevant to the analysis or
+action being performed. Such incorporation is the result of an action taken by a TECS user and is
+not the result of an automated collection.
+         2.4      Discuss how accuracy of the data is ensured.
+       TECS users routinely compare newly collected data to existing records to ensure that the
+information is accurate. For example, CBP Officers verify information received through APIS or
+entered into a Lookout by comparing it to identification cards and answers to questions provided
+by an individual at the border. CBP relies on the originating systems to have appropriate
+processes in place to ensure the accuracy of the data being shared through TECS. When
+discrepancies are discovered, CBP works with the source system owner to determine the accurate
+version of the information and resolve any discrepancies.
+41
+   The Aviation and Transportation Security Act of 2001, Pub. L. 107-71, 115 Stat. 597, and the Enhanced Border
+Security and Visa Entry Reform Act of 2002, Pub. L. 107-173, 116 Stat. 543, provide specific authority for the
+mandatory collection of certain information on all passenger and crewmembers that arrive in, transit through, or
+depart from the United States via private aircraft, commercial air, or vessel carrier (and in the case of air carrier
+crew, overfly the United States).
+                                                                     Privacy Impact Assessment
+                                                                    DHS/CBP/PIA-021 TECS Platform
+                                                                                          Page 17
+
+
+
+
+       2.5     Privacy Impact Analysis: Related to Characterization of the
+               Information
+       In addition to the risks and mitigation described in previous TECS PIAs, the following
+potential risks related to TECS Platform’s collection of data have been identified:
+        Privacy Risk: TECS aggregates data from many systems, including those belonging to
+federal, state, local, tribal, and foreign law enforcement agencies, which may exceed the minimal
+amount of data necessary to satisfy CBP mission responsibilities.
+        Mitigation: CBP maintains a large the amount of information in TECS from a variety of
+agencies, and while this information is necessary to CBP’s mission at the border, this risk is
+mitigated through the employ of access controls to ensure that users can only access information
+relevant to their specific role. Different types of information from these agencies are required to
+enforce the wide spectrum of laws enforced at the border. For example, federal and state criminal
+violations may affect the admissibility of an alien or alert a CBP Officer to smuggling or other
+customs violations. Passport, visa, ETC, and EDL information assists CBP Officers in
+confirming the identity of the person seeking admission to the United States. Notes in narrative
+reports from previous inspections or MOIRs help CBP identify past violations or, conversely,
+rule out otherwise suspicious behavior. Moreover, access to the information in TECS is
+controlled by both the mission responsibilities and the role of each TECS user. Information
+provided to, or accessible by, PGAs is limited to those data sets that fall within their authorized
+missions and are delineated in a TECS MOU/MOA.
+       Additionally, CBP is mitigating this risk by identifying datasets that should no longer be
+maintained on the TECS Platform through TECS Modernization. Certain datasets currently
+maintained on the TECS Platform as a result of legacy operations under the U.S. Customs
+Service (including some ICE case management records; Bureau of Alcohol, Tobacco, Firearms
+and Explosives (ATF) records; and Internal Revenue Service (IRS) investigative records that are
+inaccessible to CBP), are being migrated out of the TECS Platform to the owning agencies. CBP
+is migrating these records off of the TECS Platform to ensure CBP only maintains the minimal
+amount of information necessary to achieve its missions.
+        Privacy Risk: Because TECS contains a substantial amount and variety of Personally
+Identifiable Information (PII) collected by multiple organizations and maintained across multiple
+systems, there is a risk that users have access to more PII than is required to perform their
+specific function.
+        Mitigation: This risk is partially mitigated through CBP’s securing of the data and the
+provision of user access according to a set of permissions based on need-to-know and job
+function. CBP has imposed strict controls to minimize the risk of compromising the information
+that is being stored. CBP protects the data through uninterrupted monitoring in conformance to
+                                                                        Privacy Impact Assessment
+                                                                        DHS/CBP/PIA-021 TECS Platform
+                                                                                              Page 18
+
+
+
+
+National Institute of Standards and Technology (NIST) standards, to include encryption,
+electronic firewalls, and physical location within secured facilities. CBP restricts access to these
+areas to authorized users who have appropriate clearances and permissions, in the performance
+of their official duties.
+
+Section 3.0 Uses of the Information
+The following questions require a clear description of the project’s use of information.
+        3.1     Describe how and why the project uses the information.
+        CBP’s mission includes the enforcement of the customs, immigration, and agriculture
+laws and regulations of the United States and the enforcement at the border of hundreds of laws
+on behalf of numerous federal agencies. TECS users collect, maintain, and share information
+through the TECS Platform to facilitate counterterrorism, law enforcement, border security, and
+inspection activities. CBP uses this data to assess the risk or threat posed by persons, goods, or
+conveyances entering or exiting the country.
+       Law Enforcement and Counterterrorism
+        TECS users create records on the TECS Platform to document any customs, immigration,
+or other law enforcement actions taken with respect to a subject, including goods and
+conveyances, and to document encounters otherwise deemed to be of law enforcement or
+counterterrorism interest. Certain authorized PGA TECS users create Lookout records to assist
+CBP’s law enforcement and counterterrorism missions at the border by providing information
+about known or suspected violators or terrorists. For example, certain users from the U.S.
+Marshals Service enter Lookouts for fugitives into TECS so that a CBP Officer can apprehend
+the individual at the border.
+       Authorized PGA TECS users also query individuals and review responsive records in
+support of their mission. For example, certain authorized users from the FBI access TECS
+Lookout records to identify individuals suspected of, or involved in, a violation of federal law.
+        Information-gathering and Assessment
+       In connection with the counterterrorism DHS Suspicious Activity Reporting Initiative,
+MOIRs may be reviewed by the CBP Office of Intelligence and the Office of Field Operations.
+Those MOIRs that meet the necessary criteria for nomination into a Suspicious Activity Report
+(SAR) are sent to the DHS Information Sharing Environment – Suspicious Activity Report (ISE-
+SAR) server and further incorporated by DHS as National Security Information (NSI). A detailed
+description of SARs is discussed in the TECS National SAR Initiative PIA. 42
+
+42
+  DHS/CBP/PIA-009(a) TECS System: CBP Primary and Secondary Processing (TECS) National SAR Initiative,
+available at www.dhs.gov/privacy.
+                                                                                  Privacy Impact Assessment
+                                                                                 DHS/CBP/PIA-021 TECS Platform
+                                                                                                       Page 19
+
+
+
+
+           Benefits Determination
+        The TECS Platform assists CBP users in making admissibility determinations. Queries
+are also performed by DHS and partner agencies to evaluate eligibility for their own benefits
+determination (e.g.., USCIS benefit requests, Department of State visa issuance).
+           Audit Function
+       CBP uses audit logs to evaluate internal threats posed by trusted users of the TECS
+community. CBP records and monitors TECS system use and there is no expectation of privacy
+on the part of any user for any action taken in TECS. The CBP Office of Professional
+Responsibility (OPR) uses audit logs during the internal investigative process to research claims
+that TECS users have misused the system. Examples of misuse could include actions such as
+browsing the system for personal use, or providing operational details to those who might seek
+unauthorized access to the system or to do harm to CBP or the U.S. Government.
+           Employee Background Investigations
+        CBP/OPR queries the TECS Platform for law enforcement data as part of the background
+investigation process for all applicants and current employees. OPR also uses the TECS platform
+to suspend mainframe access for current CBP employees who are not in compliance with the
+reinvestigation requirements. The Office of Information and Technology uses historical
+background investigation data on the TECS Platform to verify that individuals requesting access
+to CBP systems have a favorably adjudicated background investigation.
+           3.2      Does the project use technology to conduct electronic searches,
+                    queries, or analyses in an electronic database to discover or locate
+                    a predictive pattern or an anomaly? If so, state how DHS plans to
+                    use such results.
+      No. The TECS Platform does not discover predictive patterns or anomalies. TECS only
+conducts queries for responsive records.
+           3.3      Are there other DHS components with assigned roles and
+                    responsibilities within the system?
+         Yes. Consistent with DHS regulations and the One DHS policy, 43 CBP shares the
+information collected in TECS with personnel within all DHS components that have a need-to-
+know the information, a job function requiring access to the information, and will access data
+that is consistent with the component’s mission.
+
+
+43
+     One DHS Policy, available at, http://www.dhs.gov/xlibrary/assets/dhs_information_sharing_strategy.pdf.
+                                                                    Privacy Impact Assessment
+                                                                   DHS/CBP/PIA-021 TECS Platform
+                                                                                         Page 20
+
+
+
+
+        The objectives of sharing TECS data within the DHS community are: 1) to provide the
+DHS enforcement community with a common repository of information related to suspected or
+known violators of the law; 2) to provide the ability for timely communication of information
+related to known or suspected criminals to CBP officers and other DHS employees, such as
+Immigration and Customs Enforcement agents; and, 3) to provide a common repository for the
+routine recording of law enforcement activity, including inspection results and assets seized from
+criminals as a result of law enforcement activities. In addition, TECS provides a repository
+against which other DHS components can perform queries in support of their specific missions.
+       CBP and other DHS components are able to access TECS information to perform job
+functions in conjunction with a need-to-know. A current list of DHS components with access to
+TECS includes:
+       •     DHS Office of the Chief Security Officer (OCSO)
+       •     DHS Office of the Inspector General (OIG)
+       •     DHS Office of Intelligence and Analysis (I&A)
+       •     DHS Office of Operations Coordination
+       •     National Protection and Programs Directorate (NPPD)
+       • Transportation Security Administration (TSA), including the Federal Air Marshal
+Service (FAM)
+       •     U.S. Citizenship and Immigration Services (USCIS)
+       •     U.S. Coast Guard (USCG)
+       •     U.S. Immigration and Customs Enforcement (ICE)
+       •     U.S. Secret Service (USSS)
+       A complete list of the TECS user community can be found in Appendices 2 and 4.
+       3.4      Privacy Impact Analysis: Related to the Uses of Information
+        Privacy Risk: Approximately 90,000 authorized users, including personnel from
+government agencies outside of CBP and DHS access the TECS Platform for data entry,
+communication, and data query. There is a risk that TECS could be accessed for unapproved or
+inappropriate purposes such as searching for, or creating records or Lookouts for friends,
+relatives, neighbors, the users themselves, or other members of the public.
+        Mitigation: This risk is mitigated through CBP’s employment of several layers of
+training, review, and access controls. All prospective CBP employees and contractors are
+required to undergo a background investigation before receiving access to TECS; a TECS
+                                                                           Privacy Impact Assessment
+                                                                          DHS/CBP/PIA-021 TECS Platform
+                                                                                                Page 21
+
+
+
+
+account cannot be activated without a properly adjudicated background investigation or change
+in background investigation status. Additionally, all users must pass an annual TECS Security
+and Privacy Awareness course in order to establish and retain TECS access. Moreover, TECS
+users are required to comply with TECS security requirements, including having a supervisor
+approve a Lookout in order for it to remain on Primary (“on Primary” indicates that immediate
+action is required by CBP officers if the travelers is encountered crossing the border) in TECS.
+         CBP OPR continuously monitors the use of TECS, including reviews of the extensive
+audit logs that TECS maintains, which identifies the users that have accessed records, and what
+changes or deletions (if any) were made to the records. DHS employees and contractors have no
+privacy expectations associated with the use of any DHS network, system, or application and this
+policy is also enforced for TECS. All use of the TECS Platform results in the creation of audit
+trails designed to document an individual’s activity. These audit trails are reviewed in an effort to
+identify inappropriate uses of the system and misuses of TECS information. All users
+acknowledge their understanding that their activities within TECS will be monitored, and
+provide consent to such monitoring each time they log onto the system.
+
+Section 4.0 Notice
+       The following questions seek information about the project’s notice to the individual about the
+information collected, the right to consent to uses of said information, and the right to decline to provide
+information.
+
+        4.1     How does the project provide individuals notice prior to the
+                collection of information? If notice is not provided, explain why
+                not.
+        Some information in TECS is collected directly from individuals as they complete
+primary (and secondary, if applicable) inspection at a port of entry. These individuals have direct
+notice of the information they provide to the CBP Officers during the admissibility determination
+process. Some of the information in TECS is collected directly from a suspect after a criminal or
+administrative arrest. In such cases, the individual is advised in writing and orally of their right to
+refuse to provide information pursuant to the Fifth Amendment.
+        With respect to information obtained from suspects or other individuals through
+Government forms, such as immigration benefit applications, Privacy Act statements on those
+forms provide notice to the individual that their information may be shared with law enforcement
+entities.
+       With respect to Lookout records, or records created during the course of a law
+enforcement investigation, it is not feasible to provide individuals who are interviewed as
+suspects, witnesses, or victims with any form of written notice regarding the collection of
+                                                                     Privacy Impact Assessment
+                                                                     DHS/CBP/PIA-021 TECS Platform
+                                                                                           Page 22
+
+
+
+
+information, nor is such written notice required by the Privacy Act or other federal laws or
+policies. With the exception of authorized undercover operations, however, these individuals are
+aware that they are being interviewed by a law enforcement officer and that their information is
+being collected for use in an investigation.
+        More generally, CBP provides notice through the publication of this PIA, and TECS
+source system PIAs, SORNs, and implementing regulations associated with individual programs
+and subsystems that information collected may be shared with other programs and government
+agencies. CBP also posts signage and video notices at the border explaining what information
+will be required at Ports of Entry, and publishes this information online at www.cbp.gov.
+       4.2     What opportunities are available for individuals to consent to
+               uses, decline to provide information, or opt out of the project?
+        Generally, the decision of whether to travel to or from the United States is within the
+discretion of the individual traveler. Pursuant to CBP’s authorities, any individual seeking to
+enter the United States must demonstrate to the satisfaction of the CBP officer that the traveler is
+a U.S. citizen, lawful permanent resident, or is otherwise eligible for admission to the United
+States. When applicable, a traveler must also prove he or she is not attempting to import or
+export any merchandise in violation of U.S. laws. Those unwilling to provide information
+supporting these requirements can choose not to travel to the United States.
+        For Lookout or law enforcement records, due to the DHS law enforcement or
+immigration purposes for which the information is collected, opportunities to decline may be
+limited or nonexistent. Users may enter data during the course of a law enforcement activity or in
+support of other DHS proceedings, and it is the nature of the proceeding and the individual rights
+afforded to the subject by law that will determine the ability of a person to exercise the right to
+decline to provide information.
+       There is no opportunity for individuals to decline to provide information that the TECS
+Platform receives from PGAs via system-to-system interface. However, external agency
+programs that initially collected the information from individuals may provide them with
+opportunities to decline to provide their information to that specific program. Opportunities to
+decline to provide information are enumerated in the program-specific PIA. However, once it has
+been collected, the data may be shared with TECS as outlined in the collecting system’s SORN.
+       4.3     Privacy Impact Analysis: Related to Notice
+        Privacy Risk: There is a risk that an individual may not know that his or her information
+is being maintained on the TECS Platform.
+       Mitigation: This risk is mitigated to the extent possible through the publication of this
+PIA, as well as the publishing of PIAs and SORNs addressing the collection, notification, and
+                                                                               Privacy Impact Assessment
+                                                                              DHS/CBP/PIA-021 TECS Platform
+                                                                                                    Page 23
+
+
+
+
+individual control aspects of each subsystem on the TECS Platform. Each PIA describes the data
+residing on the TECS Platform. With regard to CBP personnel and TECS users, notification that
+their data resides on the TECS platform is provided on an annual basis when they take the
+privacy awareness course.
+        There is a countervailing risk that arises when an individual is notified that information is
+being collected about them by DHS for a law enforcement or intelligence purpose. The
+notification may cause the individual to flee or destroy or conceal evidence required by DHS,
+compromising the ability of DHS agencies to perform their missions, and could put DHS
+personnel and resources at risk of injury, death, loss, or destruction. In such cases, DHS will
+intentionally withhold notification to the individual until he or she is arrested or indicted.
+       Privacy Risk: There is a risk that individuals are not afforded notice or an opportunity to
+consent to provide information for inclusion in a Lookout or law enforcement record.
+        Mitigation: This risk can only be partially mitigated. Because the data stored in TECS is
+used in support of systems in which law enforcement or intelligence contexts apply, notice or the
+opportunity to consent to use would compromise the ability of the agencies to perform their
+missions and could put DHS and other law enforcement personnel at risk. Thus, notice of
+collection and consent to specific uses are limited or not available in most cases for data stored in
+the TECS However, the methods of providing direct notice as appropriate to an individual are
+described in Section 6.1 above. There is a potential risk that an individual may not understand
+the notice. When necessary, the notice to an arrested person is provided in his or her native
+language through an interpreter or through written translation. There is a potential risk that false
+or misleading information about an individual may be provided by a source with malicious
+intent. This risk is mitigated by user training and standard operating procedures that emphasize
+the importance of verifying information prior to recording and using it.
+
+Section 5.0 Data Retention by the project
+         The following questions are intended to delineate clearly the use of information and the accuracy of the
+data being used.
+
+        5.1      Explain how long and for what reason the information is retained.
+       TECS records are retained for the purposes and durations set out in the SORNs for the
+various subsystem datasets that reside on the TECS Platform. For example, TECS Lookout
+records are retained for 75 years from the date of the last collection of data; TECS user
+information and training records are similarly retained for 75 years, while audit logs are
+                                                                                    Privacy Impact Assessment
+                                                                                    DHS/CBP/PIA-021 TECS Platform
+                                                                                                          Page 24
+
+
+
+
+maintained for 25 years. 44 Lookout records not collected by CBP but residing on the TECS
+Platform are governed by the owning agency’s respective retention policy.
+       CBP also published SORNs for data collected by the agency that resides on the TECS
+Platform, including APIS, 45 BCI, 46 NIIS, 47 and SEACATS. 48 Data on these platforms is retained
+according to the records schedules published in the SORNs.
+       Datasets not collected by CBP but residing on the TECS Platform include the Non-
+Federal Entity Data System (NEDS) 49 and the Department of State (DOS) American Citizen
+Records Query (ACRQ) System. 50 Watchlist records received from the TSC that are included
+within TECS as a match or possible match to TECS records are maintained for 75 years.
+      CBP and NARA are reviewing the record retention and disposition schedule for the
+TECS databases and will update the appropriate SORNs upon completion.
+         5.2      Privacy Impact Analysis: Related to Retention
+        Privacy Risk: There is a risk that information may be retained on the TECS Platform
+longer than is necessary.
+       Mitigation: This risk is mitigated through CBP’s application of data retention policies
+for the TECS Platform that are consistent with CBP’s law enforcement and antiterrorism
+
+44
+   DHS/CBP-011, U.S. Customs and Border Protection TECS System of Records Notice, available at
+http://www.dhs.gov/privacy
+45
+   Information collected in APIS is maintained for a maximum period of twelve months from the date of collection,
+but may be used to create records in BCI, NIIS, or other systems with differing retention periods.
+46
+   For U.S. citizens and lawful permanent residents (LPR), BCI will maintain travelers’ border crossing information
+for fifteen years from the date that the traveler was admitted or paroled into the United States. For non-immigrant
+aliens, to ensure that any information related to a particular border crossing is available for providing any applicable
+benefits related to immigration or for other law enforcement purposes, the information will be maintained for
+seventy-five (75) years from the date of admission/parole into the United States. However, for all travelers, BCI
+records that are linked to active law enforcement activities, and/or investigations will remain accessible beyond the
+limitations stated above for the life of that activity. See BCI SORN.
+47
+   NIIS data is collected and maintained for seventy five (75) years from the date obtained for purposes of entry
+screening, admissibility, and benefits determinations. See NIIS SORN.
+48
+   Records related to a law enforcement action; that are linked to an alleged violation of law or regulation, or are
+matches or suspected matches to enforcement activities, investigations, or cases (i.e., administrative penalty actions
+or criminal prosecutions), will remain accessible until the conclusion of the law enforcement matter and any other
+enforcement matters or related investigative, administrative, or judicial action to which it becomes associated plus
+five years. Records associated with a law enforcement matter, when all applicable statutes of limitation have expired
+prior to the conclusion of the matter, will be retained for two years following the expiration of the applicable statute
+of limitations. See SEACATS SORN.
+49
+   NEDS is retained for the duration of the validity of the travel document; that is, until the date of expiration on the
+document or to the extent more restrictive, in accordance with the terms of any Memorandum of
+Understanding/Agreement between DHS/CBP and the issuing authority. See Non-Federal Entity Data System.
+50
+   Retention of records maintained in the DOS ACRQ will vary depending upon when the passport application was
+received; these documents will be retired or destroyed in accordance with published NARA and DOS record
+schedules (presently 100 years for electronic records). See ACRQ, 73 Fed. Reg. 1660 (Jan. 9, 2008).
+                                                                               Privacy Impact Assessment
+                                                                               DHS/CBP/PIA-021 TECS Platform
+                                                                                                     Page 25
+
+
+
+
+missions. Additionally, retention plans are tailored in each subsystem to the particular program
+needs. TECS provides a systematic evaluation of Lookout Records on Primary to notify the
+record owner that the “on Primary” designation is about to expire. If the record is not recertified,
+the record no longer appears “on Primary.”
+       DHS has determined it needs to maintain TECS audit records for a period of 25 years to
+support internal investigations of TECS misuse and internal threats.
+
+Section 6.0 Information Sharing
+         The following questions are intended to describe the scope of the project information sharing external to
+the Department. External sharing encompasses sharing with other federal, state and local governments, and private
+sector entities.
+
+        6.1      Is information shared outside of DHS as part of the normal
+                 agency operations? If so, identify the organization(s) and how the
+                 information is accessed and how it is to be used.
+         Yes. CBP provides access to TECS information for agencies that have the authority to
+receive TECS data and have demonstrated a justifiable need for this information. The TECS
+program manager (in concurrence with all necessary DHS/CBP offices) provides authorization
+for a non-DHS agency’s access to TECS via a Memorandum of Agreement (MOA), or other
+Information Sharing Access Agreement (ISAA), between DHS/CBP and the outside entity. The
+MOA specifies the general terms and conditions that govern the use of the functionality or data,
+including privacy-related limitations on use and re-dissemination, and the types of information in
+TECS to which the agency is being granted access. An Interconnection Security Agreement
+(ISA) governs any interface implemented between DHS/CBP and that outside entity. For log-in
+access to TECS, third party agencies must not only identify their authority to receive this
+information, but also specifically identify and certify an individual(s) that meets TECS employee
+criteria. Appendices 2, 3, and 4 identify the entities with which CBP shares TECS data, describe
+what type of TECS data is shared, and how it is shared. CBP has also published PIAs and
+SORNs which describe the type of data residing on the TECS Platform. See Appendix 1.
+        In the absence of an MOA, TECS data may still be shared with federal, state, local, tribal,
+and foreign law enforcement, counterterrorism, and border security agencies on a case-by-case
+basis. In such instances, the requesting or receiving agency must provide a written explanation of
+(or DHS/CBP must have reason to know) what information the receiving agency needs, how it
+intends to use that information, and its authority to receive that data. Prior to disclosure,
+DHS/CBP determines that the proposed use is consistent with a routine use published in the most
+recent SORN or is otherwise subject to a condition of disclosure under the Privacy Act.
+        Access to TECS information is governed by need-to-know criteria, which demands that
+                                                                    Privacy Impact Assessment
+                                                                   DHS/CBP/PIA-021 TECS Platform
+                                                                                         Page 26
+
+
+
+
+the receiving entity demonstrate a mission-related need for the data before access is granted. The
+reason for the access, the scope of its use, and the purpose for which it will be employed are the
+primary privacy-related concerns that are included in the MOA negotiated between DHS/CBP
+and an agency seeking access to TECS.
+        Pursuant to the terms of the MOA, authorized PGAs access TECS Platform information
+through system-to-system connections or as direct users of TECS. Alternatively, if the agency
+seeking TECS information does not have an electronic interface with TECS, appropriate TECS
+records may be transmitted pursuant to the terms of an MOA between CBP and the agency or on
+a case-by-case basis, as discussed above.
+       Various PGAs and foreign governments connect to TECS for the purposes of law
+enforcement, screening, and consideration of benefit. Appendix 2 identifies the PGAs and
+foreign governments that presently have access to TECS and describes the type of data that is
+being shared.
+       6.2     Describe how the external sharing noted in 6.1 is compatible with
+               the SORN noted in 1.2.
+       CBP shares data from the TECS Platform with entities external to DHS in accordance
+with the Privacy Act exemptions and routine uses identified in the SORNs for the applicable
+TECS Platform data systems listed in section 1.2. Those routine uses are compatible with the
+purposes for which those records were collected.
+       6.3     Does the project place limitations on re-dissemination?
+       Yes. The use of TECS data outside of DHS is governed by the MOA, which places
+express limitations on use of CBP data and conditions on re-dissemination, or authorized for
+narrowly-tailored purposes on a case-by-case basis, as described in Section 6.1. Generally
+information cannot be re-disseminated without the prior written authorization of CBP.
+Additionally, agencies accessing information stored on the TECS Platform agree that
+information not owned by that agency cannot be disclosed by that agency without the specific
+approval of the agency or entity that owns the records.
+       6.4     Describe how the project maintains a record of any disclosures
+               outside of the Department.
+       The TECS Platform automatically generates a DHS Form 191, Privacy Act Disclosure
+Record whenever a user views TECS Person Subject Records. Case-by-case disclosures are
+recorded manually on the DHS Form 191 by the CBP or DHS employee making the disclosure.
+The DHS Form 191 lists: the type of inquiry (written or oral); the name of the subject of the
+record(s) being sought; the name of the individual, and the associated agency, seeking the
+                                                                                Privacy Impact Assessment
+                                                                               DHS/CBP/PIA-021 TECS Platform
+                                                                                                     Page 27
+
+
+
+
+record(s); the address of the requestor; the name of the individual retrieving and providing the
+records to the requestor; the purpose for the disclosure; the name of the System of Records from
+which these records are retrieved; a description, in general terms, of the nature of the records
+provided; and the date of the disclosure. The individual/component maintains a copy of the DHS
+Form 191 and provides the records to the requestor as well as by the CBP Privacy Office.
+        6.5      Privacy Impact Analysis: Related to Information Sharing
+       Privacy Risk: There is a risk that information may be shared under inappropriate
+circumstances.
+        Mitigation: This risk is mitigated through CBP’s governance of access to datasets on the
+TECS Platform by need-to-know criteria that demand the receiving entity demonstrate a mission-
+related purpose for the data before access is granted. Access and use are limited by the initial and
+ongoing authorization to receive the data, including the negotiation of MOAs between DHS/CBP
+and the requesting agency. Additionally, to retain TECS access, all TECS users must comply
+with the TECS security requirements, including successful completion of the TECS Security and
+Privacy Awareness course on an annual basis. CBP requires PGAs to sign interconnection
+security agreements before connecting to the TECS Platform to assists in guarding against errant
+transmissions and misuse.
+       For all information sharing requests, DHS/CBP reviews the requests for individual
+records, new user access, and bulk sharing. In the absence of an MOA, TECS data may still be
+shared with federal, state, local, tribal, and foreign law enforcement, counterterrorism, and
+border security agencies on a case-by-case basis, as approved by DHS/CBP. In such instances,
+the requesting or receiving agency must provide a written explanation of (or DHS/CBP must
+have reason to know) what information the receiving agency needs, how it intends to use that
+information, and its authority to receive that data. Prior to disclosure, DHS/CBP determines that
+the proposed use is consistent with a routine use published in the most recent SORN or is
+otherwise subject to a condition of disclosure under the Privacy Act.
+
+Section 7.0 Redress
+         The following questions seek information about processes in place for individuals who wish to seek redress
+(access to records about them, accuracy of the information collected about them, and/or filing complaints).
+
+        7.1      What are the procedures that allow individuals to access their
+                 information?
+        DHS has exempted the TECS system of records from access requirements pursuant to 5
+U.S.C. § 552a(j) and (k). This is because access to the TECS records could inform a subject of an
+actual or potential criminal, civil, or regulatory violation investigation or reveal investigative
+interest on the part of DHS or another agency. This could enable the individual who is the
+                                                                   Privacy Impact Assessment
+                                                                   DHS/CBP/PIA-021 TECS Platform
+                                                                                         Page 28
+
+
+
+
+subject of a record to impede the investigation, to tamper with witnesses, destroy or conceal
+evidence, and flee to avoid detection or apprehension.
+        However, the SORNs for each subsystem governs the access to data in that system –
+therefore, individuals may be able to access, correct, and amend records from APIS, BCI, or
+other external agency information. Regardless of exemption, CBP will consider individual
+requests to determine if information may be released. Individuals seeking notification of, and
+access to, any record contained in TECS, or seeking to contest its content, may gain access to
+certain information in TECS about them by filing a Freedom of Information Act (FOIA) or
+Privacy Act request with CBP at https://foia.cbp.gov/palMain.aspx, or by mailing a request to the
+CBP FOIA Headquarters Office, U.S. Customs and Border Protection, FOIA Division, 90 K
+Street NE, 9th Floor, Washington, D.C. 20229. Fax Number: (202) 325-0230.
+       7.2    What procedures are in place to allow the subject individual to
+              correct inaccurate or erroneous information?
+       A person who believes that CBP actions are the result of incorrect or inaccurate
+information may request information about their records pursuant to procedures provided by the
+Freedom of Information Act and the access provisions of the Privacy Act of 1974 by writing to:
+       U.S. Customs and Border Protection
+       Freedom of Information Act Division
+       90 K Street NE, 9th Floor
+       Washington, D.C. 20229
+        Travelers may also contact the DHS Traveler Redress Inquiry Program (TRIP) at 601
+South 12th Street, TSA-901, Arlington, VA, 22202-4220 or online at www.dhs.gov/trip.
+Individuals making inquiries should provide as much identifying information as possible to
+identify the record(s) at issue.
+       7.3    How does the project notify individuals about the procedures for
+              correcting their information?
+        The TECS Platform does not provide individual notification of procedures for correcting
+records from each system on the Platform. Instead, notification is set out in those systems’
+individual SORNs and PIAs. For TECS records that are investigatory in nature, no individual
+notification is currently provided.
+        Additionally, CBP Officers provide a Fact Sheet to individuals at ports of entry that
+outlines the process for correcting data upon request. This fact sheet describes the details in
+Section 7.2 of this PIA for individuals who believe mistakes in TECS may exist and desire
+redress. Additionally, DHS Privacy Office published guidance specifically on identifying,
+                                                                              Privacy Impact Assessment
+                                                                             DHS/CBP/PIA-021 TECS Platform
+                                                                                                   Page 29
+
+
+
+
+processing, tracking, and reporting on requests for amendments to records submitted to DHS
+under the Privacy Act. 51
+           7.4     Privacy Impact Analysis: Related to Redress
+        Privacy Risk: There is a risk that individuals may not know how to request redress
+related to accessing their records, or with regard to an issue they may have experienced during
+the customs and immigration inspection process.
+        Mitigation: To mitigate this risk, CBP has described redress procedures in this PIA as
+well as the relevant system SORNs. CBP and DHS provide notice to the public of their redress
+rights on their websites. In addition, as described above, CBP Officers provide a fact sheet to
+individuals to provide additional information on the process for accessing and correcting records.
+        Privacy Risk: Due to the law enforcement nature of much of the information in TECS,
+there is a risk that individuals will be unable to access, correct, or amend their records.
+        Mitigation: CBP determines all request for redress on a case-by-case basis. If an
+individual is not satisfied with the response, he or she can appeal his or her case to the
+appropriate authority provided for in the Privacy Act. There may also be specific legal remedies
+available to the individual in the context of any criminal or immigration proceedings in which
+the individual is involved.
+
+Section 8.0 Auditing and Accountability
+        The following questions are intended to describe technical and policy based safeguards and
+security measures.
+
+            8.1     How does the project ensure that the information is used in
+                    accordance with stated practices in this PIA?
+       The TECS Platform employs a layered approach of checks and balances to ensure
+information is used in accordance with intended uses stated in this PIA. First, to gain and
+maintain access to information that resides on the TECS Platform, a user must have the
+appropriate background investigation and have successfully passed the annual TECS Security
+and Privacy Awareness course, as well as have a need to know and job-related requirement for
+TECS information. An agency representative (CBP supervisor or agency National System
+Control Officer) submits requests to CBP indicating an individual has a need-to-know for official
+purposes. CBP verifies that background investigations, as well as security and privacy trainings
+are complete, and issues a new user account upon an affirmative determination.
+
+
+
+51
+     Privacy Policy Guidance Memorandum 2011-01, available at http://www.dhs.gov/privacy-policy-guidance.
+                                                                    Privacy Impact Assessment
+                                                                   DHS/CBP/PIA-021 TECS Platform
+                                                                                         Page 30
+
+
+
+
+        The ability to view information within TECS is dependent on both the User Profile
+assigned to the TECS user, and the access control placed on the information in the database.
+TECS users consist of CBP/PGA government employees and contractor personnel who are
+granted only the privileges necessary for them to complete the tasks required as part of their
+assigned duties. TECS users are generally required to be U.S. citizens who have successfully
+completed, at a minimum, the appropriate background investigation and have successfully
+passed the annual TECS Security and Privacy Awareness course, as well as have a need to know
+TECS information. There are some limited instances where a non-U.S. citizen with a
+successfully completed and adjudicated background investigation may be granted limited TECS
+access, following DHS guidelines.
+        8.2     Describe what privacy training is provided to users either
+                generally or specifically relevant to the project.
+        A new TECS user must complete the TECS Security and Privacy Awareness course and
+pass the associated test before CBP grants initial TECS access. The course presents Privacy Act
+responsibilities and Agency policy regarding security, sharing, and safeguarding of official
+information and PII on the TECS Platform. The course also provides a number of sharing and
+access scenarios to test the prospective user’s understanding of appropriate controls put in place
+to protect privacy. This training is regularly updated and TECS users are required to take the
+course annually.
+       TECS users are educated about the consequences of misuse of TECS records.
+Inappropriate access to (or use of) TECS can subject a user to criminal and civil penalties, as
+well as disciplinary actions in accordance with the CBP Code of Conduct to include being
+removed from one’s position.
+        8.3     What procedures are in place to determine which users may
+                access the information and how does the project determine who
+                has access?
+        TECS users are classified into the following categories: general system users;
+supervisors; system control officers; systems maintenance personnel; and security administrators.
+General system users are those CBP and PGA users requiring access to the data stored in TECS.
+Supervisors are individuals who are responsible for approving records that are added to the
+system. System Control Officers are responsible for creating and maintaining user provisioning
+lists. Systems maintenance personnel perform patch management, functionality changes, and
+testing. Security Administrators are responsible for performing audit reviews.
+       Every new and existing user of TECS is assigned a system control officer. The system
+control officer is responsible for the user’s profile record and assigns the role(s) (i.e., a CBP
+                                                                     Privacy Impact Assessment
+                                                                     DHS/CBP/PIA-021 TECS Platform
+                                                                                           Page 31
+
+
+
+
+Officer) and the accessible service functions (i.e., Secondary Inspection) within that role. CBP
+manages the assignment of system control officers so that the system control officer may assign
+only functions that the system control officer has authority to use, as well as authority to assign.
+User accounts are reviewed periodically and certified annually to ensure that these standards are
+maintained. TECS actively prevents access to information for which a user lacks authorization,
+as defined by the user’s role in the system, location of duty station, and/or job position. Multiple
+attempts to access information without proper authorization will cause TECS to suspend access
+automatically.
+        The TECS platform automatically generates audit logs that capture all users’ activity.
+Audit logs are captured at the time of logon and throughout the user’s session. The audit logs
+consist of a journal of the user’s data requests or queries into the TECS datasets, and contain the
+user ID, date and time, and the location and activity performed, such as the query terms. These
+audit logs allow system administrators to respond to “user activity” requests from the CBP
+Office of Professional Responsibility to investigate abuse of the TECS Platform.
+        Users are required to have and maintain, at minimum, a background investigation status
+and successfully complete the TECS Security and Privacy Awareness training annually to gain
+and retain access and certification to information on the TECS Platform. Additionally, TECS
+users with access to NCIC, Nlets, and the Nlets interface to the CPIC transaction via TECS must
+be NCIC-certified by successfully completing NCIC testing and certification every two years.
+The lack of a current certification trumps all other access and is not granted until recertification
+is complete. Functions required to perform job duties are reinstated after a user completes the
+recertification.
+        TECS users can also be assigned a specific transaction on an as-needed basis. A
+transaction is a collection of capabilities that update, read, or report on data. TECS users must
+possess both the authority to run the transaction and the authority to read or update the particular
+record that transaction attempts to access. Typically, transactions are used for temporary
+assignments and after the temporary assignment is completed, the user profile is reset in order to
+remove any transaction that is no longer needed. Access through transactions is further limited
+according to the specific authorization of each user. For example, two users may run the same
+transaction specifying the same parameters and get two different results if their access
+permissions differ. Additionally, a user’s ability to add a TECS record is limited entirely by the
+user’s role.
+                                                                   Privacy Impact Assessment
+                                                                   DHS/CBP/PIA-021 TECS Platform
+                                                                                         Page 32
+
+
+
+
+       8.4    How does the project review and approve information sharing
+              agreements, MOUs, new uses of the information, new access to the
+              system by organizations within DHS and outside?
+       Long-standing procedures govern access to, or sharing of, information from the TECS
+Platform. Information sharing agreements/arrangements are drafted by the CBP operational
+stakeholders (Office of Field Operations, Office of Border Patrol, etc.) in consultation with the
+Office of Information Technology program managers. Arrangements that involve PII are sent to
+the CBP Privacy Officer for review and to DHS for final approval in accordance with procedures
+developed by the DHS Information Sharing Governance Board.
+
+
+Responsible Officials
+       Valerie Isbell
+       Executive Director, Passenger Systems Program Directorate
+       Office of Information and Technology
+       U.S. Customs and Border Protection
+       (571) 468-3100
+
+       John Maulella, Director,
+       Traveler Entry Programs,
+       Office of Field Operations,
+       U.S. Customs and Border Protection
+       (202) 344-2605
+
+       Debra L. Danisek
+       Acting CBP Privacy Officer
+       U.S. Customs and Border Protection
+       (202) 344-1610
+
+Approval Signature
+
+
+       Original signed copy of file with the DHS Privacy Office.
+       _______________________________
+       Jonathan R. Cantor
+       Acting Chief Privacy Officer
+       Department of Homeland Security
+                                                                      Privacy Impact Assessment
+                                                                     DHS/CBP/PIA-021 TECS Platform
+                                                                                           Page 33
+
+
+
+
+Appendix 1. TECS Data and Associated PIAs and SORNs
+
+
+                                 Privacy Act –
+                                 System of Records    Most Recent Published
+                                 Notice – Federal     PIA, available at:
+Sub-system or Interface          Register             www.dhs.gov/privacy               General Comments
+Sub-systems – Data that resides on the TECS Platform and is collected by CBP
+Advance Passenger                73 Fed. Reg. 68435   DHS/CBP/PIA-001(f) -
+Information System (APIS)        (Nov. 18, 2008)      Advanced Passenger
+                                                      Information System (APIS)
+                                                      Update National
+                                                      Counterterrorism Center
+                                                      (NCTC)
+Border Crossing Information      78 Fed. Reg. 31958   DHS/CBP/PIA-004(h) -
+(BCI)                            (May 28, 2013)       Beyond the Border
+                                                      Entry/Exit Program Phase
+                                                      III
+Non-immigrant Information        73 Fed. Reg. 77739   DHS/CBP/PIA-016 - U.S.
+System (NIIS) - I-94 & I-94W                          Customs and Border
+                                 (Dec. 19, 2009)
+data/query                                            Protection Form I-94
+                                                      Automation.
+Seized Asset and Case            73 Fed. Reg. 77764   DHS/CBP/PIA-009 TECS
+Tracking System (SEACATS)                             System: CBP Primary and
+                                 (Dec. 19, 2008)
+                                                      Secondary Processing
+Data that resides on TECS but is not collected by CBP
+Interface with U.S. Department   73 Fed. Reg 1660     See Passport Information          Passport and related
+of State: American Citizens      (Jan. 8, 2008)       Electronic Records System         information provided for
+Record Query System (ACRQ)                            PIA (March 1, 2010),              border patrol, screening,
+                                                      available at                      law enforcement,
+                                                      https://foia.state.gov/_docs/PI   counterterrorism, and
+                                                      A/PassportInfoElecRecordsS        fraud prevention
+                                                      ystems_PIERS.pdf                  activities.
+                                                                                        ACRQ was formerly the
+                                                                                        Passport Information
+                                                                                        Electronic Records
+                                                                                        System
+                                                                   Privacy Impact Assessment
+                                                                   DHS/CBP/PIA-021 TECS Platform
+                                                                                         Page 34
+
+
+
+
+                               Privacy Act –
+                               System of Records    Most Recent Published
+                               Notice – Federal     PIA, available at:
+Sub-system or Interface        Register             www.dhs.gov/privacy           General Comments
+Interface with Non-Federal     73 Fed. Reg. 43462   DHS/CBP/PIA-004(e)            Certain States, Native
+Entity Data System (NEDS)      (July 25, 2008)      Procedures for Processing     American Tribes,
+                                                    Travel Documents at the       Canadian Provinces and
+                                                    Border                        Territories, and other
+                                                                                  non-Federal
+                                                                                  Governmental
+                                                                                  Authorities provide
+                                                                                  Enhanced Drivers
+                                                                                  Licenses, Enhanced
+                                                                                  Tribal Cards, and other
+                                                                                  identification documents
+                                                                                  acceptable for travel.
+Interface with the DHS         76 Fed. Reg. 39408   DHS/ALL/PIA-027(b)            In accordance with the
+Watchlist Service to the FBI   (July 6, 2011)       Watchlist Service (WLS)       Watchlist Service PIA
+Terrorist Screening Center                          Update                        (July 14, 2010), Watchlist
+(TSC) Terrorist Screening                                                         information for CBP is
+Database                                                                          maintained in TECS
+Data that is accessible through TECS but does not reside on TECS
+Nlets (formerly known as the   NO                   DHS/CBP/PIA-009 TECS          No SORN because this
+National Law Enforcement                            System: CBP Primary and       data is owned by the
+Telecommunications System)                          Secondary Processing          states of the United
+                                                                                  States, not subject to
+                                                                                  Privacy Act
+California Law Enforcement     NO                   DHS/CBP/PIA-009 TECS          See above
+Telecommunications System                           System: CBP Primary and
+(CLETS)                                             Secondary Processing
+Canadian Police Information    NO                   DHS/CBP/PIA-009 TECS          No SORN because
+Center (CPIC)                                       System: CBP Primary and       foreign agencies are not
+                                                    Secondary Processing          subject to Privacy Act
+                                                                   Privacy Impact Assessment
+                                                                   DHS/CBP/PIA-021 TECS Platform
+                                                                                         Page 35
+
+
+
+
+           Appendix 2. TECS Interfaces with Entities External to CBP
+
+
+Government
+Agency or
+Commercial
+Organization           Remote System Name or Use                               TECS Data Type
+TECS System-to-System Interfaces with Non-CBP Systems (Inbound)
+Commercial
+ARINC                  Carrier APIS determinations                             APIS
+SITA                   Carrier APIS determinations                             APIS
+Air Carriers           Carrier APIS determinations                             APIS
+Department of Defense (DoD)
+DoD Personnel          Background checks                                       Encounter data
+Research Center
+(PERSEREC)
+Department of Homeland Security (DHS)
+U.S. Immigration and   Global Enterprise Manager (GEMS), Enforcement Alien     Screening, Lookout
+Customs Enforcement    Removal Module (EARM), ICE Case Management
+(ICE)                  Modernization Program; Student and Exchange Visitor
+                       Information System (SEVIS)
+U.S. Secret Service    N/A                                                     Screening, Lookout
+Transportation         Secure Flight, Terrorist Threat Assessment and          Lookout
+Security               Credentialing (TTAC), Crew Vetting Program (CVP);
+Administration (TSA)   used by Office of Investigations (OI)
+United States Coast    APIS determinations                                     APIS
+Guard (USCG)
+U.S. Citizenship and   Central Index System (CIS), e-Verify, Alien             Travel Documents, Lookout,
+Immigration Services   Documentation, Identification, and Telecommunications   TECS Screening,
+(USCIS)                System (ADIT), Person-Centric Query System (PCQS)       Certificates of Eligibility
+                                                                     Privacy Impact Assessment
+                                                                     DHS/CBP/PIA-021 TECS Platform
+                                                                                           Page 36
+
+
+
+
+Government
+Agency or
+Commercial
+Organization            Remote System Name or Use                                TECS Data Type
+Department of Justice (DoJ)
+Bureau of Alcohol,      Used for firearms & firearm purchase, Lookout creation   TECS Screening, Lookout
+Tobacco, Firearms and
+Explosives (ATF)
+Drug Enforcement        Narcotics and Dangerous Drugs Information System         Lookout
+Administration (DEA)    (NADDIS)
+Federal Bureau of       International Criminal Police Organization (INTERPOL),   APIS, Encounter, TECS
+Investigation (FBI)     National Crime Information Center (NCIC) (person &       Screening, Lookout
+                        vehicle), NCIC Interstate Identification Index (III),
+                        Terrorist Screening Center (TSC)
+Department of Labor     Used for Labor Management Standards                      Lookout
+
+Department of State (DoS)
+DoS (Visas)             Immigrant visa transmission from DoS                     Travel Documents
+DoS (Passport Office)   U.S. passport feed from DoS                              Travel Documents
+Bureau of Consular      Consular Lookout and Support System (CLASS)              Lookout
+Affairs and Office of
+Diplomatic Security
+Department of Treasury
+Financial Crimes        Case Management Information System (CMIS)                Encounter
+Enforcement Network
+(FinCEN)
+State & Local
+International Justice   Enhanced Driver's License (EDL) for Michigan, Nlets      Encounter, TECS Screening,
+and Public Safety                                                                Travel Documents, Lookout
+Network (Nlets)
+California Law          CLETS                                                    TECS Screening
+Enforcement
+Telecommunications
+System (CLETS)
+Washington              EDL for Washington                                       Travel Documents
+                                                                 Privacy Impact Assessment
+                                                                DHS/CBP/PIA-021 TECS Platform
+                                                                                      Page 37
+
+
+
+
+Government
+Agency or
+Commercial
+Organization             Remote System Name or Use                          TECS Data Type
+New York                 EDL for New York                                   Travel Documents
+Vermont                  EDL for Vermont                                    Travel Documents
+Minnesota                EDL for Minnesota                                  Travel Documents
+Pascua Yaqui Tribe       Enhanced Tribal Card                               Travel Documents
+Kootenai of Idaho        Enhanced Tribal Card                               Travel Documents
+Seneca Nation            Enhanced Tribal Card                               Travel Documents
+TECS System-to-System Interfaces with Non-CBP Systems (Outbound)
+Commercial
+ARINC                    Carrier APIS determinations                        APIS
+SITA                     Carrier APIS determinations                        APIS
+Air Carriers             Carrier APIS determinations                        APIS
+National Insurance       Receipt of vehicle crossing                        Encounter (vehicle crossing)
+Crime Bureau (NICB)
+Department of Commerce (DoC)
+Office of Tourism        Not Provided                                       Encounter
+Information (OTI)
+Department of Defense (DoD)
+DoD PERSEREC             Background checks                                  Encounter
+Department of Homeland Security (DHS)
+DHS Office of            Not Provided                                       Encounter
+Immigration Statistics
+(OIS)
+ICE                      Student and Exchange Visitor Information System    Travel Document, Screening
+                         (SEVIS), GEMS, ICE Case Management Modernization
+                                                                       Privacy Impact Assessment
+                                                                      DHS/CBP/PIA-021 TECS Platform
+                                                                                            Page 38
+
+
+
+
+Government
+Agency or
+Commercial
+Organization            Remote System Name or Use                                 TECS Data Type
+National Protection     Automated Biometric Identification System (IDENT)         APIS, Primary, Secondary,
+and Programs                                                                      Encounter, Travel Document
+Directorate (NPPD)-
+Office of Biometric
+Identity Management
+TSA                     Secure Flight, TTAC, CVP, OI                              APIS, Lookout
+USCIS                   e-Verify, Systematic Alien Verification for Entitlement   Travel Documents (A-
+                        (SAVE), Computer Linked Application Information           Numbers), Encounter, TECS
+                        Management System (CLAIMS), ADIT, PCQS                    Screening
+Department of Justice (DoJ)
+ATF                     Support for firearm purchase                              TECS Screening
+DEA                     Use of license plate data                                 Primary
+FBI                     Used by Foreign Terrorist Tracking Task Force (FTTTF),    Encounter, TECS Screening,
+                        INTERPOL, NCIC (person & vehicle), III, & TSC             APIS, Primary, Secondary,
+                                                                                  Lookout
+Department of State (DoS)
+DoS (Passport Office)   U.S. passport feed                                        Travel documents
+Bureau of Consular      CLASS                                                     Lookout
+Affairs and Office of
+Diplomatic Security
+Department of Treasury
+FinCEN                  Supports receipt of Currency & Monetary Instrument        Encounter
+                        Reporting (CMIR) data
+Other Government Agencies
+Selective Service       not provided                                              Encounter
+State & Local
+Nlets                   EDL for Michigan, Nlets                                   Primary, Secondary, TECS
+                                                                                  Screening, Travel
+                                                                                  Documents, Lookout
+                                           Privacy Impact Assessment
+                                           DHS/CBP/PIA-021 TECS Platform
+                                                                 Page 39
+
+
+
+
+Government
+Agency or
+Commercial
+Organization   Remote System Name or Use               TECS Data Type
+California     CLETS                                   TECS Screening
+New York       EDL                                     Travel Documents
+                                                                 Privacy Impact Assessment
+                                                                 DHS/CBP/PIA-021 TECS Platform
+                                                                                       Page 40
+
+
+
+
+                       Appendix 3. TECS Interfaces with CBP Systems
+
+
+Remote System                                                      TECS Data Type
+TECS Interfaces with CBP Systems (Inbound)
+ATS-P                                                              APIS
+ATS-P: Lookout Record Creation (Person)                            TECS Screening
+ATS-P,TF: Immigration Advisory Program (IAP)                       Secondary
+ATS- P,TF: Integrated Search Service (ISS)                         TECS Screening
+ATS-TF: Intelligence & Operations Framework System (IOFS)          TECS Screening
+ATS-TF: Secured Integrated Government Mainframe Access (SIGMA)     Secondary
+ATS-L (Vehicle and Person)                                         Primary, Secondary, Nlets
+Automated Commercial Environment (ACE)                             Lookout
+
+TECS Interfaces with CBP Systems (Outbound)
+Office of Field Operations
+
+Office of Field Operations Management Reporting                    APIS, Primary, Secondary
+
+ATS-P                                                              APIS
+ATS-P,TF: ISS                                                      TECS Screening
+ATS-TF: IOFS                                                       TECS Screening
+ATS-TF: SIGMA                                                      Secondary
+ATS-L (Vehicle & Person)                                           Primary, Secondary, Nlets
+Enterprise Data Warehouse (EDW)                                    Encounter
+ACE                                                                Lookout
+                                                                        Privacy Impact Assessment
+                                                                        DHS/CBP/PIA-021 TECS Platform
+                                                                                              Page 41
+
+
+
+
+               Appendix 4. Partner Government Agencies with Access to TECS
+                                          Last Updated: July 20, 2017
+Agency                                                Sub-Agency
+Federal Reserve Board                                 N/A
+Office of the Director of National Intelligence       National Counterterrorism Center
+Department of Agriculture                             Animal and Plant Health Inspection Service
+Department of Commerce                                Bureau of Industry and Security
+                                                      DOD Office of Inspector General
+                                                      Special Inspector General for Afghanistan Reconstruction
+Department of Defense
+                                                      U.S. Army Criminal Investigation Command (CID)/Major
+                                                      Procurement Fraud Unit (MPFU)
+Department of Health and Human Services               Food and Drug Administration
+                                                      Alcohol, Tobacco and Firearms
+                                                      Drug Enforcement Administration
+                                                      DEA El Paso Intelligence Center
+                                                      Interpol
+Department of Justice
+                                                      Federal Bureau of Investigation
+                                                      FBI Information Technology Centers
+                                                      Office of Human Rights and Special Prosecutions Section
+                                                      U.S. Marshals Service
+Department of Labor                                   Office of Labor Management Standards
+                                                      Bureau of Consular Affairs
+Department of State
+                                                      Office of Diplomatic Security
+                                                      Internal Revenue Service (IRS)
+                                                      Financial Crime Enforcement Network (FinCEN)
+                                                      IRS Treasury Inspector General for Tax Administration
+Department of Treasury
+                                                      Bureau of Engraving and Printing
+                                                      Office of Foreign Assets Control
+                                                      Office of Intelligence and Analysis
+                                                           Privacy Impact Assessment
+                                                          DHS/CBP/PIA-021 TECS Platform
+                                                                                Page 42
+
+
+
+
+Agency                                    Sub-Agency
+                                          Special Inspector General for Troubled Asset Relief
+                                          Program
+                                          IRS Criminal Investigations Division
+                                          Office of Inspector General
+                                          Alcohol and Tobacco Tax and Trade Bureau (TTB)
+Social Security Administration            Office of Inspector General
+U.S. Consumer Product Safety Commission   N/A
+Department of the Interior                U.S. Fish and Wildlife Service
+Export-Import Bank of the United States   N/A
+                                                                                     Privacy Impact Assessment
+                                                                                     DHS/CBP/PIA-021 TECS Platform
+                                                                                                           Page 43
+
+
+
+
+                       Appendix 5 - TECS Subsystems and Associated PIAs and SORNs
+                                                  Last Updated: March 7, 2022
+
+                                                System Description                            PIA and SORN Coverage
+ Subsystem Name
+                           The CMIR subsystem is responsible for the collection of all        PIA:
+                           information related to the Department of the Treasury              • DHS/CBP/PIA-009
+                           (Treasury) Financial Crimes Enforcement Network                       TECS System: CBP
+                           (FinCEN) Form 105.                                                    Primary and Secondary
+                                                                                                 Processing
+                           FinCEN requires persons who physically transport, mail, or         SORN:
+                           ship currency or other monetary instruments in an aggregate        • DHS/CBP-011 TECS,
+                           amount exceeding $10,000 at one time to or from the United            December 19, 2008, 73
+   Currency and            States to complete FinCEN Form 105. FinCEN Form 105 is                FR 77778
+Monetary Instruments       a Treasury form that travelers transporting currency or other
+  Report (CMIR)            monetary instruments who are subject to the reporting
+                           requirement must complete and submit to CBP Officers
+                           (CBPOs) upon their arrival in or prior to their departure
+                           from the United States. CBP inputs the FinCEN Form 105
+                           into CMIR. CBP personnel as well as enforcement
+                           personnel at other agencies, use the system to develop
+                           currency-related investigations and to conduct other
+                           financial analysis.
+
+                           Commercial air, vessel carriers, and private aircraft pilots       PIA:
+                           are required to provide CBP with advance passenger                 • DHS/CBP/PIA-001 APIS
+                           information (to include crew members) traveling by air or          SORN:
+                           sea and arriving in and/or departing from (and, in the case of     • DHS/CBP-005 APIS,
+                           aircraft crew, overflying) the United States. 52                      March 13, 2015, 80 FR
+                                                                                                 13407
+                           In addition to the mandatory collection from air and
+                           commercial vessel carriers, bus, train, ferry, and bridge
+                           operators may voluntarily submit this information to CBP.
+Advance Passenger
+Information System         This advance passenger information is submitted to CBP via
+      (APIS)               various systems and tools (e.g., the Electronic Advance
+                           Passenger Information System (eAPIS) and the U.S. Coast
+                           Guard’s National Vessel Movement Center’s Notice of
+                           Arrival and Departure System (NOAD)) that have a direct
+                           connection to CBP’s APIS. In turn, CBP vets passengers
+                           and crew arriving in, transiting through, and departing from
+                           (and in the case of crew, overflying) the United States to
+                           identify whether the passenger or crewmember poses a risk
+                           to border, aviation, vessel, rail, bus, or public security, may
+                           be a terrorist or suspected terrorist or affiliated with or
+     52
+          CBP’s APIS regulations include 19 CFR 4.7b, 4.64, 122.22, 122.49a, 122.49b, 122.49c, 122.75a, and 122.75b
+                                                                                 Privacy Impact Assessment
+                                                                                DHS/CBP/PIA-021 TECS Platform
+                                                                                                      Page 44
+
+
+
+
+                        suspected of being affiliated with terrorists, may be
+                        inadmissible, may be a person of interest, or may otherwise
+                        be engaged in activity in violation of U.S. law, or the subject
+                        of wants or warrants.
+
+                        Pursuant to 19 CFR 4.2, operators of small pleasure vessels,      PIAs:
+                        arriving in the United States from a foreign port or place to     • DHS/CBP/PIA-009
+                        include any vessel which has visited a hovering vessel or            TECS System: CBP
+                        received merchandise outside the territorial sea, are required       Primary and Secondary
+                        to report their arrival to CBP immediately. PBRS is a                Processing
+                        reporting system that allows CBPOs to collect and report on       • DHS/CBP/PIA-021
+                        information related to the arrival of pleasure boats and             TECS System: Platform
+                        associated travelers into the United States, record vessel        • DHS/CBP/PIA-002(b)
+                        enforcement stops, and provide cruising licenses for the             Global Enrollment
+                        boating public.                                                      System (GES)
+                                                                                          SORNs:
+                                                                                          • DHS/CBP-007 Border
+   Pleasure Boat                                                                             Crossing Information
+  Reporting System                                                                           (BCI), December 13,
+      (PBRS)                                                                                 2016, 81 FR 89957
+                                                                                          • DHS/CBP-011 TECS,
+                                                                                             December 19, 2008, 73
+                                                                                             FR 77778
+                                                                                          • DHS/ALL-004 General
+                                                                                             Information Technology
+                                                                                             Access Account Records
+                                                                                             System (GITAARS),
+                                                                                             November 27, 2012, 77
+                                                                                             FR 70792
+                                                                                          • DHS/CBP-002 GES,
+                                                                                             January 16, 2013, 78 FR
+                                                                                             3441
+                        PAES is an enforcement tool that is used by CBPOs to track        PIAs:
+                        and record aircraft inspection results for general aviation       • DHS/CBP/PIA-009
+   Private Aircraft
+                        aircraft arriving from and departing for foreign locations. In       TECS System
+ Enforcement System
+                        TECS Modernization, PAES is available through the                 • DHS/CBP/PIA-001 APIS
+       (PAES)
+                        General Aviation Processing (GAP) module.                         SORN:
+                                                                                          • SORN not required
+                        The Travel Document and Encounter Database (TDED)                 PIA:
+                        receives U.S. passport information directly from the              • DHS/CBP/PIA-021
+                        Department of State (DoS) Passport Office any time a new             TECS System: Platform
+                        passport is issued or an existing passport is modified or         SORNs:
+U.S. Passport Interface revoked. The passport information in the TDED is updated          • DHS/CBP-011 TECS,
+                        in real time by DoS via a feed from the Consular                     December 19, 2008, 73
+                        Consolidated Database (CCD).                                         FR 77778
+                                                                                          • DHS/CBP-007 BCI,
+                        CBP uses the passport information to verify the accuracy of          December 13, 2016, 81
+                                                                                  Privacy Impact Assessment
+                                                                                  DHS/CBP/PIA-021 TECS Platform
+                                                                                                        Page 45
+
+
+
+
+                           the passport presented by a person seeking entry into the          FR 89957
+                           United States, and for identification, targeting, and           • STATE-26 Passport
+                           enforcement activities as authorized by the Memorandum of          Records, March 24, 2015,
+                           Understanding between the DoS and CBP.                             80 FR 15653 53
+                                                                                           • STATE-39, Visa
+                                                                                              Records, June 15, 2018,
+                                                                                              83 FR 28062 54
+                           CBPOs use the TPAC application during the primary               PIAs:
+                           inspection process at air and sea ports of entry (POEs).        • DHS/CBP/PIA-009
+                           TPAC integrates several primary inspection systems so that         TECS System: CBP
+                           CBPOs can query, capture, and display biographic and               Primary and Secondary
+                           biometric information through one single sign on                   Processing
+                           application.                                                    • DHS/CBP/PIA-056
+                                                                                              Traveler Verification
+                                                                                              Service (TVS)
+  Traveler Primary                                                                         SORNs:
+Arrival Client (TPAC)                                                                      • DHS/CBP-007 BCI,
+                                                                                              December 13, 2016, 81
+                                                                                              FR 89957
+                                                                                           • DHS/CBP-011 TECS,
+                                                                                              December 19, 2008, 73
+                                                                                              FR 77778
+                                                                                           • DHS/ALL-004
+                                                                                              GITAARS, November
+                                                                                              27, 2012, 77 FR 70792
+                           APIS Quick Query (AQQ) is an interactive electronic             PIA:
+                           transmission message syntax that is used by certain air            • DHS/CBP/PIA-001
+                           carriers to transmit interactive passenger APIS manifest data          APIS
+ APIS Quick Query          to CBP. AQQ messages are typically sent when a passenger        SORN:
+      (AQQ)                checks in for a flight. AQQ messages are sent by air carriers      • SORN not required
+                           to the DHS Router, described below.
+
+                           The DHS Router provides air carriers with a single window       PIA:
+                           to transmit required traveler manifest data to DHS to meet      • DHS/CBP/PIA-001 APIS
+                           both CBP and TSA requirements. The DHS Router sends             SORN:
+                           the data to the Pre-Departures Service (PD) described           • DHS/CBP-005 APIS,
+                           below, the Automated Targeting System, and to TSA Secure           March 13, 2015, 80 FR
+    DHS Router             Flight. The HDS router will also send a consolidated               13407
+                           message back to the carrier with boarding pass issuance
+                           information, based on the results of system checks and
+                           vetting conducted CBP and TSA.
+
+
+ Portable Automated        PALS serves as a backup and provides redundancy for             PIAs:
+
+     53
+          https://www.state.gov/wp-content/uploads/2019/05/Passport-Records-STATE-26.pdf
+     54
+          https://www.state.gov/wp-content/uploads/2019/05/Visa-Records-STATE-39.pdf
+                                                                               Privacy Impact Assessment
+                                                                              DHS/CBP/PIA-021 TECS Platform
+                                                                                                    Page 46
+
+
+
+
+  Lookout System        critical CBP records so that operations may continue even in    • DHS/CBP/PIA-009
+     (PALS)             the event of loss of network connectivity or power outage.        TECS System: CBP
+                                                                                          Primary and Secondary
+                                                                                          Processing
+                                                                                        • DHS/CBP/PIA-040
+                                                                                          Seized Assets and Case
+                                                                                          Tracking System
+                                                                                          (SEACATS)
+                                                                                        SORNs:
+                                                                                        • DHS/CBP-011 TECS,
+                                                                                          December 19, 2008, 73
+                                                                                          FR 77778
+                                                                                        • DHS/CBP-013
+                                                                                          SEACATS, December
+                                                                                          19, 2008, 73 FR 77764
+
+                        LRDS allows TECS users to create and modify Lookout             PIAs:
+                        Records (LRs). Lookout records contain information about        • DHS/CBP/PIA-009
+                        people, vehicles, vessels, aircraft, organizations, and other      TECS System: CBP
+                        things that may pose a threat, should be subjected to              Primary and Secondary
+                        additional scrutiny, or require special processing when            Processing
+ Look Out Records       presented for inspection or who are encountered between the     • DHS/CBP/PIA-021
+ Data and Screening     POEs. LRs are used to vet travelers and alert CBPOs and            TECS System: Platform
+  Services (LRDS)       other agencies when a person of interest crosses or attempts    SORN:
+                        to cross the border. LRs are also used to vet travelers prior   • DHS/CBP-011 TECS,
+                        to departure.                                                      December 19, 2008, 73
+                                                                                           FR 77778
+
+                        The PLOR process is designed to prevent a person who is         PIAs:
+                        not the target of a lookout record, but has a similar name or   • DHS/CBP/PIA-009
+                        other similar information, from being repeatedly referred for      TECS System: CBP
+                        secondary inspection based on that unrelated record. After a       Primary and Secondary
+                        secondary inspection officer determines that the person            Processing
+  Primary Lookout       referred is not the target of a lookout record, he or she can   • DHS/CBP/PIA-021
+  Override (PLOR)       create a PLOR record in TECS, Unified Secondary and ATS            TECS System: Platform
+                        UPAX by inputting the passport information for that             SORN:
+                        traveler. At subsequent encounters, the specific lookout        • DHS/CBP-011 TECS,
+                        record will no longer create a secondary referral for that         December 19, 2008, 73
+                        specific traveler for the TECS record hit.                         FR 77778
+
+                        CBP uses iAPIS to report on data collected and processed in     PIA:
+                        APIS regarding international air, sea, and rail travelers on    • DHS/CBP/PIA-001 APIS
+ Integrated Advance     entry into and departure from the United States. CBP            SORN:
+Passenger Information   personnel use create daily iAPIS reports to the APIS            • DHS/CBP-005 APIS,
+   System (iAPIS)       community (CBP Office of Field Operations, APIS National           March 13, 2015, 80 FR
+                        Account Managers, and representatives from airlines and the        13407
+                        shipping/vessel industry responsible for ensuring APIS
+                                                                               Privacy Impact Assessment
+                                                                               DHS/CBP/PIA-021 TECS Platform
+                                                                                                     Page 47
+
+
+
+
+                       compliance). These reports inform CBP officers of
+                       passengers who are missing data, such as date of birth, in
+                       their manifest records. iAPIS also compiles reports on the
+                       changes made to APIS information by officers or the system
+                       itself. Reports are shared with airlines and other vessels to
+                       inform them that they are providing incomplete manifests
+                       and warn them of penalties.
+
+                       The DHS WLS stores and receives the Terrorist Screening          PIAs:
+                       Database (TSDB) from the Terrorist Screening Center              • DHS/ALL/PIA-027 DHS
+                       (TSC) and disseminates it to various DHS systems. WLS is            Watchlist Service
+                       a system-to-system connection with no direct user interface,     • DHS/CBP/PIA-021
+                       and CBP does not manipulate any WLS data.                           TECS System: Platform
+                                                                                        SORNs:
+                       CBP maintains a copy of WLS in TECS. WLS records in              • DHS/CBP-011 TECS,
+  DHS Watch List       TECS are accessible and visible to all authorized users.            December 19, 2008, 73
+  Service (WLS)        When a TECS user searches for information on a person for           FR 77778
+                       whom there is a WLS record, that record is returned along        • DHS/ALL-030 Use of the
+                       with any other responsive border crossing, encounter,               Terrorist Screening
+                       lookout, or enforcement related records. In addition, traveler      Database System of
+                       manifests submitted via APIS are queried against WLS                Records, April 6, 2016,
+                       records, and users of the CBP primary inspection clients            81 FR 19988
+                       (e.g., TPAC) are able to view WLS information in TECS.
+                       CSIS is a back-end system that stores records of secondary       PIA:
+                       inspections conducted at POEs. Biographic information            • DHS/CBP/PIA-009
+                       gathered during primary inspection, as well as the reason(s)        TECS System: CBP
+                       for referral, are forwarded to Unified Secondary from the           Primary and Secondary
+                       relevant primary system (including Simplified Arrival,              Processing
+                       TPAC, U.S. Pedestrian, U.S. Arrival, and the Border Patrol       SORN:
+                       Primary Client) for use by CBP officers. As part of              • DHS/CBP-011 TECS,
+                       secondary inspections, the CBP officers record what                 December 19, 2008, 73
+    Consolidated
+                       occurred as part of the inspection, such as the type of             FR 77778
+Secondary Inspection
+                       inspection that was conducted, any issues that were
+   Service (CSIS)
+                       discovered, and the outcome of the inspection. If an officer
+                       finds something improper, the officer notes that in Unified
+                       Secondary, as the front facing system, and takes appropriate
+                       action. As the back-end system, CSIS stores a record of
+                       inspection, narrative, and other information entered by
+                       CBPOs over the course of processing a secondary
+                       inspection.
+
+                       HPPQ is a backend service, used mainly by primary                PIAs:
+                       applications (e.g., TPAC) to (1) conduct lookout searches to     • DHS/CBP/PIA-021
+ High Performance
+                       determine if travelers who present themselves for inspection        TECS System: Platform
+  Primary Query        are subjects of lookout records and, (2) create border
+     (HPPQ)                                                                             • DHS/CBP/PIA-009
+                       crossing records.                                                   TECS System: CBP
+                                                                                           Primary and Secondary
+                                                                                Privacy Impact Assessment
+                                                                               DHS/CBP/PIA-021 TECS Platform
+                                                                                                     Page 48
+
+
+
+
+                       In order to conduct these checks, the primary applications         Processing
+                       send biographic information on the individual to HPPQ,
+                       which searches lookout records and returns any hits.            SORN:
+                       Officers use these results, along with other information        • SORN not required
+                       gathered during the inspection, to permit a traveler to enter
+                       the United States or refer them to secondary inspection.
+                       HPPQ also creates border crossing records for all travelers
+                       who present themselves at a port of entry.
+
+                       NNSV provides user interface screens via the TECS Portal        PIA:
+                       to perform queries of the following external systems:           • DHS/CBP/PIA-021
+                       • FBI National Crime Information Center (NCIC), an                 TECS Platform
+                           index of criminal justice information (i.e., criminal       SORN:
+                           record history information, fugitives, stolen properties,   • DHS/CBP-011 TECS,
+                           missing persons).                                              December 19, 2008, 73
+                       • Interstate Identification Index (Triple I (III)), a              FR 77778
+                           Federal/State exchange of criminal history record
+                           information.
+ NCIC/Nlets Service    • International Justice and Public Safety Network (Nlets),
+     (NNSV)                permits law enforcement and criminal justice agencies
+                           to access a wide range of information, from standard
+                           driver’s license and vehicle queries to criminal history
+                           and Interpol information. State vehicle registration data
+                           from Nlets is ingested into NNSV to assist TECS users
+                           in identifying and researching travelers.
+
+                       NNSV also provides backend services for system-to-system
+                       consumers to request NCIC, Nlets, and III queries.
+
+                       TDED, which consists of two separate systems, allows CBP        PIA:
+                       to query and/or validate travel documents and encounter         • DHS/CBP/PIA-021
+                       data for travelers and conveyances. TDED also provides a           TECS System: Platform
+                       modernized Web-based User Interface to support both CBP
+                       and external partners in their mission functions.               SORNs:
+                                                                                       • DHS/CBP-011 TECS,
+                       The Travel Document database stores all available                 December 19, 2008, 73
+                       information on travel documents (e.g., DoS passports and          FR 77778
+Travel Documents and   visas, Enhanced Driver’s Licenses and Tribal cards). CBP        • DHS/CBP-007 BCI,
+   Encounter Data      uses the information in the Travel Document database to           December 13, 2016, 81
+       (TDED)          verify the travel documents presented by travelers.               FR 89957
+
+                       When a CBPO encounters a traveler with a non-U.S. issued
+                       travel document, the information from that document is
+                       transferred into the Travel Document database when the
+                       officer inputs it into one of the TECS primary processing
+                       applications or confirms the validity of the document
+                       information received from other systems (e.g., APIS) at
+                       inspection.
+                                                                                    Privacy Impact Assessment
+                                                                                   DHS/CBP/PIA-021 TECS Platform
+                                                                                                         Page 49
+
+
+
+
+                        The Encounter Data database collects information on person
+                        and vehicle encounters as they cross through POEs and is
+                        populated by applications used by CBPOs for travel
+                        processing (e.g., person, vehicle, and CMIR records).
+                        Information in the Encounter Data database is primarily
+                        used by TECS users to view travel history.
+
+                        CBP Vetting is a web portal used by a variety of DHS and             PIAs:
+                        other government users to bulk query records located in              • DHS/CBP/PIA-009(a)
+                        TECS. For example, a user can search CBP Vetting for a list             TECS System: CBP
+                        of license plates they believe are involved in illicit activities.      Primary and Secondary
+                        CBP Vetting will return any hits on those records found                 Processing
+                        throughout TECS subsystems, and other DHS and external               • DHS/CBP/PIA-021
+                        agency systems connected to TECS, including the CBP                     TECS System: Platform
+    CBP Vetting         Seized Assets and Cases Tracking System (SEACATS), FBI
+                        NCIC, FBI Identification Index, Nlets, and INTERPOL.                 SORNs:
+                        Users are then able to download those records to their               • DHS/CBP-007 BCI,
+                        workstations for analysis.                                              December 13, 2016, 81
+                                                                                                FR 89957
+                                                                                             • DHS/CBP-011 U.S. CBP
+                                                                                                TECS December 19,
+                                                                                                2008, 73 FR 77778
+                        ERS allows users to produce reports based on requests from           PIAs:
+                        internal TECS users. These reports pull information stored           • Source system PIAs (e.g.,
+                        in TECS, the Electronic System for Travel Authorization                 TECS, ESTA, and
+                        (ESTA), Electronic Visa Update System (EVUS),                           EVUS)
+                        Arrival and Departure Information Systems (ADIS),                    SORNs:
+Enterprise Reporting    Global Entry (GE), and Traveler Verification System (TVS)            • Source system SORNs
+   System (ERS)         and may include any of the biographic information                       (e.g., TECS, ESTA, and
+                        contained in these data sets. ERS enables CBP officers to               EVUS)
+                        monitor activities across POEs and allow officers to track
+                        and analyze compliance rates, monitor activity, and enforce
+                        regulatory processes.
+
+                        The DHS Router sends traveler information to PDS for                 PIA:
+                        travel document validation. PDS queries passenger names              • DHS/CBP/PIA-001 APIS
+                        against the ESTA, EVUS, Visa Verify, and various TECS                SORN:
+                        functions (Primary Query Service, VISA, and Travel                   • DHS/CBP-005 APIS,
+                        Document and Encounter Data (TDED)) in order to verify                  March 13, 2015, 80 FR
+Pre-Departure Service   passenger information submitted through APIS, ensure that               13407
+       (PDS)            they have valid documents, and the proper authorization to
+                        travel to the United States. The results of the checks are sent
+                        back to DHS Router, which sends the message to TSA who
+                        conduct watchlist matching and adds the results to the
+                        message which is sent back to the DHS Router and then to
+                        the air carrier for them to determine if a boarding pass can
+                                                                               Privacy Impact Assessment
+                                                                              DHS/CBP/PIA-021 TECS Platform
+                                                                                                    Page 50
+
+
+
+
+                      be issued.
+
+                      APC Services enables authorized devices to collect                PIA:
+                      biographic and inspection-related information from                • DHS/CBP/PIA-051 APC
+                      travelers. APC Services validates this data and securely             and MPC
+                      transmits it to other federal systems to query for derogatory     SORNs:
+                      information. CBP APC Services support two programs:               • DHS/CBP-011 TECS,
+                      Mobile Passport Control (MPC) and the APC Kiosk System.              December 19, 2008, 73
+                          • With MPC, eligible participants may use an                     FR 77778
+Automated Passport
+                               approved mobile application loaded onto their            • DHS/CBP-007 BCI,
+  Control (APC)
+                               personal smartphone or tablet to expedite the entry         January 25, 2016, 81 FR
+    Services
+                               process into the United States.                             4040
+                          • The Kiosk System is: (1) equipment in the form of a
+                               kiosk or other CBP approved device that allows a
+                               traveler to input data and (2) a server(s) that allows
+                               the kiosk to interface with CBP’s APC Service for
+                               traveler processing.
+
+                      ALPR allows vehicles and its occupants to pass through            PIAs:
+                      POEs quickly and efficiently using automated cameras and          • DHS/CBP/PIA-009
+                      RFID travel document readers that provide information to             TECS System: CBP
+                      primary inspection applications. Currently, ALPR is                  Primary and Secondary
+                      implemented at all vehicle inbound lanes at land POEs.               Processing
+                      Non-RFID capable ALPR systems are located at southern             • DHS/CBP/PIA-049 CBP
+                      border vehicle outbound lanes and all Border Patrol                  License Plate Reader
+ Automated License    Checkpoints.                                                         Technology (LPRT)
+Plate Reader (ALPR)                                                                     SORNs:
+                                                                                        • DHS/CBP-006 ATS,
+                                                                                           May 22, 2012, 77 FR
+                                                                                           30297
+                                                                                        • DHS/CBP-007 BCI,
+                                                                                           December 13, 2016, 81
+                                                                                           FR 89957
+
+                      LMC is used at checkpoints by Border Patrol Agents and for PIAs:
+                      outbound inspections by CBPOs. LMC has the ability to         • DHS/CBP/PIA-009
+                      read (via Optical Character Recognition or via manual data       TECS System: CBP
+                      entry) and query vehicle license plates and scan Vehicle         Primary and
+Land Border Mobile    Identification Numbers (VIN). LMC can also read passenger        Secondary Processing
+   Client (LMC)       travel documents with a Machine Readable Zone (MRZ) and       • DHS/CBP/PIA-006
+                      scan a driver’s license bar code.                                Automated Targeting
+                                                                                       System (ATS)
+                      CBPOs/Agents use the LMC to conduct queries via the        SORNs:
+                                                                                      Privacy Impact Assessment
+                                                                                     DHS/CBP/PIA-021 TECS Platform
+                                                                                                           Page 51
+
+
+
+
+                         Vehicle Primary Application and Integration Services                       •   DHS/CBP-011
+                         (VPAIS) 55 or the Land Primary Application and Integration                     TECS, December 19,
+                         Service (LPAIS) 56 depending on the mode of operation.                         2008, 73 FR 77778
+                                                                                                    •   DHS/CBP-007 BCI,
+                                                                                                        December 13, 2016,
+                                                                                                        81 FR 89957
+                         BPC is a desktop application that Border Patrol Agents use       PIAs:
+                         to process travelers at Border Patrol checkpoints using the         • DHS/CBP/PIA-009
+                         information collected from travel documents through RFID               TECS System: CBP
+                         scans, swipes of the MRZ on travel documents, or manual                Primary and
+                         entry by Agents. Information collected from travel                     Secondary Processing
+Border Patrol Client     documents is queried through the LPAIS.                             • DHS/CBP/PIA-006
+      (BPC)
+                                                                                                ATS
+                                                                                          SORN:
+                                                                                             • DHS/CBP-011
+                                                                                                TECS, December 19,
+                                                                                                2008, 73 FR 77778
+                         VPC is used by CBPOs at land POEs to inspect vehicles and PIAs:
+                         occupants entering the United States. At vehicle primary, the       • DHS/CBP/PIA-009
+                         CBPO obtains information from the driver and any                       TECS System: CBP
+                         passengers within the vehicle via RFID enabled travel                  Primary and
+                         documents, a manual swipe of the MRZ of passports, or                  Secondary Processing
+                         manual entry and enters it into VPC. This information is            • DHS/CBP/PIA-006
+                         then sent through the VPAIS for vetting. VPC creates a                 ATS
+ Vehicle Primary         Vehicle Package that consists of biographic information on          • DHS/CBP/PIA-049
+  Client (VPC)           the vehicle, the driver, and any passengers, as well as any            CBP LPRT
+                         license plate reader pictures taken during the crossing.         SORNs:
+                                                                                             • DHS/CBP-011
+                                                                                                TECS, December 19,
+                                                                                                2008, 73 FR 77778
+                                                                                             • DHS/CBP-007 BCI,
+                                                                                                December 13, 2016,
+                                                                                                81 FR 89957
+                         LPIA is a tool that provides CBPOs at land POEs with             PIAs:
+                         statistical data for monitoring primary operations. LPIA/           • DHS/CBP/PIA-009
+                         Land Border Web Reporting System (LBWRS) helps ensure                  TECS System: CBP
+License Plate Image      the integrity and validity of all license plate data captured by       Primary and
+  Archive (LPIA)
+                         the ALPR system. ALPR captures images from vehicles                    Secondary Processing
+                         exiting and entering the United States. These images include        • DHS/CBP/PIA-049
+                         license plate, surroundings, driver, and passenger images.             CBP LPRT
+
+    55
+       VPAIS is a service that receives information from the various primary vehicle applications, like VPC, and runs
+    that information through various databases for vetting (e.g., TECS, NCIC, Nlets, and ATS).
+    56
+       LPAIS is a service that receives information from the various primary land applications, like BPC, and runs that
+    information through various databases for vetting. LPAIS queries information from various systems (e.g., TECS,
+    NCIC, Nlets, and ATS). Any hits are returned to the BPC, through LPAIS, for Agent action.
+                                                                                  Privacy Impact Assessment
+                                                                                 DHS/CBP/PIA-021 TECS Platform
+                                                                                                       Page 52
+
+
+
+
+                        CBP uses the LPIA photographs for quality control checks          SORN:
+                        to ensure that the readers are accurately capturing and             • DHS/CBP-007 BCI,
+                        transcribing license plate information. LPIA also contains              December 13, 2016,
+                        information associated with the crossing, such as driver and            81 FR 89957
+                        passenger biographic information. This information is
+                        automatically sent to LPIA from the VPC, Outbound
+                        Primary Client (OPC), and the BPC. LPIA provides a
+                        variety of reports and statistical data, including lane status,
+                        average inspection and response times, and RFID read
+                        counts to CBPOs and managers.
+
+                        PED is used by CBPOs to process pedestrians seeking entry         PIA:
+                        into the United States at land border POEs. During the            • DHS/CBP/PIA-009
+                        primary inspection, the CBPO enters the traveler’s                   TECS System: Primary
+                        information into PED, which then queries other information           and Secondary
+                        stored in TECS. Any hits are returned to the PED for CBPO            Processing
+                        action. CBPOs will either refer travelers for secondary           SORNs:
+U.S. Pedestrian (PED)   processing or allow them to enter the United States. If a         • DHS/CBP-011 TECS,
+                        traveler is referred to secondary inspection, the CBPO uses          December 19, 2008, 73
+                        PED to note why the referral is occurring and the traveler’s         FR 77778
+                        information is ported over to the CSIS for review by a            • DHS/CBP-007 BCI,
+                        secondary inspection officer                                         December 13, 2016, 81
+                                                                                             FR 89957
+                        ARR is an application that allows travelers crossing at land      PIA:
+                        ports of entry to obtain an I-94 or I-94W (with approved          • DHS/CBP/PIA-009
+                        ESTA) if they are not in possession of one. ARR allows               TECS System: CBP
+                        CBPOs to perform a document validation and take the                  Primary and Secondary
+                        required biometrics for the issuance of the I-94. Officers           Processing (TECS)
+                        create an I-94 by inputting biographic data, either manually      SORNs:
+                        keyed from the travel document or scanning the MRZ of the         • DHS/CBP-016
+                        document, photograph and fingerprints into ARR.                      Nonimmigrant
+ U.S. Arrival (ARR)     Information input in ARR is vetted through TECS (e.g.,               Information System
+                        NCIC and Nlets), ESTA, EVUS, and the Automated                       March 13, 2015, 80 FR
+                        Biometric Identification System (IDENT). If no derogatory            13398
+                        information is returned, then a final I-94 is created for the     • DHS/CBP-021 Arrival
+                        traveler. If the vetting finds derogatory information, then          and Departure
+                        hits are returned to ARR and the traveler is referred for            Information System
+                        further secondary inspection. In addition to creating an I-94,       (ADIS) November 18,
+                        ARR also creates a border crossing record for the traveler.          2015, 80 FR 72081
+
+                      EDLs allow individuals from issuing states and some                 PIA:
+                      Canadian Provinces to use RFID-enabled travel documents             • DHS/CBP/PIA-004(e)
+ Enhanced Driver’s
+                      for expedited land and sea border crossing. ETCs are issued            CBP Procedures for
+ License (EDL) and    to recognized Native American Indian tribes and nations for            Processing Travel
+Enhanced Tribal Cards the same purpose. EDLs and ETCs are federally-recognized
+                                                                                             Documents at the Border
+      (ETCs)          documentation that provide proof of U.S. citizenship and            SORN:
+                      proof of identity.                                                  • DHS/CBP-008 Non-
+                                                                              Privacy Impact Assessment
+                                                                             DHS/CBP/PIA-021 TECS Platform
+                                                                                                   Page 53
+
+
+
+
+                                                                                         Federal Entity Data
+                     When a traveler’s EDL or ETC is scanned by a CBP RFID               Systems (NEDS), July
+                     reader at a POE, the information is sent to the TDED                25, 2008, 73 FR 43462
+                     database to verify authenticity of the EDL or ETC presented,
+                     and to run law enforcement checks through TECS and ATS
+                     to see if there are any hits which would require further
+                     inspection.
+
+                     In 2017, CBP introduced a technical demonstration to             PIAs:
+                     reengineer the primary air entry process through the                • DHS/CBP/PIA-009
+                     incorporation of advanced facial recognition biometric                 TECS System: CBP
+                     technologies. The new primary entry solution uses                      Primary and
+                     biometrics to initiate a transaction, using facial recognition         Secondary Processing
+                     as the primary biometric verification modality. Historically,       • DHS/CBP/PIA-030
+                     travel documents such as passports or visas have been used             TVS
+Simplified Arrival
+                     to verify a traveler’s identity, travel history, and any         SORNs:
+      (SA)
+                     enforcement concerns that may require attention, prior to           • DHS/CBP-007 BCI,
+                     admission to the United States. This shift from a                      December 13, 2016,
+                     biographically, document-based system to biometrically-                81 FR 89957
+                     initiated transactions means that the majority of travelers         • DHS/CBP-006 ATS,
+                     will provide facial biometrics for identity verification               May 22, 2012, 77 FR
+                     purposes.                                                              30297
+

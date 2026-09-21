@@ -1,0 +1,183 @@
+{
+  "id": "resp_0f344defbb71000d016aa0271c4e0487d294b55cf7cddf0610",
+  "object": "response",
+  "created_at": 1788880668,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1788880678,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": null,
+  "max_output_tokens": 4096,
+  "max_tool_calls": null,
+  "model": "gpt-6-astra",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_0f344defbb71000d016aa0271d3bd487d2b5a2fd6aed78cd30",
+      "type": "reasoning",
+      "content": [],
+      "encrypted_content": "gAAAAABqoCcmjA4McBg5cF3_Lx1QErTIn497A4slhQDXCnsMQo7aNK0Jz6h3s_RXeN9Oj7GLNk6azkCtoG8eKdhY5Fdw5vVgecKOg80por2jly1izvVy22Asvi6Z2a1nbmMXt-zmJywNnekqmh8TNnu71dj9IA-49Aaig4MtBvF3Mr1Q1C-4k9wLaTWSY0Y5C2W5Y9SXaiH_DSVNeZvAY_gcyTLHVJPp6dYSiZGNZwqnuCxf3YHsXlWnf9dN5c_qHCoLbFQ5jynmrAlf-6972w0bDhdYpcUJaeNN3HYF_nDIHVQDpNdC54jGyd0Tc5VNFa9wdjZgDQKu04M6kFHncnwA7qV5wIUql33jDQijrdDQWTAvstNter05b5i1VGgscPCIIVGFiSJv-CUj0202odCRn4zEs7qriCeLn_VIBLT3G2U8mWJtsiIoaYZOOzoPHb9ZtG_JgsFQdJhf2OZIvD66hXiUyDLplxEeG1fiSANfbfVSsqjkdWVDTY51DtLQdRPQChdqQ32B93-GMFcspjH0xL2oPusbOUSU_1zD81OmXvXw2yP2TB3mgkKPYq2feRYVTo20aXq2tTQPBD7Eg6b9O3LXWafCo_nffFX261rswVdamzgmqKNDHq3VCfYptAKtWW-r8lFCX0QPn3VM3y7L1kzXEdDoxYTCqiMge6NujyhSA7Mga8yy4BX1spOuV8I6nPeT0q7grfuAdOPOv8x5pe0Xe72wm81MGCyUDQ-j_ICjEIyOIwkqkTm_Tjr2A3ibWNgWFcXqT9C78jSOEUuplrf0SSDaHoajMrWbkZf8JJlxPHKeEHteaEXjPGMsPhXQewdJNTX8O-YnlZ7AOgS7YR5DyBGOhvMjo-eR4OtWeb4Qfos8Fkgmnb1Utyqzkb3iqZdxQR_NLV3HiY1droow_1X8x4W7TayuS4woQQpxnA6CW4JUYoDuDTw7Pl-OzVIvhBOSx9ANeMR1GSjcJyHNyUwifHQgvngQt8-6Qvdvr2wYM2T3nam-QJkvgY8AcEOkUdH8b-2mxHFoTuc3xmc9lTgfAiFO1i1LV-5JkA_eQoaHn3HjUFVaQYWlW7y-8t2WzSbuCTAUXV8e0jQPHTf6ugTsOzXdCPORamvkpsr6PDZFT3ufeliQZJIQirsrzfLlyGybngDXrd9GCWRnl7sgjPWszd9UCDhlbvLOrh_Pypfbklm5CDeerGtBdaSDCijPf_pLPqnex2PPgP1gYZ4A5crIwQul_Lxrl5_3S9HB6JsTpNVcJAv0LVEurR64NnzVhOreVQ4Kvbjbe8ndSI1AbWEO0gTdeuVGDbfxKU3KXx-gNrvibWLfXrfehJoH0JGmyfFIYj0CAxZAzUIrp2qh2-xjS5JbLe2xBm7PoYQ3X_N_55p4jdPt46ecjL1MsfmuxsDKbF1BJoNpt9k9vvIsDJviQs5Vjdvrel7xNtsH3cr0Pp3VFeM7b10VFNI2LMQKxhThbnQGMi1xkid2Kn0uRsMdtO-h3KNtJrOsopM5iyPcoMFo0sqfjsuSEYdO6F3OSprmVpCvkt9osEvpXC-YSRvkESn_HwhPzcuGs4JK8OTrTjuXgK2pYYPT5YERiGgLIkzog-YWlr9zbmpfF1gKg0Uwv-LgPrH1ymisctF3BTnZ-4KXgEriCri0Og1-SdISNeR08ETwbrltUBc8aPRhY5MrE6OkyAvE72b3adqbvSSnJPONhQzsNEW22vIVJG_r24gPeROzRGr4E7flU-J1FRHs1gsdCfijuXxIgubEqQCXy2h3LrGrfqWjfOGeWFfIGjAeK1Owj_d2f3XUeYuL5JuvyH_uRahpKZ5_GdtG8d9Vk60mSCvnhxf0HcnWObcB_snzejxlcyYOemVhcHn_XAVRndDM_AhhdyX2vrKUGF9q-EGtlfkWAHu2xptOIzYKj7uw2OYPYY6PY3V22OmhTPjzTWZAvkAxY8TmtSViDwZAjyz8lprhLgZNLMqjw7gxJuY2PtNQZPQ9_Rva13OdCzzKPChOmPtk7W68Y2_izAT_9RE3q5AIvLzlZfqokWE8eFEjADV1cQv7UJGIxsd1XINE-0ImxpRbqhwBLbA_zkqT6tA8QWMWRTAkjWiwm4CGfNnu9B5iFa2cN7ZBiKZChhf5xfKC8q4LgOFm5bJd7D0mPsRDRoSQWO33UBnWnJoygeek3wlVtG9GB5mEH545-Tg2IQ73_2FcKYRiPtaKP167a8AvHTkiAhaXR8Vj086OixtixJsaMrHs6dKjpOX5y3WFtOQ9iA-gaHTO1ChM8EANWGo9XspRix4x2MiGlweln64c2XRc",
+      "summary": []
+    },
+    {
+      "id": "msg_0f344defbb71000d016aa02721ebe887d2b5da494f04ae58ee",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"id\":\"M-8cf7f12d1cbce34b\",\"P\":\"YES\",\"O\":\"YES\",\"W_ind\":\"UNCLEAR\",\"W_opt\":\"NO\",\"W_nar\":\"NO\",\"H\":\"YES\",\"status\":\"D\",\"ambiguity\":\"P: \u201clegally binding or material decisions.\u201d O: \u201coutputs serve primarily as inputs to an investigative process.\u201d W_ind: \u201cincludes judicial review and other safeguards\u201d names an institutional check but does not explain how it prevents principal dependence on AI outputs. W_opt: no non-AI alternative stated. W_nar: \u201crather than making legally binding or material decisions itself\u201d distinguishes AI from the decision maker without bounding its influence. H: \u201cinvestigators review, validate, and contextualize the AI-generated outputs.\u201d Human oversight remains the load-bearing warrant without a qualifying W mechanism. Confidence: moderate. Lens: public-rationale-only. Model: ChatGPT; protocol: ATRACC Public-Rebuttal Codebook v3.\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "low",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": false,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "atracc_coding",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "P": {
+            "type": "string",
+            "enum": [
+              "YES",
+              "NO",
+              "UNCLEAR"
+            ]
+          },
+          "O": {
+            "type": "string",
+            "enum": [
+              "YES",
+              "NO",
+              "UNCLEAR"
+            ]
+          },
+          "W_ind": {
+            "type": "string",
+            "enum": [
+              "YES",
+              "NO",
+              "UNCLEAR"
+            ]
+          },
+          "W_opt": {
+            "type": "string",
+            "enum": [
+              "YES",
+              "NO",
+              "UNCLEAR"
+            ]
+          },
+          "W_nar": {
+            "type": "string",
+            "enum": [
+              "YES",
+              "NO",
+              "UNCLEAR"
+            ]
+          },
+          "H": {
+            "type": "string",
+            "enum": [
+              "YES",
+              "NO",
+              "UNCLEAR"
+            ]
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "S",
+              "U",
+              "D"
+            ]
+          },
+          "ambiguity": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "P",
+          "O",
+          "W_ind",
+          "W_opt",
+          "W_nar",
+          "H",
+          "status",
+          "ambiguity"
+        ],
+        "additionalProperties": false
+      },
+      "strict": true
+    },
+    "verbosity": "low"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 1509,
+    "input_tokens_details": {
+      "cache_write_tokens": 1506,
+      "cached_tokens": 0
+    },
+    "output_tokens": 346,
+    "output_tokens_details": {
+      "reasoning_tokens": 133
+    },
+    "total_tokens": 1855
+  },
+  "user": null,
+  "metadata": {}
+}

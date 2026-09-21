@@ -1,0 +1,183 @@
+{
+  "id": "resp_0ce2d864ae6af64e016aa026f2d2ac87d2b3fcf4ae418d12b7",
+  "object": "response",
+  "created_at": 1788880626,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1788880628,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": null,
+  "max_output_tokens": 4096,
+  "max_tool_calls": null,
+  "model": "gpt-5.4-mini-2026-03-17",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_0ce2d864ae6af64e016aa026f3604887d2a613b6c683a09bb2",
+      "type": "reasoning",
+      "content": [],
+      "encrypted_content": "gAAAAABqoCb08wkEeG-YiKAIw-Q8j3yH0hdWCOGquEp0r3mL_aZl-c9t28FbdR4kz206rwSoHLuFVW7V-euRm5gfcUXDMJFmiGXzTBq96JY3A3J6apy-znEJi_0vE3vOqg3k07Y0TXIhWHnaMVWzz6hWG412CakWKY74Wgc8RYNeP_ciGma-KRNSOG_QnRrXIOmTB_ZxfUeVt022b-AWI3dRXk4J0QkaSBFDXCRvPKplqFgz6-lqsypGtnjA4duuRbzpOlrPM8QC-9ztRKj2LLYZ-L4OrfiKXebEHuO8_s0v6CApyK_h_XXWQO2PIEsC8s_DDvTXzJZpl4FcyZ4q9fDir1UdKE7AGfzYSW1JVaGTYNq9usEArKTTUBqD_mxDXLMpBoU18mWIVcatglYlmT6Xm6RQAG0sw0SLjRs88uM9cvpY6iQ5j2HJmZtg9stOCcPRbpI-UKWCTyZGMEfqv3g30bRNiCKVFTU_wuMuPEZMiKZx7cpSgWoREmd7Dc08VcoyCD0mqIJcNRvD11BxnJ4UrusYhy2v4xtcfiUV7H8Bh6a6ozoHCQ3PC6b7aMYBSR6-axTBD5TSV1Xr4JszjJL-A0-l_D9uE0WCfXW6j35IPb26Rl97VEzPEj9wKeM-uxgpZz76n8IQKk2tj2Xx0HJSQkqVjZi6_Jqj1KWKG-b-nStasoJId_0OeZpWpVvBBjpdxe0ctSpzhVr6_JiaBI8jws9VGA8UfsB2zzsFT3LJbhOyFG_jOn6iuB2FfNQYzQ_p4l7TUbZ-p3lVDaY0sC4-drSYMoVQSqRxN9vc4jMZrCvyS7L4aQ8kLWsyKGz8vK5IcPyMW1sU7GlmcgH3r4o2LG_m0OKOmkynl4cDbDRjVMOPkNUcO5d5uwhLvtm6LTHkIeUvAmxOPUzKiJUFOSJpBa_nlNLcTPzdhjSQMSQOyFlHnHWOBsndACBOrXxUJyUb8t-rR4kkfjQmHjVnHQJlUTjaykc-7QpcxtGTjDaqwUb1wu19mfzsJKPwfSWK-Nol8zchUrZQ70gyqHroLQwYRHAIu9wkGAt7UG50tW2N3GS9WqQTCPx-fIY2HmLkFQzkMOWWc5sDbGW7QpHDvv7NAorZfHohT7B-Oi8tzEqbvGbvzyZlt-mOGPeUO2kSKxN3p0iGeDn2xnBJkJqL5ecoQ9mPG8K-WCBKdNu_VKxCfSJ5FVgBlkzz-Ku03dFjy9dAEY2JL4S1gT4EEizPKB3PfHALZCu9_QhcSuOXn7LewSxfMfm4rxbDMnzIrqYukNllzSD0J0J4wAEoxmmZi07qsUUeEJkNWgwDHcUdhG2bXM--mLlO1hBoHqGAAilaVcBoO6LkI2oZeMCvLAc5OwwHp4tR6VI1wI_o6WOVL5VlvhRCGp7UxPN1yE0c2J88i91Kflw_7T61P6u_ubZIRMDoEKqGO8t994KYfFP85RzPvDInBa_poBFWxe2ydYDQamwVN5aOoPOEZkgG7cCIrr49-dFzL137FD5SgVmHXYppusPyL9al74DoLqn0o2YC6Ly2NMn3gyyzMnfg0PdFbG-oKiugIs6M-wIe0nfHAZh_Eg2XwtQ0VFX1an-F8rOgZgXSf2FDT9DijzjnCX4H0yQSkwByy5BSzA_a-KOhtt6KGKyEzRnwA0fbKnG9-xb1HOhWuHTG1OVC9At7i8vvfVagW1hiigQ5Yis7l1cJPGfPgJKtIlUXabG0xIfus7R4AsLU04tmbXF6y42qNIe9PlKvmiD3f_J4Xg7WnhfRTSFe7DA_886zSt0=",
+      "summary": []
+    },
+    {
+      "id": "msg_0ce2d864ae6af64e016aa026f4019887d2b7d4e4d141fcef70",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"id\":\"M-0d86a9af74b50e94\",\"P\":\"YES\",\"O\":\"YES\",\"W_ind\":\"NO\",\"W_opt\":\"NO\",\"W_nar\":\"NO\",\"H\":\"NO\",\"status\":\"U\",\"ambiguity\":\"O is clear, but no qualifying W mechanism is stated; 'multiple sources of information' is too generic to support rebuttal.\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "current_turn",
+    "effort": "low",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": false,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "atracc_coding",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "P": {
+            "type": "string",
+            "enum": [
+              "YES",
+              "NO",
+              "UNCLEAR"
+            ]
+          },
+          "O": {
+            "type": "string",
+            "enum": [
+              "YES",
+              "NO",
+              "UNCLEAR"
+            ]
+          },
+          "W_ind": {
+            "type": "string",
+            "enum": [
+              "YES",
+              "NO",
+              "UNCLEAR"
+            ]
+          },
+          "W_opt": {
+            "type": "string",
+            "enum": [
+              "YES",
+              "NO",
+              "UNCLEAR"
+            ]
+          },
+          "W_nar": {
+            "type": "string",
+            "enum": [
+              "YES",
+              "NO",
+              "UNCLEAR"
+            ]
+          },
+          "H": {
+            "type": "string",
+            "enum": [
+              "YES",
+              "NO",
+              "UNCLEAR"
+            ]
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "S",
+              "U",
+              "D"
+            ]
+          },
+          "ambiguity": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "P",
+          "O",
+          "W_ind",
+          "W_opt",
+          "W_nar",
+          "H",
+          "status",
+          "ambiguity"
+        ],
+        "additionalProperties": false
+      },
+      "strict": true
+    },
+    "verbosity": "low"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 1509,
+    "input_tokens_details": {
+      "cache_write_tokens": 0,
+      "cached_tokens": 1280
+    },
+    "output_tokens": 183,
+    "output_tokens_details": {
+      "reasoning_tokens": 92
+    },
+    "total_tokens": 1692
+  },
+  "user": null,
+  "metadata": {}
+}

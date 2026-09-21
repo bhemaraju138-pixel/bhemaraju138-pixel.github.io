@@ -1,0 +1,111 @@
+id,agency,template_id,reconciled_status,four_statuses,four_output_status_unanimity,four_output_vector_unanimity,initial_agreement_not_preserved,gpt54_repeat_disagreement,mini_repeat_disagreement,review_reason
+46,EPA,T-e3b0c44298fc,U,U|U|U|U,1,0,0,0,0,Repeated status agreement; still requires semantic validation
+DHS-101,DHS,T-c503d2fbb79b,U,U|U|U|U,1,1,0,0,0,Repeated status agreement; still requires semantic validation
+DHS-123,DHS,T-cfd1afe05c68,D,D|D|D|D,1,0,0,0,0,Repeated status agreement; still requires semantic validation
+DHS-125,DHS,T-c60868e1c03a,S,S|S|S|S,1,0,0,0,0,Repeated status agreement; still requires semantic validation
+DHS-14,DHS,T-3e96a1b29c22,S,S|S|S|S,1,0,0,0,0,Repeated status agreement; still requires semantic validation
+DHS-180,DHS,T-0104c3e1bf9d,S,S|S|S|S,1,0,0,0,0,Repeated status agreement; still requires semantic validation
+DHS-183,DHS,T-8c856430c4bd,U,U|S|U|S,0,0,0,0,0,Computational disagreement; interpretation review
+DHS-188,DHS,T-06fac8b35612,U,U|U|U|U,1,1,0,0,0,Repeated status agreement; still requires semantic validation
+DHS-189,DHS,T-9224d600b843,S,S|U|S|U,0,0,0,0,0,Computational disagreement; interpretation review
+DHS-194,DHS,T-4e2df62dcd71,U,S|U|S|S,0,0,0,0,1,Computational disagreement; interpretation review
+DHS-204,DHS,T-02296c740e62,S,S|S|S|S,1,0,0,0,0,Repeated status agreement; still requires semantic validation
+DHS-234,DHS,T-282ad145c93c,S,S|S|U|S,0,0,1,1,0,Computational disagreement; interpretation review
+DHS-2363,DHS,T-d39c21ea4512,D,D|D|D|S,0,0,1,0,1,Computational disagreement; interpretation review
+DHS-2365,DHS,T-d39c21ea4512,D,D|D|D|S,0,0,1,0,1,Computational disagreement; interpretation review
+DHS-2383,DHS,T-d0d326f5382a,U,U|U|U|D,0,0,1,0,1,Computational disagreement; interpretation review
+DHS-24,DHS,T-1d482d39ec2c,U,U|U|U|U,1,0,0,0,0,Repeated status agreement; still requires semantic validation
+DHS-2417,DHS,T-6e05e26a6734,S,S|U|S|S,0,0,0,0,1,Computational disagreement; interpretation review
+DHS-2427,DHS,T-c60868e1c03a,S,S|S|S|S,1,0,0,0,0,Repeated status agreement; still requires semantic validation
+DHS-2434,DHS,T-b99b7f9db3af,S,S|S|S|S,1,1,0,0,0,Repeated status agreement; still requires semantic validation
+DHS-2511,DHS,T-1a8b3a877c1f,S,S|S|S|S,1,1,0,0,0,Repeated status agreement; still requires semantic validation
+DHS-2517,DHS,T-3e19adf323a0,S,S|S|S|S,1,0,0,0,0,Repeated status agreement; still requires semantic validation
+DHS-2543,DHS,T-4f967bc47dbb,U,U|S|S|U,0,0,0,1,1,Computational disagreement; interpretation review
+DHS-2547,DHS,T-41cbe51c871e,U,S|S|S|S,1,0,0,0,0,Repeated status agreement; still requires semantic validation
+DHS-2552,DHS,T-8c725571ab27,U,S|S|S|S,1,0,0,0,0,Repeated status agreement; still requires semantic validation
+DHS-2565,DHS,T-22212d16035b,U,U|U|U|D,0,0,1,0,1,Computational disagreement; interpretation review
+DHS-2568,DHS,T-70e1806a4255,U,D|S|D|S,0,0,0,0,0,Computational disagreement; interpretation review
+DHS-2572,DHS,T-46c1e0453ae6,S,D|S|D|S,0,0,0,0,0,Computational disagreement; interpretation review
+DHS-2575,DHS,T-00202881d718,U,U|S|U|S,0,0,0,0,0,Computational disagreement; interpretation review
+DHS-2578,DHS,T-7e7a9b400b1b,U,S|S|S|S,1,0,0,0,0,Repeated status agreement; still requires semantic validation
+DHS-2595,DHS,T-9d5c322cd3a3,S,S|S|S|S,1,0,0,0,0,Repeated status agreement; still requires semantic validation
+DHS-2627,DHS,T-4ae31d537142,S,S|S|S|S,1,0,0,0,0,Repeated status agreement; still requires semantic validation
+DHS-2667,DHS,T-07c5553a903f,D,S|S|S|S,1,0,0,0,0,Repeated status agreement; still requires semantic validation
+DHS-2729,DHS,T-e12f01074a7f,S,S|S|S|S,1,1,0,0,0,Repeated status agreement; still requires semantic validation
+DHS-310,DHS,T-ec1eec917acc,U,U|U|U|U,1,0,0,0,0,Repeated status agreement; still requires semantic validation
+DHS-317,DHS,T-f59a322b4b96,S,S|D|D|D,0,0,0,1,0,Computational disagreement; interpretation review
+DHS-35,DHS,T-7c48cabab497,S,S|S|S|S,1,0,0,0,0,Repeated status agreement; still requires semantic validation
+DHS-37,DHS,T-a3d7df36b0ea,U,S|S|S|S,1,0,0,0,0,Repeated status agreement; still requires semantic validation
+DHS-372,DHS,T-4f967bc47dbb,U,U|S|S|U,0,0,0,1,1,Computational disagreement; interpretation review
+DHS-38,DHS,T-35f898647486,U,D|D|D|D,1,0,0,0,0,Repeated status agreement; still requires semantic validation
+DHS-401,DHS,T-7cb7bb801fa9,U,U|U|U|U,1,1,0,0,0,Repeated status agreement; still requires semantic validation
+DHS-407,DHS,T-037d2edc22d0,S,S|S|S|S,1,0,0,0,0,Repeated status agreement; still requires semantic validation
+DHS-417,DHS,T-ba14dc894672,D,D|D|S|D,0,0,1,1,0,Computational disagreement; interpretation review
+DHS-48,DHS,T-c60868e1c03a,S,S|S|S|S,1,0,0,0,0,Repeated status agreement; still requires semantic validation
+DHS-49,DHS,T-cfd1afe05c68,D,D|D|D|D,1,0,0,0,0,Repeated status agreement; still requires semantic validation
+DHS-56,DHS,T-1605b4c2cfa3,S,S|S|S|S,1,0,0,0,0,Repeated status agreement; still requires semantic validation
+DHS-57,DHS,T-4b55610f4130,S,S|S|S|S,1,1,0,0,0,Repeated status agreement; still requires semantic validation
+DHS-65,DHS,T-3e0e2944b563,U,U|U|U|S,0,0,1,0,1,Computational disagreement; interpretation review
+DHS-81,DHS,T-61f1972a9861,U,S|D|S|S,0,0,0,0,1,Computational disagreement; interpretation review
+DHS-86,DHS,T-61fb7c4ffc61,U,S|U|S|S,0,0,0,0,1,Computational disagreement; interpretation review
+DHS-95,DHS,T-1b5a55fb5f11,U,S|U|U|S,0,0,0,1,1,Computational disagreement; interpretation review
+DOE-574,DOE,T-3e441efceab0,U,U|U|U|U,1,1,0,0,0,Repeated status agreement; still requires semantic validation
+DOE-579,DOE,T-93d9abe92b75,U,U|U|U|U,1,1,0,0,0,Repeated status agreement; still requires semantic validation
+DOE-588,DOE,T-73364a2de99d,U,U|U|U|U,1,1,0,0,0,Repeated status agreement; still requires semantic validation
+DOE-629,DOE,T-73364a2de99d,U,U|U|U|U,1,1,0,0,0,Repeated status agreement; still requires semantic validation
+DOE-713,DOE,T-73364a2de99d,U,U|U|U|U,1,1,0,0,0,Repeated status agreement; still requires semantic validation
+DOJ-0009,DOJ,T-04dfa13cd155,U,U|U|U|U,1,0,0,0,0,Repeated status agreement; still requires semantic validation
+DOJ-0014,DOJ,T-04dfa13cd155,U,U|U|U|U,1,0,0,0,0,Repeated status agreement; still requires semantic validation
+DOJ-0019,DOJ,T-04dfa13cd155,U,U|U|U|U,1,0,0,0,0,Repeated status agreement; still requires semantic validation
+DOJ-0021,DOJ,T-04dfa13cd155,U,U|U|U|U,1,0,0,0,0,Repeated status agreement; still requires semantic validation
+DOJ-0022,DOJ,T-04dfa13cd155,U,U|U|U|U,1,0,0,0,0,Repeated status agreement; still requires semantic validation
+DOJ-0029,DOJ,T-04dfa13cd155,U,U|U|U|U,1,0,0,0,0,Repeated status agreement; still requires semantic validation
+DOJ-0030,DOJ,T-04dfa13cd155,U,U|U|U|U,1,0,0,0,0,Repeated status agreement; still requires semantic validation
+DOJ-0031,DOJ,T-04dfa13cd155,U,U|U|U|U,1,0,0,0,0,Repeated status agreement; still requires semantic validation
+DOJ-0032,DOJ,T-04dfa13cd155,U,U|U|U|U,1,0,0,0,0,Repeated status agreement; still requires semantic validation
+DOJ-0033,DOJ,T-04dfa13cd155,U,U|U|U|U,1,0,0,0,0,Repeated status agreement; still requires semantic validation
+DOJ-0040,DOJ,T-04dfa13cd155,U,U|U|U|U,1,0,0,0,0,Repeated status agreement; still requires semantic validation
+DOJ-0041,DOJ,T-04dfa13cd155,U,U|U|U|U,1,0,0,0,0,Repeated status agreement; still requires semantic validation
+DOJ-0042,DOJ,T-04dfa13cd155,U,U|U|U|U,1,0,0,0,0,Repeated status agreement; still requires semantic validation
+DOJ-0043,DOJ,T-04dfa13cd155,U,U|U|U|U,1,0,0,0,0,Repeated status agreement; still requires semantic validation
+DOJ-0044,DOJ,T-04dfa13cd155,U,U|U|U|U,1,0,0,0,0,Repeated status agreement; still requires semantic validation
+DOJ-0072,DOJ,T-04dfa13cd155,U,U|U|U|U,1,0,0,0,0,Repeated status agreement; still requires semantic validation
+DOJ-0073,DOJ,T-04dfa13cd155,U,U|U|U|U,1,0,0,0,0,Repeated status agreement; still requires semantic validation
+DOJ-0102,DOJ,T-04dfa13cd155,U,U|U|U|U,1,0,0,0,0,Repeated status agreement; still requires semantic validation
+DOJ-0153,DOJ,T-04dfa13cd155,U,U|U|U|U,1,0,0,0,0,Repeated status agreement; still requires semantic validation
+DOJ-0220,DOJ,T-04dfa13cd155,U,U|U|U|U,1,0,0,0,0,Repeated status agreement; still requires semantic validation
+DOJ-0221,DOJ,T-04dfa13cd155,U,U|U|U|U,1,0,0,0,0,Repeated status agreement; still requires semantic validation
+DOJ-0235,DOJ,T-04dfa13cd155,U,U|U|U|U,1,0,0,0,0,Repeated status agreement; still requires semantic validation
+DOJ-0239,DOJ,T-04dfa13cd155,U,U|U|U|U,1,0,0,0,0,Repeated status agreement; still requires semantic validation
+DOJ-0265,DOJ,T-04dfa13cd155,U,U|U|U|U,1,0,0,0,0,Repeated status agreement; still requires semantic validation
+DOJ-0271,DOJ,T-04dfa13cd155,U,U|U|U|U,1,0,0,0,0,Repeated status agreement; still requires semantic validation
+DOJ-0315,DOJ,T-04dfa13cd155,U,U|U|U|U,1,0,0,0,0,Repeated status agreement; still requires semantic validation
+DOJ-0326,DOJ,T-04dfa13cd155,U,U|U|U|U,1,0,0,0,0,Repeated status agreement; still requires semantic validation
+DOJ-0332,DOJ,T-04dfa13cd155,U,U|U|U|U,1,0,0,0,0,Repeated status agreement; still requires semantic validation
+DOJ-0357-R01,DOJ,T-04dfa13cd155,U,U|U|U|U,1,0,0,0,0,Repeated status agreement; still requires semantic validation
+DOJ-0357-R02,DOJ,T-04dfa13cd155,U,U|U|U|U,1,0,0,0,0,Repeated status agreement; still requires semantic validation
+DOJ-0362,DOJ,T-04dfa13cd155,U,U|U|U|U,1,0,0,0,0,Repeated status agreement; still requires semantic validation
+DOJ-0363,DOJ,T-04dfa13cd155,U,U|U|U|U,1,0,0,0,0,Repeated status agreement; still requires semantic validation
+MISSING-18A285367578,HHS,T-f49fc88319d0,D,D|S|D|U,0,0,0,0,1,Computational disagreement; interpretation review
+MISSING-2045216ACC4E,HHS,T-79fa6bfbdf44,D,S|D|S|D,0,0,0,0,0,Computational disagreement; interpretation review
+MISSING-404BD6C1AE03,HHS,T-739581454da2,S,S|U|S|S,0,0,0,0,1,Computational disagreement; interpretation review
+MISSING-4B41CCE5A80E,HHS,T-1425969ae25c,U,U|U|U|U,1,0,0,0,0,Repeated status agreement; still requires semantic validation
+MISSING-6FB970D7652E,HHS,T-7530fa9894b4,U,U|S|S|S,0,0,0,1,0,Computational disagreement; interpretation review
+MISSING-7DF6162305FD,HHS,T-82676cbec526,U,U|U|U|U,1,0,0,0,0,Repeated status agreement; still requires semantic validation
+MISSING-8A490802AE57,HHS,T-cd6ef69cc9cc,D,D|D|D|D,1,0,0,0,0,Repeated status agreement; still requires semantic validation
+MISSING-91EA622F8902,HHS,T-c8716646c61f,D,S|D|D|D,0,0,0,1,0,Computational disagreement; interpretation review
+MISSING-94D0D1898672,HHS,T-cd6ef69cc9cc,D,D|D|D|D,1,0,0,0,0,Repeated status agreement; still requires semantic validation
+MISSING-AB553836F519,HHS,T-4c341bf155e4,D,D|D|D|D,1,1,0,0,0,Repeated status agreement; still requires semantic validation
+MISSING-C38B75F17C3C,HHS,T-88c2703d4c0f,S,S|S|S|S,1,0,0,0,0,Repeated status agreement; still requires semantic validation
+MISSING-E9650DD065E1,HHS,T-527ae4bd3d6a,U,U|U|S|U,0,0,1,1,0,Computational disagreement; interpretation review
+MISSING-F55AC1E5A2AD,HHS,T-e32d814335cd,D,D|D|D|D,1,0,0,0,0,Repeated status agreement; still requires semantic validation
+NASA-234,NASA,T-79b6c7760b49,U,U|U|U|U,1,0,0,0,0,Repeated status agreement; still requires semantic validation
+NASA-398,NASA,T-247d9ff961dd,U,U|U|U|U,1,1,0,0,0,Repeated status agreement; still requires semantic validation
+NASA-487,NASA,T-f6d1903d8370,U,D|U|D|D,0,0,0,0,1,Computational disagreement; interpretation review
+TBD-R01,STB,T-2ca831780599,U,U|U|U|U,1,0,0,0,0,Repeated status agreement; still requires semantic validation
+TBD-R02,STB,T-2ca831780599,U,U|U|U|U,1,0,0,0,0,Repeated status agreement; still requires semantic validation
+TREAS-94,TREAS,T-e2b1ee3e9028,D,D|D|D|D,1,0,0,0,0,Repeated status agreement; still requires semantic validation
+TREAS-IRS-75,TREAS,T-12ed683e528f,U,U|U|U|U,1,0,0,0,0,Repeated status agreement; still requires semantic validation
+TREAS-IRS-9,TREAS,T-8e7ddb102390,D,D|D|D|D,1,0,0,0,0,Repeated status agreement; still requires semantic validation
+USDA-048,USDA,T-c961f5774051,S,S|S|S|S,1,1,0,0,0,Repeated status agreement; still requires semantic validation
+USDA-175,USDA,T-bf30867b6bf4,D,D|D|D|D,1,0,0,0,0,Repeated status agreement; still requires semantic validation

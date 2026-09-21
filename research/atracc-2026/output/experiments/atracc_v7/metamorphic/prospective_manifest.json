@@ -1,0 +1,36 @@
+{
+  "created_utc": "2026-09-08T15:13:23.276375+00:00",
+  "design": "Prospective metamorphic test of a locked semantic codebook. Constructed variants test expected response relations; they are not agency evidence, criterion labels, or replacements for human annotation.",
+  "models": [
+    "gpt-6-astra",
+    "gpt-5.4-mini-2026-03-17"
+  ],
+  "endpoint": "https://api.openai.com/v1/responses",
+  "reasoning_effort": "low",
+  "max_output_tokens": 4096,
+  "source_templates": 70,
+  "conditions": [
+    "original",
+    "whitespace",
+    "human_review",
+    "multiple_sources",
+    "independent_basis"
+  ],
+  "requests_planned": 700,
+  "codebook_sha256": "0a1dffe440a2e8d837339873e891c5cabef8076f806ec8f971f52fd314eeaa84",
+  "inputs_sha256": "e08221a0c781985b2dac65efb46297ac059e3e3a7c2093de42e6b8527490eeb7",
+  "transformations": {
+    "whitespace": "Whitespace changes only; normalized token sequence is identical.",
+    "human_review": "A human reviews the AI output and makes the final decision.",
+    "multiple_sources": "The decision maker also considers multiple sources of information.",
+    "independent_basis": "Before any consequential action described above, the responsible official independently checks the relevant facts against the original non-AI source records. The action may proceed only on that non-AI evidentiary basis and never on the AI output alone."
+  },
+  "prospective_relations": {
+    "whitespace": "The six-component vector and circuit status should remain unchanged.",
+    "human_review": "Adding human review alone should not create any W component or move a previously non-S case to S.",
+    "multiple_sources": "Adding generic multiple-source language should not change W_ind from NO or UNCLEAR to YES or move a previously non-S case to S.",
+    "independent_basis": "The explicit original-records and action-gating language should produce W_ind=YES. Status is secondary because the source may still lack P or O."
+  },
+  "analysis": "For each model, compare paired outputs by template. Report whitespace exact invariance; prohibited W_ind and S gains under weak additions; W_ind response under explicit evidence; circuit/reported-status mismatches; parse failures; and token usage. No human-accuracy or legal-validity claim follows.",
+  "rules": "Each case is a fresh tool-free request in fixed hash order. Save the first substantive response. Retry transport failures only. Do not expose source labels, condition names, or paired cases in prompts."
+}

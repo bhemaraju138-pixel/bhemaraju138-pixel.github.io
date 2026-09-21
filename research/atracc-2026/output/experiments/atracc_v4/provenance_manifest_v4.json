@@ -1,0 +1,41 @@
+{
+  "experiment": "ATRACC v4 minimal-disclosure repair and artifact recovery ladder",
+  "integrity_boundary": "Computational repair analysis under the locked codebook; no human adjudication or imputation of hidden agency facts.",
+  "files": [
+    {
+      "path": "experiments/atracc_repair_v4.py",
+      "bytes": 5424,
+      "sha256": "85b8ebf77563bae2637a74ca8c595f44dd8171b63b7c40e631ab17a047f3edd9"
+    },
+    {
+      "path": "protocols/atracc_locked_codebook_v3.md",
+      "bytes": 5375,
+      "sha256": "0a1dffe440a2e8d837339873e891c5cabef8076f806ec8f971f52fd314eeaa84"
+    },
+    {
+      "path": "output/experiments/atracc_v3/atracc_consensus_codings.csv",
+      "bytes": 111375,
+      "sha256": "84bec428c5e94875707e22ab9bd3210f2577cc9d996e3f3c2e94ab17d247fe9c"
+    },
+    {
+      "path": "output/experiments/atracc_v3/artifacts/atracc_artifact_validated.csv",
+      "bytes": 13005,
+      "sha256": "3425e01d4c965773f2971f07fc48abb09d25307569d976fcce5e7a71432c03b2"
+    },
+    {
+      "path": "output/experiments/atracc_v4/atracc_artifact_recovery_ladder_v4.csv",
+      "bytes": 210,
+      "sha256": "54c9e88c6f480aca08e5b2bda66d4ca77eab62e3ddfd6d145114d7dc62a33357"
+    },
+    {
+      "path": "output/experiments/atracc_v4/atracc_minimal_disclosure_repairs_v4.csv",
+      "bytes": 16016,
+      "sha256": "4e5ae4ec63b4eebb8ef6e041efa37eb20b9e3c0f3ebf9b1e390f4e8a6cb4fa4f"
+    },
+    {
+      "path": "output/experiments/atracc_v4/atracc_repair_summary_v4.json",
+      "bytes": 1886,
+      "sha256": "43b24759f9a3435ebe04c606cfd9d84f8f2a463b0a05b14367ed6f3fed9d26e3"
+    }
+  ]
+}

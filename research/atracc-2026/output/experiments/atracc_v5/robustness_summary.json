@@ -1,0 +1,62 @@
+{
+  "records": 110,
+  "templates_including_blank": 70,
+  "nonempty_templates": 69,
+  "archived_counts": {
+    "S": 25,
+    "U": 69,
+    "D": 16
+  },
+  "reconciled_counts": {
+    "S": 24,
+    "U": 70,
+    "D": 16
+  },
+  "template_counts": {
+    "S": 22,
+    "U": 35,
+    "D": 13
+  },
+  "changed_record_ids": [
+    "DHS-2543"
+  ],
+  "duplicate_conflict_groups": 3,
+  "unresolved_repair_depth": {
+    "3": 9,
+    "2": 43,
+    "1": 12,
+    "0": 6
+  },
+  "unresolved_missing_roles": {
+    "P": 13,
+    "O": 49,
+    "W": 63
+  },
+  "equal_agency_mean_U_fraction": 0.6766672480958196,
+  "leave_agency_out_U_range": [
+    0.48717948717948717,
+    0.7868852459016393
+  ],
+  "thresholds": [
+    {
+      "votes_required": 3,
+      "S": 31,
+      "U": 59,
+      "D": 20
+    },
+    {
+      "votes_required": 4,
+      "S": 24,
+      "U": 70,
+      "D": 16
+    },
+    {
+      "votes_required": 5,
+      "S": 21,
+      "U": 77,
+      "D": 12
+    }
+  ],
+  "primary_interpretation": "Reconciled disclosed-text classification, not latent legal correctness or expert ground truth.",
+  "uncertainty": "The archived labels and post-review rules are retained separately; no unidentifiable support interval is reported."
+}

@@ -25,6 +25,12 @@ jobs:
           cache: npm
       - run: npm ci
       - run: python3 experiments/claiming_under_agents.py
+      - name: Verify ATRACC research package
+        run: |
+          python3 research/atracc-2026/experiments/verify_atracc_v5.py
+          python3 research/atracc-2026/experiments/verify_atracc_v6.py
+          python3 research/atracc-2026/experiments/verify_atracc_v7.py
+          python3 research/atracc-2026/verify_package.py
       - run: npm test
       - run: npm run build
       - uses: actions/configure-pages@v5

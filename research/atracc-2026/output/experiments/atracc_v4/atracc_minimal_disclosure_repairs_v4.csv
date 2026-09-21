@@ -1,0 +1,111 @@
+id,agency,use_case_name,status,minimum_support_repair_size,minimum_support_repair,repair_route,predicate_visible,output_workflow_visible,mechanism_visible,human_review_load_bearing,status_agreement_n
+DHS-101,DHS,The Advanced Trade Analytics Platform (ATAP),U,2,output/workflow role | qualifying mechanism,supply missing public roles,True,False,False,False,5
+DHS-123,DHS,Voice Analytics for Investigative Data,D,2,output/workflow role | qualifying mechanism,answer defeater and disclose mechanism,True,False,False,True,5
+DHS-125,DHS,Investigative Prioritization Aggregator,S,0,none,verify named mechanism,True,True,True,True,5
+DHS-14,DHS,Biometrics Enrollment Tool (BET) Fingerprint Quality Check,S,0,none,verify named mechanism,True,True,True,True,5
+DHS-180,DHS,Automated Name and Date of Birth (DOB) Harvesting Service,S,0,none,verify named mechanism,True,True,True,True,5
+DHS-183,DHS,Public Information Compilation for Travel Threat Analysis (Dataminr),U,1,qualifying mechanism,supply missing public roles,True,True,False,False,5
+DHS-188,DHS,Airship Outpost for Conveyance Identification,U,3,policy predicate | output/workflow role | qualifying mechanism,supply missing public roles,False,False,False,False,5
+DHS-189,DHS,ELIS Card Photo Validation Service,S,0,none,verify named mechanism,True,True,True,False,5
+DHS-194,DHS,AI Enabled Autonomous Underwater Vehicle,U,1,qualifying mechanism,supply missing public roles,True,True,False,True,3
+DHS-204,DHS,Semantic Search and Summarization for Investigative Data,S,0,none,verify named mechanism,True,True,True,True,5
+DHS-234,DHS,Relocatable Multi-Sensor System,S,0,none,verify named mechanism,True,True,True,False,5
+DHS-2363,DHS,Anomaly Detection COV Structure,D,1,qualifying mechanism,answer defeater and disclose mechanism,True,True,False,True,5
+DHS-2365,DHS,Anomaly Detection POV Structure,D,1,qualifying mechanism,answer defeater and disclose mechanism,True,True,False,True,5
+DHS-2383,DHS,Unmanned Aircraft Collision Avoidance,U,2,policy predicate | qualifying mechanism,supply missing public roles,False,True,False,False,5
+DHS-24,DHS,Entity Resolution,U,2,output/workflow role | qualifying mechanism,supply missing public roles,True,False,False,False,5
+DHS-2417,DHS,Process Efficiency Traveler Identity for Airline Check-in and Bag Drop,S,0,none,verify named mechanism,True,True,True,False,5
+DHS-2427,DHS,Translation and Transcription for Investigative Data,S,0,none,verify named mechanism,True,True,True,True,5
+DHS-2434,DHS,User and Entity Behavior Analytics (UEBA),S,0,none,verify named mechanism,True,True,True,False,5
+DHS-2511,DHS,AI-Assisted Audio/Video Redaction,S,0,none,verify named mechanism,True,True,True,True,5
+DHS-2517,DHS,Dark Web Threat Intelligence for Cyber Investigations,S,0,none,verify named mechanism,True,True,True,True,5
+DHS-2543,DHS,AI Security and Monitoring,S,0,none,verify named mechanism,True,True,True,False,5
+DHS-2547,DHS,Entity Resolution for Global Trade Data,U,0,none,adjudicate pass-level composition,True,True,True,True,3
+DHS-2552,DHS,Mobile Device Forensics for Investigations,U,1,qualifying mechanism,supply missing public roles,True,True,False,True,3
+DHS-2565,DHS,CBP Common AI Service(CCAIS) Image Analysis and Data Correlation,U,3,policy predicate | output/workflow role | qualifying mechanism,supply missing public roles,False,False,False,False,5
+DHS-2568,DHS,Non-intrusive vessel and object detection tool (Tethered Aerostat Radar System (TARS)),U,1,qualifying mechanism,supply missing public roles,True,True,False,True,3
+DHS-2572,DHS,Acoustic Signature AI for Gunshot Detection,S,0,none,verify named mechanism,True,True,True,True,5
+DHS-2575,DHS,Blockchain Analysis,U,1,output/workflow role,supply missing public roles,True,False,True,True,3
+DHS-2578,DHS,Enhanced Lead Identification and Targeting,U,0,none,adjudicate pass-level composition,True,True,True,True,3
+DHS-2595,DHS,Open-Source Intelligence for Lead Identification and Targeting,S,0,none,verify named mechanism,True,True,True,True,4
+DHS-2627,DHS,Extended Automated Name Harvesting (eANH),S,0,none,verify named mechanism,True,True,True,True,5
+DHS-2667,DHS,Global Maritime Intelligence,D,1,qualifying mechanism,answer defeater and disclose mechanism,True,True,False,True,4
+DHS-2729,DHS,Facial Recognition for National Security and Transnational Criminal Organizations,S,0,none,verify named mechanism,True,True,True,False,5
+DHS-310,DHS,Customs Broker License Exam - Proctor Support,U,1,qualifying mechanism,supply missing public roles,True,True,False,False,5
+DHS-317,DHS,RAPTOR (Rapid Tactical Operations Reconnaissance),S,0,none,verify named mechanism,True,True,True,True,5
+DHS-35,DHS,Autonomous Surveillance Tower,S,0,none,verify named mechanism,True,True,True,True,4
+DHS-37,DHS,Automated Item of Interest Detection,U,0,none,adjudicate pass-level composition,True,True,True,True,3
+DHS-372,DHS,User Entity and Behavior Analytics (UEBA) for Security Operations (SecOps) Anomaly Identification,U,0,none,adjudicate pass-level composition,True,True,True,False,3
+DHS-38,DHS,Vessel Detection,U,1,qualifying mechanism,supply missing public roles,True,True,False,True,3
+DHS-401,DHS,Vault Access Log (SPVAA),U,2,policy predicate | qualifying mechanism,supply missing public roles,False,True,False,False,5
+DHS-407,DHS,Biometric Check-in for ATD-ISAP (SmartLINK),S,0,none,verify named mechanism,True,True,True,True,5
+DHS-417,DHS,Machine Learning Analysis Applied to Cyber Threat Hunt Data,D,1,qualifying mechanism,answer defeater and disclose mechanism,True,True,False,True,4
+DHS-48,DHS,Email Analytics for Investigative Data,S,0,none,verify named mechanism,True,True,True,True,5
+DHS-49,DHS,Mobile Device Analytics for Investigative Data,D,2,output/workflow role | qualifying mechanism,answer defeater and disclose mechanism,True,False,False,True,5
+DHS-56,DHS,Person-Centric Identity Services Information Compilation Check,S,0,none,verify named mechanism,True,True,True,True,5
+DHS-57,DHS,Identity Match Option (IMO) Tool for Record Compilation,S,0,none,verify named mechanism,True,True,True,True,5
+DHS-65,DHS,Aircraft Landing Location Predictor (KESTREL),U,2,output/workflow role | qualifying mechanism,supply missing public roles,True,False,False,False,5
+DHS-81,DHS,Passport Anomaly Model,U,0,none,adjudicate pass-level composition,True,True,True,True,3
+DHS-86,DHS,Agriculture Commodity Model (AGC),U,1,qualifying mechanism,supply missing public roles,True,True,False,False,5
+DHS-95,DHS,Trade Entity Risk Model,U,1,qualifying mechanism,supply missing public roles,True,True,False,False,5
+DOE-574,DOE,M365 Copilot,U,3,policy predicate | output/workflow role | qualifying mechanism,supply missing public roles,False,False,False,False,5
+DOE-579,DOE,MR-DT,U,3,policy predicate | output/workflow role | qualifying mechanism,supply missing public roles,False,False,False,False,5
+DOE-588,DOE,AI-Assisted Strategies and Solutions for Environmental Technology (AI-ASSET),U,3,policy predicate | output/workflow role | qualifying mechanism,supply missing public roles,False,False,False,False,5
+DOE-629,DOE,Consolidated Nuclear Waste Glass Database,U,3,policy predicate | output/workflow role | qualifying mechanism,supply missing public roles,False,False,False,False,5
+DOE-713,DOE,Performance Monitoring at the Salt Waste Processing Facility (SWPF),U,3,policy predicate | output/workflow role | qualifying mechanism,supply missing public roles,False,False,False,False,5
+DOJ-0009,DOJ,CargoNet,U,2,output/workflow role | qualifying mechanism,supply missing public roles,True,False,False,False,5
+DOJ-0014,DOJ,Dun & Bradstreet Business Establishments Data,U,2,output/workflow role | qualifying mechanism,supply missing public roles,True,False,False,False,5
+DOJ-0019,DOJ,LexisNexis Accurint,U,2,output/workflow role | qualifying mechanism,supply missing public roles,True,False,False,False,5
+DOJ-0021,DOJ,Mark43 Public Safety Records,U,2,output/workflow role | qualifying mechanism,supply missing public roles,True,False,False,False,5
+DOJ-0022,DOJ,National Insurance Crime Bureau ISO ClaimSearch,U,2,output/workflow role | qualifying mechanism,supply missing public roles,True,False,False,False,5
+DOJ-0029,DOJ,Southwest Border Transaction Record Analysis Center (SWBTRAC),U,2,output/workflow role | qualifying mechanism,supply missing public roles,True,False,False,False,5
+DOJ-0030,DOJ,Spokeo,U,2,output/workflow role | qualifying mechanism,supply missing public roles,True,False,False,False,5
+DOJ-0031,DOJ,Thomson Reuters CLEAR,U,2,output/workflow role | qualifying mechanism,supply missing public roles,True,False,False,False,5
+DOJ-0032,DOJ,TransUnion TLOxp Online Investigative Services,U,2,output/workflow role | qualifying mechanism,supply missing public roles,True,False,False,False,5
+DOJ-0033,DOJ,Veritone Redact,U,2,output/workflow role | qualifying mechanism,supply missing public roles,True,False,False,False,5
+DOJ-0040,DOJ,"SAS (Forecasting, predictive analytics, data/statistical analysis)",U,2,output/workflow role | qualifying mechanism,supply missing public roles,True,False,False,False,5
+DOJ-0041,DOJ,"R (Forecasting, predictive analytics, data/statistical analysis)",U,2,output/workflow role | qualifying mechanism,supply missing public roles,True,False,False,False,5
+DOJ-0042,DOJ,"Stata (Forecasting, predictive analytics, data/statistical analysis)",U,2,output/workflow role | qualifying mechanism,supply missing public roles,True,False,False,False,5
+DOJ-0043,DOJ,"Matlab (Forecasting, predictive analytics, data/statistical analysis)",U,2,output/workflow role | qualifying mechanism,supply missing public roles,True,False,False,False,5
+DOJ-0044,DOJ,"Databricks (Forecasting, predictive analytics, data/statistical analysis)",U,2,output/workflow role | qualifying mechanism,supply missing public roles,True,False,False,False,5
+DOJ-0072,DOJ,Data & Analytics: Threat and Security Incident Monitoring,U,2,output/workflow role | qualifying mechanism,supply missing public roles,True,False,False,False,5
+DOJ-0073,DOJ,Data & Analytics: Transportation OCR,U,2,output/workflow role | qualifying mechanism,supply missing public roles,True,False,False,False,5
+DOJ-0102,DOJ,eLitigation Tools,U,2,output/workflow role | qualifying mechanism,supply missing public roles,True,False,False,False,5
+DOJ-0153,DOJ,Google Translate,U,2,output/workflow role | qualifying mechanism,supply missing public roles,True,False,False,False,5
+DOJ-0220,DOJ,AWS Transcribe,U,2,output/workflow role | qualifying mechanism,supply missing public roles,True,False,False,False,5
+DOJ-0221,DOJ,AWS Translate,U,2,output/workflow role | qualifying mechanism,supply missing public roles,True,False,False,False,5
+DOJ-0235,DOJ,Aware,U,2,output/workflow role | qualifying mechanism,supply missing public roles,True,False,False,False,5
+DOJ-0239,DOJ,Thomson Reuters CLEAR,U,2,output/workflow role | qualifying mechanism,supply missing public roles,True,False,False,False,5
+DOJ-0265,DOJ,Public Comment Analysis,U,2,output/workflow role | qualifying mechanism,supply missing public roles,True,False,False,False,5
+DOJ-0271,DOJ,Pega GenAI,U,2,output/workflow role | qualifying mechanism,supply missing public roles,True,False,False,False,5
+DOJ-0315,DOJ,Civil Rights Public Reporting Portal,U,2,output/workflow role | qualifying mechanism,supply missing public roles,True,False,False,False,5
+DOJ-0326,DOJ,AWS Textract,U,2,output/workflow role | qualifying mechanism,supply missing public roles,True,False,False,False,5
+DOJ-0332,DOJ,ATR Expert/Consulting with Bates White,U,2,output/workflow role | qualifying mechanism,supply missing public roles,True,False,False,False,5
+DOJ-0357-R01,DOJ,Creating and Maintaining IT Security Packages for Authorizations,U,2,output/workflow role | qualifying mechanism,supply missing public roles,True,False,False,False,5
+DOJ-0357-R02,DOJ,Creating and Maintaining IT Security Packages for Authorizations,U,2,output/workflow role | qualifying mechanism,supply missing public roles,True,False,False,False,5
+DOJ-0362,DOJ,Analyzing Prescription Monitoring Program Data,U,2,output/workflow role | qualifying mechanism,supply missing public roles,True,False,False,False,5
+DOJ-0363,DOJ,Analyze Financial Reports to Identify Linkages Across Investigations,U,2,output/workflow role | qualifying mechanism,supply missing public roles,True,False,False,False,5
+46,EPA,Briefcam,U,3,policy predicate | output/workflow role | qualifying mechanism,supply missing public roles,False,False,False,False,5
+MISSING-6FB970D7652E,HHS,Structuring and Validating Completeness of Case Data Information,U,1,qualifying mechanism,supply missing public roles,True,True,False,False,4
+MISSING-404BD6C1AE03,HHS,Structuring Notice of Concern Data,S,0,none,verify named mechanism,True,True,True,False,4
+MISSING-2045216ACC4E,HHS,Enhanced Direct Enrollment Outlier Detection,D,1,qualifying mechanism,answer defeater and disclose mechanism,True,True,False,True,4
+MISSING-F55AC1E5A2AD,HHS,Agent/Broker Fraud Analysis (ABCQI),D,1,qualifying mechanism,answer defeater and disclose mechanism,True,True,False,True,5
+MISSING-7DF6162305FD,HHS,CDER Regulatory Science Research (RSR) Projects AI for Process Control in Advanced Manufacturing,U,3,policy predicate | output/workflow role | qualifying mechanism,supply missing public roles,False,False,False,False,5
+MISSING-E9650DD065E1,HHS,Developing an Objective and Quantitative Endpoint for Atopic Dermatitis in Pediatric and Adult Populations,U,1,qualifying mechanism,supply missing public roles,True,True,False,False,4
+MISSING-18A285367578,HHS,FOIA REDACTION (FRED) TOOL,D,1,qualifying mechanism,answer defeater and disclose mechanism,True,True,False,True,5
+MISSING-AB553836F519,HHS,AI-Powered Video Analytics for Law Enforcement,D,2,policy predicate | qualifying mechanism,answer defeater and disclose mechanism,False,True,False,True,5
+MISSING-4B41CCE5A80E,HHS,Computer Vision to translate and mine Product Labeling photos to analyze labeling for potential violations,U,2,policy predicate | qualifying mechanism,supply missing public roles,False,True,False,False,5
+MISSING-94D0D1898672,HHS,NICHD RPAB AI/ML NICHD Relevance Model,D,2,policy predicate | qualifying mechanism,answer defeater and disclose mechanism,False,True,False,True,5
+MISSING-91EA622F8902,HHS,Internal Referral Module (IRM),D,1,qualifying mechanism,answer defeater and disclose mechanism,True,True,False,True,4
+MISSING-8A490802AE57,HHS,NICHD RPAB AI/ML Application Referral System,D,2,policy predicate | qualifying mechanism,answer defeater and disclose mechanism,False,True,False,True,5
+MISSING-C38B75F17C3C,HHS,NLP Automated Referral,S,0,none,verify named mechanism,True,True,True,True,5
+NASA-234,NASA,MLNav (Machine Learning Navigation),U,2,output/workflow role | qualifying mechanism,supply missing public roles,True,False,False,False,5
+NASA-398,NASA,Autonomous WAiting Room Evaluation (AWARE),U,1,qualifying mechanism,supply missing public roles,True,True,False,False,5
+NASA-487,NASA,"AI Digital Assistants (HRP) [was ""Doc in a Box"" for Earth Independent Medical Operations (EIMO)]",U,2,policy predicate | qualifying mechanism,supply missing public roles,False,True,False,True,3
+TBD-R01,STB,Copilot for Appian,U,2,output/workflow role | qualifying mechanism,supply missing public roles,True,False,False,False,5
+TBD-R02,STB,RelativityOne,U,2,output/workflow role | qualifying mechanism,supply missing public roles,True,False,False,False,5
+TREAS-94,TREAS,AI Contract Document Toolbox,D,1,qualifying mechanism,answer defeater and disclose mechanism,True,True,False,True,5
+TREAS-IRS-75,TREAS,Procurement Research,U,2,output/workflow role | qualifying mechanism,supply missing public roles,True,False,False,False,5
+TREAS-IRS-9,TREAS,Vendor Risk Analytics,D,1,qualifying mechanism,answer defeater and disclose mechanism,True,True,False,True,5
+USDA-048,USDA,Dam Inspection Report Document Processing,S,0,none,verify named mechanism,True,True,True,True,5
+USDA-175,USDA,AI for Environmental Permitting Review,D,2,policy predicate | qualifying mechanism,answer defeater and disclose mechanism,False,True,False,True,5

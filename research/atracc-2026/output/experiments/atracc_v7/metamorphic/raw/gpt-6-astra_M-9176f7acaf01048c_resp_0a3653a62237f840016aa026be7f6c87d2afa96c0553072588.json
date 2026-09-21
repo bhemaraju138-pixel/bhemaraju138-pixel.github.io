@@ -1,0 +1,183 @@
+{
+  "id": "resp_0a3653a62237f840016aa026be7f6c87d2afa96c0553072588",
+  "object": "response",
+  "created_at": 1788880574,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1788880583,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": null,
+  "max_output_tokens": 4096,
+  "max_tool_calls": null,
+  "model": "gpt-6-astra",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_0a3653a62237f840016aa026bf526087d2af1fad61ce128bf0",
+      "type": "reasoning",
+      "content": [],
+      "encrypted_content": "gAAAAABqoCbHVvE_ynHClvrZcjSVmP0lEEIAR-suqOS51_Zaw6N_vEyW--p3EnP9-BiOYr-HnRxn3ZwU1JDT53sIq0gUGY314TE-b-OsYczGTaUKmdFQssbsOicwf_G3pTQ4BJmrU_NCOx-14hw24RJ7MK6gkvsRn4EWFJQr4xx8mGmO3Y0x8IygrV1yUNG9fcJYuY82jybuJN4W19-WLpj9nFw-2z3QiA-5FBD9TTOERecnj5nooWPY-SNvwN-ucVor2xMNl81H0PguFYcVoIF1-Pz0GSfA0Gp6P3Iwdz1jySLu7F9zM8-tCgYSbJzFaJEjFT4UIZAKGNuMcKbxTiZYj10aaXS8jXAxiqvUpUouu17X0y2DD4LQjSuHHNT_gFX7cDYLK558zjFCTW3C06KPqlYnvktx1EEJhodjHdAEK2eWHR2kfr7ilow8xGL0m4AO4KsukCZRPDrzxImT6j9cW2Y0Cv5mqwNEynV-FNHiZjops9nKuW25s90bQkF-wOnHBk9zD7ClpMvBiDF0e0tVNFh4g3vQD0JNfuSGeSLNXRxva94keYXaIALB708EiRBdtZw5sZMBT2v5K5JhuCfjE6z0DJrio9WVxp1Gb4CH_me8WGyjb518vLxFO-xJ2jBSRkeaUlghf_338mAd7LwHVWHYMccHOj7eF4370n8SSaTM3QvH8OWuz0S7SBM5XUNcGXCNCwXtZuvYWkfcLM3HLcvzvRfJv_K-EGf_7omfquwWdAvOh7GsUUQJk1kvL-i0boDkilW4GCg4amYMQgRRq6vOIK2co0ya2lcN0VtadNN_xtD8Xxi9263oHR22RCsY1FxuFmbNIKhKL1WJi1TiuOXNwQa-geoEd43kolXavL4ybA_UAtZzeeHVbvGvY28lEZX-WwYRgIM7iHn3MopS_-G6VYB-OjhkMDNF7DtJA6iGcuA6kHNYVBfyFK6_5WAbjOvuFWUdwlrtpTAkwNWps0H51uxdT44lBscquN24EpN8tCd7qO5QGSYPFSgs9NhZMJxp4mzRJst1WhSb5fuukv_CmXz6iLAflBcb8Oe5ikMXgYHVy0WJCPacwRi2JM3AC12ulyNW4AXsPjWKvGSeRObmmsc6mqBZyYRKcavwiMWakeBlHeF9pcDc-zCCkuNFgtXC3QbkMB1lqONRu0Nmmnc3ntUWwKz8iMgzlfGpm44hqbcG7dXwoymdb0g3YbtjbC9F6IsaWeAF_BOg_S5C57Ce5qvjP2SMzlg7vz6WUEF02zch1S4PhKWVFGLojDu5a0mr_t1G7m__KRpL4wMlp8fSjyBvjfG8kRHdSzItJefAk0X_6P4_kP8qnl4TxaFWErqxUjlxzb7VI_K1nNercPxl2ctr6UpgEILHs85ndinTGn7WPur1NLZG9mWpRSekmCiPYhMhJ9rzyhmbpVyFcnsIwKQcLNZEmiqfI3JcNF2i1IrPlJ75ADMPChr3euwNIBx8NRSY3eDkW7FvmYBHqgRM9bh9FgcBjln2mEVS2ETVhbi70TycP046-3kmK0URZuqukuS8VIweIhgO4_3sMrRmfZ3OsSv_-8yPb-RIsOSccADF78qpm2uQIrpQP_lLqCBWNkT87e9DKJhem28JFwKktgId69PmaR3_hfxUSanlXnuK5K05D4EC26sOsW9KcmEzAkzpIgSo25DToH3hOTOBtRXaLKCXiQiExyGBZUrxskXgR1J-cVjXmzA-HxbZHT7ztDvtWWLBer-nwHCwgbEn35zXAoSyqFfOEVn-dhnxklx2dePRmrWCWCI7uKk4xioNsHB8M0Zh7PxaPxLJlD5sI0ThjdJbRhhChvHV_rKT1CD0qPKj_4RmrtJt1kphNiRK4q-5TkjpkWtT6J6NNnKKv2oOa4pNNo5aZwwYykq36mafoBnoi0iXNDS1AIn6pFJ68D9ZKgXGBTzYdtiVL5gE4wTBHQtbDslhsljlRYXfbbVpPqfcOgGg8NjdNEAAUhMcaiAVNbRWydlc8grd9YXyTm0WW7IcF26LmwjV65DFFjygoFoqVttyOEOU4QLC99P3k-o49lCbbJqjApS8kRs2MWvXmh4LbK3j_HAGfIwJK_V0n_q2IdL905RglUrh0h4KsmL8vnmxqoEJjGtde-hHsAupYhG7UUCceda5uMBfE4VL43fCfIEdRFN9df9Jkr5mYlC2A86bSIu3wDPytr7W_v-ObpWcNs-qTe7b1_4CswpQNwo=",
+      "summary": []
+    },
+    {
+      "id": "msg_0a3653a62237f840016aa026c3da2c87d28ff3a36a94c8e651",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"id\":\"M-9176f7acaf01048c\",\"P\":\"YES\",\"O\":\"YES\",\"W_ind\":\"YES\",\"W_opt\":\"NO\",\"W_nar\":\"NO\",\"H\":\"YES\",\"status\":\"S\",\"ambiguity\":\"P/H: \\\"the principal basis for decisions is made by humans\\\". O: \\\"information extraction that informs dam portfolio decisions\\\". W_ind: \\\"is vetted through aerial imagery analysis, the Oklahoma Conservation Commission, and associated dam sponsors\\\" identifies evidence and institutional checks constraining repair decisions, linked to the principal-basis claim. No non-AI alternative or narrow operational bound is stated. Ambiguity: awkward principal-basis wording, but the limiting relation is intelligible. Confidence: moderate. Lens: public-rebuttal, rationale-only. Model: OpenAI GPT. Protocol: ATRACC v3.\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "low",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": false,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "atracc_coding",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "P": {
+            "type": "string",
+            "enum": [
+              "YES",
+              "NO",
+              "UNCLEAR"
+            ]
+          },
+          "O": {
+            "type": "string",
+            "enum": [
+              "YES",
+              "NO",
+              "UNCLEAR"
+            ]
+          },
+          "W_ind": {
+            "type": "string",
+            "enum": [
+              "YES",
+              "NO",
+              "UNCLEAR"
+            ]
+          },
+          "W_opt": {
+            "type": "string",
+            "enum": [
+              "YES",
+              "NO",
+              "UNCLEAR"
+            ]
+          },
+          "W_nar": {
+            "type": "string",
+            "enum": [
+              "YES",
+              "NO",
+              "UNCLEAR"
+            ]
+          },
+          "H": {
+            "type": "string",
+            "enum": [
+              "YES",
+              "NO",
+              "UNCLEAR"
+            ]
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "S",
+              "U",
+              "D"
+            ]
+          },
+          "ambiguity": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "P",
+          "O",
+          "W_ind",
+          "W_opt",
+          "W_nar",
+          "H",
+          "status",
+          "ambiguity"
+        ],
+        "additionalProperties": false
+      },
+      "strict": true
+    },
+    "verbosity": "low"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 1441,
+    "input_tokens_details": {
+      "cache_write_tokens": 1438,
+      "cached_tokens": 0
+    },
+    "output_tokens": 318,
+    "output_tokens_details": {
+      "reasoning_tokens": 132
+    },
+    "total_tokens": 1759
+  },
+  "user": null,
+  "metadata": {}
+}

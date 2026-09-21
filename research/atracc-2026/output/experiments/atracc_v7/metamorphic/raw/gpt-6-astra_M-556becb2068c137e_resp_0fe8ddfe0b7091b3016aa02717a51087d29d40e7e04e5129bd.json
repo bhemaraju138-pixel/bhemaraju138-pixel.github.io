@@ -1,0 +1,183 @@
+{
+  "id": "resp_0fe8ddfe0b7091b3016aa02717a51087d29d40e7e04e5129bd",
+  "object": "response",
+  "created_at": 1788880663,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1788880670,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": null,
+  "max_output_tokens": 4096,
+  "max_tool_calls": null,
+  "model": "gpt-6-astra",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_0fe8ddfe0b7091b3016aa02719076487d2b0fc7ef6d5472d1b",
+      "type": "reasoning",
+      "content": [],
+      "encrypted_content": "gAAAAABqoCceiz8qk3mlBV7l6ZKyjca3PHTAKH_UodC49RRx74GAhlY_ERNc_Utf5J6qWIaVQF2vrPPyPtYWqAwZ0Io5HEerWKZQkQiEqAO-PL3KshadAG4BZ5kq1y8QWtjrcebrpAwtjKANaVWQ-HYuNop88hUMwauzExuNX3SoYaFkikrVPAbBJWWsmn1TL-7zPMi5VtIFXTkvOYpCmFs8JABPzowMG0Fy0Bj6vVOwbZ15hZqLbmJHOyQx4j2B40vpKys66dY57_GCTPI17h81RQIYcvm5VpQbp6MvIPZo0zlchA194Lc7erY8T21L5tXRBb7i9Wq9RrmHKLGdia4QQ4SgrSuVjBLiWQ85EoFzs22pq6R1bNE3ybr6ajH2j60blX1VzBlaIYw55jw7NUOHI9AbXJg5W9Uo6q8ltZzQHNQq14PQAh6QAZkxphGp94EJmxgnP_ox_Aeb4WASnZ4uDq6wUglP-VsEra5L_TJdCOnGF3MXXQMohSFCHe4wDDuAC5XCAR65hgO14v5Yz2G9JGfxXzfRLnr_Svmu9v2w8buEF-fKrxm_CChHqWCCYfWn0nWeF7VMmweJnKlSVfBJT4nioaVdLD97REm2zHhcMd1bdZASY7iV2lpaizp2WFpsyXisui3fMvIiuIMjNfuzJXl5phA5Fas8p6_JT0Tcn63FOD3p-4FsBxlQffCboYiNbxnb_j5aCCGZtTArb0oXkispOt_I_5bmvX5UBQvBEwPi0BZDiBy6alTe2-nqRg3mlgqIdR3Cwgj0tnus7j1lGTaasc-LPl8RunNfIgtWSRYFq5Gpkx6uJTeJzjBFVXoLP6NGlAtkid7ke2AGiK_vUUPArq6WppW7eV4Z7s-4Q2Q5yDCfs52VcIAWQ_u4gTfGS4XgjkcOskcis52qZKO2Vbh3nxQPRwF-iu0h5cwhQzQO7RDkioi1kBtxIIQ8TbrWRXjZ039AMv6lsZYOHqFUQ7oTGjvwnbTrKaAHe6FSoMaiayybSNmuVIQE4Mrbu2ebnccEobWlr7vJ4Bh1XU17hJ8zHrJ6OEYvQ66lagJYen1u1l9R3ezhFfpfWv4R7pFGxHvX6LDRaMh_S-gGwQOnadWHrms7axG_1BYLCJefq5i5DecxhDJpyuHDS5GFroR21LnEnlGaqBAHdyXl95pdhRED6KCZBBe95iSuxFZZi8JKvRF0XG0JGNr_Nea0Ky-l_uNx4uFbDZbLXx6B9bAhfX-isYb8-rr440lrDRVgEYHNdp0Q4K7miW7iq3QNX9ez40KeiDTsW-YqrzD74JcC527HXUHQNuUEXcuq1WfaGTezhtTz0n71EMaeXbHe2Njs3GzCtCVTJsjf2w1X_fecREAm8PqXAd3wNGN0mgGjm8ejG61BACnCM6IFtAQ6eSWRe_E16d8HXMyChRmDsC--j4Jol0xnnN_MWuJei6AP915jHIZ4LGneLpf07GwB-3LqGrOwmjX4A3-ZIksieeutHkf3zVJ_quXuNfWQctMGTFnJi-0XfS0=",
+      "summary": []
+    },
+    {
+      "id": "msg_0fe8ddfe0b7091b3016aa0271b26c887d280734a36b64ece07",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"id\":\"M-556becb2068c137e\",\"P\":\"NO\",\"O\":\"YES\",\"W_ind\":\"NO\",\"W_opt\":\"NO\",\"W_nar\":\"NO\",\"H\":\"NO\",\"status\":\"U\",\"ambiguity\":\"O: \\\"identifying the alpha-numeric values of the conveyances in front of it.\\\" W_nar: \\\"not being used for tracking or analysis\\\" limits use but does not explain why outputs cannot principally support consequential action. No threshold predicate, independent basis, non-AI alternative, or human-review warrant is stated. Confidence: high. Lens: public-rationale-only. Model: OpenAI assistant; protocol: ATRACC v3.\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "low",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": false,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "atracc_coding",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "P": {
+            "type": "string",
+            "enum": [
+              "YES",
+              "NO",
+              "UNCLEAR"
+            ]
+          },
+          "O": {
+            "type": "string",
+            "enum": [
+              "YES",
+              "NO",
+              "UNCLEAR"
+            ]
+          },
+          "W_ind": {
+            "type": "string",
+            "enum": [
+              "YES",
+              "NO",
+              "UNCLEAR"
+            ]
+          },
+          "W_opt": {
+            "type": "string",
+            "enum": [
+              "YES",
+              "NO",
+              "UNCLEAR"
+            ]
+          },
+          "W_nar": {
+            "type": "string",
+            "enum": [
+              "YES",
+              "NO",
+              "UNCLEAR"
+            ]
+          },
+          "H": {
+            "type": "string",
+            "enum": [
+              "YES",
+              "NO",
+              "UNCLEAR"
+            ]
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "S",
+              "U",
+              "D"
+            ]
+          },
+          "ambiguity": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "P",
+          "O",
+          "W_ind",
+          "W_opt",
+          "W_nar",
+          "H",
+          "status",
+          "ambiguity"
+        ],
+        "additionalProperties": false
+      },
+      "strict": true
+    },
+    "verbosity": "low"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 1423,
+    "input_tokens_details": {
+      "cache_write_tokens": 1420,
+      "cached_tokens": 0
+    },
+    "output_tokens": 200,
+    "output_tokens_details": {
+      "reasoning_tokens": 49
+    },
+    "total_tokens": 1623
+  },
+  "user": null,
+  "metadata": {}
+}

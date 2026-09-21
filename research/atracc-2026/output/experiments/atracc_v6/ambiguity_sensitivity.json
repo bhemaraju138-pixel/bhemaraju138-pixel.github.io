@@ -1,0 +1,80 @@
+{
+  "design": "Additional post-run sensitivity prompted by reading codebook Discourse rule 5 and the saved ambiguity notes. Not prospectively specified in the exact-repeat manifest.",
+  "primary_boundary": "Circuit-only results measure the declared component circuit. Model-reported results can incorporate the ambiguity override. Neither is criterion truth.",
+  "differing_outputs": 12,
+  "difference_directions": {
+    "D->U": 12
+  },
+  "all_differences_have_ambiguity_notes": true,
+  "models": {
+    "gpt-5.4-2026-03-05": {
+      "first": {
+        "reported_template_counts": {
+          "S": 32,
+          "U": 28,
+          "D": 10
+        },
+        "reported_mapped_record_counts": {
+          "S": 34,
+          "U": 64,
+          "D": 12
+        },
+        "circuit_reported_disagreements": 4
+      },
+      "repeat": {
+        "reported_template_counts": {
+          "S": 32,
+          "U": 28,
+          "D": 10
+        },
+        "reported_mapped_record_counts": {
+          "S": 35,
+          "U": 63,
+          "D": 12
+        },
+        "circuit_reported_disagreements": 5
+      },
+      "reported_status_repeat_agreement": 59
+    },
+    "gpt-5.4-mini-2026-03-17": {
+      "first": {
+        "reported_template_counts": {
+          "S": 29,
+          "U": 27,
+          "D": 14
+        },
+        "reported_mapped_record_counts": {
+          "S": 32,
+          "U": 61,
+          "D": 17
+        },
+        "circuit_reported_disagreements": 0
+      },
+      "repeat": {
+        "reported_template_counts": {
+          "S": 35,
+          "U": 20,
+          "D": 15
+        },
+        "reported_mapped_record_counts": {
+          "S": 38,
+          "U": 55,
+          "D": 17
+        },
+        "circuit_reported_disagreements": 0
+      },
+      "reported_status_repeat_agreement": 57
+    }
+  },
+  "reported_between_model_agreement": {
+    "first": 50,
+    "repeat": 51
+  },
+  "reported_four_output_unanimity": 43,
+  "reported_unanimous_template_counts": {
+    "U": 16,
+    "D": 6,
+    "S": 21
+  },
+  "initial_reported_agreement_not_preserved": 7
+}
