@@ -1060,11 +1060,12 @@ function EvidenceChain() {
 
 function ResearchCard({ item }) {
   return (
-    <article className="research-card">
+    <article className={`research-card ${item.theme ? `${item.theme}-card` : ""}`}>
       <div className="card-meta">
         <span>{item.year}</span>
         <span>{item.type}</span>
       </div>
+      {item.artwork && <img className="research-card-art" src={item.artwork} alt="" />}
       <h3>{item.title}</h3>
       <p className="card-dek">{item.dek}</p>
       <dl>
@@ -1077,7 +1078,7 @@ function ResearchCard({ item }) {
           <dd>{item.finding}</dd>
         </div>
       </dl>
-      <a className="text-link" href={item.href}>
+      <a className="text-link" href={item.href} target={item.external ? "_blank" : undefined} rel={item.external ? "noreferrer" : undefined}>
         {item.linkLabel} <Arrow />
       </a>
     </article>
@@ -1092,7 +1093,7 @@ const researchLenses = [
     question: "How do institutions respond when intelligent systems change the cost of acting?",
     thesis:
       "AI does not enter a fixed organization. Agencies and firms change verification, sourcing, queues, and evidence requirements in response.",
-    projectIndexes: [0, 2, 4],
+    projectIndexes: [1, 3, 5],
     accent: "institution",
   },
   {
@@ -1102,7 +1103,7 @@ const researchLenses = [
     question: "For whom does an intelligent system work, and under which interaction conditions?",
     thesis:
       "Performance is relational. The same behavior can help one person and frustrate another because fit depends on the user, task, and stakes.",
-    projectIndexes: [3, 4, 6],
+    projectIndexes: [4, 5, 7],
     accent: "blue",
   },
   {
@@ -1112,7 +1113,7 @@ const researchLenses = [
     question: "Which analytical choices determine what remains visible and believable?",
     thesis:
       "A result is only as stable as the assumptions, missing-data decisions, joins, and counterfactual evidence that produced it.",
-    projectIndexes: [0, 4, 5],
+    projectIndexes: [0, 1, 6],
     accent: "evidence",
   },
   {
@@ -1122,7 +1123,7 @@ const researchLenses = [
     question: "What infrastructure makes autonomous action reliable, repairable, and contestable?",
     thesis:
       "Schemas, failure signals, permissions, and monitoring are governance mechanisms, not implementation details.",
-    projectIndexes: [1, 5, 6],
+    projectIndexes: [0, 2, 6],
     accent: "mint",
   },
 ];
@@ -1714,9 +1715,10 @@ function PublicationsPage() {
       </section>
       <section className="publications-list page-shell" aria-label="Publications">
         {publications.map((item) => (
-          <article className={`publication-entry ${item.featured ? "featured-publication" : ""}`} key={item.title}>
+          <article className={`publication-entry ${item.featured ? "featured-publication" : ""} ${item.theme ? `${item.theme}-publication` : ""}`} key={item.title}>
             <div className="publication-heading">
               <span className="publication-badge">{item.publicationStatus}</span>
+              {item.artwork && <img className="publication-art" src={item.artwork} alt="" />}
               <h3>{item.title}</h3>
               <p className="publication-authors">{item.authors}</p>
               {item.affiliations && <p className="publication-affiliations">{item.affiliations}</p>}
@@ -1736,7 +1738,10 @@ function PublicationsPage() {
                 {item.method && <div><dt>Method</dt><dd>{item.method}</dd></div>}
                 <div><dt>Contribution</dt><dd>{item.implication}</dd></div>
               </dl>
-              <a className="primary-button" href={item.href}>{item.linkLabel} <Arrow /></a>
+              <div className="button-row publication-actions">
+                <a className="primary-button" href={item.href} target={item.external ? "_blank" : undefined} rel={item.external ? "noreferrer" : undefined}>{item.linkLabel} <Arrow /></a>
+                {item.secondaryHref && <a className="secondary-button" href={item.secondaryHref} target="_blank" rel="noreferrer">{item.secondaryLabel} <Arrow /></a>}
+              </div>
             </div>
           </article>
         ))}
@@ -2082,7 +2087,7 @@ function ResearchPage() {
               <div><dt>Method</dt><dd>{item.method}</dd></div>
               <div><dt>Finding</dt><dd>{item.finding}</dd></div>
               <div><dt>Why it matters</dt><dd>{item.implication}</dd></div>
-              <a className="text-link" href={item.href}>{item.linkLabel} <Arrow /></a>
+              <a className="text-link" href={item.href} target={item.external ? "_blank" : undefined} rel={item.external ? "noreferrer" : undefined}>{item.linkLabel} <Arrow /></a>
             </dl>
           </article>
         ))}

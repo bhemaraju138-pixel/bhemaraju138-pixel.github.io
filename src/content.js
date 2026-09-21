@@ -1,6 +1,37 @@
 export const research = [
   {
     year: "2026",
+    type: "Accepted full paper · TAS at AAAI FSS 2026",
+    publicationStatus: "Accepted · TAS 2026",
+    venue: "Trustworthy Agentic Systems 2026 · AAAI Fall Symposium Series",
+    authors: "Hema Raju Barri and C. C. Peddinti",
+    affiliations: "Johns Hopkins University · University of Maryland College Park",
+    title: "Same Numbers, Stale Permission",
+    dek: "A correct number can still carry stale authority.",
+    question:
+      "How can a statistical agent verify at commit time that the current measurement state still authorizes a staged claim?",
+    method:
+      "SCAR 1.0, an 80 set same payload benchmark, 3,840 official provider requests, and 480 live tool use sessions across two model families.",
+    finding:
+      "Without a current state read tool, agents produced 119 executable stale release attempts. Operation scoped revalidation blocked all 119 while invoking the contract on 49.8 percent of attempts.",
+    implication:
+      "Statistical agents need commit time authorization tied to the measurement coordinates required by the operation, not only correct arithmetic or a payload hash.",
+    metrics: [
+      ["Stale attempts blocked", "119"],
+      ["Scoped revalidation", "49.8%"],
+      ["Live sessions", "480"],
+    ],
+    featured: true,
+    theme: "tas",
+    artwork: "/images/same-numbers-stale-permission.svg",
+    href: "https://github.com/bhemaraju138-pixel/same-numbers-stale-permission",
+    linkLabel: "Explore the code and evidence",
+    external: true,
+    secondaryHref: "https://tas2026.github.io/",
+    secondaryLabel: "Visit TAS 2026",
+  },
+  {
+    year: "2026",
     type: "Accepted full paper · ATRACC at AAAI FSS 2026",
     publicationStatus: "Accepted · ATRACC 2026",
     venue: "AAAI Fall Symposium Series 2026 · Arlington, Virginia",

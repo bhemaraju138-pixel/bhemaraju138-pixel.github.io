@@ -23,6 +23,14 @@ test("the accepted ATRACC paper is indexed with its published authors", () => {
   assert.equal(paper.route, "/papers/auditing-evidence-claims-atracc-2026.pdf");
 });
 
+test("the accepted TAS paper is indexed with its code repository", () => {
+  const records = retrievePortfolioRecords("TAS stale permission SCAR", 5);
+  const paper = records.find((record) => record.title === "Same Numbers, Stale Permission");
+  assert.ok(paper);
+  assert.match(paper.text, /Hema Raju Barri and C\. C\. Peddinti/);
+  assert.equal(paper.route, "https://github.com/bhemaraju138-pixel/same-numbers-stale-permission");
+});
+
 test("broad publication questions still retrieve research outputs", () => {
   const records = retrievePortfolioRecords("show me the publications", 5);
   assert.ok(records.some((record) => record.route.endsWith(".pdf")));
