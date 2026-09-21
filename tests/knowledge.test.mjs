@@ -15,6 +15,14 @@ test("publication questions retrieve the matching paper and its status", () => {
   assert.equal(paper.route, "/papers/privacy-sensitive-sourcing.pdf");
 });
 
+test("the accepted ATRACC paper is indexed with its published authors", () => {
+  const records = retrievePortfolioRecords("ATRACC federal high impact exclusions", 5);
+  const paper = records.find((record) => record.title === "Auditing Evidence Claims in Federal High-Impact AI Exclusions");
+  assert.ok(paper);
+  assert.match(paper.text, /Hema Raju Barri.*Venkateswarlu Nagineni/);
+  assert.equal(paper.route, "/papers/auditing-evidence-claims-atracc-2026.pdf");
+});
+
 test("broad publication questions still retrieve research outputs", () => {
   const records = retrievePortfolioRecords("show me the publications", 5);
   assert.ok(records.some((record) => record.route.endsWith(".pdf")));

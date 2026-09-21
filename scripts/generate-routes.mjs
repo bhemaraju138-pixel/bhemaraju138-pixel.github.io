@@ -7,12 +7,12 @@ const routes = [
   {
     route: "research",
     title: "Selected Work | Hema Raju Barri",
-    description: "Research across AI systems, human–AI interaction, public institutions, evidence, and empirical methods.",
+    description: "Research across AI systems, human-AI interaction, public institutions, evidence, and empirical methods.",
   },
   {
     route: "publications",
     title: "Publications | Hema Raju Barri",
-    description: "Accepted, presented, forthcoming, and preprint research on AI infrastructure, federal AI sourcing, and strategic evidence.",
+    description: "Accepted ATRACC research and other publications on AI evidence, infrastructure, federal sourcing, and strategic observability.",
   },
   {
     route: "blogs",

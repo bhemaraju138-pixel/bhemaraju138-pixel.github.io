@@ -1,6 +1,6 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import { createRoot } from "react-dom/client";
-import { notes, publicDataEssays, research } from "./content";
+import { notes, publicDataEssays, publications, research } from "./content";
 import { runModel, scenarios } from "./model";
 import { buildPortfolioContext, portfolioKnowledge } from "./portfolio-knowledge";
 import { education, experience, pathMoments } from "./profile";
@@ -306,7 +306,7 @@ function SearchSidebar() {
   const documents = [
     { href: "/", file: "about.md", text: "Hema Raju Barri computer science engineering management researcher builder systems around intelligent systems Oxford Johns Hopkins Birmingham" },
     { href: "/research/", file: "research.md", text: research.map((item) => `${item.title} ${item.question} ${item.method} ${item.finding}`).join(" ") },
-    { href: "/publications/", file: "publications.md", text: research.slice(0, 3).map((item) => `${item.title} ${item.type} ${item.venue}`).join(" ") },
+    { href: "/publications/", file: "publications.md", text: publications.map((item) => `${item.title} ${item.type} ${item.venue}`).join(" ") },
     { href: "/blogs/", file: "blogs.index", text: [...notes, ...publicDataEssays].map((item) => `${item.title} ${item.standfirst}`).join(" ") },
     { href: "/simulations/", file: "simulations.run", text: simulationCatalog.map((item) => `${item.title} ${item.question} ${item.mathematics}`).join(" ") },
   ];
@@ -517,7 +517,7 @@ function LocalLLMPanel() {
           <Icon name={loadState === "ready" ? "check" : "cloud-download"} />
           {loadState === "ready" ? "Model ready" : loadState === "loading" ? "Loading model" : "Load model"}
         </button>
-        <small>A substantial first-time download is cached by your browser. Inference stays on your device; no API key or server chat log.</small>
+        <small>A substantial first-time download is cached by your browser. Inference stays on your device. No API key or server chat log is created.</small>
       </div>
 
       <div className="local-llm-transcript" ref={transcriptRef} aria-live="polite">
@@ -656,7 +656,7 @@ function DebugConsole({ path, activeFile }) {
     route: path,
     file: activeFile,
     "research.length": research.length,
-    "publications.length": research.slice(0, 3).length,
+    "publications.length": publications.length,
     "blogs.length": publicDataEssays.length + notes.length,
     "simulations.length": simulationCatalog.length,
     "research[0].title": research[0]?.title,
@@ -1092,8 +1092,8 @@ const researchLenses = [
     question: "How do institutions respond when intelligent systems change the cost of acting?",
     thesis:
       "AI does not enter a fixed organization. Agencies and firms change verification, sourcing, queues, and evidence requirements in response.",
-    projectIndexes: [1, 4, 6],
-    accent: "coral",
+    projectIndexes: [0, 2, 5],
+    accent: "institution",
   },
   {
     id: "people",
@@ -1102,7 +1102,7 @@ const researchLenses = [
     question: "For whom does an intelligent system work, and under which interaction conditions?",
     thesis:
       "Performance is relational. The same behavior can help one person and frustrate another because fit depends on the user, task, and stakes.",
-    projectIndexes: [3, 4, 6],
+    projectIndexes: [4, 5, 7],
     accent: "blue",
   },
   {
@@ -1112,8 +1112,8 @@ const researchLenses = [
     question: "Which analytical choices determine what remains visible and believable?",
     thesis:
       "A result is only as stable as the assumptions, missing-data decisions, joins, and counterfactual evidence that produced it.",
-    projectIndexes: [2, 4, 5],
-    accent: "gold",
+    projectIndexes: [0, 3, 5],
+    accent: "evidence",
   },
   {
     id: "systems",
@@ -1122,7 +1122,7 @@ const researchLenses = [
     question: "What infrastructure makes autonomous action reliable, repairable, and contestable?",
     thesis:
       "Schemas, failure signals, permissions, and monitoring are governance mechanisms, not implementation details.",
-    projectIndexes: [0, 5, 6],
+    projectIndexes: [1, 6, 7],
     accent: "mint",
   },
 ];
@@ -1247,7 +1247,7 @@ function Home() {
           </a>
         </div>
         <div className="card-grid portfolio-card-grid">
-          {research.slice(0, 3).map((item) => (
+          {publications.slice(0, 3).map((item) => (
             <ResearchCard item={item} key={item.title} />
           ))}
         </div>
@@ -1295,7 +1295,7 @@ function Home() {
           <p className="eyebrow">About</p>
           <h2 id="home-about-heading">Computer scientist by training. Institution-watcher by habit.</h2>
           <p>
-            I have built agentic workflows, studied human–AI interaction, worked with
+            I have built agentic workflows, studied human-AI interaction, worked with
             municipal policy teams, and replicated econometric studies. The settings
             change; the habit does not: find the hidden assumption, make it observable,
             and test whether the conclusion survives.
@@ -1378,7 +1378,7 @@ function ExperimentsLanding() {
             ["Error recovery", "Machine-readable problem details", "Failure signals allocate repair capacity"],
             ["Metadata", "Open-data quality audits", "Freshness and semantic legibility behave as separate capabilities"],
             ["311 channels", "Socio-spatial reporting bias", "High participation can coexist with unequal machine-ready form"],
-            ["Priority ranks", "Composite-index sensitivity", "A decision-facing probability of priority; method is not claimed as new"],
+            ["Priority ranks", "Composite-index sensitivity", "A decision-facing probability of priority. Method is not claimed as new"],
             ["Comment burden", "Variable comment periods", "Attention-normalized load rather than calendar time alone"],
             ["Global coverage", "Nonrandom missing data", "The vintage vector makes the temporal price of inclusion observable"],
           ].map(([name, established, contribution]) => (
@@ -1494,7 +1494,7 @@ function ObservabilitySimulationPage() {
         </p>
         <div className="status-box technical-status">
           <strong>Evidence status</strong>
-          <p>Illustrative Gaussian thought experiment; not an empirical estimate.</p>
+          <p>Illustrative Gaussian thought experiment. This is not an empirical estimate.</p>
         </div>
       </section>
 
@@ -1540,14 +1540,14 @@ function ObservabilitySimulationPage() {
               </div>
             ))}
           </div>
-          <p className="chart-caption">Bars show Pr(B &gt; A | evidence). The outline marks the true reversal; detection begins above 80%.</p>
+          <p className="chart-caption">Bars show Pr(B &gt; A | evidence). The outline marks the true reversal. Detection begins above 80%.</p>
         </div>
       </section>
 
       <section className="mathematical-core page-shell">
         <div><p className="eyebrow">Mathematical core</p><h2>Fractional Bayesian evidence.</h2></div>
         <div className="equation-stack">
-          <Equation label="Evidence weights" ariaLabel="w A k equals one; w B k equals r times exponential of negative delta times k minus one">
+          <Equation label="Evidence weights" ariaLabel="w A k equals one. W B k equals r times exponential of negative delta times k minus one">
             <var>w</var><sub>A,k</sub> = 1,&nbsp;&nbsp;
             <var>w</var><sub>B,k</sub> = <var>r</var> exp[−<var>δ</var>(<var>k</var>−1)]
           </Equation>
@@ -1555,7 +1555,7 @@ function ObservabilitySimulationPage() {
             <var>τ</var><sub>j,t</sub> = <var>τ</var><sub>0</sub> +
             <Fraction numerator={<>∑<sup>t</sup><sub>k=1</sub> <var>w</var><sub>j,k</sub></>} denominator={<>σ<sup>2</sup></>} />
           </Equation>
-          <Equation label="Posterior mean and variance" ariaLabel="m j t equals prior precision times prior mean plus the weighted signal sum divided by posterior precision; V j t equals one over posterior precision">
+          <Equation label="Posterior mean and variance" ariaLabel="m j t equals prior precision times prior mean plus the weighted signal sum divided by posterior precision. V j t equals one over posterior precision">
             <var>m</var><sub>j,t</sub> =
             <Fraction
               numerator={<><var>τ</var><sub>0</sub><var>m</var><sub>0</sub> + σ<sup>−2</sup>∑<sup>t</sup><sub>k=1</sub><var>w</var><sub>j,k</sub><var>y</var><sub>j,k</sub></>}
@@ -1569,7 +1569,7 @@ function ObservabilitySimulationPage() {
             <Fraction numerator={<><var>m</var><sub>B,t</sub> − <var>m</var><sub>A,t</sub></>} denominator={<>√(<var>V</var><sub>A,t</sub> + <var>V</var><sub>B,t</sub>)</>} />
             <span className="math-bracket">]</span>
           </Equation>
-          <p>The update is conjugate Gaussian inference on a deterministic expected-signal path. The fractional weight changes how much information the unchosen strategy contributes; it does not create an additional observation.</p>
+          <p>The update is conjugate Gaussian inference on a deterministic expected-signal path. The fractional weight changes how much information the unchosen strategy contributes. It does not create an additional observation.</p>
         </div>
       </section>
 
@@ -1609,7 +1609,7 @@ function VerificationQueuePage() {
         </p>
         <div className="status-box technical-status">
           <strong>Evidence status</strong>
-          <p>Illustrative steady-state queue; not a program forecast.</p>
+          <p>Illustrative steady-state queue. This is not a program forecast.</p>
         </div>
       </section>
 
@@ -1662,7 +1662,7 @@ function VerificationQueuePage() {
       <section className="mathematical-core page-shell">
         <div><p className="eyebrow">Mathematical core</p><h2>An Erlang-C queue inside a fixed point.</h2></div>
         <div className="equation-stack">
-          <Equation label="Arrivals and service" ariaLabel="lambda of a equals lambda zero times one plus 1.35 a; mu of v equals mu zero divided by one plus 1.55 v; rho equals lambda divided by c mu">
+          <Equation label="Arrivals and service" ariaLabel="lambda of a equals lambda zero times one plus 1.35 a. Mu of v equals mu zero divided by one plus 1.55 v. Rho equals lambda divided by c mu">
             <var>λ</var>(<var>a</var>) = <var>λ</var><sub>0</sub>(1 + 1.35<var>a</var>),&nbsp;&nbsp;
             <var>μ</var>(<var>v</var>) = <Fraction numerator={<><var>μ</var><sub>0</sub></>} denominator={<>1 + 1.55<var>v</var></>} />,&nbsp;&nbsp;
             <var>ρ</var> = <Fraction numerator={<var>λ</var>} denominator={<><var>cμ</var></>} />
@@ -1671,7 +1671,7 @@ function VerificationQueuePage() {
             <var>v</var><sup>*</sup> = clip<sub>[.04,.94]</sub>{"{"}.06 + .72<var>β</var> <var>s</var>[9(<var>ρ</var>(<var>v</var><sup>*</sup>)−.72)] + .20<var>ga</var>{"}"},&nbsp;&nbsp;
             <var>s</var>(<var>z</var>) = <Fraction numerator={1} denominator={<>1 + e<sup>−z</sup></>} />
           </Equation>
-          <Equation label="Erlang-C delay probability" ariaLabel="C of c x equals x to c divided by c factorial times one minus x over c, all divided by the finite series plus that same delay term; x equals lambda over mu">
+          <Equation label="Erlang-C delay probability" ariaLabel="C of c x equals x to c divided by c factorial times one minus x over c, all divided by the finite series plus that same delay term. X equals lambda over mu">
             <var>x</var> = <Fraction numerator={<var>λ</var>} denominator={<var>μ</var>} />,&nbsp;&nbsp;
             <var>C</var>(<var>c</var>,<var>x</var>) =
             <Fraction
@@ -1679,8 +1679,8 @@ function VerificationQueuePage() {
               denominator={<>∑<sup>c−1</sup><sub>n=0</sub><Fraction numerator={<>x<sup>n</sup></>} denominator={<>n!</>} /> + <Fraction numerator={<>x<sup>c</sup></>} denominator={<>c!(1−x/c)</>} /></>}
             />
           </Equation>
-          <Equation label="Waiting and abandonment proxy" ariaLabel="W q equals C of c x divided by c mu minus lambda when rho is below one; probability of abandonment for group g equals one minus exponential of negative W q divided by theta g">
-            <var>W</var><sub>q</sub> = <Fraction numerator={<><var>C</var>(<var>c</var>,<var>x</var>)</>} denominator={<><var>cμ</var>−<var>λ</var></>} />,&nbsp;<var>ρ</var>&lt;1;&nbsp;&nbsp;·&nbsp;&nbsp;
+          <Equation label="Waiting and abandonment proxy" ariaLabel="W q equals C of c x divided by c mu minus lambda when rho is below one. Probability of abandonment for group g equals one minus exponential of negative W q divided by theta g">
+            <var>W</var><sub>q</sub> = <Fraction numerator={<><var>C</var>(<var>c</var>,<var>x</var>)</>} denominator={<><var>cμ</var>−<var>λ</var></>} />,&nbsp;<var>ρ</var>&lt;1,&nbsp;&nbsp;
             Pr(abandon<sub>g</sub>) = 1 − exp(−<var>W</var><sub>q</sub>/<var>θ</var><sub>g</sub>)
           </Equation>
           <p>The queueing core is Erlang-C. The abandonment calculation is a transparent exponential-patience proxy, not a fitted Erlang-A model. The new coupling is the fixed point linking congestion, verification, and service rate.</p>
@@ -1702,23 +1702,38 @@ function VerificationQueuePage() {
 }
 
 function PublicationsPage() {
-  const publications = research.slice(0, 3);
-
   return (
     <Shell>
+      <section className="publication-intro page-shell">
+        <p className="eyebrow">Research record</p>
+        <h1>Publications</h1>
+        <p>
+          Accepted papers, presented work, and preprints on evidence,
+          institutions, and the systems around intelligent systems.
+        </p>
+      </section>
       <section className="publications-list page-shell" aria-label="Publications">
         {publications.map((item) => (
-          <article className="publication-entry" key={item.title}>
+          <article className={`publication-entry ${item.featured ? "featured-publication" : ""}`} key={item.title}>
             <div className="publication-heading">
               <span className="publication-badge">{item.publicationStatus}</span>
               <h3>{item.title}</h3>
               <p className="publication-authors">{item.authors}</p>
+              {item.affiliations && <p className="publication-affiliations">{item.affiliations}</p>}
               <p className="publication-venue">{item.venue}</p>
             </div>
             <div className="publication-detail">
               <p className="publication-dek">{item.dek}</p>
+              {item.metrics && (
+                <div className="publication-metrics" aria-label="Paper summary metrics">
+                  {item.metrics.map(([label, value]) => (
+                    <div key={label}><strong>{value}</strong><span>{label}</span></div>
+                  ))}
+                </div>
+              )}
               <dl>
                 <div><dt>Question</dt><dd>{item.question}</dd></div>
+                {item.method && <div><dt>Method</dt><dd>{item.method}</dd></div>}
                 <div><dt>Contribution</dt><dd>{item.implication}</dd></div>
               </dl>
               <a className="primary-button" href={item.href}>{item.linkLabel} <Arrow /></a>
@@ -2036,7 +2051,7 @@ function ResearchPage() {
         <h1>Research built from systems, data, and institutional questions.</h1>
         <p className="intro-lede">
           These studies begin in different settings: civic data, federal sourcing,
-          human–AI interaction, strategy, health surveillance, and municipal
+          human-AI interaction, strategy, health surveillance, and municipal
           policy, but share a method: make the hidden choice observable, then test
           what changes when it moves.
         </p>
@@ -2117,7 +2132,7 @@ function BurdenMovesSimulationPage() {
         </p>
         <div className="status-box">
           <strong>Evidence status</strong>
-          <p>Illustrative theory model; not a causal estimate or forecast.</p>
+          <p>Illustrative theory model. This is not a causal estimate or forecast.</p>
         </div>
       </section>
 
@@ -2182,16 +2197,16 @@ function BurdenMovesSimulationPage() {
           <Equation label="Ineligible applicant utility" ariaLabel="ineligible group utility equals point seven times point zero three plus one point two error minus point five five times information cost after reduction minus verification times document cost minus point one eight">
             <var>U</var><sup>N</sup><sub>g</sub> = .70(.03 + 1.20<var>e</var><sub>g</sub>) − .55<var>I</var><sub>g</sub>(1−<var>R</var><sub>g,s</sub>) − <var>vD</var><sub>g</sub> − .18
           </Equation>
-          <Equation label="Take-up and application volume" ariaLabel="application probability for group g equals the logistic of six times utility; total application volume equals the sum of group shares times application probabilities">
-            <var>a</var><sub>g</sub>(<var>v</var>; <var>s</var>) = <Fraction numerator={1} denominator={<>1 + exp(−6<var>U</var><sub>g</sub>)</>} />,&nbsp;&nbsp;
-            <var>A</var>(<var>v</var>; <var>s</var>) = ∑<sub>g</sub><var>q</var><sub>g</sub><var>a</var><sub>g</sub>(<var>v</var>; <var>s</var>)
+          <Equation label="Take-up and application volume" ariaLabel="application probability for group g equals the logistic of six times utility. Total application volume equals the sum of group shares times application probabilities">
+            <var>a</var><sub>g</sub>(<var>v</var>, <var>s</var>) = <Fraction numerator={1} denominator={<>1 + exp(−6<var>U</var><sub>g</sub>)</>} />,&nbsp;&nbsp;
+            <var>A</var>(<var>v</var>, <var>s</var>) = ∑<sub>g</sub><var>q</var><sub>g</sub><var>a</var><sub>g</sub>(<var>v</var>, <var>s</var>)
           </Equation>
-          <Equation label="Institutional response" ariaLabel="verification fixed point equals clip from point one six to point nine two of point one six plus beta times positive excess volume divided by effective capacity; effective capacity equals K plus the scenario capacity change">
+          <Equation label="Institutional response" ariaLabel="verification fixed point equals clip from point one six to point nine two of point one six plus beta times positive excess volume divided by effective capacity. Effective capacity equals K plus the scenario capacity change">
             <var>K</var><sub>s</sub> = <var>K</var> + Δ<var>K</var><sub>s</sub>,&nbsp;&nbsp;
             <var>v</var><sup>*</sup> = clip<sub>[.16,.92]</sub>{"{"}.16 + <var>β</var>
-            <Fraction numerator={<>[<var>A</var>(<var>v</var><sup>*</sup>; <var>s</var>)−<var>K</var><sub>s</sub>]<sub>+</sub></>} denominator={<><var>K</var><sub>s</sub></>} />{"}"}
+            <Fraction numerator={<>[<var>A</var>(<var>v</var><sup>*</sup>, <var>s</var>)−<var>K</var><sub>s</sub>]<sub>+</sub></>} denominator={<><var>K</var><sub>s</sub></>} />{"}"}
           </Equation>
-          <p>The scenario table supplies the reduction, error, and capacity terms. Damped iteration solves the fixed point; it is a numerical method, not an additional behavioral assumption.</p>
+          <p>The scenario table supplies the reduction, error, and capacity terms. Damped iteration solves the fixed point. It is a numerical method, not an additional behavioral assumption.</p>
         </div>
       </section>
 

@@ -1,11 +1,37 @@
 export const research = [
   {
     year: "2026",
+    type: "Accepted full paper · ATRACC at AAAI FSS 2026",
+    publicationStatus: "Accepted · ATRACC 2026",
+    venue: "AAAI Fall Symposium Series 2026 · Arlington, Virginia",
+    authors: "Hema Raju Barri¹ and Venkateswarlu Nagineni²",
+    affiliations: "¹ Johns Hopkins University · ² Texas A&M University",
+    title: "Auditing Evidence Claims in Federal High-Impact AI Exclusions",
+    dek: "Public exclusions can state a conclusion while leaving the evidence chain incomplete.",
+    question:
+      "What evidence supports federal claims that presumed high-impact AI uses fall outside the high-impact category?",
+    method:
+      "A policy-derived audit of 110 federal inventory records, repeated computational readings, evidence-response tests, and document-level provenance checks.",
+    finding:
+      "The audit classified 24 records as minimally supported, 70 as unresolved, and 16 as human-review-only. Repeated readings and controlled additions exposed instability in how evidence claims were interpreted.",
+    implication:
+      "Public inventories should identify the denied threshold, the AI output and workflow step, the limiting mechanism, and the supporting document version and passage.",
+    metrics: [
+      ["Inventory records", "110"],
+      ["Unresolved", "70"],
+      ["Response tests", "700"],
+    ],
+    featured: true,
+    href: "/papers/auditing-evidence-claims-atracc-2026.pdf",
+    linkLabel: "Read the accepted paper",
+  },
+  {
+    year: "2026",
     type: "Accepted abstract · presentation upcoming",
     publicationStatus: "Accepted · Presentation upcoming",
     venue: "20th ISDSI Global Conference · IMT Hyderabad · December 2026",
     authors: "Hema Raju Barri and Chandana Charitha Peddinti",
-    title: "Agent–Infrastructure Fit",
+    title: "Agent-Infrastructure Fit",
     dek: "Open data can be public and still be unusable by an agent.",
     question:
       "Which properties of public digital infrastructure determine whether an AI agent can act faithfully rather than merely retrieve text?",
@@ -31,7 +57,7 @@ export const research = [
     method:
       "An observational study of the federal AI-use-case inventory with agency and use-case controls, robustness checks, and explicit limits on causal interpretation.",
     finding:
-      "Systems involving personally identifiable information were more often vendor-only in the observed inventory; small-cluster inference and missing architecture data qualify that result.",
+      "Systems involving personally identifiable information were more often vendor-only in the observed inventory. Small-cluster inference and missing architecture data qualify that result.",
     implication:
       "Sourcing determines who can inspect a system, where operational knowledge accumulates, and who can be held accountable when the system acts on sensitive data.",
     href: "/papers/privacy-sensitive-sourcing.pdf",
@@ -58,7 +84,7 @@ export const research = [
   },
   {
     year: "2025",
-    type: "Human–AI experiment · research assistantship",
+    type: "Human-AI experiment · research assistantship",
     title: "Treatment Fidelity Before Treatment Effects",
     dek: "Calling an agent ‘empathizing’ does not make empathy the treatment.",
     question:
@@ -68,7 +94,7 @@ export const research = [
     finding:
       "The first research problem was construct validity: treatment labels were not evidence that the agents delivered different experiences. Early participant results suggested a provisional crossover pattern rather than a universally superior style.",
     implication:
-      "Before estimating an AI treatment effect, researchers must establish that the system enacted the intended treatment and identify the user–agent–task fit that produced the outcome.",
+      "Before estimating an AI treatment effect, researchers must establish that the system enacted the intended treatment and identify the user-agent-task fit that produced the outcome.",
     href: "/notes/labels-are-not-treatments/",
     linkLabel: "Read the method note",
   },
@@ -114,27 +140,29 @@ export const research = [
     method:
       "A transparent fixed-point model of heterogeneous applicants, unequal agent quality, agency capacity, and endogenous verification, with a parameter sweep rather than real-world calibration.",
     finding:
-      "In the baseline parameterization, equal and reliable assistance narrows the access gap; unequal agent quality can widen it. Strong verification responses can erode individual gains by shifting cost downstream.",
+      "In the baseline parameterization, equal and reliable assistance narrows the access gap. Unequal agent quality can widen it. Strong verification responses can erode individual gains by shifting cost downstream.",
     implication:
-      "The appropriate unit of analysis is the applicant–agent–agency system. The simulation specifies empirical contrasts; it is not a causal estimate or policy forecast.",
+      "The appropriate unit of analysis is the applicant-agent-agency system. The simulation specifies empirical contrasts. It is not a causal estimate or policy forecast.",
     href: "/simulations/burden-moves/",
     linkLabel: "Run the simulation",
   },
 ];
 
+export const publications = research.filter((item) => item.publicationStatus);
+
 export const notes = [
   {
     slug: "labels-are-not-treatments",
     title: "Labels Are Not Treatments",
-    eyebrow: "Method note · Work conducted September–December 2025",
+    eyebrow: "Method note · Work conducted September-December 2025",
     standfirst:
       "A clean randomization cannot rescue a treatment that exists only in the prompt writer’s vocabulary.",
     blocks: [
       {
         heading: "The failure we could have missed",
         paragraphs: [
-          "We had two conversational systems and a theoretically grounded distinction: one should communicate through perspective-taking and relational language; the other through structure, rules, and analytic decomposition. It would have been easy to name the two conditions, randomize participants, and interpret any difference as an effect of empathizing versus systemizing AI.",
-          "But a label is not an intervention. If the two agents converge in difficult scenarios, drift across turns, or differ along an unintended dimension such as verbosity, the experiment estimates the effect of an unknown bundle. Randomization balances people across conditions; it does not prove that the conditions contain what the researcher says they contain.",
+          "We had two conversational systems and a theoretically grounded distinction: one should communicate through perspective-taking and relational language, while the other should communicate through structure, rules, and analytic decomposition. It would have been easy to name the two conditions, randomize participants, and interpret any difference as an effect of empathizing versus systemizing AI.",
+          "But a label is not an intervention. If the two agents converge in difficult scenarios, drift across turns, or differ along an unintended dimension such as verbosity, the experiment estimates the effect of an unknown bundle. Randomization balances people across conditions. It does not prove that the conditions contain what the researcher says they contain.",
         ],
       },
       {
@@ -156,7 +184,7 @@ export const notes = [
   {
     slug: "map-is-a-policy-choice",
     title: "The Map Is a Policy Choice",
-    eyebrow: "Field note · Work conducted June–August 2025",
+    eyebrow: "Field note · Work conducted June-August 2025",
     standfirst:
       "A city does not discover an underserved corridor. It constructs the evidentiary conditions under which that corridor can be seen.",
     blocks: [
@@ -171,7 +199,7 @@ export const notes = [
         heading: "From visibility to action",
         paragraphs: [
           "The analysis became useful only when paired with institutional options. I compared peer-city ordinances and translated the evidence into pathways officials could actually implement. A technically elegant map without an administrative route would have been descriptive, not decision-support.",
-          "That sequence changed how I understand public-sector data work. Evidence architecture decides what enters the field of view; implementation rules decide what the institution can do about it. The two should be designed together.",
+          "That sequence changed how I understand public-sector data work. Evidence architecture decides what enters the field of view. Implementation rules decide what the institution can do about it. The two should be designed together.",
         ],
       },
       {
@@ -262,7 +290,7 @@ export const publicDataEssays = [
     ],
     figure: {
       src: "/figures/public-data-series/api-error-recovery.svg",
-      alt: "Horizontal bars compare recovery scores for eight public APIs. National Weather Service and openFDA score highest; NASA EONET scores lowest.",
+      alt: "Horizontal bars compare recovery scores for eight public APIs. National Weather Service and openFDA score highest. NASA EONET scores lowest.",
       caption:
         "Recovery score: non-success HTTP status, machine-readable body, message, named input, error code, and recovery hint or link. Red bars denote invalid requests that still returned HTTP 200.",
     },
@@ -271,7 +299,7 @@ export const publicDataEssays = [
         heading: "The overlooked half of an interface",
         paragraphs: [
           "Most evaluations begin after a system has successfully obtained data. That is convenient, but it removes the moment when an autonomous system is most likely to improvise: the request failed, the response is ambiguous, and there is no human standing beside it. In that moment, the error response is not developer polish. It is the institution's instruction about whether to retry, revise, abstain, or escalate.",
-          "The IETF's problem-details standard makes this distinction explicit. A status code can announce the general class of failure; a structured body can identify the specific problem and help a client correct it. I wanted to know how far a small set of heavily used public APIs traveled along that path in practice.",
+          "The IETF's problem-details standard makes this distinction explicit. A status code can announce the general class of failure, while a structured body can identify the specific problem and help a client correct it. I wanted to know how far a small set of heavily used public APIs traveled along that path in practice.",
         ],
       },
       {
@@ -285,7 +313,7 @@ export const publicDataEssays = [
         heading: "Three kinds of HTTP 200",
         paragraphs: [
           "Three malformed requests returned HTTP 200, but they did not mean the same thing. NHTSA returned a structured vehicle-decoding result with error information inside the domain payload. The World Bank returned an error object while preserving a success status. NASA EONET appeared to ignore the malformed limit and returned an ordinary events response. Collapsing all three into ‘the API returned 200’ would miss the consequential difference between a domain-level error, an envelope-level contradiction, and silent parameter tolerance.",
-          "The strongest responses combined layers. openFDA used a non-success status, JSON, a stable error code, and a direct message about the limit parameter. The National Weather Service returned the standardized problem-details media type and a structured parameter error. USGS used plain text rather than JSON, but the text named the offending magnitude and the expected type. It was less machine-convenient but highly actionable.",
+          "The strongest responses combined layers. OpenFDA used a non-success status, JSON, a stable error code, and a direct message about the limit parameter. The National Weather Service returned the standardized problem-details media type and a structured parameter error. USGS used plain text rather than JSON, but the text named the offending magnitude and the expected type. It was less machine-convenient but highly actionable.",
         ],
       },
       {
@@ -349,7 +377,7 @@ export const publicDataEssays = [
       src: "/figures/public-data-series/open-data-metadata-audit.svg",
       alt: "Grouped bars compare the share of old metadata and the share of datasets with no column descriptions across six public data portals.",
       caption:
-        "The two deficits do not move together. Maryland's metadata was usually recent while field descriptions were usually absent; New York State combined recent metadata with extensive field descriptions.",
+        "The two deficits do not move together. Maryland's metadata was usually recent while field descriptions were usually absent. New York State combined recent metadata with extensive field descriptions.",
     },
     blocks: [
       {
@@ -384,14 +412,14 @@ export const publicDataEssays = [
         heading: "The machine-mediated consequence",
         paragraphs: [
           "Semantic metadata changes what an agent can do safely. Field descriptions can expose units, denominators, scope, suppression, and administrative definitions that are invisible in terse names. Without them, a system may still return syntactically valid rows. That is precisely the risk: successful retrieval can conceal interpretive failure.",
-          "The institutional question is who pays to restore meaning. If the publisher supplies descriptions and reference assets, interpretation becomes shared infrastructure. If not, every downstream user rebuilds a private semantic layer. Better-resourced firms and agencies can afford that work; smaller organizations inherit guesswork. A public dataset remains free while reliable use becomes unequal.",
+          "The institutional question is who pays to restore meaning. If the publisher supplies descriptions and reference assets, interpretation becomes shared infrastructure. If not, every downstream user rebuilds a private semantic layer. Better-resourced firms and agencies can afford that work, while smaller organizations inherit guesswork. A public dataset remains free while reliable use becomes unequal.",
         ],
       },
       {
         heading: "A better test than counting descriptions",
         paragraphs: [
-          "Column-description coverage is observable, but it is only a proxy for semantic sufficiency. A short description can repeat the field name; a well-designed codebook can explain the table even when the catalog array is empty. The next experiment should sample tasks from each portal and ask independent agents to select the correct dataset, fields, filters, units, and joins. Documentation would be added or removed experimentally, and errors would be classified by consequence rather than syntax.",
-          "That design can also test the two-clock argument. Freeze the schema while varying the age of the observation, then freeze the observation while varying documentation quality. If agents confuse an old but well-described dataset with current reality, freshness signaling is the missing control. If they retrieve current rows but misuse denominators or categories, semantic infrastructure is the bottleneck. Portals need to know which repair changes behavior; a broad maturity score cannot answer that.",
+          "Column-description coverage is observable, but it is only a proxy for semantic sufficiency. A short description can repeat the field name, while a well-designed codebook can explain the table even when the catalog array is empty. The next experiment should sample tasks from each portal and ask independent agents to select the correct dataset, fields, filters, units, and joins. Documentation would be added or removed experimentally, and errors would be classified by consequence rather than syntax.",
+          "That design can also test the two-clock argument. Freeze the schema while varying the age of the observation, then freeze the observation while varying documentation quality. If agents confuse an old but well-described dataset with current reality, freshness signaling is the missing control. If they retrieve current rows but misuse denominators or categories, semantic infrastructure is the bottleneck. Portals need to know which repair changes behavior. A broad maturity score cannot answer that.",
         ],
       },
       {
@@ -433,7 +461,7 @@ export const publicDataEssays = [
       src: "/figures/public-data-series/nyc-311-channel-access.svg",
       alt: "Scatterplot of median household income against the share of 311 requests submitted online or by mobile across New York City ZIP Code Tabulation Areas.",
       caption:
-        "Each point is a ZCTA; point size reflects requests and color reflects broadband subscription. The fitted line summarizes an association, not a causal effect.",
+        "Each point is a ZCTA. Point size reflects requests, and color reflects broadband subscription. The fitted line summarizes an association, not a causal effect.",
     },
     blocks: [
       {
@@ -446,7 +474,7 @@ export const publicDataEssays = [
       {
         heading: "Joining activity to access",
         paragraphs: [
-          "I aggregated every 2025 NYC 311 service-request record by incident ZIP and open-data channel. To keep the server query auditable, the code retrieves twelve monthly aggregates and sums them; it does not sample rows. I joined those totals to the Census Bureau's 2024 ACS five-year population, median household income, and broadband estimates for ZCTAs. The analytical set retains ZCTAs with at least 1,000 residents and 100 requests.",
+          "I aggregated every 2025 NYC 311 service-request record by incident ZIP and open-data channel. To keep the server query auditable, the code retrieves twelve monthly aggregates, sums them, and does not sample rows. I joined those totals to the Census Bureau's 2024 ACS five-year population, median household income, and broadband estimates for ZCTAs. The analytical set retains ZCTAs with at least 1,000 residents and 100 requests.",
           "Digital participation is defined narrowly as online or mobile submission. Phone, other, and unknown are not counted as digital. The resulting set contains 3.62 million requests across 180 ZCTAs. Because the geographic field describes the incident, not necessarily the caller, the analysis characterizes where digitally routed complaints concern, not the demographic identity of individual complainants.",
         ],
       },
@@ -454,7 +482,7 @@ export const publicDataEssays = [
         heading: "A channel gradient inside an active system",
         paragraphs: [
           "The digital share was 64.7 percent in the lowest-income quartile of ZCTAs and 74.4 percent in the highest. Across all ZCTAs, the Spearman correlation between median household income and digital share was 0.405. Broadband subscription had a separate positive association of 0.354 with digital share. The pattern is visible, but far from deterministic: neighborhoods at similar incomes often used different channel mixes.",
-          "The result I did not want to lose is that lower-income ZCTAs were not simply absent. Their median request rate was higher than the rate in the top-income quartile, about 459 versus 362 requests per 1,000 residents. That does not prove greater civic voice; duplicate reports, land use, daytime populations, housing conditions, and complaint mix all matter. But it rejects the easiest narrative that the channel gap is merely a participation gap.",
+          "The result I did not want to lose is that lower-income ZCTAs were not simply absent. Their median request rate was higher than the rate in the top-income quartile, about 459 versus 362 requests per 1,000 residents. That does not prove greater civic voice because duplicate reports, land use, daytime populations, housing conditions, and complaint mix all matter. But it rejects the easiest narrative that the channel gap is merely a participation gap.",
         ],
       },
       {
@@ -468,7 +496,7 @@ export const publicDataEssays = [
         heading: "A sharper channel experiment",
         paragraphs: [
           "The current analysis deliberately stays above the complaint-type level. A stronger design would create matched cells: the same complaint category, month, borough, and local built-environment conditions, observed across phone and digital channels. It would compare missing fields, resolution time, reopenings, duplicate detection, and whether requests are routed to the same agency. That would show whether channel differences survive after the task is made more comparable.",
-          "An intervention could then rotate access to an agent across channels. One treatment would help web users structure a claim; another would give call-center staff the same assistance; a third would provide multilingual voice access directly to residents. If only the web treatment improves machine-readiness, the technology has increased the channel gradient. If staff-mediated assistance equalizes record quality without reducing phone access, the agent functions as public infrastructure rather than a new gate.",
+          "An intervention could then rotate access to an agent across channels. One treatment would help web users structure a claim, another would give call-center staff the same assistance, and a third would provide multilingual voice access directly to residents. If only the web treatment improves machine-readiness, the technology has increased the channel gradient. If staff-mediated assistance equalizes record quality without reducing phone access, the agent functions as public infrastructure rather than a new gate.",
         ],
       },
       {
@@ -481,7 +509,7 @@ export const publicDataEssays = [
       {
         heading: "Design implication: evaluate channel portfolios",
         paragraphs: [
-          "An AI public-service pilot should report more than aggregate uptake. It should show substitution across phone, web, mobile, and in-person routes; completion quality within each; and whether assistance makes one channel institutionally privileged. The equity question is not ‘did more people use the agent?’ It is ‘whose claims became cheaper for the institution to understand?’",
+          "An AI public-service pilot should report more than aggregate uptake. It should show substitution across phone, web, mobile, and in-person routes, completion quality within each, and whether assistance makes one channel institutionally privileged. The equity question is not ‘did more people use the agent?’ It is ‘whose claims became cheaper for the institution to understand?’",
         ],
       },
     ],
@@ -517,14 +545,14 @@ export const publicDataEssays = [
       src: "/figures/public-data-series/state-ranking-fragility.svg",
       alt: "Interval plot shows wide rank ranges for states that appear near the top of an equal-weight priority score.",
       caption:
-        "Dots compare the equal-weight rank with the median rank across 10,000 weight draws; lines show the fifth to ninety-fifth percentile. The broad weight space is a stress test, not a probability distribution over policy preferences.",
+        "Dots compare the equal-weight rank with the median rank across 10,000 weight draws, while lines show the fifth to ninety-fifth percentile. The broad weight space is a stress test, not a probability distribution over policy preferences.",
     },
     blocks: [
       {
         heading: "The seduction of one ordered list",
         paragraphs: [
           "Resource allocation wants an order. Which state should receive technical assistance first? Which jurisdiction needs an accessible digital-service redesign? Once a dashboard produces ranks, the list appears to be discovered in the data. But a multidimensional priority is not observed. It is constructed from variables, transformations, weights, and a rule about whether strength on one dimension can compensate for weakness on another.",
-          "The OECD's composite-indicator handbook treats uncertainty and sensitivity analysis as part of responsible construction. Yet the uncertainty often disappears at the point of use. A map shows five colors; a table shows ranks one through fifty-one; an automated triage system receives a score. I wanted to make the hidden range visible using data familiar enough that the mechanics could not hide behind a complex model.",
+          "The OECD's composite-indicator handbook treats uncertainty and sensitivity analysis as part of responsible construction. Yet the uncertainty often disappears at the point of use. A map shows five colors, a table shows ranks one through fifty-one, and an automated triage system receives a score. I wanted to make the hidden range visible using data familiar enough that the mechanics could not hide behind a complex model.",
         ],
       },
       {
@@ -545,7 +573,7 @@ export const publicDataEssays = [
         heading: "Why the result is not ‘rankings are useless’",
         paragraphs: [
           "A decision still has to be made. Refusing to rank can preserve an implicit allocation rule that is even harder to inspect. The lesson is narrower: the institution should distinguish dominance from preference. A state that remains high across most weights is empirically robust within this variable set. A state that enters the top tier only when one dimension is emphasized is a policy-contingent priority. Those should not be presented with the same visual certainty.",
-          "The experiment also understates uncertainty. I held the variable set, geography, vintage, percentile transformation, and Census estimates fixed. Sampling error and measurement validity are absent. In a real index, those decisions may change ranks more than weights do. The published interval is therefore not a confidence interval around a true vulnerability rank; it is a sensitivity interval over one family of value choices.",
+          "The experiment also understates uncertainty. I held the variable set, geography, vintage, percentile transformation, and Census estimates fixed. Sampling error and measurement validity are absent. In a real index, those decisions may change ranks more than weights do. The published interval is therefore not a confidence interval around a true vulnerability rank. It is a sensitivity interval over one family of value choices.",
         ],
       },
       {
@@ -594,7 +622,7 @@ export const publicDataEssays = [
       ["Proposed rules", "1,498"],
       ["Valid window + length", "1,292"],
       ["Median comment window", "45 days"],
-      ["Length–window Spearman ρ", "0.109"],
+      ["Length-window Spearman ρ", "0.109"],
     ],
     figure: {
       src: "/figures/public-data-series/federal-register-comment-burden.svg",
@@ -642,7 +670,7 @@ export const publicDataEssays = [
         heading: "Agents lower one burden and can raise another",
         paragraphs: [
           "Language models can summarize rules, locate provisions, and help draft comments. That may broaden participation by reducing reading and writing costs. But if assistance makes high-volume comments cheap, agencies may change how they filter, cluster, or value submissions. The relevant system is not ‘citizen plus summarizer.’ It includes the agency's scarce verification and attention capacity.",
-          "A tool that produces fluent but repetitive comments can increase nominal participation while making distinctive evidence harder to find. A better design would help a commenter trace claims to specific provisions, disclose uncertainty, and contribute information not already present in the docket. The goal is not maximal text generation; it is lower cost for substantive, inspectable participation.",
+          "A tool that produces fluent but repetitive comments can increase nominal participation while making distinctive evidence harder to find. A better design would help a commenter trace claims to specific provisions, disclose uncertainty, and contribute information not already present in the docket. The goal is not maximal text generation. It is lower cost for substantive, inspectable participation.",
         ],
       },
       {
@@ -676,7 +704,7 @@ export const publicDataEssays = [
     metrics: [
       ["World Bank economies", "217"],
       ["Complete in 2023", "72.4%"],
-      ["Complete using latest 2020–24", "86.6%"],
+      ["Complete using latest 2020-24", "86.6%"],
       ["Latest complete cases mixing years", "23.9%"],
     ],
     figure: {
@@ -696,7 +724,7 @@ export const publicDataEssays = [
       {
         heading: "Two honest but incompatible datasets",
         paragraphs: [
-          "From the World Bank Indicators API, I retrieved 2020–2024 observations for internet use, fixed-broadband subscriptions, secure internet servers, and access to electricity. These are not a complete theory of digital capacity. They are four public measures with different collection processes and enough conceptual range to make the missing-data choice visible.",
+          "From the World Bank Indicators API, I retrieved 2020-2024 observations for internet use, fixed-broadband subscriptions, secure internet servers, and access to electricity. These are not a complete theory of digital capacity. They are four public measures with different collection processes and enough conceptual range to make the missing-data choice visible.",
           "The strict dataset requires all four values in 2023. The latest-window dataset takes each economy's most recent nonmissing value from 2020 through 2024 and records the year for every indicator. The analysis does not impute. It asks what coverage is purchased by allowing the comparison to span time within an economy.",
         ],
       },
@@ -704,7 +732,7 @@ export const publicDataEssays = [
         heading: "Thirty-one more economies, one new ambiguity",
         paragraphs: [
           "Of 217 World Bank economies, 157 (72.4 percent) had all four values in 2023. Latest-window selection raised the complete set to 188, or 86.6 percent. That is a meaningful inclusion gain: thirty-one additional economies can enter a four-dimensional comparison without a modeled value.",
-          "But 23.9 percent of those latest-window complete cases mixed indicator years. Among low-income economies, same-year coverage was 60 percent and latest-window coverage was 80 percent; the median vintage span was one year. The gain is not fraudulent. It answers a different question: what is the latest mosaic we can assemble, rather than what did these infrastructures look like at one common moment?",
+          "But 23.9 percent of those latest-window complete cases mixed indicator years. Among low-income economies, same-year coverage was 60 percent and latest-window coverage was 80 percent. The median vintage span was one year. The gain is not fraudulent. It answers a different question: what is the latest mosaic we can assemble, rather than what did these infrastructures look like at one common moment?",
         ],
       },
       {
@@ -725,7 +753,7 @@ export const publicDataEssays = [
         heading: "The vintage vector as data, not a footnote",
         paragraphs: [
           "The latest-window file stores four value columns and four year columns for every economy. That structure allows a downstream analysis to calculate the within-economy vintage span, exclude comparisons that cross a chosen threshold, or discount older components. It also prevents a common reproducibility failure in which the displayed number survives but the rule used to select its year does not.",
-          "A future ranking experiment should carry the vintage vector through every bootstrap or sensitivity draw. One scenario could require a common year. A second could permit a one-year span. A third could model each indicator forward with uncertainty that grows with age. If the membership of a policy tier changes across those scenarios, temporal coherence is part of the decision uncertainty. The right output is not a more precise rank; it is a visible dependence on time.",
+          "A future ranking experiment should carry the vintage vector through every bootstrap or sensitivity draw. One scenario could require a common year. A second could permit a one-year span. A third could model each indicator forward with uncertainty that grows with age. If the membership of a policy tier changes across those scenarios, temporal coherence is part of the decision uncertainty. The right output is not a more precise rank. It is a visible dependence on time.",
         ],
       },
       {
