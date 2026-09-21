@@ -64,25 +64,6 @@ export const research = [
     linkLabel: "Read the presented paper",
   },
   {
-    year: "2026",
-    type: "Sole-authored preprint",
-    publicationStatus: "Sole-authored preprint",
-    venue: "SSRN · April 2026",
-    authors: "Hema Raju Barri",
-    title: "Keeping Strategic Futures Observable",
-    dek: "AI can change the evidence an institution sees after it acts.",
-    question:
-      "When an AI-supported strategy enters execution, how can an organization continue learning about paths it did not choose?",
-    method:
-      "A conceptual account of counterfactual observability and an evidence architecture for preserving alternative strategic futures under uncertainty.",
-    finding:
-      "Execution produces rich feedback about the chosen path while serious alternatives become progressively harder to observe.",
-    implication:
-      "Evaluation should preserve evidence about foregone options, not simply optimize the strategy already in motion.",
-    href: "/papers/counterfactual-observability.pdf",
-    linkLabel: "Read the preprint",
-  },
-  {
     year: "2025",
     type: "Human-AI experiment · research assistantship",
     title: "Treatment Fidelity Before Treatment Effects",

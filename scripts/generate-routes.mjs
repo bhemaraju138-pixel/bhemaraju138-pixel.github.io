@@ -12,7 +12,7 @@ const routes = [
   {
     route: "publications",
     title: "Publications | Hema Raju Barri",
-    description: "Accepted ATRACC research and other publications on AI evidence, infrastructure, federal sourcing, and strategic observability.",
+    description: "Accepted ATRACC research and other publications on AI evidence, infrastructure, and federal sourcing.",
   },
   {
     route: "blogs",

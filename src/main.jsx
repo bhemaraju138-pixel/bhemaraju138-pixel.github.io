@@ -927,7 +927,7 @@ function DevWorkspace({ children, onModeChange }) {
             <button type="button" className="ide-collapsed-pane" onClick={() => toggleTree("outline")} aria-expanded={treeOpen.outline}><Icon name={treeOpen.outline ? "chevron-down" : "chevron-right"} /> OUTLINE</button>
             {treeOpen.outline && <div className="ide-pane-details"><a href="#main">Document root</a><a href="/research/">Research program</a><a href="/publications/">Selected outputs</a></div>}
             <button type="button" className="ide-collapsed-pane" onClick={() => toggleTree("evidence")} aria-expanded={treeOpen.evidence}><Icon name={treeOpen.evidence ? "chevron-down" : "chevron-right"} /> EVIDENCE LOG</button>
-            {treeOpen.evidence && <div className="ide-pane-details"><span><Icon name="pass" /> Presented paper</span><span><Icon name="clock" /> Upcoming conference</span><span><Icon name="book" /> Sole-authored preprint</span></div>}
+            {treeOpen.evidence && <div className="ide-pane-details"><span><Icon name="pass" /> Accepted full paper</span><span><Icon name="clock" /> Upcoming conference</span><span><Icon name="book" /> Presented paper</span></div>}
           </aside>
         ))}
 
@@ -1092,7 +1092,7 @@ const researchLenses = [
     question: "How do institutions respond when intelligent systems change the cost of acting?",
     thesis:
       "AI does not enter a fixed organization. Agencies and firms change verification, sourcing, queues, and evidence requirements in response.",
-    projectIndexes: [0, 2, 5],
+    projectIndexes: [0, 2, 4],
     accent: "institution",
   },
   {
@@ -1102,7 +1102,7 @@ const researchLenses = [
     question: "For whom does an intelligent system work, and under which interaction conditions?",
     thesis:
       "Performance is relational. The same behavior can help one person and frustrate another because fit depends on the user, task, and stakes.",
-    projectIndexes: [4, 5, 7],
+    projectIndexes: [3, 4, 6],
     accent: "blue",
   },
   {
@@ -1112,7 +1112,7 @@ const researchLenses = [
     question: "Which analytical choices determine what remains visible and believable?",
     thesis:
       "A result is only as stable as the assumptions, missing-data decisions, joins, and counterfactual evidence that produced it.",
-    projectIndexes: [0, 3, 5],
+    projectIndexes: [0, 4, 5],
     accent: "evidence",
   },
   {
@@ -1122,7 +1122,7 @@ const researchLenses = [
     question: "What infrastructure makes autonomous action reliable, repairable, and contestable?",
     thesis:
       "Schemas, failure signals, permissions, and monitoring are governance mechanisms, not implementation details.",
-    projectIndexes: [1, 6, 7],
+    projectIndexes: [1, 5, 6],
     accent: "mint",
   },
 ];
@@ -1708,7 +1708,7 @@ function PublicationsPage() {
         <p className="eyebrow">Research record</p>
         <h1>Publications</h1>
         <p>
-          Accepted papers, presented work, and preprints on evidence,
+          Accepted papers and presented work on evidence,
           institutions, and the systems around intelligent systems.
         </p>
       </section>
