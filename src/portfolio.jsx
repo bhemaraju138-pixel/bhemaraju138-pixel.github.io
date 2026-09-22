@@ -479,7 +479,7 @@ function Portfolio() {
         <section className="hero section-shell" aria-labelledby="page-title">
           <div className="hero-title">
             <p>Researcher and systems builder</p>
-            <h1 id="page-title">Hema Raju Barri</h1>
+            <h1 className="sr-only" id="page-title">Hema Raju Barri</h1>
             <figure className="hero-portrait">
               <img src="/images/profile/hema-certificate-recognition.jpeg" alt="Hema Raju Barri holding a Johns Hopkins University Certificate of Recognition" />
               <figcaption>Johns Hopkins University Certificate of Recognition</figcaption>

@@ -102,10 +102,21 @@ h1, h2, h3, p { margin-top: 0; }
   line-height: 0.93;
 }
 
+.hero .sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 .hero-portrait {
   width: min(100%, 250px);
   justify-self: end;
-  margin: 28px 32px 0 0;
+  margin: 14px 32px 0 0;
 }
 
 .hero-portrait img {
@@ -522,7 +533,7 @@ h1, h2, h3, p { margin-top: 0; }
   .header-contact { font-size: 10px; }
   .hero { padding-block: 88px 68px; }
   .hero h1 { font-size: clamp(48px, 14vw, 66px); }
-  .hero-portrait { width: min(76vw, 260px); margin: 28px auto 0; }
+  .hero-portrait { width: min(76vw, 260px); margin: 18px auto 0; }
   .hero-summary { padding-top: 0; }
   .hero-bio p { font-size: 20px; }
   .section-heading { grid-template-columns: 1fr; gap: 18px; padding: 62px 0 34px; }
