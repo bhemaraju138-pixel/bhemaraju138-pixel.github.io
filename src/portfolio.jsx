@@ -488,10 +488,7 @@ function Portfolio() {
           <div className="hero-summary">
             <div className="hero-bio">
               <p>
-                I work on reliable AI systems, statistical evidence, and the public infrastructure that agents use to make and justify decisions. At the University of Oxford’s Saïd Business School, I support quantitative research on missing-data methods and reproducibility. I also contribute to the Generative AI Playbook for People and Culture (Wiley), developing human-centered frameworks for delegation, oversight, escalation, and accountability.
-              </p>
-              <p>
-                Previously, I researched conversational AI at Johns Hopkins Carey Business School, built AI-enabled outbreak-surveillance systems at the Center for Outbreak Response and Innovation, and worked with municipal and satellite data at the Bloomberg Center for Public Innovation. My earlier research at Anil Neerukonda Institute of Technology and Sciences examined computer vision for plant-disease screening and comparative machine learning for heart-disease prediction.
+                I study what makes an AI system worthy of belief: not fluency, but the evidence, infrastructure, and human judgment behind its decisions. Across Oxford, Wiley, and Johns Hopkins, my work spans statistical reproducibility, accountable workplace AI, conversational systems, outbreak surveillance, and civic data. I build systems that show not only what they concluded, but why the conclusion should survive scrutiny.
               </p>
               <p className="hero-contact">Contact: <a href="mailto:bhemaraju.138@gmail.com">bhemaraju.138@gmail.com</a></p>
             </div>

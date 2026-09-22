@@ -104,7 +104,8 @@ h1, h2, h3, p { margin-top: 0; }
 
 .hero-portrait {
   width: min(100%, 380px);
-  margin: 42px 0 0;
+  justify-self: end;
+  margin: 42px 20px 0 0;
 }
 
 .hero-portrait img {
@@ -521,7 +522,7 @@ h1, h2, h3, p { margin-top: 0; }
   .header-contact { font-size: 10px; }
   .hero { padding-block: 88px 68px; }
   .hero h1 { font-size: clamp(63px, 21vw, 92px); }
-  .hero-portrait { width: min(88vw, 360px); margin-top: 34px; }
+  .hero-portrait { width: min(88vw, 360px); margin: 34px auto 0; }
   .hero-summary { padding-top: 0; }
   .hero-bio p { font-size: 20px; }
   .section-heading { grid-template-columns: 1fr; gap: 18px; padding: 62px 0 34px; }
