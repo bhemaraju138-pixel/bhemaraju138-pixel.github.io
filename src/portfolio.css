@@ -78,10 +78,10 @@ h1, h2, h3, p { margin-top: 0; }
 
 .hero {
   display: grid;
-  grid-template-columns: minmax(420px, 0.88fr) minmax(0, 1.12fr);
-  gap: clamp(64px, 8vw, 122px);
+  grid-template-columns: minmax(350px, 0.78fr) minmax(0, 1.22fr);
+  gap: clamp(52px, 6vw, 92px);
   align-items: start;
-  padding-block: 116px 104px;
+  padding-block: 96px 88px;
 }
 
 .hero-title > p {
@@ -93,19 +93,19 @@ h1, h2, h3, p { margin-top: 0; }
 }
 
 .hero h1 {
-  max-width: 850px;
+  max-width: 520px;
   margin-bottom: 0;
   font-family: var(--serif);
-  font-size: clamp(72px, 8.6vw, 128px);
+  font-size: clamp(52px, 5.4vw, 78px);
   font-weight: 500;
-  letter-spacing: -0.065em;
-  line-height: 0.84;
+  letter-spacing: -0.05em;
+  line-height: 0.93;
 }
 
 .hero-portrait {
-  width: min(100%, 380px);
+  width: min(100%, 250px);
   justify-self: end;
-  margin: 42px 20px 0 0;
+  margin: 28px 32px 0 0;
 }
 
 .hero-portrait img {
@@ -123,7 +123,7 @@ h1, h2, h3, p { margin-top: 0; }
   letter-spacing: 0.05em;
 }
 
-.hero-summary { padding-top: 20px; }
+.hero-summary { padding-top: 8px; }
 
 .hero-bio p {
   margin-bottom: 24px;
@@ -521,8 +521,8 @@ h1, h2, h3, p { margin-top: 0; }
   .wordmark { font-size: 15px; }
   .header-contact { font-size: 10px; }
   .hero { padding-block: 88px 68px; }
-  .hero h1 { font-size: clamp(63px, 21vw, 92px); }
-  .hero-portrait { width: min(88vw, 360px); margin: 34px auto 0; }
+  .hero h1 { font-size: clamp(48px, 14vw, 66px); }
+  .hero-portrait { width: min(76vw, 260px); margin: 28px auto 0; }
   .hero-summary { padding-top: 0; }
   .hero-bio p { font-size: 20px; }
   .section-heading { grid-template-columns: 1fr; gap: 18px; padding: 62px 0 34px; }
