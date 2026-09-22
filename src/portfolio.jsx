@@ -179,7 +179,6 @@ const publications = [
     review: {
       image: "/images/publications/tas-reviewer-comment.png",
       alt: "Reviewer comment describing Same Numbers, Stale Permission as an excellent paper and praising its treatment of semantic authorization and operation-scoped receipts",
-      caption: "Reviewer assessment - TAS 2026",
     },
   },
   {
@@ -449,13 +448,7 @@ function PublicationsSection({ onOpenDev }) {
             </figure>
             {paper.review && (
               <figure className="review-evidence">
-                <div>
-                  <p>Peer review</p>
-                  <strong>“Thank you for this excellent paper.”</strong>
-                  <span>The reviewer highlighted the paper’s distinction between payload correctness and semantic authorization, and its operation-scoped receipt as a principled solution.</span>
-                </div>
                 <img src={paper.review.image} alt={paper.review.alt} loading="lazy" />
-                <figcaption>{paper.review.caption}</figcaption>
               </figure>
             )}
           </article>

@@ -522,52 +522,14 @@ h1, h2, h3, p { margin-top: 0; }
 .paper-visual figcaption { justify-self: start; }
 
 .review-evidence {
-  display: grid;
   grid-column: 1 / -1;
-  grid-template-columns: minmax(250px, 0.55fr) minmax(0, 1.45fr);
-  column-gap: clamp(28px, 4vw, 64px);
-  row-gap: 8px;
-  align-items: center;
   margin: 4px 0 0;
-  padding: 28px;
-  border: 1px solid var(--line);
-  border-radius: 12px;
-  background: var(--white);
-  box-shadow: 0 12px 30px rgba(32, 35, 40, 0.055);
-}
-.review-evidence > div p {
-  margin-bottom: 9px;
-  color: var(--blue-dark);
-  font-size: 10px;
-  font-weight: 800;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-.review-evidence > div strong {
-  display: block;
-  margin-bottom: 10px;
-  font-family: var(--serif);
-  font-size: clamp(23px, 2.25vw, 32px);
-  font-weight: 500;
-  line-height: 1.22;
-}
-.review-evidence > div span {
-  display: block;
-  color: var(--muted);
-  font-size: 13px;
-  line-height: 1.55;
 }
 .review-evidence img {
+  display: block;
   width: 100%;
   border: 1px solid #e1e1df;
   background: #fff;
-}
-.review-evidence figcaption {
-  grid-column: 2;
-  margin: 0;
-  color: var(--muted);
-  font-size: 10px;
-  letter-spacing: 0.03em;
 }
 
 .type-row {
@@ -656,8 +618,6 @@ h1, h2, h3, p { margin-top: 0; }
   .project-row { grid-template-columns: 1fr; gap: 44px; }
   .type-visual { width: min(100%, 520px); justify-self: start; }
   .project-visual { width: 100%; max-width: 850px; }
-  .review-evidence { grid-template-columns: 1fr; row-gap: 14px; }
-  .review-evidence figcaption { grid-column: 1; }
 }
 
 @media (max-width: 720px) {
@@ -690,8 +650,6 @@ h1, h2, h3, p { margin-top: 0; }
   .type-row { gap: 28px; padding-block: 36px; }
   .type-row .project-description { font-size: 16px; }
   .paper-visual { min-height: 0; padding: 20px; }
-  .review-evidence { gap: 20px; padding: 18px; }
-  .review-evidence > div span { font-size: 12px; }
   .education-section { padding-bottom: 70px; }
   .education-list article { grid-template-columns: 1fr; gap: 8px; }
   .contact-section { padding-block: 62px 80px; }
