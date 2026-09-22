@@ -16,26 +16,39 @@ function slug(value) {
   return value.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
 }
 
-const workspaceReadme = `# HRB_PORTFOLIO / actual source workspace
+const workspaceReadme = `# Navigate this workspace
 
-This read-only workspace publishes ${sourceSnapshot.files.length} audited files from the codebases that were actually used for the research and font projects shown in the portfolio.
+Dev mode is a read-only code viewer arranged like a compact VS Code workspace. Use it to move through the published research, type, and portfolio files without changing the originals.
 
-## Research repositories
+## Find and open files
 
-- Same Numbers, Stale Permission: 23 real files, including the complete experiment suite, scoring and validation scripts, the receipt contract, repository checks, requirements, and reproducibility documentation.
-- Auditing Evidence Claims: 26 real files, including audit, validation, sensitivity, repair, conformance, replication, exact-repeat, and metamorphic experiment code.
+- Choose Explorer in the left activity bar, expand a project, and select a filename to open it.
+- Type in Filter files to search by project, path, filename, or file type.
+- Use Cmd/Ctrl+P for Quick Open and enter part of a filename.
+- Open files remain available as tabs. Select a tab to return to it or use its close button to remove it from the editor.
+- The breadcrumb above the editor shows the selected file's full path.
 
-## Type and font repositories
+## Inspect, copy, and download
 
-- Unit Distance: geometry, glyph definitions, font builder, SVG renderer, tests, build script, and site source.
-- AxisDoctor: analysis engine, worker, scan hook, reports, tests, command-line tools, and interface source.
-- FontFix: parser, glyph view, export engine, tests, design-space tools, fixtures, and interface source.
-- RenderParity: capture and comparison engine, configuration, reports, tests, fixture tool, and interface source.
-- ShapeTrace: HarfBuzz worker, cluster logic, type definitions, tests, shaper hook, and interface source.
+- Scroll the editor or use the minimap at its right edge to move through longer files.
+- Copy source places the complete selected file on the clipboard.
+- Download saves the selected file with its original filename.
+- When available, Repository opens the public code repository and Open paper or Open project opens the related work.
 
-No experiment repository or local code folder was found for Privacy-Sensitive Generative AI Sourcing, Agent-Infrastructure Fit, or RULEBLIND-DCRT. Their earlier method cards have been removed rather than represented as code. Their paper PDFs remain available in Plain mode.
+## Panels and shortcuts
 
-Use Explorer to inspect each real file. Every selected source can be copied or downloaded with its original filename. The sparkle icon opens the optional local research model.`;
+- Cmd/Ctrl+B toggles the Explorer. Cmd/Ctrl+J toggles the bottom panel.
+- Drag pane boundaries to resize the workspace. Double-click a boundary to restore its default size; Fit Workbench restores the full layout.
+- The terminal accepts help, ls, open <name>, model, plain, and clear.
+- Plain mode returns to the portfolio presentation.
+
+## Extensions and local AI
+
+The sparkle icon opens the optional Local Research LLM extension in the right sidebar. The AI model is not loaded automatically when Dev mode opens or while files are being browsed.
+
+Choose Load model to download Qwen 2.5 1.5B model files into browser storage on first use. A WebGPU-capable browser is required. Prompts and inference stay on the device; no API key or server chat log is used. Answers are limited to the evidence published in this portfolio and may still be incomplete or incorrect.
+
+Closing the sidebar hides the extension but does not erase model files already cached by the browser.`;
 
 const repositoryFiles = sourceSnapshot.files.map((file) => ({
   id: file.primary ? file.projectKey : `${file.projectKey}--${slug(file.path)}`,

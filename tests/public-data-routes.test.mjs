@@ -89,6 +89,10 @@ test("dev mode publishes complete audited source snapshots instead of method pla
 
   const devIndex = await readFile(resolve("src/dev-files.js"), "utf8");
   assert.doesNotMatch(devIndex, /Method manifest|Protocol manifest|privacyMethod|infrastructureMethod|dcrtMethod/);
+  assert.doesNotMatch(devIndex, /actual source workspace|audited files|No experiment repository or local code folder/);
+  assert.match(devIndex, /# Navigate this workspace/);
+  assert.match(devIndex, /The AI model is not loaded automatically/);
+  assert.match(devIndex, /Prompts and inference stay on the device/);
 });
 
 test("publication figures, profile photograph, type screenshots, and SwiftCollab evidence are included", async () => {
