@@ -13,6 +13,7 @@ const paperFiles = [
 
 const publicationImages = [
   "same-numbers-stale-permission.png",
+  "tas-reviewer-comment.png",
   "auditing-evidence-claims.png",
   "privacy-sensitive-sourcing.png",
   "agent-infrastructure-fit.png",
@@ -42,9 +43,9 @@ test("experience and education sections follow the requested editorial order", a
     "<ExperienceSection />",
     "<FounderExperienceSection />",
     "<OtherExperienceSection />",
-    "<PublicationsSection />",
+    "<PublicationsSection ",
     "<EducationSection />",
-    "<TypeProjectsSection />",
+    "<TypeProjectsSection ",
   ];
 
   let previousIndex = -1;

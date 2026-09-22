@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { createRoot } from "react-dom/client";
+import DevMode from "./dev-mode";
 import "./portfolio.css";
 
 const researchExperience = [
@@ -172,6 +173,12 @@ const publications = [
     image: "/images/publications/same-numbers-stale-permission.png",
     alt: "Bar chart from the paper comparing payload, metadata, and contract conditions",
     caption: "Figure 1 - exact accuracy, conflict acceptance, and complete-set accuracy",
+    devFile: "paper-tas",
+    review: {
+      image: "/images/publications/tas-reviewer-comment.png",
+      alt: "Reviewer comment describing Same Numbers, Stale Permission as an excellent paper and praising its treatment of semantic authorization and operation-scoped receipts",
+      caption: "Reviewer assessment - TAS 2026",
+    },
   },
   {
     status: "Accepted, ATRACC (AAAI Fall Symposium 2026)",
@@ -183,6 +190,7 @@ const publications = [
     image: "/images/publications/auditing-evidence-claims.png",
     alt: "Evidence audit illustration showing records, provenance checks, and three evidence-status outcomes",
     caption: "Evidence audit from source records to supported, unresolved, and human-review-only outcomes",
+    devFile: "paper-atracc",
   },
   {
     status: "Accepted, INSIGHT 2026 (Springer proceedings)",
@@ -194,6 +202,7 @@ const publications = [
     image: "/images/publications/privacy-sensitive-sourcing.png",
     alt: "Coefficient plot from the paper showing vendor-only sourcing estimates across agency exclusions",
     caption: "Figure 2 - adjusted estimate and leave-one-agency-out comparisons",
+    devFile: "paper-privacy",
   },
   {
     status: "Accepted, 20th ISDSI Global Conference (Dec. 2026)",
@@ -205,6 +214,7 @@ const publications = [
     image: "/images/publications/agent-infrastructure-fit.png",
     alt: "Diagram from the paper connecting task requirements, an AI agent, public-data infrastructure, validation, and governance feedback",
     caption: "Figure 1 - agent-infrastructure fit as a governed task system",
+    devFile: "paper-infrastructure",
   },
   {
     status: "Under review, AIS2C 2027 (IEEE)",
@@ -216,6 +226,7 @@ const publications = [
     image: "/images/publications/ruleblind-dcrt.png",
     alt: "Protocol diagram and recovery chart from the RULEBLIND-DCRT paper",
     caption: "Figure 1 - durable residual protocol and exact diagnosis after repair",
+    devFile: "paper-dcrt",
   },
 ];
 
@@ -227,6 +238,7 @@ const typeProjects = [
       "A monospaced display face whose connected letterforms follow a certified geometric rule across a compact lattice.",
     href: "https://hema-unit-distance.vercel.app",
     image: "/images/type-projects/unit-distance.png",
+    devFile: "type-unit-distance",
   },
   {
     title: "AxisDoctor",
@@ -235,6 +247,7 @@ const typeProjects = [
       "A local-first workbench for sampling variable-font axes and locating outline, spacing, and interpolation problems.",
     href: "https://hema-axis-doctor.vercel.app",
     image: "/images/type-projects/axis-doctor.png",
+    devFile: "type-axis-doctor",
   },
   {
     title: "FontFix",
@@ -243,6 +256,7 @@ const typeProjects = [
       "A private browser workbench for inspecting outlines, control points, spacing, metrics, and variation behavior.",
     href: "https://hema-fontfix.vercel.app",
     image: "/images/type-projects/fontfix.png",
+    devFile: "type-font-fix",
   },
   {
     title: "RenderParity",
@@ -251,6 +265,7 @@ const typeProjects = [
       "A capture-and-comparison system that traces where font rendering begins to diverge across operating systems.",
     href: "https://hema-render-parity.vercel.app",
     image: "/images/type-projects/render-parity.png",
+    devFile: "type-render-parity",
   },
   {
     title: "ShapeTrace",
@@ -259,6 +274,7 @@ const typeProjects = [
       "A local-first microscope that follows text through shaping and into the final positioned glyph buffer.",
     href: "https://hema-shape-trace.vercel.app",
     image: "/images/type-projects/shape-trace.png",
+    devFile: "type-shape-trace",
   },
 ];
 
@@ -284,7 +300,7 @@ function Arrow() {
   return <span aria-hidden="true">↗</span>;
 }
 
-function Header() {
+function Header({ onDev }) {
   return (
     <header className="site-header">
       <a className="wordmark" href="#top">Hema Raju Barri</a>
@@ -296,7 +312,12 @@ function Header() {
         <a href="#education">Education</a>
         <a href="#type-projects">Type projects</a>
       </nav>
-      <a className="header-contact" href="mailto:bhemaraju.138@gmail.com">Email <Arrow /></a>
+      <div className="header-actions">
+        <button type="button" className="mode-switch" onClick={() => onDev("workspace-readme")}>
+          <span>Plain</span><i aria-hidden="true"><b /></i><span>Dev</span>
+        </button>
+        <a className="header-contact" href="mailto:bhemaraju.138@gmail.com">Email <Arrow /></a>
+      </div>
     </header>
   );
 }
@@ -382,7 +403,7 @@ function FounderExperienceSection() {
   );
 }
 
-function PublicationsSection() {
+function PublicationsSection({ onOpenDev }) {
   return (
     <section className="section-shell publication-section" id="publications" aria-labelledby="publications-title">
       <SectionHeading
@@ -411,11 +432,25 @@ function PublicationsSection() {
                 <a href={paper.href} target="_blank" rel="noreferrer">Paper</a>
               </p>
               <p className="project-description">{paper.summary}</p>
+              <button type="button" className="dev-entry-link" onClick={() => onOpenDev(paper.devFile)}>
+                View the code in Dev mode <span aria-hidden="true">›_</span>
+              </button>
             </div>
             <figure className="project-visual paper-visual">
               <img src={paper.image} alt={paper.alt} loading="lazy" />
               <figcaption>{paper.caption}</figcaption>
             </figure>
+            {paper.review && (
+              <figure className="review-evidence">
+                <div>
+                  <p>Peer review</p>
+                  <strong>“Thank you for this excellent paper.”</strong>
+                  <span>The reviewer highlighted the paper’s distinction between payload correctness and semantic authorization, and its operation-scoped receipt as a principled solution.</span>
+                </div>
+                <img src={paper.review.image} alt={paper.review.alt} loading="lazy" />
+                <figcaption>{paper.review.caption}</figcaption>
+              </figure>
+            )}
           </article>
         ))}
       </div>
@@ -423,7 +458,7 @@ function PublicationsSection() {
   );
 }
 
-function TypeProjectsSection() {
+function TypeProjectsSection({ onOpenDev }) {
   return (
     <section className="section-shell" id="type-projects" aria-labelledby="type-projects-title">
       <SectionHeading
@@ -440,9 +475,14 @@ function TypeProjectsSection() {
               </div>
               <h3>{project.title}</h3>
               <p className="project-description">{project.description}</p>
-              <a className="project-link" href={project.href} target="_blank" rel="noreferrer">
-                Visit the project <Arrow />
-              </a>
+              <div className="project-actions">
+                <a className="project-link" href={project.href} target="_blank" rel="noreferrer">
+                  Visit the project <Arrow />
+                </a>
+                <button type="button" className="dev-entry-link" onClick={() => onOpenDev(project.devFile)}>
+                  View code in Dev mode <span aria-hidden="true">›_</span>
+                </button>
+              </div>
             </div>
             <a className="project-visual type-visual" href={project.href} target="_blank" rel="noreferrer" aria-label={`Open ${project.title}`}>
               <img src={project.image} alt={`${project.title} interface`} loading="lazy" />
@@ -471,10 +511,10 @@ function EducationSection() {
   );
 }
 
-function Portfolio() {
+function Portfolio({ onOpenDev }) {
   return (
     <>
-      <Header />
+      <Header onDev={onOpenDev} />
       <main id="top">
         <section className="hero section-shell" aria-labelledby="page-title">
           <div className="hero-title">
@@ -501,9 +541,9 @@ function Portfolio() {
         <ExperienceSection />
         <FounderExperienceSection />
         <OtherExperienceSection />
-        <PublicationsSection />
+        <PublicationsSection onOpenDev={onOpenDev} />
         <EducationSection />
-        <TypeProjectsSection />
+        <TypeProjectsSection onOpenDev={onOpenDev} />
 
         <section className="contact-section section-shell" aria-labelledby="contact-title">
           <div>
@@ -521,8 +561,55 @@ function Portfolio() {
   );
 }
 
+function readDevRoute() {
+  const match = window.location.hash.match(/^#dev\/(.+)$/);
+  return match?.[1] || null;
+}
+
+function App() {
+  const initialDevFile = readDevRoute();
+  const [mode, setMode] = useState(initialDevFile ? "dev" : "plain");
+  const [devFile, setDevFile] = useState(initialDevFile || "workspace-readme");
+
+  useEffect(() => {
+    document.body.style.overflow = mode === "dev" ? "hidden" : "";
+    document.documentElement.dataset.interface = mode;
+    return () => {
+      document.body.style.overflow = "";
+      delete document.documentElement.dataset.interface;
+    };
+  }, [mode]);
+
+  const openDev = (fileId) => {
+    setDevFile(fileId);
+    setMode("dev");
+    window.history.replaceState(null, "", `#dev/${fileId}`);
+    window.scrollTo({ top: 0, behavior: "auto" });
+  };
+
+  const openPlain = () => {
+    setMode("plain");
+    window.history.replaceState(null, "", "#top");
+    window.setTimeout(() => document.getElementById("top")?.focus({ preventScroll: true }), 0);
+  };
+
+  if (mode === "dev") {
+    return (
+      <DevMode
+        initialFileId={devFile}
+        onPlain={openPlain}
+        publications={publications}
+        typeProjects={typeProjects}
+        researchExperience={researchExperience}
+      />
+    );
+  }
+
+  return <Portfolio onOpenDev={openDev} />;
+}
+
 createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <Portfolio />
+    <App />
   </React.StrictMode>,
 );
