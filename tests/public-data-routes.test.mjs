@@ -42,7 +42,7 @@ test("all five publication PDFs are included in the public build", async () => {
   }
 });
 
-test("publication figures, type screenshots, and SwiftCollab evidence are included", async () => {
+test("publication figures, profile photograph, type screenshots, and SwiftCollab evidence are included", async () => {
   for (const filename of publicationImages) {
     await access(resolve("dist/client/images/publications", filename));
   }
@@ -51,6 +51,7 @@ test("publication figures, type screenshots, and SwiftCollab evidence are includ
   }
   await access(resolve("dist/client/images/experience/pava-center-invitation.png"));
   await access(resolve("dist/client/images/experience/towson-startup-cohort.jpeg"));
+  await access(resolve("dist/client/images/profile/hema-certificate-recognition.jpeg"));
 });
 
 test("removed portfolio sections are not emitted as routes", async () => {

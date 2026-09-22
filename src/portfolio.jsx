@@ -6,7 +6,12 @@ const researchExperience = [
   {
     period: "May 2026 - Present",
     institution: "University of Oxford, Saïd Business School",
+    institutionHref: "https://www.sbs.ox.ac.uk/",
     role: "Predoctoral Research Assistant",
+    supervisor: {
+      name: "Professor Kejia Hu",
+      href: "https://www.ox.ac.uk/news/find-an-expert/dr-kejia-hu",
+    },
     detail:
       "Monte Carlo studies of seven missing-data methods under MCAR, MAR, and NMAR; econometric replication and reproducibility checks across tens of thousands of regressions.",
   },
@@ -14,36 +19,71 @@ const researchExperience = [
     period: "May 2026 - Present",
     institution: "Generative AI Playbook for People and Culture (Wiley)",
     role: "Research Contributor",
+    supervisor: {
+      name: "Puneet Zohar Sachdev",
+      href: "https://www.linkedin.com/in/puneetsachdevpro",
+    },
     detail:
       "Developing a human-centered adoption framework and Work-Contract Map for delegation, oversight, escalation, accountability, and reliable use in sensitive workplace decisions.",
   },
   {
-    period: "Jan. 2026 - May 2026",
-    institution: "Testing Autonomy",
-    role: "AI Software Development Engineer in Test",
-    detail:
-      "Built LLM and RAG evaluations for evidence support, hallucinations, and prompt regressions; tested agent tool use, recovery behavior, and continuous-integration gates.",
-  },
-  {
     period: "Sep. 2025 - Dec. 2025",
     institution: "Johns Hopkins Carey Business School",
+    institutionHref: "https://carey.jhu.edu/",
     role: "Research Assistant",
+    supervisor: {
+      name: "Professor Harang Ju",
+      href: "https://carey.jhu.edu/faculty/harang-ju-phd",
+    },
     detail:
       "Designed conversational AI grounded in systemizing-empathizing theory and built a GEPA/BLOOM evaluation workflow for behavioral fidelity, prompt refinement, and user outcomes.",
   },
   {
     period: "Sep. 2025 - Dec. 2025",
     institution: "Center for Outbreak Response and Innovation",
+    institutionHref: "https://cori.centerforhealthsecurity.org/who-we-are/",
     role: "Research Assistant",
+    supervisor: {
+      name: "Sarah Gillani",
+      href: "https://publichealth.jhu.edu/faculty/4842/sarah-gillani",
+    },
     detail:
       "Built an AI surveillance pipeline spanning 45 U.S. states, Canada, and Mexico, with schema guardrails, confidence thresholds, failure recovery, and human review.",
   },
   {
+    period: "Oct. 2021 - Jan. 2023",
+    institution: "Anil Neerukonda Institute of Technology and Sciences, India",
+    institutionHref: "https://www.anits.edu.in/",
+    role: "Research Assistant",
+    supervisor: {
+      name: "Professor Sangeeta Viswanadham",
+      href: "https://www.gitam.edu/faculty/sangeeta-viswanadham",
+    },
+    details: [
+      "Contributed to an end-to-end ResNet-152 V2 computer-vision pipeline for early plant-disease screening, processing 7,000 healthy and diseased leaf images through resizing, data augmentation, normalization, dataset splitting, deep feature extraction, and softmax classification.",
+      "Evaluated the plant-detection model through separate training and validation accuracy and loss analyses, examining model behavior beyond a single aggregate performance measure.",
+      "Developed a comparative evaluation workflow for heart-disease prediction in a high-stakes clinical setting, benchmarking six machine-learning methods across 14 selected patient features using accuracy, precision, recall, and F1; identified random forest as the strongest-performing approach.",
+    ],
+  },
+  {
     period: "Jun. 2025 - Aug. 2025",
     institution: "Bloomberg Center for Public Innovation",
+    institutionHref: "https://publicinnovation.jhu.edu/",
     role: "Summer Scholar",
+    location: "Birmingham, Alabama",
     detail:
-      "Integrated more than 20,000 municipal, NASA Black Marble, asset, location, and equity records to identify 12 underserved corridors and deliver five policy pathways.",
+      "Integrated more than 20,000 municipal, NASA Black Marble, asset, location, and equity records to identify 12 underserved corridors and deliver five policy pathways to city officials.",
+  },
+];
+
+const otherExperience = [
+  {
+    period: "Jan. 2026 - May 2026",
+    institution: "Testing Autonomy",
+    role: "AI Software Development Engineer in Test (AI SDET)",
+    location: "Delaware",
+    detail:
+      "Built LLM and RAG evaluations for evidence support, hallucinations, prompt regressions, agent tool use, and recovery behavior; added self-healing Playwright tests and continuous-integration gates.",
   },
   {
     period: "Oct. 2024 - Dec. 2025",
@@ -65,6 +105,14 @@ const researchExperience = [
         caption: "SwiftCollab in the Towson University Startup Accelerator cohort",
       },
     ],
+  },
+  {
+    period: "Jan. 2024 - Jun. 2024",
+    institution: "Contor Solutions",
+    role: "Software Engineer",
+    location: "Hyderabad, India",
+    detail:
+      "Developed production-ready features across the frontend, Flask backend, and SQL database, owning work from requirements through implementation and delivering improvements associated with a 17% increase in user engagement.",
   },
 ];
 
@@ -88,8 +136,8 @@ const publications = [
       "Audits 110 federal high-impact AI exclusion records for visible support, interpretive stability, and document-level provenance.",
     href: "/papers/auditing-evidence-claims.pdf",
     image: "/images/publications/auditing-evidence-claims.png",
-    alt: "Result table from the paper showing supported, unresolved, and human-review-only records",
-    caption: "Table 1 - reconciled evidence-status partition across 110 records",
+    alt: "Evidence audit illustration showing records, provenance checks, and three evidence-status outcomes",
+    caption: "Evidence audit from source records to supported, unresolved, and human-review-only outcomes",
   },
   {
     status: "Accepted, INSIGHT 2026 (Springer proceedings)",
@@ -196,7 +244,8 @@ function Header() {
     <header className="site-header">
       <a className="wordmark" href="#top">Hema Raju Barri</a>
       <nav aria-label="Primary navigation">
-        <a href="#experience">Research experience</a>
+        <a href="#experience">Research</a>
+        <a href="#other-experience">Other experience</a>
         <a href="#publications">Publications</a>
         <a href="#type-projects">Type projects</a>
         <a href="#education">Education</a>
@@ -206,31 +255,42 @@ function Header() {
   );
 }
 
-function SectionHeading({ number, title, description, id }) {
+function SectionHeading({ title, description, id }) {
   return (
     <header className="section-heading">
-      <span>{number}</span>
       <h2 id={id}>{title}</h2>
       {description && <p>{description}</p>}
     </header>
   );
 }
 
-function ExperienceSection() {
+function ExperienceList({ items }) {
   return (
-    <section className="section-shell" id="experience" aria-labelledby="experience-title">
-      <SectionHeading number="01" title="Research Experience" id="experience-title" />
-      <div className="experience-list">
-        {researchExperience.map((item, index) => (
+    <div className="experience-list">
+        {items.map((item) => (
           <article className={`experience-item ${item.images ? "experience-featured" : ""}`} key={item.institution}>
-            <span className="item-number">{String(index + 1).padStart(2, "0")}</span>
             <div className="item-meta">
               <p>{item.period}</p>
               <p>{item.role}</p>
+              {item.location && <p>{item.location}</p>}
             </div>
             <div className="item-copy">
-              <h3>{item.institution}</h3>
-              <p>{item.detail}</p>
+              <h3>
+                {item.institutionHref ? (
+                  <a href={item.institutionHref} target="_blank" rel="noreferrer">{item.institution}</a>
+                ) : item.institution}
+              </h3>
+              {item.supervisor && (
+                <p className="supervisor-line">
+                  Supervised by <a href={item.supervisor.href} target="_blank" rel="noreferrer">{item.supervisor.name}</a>
+                </p>
+              )}
+              {item.detail && <p>{item.detail}</p>}
+              {item.details && (
+                <ul className="experience-points">
+                  {item.details.map((detail) => <li key={detail}>{detail}</li>)}
+                </ul>
+              )}
               {item.note && <p className="item-note">{item.note}</p>}
             </div>
             {item.images && (
@@ -245,7 +305,24 @@ function ExperienceSection() {
             )}
           </article>
         ))}
-      </div>
+    </div>
+  );
+}
+
+function ExperienceSection() {
+  return (
+    <section className="section-shell" id="experience" aria-labelledby="experience-title">
+      <SectionHeading title="Research Experience" id="experience-title" />
+      <ExperienceList items={researchExperience} />
+    </section>
+  );
+}
+
+function OtherExperienceSection() {
+  return (
+    <section className="section-shell" id="other-experience" aria-labelledby="other-experience-title">
+      <SectionHeading title="Other Experience" id="other-experience-title" />
+      <ExperienceList items={otherExperience} />
     </section>
   );
 }
@@ -254,17 +331,15 @@ function PublicationsSection() {
   return (
     <section className="section-shell publication-section" id="publications" aria-labelledby="publications-title">
       <SectionHeading
-        number="02"
         title="Publications"
         id="publications-title"
         description="Five papers on reliable agents, evidence, public infrastructure, and institutional deployment."
       />
       <div className="project-list publication-list">
-        {publications.map((paper, index) => (
+        {publications.map((paper) => (
           <article className="project-row publication-row" key={paper.title}>
             <div className="project-copy">
               <div className="project-index">
-                <span>{String(index + 1).padStart(2, "0")}</span>
                 <p>Research paper</p>
               </div>
               <h3>{paper.title}</h3>
@@ -297,17 +372,15 @@ function TypeProjectsSection() {
   return (
     <section className="section-shell" id="type-projects" aria-labelledby="type-projects-title">
       <SectionHeading
-        number="03"
         title="Type Design & Font Engineering"
         id="type-projects-title"
         description="Five working studies of letterform construction, variable fonts, shaping, and rendering."
       />
       <div className="project-list type-list">
-        {typeProjects.map((project, index) => (
+        {typeProjects.map((project) => (
           <article className="project-row type-row" key={project.title}>
             <div className="project-copy">
               <div className="project-index">
-                <span>{String(index + 1).padStart(2, "0")}</span>
                 <p>{project.kind}</p>
               </div>
               <h3>{project.title}</h3>
@@ -329,11 +402,10 @@ function TypeProjectsSection() {
 function EducationSection() {
   return (
     <section className="section-shell education-section" id="education" aria-labelledby="education-title">
-      <SectionHeading number="04" title="Education" id="education-title" />
+      <SectionHeading title="Education" id="education-title" />
       <div className="education-list">
-        {education.map((item, index) => (
+        {education.map((item) => (
           <article key={item.institution}>
-            <span>{String(index + 1).padStart(2, "0")}</span>
             <p>{item.period}</p>
             <h3>{item.institution}</h3>
             <p>{item.degree}</p>
@@ -353,25 +425,34 @@ function Portfolio() {
           <div className="hero-title">
             <p>Researcher and systems builder</p>
             <h1 id="page-title">Hema Raju Barri</h1>
+            <figure className="hero-portrait">
+              <img src="/images/profile/hema-certificate-recognition.jpeg" alt="Hema Raju Barri holding a Johns Hopkins University Certificate of Recognition" />
+              <figcaption>Johns Hopkins University Certificate of Recognition</figcaption>
+            </figure>
           </div>
           <div className="hero-summary">
-            <p>
-              I study how AI systems interact with evidence, public infrastructure, and organizational decisions. My work combines empirical research, system evaluation, and applied engineering.
-            </p>
+            <div className="hero-bio">
+              <p>
+                I work on reliable AI systems, statistical evidence, and the public infrastructure that agents use to make and justify decisions. At the University of Oxford’s Saïd Business School, I support quantitative research on missing-data methods and reproducibility. I also contribute to the Generative AI Playbook for People and Culture (Wiley), developing human-centered frameworks for delegation, oversight, escalation, and accountability.
+              </p>
+              <p>
+                Previously, I researched conversational AI at Johns Hopkins Carey Business School, built AI-enabled outbreak-surveillance systems at the Center for Outbreak Response and Innovation, and worked with municipal and satellite data at the Bloomberg Center for Public Innovation. My earlier research at Anil Neerukonda Institute of Technology and Sciences examined computer vision for plant-disease screening and comparative machine learning for heart-disease prediction.
+              </p>
+              <p className="hero-contact">Contact: <a href="mailto:bhemaraju.138@gmail.com">bhemaraju.138@gmail.com</a></p>
+            </div>
             <dl>
               <div><dt>Current</dt><dd>Predoctoral Research Assistant, University of Oxford Saïd Business School</dd></div>
-              <div><dt>Methods</dt><dd>Experiments, econometrics, simulations, mixed methods, and systems engineering</dd></div>
             </dl>
           </div>
         </section>
 
         <ExperienceSection />
+        <OtherExperienceSection />
         <PublicationsSection />
         <TypeProjectsSection />
         <EducationSection />
 
         <section className="contact-section section-shell" aria-labelledby="contact-title">
-          <span>05</span>
           <div>
             <h2 id="contact-title">Contact</h2>
             <p>For research, collaboration, or speaking inquiries:</p>
