@@ -169,6 +169,20 @@
 .dev-tree button span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .dev-tree button:hover { background: #2a2d2e; }
 .dev-tree button.active { background: #37373d; color: #fff; }
+.dev-tree .dev-tree-project-toggle {
+  padding-left: 17px;
+  color: #d2d2d2;
+  font-size: 11px;
+  font-weight: 600;
+}
+.dev-tree .dev-tree-project-toggle .codicon:first-child { width: 12px; margin-right: -4px; }
+.dev-tree .dev-tree-project-toggle small {
+  margin-left: auto;
+  color: #7f7f7f;
+  font-size: 9px;
+  font-weight: 500;
+}
+.dev-tree .dev-tree-file { padding-left: 46px; }
 .dev-tree button .codicon-symbol-method { color: #dcdcaa; }
 .dev-tree button .codicon-symbol-class { color: #4ec9b0; }
 .dev-tree button .codicon-markdown { color: #75beff; }
@@ -423,7 +437,7 @@
   }
   .dev-main { grid-template-rows: minmax(0, 1fr) 174px; }
   .dev-source-banner { align-items: flex-start; flex-direction: column; }
-  .dev-source-banner > div:last-child { width: 100%; }
+  .dev-source-banner > div:last-child { width: 100%; flex-wrap: wrap; }
   .dev-source-banner a,
   .dev-source-banner button { flex: 1; justify-content: center; }
   .dev-statusbar span:nth-last-child(2),

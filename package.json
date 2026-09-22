@@ -15,7 +15,8 @@
     "test": "node --test tests/model.test.mjs tests/simulations.test.mjs tests/knowledge.test.mjs",
     "test:data": "python3 tests/verify_public_data.py",
     "test:routes": "node --test tests/public-data-routes.test.mjs",
-    "lint": "eslint src scripts --ignore-pattern dist"
+    "snapshot:code": "node scripts/build-dev-source-snapshot.mjs",
+    "lint": "eslint src/portfolio.jsx src/dev-mode.jsx src/dev-files.js scripts --ignore-pattern dist --ignore-pattern src/dev-source-snapshot.json"
   },
   "dependencies": {
     "@mlc-ai/web-llm": "^0.2.84",

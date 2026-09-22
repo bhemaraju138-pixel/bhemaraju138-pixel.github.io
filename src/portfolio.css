@@ -27,6 +27,18 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+.dev-loading {
+  position: fixed;
+  z-index: 100;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background: #1e1e1e;
+  color: #cfcfcf;
+  font-family: "SFMono-Regular", Consolas, monospace;
+  font-size: 12px;
+}
+
 a { color: inherit; }
 img { display: block; max-width: 100%; }
 h1, h2, h3, p { margin-top: 0; }

@@ -1,241 +1,97 @@
-import tasRuntime from "./dev-code/tas_runtime_v4.py?raw";
-import atraccAudit from "./dev-code/atracc_audit.py?raw";
-import axisDoctorDetect from "./dev-code/axisdoctor_detect.ts?raw";
-import fontFixGlyph from "./dev-code/fontfix_glyph.ts?raw";
-import renderParityCompare from "./dev-code/renderparity_compare.py?raw";
-import shapeTraceCluster from "./dev-code/shapetrace_cluster.ts?raw";
-import unitDistanceGeometry from "./dev-code/unit_distance_geometry.py?raw";
+import sourceSnapshot from "./dev-source-snapshot.json";
 import portfolioSource from "./portfolio.jsx?raw";
 import portfolioStyles from "./portfolio.css?raw";
 
-const workspaceReadme = `# HRB_PORTFOLIO / published code view
+const projectFolders = {
+  "paper-tas": "papers/same-numbers-stale-permission",
+  "paper-atracc": "papers/auditing-evidence-claims",
+  "type-unit-distance": "type/unit-distance",
+  "type-axis-doctor": "type/axis-doctor",
+  "type-font-fix": "type/fontfix",
+  "type-render-parity": "type/render-parity",
+  "type-shape-trace": "type/shape-trace",
+};
 
-This is a curated, read-only source workspace for Hema Raju Barri's portfolio.
+function slug(value) {
+  return value.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+}
 
-## What is here
+const workspaceReadme = `# HRB_PORTFOLIO / actual source workspace
 
-- Reproducibility code for Same Numbers, Stale Permission and the federal evidence audit
-- Method manifests for papers whose full research package is not published here
-- Representative implementation files from five type-design and font-engineering projects
-- The React and CSS source for the portfolio itself
+This read-only workspace publishes ${sourceSnapshot.files.length} audited files from the codebases that were actually used for the research and font projects shown in the portfolio.
 
-## Boundaries
+## Research repositories
 
-The code view publishes only the files intentionally selected for this portfolio. A paper PDF is the authoritative description of the reported study. A method manifest is documentation, not a claim that an unpublished replication package exists.
+- Same Numbers, Stale Permission: 23 real files, including the complete experiment suite, scoring and validation scripts, the receipt contract, repository checks, requirements, and reproducibility documentation.
+- Auditing Evidence Claims: 26 real files, including audit, validation, sensitivity, repair, conformance, replication, exact-repeat, and metamorphic experiment code.
 
-Use the Explorer to open a file, the terminal to navigate, or the sparkle icon to load the optional local research model.`;
+## Type and font repositories
 
-const privacyMethod = `# Privacy-Sensitive Generative AI Sourcing
+- Unit Distance: geometry, glyph definitions, font builder, SVG renderer, tests, build script, and site source.
+- AxisDoctor: analysis engine, worker, scan hook, reports, tests, command-line tools, and interface source.
+- FontFix: parser, glyph view, export engine, tests, design-space tools, fixtures, and interface source.
+- RenderParity: capture and comparison engine, configuration, reports, tests, fixture tool, and interface source.
+- ShapeTrace: HarfBuzz worker, cluster logic, type definitions, tests, shaper hook, and interface source.
 
-artifact: method manifest
-paper: /papers/privacy-sensitive-generative-ai-sourcing.pdf
-status: Accepted, INSIGHT 2026 (Springer proceedings)
+No experiment repository or local code folder was found for Privacy-Sensitive Generative AI Sourcing, Agent-Infrastructure Fit, or RULEBLIND-DCRT. Their earlier method cards have been removed rather than represented as code. Their paper PDFs remain available in Plain mode.
 
-question:
-  Is agency-maintained personal information associated with vendor-only sourcing
-  in federal generative-AI use cases?
+Use Explorer to inspect each real file. Every selected source can be copied or downloaded with its original filename. The sparkle icon opens the optional local research model.`;
 
-reported_scope:
-  use_cases: 368
-  unit: federal generative-AI use case
-
-analysis:
-  - define vendor-only sourcing from the inventory record
-  - identify use cases involving agency-maintained personal information
-  - estimate an adjusted sourcing difference
-  - repeat the estimate while excluding each identifying agency in turn
-
-evidence:
-  - the paper PDF is the authoritative research artifact
-  - the portfolio figure reports the adjusted estimate and agency deletions
-
-This manifest documents the public portfolio representation. It is not a substitute
-for the paper, nor is it presented as a complete replication package.`;
-
-const infrastructureMethod = `# Agent-Infrastructure Fit
-
-artifact: method manifest
-paper: /papers/agent-infrastructure-fit.pdf
-status: Accepted, 20th ISDSI Global Conference (December 2026)
-
-construct:
-  agent_infrastructure_fit = alignment(
-    task_requirements,
-    agent_capabilities,
-    public_data_affordances,
-    validation_requirements
-  )
-
-reported_design:
-  runs: 810
-  conditions:
-    - no metadata
-    - schema only
-    - structured infrastructure
-
-outcomes:
-  - completion
-  - reliability
-  - traceability
-  - graceful failure
-
-governance_loop:
-  failure traces -> stewardship priorities -> improved manifests, joins, and warnings
-
-The paper PDF contains the authoritative argument, design, results, and limitations.`;
-
-const dcrtMethod = `# RULEBLIND-DCRT
-
-artifact: protocol manifest
-paper: /papers/ruleblind-dcrt.pdf
-status: Under review, AIS2C 2027 (IEEE)
-
-protocol:
-  observe selected probes
-  encode an authorized residual
-  prepare and durably append the residual
-  repair state
-  verify by decoding and checking the residual
-  commit success or explicit diagnostic debt
-
-invariant:
-  destructive repair cannot precede durable evidence for the authorized diagnosis
-
-comparison:
-  no-retention baselines lose exact original-fault diagnosis as repair history is erased
-  DCRT composes the authorized residual across repair steps
-
-This protocol card is an inspectable summary. The paper PDF is authoritative and the
-submission is still under review.`;
+const repositoryFiles = sourceSnapshot.files.map((file) => ({
+  id: file.primary ? file.projectKey : `${file.projectKey}--${slug(file.path)}`,
+  projectKey: file.projectKey,
+  group: file.group,
+  project: file.project,
+  path: `${projectFolders[file.projectKey]}/${file.path}`,
+  sourcePath: file.path,
+  language: file.language,
+  kind: file.group === "Papers" ? "Actual research repository file" : "Actual project source file",
+  source: file.source,
+  openHref: file.href,
+  openLabel: file.group === "Papers" ? "Open paper" : "Open project",
+  repositoryHref: file.repository,
+}));
 
 export const devFiles = [
   {
     id: "workspace-readme",
     group: "Workspace",
+    project: "Source index",
     path: "README.md",
+    sourcePath: "README.md",
     language: "Markdown",
     kind: "Published workspace guide",
     source: workspaceReadme,
   },
-  {
-    id: "paper-tas",
-    group: "Papers",
-    path: "papers/tas/tas_runtime_v4.py",
-    language: "Python",
-    kind: "Reproducibility source",
-    source: tasRuntime,
-    openHref: "/papers/same-numbers-stale-permission.pdf",
-    openLabel: "Open paper",
-  },
-  {
-    id: "paper-atracc",
-    group: "Papers",
-    path: "papers/atracc/atracc_audit.py",
-    language: "Python",
-    kind: "Reproducibility source",
-    source: atraccAudit,
-    openHref: "/papers/auditing-evidence-claims.pdf",
-    openLabel: "Open paper",
-  },
-  {
-    id: "paper-privacy",
-    group: "Papers",
-    path: "papers/privacy-sensitive/method.md",
-    language: "Markdown",
-    kind: "Method manifest",
-    source: privacyMethod,
-    openHref: "/papers/privacy-sensitive-generative-ai-sourcing.pdf",
-    openLabel: "Open paper",
-  },
-  {
-    id: "paper-infrastructure",
-    group: "Papers",
-    path: "papers/agent-infrastructure-fit/method.md",
-    language: "Markdown",
-    kind: "Method manifest",
-    source: infrastructureMethod,
-    openHref: "/papers/agent-infrastructure-fit.pdf",
-    openLabel: "Open paper",
-  },
-  {
-    id: "paper-dcrt",
-    group: "Papers",
-    path: "papers/ruleblind-dcrt/protocol.md",
-    language: "Markdown",
-    kind: "Protocol manifest",
-    source: dcrtMethod,
-    openHref: "/papers/ruleblind-dcrt.pdf",
-    openLabel: "Open paper",
-  },
-  {
-    id: "type-unit-distance",
-    group: "Type projects",
-    path: "type/unit-distance/geometry.py",
-    language: "Python",
-    kind: "Project source",
-    source: unitDistanceGeometry,
-    openHref: "https://hema-unit-distance.vercel.app",
-    openLabel: "Open project",
-  },
-  {
-    id: "type-axis-doctor",
-    group: "Type projects",
-    path: "type/axis-doctor/detect.ts",
-    language: "TypeScript",
-    kind: "Project source",
-    source: axisDoctorDetect,
-    openHref: "https://hema-axis-doctor.vercel.app",
-    openLabel: "Open project",
-  },
-  {
-    id: "type-font-fix",
-    group: "Type projects",
-    path: "type/fontfix/glyph.ts",
-    language: "TypeScript",
-    kind: "Project source",
-    source: fontFixGlyph,
-    openHref: "https://hema-fontfix.vercel.app",
-    openLabel: "Open project",
-  },
-  {
-    id: "type-render-parity",
-    group: "Type projects",
-    path: "type/render-parity/compare.py",
-    language: "Python",
-    kind: "Project source",
-    source: renderParityCompare,
-    openHref: "https://hema-render-parity.vercel.app",
-    openLabel: "Open project",
-  },
-  {
-    id: "type-shape-trace",
-    group: "Type projects",
-    path: "type/shape-trace/cluster.ts",
-    language: "TypeScript",
-    kind: "Project source",
-    source: shapeTraceCluster,
-    openHref: "https://hema-shape-trace.vercel.app",
-    openLabel: "Open project",
-  },
+  ...repositoryFiles,
   {
     id: "portfolio-react",
+    projectKey: "portfolio",
     group: "Portfolio",
+    project: "Portfolio",
     path: "portfolio/portfolio.jsx",
+    sourcePath: "portfolio.jsx",
     language: "JavaScript React",
     kind: "Live portfolio source",
     source: portfolioSource,
   },
   {
     id: "portfolio-css",
+    projectKey: "portfolio",
     group: "Portfolio",
+    project: "Portfolio",
     path: "portfolio/portfolio.css",
+    sourcePath: "portfolio.css",
     language: "CSS",
     kind: "Live portfolio source",
     source: portfolioStyles,
   },
 ];
 
+const fileById = new Map(devFiles.map((file) => [file.id, file]));
+
 export function getDevFile(id) {
-  return devFiles.find((file) => file.id === id) || devFiles[0];
+  return fileById.get(id) || devFiles[0];
 }
 
+export const sourceCounts = sourceSnapshot.counts;

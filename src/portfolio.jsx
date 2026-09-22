@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { lazy, Suspense, useEffect, useState } from "react";
 import { createRoot } from "react-dom/client";
-import DevMode from "./dev-mode";
 import "./portfolio.css";
+
+const DevMode = lazy(() => import("./dev-mode"));
 
 const researchExperience = [
   {
@@ -174,6 +175,7 @@ const publications = [
     alt: "Bar chart from the paper comparing payload, metadata, and contract conditions",
     caption: "Figure 1 - exact accuracy, conflict acceptance, and complete-set accuracy",
     devFile: "paper-tas",
+    sourceCount: 23,
     review: {
       image: "/images/publications/tas-reviewer-comment.png",
       alt: "Reviewer comment describing Same Numbers, Stale Permission as an excellent paper and praising its treatment of semantic authorization and operation-scoped receipts",
@@ -191,6 +193,7 @@ const publications = [
     alt: "Evidence audit illustration showing records, provenance checks, and three evidence-status outcomes",
     caption: "Evidence audit from source records to supported, unresolved, and human-review-only outcomes",
     devFile: "paper-atracc",
+    sourceCount: 26,
   },
   {
     status: "Accepted, INSIGHT 2026 (Springer proceedings)",
@@ -202,7 +205,6 @@ const publications = [
     image: "/images/publications/privacy-sensitive-sourcing.png",
     alt: "Coefficient plot from the paper showing vendor-only sourcing estimates across agency exclusions",
     caption: "Figure 2 - adjusted estimate and leave-one-agency-out comparisons",
-    devFile: "paper-privacy",
   },
   {
     status: "Accepted, 20th ISDSI Global Conference (Dec. 2026)",
@@ -214,7 +216,6 @@ const publications = [
     image: "/images/publications/agent-infrastructure-fit.png",
     alt: "Diagram from the paper connecting task requirements, an AI agent, public-data infrastructure, validation, and governance feedback",
     caption: "Figure 1 - agent-infrastructure fit as a governed task system",
-    devFile: "paper-infrastructure",
   },
   {
     status: "Under review, AIS2C 2027 (IEEE)",
@@ -226,7 +227,6 @@ const publications = [
     image: "/images/publications/ruleblind-dcrt.png",
     alt: "Protocol diagram and recovery chart from the RULEBLIND-DCRT paper",
     caption: "Figure 1 - durable residual protocol and exact diagnosis after repair",
-    devFile: "paper-dcrt",
   },
 ];
 
@@ -239,6 +239,7 @@ const typeProjects = [
     href: "https://hema-unit-distance.vercel.app",
     image: "/images/type-projects/unit-distance.png",
     devFile: "type-unit-distance",
+    sourceCount: 20,
   },
   {
     title: "AxisDoctor",
@@ -248,6 +249,7 @@ const typeProjects = [
     href: "https://hema-axis-doctor.vercel.app",
     image: "/images/type-projects/axis-doctor.png",
     devFile: "type-axis-doctor",
+    sourceCount: 19,
   },
   {
     title: "FontFix",
@@ -257,6 +259,7 @@ const typeProjects = [
     href: "https://hema-fontfix.vercel.app",
     image: "/images/type-projects/fontfix.png",
     devFile: "type-font-fix",
+    sourceCount: 21,
   },
   {
     title: "RenderParity",
@@ -266,6 +269,7 @@ const typeProjects = [
     href: "https://hema-render-parity.vercel.app",
     image: "/images/type-projects/render-parity.png",
     devFile: "type-render-parity",
+    sourceCount: 20,
   },
   {
     title: "ShapeTrace",
@@ -275,6 +279,7 @@ const typeProjects = [
     href: "https://hema-shape-trace.vercel.app",
     image: "/images/type-projects/shape-trace.png",
     devFile: "type-shape-trace",
+    sourceCount: 13,
   },
 ];
 
@@ -432,9 +437,11 @@ function PublicationsSection({ onOpenDev }) {
                 <a href={paper.href} target="_blank" rel="noreferrer">Paper</a>
               </p>
               <p className="project-description">{paper.summary}</p>
-              <button type="button" className="dev-entry-link" onClick={() => onOpenDev(paper.devFile)}>
-                View the code in Dev mode <span aria-hidden="true">›_</span>
-              </button>
+              {paper.devFile && (
+                <button type="button" className="dev-entry-link" onClick={() => onOpenDev(paper.devFile)}>
+                  Explore {paper.sourceCount} actual source files <span aria-hidden="true">›_</span>
+                </button>
+              )}
             </div>
             <figure className="project-visual paper-visual">
               <img src={paper.image} alt={paper.alt} loading="lazy" />
@@ -480,7 +487,7 @@ function TypeProjectsSection({ onOpenDev }) {
                   Visit the project <Arrow />
                 </a>
                 <button type="button" className="dev-entry-link" onClick={() => onOpenDev(project.devFile)}>
-                  View code in Dev mode <span aria-hidden="true">›_</span>
+                  Explore {project.sourceCount} actual source files <span aria-hidden="true">›_</span>
                 </button>
               </div>
             </div>
@@ -595,13 +602,15 @@ function App() {
 
   if (mode === "dev") {
     return (
-      <DevMode
-        initialFileId={devFile}
-        onPlain={openPlain}
-        publications={publications}
-        typeProjects={typeProjects}
-        researchExperience={researchExperience}
-      />
+      <Suspense fallback={<div className="dev-loading" role="status">Opening source workspace…</div>}>
+        <DevMode
+          initialFileId={devFile}
+          onPlain={openPlain}
+          publications={publications}
+          typeProjects={typeProjects}
+          researchExperience={researchExperience}
+        />
+      </Suspense>
     );
   }
 

@@ -69,6 +69,28 @@ test("all five publication PDFs are included in the public build", async () => {
   }
 });
 
+test("dev mode publishes complete audited source snapshots instead of method placeholders", async () => {
+  const snapshot = JSON.parse(await readFile(resolve("src/dev-source-snapshot.json"), "utf8"));
+  assert.deepEqual(snapshot.counts, {
+    "paper-tas": 23,
+    "paper-atracc": 26,
+    "type-unit-distance": 20,
+    "type-axis-doctor": 19,
+    "type-font-fix": 21,
+    "type-render-parity": 20,
+    "type-shape-trace": 13,
+  });
+  assert.equal(snapshot.files.length, 142);
+  assert.ok(snapshot.files.every((file) => file.path && file.source.length > 0));
+  assert.ok(snapshot.files.some((file) => file.path === "experiments/run_tas_stochastic_v6.py"));
+  assert.ok(snapshot.files.some((file) => file.path === "experiments/run_atracc_metamorphic_v7.py"));
+  assert.ok(snapshot.files.some((file) => file.path === "src/workers/analyze.worker.ts"));
+  assert.ok(snapshot.files.some((file) => file.path === "renderparity/capture.py"));
+
+  const devIndex = await readFile(resolve("src/dev-files.js"), "utf8");
+  assert.doesNotMatch(devIndex, /Method manifest|Protocol manifest|privacyMethod|infrastructureMethod|dcrtMethod/);
+});
+
 test("publication figures, profile photograph, type screenshots, and SwiftCollab evidence are included", async () => {
   for (const filename of publicationImages) {
     await access(resolve("dist/client/images/publications", filename));

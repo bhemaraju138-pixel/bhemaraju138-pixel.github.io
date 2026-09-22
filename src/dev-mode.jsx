@@ -130,8 +130,9 @@ function LocalModelPanel({ publications, typeProjects, researchExperience, onClo
     const evidence = selectedSources.map((source) => (
       `[${source.title} | ${source.route}]\n${source.text.slice(0, 1700)}`
     )).join("\n\n");
-    const userMessage = { id: `user-${Date.now()}`, role: "user", content: prompt };
-    const answerId = `answer-${Date.now()}`;
+    const messageSequence = messages.length;
+    const userMessage = { id: `user-${messageSequence}`, role: "user", content: prompt };
+    const answerId = `answer-${messageSequence}`;
     const history = [...messages.filter((message) => message.id !== "welcome"), userMessage]
       .slice(-6)
       .map(({ role, content }) => ({ role, content }));
@@ -240,6 +241,18 @@ function LocalModelPanel({ publications, typeProjects, researchExperience, onClo
 function Explorer({ activeId, onSelect, query, onQueryChange }) {
   const groups = [...new Set(devFiles.map((file) => file.group))];
   const normalized = query.trim().toLowerCase();
+  const activeProject = getDevFile(activeId).project;
+  const [openProjects, setOpenProjects] = useState(() => new Set([activeProject]));
+
+  const toggleProject = (project) => {
+    setOpenProjects((current) => {
+      const next = new Set(current);
+      if (next.has(project)) next.delete(project);
+      else next.add(project);
+      return next;
+    });
+  };
+
   return (
     <aside className="dev-explorer" aria-label="Source explorer">
       <header><strong>EXPLORER</strong><span>•••</span></header>
@@ -253,14 +266,28 @@ function Explorer({ activeId, onSelect, query, onQueryChange }) {
         {groups.map((group) => {
           const files = devFiles.filter((file) => file.group === group && (!normalized || `${file.path} ${file.kind}`.toLowerCase().includes(normalized)));
           if (!files.length) return null;
+          const projects = [...new Set(files.map((file) => file.project))];
           return (
             <section key={group}>
               <h2><Icon name="chevron-down" /> {group}</h2>
-              {files.map((file) => (
-                <button type="button" className={file.id === activeId ? "active" : ""} onClick={() => onSelect(file.id)} key={file.id} title={file.path}>
-                  <Icon name={fileIcon(file)} /><span>{file.path.split("/").at(-1)}</span>
-                </button>
-              ))}
+              {projects.map((project) => {
+                const projectFiles = files.filter((file) => file.project === project);
+                const isOpen = Boolean(normalized) || project === activeProject || openProjects.has(project);
+                return (
+                  <div className="dev-tree-project" key={project}>
+                    <button type="button" className="dev-tree-project-toggle" onClick={() => toggleProject(project)} aria-expanded={Boolean(isOpen)}>
+                      <Icon name={isOpen ? "chevron-down" : "chevron-right"} />
+                      <Icon name={isOpen ? "folder-opened" : "folder"} />
+                      <span>{project}</span><small>{projectFiles.length}</small>
+                    </button>
+                    {isOpen && projectFiles.map((file) => (
+                      <button type="button" className={`dev-tree-file ${file.id === activeId ? "active" : ""}`} onClick={() => onSelect(file.id)} key={file.id} title={file.path}>
+                        <Icon name={fileIcon(file)} /><span>{file.sourcePath.split("/").at(-1)}</span>
+                      </button>
+                    ))}
+                  </div>
+                );
+              })}
             </section>
           );
         })}
@@ -275,6 +302,15 @@ function Explorer({ activeId, onSelect, query, onQueryChange }) {
 
 function SourceEditor({ file, onCopy, copied }) {
   const lines = file.source.replace(/\n$/, "").split("\n");
+  const downloadSource = () => {
+    const blob = new Blob([file.source], { type: "text/plain;charset=utf-8" });
+    const url = URL.createObjectURL(blob);
+    const anchor = document.createElement("a");
+    anchor.href = url;
+    anchor.download = file.sourcePath.split("/").at(-1);
+    anchor.click();
+    window.setTimeout(() => URL.revokeObjectURL(url), 0);
+  };
   return (
     <section className="dev-editor" aria-label={`Source editor: ${file.path}`}>
       <div className="dev-tabbar">
@@ -284,13 +320,15 @@ function SourceEditor({ file, onCopy, copied }) {
         {file.path.split("/").map((part, index) => <React.Fragment key={`${part}-${index}`}><span>{part}</span>{index < file.path.split("/").length - 1 && <Icon name="chevron-right" />}</React.Fragment>)}
       </div>
       <div className="dev-source-banner">
-        <div><span>{file.kind}</span><small>{file.language} · {lines.length.toLocaleString()} lines</small></div>
+        <div><span>{file.kind}</span><small>{file.language} · {lines.length.toLocaleString()} lines · {file.sourcePath}</small></div>
         <div>
+          {file.repositoryHref && <a href={file.repositoryHref} target="_blank" rel="noreferrer">Repository <Icon name="github" /></a>}
           {file.openHref && <a href={file.openHref} target="_blank" rel="noreferrer">{file.openLabel} <Icon name="link-external" /></a>}
+          <button type="button" onClick={downloadSource}><Icon name="desktop-download" /> Download</button>
           <button type="button" onClick={onCopy}><Icon name={copied ? "check" : "copy"} /> {copied ? "Copied" : "Copy source"}</button>
         </div>
       </div>
-      <pre className="dev-code" tabIndex="0" aria-label={`${file.path} source code`}>
+      <pre className="dev-code" aria-label={`${file.path} source code`}>
         <code>
           {lines.map((line, index) => (
             <span className="dev-code-line" key={`${file.id}-${index}`}><i>{index + 1}</i><b>{line || " "}</b></span>
@@ -355,17 +393,13 @@ function BottomPanel({ activeTab, onTabChange, file, onSelect, onPlain, onModel 
 }
 
 export default function DevMode({ initialFileId, onPlain, publications, typeProjects, researchExperience }) {
-  const [activeId, setActiveId] = useState(initialFileId || "workspace-readme");
+  const [activeId, setActiveId] = useState(() => getDevFile(initialFileId).id);
   const [query, setQuery] = useState("");
   const [panelTab, setPanelTab] = useState("terminal");
   const [modelOpen, setModelOpen] = useState(false);
   const [explorerOpen, setExplorerOpen] = useState(true);
   const [copied, setCopied] = useState(false);
   const file = getDevFile(activeId);
-
-  useEffect(() => {
-    if (initialFileId && getDevFile(initialFileId).id === initialFileId) setActiveId(initialFileId);
-  }, [initialFileId]);
 
   const selectFile = (id) => {
     setActiveId(id);
