@@ -35,6 +35,32 @@ test("the production entry is the simplified portfolio", async () => {
   await access(resolve("dist/client/404.html"));
 });
 
+test("experience and education sections follow the requested editorial order", async () => {
+  const source = await readFile(resolve("src/portfolio.jsx"), "utf8");
+  const renderedSections = source.slice(source.indexOf("<ExperienceSection />"));
+  const sectionMarkers = [
+    "<ExperienceSection />",
+    "<FounderExperienceSection />",
+    "<OtherExperienceSection />",
+    "<PublicationsSection />",
+    "<EducationSection />",
+    "<TypeProjectsSection />",
+  ];
+
+  let previousIndex = -1;
+  for (const marker of sectionMarkers) {
+    const markerIndex = renderedSections.indexOf(marker);
+    assert.ok(markerIndex > previousIndex, `${marker} should appear in sequence`);
+    previousIndex = markerIndex;
+  }
+
+  assert.match(source, /Series - Agentic AI Network/);
+  assert.match(source, /Human BioSciences/);
+  assert.match(source, /Ms\. Brenda Nack/);
+  assert.match(source, /Thomas Yuill/);
+  assert.doesNotMatch(source, /more than 50 applications|17% increase|20,000 municipal/);
+});
+
 test("all five publication PDFs are included in the public build", async () => {
   for (const filename of paperFiles) {
     const content = await readFile(resolve("dist/client/papers", filename));

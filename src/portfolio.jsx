@@ -71,8 +71,41 @@ const researchExperience = [
     institutionHref: "https://publicinnovation.jhu.edu/",
     role: "Summer Scholar",
     location: "Birmingham, Alabama",
+    supervisor: {
+      name: "Thomas Yuill",
+      href: "https://www.birminghamal.gov/government/city-departments/office-resilience-sustainability",
+    },
     detail:
-      "Integrated more than 20,000 municipal, NASA Black Marble, asset, location, and equity records to identify 12 underserved corridors and deliver five policy pathways to city officials.",
+      "Combined municipal, satellite, asset, location, and equity records to study street-lighting gaps and develop policy pathways with Birmingham officials.",
+  },
+];
+
+const founderExperience = [
+  {
+    period: "Oct. 2024 - Dec. 2025",
+    institution: "SwiftCollab",
+    role: "Founder",
+    location: "Baltimore, Maryland",
+    supervisor: {
+      name: "Professor Ryan Hearty",
+      href: "https://engineering.jhu.edu/faculty/ryan-hearty/",
+    },
+    detail:
+      "Founded a proactive workflow-automation platform using schema-aware tool selection, grounded API arguments, and durable Temporal workflows with monitoring and recovery.",
+    note:
+      "Selected for the Johns Hopkins Pava Center Summer Incubator and the Towson University Startup Accelerator.",
+    images: [
+      {
+        src: "/images/experience/pava-center-invitation.png",
+        alt: "Pava Center Summer Incubator acceptance message",
+        caption: "Johns Hopkins Pava Center Summer Incubator selection",
+      },
+      {
+        src: "/images/experience/towson-startup-cohort.jpeg",
+        alt: "Towson University Startup Accelerator cohort display showing SwiftCollab",
+        caption: "SwiftCollab in the Towson University Startup Accelerator cohort",
+      },
+    ],
   },
 ];
 
@@ -86,25 +119,37 @@ const otherExperience = [
       "Built LLM and RAG evaluations for evidence support, hallucinations, prompt regressions, agent tool use, and recovery behavior; added self-healing Playwright tests and continuous-integration gates.",
   },
   {
-    period: "Oct. 2024 - Dec. 2025",
-    institution: "SwiftCollab",
-    role: "Founder",
+    period: "Sep. 2024 - Feb. 2025",
+    institution: "Series - Agentic AI Network",
+    role: "Business Development Associate",
+    location: "New Haven, Connecticut",
     detail:
-      "Built a proactive workflow-automation platform for more than 50 applications using schema-aware tool selection, API argument grounding, and durable Temporal workflows with retries and monitoring.",
-    note:
-      "Selected for a Johns Hopkins Pava Center accelerator ($5,000) and Towson University venture funding ($10,000).",
-    images: [
-      {
-        src: "/images/experience/pava-center-invitation.png",
-        alt: "Pava Center Summer Incubator acceptance message",
-        caption: "Johns Hopkins Pava Center Summer Incubator selection",
-      },
-      {
-        src: "/images/experience/towson-startup-cohort.jpeg",
-        alt: "Towson University 2026 Startup Accelerator cohort display showing SwiftCollab",
-        caption: "SwiftCollab in the Towson University Startup Accelerator cohort",
-      },
-    ],
+      "Analyzed user behavior and funnel performance, translating ambiguous drop-off patterns into focused growth recommendations.",
+  },
+  {
+    period: "Oct. 2024 - Dec. 2024",
+    institution: "Human BioSciences",
+    role: "Product Strategy Consultant",
+    location: "Gaithersburg, Maryland",
+    supervisor: {
+      name: "Ujwal Arunkumar",
+      href: "https://in.linkedin.com/in/ujwal-at",
+    },
+    detail:
+      "Synthesized stakeholder outreach and interviews across procurement, supply chain, nursing, and wound care into a prioritized market-access business case and rollout strategy.",
+  },
+  {
+    period: "Aug. 2024 - Oct. 2024",
+    institution: "The Johns Hopkins Hospital",
+    institutionHref: "https://www.hopkinsmedicine.org/the-johns-hopkins-hospital",
+    role: "Clinical Systems Optimization Consultant",
+    location: "Baltimore, Maryland",
+    supervisor: {
+      name: "Ms. Brenda Nack",
+      href: "https://www.linkedin.com/in/brenda-nack-80365554",
+    },
+    detail:
+      "Converted field observations, stakeholder interviews, and workflow mapping into redesigned instrument-tracking processes, digital requisition practices, and structured staff training.",
   },
   {
     period: "Jan. 2024 - Jun. 2024",
@@ -112,7 +157,7 @@ const otherExperience = [
     role: "Software Engineer",
     location: "Hyderabad, India",
     detail:
-      "Developed production-ready features across the frontend, Flask backend, and SQL database, owning work from requirements through implementation and delivering improvements associated with a 17% increase in user engagement.",
+      "Developed production-ready features across the frontend, Flask backend, and SQL database, owning work from requirements through implementation.",
   },
 ];
 
@@ -179,7 +224,7 @@ const typeProjects = [
     title: "Unit Distance",
     kind: "Original typeface",
     description:
-      "A monospaced display typeface whose connected glyphs follow a certified unit-distance rule on a 5 by 7 lattice.",
+      "A monospaced display face whose connected letterforms follow a certified geometric rule across a compact lattice.",
     href: "https://hema-unit-distance.vercel.app",
     image: "/images/type-projects/unit-distance.png",
   },
@@ -187,7 +232,7 @@ const typeProjects = [
     title: "AxisDoctor",
     kind: "Variable-font diagnostics",
     description:
-      "A local-first workbench that samples variable-font axes and identifies outline, spacing, and interpolation problems between endpoints.",
+      "A local-first workbench for sampling variable-font axes and locating outline, spacing, and interpolation problems.",
     href: "https://hema-axis-doctor.vercel.app",
     image: "/images/type-projects/axis-doctor.png",
   },
@@ -195,7 +240,7 @@ const typeProjects = [
     title: "FontFix",
     kind: "Glyph inspection",
     description:
-      "A browser workbench for inspecting outlines, control points, spacing, metrics, and variable-font axes without uploading the font.",
+      "A private browser workbench for inspecting outlines, control points, spacing, metrics, and variation behavior.",
     href: "https://hema-fontfix.vercel.app",
     image: "/images/type-projects/fontfix.png",
   },
@@ -203,7 +248,7 @@ const typeProjects = [
     title: "RenderParity",
     kind: "Cross-platform rendering",
     description:
-      "A capture and comparison system that locates the first rendering layer where the same font begins to differ across operating systems.",
+      "A capture-and-comparison system that traces where font rendering begins to diverge across operating systems.",
     href: "https://hema-render-parity.vercel.app",
     image: "/images/type-projects/render-parity.png",
   },
@@ -211,7 +256,7 @@ const typeProjects = [
     title: "ShapeTrace",
     kind: "OpenType shaping inspection",
     description:
-      "A local-first microscope that follows text from Unicode input through HarfBuzz to the final positioned glyph buffer.",
+      "A local-first microscope that follows text through shaping and into the final positioned glyph buffer.",
     href: "https://hema-shape-trace.vercel.app",
     image: "/images/type-projects/shape-trace.png",
   },
@@ -245,10 +290,11 @@ function Header() {
       <a className="wordmark" href="#top">Hema Raju Barri</a>
       <nav aria-label="Primary navigation">
         <a href="#experience">Research</a>
-        <a href="#other-experience">Other experience</a>
+        <a href="#founder-experience">Founder</a>
+        <a href="#other-experience">Experience</a>
         <a href="#publications">Publications</a>
-        <a href="#type-projects">Type projects</a>
         <a href="#education">Education</a>
+        <a href="#type-projects">Type projects</a>
       </nav>
       <a className="header-contact" href="mailto:bhemaraju.138@gmail.com">Email <Arrow /></a>
     </header>
@@ -323,6 +369,15 @@ function OtherExperienceSection() {
     <section className="section-shell" id="other-experience" aria-labelledby="other-experience-title">
       <SectionHeading title="Other Experience" id="other-experience-title" />
       <ExperienceList items={otherExperience} />
+    </section>
+  );
+}
+
+function FounderExperienceSection() {
+  return (
+    <section className="section-shell" id="founder-experience" aria-labelledby="founder-experience-title">
+      <SectionHeading title="Founder Experience" id="founder-experience-title" />
+      <ExperienceList items={founderExperience} />
     </section>
   );
 }
@@ -447,10 +502,11 @@ function Portfolio() {
         </section>
 
         <ExperienceSection />
+        <FounderExperienceSection />
         <OtherExperienceSection />
         <PublicationsSection />
-        <TypeProjectsSection />
         <EducationSection />
+        <TypeProjectsSection />
 
         <section className="contact-section section-shell" aria-labelledby="contact-title">
           <div>
